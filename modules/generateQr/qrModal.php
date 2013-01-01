@@ -1,0 +1,60 @@
+
+<?php
+
+//este es el del MODAL!!!****************************************************************************
+
+require_once "../../config/database.php";
+$coma = ".";
+$var1=$_POST['textqr'];//Recibo la variable pasada por post
+$sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
+
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'")
+                                    or die('error'.mysqli_error($mysqli));
+
+    $rows  = mysqli_num_rows($query);
+
+    if ($rows > 0) {
+        $data = mysqli_fetch_assoc($query);
+        $var2   = $data['descripcion'];
+    	$var3	= $data['marca'];
+    	$var4	= $data['modelo'];	
+    	$var5	= $data['color'];
+    	$var6	= $data['bienesN'];
+    	$var7	= $data['condicion'];
+    	$var8	= $data['sede'];
+    	$var9   = $data['pertenece'];
+    	$var10   = $data['nombre'];
+    	$var11   = $data['cedula'];
+    	$var12   = $data['ubicacion'];
+    }
+
+    $var1 = " SERIAL: ".$data['serial'];
+    $var2 = " DESCRIPCION: ".$data['descripcion'];
+    $var3 = " MARCA: ".$data['marca'];
+    $var4 = " MODELO: ".$data['modelo'];
+    $var5 = " COLOR: ".$data['color'];
+    $var6 = " COD. BIENES NAC.: ".$data['bienesN'];
+    $var7 = " CONDICION: ".$data['condicion'];
+    $var8 = " SEDE: ".$data['sede'];
+    $var9 = " PERTENECE: ".$data['pertenece'];
+    $var10 = " RESPONSABLE: ".$data['nombre'];
+    $var11 = " CEDULA: ".$data['cedula'];
+    $var12 = " UBICACION: ".$data['ubicacion'];
+
+$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
+
+include('vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
+use Endroid\QrCode\QrCode;
+
+$qrCode = new QrCode($textqr);//Creo una nueva instancia de la clase
+$qrCode->setSize($sizeqr);//Establece el tamaño del qr
+//header('Content-Type: '.$qrCode->getContentType());
+$image= $qrCode->writeString();//Salida en formato de texto 
+
+ $imageData = base64_encode($image);//Codifico la imagen usando base64_encode
+
+
+echo '<img src="data:image/png;base64,'.$imageData.'">';
+
+?>
+
