@@ -45,8 +45,8 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
       		<ul class="treeview-menu">
         		<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i> Comunicación  </a></li>
 				<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i> Mobiliario y de oficina</a></li>
-				<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i> Refrigeracion y electrodomesticos</a></li>
-				<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i> Cientificos y electronicos</a></li>
+				<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i> Refrigeracion y Electrodomesticos</a></li>
+				<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i> Cientificos y Electronicos</a></li>
 				<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i> Seguridad</a></li>
 				<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 				<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
@@ -80,9 +80,9 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
           	</a>
       		<ul class="treeview-menu">
 			  <li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i> Comunicación  </a></li>
-				<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i> Mobiliario y de oficina</a></li>
-				<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i> Refrigeracion y electrodomesticos</a></li>
-				<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i> Cientificos y electronicos</a></li>
+				<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i> Mobiliario y de Oficina</a></li>
+				<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i> Refrigeracion y Electrodomesticos</a></li>
+				<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i> Cientificos y Electronicos</a></li>
 				<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i> Seguridad</a></li>
 				<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 				<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
