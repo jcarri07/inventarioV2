@@ -8,7 +8,7 @@
 -- Versión de PHP: 7.3.9
 
 CREATE DATABASE inventario3;
-USE inve
+USE inventario3;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
