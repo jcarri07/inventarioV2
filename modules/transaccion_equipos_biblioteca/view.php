@@ -38,7 +38,7 @@ function validarExt()
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-sign-in icon-title"></i> Control de equipos
+    <i class="fa fa-sign-in icon-title"></i> Control de Equipos Biblioteca
      
     <form action="database/excel_to_mysql_control.php" method="POST" enctype="multipart/form-data">
       <button class="btn btn-primary pull-right botones" title="Importar" name="archivo" data-toggle="tooltip">Importar</button>
@@ -52,7 +52,7 @@ function validarExt()
       </a>
  
 
-      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos&form=add" title="Agregar" data-toggle="tooltip">
+      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_biblioteca&form=add" title="Agregar" data-toggle="tooltip">
         <i class="fa fa-plus"></i> Entradas / Salidas
       </a>
 
@@ -105,7 +105,7 @@ function validarExt()
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">TITULO</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">RESPONSABLE ENTREGA</th>
@@ -125,9 +125,10 @@ function validarExt()
             <tbody>
             <?php  
             $no = 1;
+      
             $sede = $_SESSION['sede'];
-            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.nombre, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.serial, b.descripcion, b.condicion
-                                            FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
+            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.titulo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.serial, b.autor, b.condicion
+                                            FROM transaccion_equipos as a INNER JOIN biblioteca as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
            
@@ -143,7 +144,7 @@ function validarExt()
                       <td width='50' class='center'>$data[tipo_transaccion]</td>
                       <td width='80' class='center'>$data[codigo]</td>
                       <td width='80'>$data[serial]</td>
-                      <td width='80' class='center'>$data[descripcion]</td>
+                      <td width='80' class='center'>$data[titulo]</td>
                       <td width='80' class='center'>$data[condicion]</td>
                       <td width='80' class='center'>$data[motivo]</td>
                       <td width='80' class='center'>$data[entrega]</td>

@@ -55,7 +55,7 @@ else {
                
                 if ($query1) {                       
                     
-                    header("location: ../../main.php?module=transaccion_equipos&alert=1");
+                    header("location: ../../main.php?module=transaccion_equipos_biblioteca&alert=1");
                 }
             }   
         }   
