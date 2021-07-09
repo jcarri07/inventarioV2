@@ -6,7 +6,7 @@ session_start();
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ABAE | Inventario</title>
+    <title>ABAE | InventarioV2</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Inventario de equipos ABAE">
