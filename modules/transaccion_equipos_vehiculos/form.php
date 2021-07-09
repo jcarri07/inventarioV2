@@ -73,11 +73,11 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/transaccion_equipos/proses.php?act=insert" method="POST" name="formObatMasuk">
+          <form role="form" class="form-horizontal" action="modules/transaccion_equipos_vehiculos/proses.php?act=insert" method="POST" name="formObatMasuk">
             <div class="box-body">
               <?php  
             
-              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
+              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos_vehiculos
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
 
@@ -118,10 +118,10 @@ if ($_GET['form']=='add') { ?>
                   <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar equipo--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, descripcion FROM inventario ORDER BY nombre ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, tipo FROM vehiculos ORDER BY tipo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[descripcion] </option>";
+                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[tipo] </option>";
                       }
                     ?>
                   </select>

@@ -38,7 +38,7 @@ else {
             $created_user     = $_SESSION['id_user'];
             $accion = "Transaccion de ".$tipo_transaccion;
           
-            $query = mysqli_query($mysqli, "INSERT INTO transaccion_equipos(codigo_transaccion,created_date,codigo,motivo,recibe,cedula_r,empresa_r,entrega,cedula_e,empresa,lugar_r,lugar_e,created_user,tipo_transaccion) 
+            $query = mysqli_query($mysqli, "INSERT INTO transaccion_equipos_biblioteca(codigo_transaccion,created_date,codigo,motivo,recibe,cedula_r,empresa_r,entrega,cedula_e,empresa,lugar_r,lugar_e,created_user,tipo_transaccion) 
                                             VALUES('$codigo_transaccion',NOW(),'$codigo','$motivo','$recibe','$cedula_r','$empresa_r','$entrega','$cedula_e','$empresa','$lugar_r','$lugar_e','$created_user','$tipo_transaccion')")
                                             or die('Error: '.mysqli_error($mysqli));    
 

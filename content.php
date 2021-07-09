@@ -76,6 +76,20 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 
 	} elseif ($_GET['module'] == 'form_transaccion_equipos_biblioteca') {
 		include "modules/transaccion_equipos_biblioteca/form.php";
+
+	//transaccion equipos vehiculos
+	} elseif ($_GET['module'] == 'transaccion_equipos_vehiculos') {
+		include "modules/transaccion_equipos_vehiculos/view.php";
+
+	} elseif ($_GET['module'] == 'form_transaccion_equipos_vehiculos') {
+		include "modules/transaccion_equipos_vehiculos/form.php";
+
+	//transaccion inmuebles
+	} elseif ($_GET['module'] == 'transaccion_equipos_inmuebles') {
+		include "modules/transaccion_equipos_inmuebles/view.php";
+
+	} elseif ($_GET['module'] == 'form_transaccion_equipos_inmuebles') {
+		include "modules/transaccion_equipos_inmuebles/form.php";
 	
 	//Stock inventory
 	} elseif ($_GET['module'] == 'stock_inventory') {

@@ -103,12 +103,38 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 		//Control de equipos biblioteca 
 		if ($_GET["module"] == "transaccion_equipos_biblioteca" || $_GET["module"] == "form_transaccion_equipos_biblioteca") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
+			</li>
+		<?php
+		}
+
+		//Control de equipos vehiculos 
+		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		}
+
+		//Control de equipos inmuebles 
+		if ($_GET["module"] == "transaccion_equipos_inmuebles" || $_GET["module"] == "form_transaccion_equipos_inmuebles") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
 			</li>
 		<?php
 		}
@@ -319,16 +345,41 @@ elseif ($_SESSION['permisos_acceso'] == 'Trabajador') { ?>
 		//Control de equipos biblioteca 
 		if ($_GET["module"] == "transaccion_equipos_biblioteca" || $_GET["module"] == "form_transaccion_equipos_biblioteca") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
 			</li>
 		<?php
 		}
 
+		//Control de equipos vehiculos 
+		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		}
+
+		//Control de equipos inmuebles 
+		if ($_GET["module"] == "transaccion_equipos_inmuebles" || $_GET["module"] == "form_transaccion_equipos_inmuebles") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
+			</li>
+		<?php
+		}
 
 		//Cambiar contraseña
 		if ($_GET["module"] == "password") { ?>
@@ -397,12 +448,38 @@ if ($_SESSION['permisos_acceso'] == 'Admin') { ?>
 		//Control de equipos biblioteca 
 		if ($_GET["module"] == "transaccion_equipos_biblioteca" || $_GET["module"] == "form_transaccion_equipos_biblioteca") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Equipos Biblioteca </a>
+				<a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-clone"></i> Control de Biblioteca </a>
+			</li>
+		<?php
+		}
+
+		//Control de equipos vehiculos 
+		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+			</li>
+		<?php
+		}
+
+		//Control de equipos inmuebles 
+		if ($_GET["module"] == "transaccion_equipos_inmuebles" || $_GET["module"] == "form_transaccion_equipos_inmuebles") { ?>
+			<li class="active">
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
+			</li>
+		<?php
+		} else { ?>
+			<li>
+				<a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-clone"></i> Control de Inmuebles</a>
 			</li>
 		<?php
 		}
@@ -470,7 +547,6 @@ if ($_SESSION['permisos_acceso'] == 'Admin') { ?>
 		}
 		?>
 	</ul>
-
 
 
 <?php
