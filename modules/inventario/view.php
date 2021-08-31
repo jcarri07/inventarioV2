@@ -34,6 +34,37 @@ function validarExt()
         return false;
     }
 }
+
+
+$('body').on('click', '.internos', function(e){
+
+console.log("estas intentando visualizar los internos"); 
+var boton = $(this);
+var id = boton[0].id;
+cadena = "serial=" + id;
+var modalpdf = $('#modal_internos');
+var cuerpomodalpdf = $('#cuerpo_internos');
+
+
+$.ajax({
+        data: cadena, //variables o parametros a enviar, formato => nombre_de_variable:contenido
+        dataType: 'html', //tipo de datos que esperamos de regreso
+        type: 'POST', //mandar variables como post o get
+        // url: 'php/visualizarpdfodt.php' //url que recibe las variables
+        url: 'modules/inventario/view-modal.php'
+
+        }).done(function(data){ //metodo que se ejecuta cuando ajax ha completado su ejecucion             
+       
+        cuerpomodalpdf.html(data); //establecemos el contenido html de discos con la informacion que regresa ajax             
+       //  tipoEquipo.prop('Disabled', false); //habilitar el select
+       //  Equipo.html(' ');
+       //  Equipo.prop('Disabled', true);
+    });
+
+modalpdf.modal('show');
+});
+
+
   </script>
 
 <section class="content-header">
@@ -198,16 +229,24 @@ function validarExt()
                       <td width='90' class='center'>$data[pertenece]</td>
                       <td width='90' class='center'>$data[categoria]</td>
                   
-                      <td class='center'  width='100'>
+                      <td class='center'  width='120'>
                           <div>
             
                         <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
+                    
             ?>
+            
                     <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
+
+  
+                    <a class="btn btn-primary btn-xs internos" class="modal-dialog modal-lg" id="<?php echo $data['serial'];?>">
+                          <i  style='color:#fff' class='glyphicon glyphicon-list'></i>
+                    </a>
+                    <!--data-toggle='modal' data-target='#modal_internos'-->
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
@@ -222,12 +261,14 @@ function validarExt()
               </a>
             <?php
            }
-
+         
               echo "    </div>
                       </td>
                     </tr>";
               $no++;
             }
+
+            
             ?>
 
            <a class="btn btn-primary pull-right" href="modules/inventario/proses.php?act=reset"  style="height:35px;">
@@ -270,4 +311,23 @@ function validarExt()
       </div><!-- /.box -->
     </div><!--/.col -->
   </div>   <!-- /.row -->
-</section><!-- /.content
+
+  <div class="modal fade bd-example-modal-lg" id="modal_internos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="cuerpo_internos" class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+</section><!-- /.content -->
+
+

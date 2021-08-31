@@ -32,7 +32,7 @@
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar equipos
+      <i class="fa fa-edit icon-title"></i> Agregar equipos cambio prueba
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -988,6 +988,7 @@
    </div>
      </div>
        </div>
+       
           </div>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
