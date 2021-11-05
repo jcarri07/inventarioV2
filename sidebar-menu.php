@@ -108,7 +108,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de equipos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
 				<li> <a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
 				<li>  <a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
@@ -121,7 +121,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de equipos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
 				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
 				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
@@ -134,7 +134,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de equipos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
 				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
 				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
