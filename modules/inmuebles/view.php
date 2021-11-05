@@ -39,9 +39,9 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Biblioteca
+  <i class="fa fa-folder-o icon-title"></i> Inmuebles
 
-    <form action="database/excel_to_mysql_biblioteca.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_inmuebles.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -54,11 +54,11 @@ function validarExt()
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_biblioteca.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_inmueble.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_biblioteca&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_inmuebles&form=add"  title="Agregar" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp;
           </a>
 
@@ -141,20 +141,21 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">TIPO</th>
-                <th class="center">TITULO</th>
-                <th class="center">AUTOR</th>
-				        <th class="center">EDITORIAL</th>
-                <th class="center">CANTIDAD</th>
-                <th class="center">ISBN</th>
-                <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">METROS CUADRADOS</th>
                 <th class="center">UBICACION</th>
+				        <th class="center">TIPO</th>
+                <th class="center">NRO CUARTOS</th>
+                <th class="center">CONDICION</th>
+                <th class="center">ESTADO</th>
+                <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
-                <th class="center">SEDE</th>
-                <th class="center">COLOR</th>
-                <th class="center">ENVOLTURA</th>
+                <th class="center">CEDULA</th>
+                <th class="center">DIRECCION</th>
+                <th class="center">NRO HABITANTES</th>
                 <th class="center">EDITAR</th>
+                
+                
                
               
               </tr>
@@ -171,7 +172,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' and sede LIKE '$sede' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -181,39 +182,38 @@ function validarExt()
               echo "<tr>
                       <td width='30' class='center'>$no</td>
                       <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[tipo]</td>
-                      <td width='90' class='center'>$data[titulo]</td>
-                      <td width='90' class='center'>$data[autor]</td>
-                      <td width='90' class='center'>$data[editorial]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>
-                      <td width='50' class='center'>$data[isbn]</td>
-                      <td width='50' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
+                      <td width='90' class='center'>$data[descripcion]</td>
+                      <td width='90' class='center'>$data[metrosCuadrados]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='50' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[envoltura]</td>               
+                      <td width='90' class='center'>$data[tipo]</td>
+                      <td width='90' class='center'>$data[nmroCuartos]</td>
+                      <td width='50' class='center'>$data[condicion]</td>
+                      <td width='50' class='center'>$data[categoria]</td>
+                      <td width='90' class='center'>$data[pisas]</td>
+                      <td width='90' class='center'>$data[responsable]</td>
+                      <td width='50' class='center'>$data[cedula]</td>
+                      <td width='90' class='center'>$data[direccion]</td>
+                      <td width='90' class='center'>$data[habitantes]</td>             
                       <td class='center'  width='100'>
                           <div>
             
-                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_biblioteca&form=edit&id=$data[codigo]'>
+                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inmueble&form=edit&id=$data[codigo]'>
                         <i style='x:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/biblioteca/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['cedula'].' '.$data['tipo']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inmueble/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['cedula'].' '.$data['tipo']; ?>?');">
                         <i style="x:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/biblioteca/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/inmueble/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="x:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/biblioteca/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/inmueble/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="x:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -226,7 +226,7 @@ function validarExt()
             }
             ?>
 
-           <a class="btn btn-primary pull-right" href="modules/biblioteca/proses.php?act=reset"  style="height:35px;">
+           <a class="btn btn-primary pull-right" href="modules/inmueble/proses.php?act=reset"  style="height:35px;">
             <i></i> Reset Check
            </a>
 
