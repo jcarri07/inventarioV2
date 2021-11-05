@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Respaldo_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Respaldo_Vehiculos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -27,7 +27,7 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario ORDER BY codigo DESC")
+      $query = mysqli_query($mysqli, "SELECT * FROM vehiculos ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 

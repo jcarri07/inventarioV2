@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Respaldo_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Respaldo_Inmueble.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -27,16 +27,33 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario ORDER BY codigo DESC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
 
               echo "
               <tr>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center' >$data[categoria]</td>
                 <td width='180' class='center' align='center'>$data[codigo]</td>
+                <td width='180' class='center' align='center'>$data[descripcion]</td>
+                <td width='180' class='center' align='center' >$data[metrosCuadrados]</td>
+                <td width='180' class='center' align='center'>$data[ubicacion]</td>
+                <td width='180' class='center' align='center'>$data[tipo]</td>
+                <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
+                <td width='180' class='center' align='center'>$data[condicion]</td>
+                <td width='180' class='center' align='center'>$data[estado]</td>
+                <td width='180' class='center' align='center'>$data[categoria]</td>
+                <td width='180' class='center' align='center'>$data[pisos]</td>
+                <td width='180' class='center' align='center'>$data[responsable]</td>
+                <td width='180' class='center' align='center'>$data[cedula]</td>
+                <td width='180' class='center' align='center'>$data[direccion]</td>
+                <td width='180' class='center' align='center'>$data[numero]</td>
+                <td width='180' class='center' align='center'>$data[habitantes]</td>
+                <td width='180' class='center' align='center'>$data[created_user]</td>
+                <td width='180' class='center' align='center'>$data[updated_user]</td>
+                <td width='180' class='center' align='center'>$data[created_date]</td>
+                <td width='180' class='center' align='center'>$data[updated_date]</td>
+
                 <td class='center' width='85'>
                       
                 <div>
