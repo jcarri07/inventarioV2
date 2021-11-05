@@ -42,7 +42,6 @@
                 <td width='180' class='center' align='center'>$data[tipo]</td>
                 <td width='180' class='center' align='center'>$data[color]</td>
                 <td width='180' class='center' align='center'>$data[envoltura]</td>
-                <td width='180' class='center' align='center'>$data[codicion]</td>
                 <td width='180' class='center' align='center'>$data[cantidad]</td>
                 <td width='180' class='center' align='center'>$data[bienesN]</td>
                 <td width='180' class='center' align='center'>$data[responsable]</td>
@@ -56,6 +55,7 @@
                 <td width='180' class='center' align='center'>$data[updated_date]</td>
                 <td width='180' class='center' align='center'>$data[estado]</td>
                 <td width='180' class='center' align='center'>$data[categoria]</td>
+                <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td class='center' width='85'>
                       
                 <div>
