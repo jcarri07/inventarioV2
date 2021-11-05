@@ -243,6 +243,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Inventario </a></li>
 					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
+					<li><a href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
 				</ul>
 			</li>
 		<?php
@@ -254,6 +255,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li><a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-save"></i> Inventario </a></li>
 					<li class="active"><a href="?module=backup/php_excel2.php"><i class="fa fa-save"></i>Control de Movimientos</a></li>
+					<li><a href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
 				</ul>
 			</li>
 		<?php
@@ -265,6 +267,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li><a data-toggle="modal" href="#respaldo"><i class="fa fa-save"></i>Inventario </a></li>
 					<li><a data-toggle="modal" href="#respaldo1"><i class="fa fa-save"></i> Control de Movimientos </a></li>
+					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
 				</ul>
 			</li>
 
