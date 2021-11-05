@@ -241,7 +241,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<!--<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Inventario </a></li>-->
+					<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Inventario </a></li>
 					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
 				</ul>
 			</li>
@@ -252,7 +252,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<!--<li><a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-save"></i> Inventario </a></li>-->
+					<li><a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-save"></i> Inventario </a></li>
 					<li class="active"><a href="?module=backup/php_excel2.php"><i class="fa fa-save"></i>Control de Movimientos</a></li>
 				</ul>
 			</li>
@@ -263,7 +263,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-database"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<!--<li><a data-toggle="modal" href="#respaldo"><i class="fa fa-save"></i>Inventario </a></li>-->
+					<li><a data-toggle="modal" href="#respaldo"><i class="fa fa-save"></i>Inventario </a></li>
 					<li><a data-toggle="modal" href="#respaldo1"><i class="fa fa-save"></i> Control de Movimientos </a></li>
 				</ul>
 			</li>
