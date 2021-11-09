@@ -7,8 +7,8 @@
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
-CREATE DATABASE inventario3;
-USE inventario3;
+CREATE DATABASE inventario;
+USE inventario;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
