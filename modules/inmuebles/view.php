@@ -121,7 +121,7 @@ function validarExt()
     }   elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos de bibblioteca exportados correctamente </h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Datos de inmuebles exportados correctamente </h4>
             </div>";
     } elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
@@ -199,23 +199,23 @@ function validarExt()
                       <td class='center'  width='100'>
                           <div>
             
-                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inmueble&form=edit&id=$data[codigo]'>
+                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inmuebles&form=edit&id=$data[codigo]'>
                         <i style='x:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inmueble/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['cedula'].' '.$data['tipo']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inmuebles/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['cedula'].' '.$data['tipo']; ?>?');">
                         <i style="x:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/inmueble/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/inmuebles/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="x:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/inmueble/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/inmuebles/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="x:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -228,7 +228,7 @@ function validarExt()
             }
             ?>
 
-           <a class="btn btn-primary pull-right" href="modules/inmueble/proses.php?act=reset"  style="height:35px;">
+           <a class="btn btn-primary pull-right" href="modules/inmuebles/proses.php?act=reset"  style="height:35px;">
             <i></i> Reset Check
            </a>
 

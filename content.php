@@ -45,7 +45,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		elseif ($_GET['module'] == 'inmuebles') {
 			include "modules/inmuebles/view.php";
 	
-		} elseif ($_GET['module'] == 'form_equiposcientificos_electricos') {
+		} elseif ($_GET['module'] == 'form_inmuebles') {
 			include "modules/inmuebles/form.php";
 		} 
 
