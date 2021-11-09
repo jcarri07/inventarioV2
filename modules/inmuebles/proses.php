@@ -5,7 +5,7 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from biblioteca
+      $result = mysqli_query($mysqli,"SELECT codigo from inmuebles
       WHERE codigo = '$codigo'");
 
       if(mysqli_num_rows($result) > 0){
@@ -53,38 +53,38 @@ else {
 
            // $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            $serial = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
+            $descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
+            $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
+            $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
             $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-            $titulo  = mysqli_real_escape_string($mysqli, trim($_POST['titulo']));
-            $autor  = mysqli_real_escape_string($mysqli, trim($_POST['autor']));
-            $editorial  = mysqli_real_escape_string($mysqli, trim($_POST['editorial']));
-            $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
-            $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
-            $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-            $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+            $mroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+            $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+            $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
+            $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+            $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
             //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
+            $responsables  = mysqli_real_escape_string($mysqli, trim($_POST['responsables']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-            $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
 
             //$detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
-            $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
-            $serial  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            $envoltura  = mysqli_real_escape_string($mysqli, trim($_POST['envoltura']));
-            $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+            $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
+            $numero  = mysqli_real_escape_string($mysqli, trim($_POST['numero']));
+            $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
+            $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
           //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-            $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+            $cantidad = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($codigo,$mysqli) == 1) {
-                 header("location: ../../main.php?module=biblioteca&alert=5");
+                 header("location: ../../main.php?module=inmuebles&alert=5");
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, serial, cantidad, isbn, bienesN, responsable, cedula, sede, color, envoltura, condicion, ubicacion, created_user, updated_user) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$serial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$envoltura', '$condicion', '$ubicacion', '$created_user', '$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (categoria, codigo, descripcion, metrosCuadrados, ubicacion, tipo , mroCuartos, condicion, estado, responsable, cedula, sede, direccion, numero, habitantes, cantidad, created_user, updated_user) 
+                VALUES('inmuebles', '$codigo', '$descripcion', '$metrosCuadrados', '$ubicacion', '$tipo ', '$mroCuartos', '$condicion', '$estado', '$responsable', '$cedula', '$sede', '$direccion', '$numero', '$habitantes', '$cantidad', '$created_user', '$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -94,7 +94,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
 
-                header("location: ../../main.php?module=biblioteca&alert=1");  
+                header("location: ../../main.php?module=inmuebles&alert=1");  
             }
         }   
     }
@@ -102,60 +102,59 @@ else {
     elseif ($_GET['act']=='update') {
         if (isset($_POST['Guardar'])) {
             if (isset($_POST['codigo'])) {
-        
-                //$categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
-                $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-                $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-                $titulo  = mysqli_real_escape_string($mysqli, trim($_POST['titulo']));
-                $autor  = mysqli_real_escape_string($mysqli, trim($_POST['autor']));
-                $editorial  = mysqli_real_escape_string($mysqli, trim($_POST['editorial']));
-                $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
-                $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
-                $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-                $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
-               
-                $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-                $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-               // $pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
-                //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
-               
-               // $detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
-                $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
-              //  $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $envoltura  = mysqli_real_escape_string($mysqli, trim($_POST['envoltura']));
-                $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-               // $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-                $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+        // $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+        $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
+        $descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
+        $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
+        $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+        $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
+        $mroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+        $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+        $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
+        $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+        $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
+        //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
+        $responsables  = mysqli_real_escape_string($mysqli, trim($_POST['responsables']));
+        $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
+        //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
+        //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
+
+        //$detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
+        $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
+        $numero  = mysqli_real_escape_string($mysqli, trim($_POST['numero']));
+        $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
+        $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
+      //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+        $cantidad = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
-                $query = mysqli_query($mysqli, "UPDATE biblioteca SET titulo       = '$titulo',
-                                                                    autor             = '$autor',
+                $query = mysqli_query($mysqli, "UPDATE inmuebles SET codigo        = '$codigo',
+                                                                    metrosCuadrados            = '$metrosCuadrados',
+                                                                    ubicacion             = '$ubicacion',
                                                                     tipo             = '$tipo',
-                                                                    editorial             = '$editorial',
-                                                                    serial                  ='$serial',
-                                                                    cantidad               = '$cantidad',
-                                                                    isbn            = '$isbn',
-                                                                    bienesN             = '$bienesN',
+                                                                    mroCuartos                  ='$mroCuartos',
+                                                                    condicion               = '$condicion',
+                                                                    categoria           = '$categoria',
+                                                                    pisos             = '$pisos',
                                                                     cedula             = '$cedula',
                                                                     responsable             = '$responsable',
-                                                                    sede          = '$sede',
-                                                                    color          = '$color',
-                                                                    envoltura          = '$envoltura',
-                                                                    condicion          = '$condicion',
+                                                                    direccion          = '$direccion',
+                                                                    numero         = '$numero',
+                                                                    habitantes          = '$habitantes',
+                                                                    sede         = '$sede',
                                                                     ubicacion          = '$ubicacion',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));
 
-                 $accion = "Modificacion de equipo";
+                 $accion = "Modificacion de inmueble";
 
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
                                             
-                header("location: ../../main.php?module=biblioteca&alert=2");
+                header("location: ../../main.php?module=inmuebles&alert=2");
                 }        
             }
         }
@@ -166,10 +165,10 @@ else {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
       
-            $query = mysqli_query($mysqli, "DELETE FROM biblioteca WHERE codigo = '$codigo'")
+            $query = mysqli_query($mysqli, "DELETE FROM inmuebles WHERE codigo = '$codigo'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de equipo";
+            $accion = "Eliminacion de inmuebles";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -178,7 +177,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=biblioteca&alert=3");
+                header("location: ../../main.php?module=inmuebles&alert=3");
             }
         }
     }  
@@ -190,14 +189,14 @@ else {
 			$estado  = "nochequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE biblioteca SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE inmuebles SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('error: '.mysqli_error($mysqli));
 
   
             if ($query) {
                
-                header("location: ../../main.php?module=biblioteca");
+                header("location: ../../main.php?module=inmuebles");
             }
 		}
 	} 
@@ -209,14 +208,14 @@ else {
 			$estado  = "chequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE biblioteca SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE inmuebles SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('Error : '.mysqli_error($mysqli));
 
         
             if ($query) {
               
-                header("location: ../../main.php?module=biblioteca");
+                header("location: ../../main.php?module=inmuebles");
             }
 		}
 	}
@@ -227,14 +226,14 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
         $estado  = "nochequeado";
 
     
-        $query = mysqli_query($mysqli, "UPDATE biblioteca SET estado = '$estado'
+        $query = mysqli_query($mysqli, "UPDATE inmuebles SET estado = '$estado'
                                                         WHERE estado = 'chequeado'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=biblioteca");
+            header("location: ../../main.php?module=inmuebles");
         }
     
 }      
