@@ -96,7 +96,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-             header('Location:/inventario3Debug/main.php?module=inventario&alert=4');    
+             header('Location:/inventariov2/main.php?module=inventario&alert=4');    
             
 
         foreach ($xlsx->rows() as $fields)
@@ -122,7 +122,6 @@ if ($parametro != null) {
             $created_date = $fields[18];
             $updated_user = $fields[19];
             $updated_date = $fields[20];
-            $categoria = $fields[21];
             $stmt->execute();
            
         }

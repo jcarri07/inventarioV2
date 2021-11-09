@@ -189,8 +189,7 @@ function validarExt()
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[pertenece]</td>
-                      
-                  
+                    
                       <td class='center'  width='100'>
                           <div>
             
