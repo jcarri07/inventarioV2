@@ -147,13 +147,12 @@ function validarExt()
 				        <th class="center">TIPO</th>
                 <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
-                <th class="center">CATEGORIA</th>
                 <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">DIRECCION</th>
                 <th class="center">NRO HABITANTES</th>
-                <th class="center">CANTIDAD DE INMUEBLES</th>
+                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
                 
                 
@@ -189,7 +188,6 @@ function validarExt()
                       <td width='90' class='center'>$data[tipo]</td>
                       <td width='90' class='center'>$data[nmroCuartos]</td>
                       <td width='50' class='center'>$data[condicion]</td>
-                      <td width='50' class='center'>$data[categoria]</td>
                       <td width='90' class='center'>$data[pisos]</td>
                       <td width='90' class='center'>$data[responsable]</td>
                       <td width='50' class='center'>$data[cedula]</td>
