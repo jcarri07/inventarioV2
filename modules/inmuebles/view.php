@@ -147,7 +147,7 @@ function validarExt()
 				        <th class="center">TIPO</th>
                 <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
-                <th class="center">ESTADO</th>
+                <th class="center">CATEGORIA</th>
                 <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
