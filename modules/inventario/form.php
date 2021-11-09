@@ -213,6 +213,14 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>-->
 
+              
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Ubicacion</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" readonly required>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
@@ -230,6 +238,14 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cantidad" autocomplete="off" readonly required>
+                </div>
+              </div>
+
 
               <!--<div class="form-group">
                 <label class="col-sm-2 control-label">Precio de Compra</label>
@@ -473,22 +489,18 @@ elseif ($_GET['form']=='edit') {
 
 <!-- COMUNICACION -->
     <div class="tab-content" >
-        <div role= "tabpanel" class="tab-pane active" id="modificar"> 
+        <div role= "tabpanel" class="tab-pane active" id="internos2"> 
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=update" method="POST">
             <div class="box-body">
+
+
+    
               
               <div class="form-group">
                 <label class="col-sm-2 control-label">Código</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="codigo" value="<?php echo $data['codigo']; ?>" readonly required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Serial</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
                 </div>
               </div>
 
@@ -499,6 +511,7 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
+                        
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
@@ -512,6 +525,14 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="modelo" autocomplete="off" value="<?php echo $data['modelo']; ?>" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Serial</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
+                </div>
+              </div>
+             
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
@@ -567,12 +588,6 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Sede</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
-                </div>
-              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicacion</label>
@@ -580,6 +595,15 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Sede</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
+                </div>
+              </div>
+
+            
 
              
 
@@ -611,6 +635,14 @@ elseif ($_GET['form']=='edit') {
                   <datalist id="item">
                     <option  selected value="ABAE">ABAE</option>
                     </datalist>
+                </div>
+              </div>
+
+              
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cantidad" autocomplete="off" value="<?php echo $data['cantidad']; ?>" required>
                 </div>
               </div>
 
