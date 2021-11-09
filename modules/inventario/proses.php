@@ -66,6 +66,7 @@ else {
             $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
             $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+            $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
 
@@ -77,8 +78,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('Comunicacion','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user) 
+                                            VALUES('Comunicacion','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
 
         
@@ -109,6 +110,7 @@ else {
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
 
                 $updated_user = $_SESSION['id_user'];
@@ -129,6 +131,7 @@ else {
                                                                     condicion             = '$condicion',
                                                                     ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
+                                                                    cantidad          = '$cantidad',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

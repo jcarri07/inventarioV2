@@ -185,7 +185,6 @@ modalpdf.modal('show');
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
-                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>            
               </tr>
             </thead>
@@ -224,7 +223,6 @@ modalpdf.modal('show');
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[pertenece]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>
                   
                       <td class='center'  width='120'>
                           <div>

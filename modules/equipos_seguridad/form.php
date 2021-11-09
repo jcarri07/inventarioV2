@@ -258,13 +258,7 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Serial</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
-                </div>
-              </div>
-
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
@@ -283,6 +277,13 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Modelo</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="modelo" autocomplete="off" value="<?php echo $data['modelo']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Serial</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
                 </div>
               </div>
 
@@ -330,7 +331,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
+                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" readonly required>
                 </div>
               </div>
 
