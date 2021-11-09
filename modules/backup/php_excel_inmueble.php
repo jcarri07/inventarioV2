@@ -38,6 +38,7 @@
                 <td width='180' class='center' align='center'>$data[descripcion]</td>
                 <td width='180' class='center' align='center' >$data[metrosCuadrados]</td>
                 <td width='180' class='center' align='center'>$data[ubicacion]</td>
+                <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[tipo]</td>
                 <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
                 <td width='180' class='center' align='center'>$data[condicion]</td>
