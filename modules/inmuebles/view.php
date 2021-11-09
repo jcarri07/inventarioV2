@@ -153,6 +153,7 @@ function validarExt()
                 <th class="center">CEDULA</th>
                 <th class="center">DIRECCION</th>
                 <th class="center">NRO HABITANTES</th>
+                <th class="center">CANTIDAD DE INMUEBLES</th>
                 <th class="center">EDITAR</th>
                 
                 
@@ -172,7 +173,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles' and sede LIKE '$sede' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -189,11 +190,12 @@ function validarExt()
                       <td width='90' class='center'>$data[nmroCuartos]</td>
                       <td width='50' class='center'>$data[condicion]</td>
                       <td width='50' class='center'>$data[categoria]</td>
-                      <td width='90' class='center'>$data[pisas]</td>
+                      <td width='90' class='center'>$data[pisos]</td>
                       <td width='90' class='center'>$data[responsable]</td>
                       <td width='50' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[direccion]</td>
-                      <td width='90' class='center'>$data[habitantes]</td>             
+                      <td width='90' class='center'>$data[habitantes]</td>
+                      <td width='90' class='center'>$data[cantidad]</td>             
                       <td class='center'  width='100'>
                           <div>
             

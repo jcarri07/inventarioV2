@@ -145,7 +145,6 @@ function validarExt()
                 <th class="center">TITULO</th>
                 <th class="center">AUTOR</th>
 				        <th class="center">EDITORIAL</th>
-                <th class="center">CANTIDAD</th>
                 <th class="center">ISBN</th>
                 <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
@@ -154,6 +153,7 @@ function validarExt()
                 <th class="center">SEDE</th>
                 <th class="center">COLOR</th>
                 <th class="center">ENVOLTURA</th>
+                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
                
               
@@ -185,7 +185,6 @@ function validarExt()
                       <td width='90' class='center'>$data[titulo]</td>
                       <td width='90' class='center'>$data[autor]</td>
                       <td width='90' class='center'>$data[editorial]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>
                       <td width='50' class='center'>$data[isbn]</td>
                       <td width='50' class='center'>$data[bienesN]</td>
                       <td width='90' class='center'>$data[condicion]</td>
@@ -193,7 +192,8 @@ function validarExt()
                       <td width='50' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[envoltura]</td>               
+                      <td width='90' class='center'>$data[envoltura]</td>  
+                      <td width='90' class='center'>$data[cantidad]</td>             
                       <td class='center'  width='100'>
                           <div>
             
