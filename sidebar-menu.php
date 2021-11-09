@@ -48,6 +48,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i> Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
+					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 				</ul>
 			</li>
 		<?php
@@ -64,6 +65,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i> Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
+					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 				</ul>
 			</li>
 		<?php
@@ -80,6 +82,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i> Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i> Vehiculos</a></li>
+					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 				</ul>
 			</li>
 		<?php
