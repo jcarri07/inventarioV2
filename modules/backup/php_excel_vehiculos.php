@@ -53,6 +53,18 @@
                 <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[bienesN]</td>
                 <td width='180' class='center' align='center'>$data[resguardo]</td>
+                <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
+                <td width='180' class='center' align='center'>$data[anio]</td>
+                <td width='180' class='center' align='center'>$data[uso]</td>
+                <td width='180' class='center' align='center'>$data[servicio]</td>
+                <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
+                <td width='180' class='center' align='center'>$data[capacidadTanque]</td>
+                <td width='180' class='center' align='center'>$data[created_user]</td>
+                <td width='180' class='center' align='center'>$data[created_date]</td>
+                <td width='180' class='center' align='center'>$data[updated_date]</td>
+                <td width='180' class='center' align='center'>$data[estado]</td>
+                <td width='180' class='center' align='center'>$data[updated_date]</td>
+                <td width='180' class='center' align='center'>$data[categoria]</td>
                 <td class='center' width='85'>
                       
                 <div>
