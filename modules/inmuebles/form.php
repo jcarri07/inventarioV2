@@ -274,6 +274,13 @@ elseif ($_GET['form']=='edit') {
               </div>  
 
               <div class="form-group">
+                <label class="col-sm-2 control-label">Categoria</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="categoria" autocomplete="off" value="<?php echo $data['categoria']; ?>" required>
+                </div>
+              </div> 
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Pisos</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="pisos" autocomplete="off" onkeypress='return validaNumericos(event)'  value="<?php echo $data['pisos']; ?>" required>

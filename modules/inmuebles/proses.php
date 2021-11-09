@@ -57,13 +57,13 @@ else {
             $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
             $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
             $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-            $mroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+            $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
             $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
             $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
             //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
-            $responsables  = mysqli_real_escape_string($mysqli, trim($_POST['responsables']));
+            $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
@@ -83,8 +83,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (categoria, codigo, descripcion, metrosCuadrados, ubicacion, tipo , mroCuartos, condicion, estado, responsable, cedula, sede, direccion, numero, habitantes, cantidad, created_user, updated_user) 
-                VALUES('inmuebles', '$codigo', '$descripcion', '$metrosCuadrados', '$ubicacion', '$tipo ', '$mroCuartos', '$condicion', '$estado', '$responsable', '$cedula', '$sede', '$direccion', '$numero', '$habitantes', '$cantidad', '$created_user', '$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo, descripcion, metrosCuadrados, ubicacion, tipo , nmroCuartos, condicion, estado, categoria, responsable, cedula, sede, direccion, numero, habitantes, cantidad, created_user, updated_user) 
+                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$ubicacion', '$tipo ', '$nmroCuartos', '$condicion', '$estado', 'inmuebles', '$responsable', '$cedula', '$sede', '$direccion', '$numero', '$habitantes', '$cantidad', '$created_user', '$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -108,13 +108,13 @@ else {
         $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
         $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
         $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-        $mroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+        $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
         $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
         $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
         $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
         $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
         //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
-        $responsables  = mysqli_real_escape_string($mysqli, trim($_POST['responsables']));
+        $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
         $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
         //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
         //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
@@ -133,7 +133,7 @@ else {
                                                                     metrosCuadrados            = '$metrosCuadrados',
                                                                     ubicacion             = '$ubicacion',
                                                                     tipo             = '$tipo',
-                                                                    mroCuartos                  ='$mroCuartos',
+                                                                    nmroCuartos                  ='$mroCuartos',
                                                                     condicion               = '$condicion',
                                                                     categoria           = '$categoria',
                                                                     pisos             = '$pisos',
