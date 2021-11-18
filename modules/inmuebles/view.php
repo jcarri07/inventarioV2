@@ -152,7 +152,6 @@ function validarExt()
                 <th class="center">CEDULA</th>
                 <th class="center">DIRECCION</th>
                 <th class="center">NRO HABITANTES</th>
-                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
                 
                 
@@ -192,8 +191,7 @@ function validarExt()
                       <td width='90' class='center'>$data[responsable]</td>
                       <td width='50' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[direccion]</td>
-                      <td width='90' class='center'>$data[habitantes]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>             
+                      <td width='90' class='center'>$data[habitantes]</td>           
                       <td class='center'  width='100'>
                           <div>
             
