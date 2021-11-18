@@ -96,7 +96,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-             header('Location:/inventario3Debug/main.php?module=refrigeracion_electrodomesticos&alert=4');    
+             header('Location:/inventariov2/main.php?module=refrigeracion_electrodomesticos&alert=4');    
             
 
         foreach ($xlsx->rows() as $fields)
@@ -139,7 +139,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventario3Debug/main.php?module=refrigeracion_electrodomesticos&alert=8');
+    header('Location:/inventariov2/main.php?module=refrigeracion_electrodomesticos&alert=8');
  }
 
 ?>

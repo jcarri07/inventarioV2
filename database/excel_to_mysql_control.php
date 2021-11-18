@@ -86,7 +86,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
 
-            header('Location:/inventario3Debug/main.php?module=transaccion_equipos&alert=3');
+            header('Location:/inventariov2/main.php?module=transaccion_equipos&alert=3');
            
         foreach ($xlsx->rows() as $fields)
         {
@@ -117,6 +117,6 @@ if ($parametro != null) {
         echo SimpleXLSX::parseError();
     }
 } else {
-    header('Location:/inventario3Debug/main.php?module=transaccion_equipos&alert=2');
+    header('Location:/inventariov2/main.php?module=transaccion_equipos&alert=2');
 }
 ?>

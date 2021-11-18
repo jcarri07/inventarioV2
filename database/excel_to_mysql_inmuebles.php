@@ -65,8 +65,9 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inmuebles (descripcion, codigo, metrosCuadrados, ubicacion, direccion, tipo, nmroCuartos, pisos, condicion, estado, numero, habitantes, categoria, responsable, cedula, sede, cantidad, created_user, updated_user, created_date, updated_date) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (descripcion, codigo, metrosCuadrados, ubicacion, direccion, tipo, nmroCuartos, 
+        pisos, condicion, estado, numero, habitantes, categoria, responsable, cedula, sede, cantidad, created_user, created_date, updated_user, update_date) 
+        VALUES (?, ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
         
             $stmt->bindParam( 1, $descripcion);
             $stmt->bindParam( 2, $codigo);
@@ -88,7 +89,7 @@ if ($parametro != null) {
             $stmt->bindParam( 18, $created_user);
             $stmt->bindParam( 19, $created_date);
             $stmt->bindParam( 20, $updated_user);
-            $stmt->bindParam( 21, $updated_date);
+            $stmt->bindParam( 21, $update_date);
             
             $accion = "Incorporacion de equipos";
 
@@ -96,32 +97,32 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-             header('Location:/inventariov2/main.php?module=inventario&alert=4');    
+             header('Location:/inventariov2/main.php?module=inmuebles&alert=4');    
             
 
         foreach ($xlsx->rows() as $fields)
         {
             $descripcion = $fields[0];
             $codigo = $fields[1];
-            $serial = $fields[2];
-            $marca = $fields[3];
-            $modelo = $fields[4];
-            $color = $fields[5];
-            $nb = $fields[6];
-            $condicion = $fields[7];
-            $ubicacion = $fields[8];
-            $nombre = $fields[9];
-            $cedula = $fields[10];
-            $sede = $fields[11];
-            $pertenece = $fields[12];
-            $precio_compra = $fields[13];
-            $precio_venta = $fields[14];
-            $unidad = $fields[15];
-            $stock = $fields[16];
+            $metrosCuadrados = $fields[2];
+            $ubicacion = $fields[3];
+            $direccion = $fields[4];
+            $tipo = $fields[5];
+            $nmroCuartos = $fields[6];
+            $pisos = $fields[7];
+            $condicion = $fields[8];
+            $estado = $fields[9];
+            $numero = $fields[10];
+            $habitantes= $fields[11];
+            $categoria = $fields[12];
+            $responsable = $fields[13];
+            $cedula= $fields[14];
+            $sede = $fields[15];
+            $cantidad= $fields[16];
             $created_user = $fields[17];
             $created_date = $fields[18];
             $updated_user = $fields[19];
-            $updated_date = $fields[20];
+            $update_date = $fields[20];
             $stmt->execute();
            
         }
@@ -138,7 +139,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventario3Debug/main.php?module=inventario&alert=8');
+    header('Location:/inventariov2/main.php?module=inmuebles&alert=8');
  }
 
 ?>

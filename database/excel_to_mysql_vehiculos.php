@@ -104,7 +104,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-            header('Location:/inventario3Debug/main.php?module=vehiculos&alert=4');
+            header('Location:/inventariov2/main.php?module=vehiculos&alert=4');
                
             
 
@@ -156,7 +156,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventario3Debug/main.php?module=vehiculos&alert=8');
+    header('Location:/inventariov2/main.php?module=vehiculos&alert=8');
  }
 
 ?>
