@@ -217,7 +217,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicacion</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" readonly required>
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
 
@@ -239,13 +239,7 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cantidad</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cantidad" autocomplete="off" readonly required>
-                </div>
-              </div>
-
+           
 
               <!--<div class="form-group">
                 <label class="col-sm-2 control-label">Precio de Compra</label>
@@ -599,7 +593,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
+                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" readonly required>
                 </div>
               </div>
 
@@ -639,13 +633,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cantidad</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cantidad" autocomplete="off" value="<?php echo $data['cantidad']; ?>" required>
-                </div>
-              </div>
-
+             
               <!--<div class="form-group">
                 <label class="col-sm-2 control-label">Precio de Compra</label>
                 <div class="col-sm-5">
