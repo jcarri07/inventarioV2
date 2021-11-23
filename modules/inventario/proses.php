@@ -105,7 +105,7 @@ else {
                 $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
                 $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
                 $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-               // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+                // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
                 $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));

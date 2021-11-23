@@ -80,7 +80,7 @@ if ($parametro != null) {
             $stmt->bindParam( 13, $created_date);
             $stmt->bindParam( 14, $tipo_transaccion);
 
-            $accion = "Incorporacion de multiples transacciones";
+            $accion = "Importacion Modulo Control de Equipos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

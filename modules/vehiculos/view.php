@@ -200,7 +200,7 @@ function validarExt()
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/vehiculos/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/vehiculos/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['placa'].' '.$data['tipo']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php

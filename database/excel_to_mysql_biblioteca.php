@@ -90,7 +90,7 @@ if ($parametro != null) {
             $stmt->bindParam( 21, $estado);
             $stmt->bindParam( 22, $categoria);
             
-            $accion = "Incorporacion de equipos";
+            $accion = "Importacion Modulo Biblioteca";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

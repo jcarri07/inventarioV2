@@ -54,7 +54,7 @@ function validarExt()
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_inmueble.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_inmuebles.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
@@ -144,19 +144,15 @@ function validarExt()
                 <th class="center">DESCRIPCION</th>
                 <th class="center">METROS CUADRADOS</th>
                 <th class="center">UBICACION</th>
+                <th class="center">DIRECCION</th>
 				        <th class="center">TIPO</th>
                 <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
                 <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
-                <th class="center">DIRECCION</th>
                 <th class="center">NRO HABITANTES</th>
                 <th class="center">EDITAR</th>
-                
-                
-               
-              
               </tr>
             </thead>
             <tbody>
@@ -184,16 +180,16 @@ function validarExt()
                       <td width='90' class='center'>$data[descripcion]</td>
                       <td width='90' class='center'>$data[metrosCuadrados]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
+                      <td width='90' class='center'>$data[direccion]</td>
                       <td width='90' class='center'>$data[tipo]</td>
                       <td width='90' class='center'>$data[nmroCuartos]</td>
                       <td width='50' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[pisos]</td>
                       <td width='90' class='center'>$data[responsable]</td>
                       <td width='50' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[direccion]</td>
                       <td width='90' class='center'>$data[habitantes]</td>           
                       <td class='center'  width='100'>
-                          <div>
+                    <div>
             
                         <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inmuebles&form=edit&id=$data[codigo]'>
                         <i style='x:#fff' class='glyphicon glyphicon-edit'></i>

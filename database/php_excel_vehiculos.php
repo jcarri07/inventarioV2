@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Reporte_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Reporte_General_Vehiculos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -39,15 +39,20 @@
 
     session_start();
 
+    $hari_ini = date("d-m-Y");
+    $NombreUser = $_SESSION['name_user'];
+    $iduser = $_SESSION['id_user'];
+    $cedulauser = $_SESSION['cedula_user'];
+
 		$mysqli = new mysqli($server, $username, $password, $database);
 
     $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
-            $data = mysqli_fetch_assoc($query);
-            $_SESSION['sede'] = $data['sede'];
-            $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
-            $permiso = $_SESSION['permisos_acceso'];
-            $sede = $_SESSION['sede'];
+    $data = mysqli_fetch_assoc($query);
+    $_SESSION['sede'] = $data['sede'];
+    $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
+    $permiso = $_SESSION['permisos_acceso'];
+    $sede = $_SESSION['sede'];
 
 	  if ($mysqli->connect_error) {
     	die('error'.$mysqli->connect_error);
@@ -95,8 +100,16 @@
     echo "    </div>
                </td>
               </tr>";
+
     $no++;
           	}
+
+    $accion = "Eportacion Modulo Vehiculos";
+
+    $query3 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                  VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                  or die('error '.mysqli_error($mysqli));
+
             ?>
             </tbody>
           </table>

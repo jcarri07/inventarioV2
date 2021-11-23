@@ -111,7 +111,6 @@ else {
         $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
         $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
         $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
-        $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
         $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
         //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
         $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
@@ -130,12 +129,12 @@ else {
                 $updated_user = $_SESSION['id_user'];
 
                 $query = mysqli_query($mysqli, "UPDATE inmuebles SET codigo        = '$codigo',
+                                                                    descripcion           = '$descripcion',
                                                                     metrosCuadrados            = '$metrosCuadrados',
                                                                     ubicacion             = '$ubicacion',
                                                                     tipo             = '$tipo',
                                                                     nmroCuartos                  ='$mroCuartos',
                                                                     condicion               = '$condicion',
-                                                                    categoria           = '$categoria',
                                                                     pisos             = '$pisos',
                                                                     cedula             = '$cedula',
                                                                     responsable             = '$responsable',
