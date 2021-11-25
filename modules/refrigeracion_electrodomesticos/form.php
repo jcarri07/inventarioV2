@@ -15,7 +15,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar equipos de Refrigeracion / Electrodomesticos
+      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Refrigeración y Electrodomésticos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -194,7 +194,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar equipo
+      <i class="fa fa-edit icon-title"></i> Modificar Equipos de Refrigeración y Electrodomésticos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>

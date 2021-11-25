@@ -15,8 +15,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar vehiculos
-  </section>
+      <i class="fa fa-edit icon-title"></i> Agregar Vehículos
 
   <!-- Main content -->
   <section class="content">
@@ -206,7 +205,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar datos vehiculos
+      <i class="fa fa-edit icon-title"></i> Modificar Vehículos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>

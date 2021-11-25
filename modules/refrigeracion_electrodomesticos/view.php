@@ -39,7 +39,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos de Refrigeracion y Electrodomésticos
+  <i class="fa fa-folder-o icon-title"></i> Equipos de Refrigeración y Electrodomésticos
 
     <form action="database/excel_to_mysql_refrigeracion.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
