@@ -65,6 +65,7 @@
             <li role="presentation"><a href="#seguridad" aria-controls="" data-toggle="tab" role="tab"> Seguridad </a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehiculos </a></li>
+            <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
           </ul>
 
 
@@ -1012,6 +1013,144 @@
                 </div>
               </form>
             </div>
+
+
+            <!--INMUEBLES-->
+            <div role="tabpanel" class="tab-pane" id="biblioteca">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_biblioteca.php" method="POST">
+                <div class="box-body">
+
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_biblioteca.php" target="_blank">
+
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items_biblioteca" type="text" name="filtrado_biblioteca" id="filtrado_biblioteca" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false">
+                            <datalist id="items_biblioteca">
+                              <option value=""></option>
+                              <option value="titulo"></option>
+                              <option value="codigo"></option>
+                              <option value="isbn"></option>
+                              <option value="bienesN"></option>
+                              <option value="autor"></option>
+                              <option value="tipo"></option>
+                              <option value="color"></option>
+                              <option value="envoltura"></option>
+                              <option value="editorial"></option>
+                              <option value="codicion"></option>
+                              <option value="ubicacion"></option>
+                              <option value="responsable"></option>
+                              <option value="cedula"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="filtrado2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="filtrado3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
+
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --" onpaste="return false"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
+
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_biblioteca.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
+
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">TIPO</th>
+                                <th class="center">TITULO</th>
+                                <th class="center">AUTOR</th>
+                                <th class="center">EDITORIAL</th>
+                                <th class="center">CANTIDAD</th>
+                                <th class="center">ISBN</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">ENVOLTURA</th>
+                                <th class="center">EDITAR</th>
+
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+
+                              $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' ORDER BY codigo ASC")
+                                or die('error: ' . mysqli_error($mysqli));
+
+                              while ($data = mysqli_fetch_assoc($query)) {
+
+                                echo "<tr>
+                <td width='30' class='center'>$no</td>
+                <td width='50' class='center'>$data[codigo]</td>
+                <td width='90' class='center'>$data[tipo]</td>
+                <td width='90' class='center'>$data[titulo]</td>
+                <td width='90' class='center'>$data[autor]</td>
+                <td width='90' class='center'>$data[editorial]</td>
+                <td width='90' class='center'>$data[cantidad]</td>
+                <td width='50' class='center'>$data[isbn]</td>
+                <td width='50' class='center'>$data[bienesN]</td>
+                <td width='90' class='center'>$data[condicion]</td>
+                <td width='90' class='center'>$data[ubicacion]</td>
+                <td width='50' class='center'>$data[responsable]</td>
+                <td width='90' class='center'>$data[sede]</td>
+                <td width='90' class='center'>$data[color]</td>
+                <td width='90' class='center'>$data[envoltura]</td>               
+                <td class='center'  width='100'>
+                    <div>
+      
+              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                    <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+              </a>";
+
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                    <!--/.col -->
+                  </div> <!-- /.row -->
+
+                </div>
+              </form>
+            </div>
+
+
 
           </div>
         </div>
