@@ -13,42 +13,19 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, pe
                                 or die('error: '.mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre'];
-$var2 = $_POST['nombre2'];
-$var3 = $_POST['nombre3'];
-$filtro = $_POST['filtrado']; trim($filtro);
-$filtro2 = $_POST['filtrado2']; trim($filtro2);
-$filtro3 = $_POST['filtrado3']; trim($filtro3);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-if ($var != "" && $var2 == "" && $var3 == "") {
-   
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%'")
-                             or die('Error '.mysqli_error($mysqli));
-    $count  = mysqli_num_rows($query);
-}
-
-if ($var != "" && $var2 != "" && $var3 == "") {
-
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
+$query = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY titulo ASC")
                                 or die('Error '.mysqli_error($mysqli));
-    $count  = mysqli_num_rows($query);
-}
-
-if ($var != "" && $var2 != "" && $var3 != "") {
-
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
-                                or die('Error '.mysqli_error($mysqli));
-    $count  = mysqli_num_rows($query);
-}
+$count  = mysqli_num_rows($query);
 
 
 ?>
-    <html xmlns="http://www.w3.org/1999/xhtml"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>REPORTE DE INVENTARIO</title>
@@ -57,7 +34,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     </head>
     <body>
 
-    
+
  <table border="0">
 <tr>
     <td><img src="../../assets/img/norma.png" width="550" align='right';></td>
@@ -66,8 +43,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 </tr>
 </table>
 
-
-<!-- <div id="imagen2">
+  <!-- <div id="imagen2">
     <img src="http://apis.mppeuct.gob.ve/img/comun/normativa-izquierda-transparente.png" />
     </div>
 
@@ -79,16 +55,12 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <div id="title">
            REPORTE DE INVENTARIO
         </div>
-  
-        <div id="title-tanggal">
-            Filtrando: <?php echo $filtro ." "."="." ". $var; ?>
-        </div>
-    
-    
-            <table border="0.7" cellpadding="0" cellspacing="0"  style="margin: left;"  >
+
+           <table border="0.7" cellpadding="0" cellspacing="0"  style="margin: left;"  >
                 <tr>
                     <td width="90">Generado por: </td>
                     <td><?php echo $nombre ?></td>
+                    
                 </tr>
                 <tr>
                     <td>Cedula:</td>
@@ -100,6 +72,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 </tr>
                 
             </table>
+
         <br>
         <hr><br>
         
@@ -109,20 +82,19 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     <tr class="tr-title">
                     <th class="center">No.</th>
                     <th class="center">CODIGO</th>
-                    <th class="center">DESCRIPCION</th>
-                    <th class="center">MARCA</th>
-				    <th class="center">MODELO</th>
-                    <th class="center">SERIAL</th>
+                    <th class="center">TIPO</th>
+                    <th class="center">TITULO</th>
+                    <th class="center">AUTOR</th>
+				    <th class="center">EDITORIAL</th>
+                    <th class="center">ISBN</th>
                     <th class="center">N_BIEN</th>
-                    <th class="center">COLOR</th>
                     <th class="center">CONDICION</th>
-                    <th class="center">DIREC/UNIDAD</th>
-                    <th class="center">RESPONSABLE</th>
-                    <th class="center">CEDULA</th>
                     <th class="center">UBICACION</th>
+                    <th class="center">RESPONSABLE</th>
                     <th class="center">SEDE</th>
-                    <th class="center">PERTENECE</th>
-                    <th class="center">EDITAR</th>
+                    <th class="center">COLOR</th>
+                    <th class="center">ENVOLTURA</th>
+                    <th class="center">CANTIDAD</th>>
                     </tr>
                 </thead>
                 <tbody>
@@ -134,35 +106,37 @@ if ($var != "" && $var2 != "" && $var3 != "") {
             echo "  <tr>
                 <td width='30' class='center'>$no</td>
                 <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[color]</td>
+                <td width='90' class='center'>$data[tipo]</td>
+                <td width='90' class='center'>$data[titulo]</td>
+                <td width='90' class='center'>$data[autor]</td>
+                <td width='90' class='center'>$data[editorial]</td>
+                <td width='50' class='center'>$data[isbn]</td>
+                <td width='50' class='center'>$data[bienesN]</td>
                 <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[nombre]</td>
-                <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
+                <td width='50' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>                           
+                <td width='90' class='center'>$data[color]</td>
+                <td width='90' class='center'>$data[envoltura]</td>  
+                <td width='90' class='center'>$data[cantidad]</td>                        
                 </tr>";
             $no++;
         }
         ?>  
                 </tbody>
-            </table>  
+            </table>
+
+            
         </div>
     </body>
 </html>
 <?php
-    $filename="REPORTE DE INVENTARIO FILTRADO.pdf"; 
+$filename="INFORME DE INVENTARIO.pdf"; 
 //==========================================================================================================
-    $content = ob_get_clean();
-    $content = '<page style="font-family: freeserif">'.($content).'</page>';
+$content = ob_get_clean();
+$content = '<page style="font-family: freeserif">'.($content).'</page>';
 
-    require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
+require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
 try
 {
     $html2pdf = new HTML2PDF('l','A4','en', false,'ISO-8859-15',array(10, 10, 10, 10));
@@ -170,5 +144,5 @@ try
     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
     $html2pdf->Output($filename);
 }
-    catch(HTML2PDF_exception $e) { echo $e; }
+catch(HTML2PDF_exception $e) { echo $e; }
 ?>

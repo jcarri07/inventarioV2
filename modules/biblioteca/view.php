@@ -155,8 +155,6 @@ function validarExt()
                 <th class="center">ENVOLTURA</th>
                 <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
-               
-              
               </tr>
             </thead>
             <tbody>

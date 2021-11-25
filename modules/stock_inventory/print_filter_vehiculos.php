@@ -13,12 +13,12 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, pe
                                 or die('error: '.mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre'];
-$var2 = $_POST['nombre2'];
-$var3 = $_POST['nombre3'];
-$filtro = $_POST['filtrado']; trim($filtro);
-$filtro2 = $_POST['filtrado2']; trim($filtro2);
-$filtro3 = $_POST['filtrado3']; trim($filtro3);
+$var = $_POST['nombre']; trim($var);
+$var2 = $_POST['nombre2']; trim($var2);
+$var3 = $_POST['nombre3']; trim($var3);
+$filtro = $_POST['filtrado_vehiculos']; trim($filtro);
+$filtro2 = $_POST['filtrado_vehiculos2']; trim($filtro2);
+$filtro3 = $_POST['filtrado_vehiculos3']; trim($filtro3);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $hari_ini = date("d-m-Y");
@@ -27,21 +27,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
    
-    $query = mysqli_query($mysqli, "SELECT codigo,descripcion,marca,modelo,serial,color,bienesN,condicion,ubicacion,nombre,cedula,sede,pertenece FROM inventario WHERE $filtro LIKE '$var%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%'")
                              or die('Error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT codigo,descripcion,marca,modelo,serial,color,bienesN,condicion,ubicacion,nombre,cedula,sede,pertenece FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
                                 or die('Error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT codigo,descripcion,marca,modelo,serial,color,bienesN,condicion,ubicacion,nombre,cedula,sede,pertenece FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
                                 or die('Error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -107,21 +107,24 @@ if ($var != "" && $var2 != "" && $var3 != "") {
             <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
                 <thead style="background:#e8ecee">
                     <tr class="tr-title">
-                        <th height="20" align="center" valign="middle"><small>NO.</small></th>
-                        <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                        <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
-                        <th height="20" align="center" valign="middle"><small>MARCA</small></th>
-                        <th height="20" align="center" valign="middle"><small>MODELO</small></th>
-                        <th height="20" align="center" valign="middle"><small>SERIAL</small></th>
-                        <th height="20" align="center" valign="middle"><small>COLOR</small></th>
-                        <th height="20" align="center" valign="middle"><small>N. BIEN</small></th>
-                        <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
-                        <th height="20" align="center" valign="middle"><small>DIRECCION/UNIDAD</small></th>
-                        <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
-                        <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
-                        <th height="20" align="center" valign="middle"><small>SEDE</small></th>
-                        <th height="20" align="center" valign="middle"><small>PERTENECE</small></th>
-
+                    <th class="center">No.</th>
+                    <th class="center">CODIGO</th>
+                    <th class="center">MARCA</th>
+                    <th class="center">TIPO</th>
+				    <th class="center">MODELO</th>
+                    <th class="center">PLACA</th>
+                    <th class="center">COLOR</th>
+                    <th class="center">CILINDROS</th>
+                    <th class="center">TRANSMISION</th>
+                    <th class="center">TIPO COMBUSTIBLE</th>
+                    <th class="center">Nº CARROCERIA</th>
+                    <th class="center">CONDICION</th>
+                    <th class="center">UNIDAD</th>
+                    <th class="center">UBICACION</th>
+                    <th class="center">SEDE</th>
+                    <th class="center">RESGUARDO</th>
+                    <th class="center">RESPONSABLE</th>
+                    <th class="center">SERVICIO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -131,22 +134,25 @@ if ($var != "" && $var2 != "" && $var3 != "") {
            
             
             echo "  <tr>
-                        <td width='25' height='13' align='center' valign='middle'>$no</td>
-                        <td width='50' height='13' align='center' valign='middle'>$data[codigo]</td>                       
-                        <td width='140' height='13' align='center' valign='middle'>$data[descripcion]</td>
-                        <td width='40' height='13' align='center' valign='middle'>$data[marca]</td>                       
-                        <td width='70' height='13' align='center' valign='middle'>$data[modelo]</td>
-                        <td width='100' height='13' align='center' valign='middle'>$data[serial]</td>                       
-                        <td width='35' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[color]</td>
-                        <td width='30' style='padding-left:5px;' height='15' align='center' valign='middle'>$data[bienesN]</td>                       
-                        <td width='50' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='85' height='13' align='center' valign='middle'>$data[ubicacion]</td>                       
-                        <td width='140' height='13' align='center' valign='middle'>$data[nombre]</td>
-                        <td width='50' height='13' align='center' valign='middle'>$data[cedula]</td>                       
-                        <td width='65' height='13' align='center' valign='middle'>$data[sede]</td>
-                        <td width='40' height='13' align='center' valign='middle'>$data[pertenece]</td>                       
-                
-                    </tr>";
+                <td width='20' class='center'>$no</td>
+                <td width='50' class='center'>$data[codigo]</td>
+                <td width='80' class='center'>$data[marca]</td>
+                <td width='80' class='center'>$data[tipo]</td>
+                <td width='80' class='center'>$data[modelo]</td>
+                <td width='80' class='center'>$data[placa]</td>
+                <td width='80' class='center'>$data[color]</td>
+                <td width='80' class='center'>$data[cilindros]</td>
+                <td width='80' class='center'>$data[transmision]</td>
+                <td width='50' class='center'>$data[tipoCombustible]</td>
+                <td width='80' class='center'>$data[nmroCarroceria]</td>
+                <td width='50' class='center'>$data[condicion]</td>
+                <td width='80' class='center'>$data[unidad]</td>
+                <td width='90' class='center'>$data[ubicacion]</td>
+                <td width='90' class='center'>$data[sede]</td>
+                <td width='90' class='center'>$data[resguardo]</td>
+                <td width='90' class='center'>$data[responsable]</td>
+                <td width='90' class='center'>$data[servicio]</td>                       
+                </tr>";
             $no++;
         }
         ?>  

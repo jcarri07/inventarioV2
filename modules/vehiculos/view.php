@@ -153,8 +153,6 @@ function validarExt()
                 <th class="center">RESPONSABLE</th>
                 <th class="center">SERVICIO</th>
                 <th class="center">EDITAR</th>
-               
-              
               </tr>
             </thead>
             <tbody>

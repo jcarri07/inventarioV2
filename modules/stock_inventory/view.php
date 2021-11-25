@@ -7,38 +7,38 @@
   </h1>
 </section>
 
-    </br>
-    <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
+</br>
+  <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
     <div class="row">
-    <div class="col-md-12">    
-      <div class="box box-primary">
-        <div class="box-body" id="contenido">     
-          <table id="dataTables1" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-              <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
-              <datalist id="items">
-                    <option value=""></option>
-                    <option value="descripcion"></option>
-                    <option value="codigo"></option>
-                    <option value="condicion"></option>
-                    <option value="marca"></option>
-                    <option value="serial"></option>
-                    <option value="modelo"></option>
-                    <option value="bienesN"></option>
-                    <option value="cedula"></option>
-                    <option value="ubicacion"></option>
-                    <option value="sede"></option>
+      <div class="col-md-12">    
+        <div class="box box-primary">
+          <div class="box-body" id="contenido">     
+            <table id="dataTables1" class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                <th class="center">
+                  <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+                    <datalist id="items">
+                      <option value=""></option>
+                      <option value="descripcion"></option>
+                      <option value="codigo"></option>
+                      <option value="condicion"></option>
+                      <option value="marca"></option>
+                      <option value="serial"></option>
+                      <option value="modelo"></option>
+                      <option value="bienesN"></option>
+                      <option value="cedula"></option>
+                      <option value="ubicacion"></option>
+                      <option value="sede"></option>
                     </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
+                  <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
                 <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
+              <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
                 <i style="color:#fff" class="fa fa-minus"></i>
-                </th>
-                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
+              </th>
+              <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
                 <i style="color:#fff" class="fa fa-plus"></i>
-                </th>
+              </th>
        
 				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
@@ -48,9 +48,9 @@
                 </th>
               </tr>
             </thead>
-    </tr>
-</table>
-</form>
+        </tr>
+      </table>
+    </form>
 </br>
           
   <div class="row">
@@ -84,7 +84,7 @@
               <?php  
                 $no = 1;
           
-                $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad FROM inventario ORDER BY nombre DESC") or die('Error: '.mysqli_error($mysqli));
+                $query = mysqli_query($mysqli, "SELECT * FROM inventario ORDER BY nombre DESC") or die('Error: '.mysqli_error($mysqli));
 
            
                 while ($data = mysqli_fetch_assoc($query)) { 

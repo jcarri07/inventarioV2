@@ -1,6 +1,68 @@
 <script src="js/alertifyjs/alertify.js"></script>
 
+
+
 <script type="text/javascript">
+
+window.onload = function() {
+
+  var myInput = document.getElementById('filtrado');
+  var myInput2 = document.getElementById('filtrado2');
+  var myInput3 = document.getElementById('filtrado3');
+
+  var myInput4 = document.getElementById('filtro');
+  var myInput5 = document.getElementById('filtro2');
+  var myInput6 = document.getElementById('filtro3');
+
+  myInput.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+
+  myInput2.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+
+  myInput3.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+  
+  myInput4.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+
+  myInput5.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+
+  myInput6.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+
+  myInput.oncopy = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+}
+
+function check(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla == 8) {
+        return true;
+    }
+
+    // Patron de entrada, en este caso solo acepta numeros y letras
+    patron = /[A-Za-z0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
 
   function validaNumericos(event) {
 
@@ -12,7 +74,6 @@
      return false;        
 } 
 </script>
-
 <script type="text/javascript">
 
     $('.tab-submit').on('click', function() {  
@@ -56,6 +117,7 @@
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehiculos </a></li>
           </ul>
+          
 
 <!-- COMUNICACION -->
     <div class="tab-content">
@@ -69,8 +131,8 @@
             <thead>
               <tr>
               <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
-              <datalist id="items">
+              <input list="items_comunicacion" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+              <datalist id="items_comunicacion">
                     <option value=""></option>
                     <option value="descripcion"></option>
                     <option value="codigo"></option>
@@ -92,9 +154,9 @@
                 <i style="color:#fff" class="fa fa-plus"></i>
                 </th>
        
-				<th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+				<th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-                <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
+                <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value=""  placeholder="-- Filtro 3 --"></th>
                 <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                 <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                 </th>
@@ -145,7 +207,7 @@
               <?php  
                 $no = 1;
           
-                $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria='comunicacion' ORDER BY codigo ASC ")
+                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='comunicacion' ORDER BY codigo ASC ")
                 or die('error: '.mysqli_error($mysqli));
 
                 while ($data = mysqli_fetch_assoc($query)) { 
@@ -194,7 +256,7 @@
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
             <div class="box-body">
-              
+            
 
             <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
     <table id="dataTables1" class="table table-bordered table-striped table-hover">     
@@ -224,7 +286,7 @@
                 <i style="color:#fff" class="fa fa-plus"></i>
                 </th>
        
-				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
                 <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
                 <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -257,7 +319,7 @@
                 <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
-				      <th class="center">MODELO</th>
+				        <th class="center">MODELO</th>
                 <th class="center">COLOR</th>
                 <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
@@ -358,7 +420,7 @@
                 <i style="color:#fff" class="fa fa-plus"></i>
                 </th>
        
-				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
                 <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
                 <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -489,7 +551,7 @@
           <i style="color:#fff" class="fa fa-plus"></i>
           </th>
  
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
           <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
           <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -620,7 +682,7 @@
           <i style="color:#fff" class="fa fa-plus"></i>
           </th>
  
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
           <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
           <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -720,31 +782,35 @@
 <!--BIBLIOTECA-->
 <div role= "tabpanel" class="tab-pane" id="biblioteca">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_biblioteca.php" method="POST">
             <div class="box-body">
         
-            <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
+            <form name="formulario" method="post" action="modules/stock_inventory/print_biblioteca.php" target="_blank">
     
     <table id="dataTables1" class="table table-bordered table-striped table-hover">
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
-        <datalist id="items">
-              <option value=""></option>
-              <option value="descripcion"></option>
-              <option value="codigo"></option>
-              <option value="condicion"></option>
-              <option value="marca"></option>
-              <option value="serial"></option>
-              <option value="modelo"></option>
-              <option value="bienesN"></option>
-              <option value="cedula"></option>
-              <option value="ubicacion"></option>
-              <option value="sede"></option>
+        <input list="items_biblioteca" type="text" name="filtrado_biblioteca" id="filtrado_biblioteca" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <datalist id="items_biblioteca">
+        <option value=""></option>
+                    <option value="titulo"></option>
+                    <option value="codigo"></option>
+                    <option value="isbn"></option>
+                    <option value="bienesN"></option>
+                    <option value="autor"></option>
+                    <option value="tipo"></option>
+                    <option value="color"></option>
+                    <option value="envoltura"></option>
+                    <option value="editorial"></option>
+                    <option value="codicion"></option>
+                    <option value="ubicacion"></option>
+                    <option value="responsable"></option>
+                    <option value="cedula"></option>
+                    <option value="sede"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+           <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -752,7 +818,7 @@
           <i style="color:#fff" class="fa fa-plus"></i>
           </th>
  
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
           <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
           <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -771,7 +837,7 @@
   <div class="box-body" id="contenido">     
 
   <section>
-     <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+     <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_biblioteca.php" target="_blank">
       <i class="fa fa-print"></i> Imprimir
      </a>
          </br>
@@ -847,34 +913,34 @@
           </div>
 
 
-<!--BIBLIOTECA-->
+<!--VEHICULOS-->
 <div role= "tabpanel" class="tab-pane" id="vehiculos">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
+    <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_vehiculos.php" method="POST">
+      <div class="box-body">
         
-            <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
+    <form name="formulario" method="post" action="modules/stock_inventory/print_vehiculos.php" target="_blank">
     
-    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+    <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
-        <datalist id="items">
+        <input list="items_vehiculos" type="text" name="filtrado_vehiculos" id="filtrado_vehiculos" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <datalist id="items_vehiculos">
               <option value=""></option>
-              <option value="descripcion"></option>
+              <option value="tipo"></option>
               <option value="codigo"></option>
-              <option value="condicion"></option>
               <option value="marca"></option>
-              <option value="serial"></option>
               <option value="modelo"></option>
-              <option value="bienesN"></option>
-              <option value="cedula"></option>
-              <option value="ubicacion"></option>
+              <option value="placa"></option>
+              <option value="color"></option>
+              <option value="resguardo"></option>
               <option value="sede"></option>
+              <option value="servicio"></option>
+              <option value="condicion"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos2"  id="filtrado_vehiculos2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3"  id="filtrado_vehiculos3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -882,7 +948,7 @@
           <i style="color:#fff" class="fa fa-plus"></i>
           </th>
  
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
           <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
           <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -896,18 +962,18 @@
 </br>
 
 <div class="row">
-<div class="col-md-12">    
-<div class="box box-primary">
-  <div class="box-body" id="contenido">   
+  <div class="col-md-12">    
+    <div class="box box-primary">
+      <div class="box-body" id="contenido">   
 
-  <section>
-     <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-      <i class="fa fa-print"></i> Imprimir
-     </a>
-     </br>
- </section>
+      <section>
+          <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_vehiculos.php" target="_blank">
+            <i class="fa fa-print"></i> Imprimir
+          </a>
+        </br>
+      </section>
  </br>
-    <table id="dataTables2" class="table table-bordered table-striped table-hover">
+    <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
       <thead>
       <tr>
       <th class="center">No.</th>
@@ -1010,14 +1076,13 @@
 </section><!-- /.content-->
 
 <script src="assets/js/datatables.min.js" type="text/javascript"></script>
-            <script>
+   
+<script type="text/javascript">
 
-
-                $(document).ready( function () {
-                $('#dataTables2').DataTable();
-            } );
-      
-            $(document).ready(function(){
+$(document).ready( function () {
+    $('#dataTables2').DataTable();
+      } );
+        $(document).ready(function(){
               load(1);
             });
 
@@ -1037,9 +1102,6 @@
             }
             })
           }
-          </script>
-
-<script type="text/javascript">
 
   var elemento = document.getElementById("filtro2");
   var elemento2 = document.getElementById("filtro3");
