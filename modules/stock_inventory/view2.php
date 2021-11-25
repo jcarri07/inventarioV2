@@ -176,7 +176,7 @@
                 <td width='90' class='center'>$data[bienesN]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[nombre]</td>
+                <td width='130' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
@@ -290,7 +290,7 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria LIKE 'oficina' ORDER BY codigo ASC ")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC ")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -308,7 +308,7 @@
                       <td width='90' class='center'>$data[bienesN]</td>
                       <td width='90' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[nombre]</td>
+                      <td width='130' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
@@ -425,7 +425,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria= 'refrigeracion' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo ASC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -443,7 +443,7 @@
                       <td width='60' class='center'>$data[bienesN]</td>
                       <td width='70' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
-                      <td width='100' class='center'>$data[nombre]</td>
+                      <td width='100' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
@@ -558,7 +558,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria = 'cientificos' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo ASC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -576,7 +576,7 @@
                 <td width='90' class='center'>$data[bienesN]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[nombre]</td>
+                <td width='130' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
@@ -760,7 +760,6 @@
                               <option value="autor"></option>
                               <option value="tipo"></option>
                               <option value="color"></option>
-                              <option value="envoltura"></option>
                               <option value="editorial"></option>
                               <option value="codicion"></option>
                               <option value="ubicacion"></option>
@@ -820,7 +819,6 @@
                                 <th class="center">RESPONSABLE</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">COLOR</th>
-                                <th class="center">ENVOLTURA</th>
                                 <th class="center">EDITAR</th>
 
 
@@ -849,13 +847,12 @@
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='50' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[envoltura]</td>               
+                <td width='90' class='center'>$data[color]</td>           
                 <td class='center'  width='100'>
                     <div>
       
               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                    <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                    <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
               </a>";
 
                                 $no++;
@@ -945,17 +942,13 @@
                                 <th class="center">MODELO</th>
                                 <th class="center">PLACA</th>
                                 <th class="center">COLOR</th>
-                                <th class="center">CILINDROS</th>
-                                <th class="center">TRANSMISION</th>
                                 <th class="center">TIPO COMBUSTIBLE</th>
                                 <th class="center">Nº CARROCERIA</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">UNIDAD</th>
                                 <th class="center">UBICACION</th>
                                 <th class="center">SEDE</th>
-                                <th class="center">RESGUARDO</th>
                                 <th class="center">RESPONSABLE</th>
-                                <th class="center">SERVICIO</th>
                                 <th class="center">EDITAR</th>
 
                               </tr>
@@ -963,7 +956,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'Vehiculos' ORDER BY codigo ASC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -978,17 +971,14 @@
         <td width='80' class='center'>$data[modelo]</td>
         <td width='80' class='center'>$data[placa]</td>
         <td width='80' class='center'>$data[color]</td>
-        <td width='80' class='center'>$data[cilindros]</td>
-        <td width='80' class='center'>$data[transmision]</td>
         <td width='50' class='center'>$data[tipoCombustible]</td>
         <td width='80' class='center'>$data[nmroCarroceria]</td>
         <td width='50' class='center'>$data[condicion]</td>
         <td width='80' class='center'>$data[unidad]</td>
         <td width='90' class='center'>$data[ubicacion]</td>
         <td width='90' class='center'>$data[sede]</td>
-        <td width='90' class='center'>$data[resguardo]</td>
         <td width='90' class='center'>$data[responsable]</td>
-        <td width='90' class='center'>$data[servicio]</td>
+  
             
                 <td class='center'  width='100'>
                     <div>
