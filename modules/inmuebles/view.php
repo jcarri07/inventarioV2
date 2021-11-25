@@ -167,7 +167,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles'  ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 

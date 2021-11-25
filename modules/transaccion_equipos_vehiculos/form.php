@@ -77,7 +77,7 @@ if ($_GET['form']=='add') { ?>
             <div class="box-body">
               <?php  
             
-              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
+              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos_vehiculos
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
 
@@ -207,7 +207,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=transaccion_equipos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=transaccion_equipos_vehiculos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->

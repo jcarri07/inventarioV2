@@ -52,7 +52,7 @@ function validarExt()
       </a>
  
 
-      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_vehiculos&form=add" title="Agregar" data-toggle="tooltip">
+      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_inmuebles&form=add" title="Agregar" data-toggle="tooltip">
         <i class="fa fa-plus"></i> Entradas / Salidas
       </a>
 
@@ -104,8 +104,8 @@ function validarExt()
                 <th class="center">COD. TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
-                <th class="center">PLACA</th>
-                <th class="center">TIPO DE VEHICULO</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">TIPO</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">RESPONSABLE ENTREGA</th>
@@ -126,8 +126,8 @@ function validarExt()
             <?php  
             $no = 1;
             $sede = $_SESSION['sede'];
-            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.placa, b.marca, b.condicion
-                                            FROM transaccion_equipos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
+            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.descripcion, b.tipo, b.condicion
+                                            FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
            
@@ -142,7 +142,7 @@ function validarExt()
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
                       <td width='50' class='center'>$data[tipo_transaccion]</td>
                       <td width='80' class='center'>$data[codigo]</td>
-                      <td width='80'>$data[placa]</td>
+                      <td width='80'>$data[descripcion]</td>
                       <td width='80' class='center'>$data[tipo]</td>
                       <td width='80' class='center'>$data[condicion]</td>
                       <td width='80' class='center'>$data[motivo]</td>

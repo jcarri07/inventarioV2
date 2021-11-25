@@ -77,7 +77,7 @@ if ($_GET['form']=='add') { ?>
             <div class="box-body">
               <?php  
             
-              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
+              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos_inmuebles
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
 
@@ -118,10 +118,10 @@ if ($_GET['form']=='add') { ?>
                   <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar equipo--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, tipo FROM vehiculos ORDER BY tipo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, descripcion FROM inmuebles ORDER BY descripcion ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[tipo] </option>";
+                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[descripcion] </option>";
                       }
                     ?>
                   </select>
@@ -207,7 +207,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=transaccion_equipos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=transaccion_equipos_inmuebles" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
