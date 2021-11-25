@@ -59,7 +59,6 @@ if ($_GET['form']=='add') { ?>
               $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
               $codigo = "$buat_id";
               ?>
-
               <div class="form-group">
                 <label class="col-sm-2 control-label">Código </label>
                 <div class="col-sm-5">
@@ -88,6 +87,7 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
@@ -97,16 +97,16 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Color</label>
+                <label class="col-sm-2 control-label">Nº Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" required>
+                  <input type="text" class="form-control" name="bienesN" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Bienes Nacionales</label>
+                <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" onkeypress='return validaNumericos(event)' autocomplete="off" required>
+                  <input type="text" class="form-control" name="color" autocomplete="off" required>
                 </div>
               </div>
 
@@ -118,9 +118,23 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="unidad" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Responsable</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="responsable" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cédula</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 
@@ -130,41 +144,6 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nombre" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' autocomplete="off" required>
-                </div>
-              </div>
-            
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Numero de Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="clasificacion" onkeypress='return validaNumericos(event)' autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="pertenece" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""></option>
-                    <option value="USMI">ABAE</option>
-                    <option value="UDLP">Otro</option>
-                    <option value="caja">Caja</option>
-                    <option value="raya">Raya</option>
-                    <option value="tubo">Tubo</option>
-                  </select>
-                </div>
-              </div>-->
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
@@ -184,25 +163,12 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Compra</label>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad</label>
                 <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_compra" name="pcompra" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" required>
-                  </div>
+                  <input type="text" class="form-control" name="cantidad" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Venta</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_venta" name="pventa" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" required>
-                  </div>
-                </div>
-              </div>-->
 
             </div><!-- /.box body -->
 
@@ -225,7 +191,7 @@ if ($_GET['form']=='add') { ?>
 elseif ($_GET['form']=='edit') { 
   if (isset($_GET['id'])) {
 
-      $query = mysqli_query($mysqli, "SELECT codigo,serial,marca,modelo,bienesN,color,descripcion,condicion,ubicacion,nombre,cedula,sede,pertenece,precio_compra,precio_venta,unidad FROM inventario WHERE codigo='$_GET[id]'") 
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo='$_GET[id]'") 
                                       or die('error: '.mysqli_error($mysqli));
       $data  = mysqli_fetch_assoc($query);
     }
@@ -251,129 +217,116 @@ elseif ($_GET['form']=='edit') {
           <form role="form" class="form-horizontal" action="modules/equiposcientificos_electricos/proses.php?act=update" method="POST">
             <div class="box-body">
               
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Código</label>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Código </label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="codigo" value="<?php echo $data['codigo']; ?>" readonly required>
+                  <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" readonly required>
                 </div>
               </div>
 
-              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" autocomplete="off" value="<?php echo $data['descripcion']; ?>" required>
+                  <input type="text" class="form-control" name="descripcion" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="marca" autocomplete="off" value="<?php echo $data['marca']; ?>" required>
+                  <input type="text" class="form-control" name="marca" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Modelo</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="modelo" autocomplete="off" value="<?php echo $data['modelo']; ?>" required>
+                  <input type="text" class="form-control" name="modelo" autocomplete="off" required>
                 </div>
               </div>
 
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
+                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
                 </div>
+                <div id="resultado"></div>
               </div>
 
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nº Bien</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="bienesN" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
+                </div>
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
+                  <input type="text" class="form-control" name="color" autocomplete="off" required>
                 </div>
-              </div>  
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Bienes Nacionales</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" onkeypress='return validaNumericos(event)'  value="<?php echo $data['bienesN']; ?>" required>
-                </div>
-              </div>    
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" value="<?php echo $data['condicion']; ?>" required>
+                  <input type="text" class="form-control" name="condicion" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['unidad']; ?>" required>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" required>
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Responsable</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nombre" autocomplete="off" value="<?php echo $data['nombre']; ?>" required>
+                  <input type="text" class="form-control" name="responsable" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Sede</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" readonly required>
-                </div>
-              </div>
-
+      
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicacion</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
 
-             
-
-             <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">Nº de Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="clasificacion" autocomplete="off" onkeypress='return validaNumericos(event)' value="<?php //echo $data['clasificacion']; ?>" required>
-                </div>
-              </div>       
-
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="pertenece" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value="<?php echo $data['pertenece']; ?>"></option>
-                   <option selected value="UDMI">ABAE</option>
-                    <option value="UDLP">Otro</option>
-                    <option value="caja"></option>
-                    <option value="raya"></option>
-                    <option value="tubo">Tubo</option>
-                  </select>
+                  <input type="text" class="form-control" name="sede" value="<?php echo $sede; ?>" autocomplete="off" readonly required>
                 </div>
-              </div>-->
+              </div>
 
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" value="<?php echo $data['pertenece'];?>" name="pertenece" autocomplete="off" required>
+                <input class="form-control" list="item" type="text" placeholder="--Especificar--" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
-                    <option  selected value="ABAE">ABAE</option>
+                    <option value=""></option>
+                    <option value="ABAE">ABAE</option>
                     </datalist>
+                </div>
+              </div>
+            </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cantidad" onkeypress='return validaNumericos(event)' onpaste="return false" value="<?php echo $data['cantidad']; ?>" autocomplete="off" required>
                 </div>
               </div>
 

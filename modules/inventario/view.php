@@ -176,7 +176,7 @@ modalpdf.modal('show');
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">N_BIEN</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
@@ -200,7 +200,7 @@ modalpdf.modal('show');
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicacion' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicacion' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -218,7 +218,7 @@ modalpdf.modal('show');
                       <td width='90' class='center'>$data[color]</td>
                       <td width='90' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[nombre]</td>
+                      <td width='130' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>

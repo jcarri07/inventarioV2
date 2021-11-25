@@ -65,31 +65,31 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo , placa, marca, tipo, modelo, color, condicion, unidad, ubicacion, responsable, pertenece, cedula, sede,  nmroCarroceria, anio, uso, tipoCombustible, created_user, created_date, updated_date, estado, updated_user, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, tipo, marca, modelo, nmroCarroceria, color, anio, placa, tipoCombustible, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $placa);
+            $stmt->bindParam( 2, $tipo);
             $stmt->bindParam( 3, $marca);
-            $stmt->bindParam( 4, $tipo);
-            $stmt->bindParam( 5, $modelo);
+            $stmt->bindParam( 4, $modelo);
+            $stmt->bindParam( 5, $nmroCarroceria);
             $stmt->bindParam( 6, $color);
-            $stmt->bindParam( 7, $condicion);
-            $stmt->bindParam( 8, $unidad);
-            $stmt->bindParam( 9, $ubicacion);
-            $stmt->bindParam( 10, $responsable);
-            $stmt->bindParam( 11, $cedula);
-            $stmt->bindParam( 12, $pertenece);
-            $stmt->bindParam( 13, $sede);
-            $stmt->bindParam( 14, $nmroCarroceria);
-            $stmt->bindParam( 15, $anio);
-            $stmt->bindParam( 16, $uso);
-            $stmt->bindParam( 17, $tipoCombustible);
-            $stmt->bindParam( 18, $created_user);
+            $stmt->bindParam( 7, $anio);
+            $stmt->bindParam( 8, $placa);
+            $stmt->bindParam( 9, $tipoCombustible);
+            $stmt->bindParam( 10, $condicion);
+            $stmt->bindParam( 11, $unidad);
+            $stmt->bindParam( 12, $responsable);
+            $stmt->bindParam( 13, $cedula);
+            $stmt->bindParam( 14, $ubicacion);
+            $stmt->bindParam( 15, $sede);
+            $stmt->bindParam( 16, $pertenece);
+            $stmt->bindParam( 17, $created_user);
+            $stmt->bindParam( 18, $updated_user);
             $stmt->bindParam( 19, $created_date);
             $stmt->bindParam( 20, $updated_date);
             $stmt->bindParam( 21, $estado);
-            $stmt->bindParam( 22, $updated_user);
-            $stmt->bindParam( 23, $categoria);
+            $stmt->bindParam( 22, $categoria);
             
             $accion = "Importacion Modulo Vehiculos";
 
@@ -104,28 +104,27 @@ if ($parametro != null) {
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $placa = $fields[1];
+            $tipo = $fields[1];
             $marca = $fields[2];
-            $tipo = $fields[3];
-            $modelo = $fields[4];
+            $modelo = $fields[3];
+            $nmroCarroceria= $fields[4];
             $color = $fields[5];
-            $condicion = $fields[6];
-            $unidad = $fields[7];
-            $ubicacion = $fields[8];
-            $responsable = $fields[9];
-            $cedula = $fields[10];
-            $pertenece = $fields[11];
-            $sede = $fields[12];
-            $nmroCarroceria = $fields[13];
-            $anio = $fields[14];
-            $uso = $fields[15];
-            $tipoCombustible = $fields[16];
-            $created_user = $fields[17];
+            $anio = $fields[6];
+            $placa = $fields[7];
+            $tipoCombustible = $fields[8];
+            $condicion = $fields[9];
+            $unidad = $fields[10];
+            $responsable = $fields[11];
+            $cedula = $fields[12];
+            $ubicacion = $fields[13];
+            $sede = $fields[14];
+            $pertenece = $fields[15];
+            $created_user = $fields[16];
+            $updated_user = $fields[17];
             $created_date = $fields[18];
             $updated_date = $fields[19];
             $estado = $fields[20];
-            $updated_user = $fields[21];
-            $categoria = $fields[22];
+            $categoria = $fields[21];
             $stmt->execute();
            
         }

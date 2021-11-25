@@ -65,22 +65,22 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo , isbn, tipo, titulo, autor, editorial, cantidad, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo, tipo, titulo, autor, editorial, isbn, bienesN, color, condicion, responsable, cedula, ubicacion, sede, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $isbn);
-            $stmt->bindParam( 3, $tipo);
-            $stmt->bindParam( 4, $titulo);
-            $stmt->bindParam( 5, $autor);
-            $stmt->bindParam( 6, $editorial);
-            $stmt->bindParam( 7, $cantidad);
-            $stmt->bindParam( 8, $bienesN);
-            $stmt->bindParam( 9, $responsable);
-            $stmt->bindParam( 10, $cedula);
-            $stmt->bindParam( 11, $sede);
-            $stmt->bindParam( 12, $color);
-            $stmt->bindParam( 13, $condicion);
-            $stmt->bindParam( 14, $ubicacion);
+            $stmt->bindParam( 2, $tipo);
+            $stmt->bindParam( 3, $titulo);
+            $stmt->bindParam( 4, $autor);
+            $stmt->bindParam( 5, $editorial);
+            $stmt->bindParam( 6, $isbn);
+            $stmt->bindParam( 7, $bienesN);
+            $stmt->bindParam( 8, $color);
+            $stmt->bindParam( 9, $condicion);
+            $stmt->bindParam( 10, $responsable);
+            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 12, $ubicacion);
+            $stmt->bindParam( 13, $sede);
+            $stmt->bindParam( 14, $cantidad);
             $stmt->bindParam( 15, $created_user);
             $stmt->bindParam( 16, $updated_user);
             $stmt->bindParam( 17, $created_date);
@@ -101,19 +101,19 @@ if ($parametro != null) {
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $isbn = $fields[1];
-            $tipo = $fields[2];
-            $titulo = $fields[3];
-            $autor = $fields[4];
-            $editorial = $fields[5];
-            $cantidad = $fields[6];
-            $bienesN = $fields[7];
-            $responsable = $fields[8];
-            $cedula = $fields[9];
-            $sede = $fields[10];
-            $color = $fields[11];
-            $condicion = $fields[12];
-            $ubicacion = $fields[13];
+            $tipo = $fields[1];
+            $titulo = $fields[2];
+            $autor = $fields[3];
+            $editorial = $fields[4];
+            $isbn = $fields[5];
+            $bienesN = $fields[6];
+            $color = $fields[7];
+            $condicion = $fields[8];
+            $responsable = $fields[9];
+            $cedula = $fields[10];
+            $ubicacion = $fields[11];
+            $sede = $fields[12];
+            $cantidad = $fields[13];
             $created_user = $fields[14];
             $updated_user = $fields[15];
             $created_date = $fields[16];

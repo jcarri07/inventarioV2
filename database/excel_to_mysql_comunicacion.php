@@ -65,30 +65,29 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inventario (descripcion, codigo ,serial, marca, modelo, color, bienesN, condicion, ubicacion, cedula, sede, pertenece, nombre, precio_compra, precio_venta, unidad, stock, created_user, created_date, updated_user, updated_date, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO inventario (codigo, descripcion, marca, modelo, serial, bienesN, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
-            $stmt->bindParam( 1, $descripcion);
-            $stmt->bindParam( 2, $codigo);
-            $stmt->bindParam( 3, $serial);
-            $stmt->bindParam( 4, $marca);
-            $stmt->bindParam( 5, $modelo);
-            $stmt->bindParam( 6, $color);
-            $stmt->bindParam( 7, $nb);
+            $stmt->bindParam( 1, $codigo);
+            $stmt->bindParam( 2, $descripcion);
+            $stmt->bindParam( 3, $marca);
+            $stmt->bindParam( 4, $modelo);
+            $stmt->bindParam( 5, $serial);
+            $stmt->bindParam( 6, $nb);
+            $stmt->bindParam( 7, $color);
             $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $ubicacion);
-            $stmt->bindParam( 10, $cedula);
-            $stmt->bindParam( 11, $sede);
-            $stmt->bindParam( 12, $pertenece);
-            $stmt->bindParam( 13, $nombre);
-            $stmt->bindParam( 14, $precio_compra);
-            $stmt->bindParam( 15, $precio_venta);
-            $stmt->bindParam( 16, $unidad);
-            $stmt->bindParam( 17, $stock);
-            $stmt->bindParam( 18, $created_user);
-            $stmt->bindParam( 19, $created_date);
-            $stmt->bindParam( 20, $updated_user);
-            $stmt->bindParam( 21, $updated_date);
-            $stmt->bindParam( 22, $categoria);
+            $stmt->bindParam( 9, $unidad);
+            $stmt->bindParam( 10, $responsable);
+            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 12, $ubicacion);
+            $stmt->bindParam( 13, $sede);
+            $stmt->bindParam( 14, $pertenece);
+            $stmt->bindParam( 15, $cantidad);
+            $stmt->bindParam( 16, $created_user);
+            $stmt->bindParam( 17, $updated_user);
+            $stmt->bindParam( 18, $created_date);
+            $stmt->bindParam( 19, $updated_date);
+            $stmt->bindParam( 20, $estado);
+            $stmt->bindParam( 21, $categoria);
             
             $accion = "Importacion Modulo Comunicacion";
 
@@ -101,28 +100,28 @@ if ($parametro != null) {
 
         foreach ($xlsx->rows() as $fields)
         {
-            $descripcion = $fields[0];
-            $codigo = $fields[1];
-            $serial = $fields[2];
-            $marca = $fields[3];
-            $modelo = $fields[4];
-            $color = $fields[5];
-            $nb = $fields[6];
+            $codigo = $fields[0];
+            $descripcion = $fields[1];
+            $marca = $fields[2];
+            $modelo = $fields[3];
+            $serial = $fields[4];
+            $nb = $fields[5];
+            $color = $fields[6];
             $condicion = $fields[7];
-            $ubicacion = $fields[8];
-            $nombre = $fields[9];
+            $unidad = $fields[8];
+            $responsable = $fields[9];
             $cedula = $fields[10];
-            $sede = $fields[11];
-            $pertenece = $fields[12];
-            $precio_compra = $fields[13];
-            $precio_venta = $fields[14];
-            $unidad = $fields[15];
-            $stock = $fields[16];
-            $created_user = $fields[17];
-            $created_date = $fields[18];
-            $updated_user = $fields[19];
-            $updated_date = $fields[20];
-            $categoria = $fields[21];
+            $ubicacion = $fields[11];
+            $sede = $fields[12];
+            $pertenece = $fields[13];
+            $cantidad = $fields[14];
+            $created_user = $fields[15];
+            $updated_user = $fields[16];
+            $created_date= $fields[17];
+            $updated_date = $fields[18];
+            $estado = $fields[19];
+            $categoria = $fields[20];
+            
             $stmt->execute();
            
         }

@@ -68,6 +68,7 @@ else {
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
             $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $cantidad    = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
             $created_user = $_SESSION['id_user'];
 
@@ -76,8 +77,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('Cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
+                                            VALUES('Electronicos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -112,6 +113,7 @@ else {
                // $pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
                 //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
                 $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+                $cantidad     = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
@@ -130,6 +132,7 @@ else {
                                                                     condicion             = '$condicion',
                                                                     ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
+                                                                    cantidad          = '$cantidad',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

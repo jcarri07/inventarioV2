@@ -167,7 +167,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria = 'Oficina' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Mobiliario' and sede LIKE '$sede' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -185,7 +185,7 @@ function validarExt()
                       <td width='90' class='center'>$data[color]</td>
                       <td width='90' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[nombre]</td>
+                      <td width='130' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>

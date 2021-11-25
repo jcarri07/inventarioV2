@@ -65,28 +65,27 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inmuebles (descripcion, codigo, metrosCuadrados, direccion, tipo, nmroCuartos, 
-        pisos, condicion, estado, habitantes, categoria, responsable, cedula, sede, created_user, created_date, updated_user, update_date) 
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, tipo, descripcion, metrosCuadrados, pisos, nmroCuartos, habitantes, direccion, condicion, responsable, cedula, sede, created_user, updated_user, created_date, update_date, estado, categoria) 
         VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
         
-            $stmt->bindParam( 1, $descripcion);
-            $stmt->bindParam( 2, $codigo);
-            $stmt->bindParam( 3, $metrosCuadrados);
-            $stmt->bindParam( 4, $direccion);
-            $stmt->bindParam( 5, $tipo);
+            $stmt->bindParam( 1, $codigo);
+            $stmt->bindParam( 2, $tipo);
+            $stmt->bindParam( 3, $descripcion);
+            $stmt->bindParam( 4, $metrosCuadrados);
+            $stmt->bindParam( 5, $pisos);
             $stmt->bindParam( 6, $nmroCuartos);
-            $stmt->bindParam( 7, $pisos);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $estado);
-            $stmt->bindParam( 10, $habitantes);
-            $stmt->bindParam( 11, $categoria);
-            $stmt->bindParam( 12, $responsable);
-            $stmt->bindParam( 13, $cedula);
-            $stmt->bindParam( 14, $sede);
-            $stmt->bindParam( 15, $created_user);
-            $stmt->bindParam( 16, $created_date);
-            $stmt->bindParam( 17, $updated_user);
-            $stmt->bindParam( 18, $update_date);
+            $stmt->bindParam( 7, $habitantes);
+            $stmt->bindParam( 8, $direccion);
+            $stmt->bindParam( 9, $condicion);
+            $stmt->bindParam( 10, $responsable);
+            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 12, $sede);
+            $stmt->bindParam( 13, $created_user);
+            $stmt->bindParam( 14, $updated_user);
+            $stmt->bindParam( 15, $created_date);
+            $stmt->bindParam( 16, $update_date);
+            $stmt->bindParam( 17, $estado);
+            $stmt->bindParam( 18, $categoria);
             
             $accion = "Importacion Modulo Inmuebles";
 
@@ -99,24 +98,24 @@ if ($parametro != null) {
 
         foreach ($xlsx->rows() as $fields)
         {
-            $descripcion = $fields[0];
-            $codigo = $fields[1];
-            $metrosCuadrados = $fields[2];
-            $direccion = $fields[3];
-            $tipo = $fields[4];
+            $codigo = $fields[0];
+            $tipo = $fields[1];
+            $descripcion = $fields[2];
+            $metrosCuadrados = $fields[3];
+            $pisos = $fields[4];
             $nmroCuartos = $fields[5];
-            $pisos = $fields[6];
-            $condicion = $fields[7];
-            $estado = $fields[8];
-            $habitantes= $fields[9];
-            $categoria = $fields[10];
-            $responsable = $fields[11];
-            $cedula= $fields[12];
-            $sede = $fields[13];
-            $created_user = $fields[14];
-            $created_date = $fields[15];
-            $updated_user = $fields[16];
-            $update_date = $fields[17];
+            $habitantes = $fields[6];
+            $direccion = $fields[7];
+            $condicion = $fields[8];
+            $responsable= $fields[9];
+            $cedula = $fields[10];
+            $sede = $fields[11];
+            $created_user= $fields[12];
+            $updated_user = $fields[13];
+            $created_date = $fields[14];
+            $update_date = $fields[15];
+            $estado = $fields[16];
+            $categoria = $fields[17];
             $stmt->execute();
            
         }
