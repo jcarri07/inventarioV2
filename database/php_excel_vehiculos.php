@@ -17,14 +17,12 @@
                 <th class="center">MODELO</th>
                 <th class="center">PLACA</th>
                 <th class="center">COLOR</th>
-                <th class="center">CILINDROS</th>
-                <th class="center">TRANSMISION</th>
                 <th class="center">TIPO COMBUSTIBLE</th>
+                <th class="center">NMRO CARROCERIA</th>
                 <th class="center">CONDICION</th>
                 <th class="center">UNIDAD</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
-                <th class="center">RESGUARDO</th>
                 <th class="center">RESPONSABLE</th>
               </tr>
             </thead>
@@ -73,17 +71,13 @@
                 <td width='180' class='center' align='center'>$data[modelo]</td>
                 <td width='180' class='center' align='center'>$data[placa]</td>
                 <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='center' align='center'>$data[cilindros]</td>
-                <td width='180' class='center' align='center'>$data[transmision]</td>
                 <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
                 <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
                 <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[unidad]</td>
                 <td width='180' class='center' align='center'>$data[ubicacion]</td>
                 <td width='180' class='center'align='center' >$data[sede]</td>
-                <td width='180' class='center'align='center' >$data[resguardo]</td>
                 <td width='180' class='center'align='center' >$data[responsable]</td>
-                <td width='180' class='center'align='center' >$data[categoria]</td>
                 <td class='center' width='85'>
                       
                 <div>

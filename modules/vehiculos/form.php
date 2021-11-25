@@ -91,6 +91,13 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="modelo" autocomplete="off" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nº CARROCERIA</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
+                </div>
+              </div>
              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Numero de Placa</label>
@@ -107,78 +114,12 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cilindros</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cilindros" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carroceria</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Transmision</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="transmision" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Motor</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nMotor" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Servicio</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items1" type="text" placeholder="--Especificar--" name="servicio" autocomplete="off" required>
-                  <datalist id="items1">
-                    <option value=""></option>
-                    <option value="Privado">Privado</option>
-                    <option value="Trans. Bienes o Mat">Trans. Bienes o Mat</option>
-                    <option value="Apoyo Logistico">Apoyo Logistico</option>
-                    <option value="Trans. Alimentos">Trans. Alimentos</option>
-                    <option value="Trans. Mat. Peligroso">Trans. Mat. Peligroso</option>
-                    <option value="Arrastre de carga">Arrastre de carga</option>
-                    <option value="Clinica">Clinica</option>
-                    </datalist>
-                </div>
-              </div>
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Uso del Vehiculo</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items" type="text" placeholder="--Especificar--" name="uso" autocomplete="off" required>
-                  <datalist id="items">
-                    <option value=""></option>
-                    <option value="Carga">Carga</option>
-                    <option value="Carga puerto libre">Carga puerto libre</option>
-                    <option value="Construccion">Construccion</option>
-                    <option value="Deportivo">Deportivo</option>
-                    <option value="Especial">Especial</option>
-                    <option value="Grua">Grua</option>
-                    <option value="Maq. Pesada">Maq. Pesada</option>
-                    <option value="Particular">Particular</option>
-                    <option value="Particular puerto libre">Particular puerto libre</option>
-                    <option value="Transporte privado">Transporte privado</option>
-                    <option value="Transporte publico">Transporte publico</option>
-                    </datalist>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Condicion</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="condicion" autocomplete="off" required>
                 </div>
               </div>
+
 
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Tipo de Combustible</label>
@@ -193,12 +134,6 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Capacidad Tanque</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="capacidadTanque" autocomplete="off" required>
-                </div>
-              </div> 
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicación</label>
@@ -207,12 +142,6 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Resguardo</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="resguardo" autocomplete="off" required>
-                </div>
-              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Responsable</label>
@@ -236,48 +165,29 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
+                <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="unidad"  autocomplete="off" required>
-                </div>
-              </div>
-            
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Numero de Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="clasificacion" onkeypress='return validaNumericos(event)' autocomplete="off" required>
+                  <input type="text" class="form-control" name="pertenece"  autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Unidad</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="pertenece" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select" name="unidad" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
-                    <option value="USMI">ABAE</option>
-                    <option value="UDLP">Otro</option>
-                    <option value="caja">Caja</option>
-                    <option value="raya">Raya</option>
-                    <option value="tubo">Tubo</option>
+                    <option value="USMI">USMI</option>
+                    <option value="UDLP">UDLP</option>
+                    <option value="UDPP">UDPP</option>
+                    <option value="UDIT">UDIT</option>
                   </select>
                 </div>
-              </div>-->
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="sede" value="<?php echo $sede; ?>" autocomplete="off" readonly required>
-                </div>
-              </div>
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Pertenece</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" placeholder="--Especificar--" name="pertenece" autocomplete="off" required>
-                  <datalist id="item">
-                    <option value=""></option>
-                    <option value="ABAE">ABAE</option>
-                    </datalist>
                 </div>
               </div>
 

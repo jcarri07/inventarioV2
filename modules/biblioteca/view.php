@@ -147,12 +147,12 @@ function validarExt()
 				        <th class="center">EDITORIAL</th>
                 <th class="center">ISBN</th>
                 <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
-                <th class="center">UBICACION</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">SEDE</th>
                 <th class="center">COLOR</th>
-                <th class="center">ENVOLTURA</th>
+                <th class="center">CONDICION</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
                 <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
               </tr>
@@ -185,12 +185,12 @@ function validarExt()
                       <td width='90' class='center'>$data[editorial]</td>
                       <td width='50' class='center'>$data[isbn]</td>
                       <td width='50' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='50' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[envoltura]</td>  
+                      <td width='90' class='center'>$data[condicion]</td>
+                      <td width='50' class='center'>$data[responsable]</td>
+                      <td width='50' class='center'>$data[cedula]</td>
+                      <td width='90' class='center'>$data[ubicacion]</td>
+                      <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[cantidad]</td>             
                       <td class='center'  width='100'>
                           <div>

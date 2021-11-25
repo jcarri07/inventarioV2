@@ -71,7 +71,6 @@ else {
             //$detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            $envoltura  = mysqli_real_escape_string($mysqli, trim($_POST['envoltura']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
           //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
@@ -83,8 +82,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, serial, cantidad, isbn, bienesN, responsable, cedula, sede, color, envoltura, condicion, ubicacion, created_user, updated_user) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$serial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$envoltura', '$condicion', '$ubicacion', '$created_user', '$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, updated_user) 
+                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -111,7 +110,6 @@ else {
                 $editorial  = mysqli_real_escape_string($mysqli, trim($_POST['editorial']));
                 $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
                 $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
-                $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
                 $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
                 $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
                
@@ -123,7 +121,6 @@ else {
                // $detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
                 $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
               //  $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $envoltura  = mysqli_real_escape_string($mysqli, trim($_POST['envoltura']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                // $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
                 $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
@@ -134,7 +131,6 @@ else {
                                                                     autor             = '$autor',
                                                                     tipo             = '$tipo',
                                                                     editorial             = '$editorial',
-                                                                    serial                  ='$serial',
                                                                     cantidad               = '$cantidad',
                                                                     isbn            = '$isbn',
                                                                     bienesN             = '$bienesN',
@@ -142,7 +138,6 @@ else {
                                                                     responsable             = '$responsable',
                                                                     sede          = '$sede',
                                                                     color          = '$color',
-                                                                    envoltura          = '$envoltura',
                                                                     condicion          = '$condicion',
                                                                     ubicacion          = '$ubicacion',
                                                                     updated_user    = '$updated_user'

@@ -65,7 +65,7 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo , isbn, tipo, titulo, autor, editorial, cantidad, bienesN, responsable, cedula, sede, color, serial, envoltura, condicion, ubicacion, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo , isbn, tipo, titulo, autor, editorial, cantidad, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
             $stmt->bindParam( 2, $isbn);
@@ -79,16 +79,14 @@ if ($parametro != null) {
             $stmt->bindParam( 10, $cedula);
             $stmt->bindParam( 11, $sede);
             $stmt->bindParam( 12, $color);
-            $stmt->bindParam( 13, $serial);
-            $stmt->bindParam( 14, $envoltura);
-            $stmt->bindParam( 15, $condicion);
-            $stmt->bindParam( 16, $ubicacion);
-            $stmt->bindParam( 17, $created_user);
-            $stmt->bindParam( 18, $updated_user);
-            $stmt->bindParam( 19, $created_date);
-            $stmt->bindParam( 20, $updated_date);
-            $stmt->bindParam( 21, $estado);
-            $stmt->bindParam( 22, $categoria);
+            $stmt->bindParam( 13, $condicion);
+            $stmt->bindParam( 14, $ubicacion);
+            $stmt->bindParam( 15, $created_user);
+            $stmt->bindParam( 16, $updated_user);
+            $stmt->bindParam( 17, $created_date);
+            $stmt->bindParam( 18, $updated_date);
+            $stmt->bindParam( 19, $estado);
+            $stmt->bindParam( 20, $categoria);
             
             $accion = "Importacion Modulo Biblioteca";
 
@@ -114,16 +112,14 @@ if ($parametro != null) {
             $cedula = $fields[9];
             $sede = $fields[10];
             $color = $fields[11];
-            $serial = $fields[12];
-            $envoltura = $fields[13];
-            $condicion = $fields[14];
-            $ubicacion = $fields[15];
-            $created_user = $fields[16];
-            $updated_user = $fields[17];
-            $created_date = $fields[18];
-            $updated_date = $fields[19];
-            $estado = $fields[20];
-            $categoria = $fields[21];
+            $condicion = $fields[12];
+            $ubicacion = $fields[13];
+            $created_user = $fields[14];
+            $updated_user = $fields[15];
+            $created_date = $fields[16];
+            $updated_date = $fields[17];
+            $estado = $fields[18];
+            $categoria = $fields[19];
             $stmt->execute();
            
         }

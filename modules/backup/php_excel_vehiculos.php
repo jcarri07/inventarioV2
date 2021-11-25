@@ -41,9 +41,6 @@
                 <td width='180' class='center' align='center'>$data[tipo]</td>
                 <td width='180' class='center' align='center'>$data[modelo]</td>
                 <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='center' align='center'>$data[cilindros]</td>
-                <td width='180' class='center' align='center'>$data[transmision]</td>
-                <td width='180' class='center' align='center'>$data[nMotor]</td>
                 <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[unidad]</td>
                 <td width='180' class='center' align='center'>$data[ubicacion]</td>
@@ -51,14 +48,9 @@
                 <td width='180' class='center' align='center'>$data[pertenece]</td>
                 <td width='180' class='center' align='center'>$data[cedula]</td>
                 <td width='180' class='center' align='center'>$data[sede]</td>
-                <td width='180' class='center' align='center'>$data[bienesN]</td>
-                <td width='180' class='center' align='center'>$data[resguardo]</td>
                 <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
                 <td width='180' class='center' align='center'>$data[anio]</td>
-                <td width='180' class='center' align='center'>$data[uso]</td>
-                <td width='180' class='center' align='center'>$data[servicio]</td>
                 <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
-                <td width='180' class='center' align='center'>$data[capacidadTanque]</td>
                 <td width='180' class='center' align='center'>$data[created_user]</td>
                 <td width='180' class='center' align='center'>$data[created_date]</td>
                 <td width='180' class='center' align='center'>$data[updated_date]</td>

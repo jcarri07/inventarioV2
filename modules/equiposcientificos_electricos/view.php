@@ -140,8 +140,8 @@ function validarExt()
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">COLOR</th>
                 <th class="center">N_BIEN</th>
+                <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
@@ -181,8 +181,8 @@ function validarExt()
                       <td width='90' class='center'>$data[marca]</td>
                       <td width='90' class='center'>$data[modelo]</td>
                       <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[color]</td>
                       <td width='90' class='center'>$data[bienesN]</td>
+                      <td width='90' class='center'>$data[color]</td>
                       <td width='90' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
                       <td width='130' class='center'>$data[nombre]</td>

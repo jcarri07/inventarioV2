@@ -108,9 +108,6 @@ else {
             	$modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
             	$placa  = mysqli_real_escape_string($mysqli, trim($_POST['placa']));
             	$color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
-            	$cilindros  = mysqli_real_escape_string($mysqli, trim($_POST['cilindros']));
-            	$transmision  = mysqli_real_escape_string($mysqli, trim($_POST['transmision']));
-            	$nMotor  = mysqli_real_escape_string($mysqli, trim($_POST['nMotor']));
             	$condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
             	$unidad  = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             	$ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
@@ -119,44 +116,31 @@ else {
             	$responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
 				$cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
 				$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-				$bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-				$resguardo  = mysqli_real_escape_string($mysqli, trim($_POST['resguardo']));
 				$nmroCarroceria  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCarroceria']));
 				$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
-				$uso  = mysqli_real_escape_string($mysqli, trim($_POST['uso']));
-				$servicio  = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
                 $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
 				$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
-				$capacidadTanque  = mysqli_real_escape_string($mysqli, trim($_POST['capacidadTanque']));
 
                 $updated_user = $_SESSION['id_user'];
 
             
 
                 $query = mysqli_query($mysqli, "UPDATE vehiculos SET marca             = '$marca',
-                                                                    cilindros             = '$cilindros',
                                                                     tipo             = '$tipo',
                                                                     modelo               = '$modelo',
                                                                     placa            = '$placa',
                                                                     color            = '$color',
-                                                                    transmision        = '$transmision',
-                                                                    nMotor             = '$nMotor',
                                                                     condicion             = '$condicion',
                                                                     pertenece             = '$pertenece',
                                                                     unidad          = '$unidad',
                                                                     ubicacion          = '$ubicacion',
                                                                     responsable          = '$responsable',
-                                                                    resguardo          = '$resguardo',
                                                                     cedula          = '$cedula',
                                                                     sede          = '$sede',
-                                                                    bienesN          = '$bienesN',
                                                                     nmroCarroceria          = '$nmroCarroceria',
                                                                     anio         = '$anio',
-                                                                    uso         = '$uso',
                                                                     tipo         = '$tipo',
-                                                                    servicio          = '$servicio',
                                                                     tipoCombustible          = '$tipoCombustible',
-                                                                    capacidadTanque          = '$capacidadTanque',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

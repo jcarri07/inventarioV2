@@ -91,13 +91,6 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Serial</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Titulo</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="titulo" autocomplete="off" required>
@@ -144,13 +137,6 @@ if ($_GET['form']=='add') { ?>
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="color" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Envoltura</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="envoltura" autocomplete="off" required>
                 </div>
               </div>
 

@@ -136,22 +136,21 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">MARCA</th>
                 <th class="center">TIPO</th>
+                <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
-                <th class="center">PLACA</th>
-                <th class="center">COLOR</th>
-                <th class="center">CILINDROS</th>
-                <th class="center">TRANSMISION</th>
-                <th class="center">TIPO COMBUSTIBLE</th>
                 <th class="center">Nº CARROCERIA</th>
+                <th class="center">COLOR</th>
+                <th class="center">AÑO</th>
+                <th class="center">PLACA</th>
+                <th class="center">TIPO COMBUSTIBLE</th>
                 <th class="center">CONDICION</th>
                 <th class="center">UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
-                <th class="center">RESGUARDO</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">SERVICIO</th>
+                <th class="center">PERTENECE</th>
                 <th class="center">EDITAR</th>
               </tr>
             </thead>
@@ -165,7 +164,7 @@ function validarExt()
               $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -175,22 +174,21 @@ function validarExt()
               echo "<tr>
                       <td width='20' class='center'>$no</td>
                       <td width='50' class='center'>$data[codigo]</td>
-                      <td width='80' class='center'>$data[marca]</td>
                       <td width='80' class='center'>$data[tipo]</td>
+                      <td width='80' class='center'>$data[marca]</td>
                       <td width='80' class='center'>$data[modelo]</td>
-                      <td width='80' class='center'>$data[placa]</td>
-                      <td width='80' class='center'>$data[color]</td>
-                      <td width='80' class='center'>$data[cilindros]</td>
-                      <td width='80' class='center'>$data[transmision]</td>
-                      <td width='50' class='center'>$data[tipoCombustible]</td>
                       <td width='80' class='center'>$data[nmroCarroceria]</td>
+                      <td width='80' class='center'>$data[color]</td>
+                      <td width='80' class='center'>$data[anio]</td>
+                      <td width='80' class='center'>$data[placa]</td>
+                      <td width='50' class='center'>$data[tipoCombustible]</td>
                       <td width='50' class='center'>$data[condicion]</td>
                       <td width='80' class='center'>$data[unidad]</td>
+                      <td width='90' class='center'>$data[responsable]</td>
+                      <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[resguardo]</td>
-                      <td width='90' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[servicio]</td>
+                      <td width='90' class='center'>$data[pertenece]</td>
                       <td class='center'  width='80'>
                           <div>
             
