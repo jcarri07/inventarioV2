@@ -55,13 +55,10 @@ else {
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
-            $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
-            $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-            $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+            $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCuartos']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-            $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
-            $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
+            $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
             //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
             $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
@@ -70,11 +67,9 @@ else {
 
             //$detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
             $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
-            $numero  = mysqli_real_escape_string($mysqli, trim($_POST['numero']));
             $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
           //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-            $cantidad = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
             $created_user = $_SESSION['id_user'];
 
@@ -83,8 +78,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo, descripcion, metrosCuadrados, ubicacion, tipo , nmroCuartos, condicion, estado, categoria, responsable, cedula, sede, direccion, numero, habitantes, cantidad, created_user, updated_user) 
-                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$ubicacion', '$tipo ', '$nmroCuartos', '$condicion', '$estado', 'inmuebles', '$responsable', '$cedula', '$sede', '$direccion', '$numero', '$habitantes', '$cantidad', '$created_user', '$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo,  descripcion, metrosCuadrados, tipo, nmroCuartos, condicion, estado, categoria, pisos, responsable, cedula, sede, direccion, habitantes, created_user, created_date) 
+                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', 'nochequeado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -106,11 +101,10 @@ else {
         $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
         $descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
         $metrosCuadrados  = mysqli_real_escape_string($mysqli, trim($_POST['metrosCuadrados']));
-        $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
         $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-        $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['mroCuartos']));
+        $nmroCuartos  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCuartos']));
+        $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
         $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-        $estado = mysqli_real_escape_string($mysqli, trim($_POST['estado']));
         $pisos  = mysqli_real_escape_string($mysqli, trim($_POST['pisos']));
         //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
         $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
@@ -120,29 +114,25 @@ else {
 
         //$detalles  = mysqli_real_escape_string($mysqli, trim($_POST['detalles']));
         $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
-        $numero  = mysqli_real_escape_string($mysqli, trim($_POST['numero']));
         $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
         $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
       //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-        $cantidad = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
                 $query = mysqli_query($mysqli, "UPDATE inmuebles SET codigo        = '$codigo',
                                                                     descripcion           = '$descripcion',
                                                                     metrosCuadrados            = '$metrosCuadrados',
-                                                                    ubicacion             = '$ubicacion',
                                                                     tipo             = '$tipo',
-                                                                    nmroCuartos                  ='$mroCuartos',
+                                                                    pisos             = '$pisos',
+                                                                    nmroCuartos                  ='$nmroCuartos',
                                                                     condicion               = '$condicion',
                                                                     pisos             = '$pisos',
                                                                     cedula             = '$cedula',
                                                                     responsable             = '$responsable',
                                                                     direccion          = '$direccion',
-                                                                    numero         = '$numero',
                                                                     habitantes          = '$habitantes',
                                                                     sede         = '$sede',
-                                                                    ubicacion          = '$ubicacion',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

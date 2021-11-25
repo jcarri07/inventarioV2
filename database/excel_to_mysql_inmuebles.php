@@ -65,31 +65,28 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inmuebles (descripcion, codigo, metrosCuadrados, ubicacion, direccion, tipo, nmroCuartos, 
-        pisos, condicion, estado, numero, habitantes, categoria, responsable, cedula, sede, cantidad, created_user, created_date, updated_user, update_date) 
-        VALUES (?, ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (descripcion, codigo, metrosCuadrados, direccion, tipo, nmroCuartos, 
+        pisos, condicion, estado, habitantes, categoria, responsable, cedula, sede, created_user, created_date, updated_user, update_date) 
+        VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
         
             $stmt->bindParam( 1, $descripcion);
             $stmt->bindParam( 2, $codigo);
             $stmt->bindParam( 3, $metrosCuadrados);
-            $stmt->bindParam( 4, $ubicacion);
-            $stmt->bindParam( 5, $direccion);
-            $stmt->bindParam( 6, $tipo);
-            $stmt->bindParam( 7, $nmroCuartos);
-            $stmt->bindParam( 8, $pisos);
-            $stmt->bindParam( 9, $condicion);
-            $stmt->bindParam( 10, $estado);
-            $stmt->bindParam( 11, $numero);
-            $stmt->bindParam( 12, $habitantes);
-            $stmt->bindParam( 13, $categoria);
-            $stmt->bindParam( 14, $responsable);
-            $stmt->bindParam( 15, $cedula);
-            $stmt->bindParam( 16, $sede);
-            $stmt->bindParam( 17, $cantidad);
-            $stmt->bindParam( 18, $created_user);
-            $stmt->bindParam( 19, $created_date);
-            $stmt->bindParam( 20, $updated_user);
-            $stmt->bindParam( 21, $update_date);
+            $stmt->bindParam( 4, $direccion);
+            $stmt->bindParam( 5, $tipo);
+            $stmt->bindParam( 6, $nmroCuartos);
+            $stmt->bindParam( 7, $pisos);
+            $stmt->bindParam( 8, $condicion);
+            $stmt->bindParam( 9, $estado);
+            $stmt->bindParam( 10, $habitantes);
+            $stmt->bindParam( 11, $categoria);
+            $stmt->bindParam( 12, $responsable);
+            $stmt->bindParam( 13, $cedula);
+            $stmt->bindParam( 14, $sede);
+            $stmt->bindParam( 15, $created_user);
+            $stmt->bindParam( 16, $created_date);
+            $stmt->bindParam( 17, $updated_user);
+            $stmt->bindParam( 18, $update_date);
             
             $accion = "Importacion Modulo Inmuebles";
 
@@ -105,24 +102,21 @@ if ($parametro != null) {
             $descripcion = $fields[0];
             $codigo = $fields[1];
             $metrosCuadrados = $fields[2];
-            $ubicacion = $fields[3];
-            $direccion = $fields[4];
-            $tipo = $fields[5];
-            $nmroCuartos = $fields[6];
-            $pisos = $fields[7];
-            $condicion = $fields[8];
-            $estado = $fields[9];
-            $numero = $fields[10];
-            $habitantes= $fields[11];
-            $categoria = $fields[12];
-            $responsable = $fields[13];
-            $cedula= $fields[14];
-            $sede = $fields[15];
-            $cantidad= $fields[16];
-            $created_user = $fields[17];
-            $created_date = $fields[18];
-            $updated_user = $fields[19];
-            $update_date = $fields[20];
+            $direccion = $fields[3];
+            $tipo = $fields[4];
+            $nmroCuartos = $fields[5];
+            $pisos = $fields[6];
+            $condicion = $fields[7];
+            $estado = $fields[8];
+            $habitantes= $fields[9];
+            $categoria = $fields[10];
+            $responsable = $fields[11];
+            $cedula= $fields[12];
+            $sede = $fields[13];
+            $created_user = $fields[14];
+            $created_date = $fields[15];
+            $updated_user = $fields[16];
+            $update_date = $fields[17];
             $stmt->execute();
            
         }

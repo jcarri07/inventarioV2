@@ -43,11 +43,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
 					<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomesticos</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electronicos</a></li>
+					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehiculos</a></li>
+					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>
@@ -60,11 +60,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
 					<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomesticos</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electronicos</a></li>
+					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehiculos</a></li>
+					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>
@@ -77,11 +77,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
 					<li><a href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomesticos</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electronicos</a></li>
+					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehiculos</a></li>
+					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>

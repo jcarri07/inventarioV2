@@ -70,7 +70,7 @@ modalpdf.modal('show');
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos de comunicacion
+  <i class="fa fa-folder-o icon-title"></i> Equipos de Comunicación
 
     <form action="database/excel_to_mysql_comunicacion.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>

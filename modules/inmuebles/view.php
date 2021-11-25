@@ -141,17 +141,17 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
+                <th class="center">TIPO</th>
                 <th class="center">DESCRIPCION</th>
-                <th class="center">METROS CUADRADOS</th>
-                <th class="center">UBICACION</th>
+                <th class="center">M²</th>
+                <th class="center">Nº PISOS</th>
+                <th class="center">Nº CUARTOS</th>
+                <th class="center">Nº HABITANTES</th>
                 <th class="center">DIRECCION</th>
-				        <th class="center">TIPO</th>
-                <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
-                <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
-                <th class="center">NRO HABITANTES</th>
+                <th class="center">SEDE</th>
                 <th class="center">EDITAR</th>
               </tr>
             </thead>
@@ -167,7 +167,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles'  ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles'  ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -177,17 +177,17 @@ function validarExt()
               echo "<tr>
                       <td width='30' class='center'>$no</td>
                       <td width='50' class='center'>$data[codigo]</td>
+                      <td width='90' class='center'>$data[tipo]</td>
                       <td width='90' class='center'>$data[descripcion]</td>
                       <td width='90' class='center'>$data[metrosCuadrados]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[direccion]</td>
-                      <td width='90' class='center'>$data[tipo]</td>
-                      <td width='90' class='center'>$data[nmroCuartos]</td>
-                      <td width='50' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[pisos]</td>
+                      <td width='90' class='center'>$data[nmroCuartos]</td>
+                      <td width='90' class='center'>$data[habitantes]</td> 
+                      <td width='90' class='center'>$data[direccion]</td>
+                      <td width='50' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[responsable]</td>
-                      <td width='50' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[habitantes]</td>           
+                      <td width='50' class='center'>$data[cedula]</td> 
+                      <td width='50' class='center'>$data[sede]</td>           
                       <td class='center'  width='100'>
                     <div>
             

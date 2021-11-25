@@ -14,9 +14,8 @@
                 <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">METROS CUADRADOS</th>
-                <th class="center">UBICACION</th>
                 <th class="center">DIRECCION</th>
-				<th class="center">TIPO</th>
+				        <th class="center">TIPO</th>
                 <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
                 <th class="center">PISOS</th>
@@ -67,7 +66,6 @@
                 <td width='100' class='center' align='center'>$data[codigo]</td>
                 <td width='180' class='center' align='center'>$data[descripcion]</td>
                 <td width='180' class='center' align='center'>$data[metrosCuadrados]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
                 <td width='180' class='center' align='center'>$data[direccion]</td>
                 <td width='100' class='center' align='center'>$data[tipo]</td>
                 <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
