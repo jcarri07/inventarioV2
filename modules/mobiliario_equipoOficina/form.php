@@ -60,7 +60,8 @@ if ($_GET['form']=='add') { ?>
               $codigo = "$buat_id";
               ?>
 
-              <div class="form-group">
+
+<div class="form-group">
                 <label class="col-sm-2 control-label">Código </label>
                 <div class="col-sm-5">
                   <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" readonly required>
@@ -138,9 +139,9 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
-
+      
               <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
+                <label class="col-sm-2 control-label">Ubicacion</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
@@ -163,25 +164,17 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cantidad</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cantidad" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
-                </div>
-              </div>
-            </div><!-- /.box body -->
+            </div>
 
             <div class="box-footer">
-              < class="form-group">
+              <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=mobiliario_equipoOficina" class="btn btn-default btn-reset">Cancelar</a>
-                  </div>
-                  </div>
+                  <a href="?module=refrigeracion_electrodomesticos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div><!-- /.box footer -->
+            </div>
+
           </form>
         </div><!-- /.box -->
       </div><!--/.col -->
@@ -289,7 +282,7 @@ elseif ($_GET['form']=='edit') {
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Cedula</label>
+                  <label class="col-sm-2 control-label">Cédula</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
                   </div>
