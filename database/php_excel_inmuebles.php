@@ -12,17 +12,19 @@
               <tr>
               <th class="center">No.</th>
                 <th class="center">CODIGO</th>
+                <th class="center">TIPO</th>
                 <th class="center">DESCRIPCION</th>
-                <th class="center">METROS CUADRADOS</th>
+                <th class="center">M²</th>
+                <th class="center">Nº PISOS</th>
+                <th class="center">Nº CUARTOS</th>
+                <th class="center">Nº HABITANTES</th>
                 <th class="center">DIRECCION</th>
-				        <th class="center">TIPO</th>
-                <th class="center">NRO CUARTOS</th>
                 <th class="center">CONDICION</th>
-                <th class="center">PISOS</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
-                <th class="center">NRO HABITANTES</th>
-                </tr>
+                <th class="center">SEDE</th>
+
+              </tr>
             </thead>
             <tbody>
   
@@ -62,18 +64,19 @@
               echo "
 
               <tr>
-                <td width='70' class='center' align='center'>$no</td>
-                <td width='100' class='center' align='center'>$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center'>$data[metrosCuadrados]</td>
-                <td width='180' class='center' align='center'>$data[direccion]</td>
-                <td width='100' class='center' align='center'>$data[tipo]</td>
-                <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
-                <td width='100' class='center' align='center'>$data[condicion]</td>
-                <td width='50' class='center' align='center'>$data[pisos]</td>
-                <td width='180' class='center' align='center'>$data[responsable]</td>
-                <td width='100' class='center' align='center'>$data[cedula]</td>
-                <td width='100' class='center' align='center'>$data[habitantes]</td>           
+                      <td width='30' class='center' align='center'>$no</td>
+                      <td width='50' class='center' align='center'>$data[codigo]</td>
+                      <td width='90' class='center' align='center'>$data[tipo]</td>
+                      <td width='90' class='center' align='center'>$data[descripcion]</td>
+                      <td width='90' class='center' align='center'>$data[metrosCuadrados]</td>
+                      <td width='90' class='center' align='center'>$data[pisos]</td>
+                      <td width='90' class='center' align='center'>$data[nmroCuartos]</td>
+                      <td width='90' class='center' align='center'>$data[habitantes]</td> 
+                      <td width='90' class='center' align='center'>$data[direccion]</td>
+                      <td width='50' class='center' align='center'>$data[condicion]</td>
+                      <td width='90' class='center' align='center'>$data[responsable]</td>
+                      <td width='50' class='center' align='center'>$data[cedula]</td> 
+                      <td width='50' class='center' align='center'>$data[sede]</td>           
                 <td class='center'  width='100'>
               <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>

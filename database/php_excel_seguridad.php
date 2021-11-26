@@ -12,20 +12,19 @@
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 			        	<th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">N BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
-                <th class="center">DIRECCION/UNIDAD</th>
+                <th class="center">UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
-                <th class="center">CATEGORIA</th>
               </tr>
             </thead>
             <tbody>
@@ -59,29 +58,28 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad, categoria FROM inventario WHERE categoria = 'Seguridad' and sede LIKE '$sede' ORDER BY codigo ASC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Seguridad' and sede LIKE '$sede' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
-                <td width='30' class='center'>$no</td>
-                <center><td width='80' class='center' align='center'>$data[codigo]</td></center>
-                <td width='180' class='center' align='center' >$data[serial]</td>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center'>$data[marca]</td>
-                <td width='180' class='center' align='center'>$data[modelo]</td>
-                <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='center' align='center'>$data[bienesN]</td>
-                <td width='180' class='center' align='center'>$data[condicion]</td>
-                <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='180' class='center' align='center'>$data[nombre]</td>
-                <td width='180' class='center' align='center'>$data[cedula]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                <td width='180' class='center' align='center'>$data[sede]</td>
-                <td width='180' class='center'align='center' >$data[pertenece]</td>
-                <td width='180' class='center'align='center' >$data[categoria]</td>
+              <td width='30' class='center'  align='center'>$no</td>
+              <td width='100' class='center' align='center'>$data[codigo]</td>
+              <td width='180' class='center' align='center'>$data[descripcion]</td>
+              <td width='180' class='center' align='center'>$data[marca]</td>
+              <td width='180' class='center' align='center'>$data[modelo]</td>
+              <td width='180' class='center' align='center'>$data[serial]</td>
+              <td width='100' class='center' align='center'>$data[bienesN]</td>
+              <td width='100' class='center' align='center' >$data[color]</td>
+              <td width='100' class='center' align='center' >$data[condicion]</td>
+              <td width='180' class='center' align='center'>$data[unidad]</td>
+              <td width='180' class='center' align='center'>$data[responsable]</td>
+              <td width='100' class='center' align='center'>$data[cedula]</td>
+              <td width='180' class='center' align='center'>$data[ubicacion]</td>
+              <td width='180' class='center' align='center'>$data[sede]</td>
+              <td width='180' class='center' align='center'>$data[pertenece]</td>
                 <td class='center' width='85'>
                       
                 <div>
