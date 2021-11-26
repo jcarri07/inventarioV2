@@ -104,7 +104,7 @@ function validarExt()
                 <th class="center">COD. TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
+                <th class="center">ISBN</th>
                 <th class="center">TITULO</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>
@@ -128,7 +128,7 @@ function validarExt()
       
             $sede = $_SESSION['sede'];
             
-            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.titulo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.serial, b.autor, b.condicion
+            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.titulo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.isbn, b.autor, b.condicion
                                             FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
@@ -144,7 +144,7 @@ function validarExt()
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
                       <td width='50' class='center'>$data[tipo_transaccion]</td>
                       <td width='80' class='center'>$data[codigo]</td>
-                      <td width='80'>$data[serial]</td>
+                      <td width='80'>$data[isbn]</td>
                       <td width='80' class='center'>$data[titulo]</td>
                       <td width='80' class='center'>$data[condicion]</td>
                       <td width='80' class='center'>$data[motivo]</td>

@@ -35,25 +35,23 @@
               echo "
               <tr>
                 <td width='180' class='center' align='center'>$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center' >$data[metrosCuadrados]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[tipo]</td>
-                <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
-                <td width='180' class='center' align='center'>$data[condicion]</td>
-                <td width='180' class='center' align='center'>$data[estado]</td>
-                <td width='180' class='center' align='center'>$data[categoria]</td>
+                <td width='180' class='center' align='center' >$data[descripcion]</td>
+                <td width='180' class='center' align='center'>$data[metrosCuadrados]</td>
                 <td width='180' class='center' align='center'>$data[pisos]</td>
+                <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
+                <td width='180' class='center' align='center'>$data[habitantes]</td>
+                <td width='180' class='center' align='center'>$data[direccion]</td>
+                <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[responsable]</td>
                 <td width='180' class='center' align='center'>$data[cedula]</td>
-                <td width='180' class='center' align='center'>$data[direccion]</td>
-                <td width='180' class='center' align='center'>$data[numero]</td>
-                <td width='180' class='center' align='center'>$data[habitantes]</td>
+                <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[created_user]</td>
                 <td width='180' class='center' align='center'>$data[updated_user]</td>
                 <td width='180' class='center' align='center'>$data[created_date]</td>
-                <td width='180' class='center' align='center'>$data[updated_date]</td>
+                <td width='180' class='center' align='center'>$data[update_date]</td>
+                <td width='180' class='center' align='center'>$data[estado]</td>
+                <td width='180' class='center' align='center'>$data[categoria]</td>
 
                 <td class='center' width='85'>
                       

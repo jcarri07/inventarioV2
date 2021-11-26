@@ -35,27 +35,26 @@
               echo "
               <tr>
                 <td width='180' class='center' align='center'>$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[placa]</td>
-                <td width='180' class='center' align='center' >$data[categoria]</td>
-                <td width='180' class='center' align='center'>$data[marca]</td>
                 <td width='180' class='center' align='center'>$data[tipo]</td>
+                <td width='180' class='center' align='center' >$data[marca]</td>
                 <td width='180' class='center' align='center'>$data[modelo]</td>
+                <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
                 <td width='180' class='center' align='center'>$data[color]</td>
+                <td width='180' class='center' align='center'>$data[anio]</td>
+                <td width='180' class='center' align='center'>$data[placa]</td>
+                <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
                 <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
                 <td width='180' class='center' align='center'>$data[responsable]</td>
-                <td width='180' class='center' align='center'>$data[pertenece]</td>
                 <td width='180' class='center' align='center'>$data[cedula]</td>
+                <td width='180' class='center' align='center'>$data[ubicacion]</td>
                 <td width='180' class='center' align='center'>$data[sede]</td>
-                <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
-                <td width='180' class='center' align='center'>$data[anio]</td>
-                <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
+                <td width='180' class='center' align='center'>$data[pertenece]</td>
                 <td width='180' class='center' align='center'>$data[created_user]</td>
+                <td width='180' class='center' align='center'>$data[updated_user]</td>
                 <td width='180' class='center' align='center'>$data[created_date]</td>
                 <td width='180' class='center' align='center'>$data[updated_date]</td>
                 <td width='180' class='center' align='center'>$data[estado]</td>
-                <td width='180' class='center' align='center'>$data[updated_date]</td>
                 <td width='180' class='center' align='center'>$data[categoria]</td>
                 <td class='center' width='85'>
                       
