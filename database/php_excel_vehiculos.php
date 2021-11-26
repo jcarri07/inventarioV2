@@ -15,7 +15,7 @@
                 <th class="center">TIPO</th>
                 <th class="center">MARCA</th>
                 <th class="center">MODELO</th>
-                <th class="center">NMRO CARROCERIA</th>
+                <th class="center">N CARROCERIA</th>
                 <th class="center">COLOR</th>
                 <th class="center">ANIO</th>
                 <th class="center">PLACA</th>
@@ -92,7 +92,7 @@
                   </a>";
     ?>
     
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
+    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
     </a>
   

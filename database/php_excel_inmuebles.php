@@ -1,6 +1,7 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
 	header('Content-Disposition: attachment; filename=Reporte_General_Inmuebles.xlsx');
+
 ?>
 
   <div class="box box-primary">
