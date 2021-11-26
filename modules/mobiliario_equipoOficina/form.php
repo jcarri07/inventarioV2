@@ -170,7 +170,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=refrigeracion_electrodomesticos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=mobiliario_equipoOficina" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div>
