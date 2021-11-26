@@ -31,7 +31,7 @@ if ($_GET['form']=='add') { ?>
         <div class="box box-primary">
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/biblioteca/proses.php?act=insert" method="POST">
-            <div class="box-body">
+          <div class="box-body">
               <?php  
               
               $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
@@ -48,8 +48,8 @@ if ($_GET['form']=='add') { ?>
 
               <?php  
           
-              $query_id = mysqli_query($mysqli, "SELECT categoria, codigo FROM biblioteca
-                                                where categoria = 'biblioteca' ORDER BY codigo DESC LIMIT 1")
+              $query_id = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
+                                                where categoria = 'inmuebles' ORDER BY codigo DESC LIMIT 1")
                                                 or die('error '.mysqli_error($mysqli));
 
               $count = mysqli_num_rows($query_id);
@@ -63,10 +63,6 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
 
-
-              $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
-              $codigo = "$buat_id";
-              $serial = $codigo;
               ?>
 
               <div class="form-group">
@@ -84,7 +80,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Titulo</label>
+                <label class="col-sm-2 control-label">Título</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="titulo" autocomplete="off" required>
                 </div>
@@ -140,12 +136,11 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' autocomplete="off" required>
+                  <input type="text" class="form-control" name="cedula" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
-            </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicación</label>
@@ -153,7 +148,6 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
@@ -167,9 +161,8 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cantidad" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
-                <div id="resultado"></div>
+               </div>
               </div>
-             <!-- /.bosede body -->
 
             <div class="box-footer">
               <div class="form-group">
@@ -178,7 +171,8 @@ if ($_GET['form']=='add') { ?>
                   <a href="?module=biblioteca" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div><!-- /.bosede footer -->
+            </div>
+            <!-- /.bosede footer -->
           </form>
         </div><!-- /.bosede -->
       </div><!--/.col -->
@@ -232,7 +226,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Titulo</label>
+                <label class="col-sm-2 control-label">Título</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="titulo" autocomplete="off" value="<?php echo $data['titulo']; ?>" required>
                 </div>
@@ -288,14 +282,14 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicacion</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                 </div>

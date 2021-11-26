@@ -53,7 +53,7 @@ else {
      
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-            $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['nombre']));
+            $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
             $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -76,7 +76,7 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
                                             VALUES('Seguridad','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
@@ -97,7 +97,7 @@ else {
         
                 $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
                 $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['nombre']));
+                $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
                 $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
                 $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
                 $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -118,7 +118,7 @@ else {
             
 
                 $query = mysqli_query($mysqli, "UPDATE inventario SET 
-                                                                    nombre       = '$nombre',
+                                                                    responsable       = '$nombre',
                                                                     marca             = '$marca',
                                                                     serial             = '$serial',
                                                                     modelo             = '$modelo',

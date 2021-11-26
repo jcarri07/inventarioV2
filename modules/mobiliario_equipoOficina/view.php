@@ -39,7 +39,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Mobiliario y Equipos de Oficina
+  <i class="fa fa-folder-o icon-title"></i> Equipos de Oficina y Mobiliario
 
     <form action="database/excel_to_mysql_mobiliario.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
@@ -167,7 +167,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Mobiliario' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Mobiliario' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 

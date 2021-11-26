@@ -108,39 +108,39 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 		if ($_GET["module"] == "transaccion_equipos") { ?>
 			<li class="active treeview">
 				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
+					<i class="fa fa-file-text"></i> <span>Control de Movimientos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
-				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
-				<li> <a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
-				<li>  <a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
+				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
+				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehiculos </a></li>
+				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
 		<?php
 		} elseif ($_GET["module"] == "transaccion_equipos") { ?>
 			<li class="active treeview">
 				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
+					<i class="fa fa-file-text"></i> <span>Control de Movimientos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
-				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
-				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
-				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
+				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
+				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehiculos </a></li>
+				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
 		<?php
 		} else { ?>
 			<li class="treeview">
 				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Control de equipos</span> <i class="fa fa-angle-left pull-right"></i>
+					<i class="fa fa-file-text"></i> <span>Control de Movimientos</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Control de Equipos </a></li>
-				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Control de Biblioteca </a></li>
-				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Control de Inmuebles </a></li>
-				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Control de Vehiculos </a></li>
+				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
+				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
+				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehiculos </a></li>
+				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
 		<?php
@@ -244,11 +244,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Inventario </a></li>
-					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
+					<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Equipos </a></li>
 					<li><a href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
-					<li><a href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
 					<li><a href="#respaldo4"><i class="fa fa-save"></i> Vehiculos</a></li>
+					<li><a href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
+					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
 				</ul>
 			</li>
 		<?php
@@ -258,11 +258,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-file-text"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-save"></i> Inventario </a></li>
-					<li class="active"><a href="?module=backup/php_excel2.php"><i class="fa fa-save"></i>Control de Movimientos</a></li>
+				<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Equipos </a></li>
 					<li><a href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
-					<li><a href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
 					<li><a href="#respaldo4"><i class="fa fa-save"></i> Vehiculos</a></li>
+					<li><a href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
+					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
 				</ul>
 			</li>
 		<?php
@@ -272,11 +272,11 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-database"></i> <span>Respaldo</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a data-toggle="modal" href="#respaldo"><i class="fa fa-save"></i>Inventario </a></li>
-					<li><a data-toggle="modal" href="#respaldo1"><i class="fa fa-save"></i> Control de Movimientos </a></li>
-					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
-					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
-					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-save"></i> Vehiculos</a></li>
+				<li class="active"><a data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-save"></i> Equipos </a></li>
+					<li><a href="#respaldo2"><i class="fa fa-save"></i> Biblioteca</a></li>
+					<li><a href="#respaldo4"><i class="fa fa-save"></i> Vehiculos</a></li>
+					<li><a href="#respaldo3"><i class="fa fa-save"></i> Inmuebles</a></li>
+					<li><a href="#respaldo"><i class="fa fa-save"></i> Control de Movimientos</a></li>
 				</ul>
 			</li>
 

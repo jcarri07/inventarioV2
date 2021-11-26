@@ -140,7 +140,7 @@ function validarExt()
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">N_BIEN</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
@@ -166,7 +166,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 

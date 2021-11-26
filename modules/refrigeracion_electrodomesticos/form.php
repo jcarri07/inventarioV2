@@ -165,8 +165,6 @@ if ($_GET['form']=='add') { ?>
               </div>
             </div>
 
-            </div><!-- /.box body -->
-
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
@@ -174,7 +172,8 @@ if ($_GET['form']=='add') { ?>
                   <a href="?module=refrigeracion_electrodomesticos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div><!-- /.box footer -->
+            </div>
+
           </form>
         </div><!-- /.box -->
       </div><!--/.col -->
@@ -284,7 +283,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cedula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>
 
@@ -313,29 +312,6 @@ elseif ($_GET['form']=='edit') {
               </div>
             </div>
 
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Compra</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_compra" name="pcompra" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo format_rupiah($data['precio_compra']); ?>" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Venta</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_venta" name="pventa" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo format_rupiah($data['precio_venta']); ?>" required>
-                  </div>
-                </div>
-              </div>-->
-
-
-            </div><!-- /.box body -->
-
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
@@ -343,7 +319,8 @@ elseif ($_GET['form']=='edit') {
                   <a href="?module=refrigeracion_electrodomesticos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div><!-- /.box footer -->
+            </div>
+            <!-- /.box footer -->
           </form>
         </div><!-- /.box -->
       </div><!--/.col -->

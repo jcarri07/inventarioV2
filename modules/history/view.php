@@ -65,7 +65,8 @@
 
               $no = 1;
           
-              $query = mysqli_query($mysqli, "SELECT nombre, cedula, permiso, accion, fecha, hora, permiso FROM history ORDER BY fecha desc") or die('Error: '.mysqli_error($mysqli));
+              $query = mysqli_query($mysqli, "SELECT nombre, cedula, permiso, accion, fecha, hora, permiso FROM history ORDER BY fecha ASC") 
+                        or die('Error: '.mysqli_error($mysqli));
 
            
               while ($data = mysqli_fetch_assoc($query)) { 
