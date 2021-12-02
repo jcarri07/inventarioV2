@@ -1,5 +1,4 @@
 <script src="js/alertifyjs/alertify.js"></script>
-
 <script type="text/javascript">
 
   function validaNumericos(event) {
@@ -69,7 +68,7 @@
             <thead>
               <tr>
               <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+              <input list="items" type="text" name="filtrado" id="filtrado_comunicacion" autocomplete="off" required="true" placeholder="-- Especificar--">
               <datalist id="items">
                     <option value=""></option>
                     <option value="descripcion"></option>
@@ -83,16 +82,16 @@
                     <option value="ubicacion"></option>
                     <option value="sede"></option>
                     </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
+                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado_comunicacion2" placeholder="-- Especificar --" autocomplete="off" >
+                <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado_comunicacion3" placeholder="-- Especificar --" autocomplete="off" >
+                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="esconde_div();">
                 <i style="color:#fff" class="fa fa-minus"></i>
                 </th>
-                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
+                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="visible_div();">
                 <i style="color:#fff" class="fa fa-plus"></i>
                 </th>
        
-				<th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+				<th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id ="filtro" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
                 <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
                 <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -145,7 +144,7 @@
               <?php  
                 $no = 1;
           
-                $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria='comunicacion' ORDER BY codigo ASC ")
+                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='comunicacion' ORDER BY codigo ASC ")
                 or die('error: '.mysqli_error($mysqli));
 
                 while ($data = mysqli_fetch_assoc($query)) { 
@@ -201,7 +200,7 @@
             <thead>
               <tr>
               <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+              <input list="items" type="text" name="filtrado" id="do" autocomplete="off" required="true" placeholder="-- Especificar--">
               <datalist id="items">
                     <option value=""></option>
                     <option value="descripcion"></option>
@@ -215,16 +214,16 @@
                     <option value="ubicacion"></option>
                     <option value="sede"></option>
                     </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
+                 <th class="center"><input list="items" type="text" name="filtrado2"  id="do2" placeholder="-- Especificar --" autocomplete="off" >
+                <th class="center"><input list="items" type="text" name="filtrado3"  id="do3" placeholder="-- Especificar --" autocomplete="off" >
+                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div('do2','do3');">
                 <i style="color:#fff" class="fa fa-minus"></i>
                 </th>
                 <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
                 <i style="color:#fff" class="fa fa-plus"></i>
                 </th>
        
-				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
                 <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
                 <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
                 <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -335,7 +334,7 @@
             <thead>
               <tr>
               <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+              <input list="items" type="text" name="filtrado" id="ado" autocomplete="off" required="true" placeholder="-- Especificar--">
               <datalist id="items">
                     <option value=""></option>
                     <option value="descripcion"></option>
@@ -349,8 +348,8 @@
                     <option value="ubicacion"></option>
                     <option value="sede"></option>
                     </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+                 <th class="center"><input list="items" type="text" name="filtrado2"  id="ado2" placeholder="-- Especificar --" autocomplete="off" >
+                <th class="center"><input list="items" type="text" name="filtrado3"  id="ado3" placeholder="-- Especificar --" autocomplete="off" >
                 <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
                 <i style="color:#fff" class="fa fa-minus"></i>
                 </th>
@@ -466,7 +465,7 @@
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <input list="items" type="text" name="filtrado" id="rado" autocomplete="off" required="true" placeholder="-- Especificar--">
         <datalist id="items">
               <option value=""></option>
               <option value="descripcion"></option>
@@ -480,8 +479,8 @@
               <option value="ubicacion"></option>
               <option value="sede"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+           <th class="center"><input list="items" type="text" name="filtrado2"  id="rado2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items" type="text" name="filtrado3"  id="rado3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -597,7 +596,7 @@
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <input list="items" type="text" name="filtrado" id="trado" autocomplete="off" required="true" placeholder="-- Especificar--">
         <datalist id="items">
               <option value=""></option>
               <option value="descripcion"></option>
@@ -611,8 +610,8 @@
               <option value="ubicacion"></option>
               <option value="sede"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+           <th class="center"><input list="items" type="text" name="filtrado2"  id="trado2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items" type="text" name="filtrado3"  id="trado3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -729,7 +728,7 @@
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <input list="items" type="text" name="filtrado" id="ltrado" autocomplete="off" required="true" placeholder="-- Especificar--">
         <datalist id="items">
               <option value=""></option>
               <option value="descripcion"></option>
@@ -743,8 +742,8 @@
               <option value="ubicacion"></option>
               <option value="sede"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+           <th class="center"><input list="items" type="text" name="filtrado2"  id="ltrado2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items" type="text" name="filtrado3"  id="ltrado3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -859,7 +858,7 @@
       <thead>
         <tr>
         <th class="center">
-        <input list="items" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--">
+        <input list="items" type="text" name="filtrado" id="iltrado" autocomplete="off" required="true" placeholder="-- Especificar--">
         <datalist id="items">
               <option value=""></option>
               <option value="descripcion"></option>
@@ -873,8 +872,8 @@
               <option value="ubicacion"></option>
               <option value="sede"></option>
               </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado3" placeholder="-- Especificar --" autocomplete="off" >
+           <th class="center"><input list="items" type="text" name="filtrado2"  id="iltrado2" placeholder="-- Especificar --" autocomplete="off" >
+          <th class="center"><input list="items" type="text" name="filtrado3"  id="iltrado3" placeholder="-- Especificar --" autocomplete="off" >
           <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
           <i style="color:#fff" class="fa fa-minus"></i>
           </th>
@@ -1040,56 +1039,56 @@
           </script>
 
 <script type="text/javascript">
+  
+   var elemento = document.getElementById("filtrado_comunicacion2");
+   var elemento2 = document.getElementById("filtrado_comunicacion3");
+   var elementos = [elemento, elemento2];
+   var element = document.getElementById("filtro2");
+   var element2 = document.getElementById("filtro3");
+   var elementos2 = [element, element2];
 
-  var elemento = document.getElementById("filtro2");
-  var elemento2 = document.getElementById("filtro3");
-  var elementos = [elemento, elemento2];
-  var elementos2 = [filtrado2, filtrado3];
+   function esconde_div() {
+
+console.log(elementos.length);
+
+if (elementos.length > 1) {
+    elementos2[1].style.display = 'none';
+    elementos[1].style.display = 'none';
+    elementos[1].value = "";
+    elementos2[1].value = "";
+    var ultimo = elementos.pop();
+    var ultimox = elementos2.pop();
+  
+} else if (elementos.length == 1) {
+    elementos2[0].style.display = 'none';
+    elementos[0].style.display = 'none';
+    elementos[0].value = "";
+    elementos2[0].value = "";
+    var ultimo = elementos.pop();
+    var ultimox = elementos2.pop();
+  }
+}
+
+function visible_div(){
+
+ if (elementos.length < 1) {
+    elementos.push(elemento);
+    elementos2.push(element);
+    elementos[0].style.display = '';
+    elementos2[0].style.display = '';
+
+  } else if (elementos.length < 2) {
+    elementos.push(elemento2);
+    elementos2.push(element2);
+    elementos[1].style.display = '';
+    elementos2[1].style.display = '';
+  }
+}
 
 </script>
 
-<script>
-function esconde_div(){
-
-  if (elementos.length > 1) {
-
-      elementos2[1].style.display = 'none';
-      elementos[1].style.display = 'none';
-      elementos[1].value = "";
-      elementos2[1].value = "";
-      var ultimo = elementos.pop();
-      var ultimox = elementos2.pop();
-
-  } else if (elementos.length > 0) {
-
-      elementos2[0].style.display = 'none';
-      elementos[0].style.display = 'none';
-      elementos[0].value = "";
-      elementos2[0].value = "";
-      var ultimo = elementos.pop();
-      var ultimox = elementos2.pop();
-  }
-}
- 
-function visible_div(){
-
-   if (elementos.length < 1) {
-
-      elementos.push(elemento);
-      elementos2.push(filtrado2);
-      elementos[0].style.display = '';
-      elementos2[0].style.display = '';
-
-  } else if (elementos.length < 2) {
-
-      elementos.push(elemento2);
-      elementos2.push(filtrado3);
-      elementos[1].style.display = '';
-      elementos2[1].style.display = '';
-  }
- 
-}
-
+<script >
+  
 //document.getElementById("contenido");
 
 var qr= document.getElementById("contenido2");
