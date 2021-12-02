@@ -64,7 +64,7 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO transaccion_inventario (codigo_transaccion,codigo,motivo,recibe,cedula_r,empresa_r,entrega,cedula_e,empresa,lugar_e,lugar_r,created_user,created_date,tipo_transaccion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare( "INSERT INTO transaccion_equipos (codigo_transaccion,codigo,motivo,recibe,cedula_r,empresa_r,entrega,cedula_e,empresa,lugar_e,lugar_r,created_user,created_date,tipo_transaccion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             $stmt->bindParam( 1, $codigo_transaccion);
             $stmt->bindParam( 2, $codigo);
             $stmt->bindParam( 3, $motivo);
@@ -80,13 +80,13 @@ if ($parametro != null) {
             $stmt->bindParam( 13, $created_date);
             $stmt->bindParam( 14, $tipo_transaccion);
 
-            $accion = "Incorporacion de multiples transacciones";
+            $accion = "Importacion Modulo Control de Equipos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
 
-            header('Location:/inventario3Debug/main.php?module=transaccion_equipos&alert=3');
+            header('Location:/inventariov2/main.php?module=transaccion_equipos&alert=3');
            
         foreach ($xlsx->rows() as $fields)
         {
@@ -117,6 +117,6 @@ if ($parametro != null) {
         echo SimpleXLSX::parseError();
     }
 } else {
-    header('Location:/inventario3Debug/main.php?module=transaccion_equipos&alert=2');
+    header('Location:/inventariov2/main.php?module=transaccion_equipos&alert=2');
 }
 ?>

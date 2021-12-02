@@ -90,6 +90,7 @@
                 <th class="center">No.</th>
                 <th class="center">Foto</th>
                 <th class="center">Usuario</th>
+                <th class="center">ID</th>
                 <th class="center">Nombre del usuario</th>
                 <th class="center">Permisos de acceso</th>
                 <th class="center">Sede</th>
@@ -116,11 +117,14 @@
                         <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
                       <?php
                       } else { ?>
+                        
                         <td class='center'><img class='img-user' src='images/user/<?php echo $data['foto']; ?>' width='25'></td>
                       <?php
                       }
 
-              echo "  <td>$data[username]</td>
+              echo "  
+                      <td>$data[username]</td>
+                      <td>$data[id_user]</td>
                       <td>$data[name_user]</td>
                       <td>$data[permisos_acceso]</td>
                       <td>$data[sede]</td>

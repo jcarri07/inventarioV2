@@ -34,52 +34,27 @@
 
               echo "
               <tr>
-                <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
-                <td width='180' class='center' align='center' >$data[categoria]</td>
                 <td width='180' class='center' align='center'>$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[serial]</td>
-                <td width='180' class='center' align='center'>$data[nombre]</td>
+                <td width='180' class='center' align='center' >$data[descripcion]</td>
                 <td width='180' class='center' align='center'>$data[marca]</td>
                 <td width='180' class='center' align='center'>$data[modelo]</td>
-                <td width='180' class='center' align='center'>$data[cantidad]</td>
-                <td width='180' class='center' align='center'>$data[clasificacion]</td>
+                <td width='180' class='center' align='center'>$data[serial]</td>
+                <td width='180' class='center' align='center'>$data[bienesN]</td>
+                <td width='180' class='center' align='center'>$data[color]</td>
+                <td width='180' class='center' align='center'>$data[condicion]</td>
+                <td width='180' class='center' align='center'>$data[unidad]</td>
+                <td width='180' class='center' align='center'>$data[responsable]</td>
+                <td width='180' class='center' align='center'>$data[cedula]</td>
+                <td width='180' class='center' align='center'>$data[ubicacion]</td>
                 <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[pertenece]</td>
-                <td width='180' class='center'align='center' >$data[cedula]</td>
-                <td width='180' class='center'align='center' >$data[bienesN]</td>
-                <td width='180' class='center'align='center' >$data[color]</td>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center'>$data[condicion]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                <td width='180' class='center' align='center'>$data[precio_compra]</td>
-                <td width='180' class='center' align='center'>$data[precio_venta]</td>
-                <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='180' class='center' align='center'>$data[stock]</td>
-                <td width='180' class='center' align='center'>$data[estado]</td>
+                <td width='180' class='center' align='center'>$data[cantidad]</td>
                 <td width='180' class='center' align='center'>$data[created_user]</td>
                 <td width='180' class='center' align='center'>$data[updated_user]</td>
                 <td width='180' class='center' align='center'>$data[created_date]</td>
-                <td width='180' class='center' align='center'>$data[updated_user]</td>
                 <td width='180' class='center' align='center'>$data[updated_date]</td>
-                <td width='180' class='center' align='center'>$data[tipo]</td>
-                <td width='180' class='center' align='center'>$data[titulo]</td>
-                <td width='180' class='center' align='center'>$data[autor]</td>
-                <td width='180' class='center' align='center'>$data[editorial]</td>
-                <td width='180' class='center' align='center'>$data[isbn]</td>
-                <td width='180' class='center' align='center'>$data[envoltura]</td>
-                <td width='180' class='center' align='center'>$data[clase]</td>
-                <td width='180' class='center' align='center'>$data[placas]</td>
-                <td width='180' class='center' align='center'>$data[cilindros]</td>
-                <td width='180' class='center' align='center'>$data[transmision]</td>
-                <td width='180' class='center' align='center'>$data[nMotor]</td>
-                <td width='180' class='center' align='center'>$data[responsable]</td>
-                <td width='180' class='center' align='center'>$data[resguardo]</td>
-                <td width='180' class='center' align='center'>$data[anio]</td>
-                <td width='180' class='center' align='center'>$data[uso]</td>
-                <td width='180' class='center' align='center'>$data[detalles]</td>
-                <td width='180' class='center' align='center'>$data[servicio]</td>
-                <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
-                <td width='180' class='center' align='center'>$data[capacidadTanque]</td>
+                <td width='180' class='center' align='center'>$data[estado]</td>
+                <td width='180' class='center' align='center'>$data[categoria]</td>
                 <td class='center' width='85'>
                       
                 <div>

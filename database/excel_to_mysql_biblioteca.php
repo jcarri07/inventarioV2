@@ -65,65 +65,61 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo , isbn, tipo, titulo, autor, editorial, cantidad, bienesN, responsable, cedula, sede, color, serial, envoltura, condicion, ubicacion, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo, tipo, titulo, autor, editorial, isbn, bienesN, color, condicion, responsable, cedula, ubicacion, sede, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $isbn);
-            $stmt->bindParam( 3, $tipo);
-            $stmt->bindParam( 4, $titulo);
-            $stmt->bindParam( 5, $autor);
-            $stmt->bindParam( 6, $editorial);
-            $stmt->bindParam( 7, $cantidad);
-            $stmt->bindParam( 8, $bienesN);
-            $stmt->bindParam( 9, $responsable);
-            $stmt->bindParam( 10, $cedula);
-            $stmt->bindParam( 11, $sede);
-            $stmt->bindParam( 12, $color);
-            $stmt->bindParam( 13, $serial);
-            $stmt->bindParam( 14, $envoltura);
-            $stmt->bindParam( 15, $condicion);
-            $stmt->bindParam( 16, $ubicacion);
-            $stmt->bindParam( 17, $created_user);
-            $stmt->bindParam( 18, $updated_user);
-            $stmt->bindParam( 19, $created_date);
-            $stmt->bindParam( 20, $updated_date);
-            $stmt->bindParam( 21, $estado);
-            $stmt->bindParam( 22, $categoria);
+            $stmt->bindParam( 2, $tipo);
+            $stmt->bindParam( 3, $titulo);
+            $stmt->bindParam( 4, $autor);
+            $stmt->bindParam( 5, $editorial);
+            $stmt->bindParam( 6, $isbn);
+            $stmt->bindParam( 7, $bienesN);
+            $stmt->bindParam( 8, $color);
+            $stmt->bindParam( 9, $condicion);
+            $stmt->bindParam( 10, $responsable);
+            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 12, $ubicacion);
+            $stmt->bindParam( 13, $sede);
+            $stmt->bindParam( 14, $cantidad);
+            $stmt->bindParam( 15, $created_user);
+            $stmt->bindParam( 16, $updated_user);
+            $stmt->bindParam( 17, $created_date);
+            $stmt->bindParam( 18, $updated_date);
+            $stmt->bindParam( 19, $estado);
+            $stmt->bindParam( 20, $categoria);
             
-            $accion = "Incorporacion de equipos";
+            $accion = "Importacion Modulo Biblioteca";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-            header('Location:/inventario3Debug/main.php?module=biblioteca&alert=7');
+            header('Location:/inventariov2/main.php?module=biblioteca&alert=7');
                
             
 
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $isbn = $fields[1];
-            $tipo = $fields[2];
-            $titulo = $fields[3];
-            $autor = $fields[4];
-            $editorial = $fields[5];
-            $cantidad = $fields[6];
-            $bienesN = $fields[7];
-            $responsable = $fields[8];
-            $cedula = $fields[9];
-            $sede = $fields[10];
-            $color = $fields[11];
-            $serial = $fields[12];
-            $envoltura = $fields[13];
-            $condicion = $fields[14];
-            $ubicacion = $fields[15];
-            $created_user = $fields[16];
-            $updated_user = $fields[17];
-            $created_date = $fields[18];
-            $updated_date = $fields[19];
-            $estado = $fields[20];
-            $categoria = $fields[21];
+            $tipo = $fields[1];
+            $titulo = $fields[2];
+            $autor = $fields[3];
+            $editorial = $fields[4];
+            $isbn = $fields[5];
+            $bienesN = $fields[6];
+            $color = $fields[7];
+            $condicion = $fields[8];
+            $responsable = $fields[9];
+            $cedula = $fields[10];
+            $ubicacion = $fields[11];
+            $sede = $fields[12];
+            $cantidad = $fields[13];
+            $created_user = $fields[14];
+            $updated_user = $fields[15];
+            $created_date = $fields[16];
+            $updated_date = $fields[17];
+            $estado = $fields[18];
+            $categoria = $fields[19];
             $stmt->execute();
            
         }
@@ -140,7 +136,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventario3Debug/main.php?module=biblioteca&alert=8');
+    header('Location:/inventariov2/main.php?module=biblioteca&alert=8');
  }
 
 ?>

@@ -53,7 +53,7 @@ else {
      
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-            $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['nombre']));
+            $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
             $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -66,10 +66,11 @@ else {
             $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
             $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+            $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
-           
 
+            
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($serial,$mysqli) == 1) {
@@ -77,11 +78,11 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,nombre,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('Comunicacion','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user) 
+                                            VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
-                
 
+        
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
@@ -96,7 +97,7 @@ else {
         
                 $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
                 $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['nombre']));
+                $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
                 $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
                 $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
                 $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -104,21 +105,20 @@ else {
                 $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
                 $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
                 $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-               // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+                // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
                 $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
-               // $pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
-                //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
-                
+                $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+
 
                 $updated_user = $_SESSION['id_user'];
 
             
 
                 $query = mysqli_query($mysqli, "UPDATE inventario SET 
-                                                                    nombre       = '$nombre',
+                                                                    responsable       = '$responsable',
                                                                     marca             = '$marca',
                                                                     serial             = '$serial',
                                                                     modelo             = '$modelo',
@@ -131,6 +131,7 @@ else {
                                                                     condicion             = '$condicion',
                                                                     ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
+                                                                    cantidad          = '$cantidad',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Reporte_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Reporte_Equipos_Electronicos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -12,20 +12,20 @@
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 			        	<th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">N BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
-                <th class="center">DIRECCION/UNIDAD</th>
+                <th class="center">UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
-                <th class="center">CATEGORIA</th>
+                <th class="center">CANTIDAD</th>
               </tr>
             </thead>
             <tbody>
@@ -39,44 +39,49 @@
 
     session_start();
 
+    $hari_ini = date("d-m-Y");
+    $NombreUser = $_SESSION['name_user'];
+    $iduser = $_SESSION['id_user'];
+    $cedulauser = $_SESSION['cedula_user'];
+
 		$mysqli = new mysqli($server, $username, $password, $database);
 
     $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
-            $data = mysqli_fetch_assoc($query);
-            $_SESSION['sede'] = $data['sede'];
-            $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
-            $permiso = $_SESSION['permisos_acceso'];
-            $sede = $_SESSION['sede'];
+    $data = mysqli_fetch_assoc($query);
+    $_SESSION['sede'] = $data['sede'];
+    $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
+    $permiso = $_SESSION['permisos_acceso'];
+    $sede = $_SESSION['sede'];
 
 	  if ($mysqli->connect_error) {
     	die('error'.$mysqli->connect_error);
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado, categoria FROM inventario WHERE categoria = 'Cientificos' and sede LIKE '$sede' ORDER BY codigo ASC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' and sede LIKE '$sede' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
-                <td width='30' class='center'>$no</td>
-                <center><td width='80' class='center' align='center'>$data[codigo]</td></center>
-                <td width='180' class='center' align='center' >$data[serial]</td>
-                <td width='180' class='center' align='center'>$data[descripcion]</td>
-                <td width='180' class='center' align='center'>$data[marca]</td>
-                <td width='180' class='center' align='center'>$data[modelo]</td>
-                <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='center' align='center'>$data[bienesN]</td>
-                <td width='180' class='center' align='center'>$data[condicion]</td>
-                <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='180' class='center' align='center'>$data[nombre]</td>
-                <td width='180' class='center' align='center'>$data[cedula]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                <td width='180' class='center' align='center'>$data[sede]</td>
-                <td width='180' class='center'align='center' >$data[pertenece]</td>
-                <td width='180' class='center'align='center' >$data[categoria]</td>
+              <td width='30' class='center'  align='center'>$no</td>
+              <td width='100' class='center' align='center'>$data[codigo]</td>
+              <td width='180' class='center' align='center'>$data[descripcion]</td>
+              <td width='180' class='center' align='center'>$data[marca]</td>
+              <td width='180' class='center' align='center'>$data[modelo]</td>
+              <td width='180' class='center' align='center'>$data[serial]</td>
+              <td width='100' class='center' align='center'>$data[bienesN]</td>
+              <td width='100' class='center' align='center' >$data[color]</td>
+              <td width='100' class='center' align='center' >$data[condicion]</td>
+              <td width='180' class='center' align='center'>$data[unidad]</td>
+              <td width='180' class='center' align='center'>$data[responsable]</td>
+              <td width='100' class='center' align='center'>$data[cedula]</td>
+              <td width='180' class='center' align='center'>$data[ubicacion]</td>
+              <td width='180' class='center' align='center'>$data[sede]</td>
+              <td width='180' class='center' align='center'>$data[pertenece]</td>
+              <td width='100' class='center' align='center'>$data[cantidad]</td> 
                 <td class='center' width='85'>
                       
                 <div>
@@ -95,6 +100,12 @@
               </tr>";
     $no++;
           	}
+
+    $accion = "Exportacion Modulo Electronicos";
+
+    $query3 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli));
             ?>
             </tbody>
           </table>

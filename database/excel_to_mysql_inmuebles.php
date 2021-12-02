@@ -50,10 +50,10 @@
 
         //Creamos el nombre del archivo que le pasaremos a la clase. Ex: libros1.xlsx
         $parametro = $nombreArc.".".$ext;
-    }
 
+    }
 if ($parametro != null) {
-   
+
     if ( $xlsx = SimpleXLSX::parse($parametro)) {
         try {
             $conn = new PDO( "mysql:host=$db_host;dbname=$db_name", "$db_user", "$db_pass");
@@ -65,64 +65,57 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inventario (descripcion, codigo ,serial, marca, modelo, color, bienesN, condicion, ubicacion, cedula, sede, pertenece, nombre, precio_compra, precio_venta, unidad, stock, created_user, created_date, updated_user, updated_date, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, tipo, descripcion, metrosCuadrados, pisos, nmroCuartos, habitantes, direccion, condicion, responsable, cedula, sede, created_user, updated_user, created_date, update_date, estado, categoria) 
+        VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
         
-            $stmt->bindParam( 1, $descripcion);
-            $stmt->bindParam( 2, $codigo);
-            $stmt->bindParam( 3, $serial);
-            $stmt->bindParam( 4, $marca);
-            $stmt->bindParam( 5, $modelo);
-            $stmt->bindParam( 6, $color);
-            $stmt->bindParam( 7, $nb);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $ubicacion);
-            $stmt->bindParam( 10, $cedula);
-            $stmt->bindParam( 11, $sede);
-            $stmt->bindParam( 12, $pertenece);
-            $stmt->bindParam( 13, $nombre);
-            $stmt->bindParam( 14, $precio_compra);
-            $stmt->bindParam( 15, $precio_venta);
-            $stmt->bindParam( 16, $unidad);
-            $stmt->bindParam( 17, $stock);
-            $stmt->bindParam( 18, $created_user);
-            $stmt->bindParam( 19, $created_date);
-            $stmt->bindParam( 20, $updated_user);
-            $stmt->bindParam( 21, $updated_date);
-            $stmt->bindParam( 22, $categoria);
+            $stmt->bindParam( 1, $codigo);
+            $stmt->bindParam( 2, $tipo);
+            $stmt->bindParam( 3, $descripcion);
+            $stmt->bindParam( 4, $metrosCuadrados);
+            $stmt->bindParam( 5, $pisos);
+            $stmt->bindParam( 6, $nmroCuartos);
+            $stmt->bindParam( 7, $habitantes);
+            $stmt->bindParam( 8, $direccion);
+            $stmt->bindParam( 9, $condicion);
+            $stmt->bindParam( 10, $responsable);
+            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 12, $sede);
+            $stmt->bindParam( 13, $created_user);
+            $stmt->bindParam( 14, $updated_user);
+            $stmt->bindParam( 15, $created_date);
+            $stmt->bindParam( 16, $update_date);
+            $stmt->bindParam( 17, $estado);
+            $stmt->bindParam( 18, $categoria);
             
-            $accion = "Incorporacion de equipos";
+            $accion = "Importacion Modulo Inmuebles";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-             header('Location:/inventario3Debug/main.php?module=mobiliario_equipoOficina&alert=4');    
+             header('Location:/inventariov2/main.php?module=inmuebles&alert=4');    
             
 
         foreach ($xlsx->rows() as $fields)
         {
-            $descripcion = $fields[0];
-            $codigo = $fields[1];
-            $serial = $fields[2];
-            $marca = $fields[3];
-            $modelo = $fields[4];
-            $color = $fields[5];
-            $nb = $fields[6];
-            $condicion = $fields[7];
-            $ubicacion = $fields[8];
-            $nombre = $fields[9];
+            $codigo = $fields[0];
+            $tipo = $fields[1];
+            $descripcion = $fields[2];
+            $metrosCuadrados = $fields[3];
+            $pisos = $fields[4];
+            $nmroCuartos = $fields[5];
+            $habitantes = $fields[6];
+            $direccion = $fields[7];
+            $condicion = $fields[8];
+            $responsable= $fields[9];
             $cedula = $fields[10];
             $sede = $fields[11];
-            $pertenece = $fields[12];
-            $precio_compra = $fields[13];
-            $precio_venta = $fields[14];
-            $unidad = $fields[15];
-            $stock = $fields[16];
-            $created_user = $fields[17];
-            $created_date = $fields[18];
-            $updated_user = $fields[19];
-            $updated_date = $fields[20];
-            $categoria = $fields[21];
+            $created_user= $fields[12];
+            $updated_user = $fields[13];
+            $created_date = $fields[14];
+            $update_date = $fields[15];
+            $estado = $fields[16];
+            $categoria = $fields[17];
             $stmt->execute();
            
         }
@@ -137,9 +130,9 @@ if ($parametro != null) {
     } else {
         echo SimpleXLSX::parseError();
     }
-} else {
-    header('Location:/inventario3Debug/main.php?module=mobiliario_equipoOficina&alert=8');
-}    
-   
+    
+ } else {
+    header('Location:/inventariov2/main.php?module=inmuebles&alert=8');
+ }
 
 ?>

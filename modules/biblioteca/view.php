@@ -39,7 +39,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Bibliotca
+  <i class="fa fa-folder-o icon-title"></i> Biblioteca
 
     <form action="database/excel_to_mysql_biblioteca.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
@@ -121,7 +121,7 @@ function validarExt()
     }   elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos de bibblioteca exportados correctamente </h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Datos de Biblioteca Importados correctamente </h4>
             </div>";
     } elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
@@ -145,18 +145,16 @@ function validarExt()
                 <th class="center">TITULO</th>
                 <th class="center">AUTOR</th>
 				        <th class="center">EDITORIAL</th>
-                <th class="center">CANTIDAD</th>
                 <th class="center">ISBN</th>
-                <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
-                <th class="center">UBICACION</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">SEDE</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">ENVOLTURA</th>
+                <th class="center">CONDICION</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
-               
-              
               </tr>
             </thead>
             <tbody>
@@ -185,15 +183,15 @@ function validarExt()
                       <td width='90' class='center'>$data[titulo]</td>
                       <td width='90' class='center'>$data[autor]</td>
                       <td width='90' class='center'>$data[editorial]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>
                       <td width='50' class='center'>$data[isbn]</td>
                       <td width='50' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='50' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[envoltura]</td>               
+                      <td width='90' class='center'>$data[condicion]</td>
+                      <td width='50' class='center'>$data[responsable]</td>
+                      <td width='50' class='center'>$data[cedula]</td>
+                      <td width='90' class='center'>$data[ubicacion]</td>
+                      <td width='90' class='center'>$data[sede]</td>
+                      <td width='90' class='center'>$data[cantidad]</td>             
                       <td class='center'  width='100'>
                           <div>
             
@@ -201,7 +199,7 @@ function validarExt()
                         <i style='x:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/biblioteca/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['cedula'].' '.$data['tipo']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/biblioteca/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['isbn'].' '.$data['titulo']; ?>?');">
                         <i style="x:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php

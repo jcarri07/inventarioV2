@@ -72,7 +72,7 @@
           </div>
         </form>
 
-      </div><!-- /.login-box-body -->
+      </div>/.login-box-body
     </div><!-- /.login-box -->
 
     <!-- jQuery 2.1.3 -->

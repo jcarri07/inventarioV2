@@ -15,8 +15,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar vehiculos
-  </section>
+      <i class="fa fa-edit icon-title"></i> Agregar Vehículos
 
   <!-- Main content -->
   <section class="content">
@@ -62,26 +61,16 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Marca</label>
+                <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="marca" autocomplete="off" required>
+                  <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
               </div>
 
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Tipo de Vehiculo</label>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="items1" type="text" placeholder="--Especificar--" name="tipo" autocomplete="off" required>
-                  <datalist id="items1">
-                    <option value=""></option>
-                    <option value="Privado">Privado</option>
-                    <option value="Trans. Bienes o Mat">Trans. Bienes o Mat</option>
-                    <option value="Apoyo Logistico">Apoyo Logistico</option>
-                    <option value="Trans. Alimentos">Trans. Alimentos</option>
-                    <option value="Trans. Mat. Peligroso">Trans. Mat. Peligroso</option>
-                    <option value="Arrastre de carga">Arrastre de carga</option>
-                    <option value="Clinica">Clinica</option>
-                    </datalist>
+                  <input type="text" class="form-control" name="marca" autocomplete="off" required>
                 </div>
               </div>
 
@@ -91,11 +80,11 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="modelo" autocomplete="off" required>
                 </div>
               </div>
-             
+
               <div class="form-group">
-                <label class="col-sm-2 control-label">Numero de Placa</label>
+                <label class="col-sm-2 control-label">Nº Carrocería</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
+                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
                 </div>
               </div>
 
@@ -107,110 +96,37 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cilindros</label>
+                <label class="col-sm-2 control-label">Año</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cilindros" autocomplete="off" required>
+                  <input type="text" class="form-control" name="anio" autocomplete="off" required>
+                </div>
+              </div>
+   
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Placa</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carroceria</label>
+                <label class="col-sm-2 control-label">Tipo Combustible</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Transmision</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="transmision" autocomplete="off" required>
+                  <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Motor</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nMotor" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Servicio</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items1" type="text" placeholder="--Especificar--" name="servicio" autocomplete="off" required>
-                  <datalist id="items1">
-                    <option value=""></option>
-                    <option value="Privado">Privado</option>
-                    <option value="Trans. Bienes o Mat">Trans. Bienes o Mat</option>
-                    <option value="Apoyo Logistico">Apoyo Logistico</option>
-                    <option value="Trans. Alimentos">Trans. Alimentos</option>
-                    <option value="Trans. Mat. Peligroso">Trans. Mat. Peligroso</option>
-                    <option value="Arrastre de carga">Arrastre de carga</option>
-                    <option value="Clinica">Clinica</option>
-                    </datalist>
-                </div>
-              </div>
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Uso del Vehiculo</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items" type="text" placeholder="--Especificar--" name="uso" autocomplete="off" required>
-                  <datalist id="items">
-                    <option value=""></option>
-                    <option value="Carga">Carga</option>
-                    <option value="Carga puerto libre">Carga puerto libre</option>
-                    <option value="Construccion">Construccion</option>
-                    <option value="Deportivo">Deportivo</option>
-                    <option value="Especial">Especial</option>
-                    <option value="Grua">Grua</option>
-                    <option value="Maq. Pesada">Maq. Pesada</option>
-                    <option value="Particular">Particular</option>
-                    <option value="Particular puerto libre">Particular puerto libre</option>
-                    <option value="Transporte privado">Transporte privado</option>
-                    <option value="Transporte publico">Transporte publico</option>
-                    </datalist>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Condicion</label>
+                <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="condicion" autocomplete="off" required>
                 </div>
               </div>
 
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Tipo de Combustible</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items0" type="text" placeholder="--Especificar--" name="tipoCombustible" autocomplete="off" required>
-                  <datalist id="items0">
-                    <option value=""></option>
-                    <option value="Gas">Gas</option>
-                    <option value="Gasoil">(Diesel)</option>
-                    <option value="Gasolina">Gasolina</option>
-                    <option value="Mixto">(Gasolina y Gas)</option>
-                </div>
-              </div>
-
               <div class="form-group">
-                <label class="col-sm-2 control-label">Capacidad Tanque</label>
+                <label class="col-sm-2 control-label">Unidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="capacidadTanque" autocomplete="off" required>
-                </div>
-              </div> 
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Resguardo</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="resguardo" autocomplete="off" required>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['tipoCombustible']; ?>" required>
                 </div>
               </div>
 
@@ -222,46 +138,18 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Año</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="anio" autocomplete="off" required>
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="unidad"  autocomplete="off" required>
-                </div>
-              </div>
-            
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Numero de Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="clasificacion" onkeypress='return validaNumericos(event)' autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="pertenece" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""></option>
-                    <option value="USMI">ABAE</option>
-                    <option value="UDLP">Otro</option>
-                    <option value="caja">Caja</option>
-                    <option value="raya">Raya</option>
-                    <option value="tubo">Tubo</option>
-                  </select>
-                </div>
-              </div>-->
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
@@ -273,35 +161,12 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" placeholder="--Especificar--" name="pertenece" autocomplete="off" required>
+                <input class="form-control" list="item" type="text" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
-                    <option value=""></option>
-                    <option value="ABAE">ABAE</option>
+                    <option  selected value="ABAE">ABAE</option>
                     </datalist>
                 </div>
-              </div>
-
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Compra</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_compra" name="pcompra" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Venta</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_venta" name="pventa" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" required>
-                  </div>
-                </div>
-              </div>-->
-
-            </div><!-- /.box body -->
+              </div><!-- /.box body -->
 
             <div class="box-footer">
               <div class="form-group">
@@ -330,7 +195,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar datos vehiculos
+      <i class="fa fa-edit icon-title"></i> Modificar Vehículos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -355,20 +220,10 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Tipo de Vehiculo</label>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="items1" type="text" placeholder="<?php echo $data['tipo']; ?>" name="tipo" autocomplete="off" required>
-                  <datalist id="items1">
-                    <option value=""></option>
-                    <option value="Privado">Privado</option>
-                    <option value="Trans. Bienes o Mat">Trans. Bienes o Mat</option>
-                    <option value="Apoyo Logistico">Apoyo Logistico</option>
-                    <option value="Trans. Alimentos">Trans. Alimentos</option>
-                    <option value="Trans. Mat. Peligroso">Trans. Mat. Peligroso</option>
-                    <option value="Arrastre de carga">Arrastre de carga</option>
-                    <option value="Clinica">Clinica</option>
-                    </datalist>
+                  <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
                 </div>
               </div>
 
@@ -380,18 +235,18 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Placa</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Modelo</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="modelo" autocomplete="off" value="<?php echo $data['modelo']; ?>" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nº Carrocería</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off"  value="<?php echo $data['nmroCarroceria']; ?>" required>
+                </div>
+              </div>     
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
@@ -401,68 +256,23 @@ elseif ($_GET['form']=='edit') {
               </div>  
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Transmision</label>
+                <label class="col-sm-2 control-label">Año</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="transmision" autocomplete="off"  value="<?php echo $data['transmision']; ?>" required>
+                  <input type="text" class="form-control" name="anio" autocomplete="off" value="<?php echo $data['anio']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cilindros</label>
+                <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cilindros" autocomplete="off"  value="<?php echo $data['cilindros']; ?>" required>
+                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carroceria</label>
+                <label class="col-sm-2 control-label">Tipo Combustible</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off"  value="<?php echo $data['nmroCarroceria']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Motor</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nMotor" autocomplete="off"  value="<?php echo $data['nMotor']; ?>" required>
-                </div>
-              </div>        
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Tipo de Combustible</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items0" type="text" placeholder="<?php echo $data['tipoCombustible']; ?>" name="tipoCombustible" autocomplete="off" required>
-                  <datalist id="items0">
-                    <option value=""></option>
-                    <option value="Gas">Gas</option>
-                    <option value="Gasoil">(Diesel)</option>
-                    <option value="Gasolina">Gasolina</option>
-                    <option value="Mixto">(Gasolina y Gas)</option>
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Capacidad Tanque</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="capacidadTanque" autocomplete="off"  value="<?php echo $data['capacidadTanque']; ?>" required>
-                </div>
-              </div>  
-
-              <div class="form-group" >
-                <label class="col-sm-2 control-label">Servicio</label>
-                <div class="col-sm-5">
-                <input class="form-control" list="items1" type="text" placeholder="<?php echo $data['servicio']; ?>" name="servicio" autocomplete="off" required>
-                  <datalist id="items1">
-                    <option value=""></option>
-                    <option value="Privado">Privado</option>
-                    <option value="Trans. Bienes o Mat">Trans. Bienes o Mat</option>
-                    <option value="Apoyo Logistico">Apoyo Logistico</option>
-                    <option value="Trans. Alimentos">Trans. Alimentos</option>
-                    <option value="Trans. Mat. Peligroso">Trans. Mat. Peligroso</option>
-                    <option value="Arrastre de carga">Arrastre de carga</option>
-                    <option value="Clinica">Clinica</option>
-                    </datalist>
+                  <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" value="<?php echo $data['tipoCombustible']; ?>" required>
                 </div>
               </div>
 
@@ -474,23 +284,9 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicacion</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Unidad</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['unidad']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Sede</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
                 </div>
               </div>
 
@@ -502,40 +298,25 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Resguardo</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="resguardo" autocomplete="off" value="<?php echo $data['resguardo']; ?>" required>
+                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
+                </div>
+              </div>      
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
                 </div>
               </div>
-            
-
-             <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">Nº de Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="clasificacion" autocomplete="off" onkeypress='return validaNumericos(event)' value="<?php //echo $data['clasificacion']; ?>" required>
-                </div>
-              </div>       
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="pertenece" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value="<?php echo $data['pertenece']; ?>"></option>
-                   <option selected value="UDMI">ABAE</option>
-                    <option value="UDLP">Otro</option>
-                    <option value="caja"></option>
-                    <option value="raya"></option>
-                    <option value="tubo">Tubo</option>
-                  </select>
-                </div>
-              </div>-->
 
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
@@ -546,28 +327,6 @@ elseif ($_GET['form']=='edit') {
                     </datalist>
                 </div>
               </div>
-
-              <!--<div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Compra</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_compra" name="pcompra" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo format_rupiah($data['precio_compra']); ?>" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Precio de Venta</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <span class="input-group-addon">$.</span>
-                    <input type="text" class="form-control" id="precio_venta" name="pventa" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo format_rupiah($data['precio_venta']); ?>" required>
-                  </div>
-                </div>
-              </div>-->
-
-
             </div><!-- /.box body -->
 
             <div class="box-footer">

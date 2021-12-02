@@ -127,7 +127,7 @@ function validarExt()
             $no = 1;
             $sede = $_SESSION['sede'];
             $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.placa, b.marca, b.condicion
-                                            FROM transaccion_equipos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
+                                            FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
            

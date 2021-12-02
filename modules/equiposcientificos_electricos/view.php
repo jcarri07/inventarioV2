@@ -39,7 +39,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos Cientificos y Electronicos
+  <i class="fa fa-folder-o icon-title"></i> Equipos Científicos y Electrónicos
 
     <form action="database/excel_to_mysql.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
@@ -136,12 +136,12 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
@@ -149,6 +149,7 @@ function validarExt()
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
+                <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
                
               
@@ -166,7 +167,7 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado, categoria FROM inventario WHERE categoria = 'Cientificos' and sede LIKE '$sede' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -176,19 +177,21 @@ function validarExt()
               echo "<tr>
                       <td width='30' class='center'>$no</td>
                       <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
                       <td width='90' class='center'>$data[descripcion]</td>
                       <td width='90' class='center'>$data[marca]</td>
                       <td width='90' class='center'>$data[modelo]</td>
-                      <td width='90' class='center'>$data[color]</td>
+                      <td width='90' class='center'>$data[serial]</td>
                       <td width='90' class='center'>$data[bienesN]</td>
+                      <td width='90' class='center'>$data[color]</td>
                       <td width='90' class='center'>$data[condicion]</td>
                       <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[nombre]</td>
+                      <td width='130' class='center'>$data[responsable]</td>
                       <td width='90' class='center'>$data[cedula]</td>
                       <td width='90' class='center'>$data[ubicacion]</td>
                       <td width='90' class='center'>$data[sede]</td>
                       <td width='90' class='center'>$data[pertenece]</td>
+                      <td width='90' class='center'>$data[cantidad]</td>
+                      
                       
                   
                       <td class='center'  width='100'>

@@ -46,7 +46,7 @@
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
-
+             
               <tr>
                 <td width='30' class='center'>$no</td>
                 <center><td width='80' class='center' align='center'>$data[codigo_transaccion]</td></center>
@@ -55,11 +55,13 @@
                 <td width='180' class='center' align='center'>$data[recibe]</td>
                 <td width='180' class='center' align='center'>$data[cedula_r]</td>
                 <td width='180' class='center' align='center'>$data[empresa_r]</td>
+                <td width='180' class='center' align='center'>$data[lugar_r]</td>
                 <td width='180' class='center' align='center'>$data[entrega]</td>
                 <td width='180' class='center' align='center'>$data[cedula_e]</td>
                 <td width='180' class='center' align='center'>$data[empresa]</td>
                 <td width='180' class='center' align='center'>$data[lugar_e]</td>
-                <td width='180' class='center' align='center'>$data[lugar_r]</td>
+                <td width='180' class='center' align='center'>$data[created_user]</td>
+                <td width='180' class='center' align='center'>$data[created_date]</td>
                 <td width='180' class='center' align='center'>$data[tipo_transaccion]</td>
                <td class='center' width='85'>
                       

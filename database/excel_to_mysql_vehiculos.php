@@ -65,81 +65,66 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo , placa, marca, tipo, modelo, color, cilindros, transmision, nMotor, condicion, unidad, ubicacion, responsable, pertenece, cedula, sede, bienesN, resguardo, nmroCarroceria, anio, uso, servicio, tipoCombustible, capacidadTanque, created_user, created_date, updated_date, estado, updated_user, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, tipo, marca, modelo, nmroCarroceria, color, anio, placa, tipoCombustible, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $placa);
+            $stmt->bindParam( 2, $tipo);
             $stmt->bindParam( 3, $marca);
-            $stmt->bindParam( 4, $tipo);
-            $stmt->bindParam( 5, $modelo);
+            $stmt->bindParam( 4, $modelo);
+            $stmt->bindParam( 5, $nmroCarroceria);
             $stmt->bindParam( 6, $color);
-            $stmt->bindParam( 7, $cilindros);
-            $stmt->bindParam( 8, $transmision);
-            $stmt->bindParam( 9, $nMotor);
+            $stmt->bindParam( 7, $anio);
+            $stmt->bindParam( 8, $placa);
+            $stmt->bindParam( 9, $tipoCombustible);
             $stmt->bindParam( 10, $condicion);
             $stmt->bindParam( 11, $unidad);
-            $stmt->bindParam( 12, $ubicacion);
-            $stmt->bindParam( 13, $responsable);
-            $stmt->bindParam( 14, $cedula);
-            $stmt->bindParam( 15, $pertenece);
-            $stmt->bindParam( 16, $sede);
-            $stmt->bindParam( 17, $bienesN);
-            $stmt->bindParam( 18, $resguardo);
-            $stmt->bindParam( 19, $nmroCarroceria);
-            $stmt->bindParam( 20, $anio);
-            $stmt->bindParam( 21, $uso);
-            $stmt->bindParam( 22, $servicio);
-            $stmt->bindParam( 23, $tipoCombustible);
-            $stmt->bindParam( 24, $capacidadTanque);
-            $stmt->bindParam( 25, $created_user);
-            $stmt->bindParam( 26, $created_date);
-            $stmt->bindParam( 27, $updated_date);
-            $stmt->bindParam( 28, $estado);
-            $stmt->bindParam( 29, $updated_user);
-            $stmt->bindParam( 30, $categoria);
+            $stmt->bindParam( 12, $responsable);
+            $stmt->bindParam( 13, $cedula);
+            $stmt->bindParam( 14, $ubicacion);
+            $stmt->bindParam( 15, $sede);
+            $stmt->bindParam( 16, $pertenece);
+            $stmt->bindParam( 17, $created_user);
+            $stmt->bindParam( 18, $updated_user);
+            $stmt->bindParam( 19, $created_date);
+            $stmt->bindParam( 20, $updated_date);
+            $stmt->bindParam( 21, $estado);
+            $stmt->bindParam( 22, $categoria);
             
-            $accion = "Incorporacion de equipos";
+            $accion = "Importacion Modulo Vehiculos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-            header('Location:/inventario3Debug/main.php?module=vehiculos&alert=4');
+            header('Location:/inventariov2/main.php?module=vehiculos&alert=4');
                
             
 
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $placa = $fields[1];
+            $tipo = $fields[1];
             $marca = $fields[2];
-            $tipo = $fields[3];
-            $modelo = $fields[4];
+            $modelo = $fields[3];
+            $nmroCarroceria= $fields[4];
             $color = $fields[5];
-            $cilindros = $fields[6];
-            $transmision = $fields[7];
-            $nMotor = $fields[8];
+            $anio = $fields[6];
+            $placa = $fields[7];
+            $tipoCombustible = $fields[8];
             $condicion = $fields[9];
             $unidad = $fields[10];
-            $ubicacion = $fields[11];
-            $responsable = $fields[12];
-            $cedula = $fields[13];
-            $pertenece = $fields[14];
-            $sede = $fields[15];
-            $bienesN = $fields[16];
-            $resguardo = $fields[17];
-            $nmroCarroceria = $fields[18];
-            $anio = $fields[19];
-            $uso = $fields[20];
-            $servicio = $fields[21];
-            $tipoCombustible = $fields[22];
-            $capacidadTanque = $fields[23];
-            $created_user = $fields[24];
-            $created_date = $fields[25];
-            $updated_date = $fields[26];
-            $estado = $fields[27];
-            $updated_user = $fields[28];
-            $categoria = $fields[29];
+            $responsable = $fields[11];
+            $cedula = $fields[12];
+            $ubicacion = $fields[13];
+            $sede = $fields[14];
+            $pertenece = $fields[15];
+            $created_user = $fields[16];
+            $updated_user = $fields[17];
+            $created_date = $fields[18];
+            $updated_date = $fields[19];
+            $estado = $fields[20];
+            $categoria = $fields[21];
             $stmt->execute();
            
         }
@@ -156,7 +141,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventario3Debug/main.php?module=vehiculos&alert=8');
+    header('Location:/inventariov2/main.php?module=vehiculos&alert=8');
  }
 
 ?>
