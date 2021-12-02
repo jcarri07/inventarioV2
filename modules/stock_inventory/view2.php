@@ -67,102 +67,104 @@
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehiculos </a></li>
           </ul>
 
-<!-- COMUNICACION -->
-    <div class="tab-content">
-        <div role= "tabpanel" class="tab-pane active" id="comunicacion">             
-          <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
-         
-            <form name="formulario" method="POST" action="modules/stock_inventory/print_filter.php" target="_blank">
-          <table id="dataTables1" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-              <th class="center">
-              <input list="items" type="text" name="filtrado" id="filtrado_comunicacion" autocomplete="off" required="true" placeholder="-- Especificar--">
-              <datalist id="items">
-                    <option value=""></option>
-                    <option value="descripcion"></option>
-                    <option value="codigo"></option>
-                    <option value="condicion"></option>
-                    <option value="marca"></option>
-                    <option value="serial"></option>
-                    <option value="modelo"></option>
-                    <option value="bienesN"></option>
-                    <option value="cedula"></option>
-                    <option value="ubicacion"></option>
-                    <option value="sede"></option>
-                    </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="filtrado_comunicacion2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="filtrado_comunicacion3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="esconde_div();">
-                <i style="color:#fff" class="fa fa-minus"></i>
-                </th>
-                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="visible_div();">
-                <i style="color:#fff" class="fa fa-plus"></i>
-                </th>
-       
-				<th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id ="filtro" value="" placeholder="-- Filtro 1 --"></th>
-                <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-                <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
-                <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                </th>
-              </tr>
-            </thead>
-    </tr>
-</table>
-</form>
-</br>
+
+          <!-- COMUNICACION -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="comunicacion">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+                <div class="box-body">
+
+                  <form name="formulario" method="POST" action="modules/stock_inventory/print_filter.php" target="_blank">
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items_comunicacion" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false">
+                            <datalist id="items_comunicacion">
+                              <option value=""></option>
+                              <option value="descripcion"></option>
+                              <option value="codigo"></option>
+                              <option value="condicion"></option>
+                              <option value="marca"></option>
+                              <option value="serial"></option>
+                              <option value="modelo"></option>
+                              <option value="bienesN"></option>
+                              <option value="cedula"></option>
+                              <option value="ubicacion"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
+
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --" onpaste="return false"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
 
 
-<div class="row">
-    <div class="col-md-12">    
-      <div class="box box-primary">
-        <div class="box-body" id="contenido">    
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
 
-        <section>
-           <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-            <i class="fa fa-print"></i> Imprimir
-           </a>
-               </br>
-       </section>
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
 
-          <table id="dataTables2" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-              <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
-                <th class="center">DESCRIPCION</th>
-                <th class="center">MARCA</th>
-			          <th class="center">MODELO</th>
-                <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
-                <th class="center">DIRECCION/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">UBICACION</th>
-                <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
-                <th class="center">QR
-                </th>
-              </tr>
-            </thead>
-          
-            <tbody>
-              <?php  
-                $no = 1;
-          
-                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='comunicacion' ORDER BY codigo ASC ")
-                or die('error: '.mysqli_error($mysqli));
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">SERIAL</th>
+                                <th class="center">DESCRIPCION</th>
+                                <th class="center">MARCA</th>
+                                <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">DIRECCION/UNIDAD</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">CEDULA</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
+                                <th class="center">QR
+                                </th>
+                              </tr>
+                            </thead>
 
-                while ($data = mysqli_fetch_assoc($query)) { 
-                $precio_compra = format_rupiah($data['precio_compra']);
-                $precio_venta = format_rupiah($data['precio_venta']);
+                            <tbody>
+                              <?php
+                              $no = 1;
 
-                echo "<tr>
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicacion' ORDER BY codigo ASC ")
+                                or die('error: ' . mysqli_error($mysqli));
+
+                              while ($data = mysqli_fetch_assoc($query)) {
+                                $precio_compra = format_rupiah($data['precio_compra']);
+                                $precio_venta = format_rupiah($data['precio_venta']);
+
+                                echo "<tr>
                 <td width='30' class='center'>$no</td>
                 <td width='50' class='center'>$data[codigo]</td>
                 <td width='90' class='center'>$data[serial]</td>
@@ -267,7 +269,7 @@
                 <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
-				      <th class="center">MODELO</th>
+				        <th class="center">MODELO</th>
                 <th class="center">COLOR</th>
                 <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
@@ -286,7 +288,7 @@
             <?php  
             $no = 1;
                     
-            $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria LIKE 'oficina' ORDER BY codigo ASC ")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC ")
             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -419,7 +421,7 @@
             <tbody>
             <?php  
             $no = 1;
-            $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria= 'refrigeracion' ORDER BY codigo ASC")
+            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo ASC")
                                             or die('error: '.mysqli_error($mysqli));
 
             while ($data = mysqli_fetch_assoc($query)) { 
@@ -550,7 +552,7 @@
       <tbody>
       <?php  
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria = 'cientificos' ORDER BY codigo ASC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo ASC")
                                       or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
@@ -681,7 +683,7 @@
       <tbody>
       <?php  
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT codigo,descripcion,serial,marca,modelo,color,bienesN, condicion, ubicacion, nombre, cedula, sede, pertenece,cantidad,precio_compra,precio_venta,unidad,estado FROM inventario WHERE categoria='seguridad' ORDER BY codigo ASC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo ASC")
                                       or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
@@ -699,7 +701,7 @@
                 <td width='90' class='center'>$data[bienesN]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[nombre]</td>
+                <td width='130' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
@@ -758,8 +760,8 @@
                               <option value="sede"></option>
                             </datalist>
                           </th>
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="filtrado2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="filtrado3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -1022,8 +1024,8 @@
 
 <script type="text/javascript">
   
-   var elemento = document.getElementById("filtrado_comunicacion2");
-   var elemento2 = document.getElementById("filtrado_comunicacion3");
+   var elemento = document.getElementById("f_comu2");
+   var elemento2 = document.getElementById("f_comu3");
    var elementos = [elemento, elemento2];
    var element = document.getElementById("filtro2");
    var element2 = document.getElementById("filtro3");
