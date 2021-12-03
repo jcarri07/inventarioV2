@@ -13,9 +13,9 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, pe
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre'];
-$var2 = $_POST['nombre2'];
-$var3 = $_POST['nombre3'];
+$var = $_POST['filtro'];
+$var2 = $_POST['filtro2'];
+$var3 = $_POST['filtro3'];
 $filtro = $_POST['filtrado'];
 trim($filtro);
 $filtro2 = $_POST['filtrado2'];

@@ -1,6 +1,6 @@
 <script src="js/alertifyjs/alertify.js"></script>
 <script type="text/javascript">
-  
+
   function check(e) {
     tecla = (document.all) ? e.keyCode : e.which;
 
@@ -80,7 +80,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_comunicacion" type="text" name="filtrado" id="filtrado" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false">
+                            <input list="items_comunicacion" type="text" name="filtrado" id="f_comu" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_comunicacion">
                               <option value=""></option>
                               <option value="descripcion"></option>
@@ -95,8 +95,8 @@
                               <option value="sede"></option>
                             </datalist>
                           </th>
-                          <th class="center"><input list="items" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
-                          <th class="center"><input list="items" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -104,9 +104,9 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --" onpaste="return false"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --" onpaste="return false"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro" id="filtro" value="" placeholder="-- Filtro 1 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2" id="filtro2" value="" placeholder="-- Filtro 2 --" onpaste="return false"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro3" id="filtro3" value="" placeholder="-- Filtro 3 --" onpaste="return false"></th>
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                           <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
@@ -165,555 +165,549 @@
                                 $precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
-                <td class='center'  width='100'>
-                <div>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[serial]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[marca]</td>
+                                  <td width='90' class='center'>$data[modelo]</td>
+                                  <td width='90' class='center'>$data[color]</td>
+                                  <td width='90' class='center'>$data[bienesN]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[unidad]</td>
+                                  <td width='130' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[pertenece]</td>
+                                  <td class='center'  width='100'>
+                                  <div>
   
                     <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
                           <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                     </a>";
 
-                  $no++;
-                }
-              ?>
-            </tbody>
-          </table>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
-   </div><!--/.col -->
-  </div>   <!-- /.row -->
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                    <!--/.col -->
+                  </div> <!-- /.row -->
 
-            </div><!-- /.box body -->
-          </form>
-    </div>
+                </div><!-- /.box body -->
+              </form>
+            </div>
 
-<!--MOBILIARIO-->
-    <div role= "tabpanel" class="tab-pane" id="mobiliario">
-          <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
-              
+            <!--MOBILIARIO-->
+            <div role="tabpanel" class="tab-pane" id="mobiliario">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+                <div class="box-body">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items" type="text" name="filtrado" id="do" autocomplete="off" required="true" placeholder="-- Especificar--">
+                            <datalist id="items">
+                              <option value=""></option>
+                              <option value="descripcion"></option>
+                              <option value="codigo"></option>
+                              <option value="condicion"></option>
+                              <option value="marca"></option>
+                              <option value="serial"></option>
+                              <option value="modelo"></option>
+                              <option value="bienesN"></option>
+                              <option value="cedula"></option>
+                              <option value="ubicacion"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="do2" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="do3" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div('do2','do3');">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
 
-            <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
-    <table id="dataTables1" class="table table-bordered table-striped table-hover">     
-            <thead>
-              <tr>
-              <th class="center">
-              <input list="items" type="text" name="filtrado" id="do" autocomplete="off" required="true" placeholder="-- Especificar--">
-              <datalist id="items">
-                    <option value=""></option>
-                    <option value="descripcion"></option>
-                    <option value="codigo"></option>
-                    <option value="condicion"></option>
-                    <option value="marca"></option>
-                    <option value="serial"></option>
-                    <option value="modelo"></option>
-                    <option value="bienesN"></option>
-                    <option value="cedula"></option>
-                    <option value="ubicacion"></option>
-                    <option value="sede"></option>
-                    </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="do2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="do3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div('do2','do3');">
-                <i style="color:#fff" class="fa fa-minus"></i>
-                </th>
-                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
-                <i style="color:#fff" class="fa fa-plus"></i>
-                </th>
-       
-				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
-                <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-                <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
-                <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                </th>
-              </tr>
-            </thead>
-    </tr>
-</table>
-</form>
-</br>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
 
-<div class="row">
-    <div class="col-md-12">    
-      <div class="box box-primary">
-        <div class="box-body" id="contenido"> 
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
 
-        <section>
-           <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-              <i class="fa fa-print"></i> Imprimir
-           </a>
-               </br>
-        </section>
-          <table id="dataTables2" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-              <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
-                <th class="center">DESCRIPCION</th>
-                <th class="center">MARCA</th>
-				        <th class="center">MODELO</th>
-                <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
-                <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">UBICACION</th>
-                <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
-                <th class="center">EDITAR</th>
-               
-              
-              </tr>
-            </thead>
-            <tbody>
-            <?php  
-            $no = 1;
-                    
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC ")
-            or die('error: '.mysqli_error($mysqli));
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">SERIAL</th>
+                                <th class="center">DESCRIPCION</th>
+                                <th class="center">MARCA</th>
+                                <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">CEDULA</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
+                                <th class="center">EDITAR</th>
 
-            while ($data = mysqli_fetch_assoc($query)) { 
-              $precio_compra = format_rupiah($data['precio_compra']);
-              $precio_venta = format_rupiah($data['precio_venta']);
-           
-              echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[marca]</td>
-                      <td width='90' class='center'>$data[modelo]</td>
-                      <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[pertenece]</td>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC ")
+                                or die('error: ' . mysqli_error($mysqli));
+
+                              while ($data = mysqli_fetch_assoc($query)) {
+                                $precio_compra = format_rupiah($data['precio_compra']);
+                                $precio_venta = format_rupiah($data['precio_venta']);
+
+                                echo "<tr>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[serial]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[marca]</td>
+                                  <td width='90' class='center'>$data[modelo]</td>
+                                  <td width='90' class='center'>$data[color]</td>
+                                  <td width='90' class='center'>$data[bienesN]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[unidad]</td>
+                                  <td width='130' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[pertenece]</td>
                       
                   
-                      <td class='center'  width='100'>
-                          <div>
+                                <td class='center'  width='100'>
+                                    <div>
             
-                    <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                          <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-                    </a>";
+                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                </a>";
 
-                  $no++;
-                }
-              ?>
-            </tbody>
-          </table>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
-    </div><!--/.col -->
-  </div>   <!-- /.row -->
-            
-
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                    <!--/.col -->
+                </div> <!-- /.row -->
               </div>
             </form>
           </div>
+            <!--Refrigeracion-->
+            <div role="tabpanel" class="tab-pane" id="refrigeracion">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+                <div class="box-body">
 
-<!--Refrigeracion-->
-<div role= "tabpanel" class="tab-pane" id="refrigeracion">
-          <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
-        
-    <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
-    
-          <table id="dataTables1" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-              <th class="center">
-              <input list="items" type="text" name="filtrado" id="ado" autocomplete="off" required="true" placeholder="-- Especificar--">
-              <datalist id="items">
-                    <option value=""></option>
-                    <option value="descripcion"></option>
-                    <option value="codigo"></option>
-                    <option value="condicion"></option>
-                    <option value="marca"></option>
-                    <option value="serial"></option>
-                    <option value="modelo"></option>
-                    <option value="bienesN"></option>
-                    <option value="cedula"></option>
-                    <option value="ubicacion"></option>
-                    <option value="sede"></option>
-                    </datalist></th>
-                 <th class="center"><input list="items" type="text" name="filtrado2"  id="ado2" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center"><input list="items" type="text" name="filtrado3"  id="ado3" placeholder="-- Especificar --" autocomplete="off" >
-                <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
-                <i style="color:#fff" class="fa fa-minus"></i>
-                </th>
-                <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
-                <i style="color:#fff" class="fa fa-plus"></i>
-                </th>
-       
-				        <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
-                <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-                <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
-                <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                </th>
-              </tr>
-            </thead>
-    </tr>
-</table>
-</form>
-</br>
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
 
-<div class="row">
-    <div class="col-md-12">    
-      <div class="box box-primary">
-        <div class="box-body" id="contenido">   
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items" type="text" name="filtrado" id="ado" autocomplete="off" required="true" placeholder="-- Especificar--">
+                            <datalist id="items">
+                              <option value=""></option>
+                              <option value="descripcion"></option>
+                              <option value="codigo"></option>
+                              <option value="condicion"></option>
+                              <option value="marca"></option>
+                              <option value="serial"></option>
+                              <option value="modelo"></option>
+                              <option value="bienesN"></option>
+                              <option value="cedula"></option>
+                              <option value="ubicacion"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="ado2" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="ado3" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
 
-        <section>
-           <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-            <i class="fa fa-print"></i> Imprimir
-           </a>
-               </br>
-       </section>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
 
-          <table id="dataTables2" class="table table-bordered table-striped table-hover">
-            <thead>
-              <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
-                <th class="center">DESCRIPCION</th>
-                <th class="center">MARCA</th>
-				        <th class="center">MODELO</th>
-                <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
-                <th class="center">CONDICION</th>
-                <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">UBICACION</th>
-                <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
-                <th class="center">EDITAR</th>
-               
-              
-              </tr>
-            </thead>
-            <tbody>
-            <?php  
-            $no = 1;
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo ASC")
-                                            or die('error: '.mysqli_error($mysqli));
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
 
-            while ($data = mysqli_fetch_assoc($query)) { 
-              $precio_compra = format_rupiah($data['precio_compra']);
-              $precio_venta = format_rupiah($data['precio_venta']);
-           
-              echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[marca]</td>
-                      <td width='60' class='center'>$data[modelo]</td>
-                      <td width='60' class='center'>$data[color]</td>
-                      <td width='60' class='center'>$data[bienesN]</td>
-                      <td width='70' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[unidad]</td>
-                      <td width='100' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[pertenece]</td>
-                      
-                  
-                      <td class='center'  width='100'>
-                          <div>
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
 
-                    <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                          <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-                    </a>";
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">SERIAL</th>
+                                <th class="center">DESCRIPCION</th>
+                                <th class="center">MARCA</th>
+                                <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">CEDULA</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
+                                <th class="center">EDITAR</th>
 
-                  $no++;
-                }
-              ?>
-            </tbody>
-          </table>
-        </div><!-- /.box-body -->
-      </div><!-- /.box -->
-    </div><!--/.col -->
-  </div>   <!-- /.row -->
 
-              </div>
-            </form>
-          </div>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo ASC")
+                                or die('error: ' . mysqli_error($mysqli));
 
-<!--CIENTIFICOS Y ELECTRONICOS-->
-<div role= "tabpanel" class="tab-pane" id="cientificos">
-          <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
-            <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
-    
-    <table id="dataTables1" class="table table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-        <th class="center">
-        <input list="items" type="text" name="filtrado" id="rado" autocomplete="off" required="true" placeholder="-- Especificar--">
-        <datalist id="items">
-              <option value=""></option>
-              <option value="descripcion"></option>
-              <option value="codigo"></option>
-              <option value="condicion"></option>
-              <option value="marca"></option>
-              <option value="serial"></option>
-              <option value="modelo"></option>
-              <option value="bienesN"></option>
-              <option value="cedula"></option>
-              <option value="ubicacion"></option>
-              <option value="sede"></option>
-              </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="rado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="rado3" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
-          <i style="color:#fff" class="fa fa-minus"></i>
-          </th>
-          <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
-          <i style="color:#fff" class="fa fa-plus"></i>
-          </th>
- 
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
-          <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-          <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
-          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-          </th>
-        </tr>
-      </thead>
-</tr>
-</table>
-</form>
-</br>
+                              while ($data = mysqli_fetch_assoc($query)) {
+                                $precio_compra = format_rupiah($data['precio_compra']);
+                                $precio_venta = format_rupiah($data['precio_venta']);
 
-<div class="row">
-<div class="col-md-12">    
-<div class="box box-primary">
-  <div class="box-body" id="contenido">     
+                                echo "<tr>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[serial]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[marca]</td>
+                                  <td width='60' class='center'>$data[modelo]</td>
+                                  <td width='60' class='center'>$data[color]</td>
+                                  <td width='60' class='center'>$data[bienesN]</td>
+                                  <td width='70' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[pertenece]</td>
+                                <td class='center'  width='100'>
+                                    <div>
+                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                </a>";
 
-  <section>
-     <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-      <i class="fa fa-print"></i> Imprimir
-     </a>
-         </br>
- </section>
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                  </div> <!-- /.row -->
+                </div>
+              </form>
+            </div>
 
-    <table id="dataTables2" class="table table-bordered table-striped table-hover">
-      <thead>
-      <tr>
-          <th class="center">No.</th>
-          <th class="center">CODIGO</th>
-          <th class="center">SERIAL</th>
-          <th class="center">DESCRIPCION</th>
-          <th class="center">MARCA</th>
-          <th class="center">MODELO</th>
-          <th class="center">COLOR</th>
-          <th class="center">N_BIEN</th>
-          <th class="center">CONDICION</th>
-          <th class="center">DIREC/UNIDAD</th>
-          <th class="center">RESPONSABLE</th>
-          <th class="center">CEDULA</th>
-          <th class="center">UBICACION</th>
-          <th class="center">SEDE</th>
-          <th class="center">PERTENECE</th>
-          <th class="center">EDITAR</th>
-         
-        
-        </tr>
-      </thead>
-      <tbody>
-      <?php  
-      $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo ASC")
-                                      or die('error: '.mysqli_error($mysqli));
+            <!--CIENTIFICOS Y ELECTRONICOS-->
+            <div role="tabpanel" class="tab-pane" id="cientificos">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+                <div class="box-body">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
 
-      while ($data = mysqli_fetch_assoc($query)) { 
-        $precio_compra = format_rupiah($data['precio_compra']);
-        $precio_venta = format_rupiah($data['precio_venta']);
-     
-        echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
-                
-            
-                <td class='center'  width='100'>
-                    <div>
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items" type="text" name="filtrado" id="rado" autocomplete="off" required="true" placeholder="-- Especificar--">
+                            <datalist id="items">
+                              <option value=""></option>
+                              <option value="descripcion"></option>
+                              <option value="codigo"></option>
+                              <option value="condicion"></option>
+                              <option value="marca"></option>
+                              <option value="serial"></option>
+                              <option value="modelo"></option>
+                              <option value="bienesN"></option>
+                              <option value="cedula"></option>
+                              <option value="ubicacion"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="rado2" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="rado3" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
 
-              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                    <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-              </a>";
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
 
-            $no++;
-          }
-        ?>
-      </tbody>
-    </table>
-  </div><!-- /.box-body -->
-</div><!-- /.box -->
-</div><!--/.col -->
-</div>   <!-- /.row -->
-              </div>
-            </form>
-          </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
 
-<!--SEGURIDAD-->
-<div role= "tabpanel" class="tab-pane" id="seguridad">
-          <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
-            <div class="box-body">
-        
-            <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
-    
-    <table id="dataTables1" class="table table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-        <th class="center">
-        <input list="items" type="text" name="filtrado" id="trado" autocomplete="off" required="true" placeholder="-- Especificar--">
-        <datalist id="items">
-              <option value=""></option>
-              <option value="descripcion"></option>
-              <option value="codigo"></option>
-              <option value="condicion"></option>
-              <option value="marca"></option>
-              <option value="serial"></option>
-              <option value="modelo"></option>
-              <option value="bienesN"></option>
-              <option value="cedula"></option>
-              <option value="ubicacion"></option>
-              <option value="sede"></option>
-              </datalist></th>
-           <th class="center"><input list="items" type="text" name="filtrado2"  id="trado2" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center"><input list="items" type="text" name="filtrado3"  id="trado3" placeholder="-- Especificar --" autocomplete="off" >
-          <th class="center" > <a  data-toggle="tooltip"   class="btn btn-primary btn-mb"  onclick="javascript:esconde_div();">
-          <i style="color:#fff" class="fa fa-minus"></i>
-          </th>
-          <th class="center" > <a  data-toggle="tooltip" class="btn btn-primary btn-mb"  onclick="javascript:visible_div();">
-          <i style="color:#fff" class="fa fa-plus"></i>
-          </th>
- 
-          <th class="center"> <input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
-          <th class="center"><input class="chosen-select"  class="col-mb-2 form-control" class="col-mb-2 form-control"  type="text" name="nombre2" id="filtro2" value=""  placeholder="-- Filtro 2 --"></th>
-          <th class="center"><input  class="chosen-select" class="col-mb-2 form-control"  type="text" name="nombre3" id="filtro3"  value="" placeholder="-- Filtro 3 --"></th>
-          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-          </th>
-        </tr>
-      </thead>
-</tr>
-</table>
-</form>
-</br>
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
 
-<div class="row">
-<div class="col-md-12">    
-<div class="box box-primary">
-  <div class="box-body" id="contenido">     
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">SERIAL</th>
+                                <th class="center">DESCRIPCION</th>
+                                <th class="center">MARCA</th>
+                                <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">CEDULA</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
+                                <th class="center">EDITAR</th>
 
-  <section>
-     <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
-      <i class="fa fa-print"></i> Imprimir
-     </a>
-         </br>
- </section>
 
-    <table id="dataTables1" class="table table-bordered table-striped table-hover">
-      <thead>
-      <tr>
-          <th class="center">No.</th>
-          <th class="center">CODIGO</th>
-          <th class="center">SERIAL</th>
-          <th class="center">DESCRIPCION</th>
-          <th class="center">MARCA</th>
-          <th class="center">MODELO</th>
-          <th class="center">COLOR</th>
-          <th class="center">N_BIEN</th>
-          <th class="center">CONDICION</th>
-          <th class="center">DIREC/UNIDAD</th>
-          <th class="center">RESPONSABLE</th>
-          <th class="center">CEDULA</th>
-          <th class="center">UBICACION</th>
-          <th class="center">SEDE</th>
-          <th class="center">PERTENECE</th>
-          <th class="center">EDITAR</th>
-         
-        
-        </tr>
-      </thead>
-      <tbody>
-      <?php  
-      $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo ASC")
-                                      or die('error: '.mysqli_error($mysqli));
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo ASC")
+                                or die('error: ' . mysqli_error($mysqli));
 
-      while ($data = mysqli_fetch_assoc($query)) { 
-        $precio_compra = format_rupiah($data['precio_compra']);
-        $precio_venta = format_rupiah($data['precio_venta']);
-     
-        echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
-                
-            
-                <td class='center'  width='100'>
-                    <div>
+                              while ($data = mysqli_fetch_assoc($query)) {
+                                $precio_compra = format_rupiah($data['precio_compra']);
+                                $precio_venta = format_rupiah($data['precio_venta']);
 
-              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                    <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-              </a>";
+                                echo "<tr>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[serial]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[marca]</td>
+                                  <td width='90' class='center'>$data[modelo]</td>
+                                  <td width='90' class='center'>$data[color]</td>
+                                  <td width='90' class='center'>$data[bienesN]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[unidad]</td>
+                                  <td width='130' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[pertenece]</td>
+                                <td class='center'  width='100'>
+                                  <div>
+
+                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                </a>";
+
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                    <!--/.col -->
+                  </div> <!-- /.row -->
+                </div>
+              </form>
+            </div>
+
+            <!--SEGURIDAD-->
+            <div role="tabpanel" class="tab-pane" id="seguridad">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST">
+                <div class="box-body">
+
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter.php" target="_blank">
+
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items" type="text" name="filtrado" id="trado" autocomplete="off" required="true" placeholder="-- Especificar--">
+                            <datalist id="items">
+                              <option value=""></option>
+                              <option value="descripcion"></option>
+                              <option value="codigo"></option>
+                              <option value="condicion"></option>
+                              <option value="marca"></option>
+                              <option value="serial"></option>
+                              <option value="modelo"></option>
+                              <option value="bienesN"></option>
+                              <option value="cedula"></option>
+                              <option value="ubicacion"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items" type="text" name="filtrado2" id="trado2" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"><input list="items" type="text" name="filtrado3" id="trado3" placeholder="-- Especificar --" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:visible_div();">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
+
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
+
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
+
+                          <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th class="center">No.</th>
+                                <th class="center">CODIGO</th>
+                                <th class="center">SERIAL</th>
+                                <th class="center">DESCRIPCION</th>
+                                <th class="center">MARCA</th>
+                                <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
+                                <th class="center">N_BIEN</th>
+                                <th class="center">CONDICION</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">RESPONSABLE</th>
+                                <th class="center">CEDULA</th>
+                                <th class="center">UBICACION</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
+                                <th class="center">EDITAR</th>
+
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo ASC")
+                                or die('error: ' . mysqli_error($mysqli));
+
+                              while ($data = mysqli_fetch_assoc($query)) {
+                                $precio_compra = format_rupiah($data['precio_compra']);
+                                $precio_venta = format_rupiah($data['precio_venta']);
+
+                                echo "<tr>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[serial]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[marca]</td>
+                                  <td width='90' class='center'>$data[modelo]</td>
+                                  <td width='90' class='center'>$data[color]</td>
+                                  <td width='90' class='center'>$data[bienesN]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[unidad]</td>
+                                  <td width='130' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[pertenece]</td>
+                                <td class='center'  width='100'>
+                                  <div>
+
+                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                </a>";
 
                                 $no++;
                               }
@@ -826,26 +820,26 @@
                               while ($data = mysqli_fetch_assoc($query)) {
 
                                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[tipo]</td>
-                <td width='90' class='center'>$data[titulo]</td>
-                <td width='90' class='center'>$data[autor]</td>
-                <td width='90' class='center'>$data[editorial]</td>
-                <td width='90' class='center'>$data[cantidad]</td>
-                <td width='50' class='center'>$data[isbn]</td>
-                <td width='50' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='50' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[color]</td>           
-                <td class='center'  width='100'>
-                    <div>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[tipo]</td>
+                                  <td width='90' class='center'>$data[titulo]</td>
+                                  <td width='90' class='center'>$data[autor]</td>
+                                  <td width='90' class='center'>$data[editorial]</td>
+                                  <td width='90' class='center'>$data[cantidad]</td>
+                                  <td width='50' class='center'>$data[isbn]</td>
+                                  <td width='50' class='center'>$data[bienesN]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='50' class='center'>$data[responsable]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[color]</td>           
+                                  <td class='center'  width='100'>
+                                <div>
       
-              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                    <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-              </a>";
+                              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                    <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              </a>";
 
                                 $no++;
                               }
@@ -870,7 +864,6 @@
                 <div class="box-body">
 
                   <form name="formulario" method="post" action="modules/stock_inventory/print_vehiculos.php" target="_blank">
-
                     <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
@@ -891,7 +884,7 @@
                             </datalist>
                           </th>
                           <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos2" id="filtrado_vehiculos2" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
-                          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3" id="filtrado_vehiculos3" placeholder="-- Especificar --"onpaste="return false"  autocomplete="off">
+                          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3" id="filtrado_vehiculos3" placeholder="-- Especificar --" onpaste="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" onclick="javascript:esconde_div();">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -956,29 +949,25 @@
                                 //$precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-        <td width='20' class='center'>$no</td>
-        <td width='50' class='center'>$data[codigo]</td>
-        <td width='80' class='center'>$data[marca]</td>
-        <td width='80' class='center'>$data[tipo]</td>
-        <td width='80' class='center'>$data[modelo]</td>
-        <td width='80' class='center'>$data[placa]</td>
-        <td width='80' class='center'>$data[color]</td>
-        <td width='50' class='center'>$data[tipoCombustible]</td>
-        <td width='80' class='center'>$data[nmroCarroceria]</td>
-        <td width='50' class='center'>$data[condicion]</td>
-        <td width='80' class='center'>$data[unidad]</td>
-        <td width='90' class='center'>$data[ubicacion]</td>
-        <td width='90' class='center'>$data[sede]</td>
-        <td width='90' class='center'>$data[responsable]</td>
-  
-            
-                <td class='center'  width='100'>
-                    <div>
-      
-
-              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                    <i id='$data[placa]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-              </a>";
+                                  <td width='20' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='80' class='center'>$data[marca]</td>
+                                  <td width='80' class='center'>$data[tipo]</td>
+                                  <td width='80' class='center'>$data[modelo]</td>
+                                  <td width='80' class='center'>$data[placa]</td>
+                                  <td width='80' class='center'>$data[color]</td>
+                                  <td width='50' class='center'>$data[tipoCombustible]</td>
+                                  <td width='80' class='center'>$data[nmroCarroceria]</td>
+                                  <td width='50' class='center'>$data[condicion]</td>
+                                  <td width='80' class='center'>$data[unidad]</td>
+                                  <td width='90' class='center'>$data[ubicacion]</td>
+                                  <td width='90' class='center'>$data[sede]</td>
+                                  <td width='90' class='center'>$data[responsable]</td>
+                                <td class='center'  width='100'>
+                                    <div>
+                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                      <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                </a>";
 
                                 $no++;
                               }
@@ -988,18 +977,14 @@
                         </div><!-- /.box-body -->
                       </div><!-- /.box -->
                     </div>
-                    <!--/.col -->
-                  </div> <!-- /.row -->
-
-
-                </div>
-              </form>
-            </div>
-
+                </div> 
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1023,77 +1008,87 @@
 <script src="assets/js/datatables.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-  
-   var elemento = document.getElementById("f_comu2");
-   var elemento2 = document.getElementById("f_comu3");
-   var elementos = [elemento, elemento2];
-   var element = document.getElementById("filtro2");
-   var element2 = document.getElementById("filtro3");
-   var elementos2 = [element, element2];
 
-   function esconde_div() {
+  // COMUNICACION
+  var elemento = document.getElementById("f_comu2");
+  var elemento2 = document.getElementById("f_comu3");
+  var elementos = [elemento, elemento2];
+  var element = document.getElementById("filtro2");
+  var element2 = document.getElementById("filtro3");
+  var elementos2 = [element, element2];
 
-console.log(elementos.length);
+  // MOBILIARIO
+  // var elemento = document.getElementById("f_mobi2");
+  // var elemento2 = document.getElementById("f_mobi3");
+  // var elementos = [elemento, elemento2];
+  // var element = document.getElementById("mobiliario2");
+  // var element2 = document.getElementById("filtro3");
+  // var elementos2 = [element, element2];
 
-if (elementos.length > 1) {
-    elementos2[1].style.display = 'none';
-    elementos[1].style.display = 'none';
-    elementos[1].value = "";
-    elementos2[1].value = "";
-    var ultimo = elementos.pop();
-    var ultimox = elementos2.pop();
-  
-} else if (elementos.length == 1) {
-    elementos2[0].style.display = 'none';
-    elementos[0].style.display = 'none';
-    elementos[0].value = "";
-    elementos2[0].value = "";
-    var ultimo = elementos.pop();
-    var ultimox = elementos2.pop();
+  function esconde_div() {
+
+    console.log(elementos.length);
+
+    if (elementos.length > 1) {
+      elementos2[1].style.display = 'none';
+      elementos[1].style.display = 'none';
+      elementos[1].value = "";
+      elementos2[1].value = "";
+      var ultimo = elementos.pop();
+      var ultimox = elementos2.pop();
+
+    } else if (elementos.length == 1) {
+      elementos2[0].style.display = 'none';
+      elementos[0].style.display = 'none';
+      elementos[0].value = "";
+      elementos2[0].value = "";
+      var ultimo = elementos.pop();
+      var ultimox = elementos2.pop();
+    }
   }
-}
 
-function visible_div(){
+  function visible_div() {
 
- if (elementos.length < 1) {
-    elementos.push(elemento);
-    elementos2.push(element);
-    elementos[0].style.display = '';
-    elementos2[0].style.display = '';
+    if (elementos.length < 1) {
+      elementos.push(elemento);
+      elementos2.push(element);
+      elementos[0].style.display = '';
+      elementos2[0].style.display = '';
 
-  } else if (elementos.length < 2) {
-    elementos.push(elemento2);
-    elementos2.push(element2);
-    elementos[1].style.display = '';
-    elementos2[1].style.display = '';
+    } else if (elementos.length < 2) {
+      elementos.push(elemento2);
+      elementos2.push(element2);
+      elementos[1].style.display = '';
+      elementos2[1].style.display = '';
+    }
   }
-}
-
 </script>
 
-<script >
-  
-//document.getElementById("contenido");
+<script>
+  //document.getElementById("contenido");
 
-var qr= document.getElementById("contenido2");
-console.log(qr);
-var cuerpo = $('#cuerpoModal');
+  var qr = document.getElementById("contenido2");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
 
-qr.addEventListener("click",
-  function(e){
-    
-    if(e.target.id=="qr"){
-      //console.log(qr);
-      //console.log(e.target.firstChild.nextSibling.id);
-      serial = e.target.firstChild.nextSibling.id;
-      //console.log(e.target);
-      var parametros={"textqr":serial,"sizeqr":300};
-      $.ajax({
-				type: "POST",
-        dataType: "html",
-				url: "modules/generateQr/qrModal.php",
-				data: parametros,
-				//success: function(datos){
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
           //console.log(cuerpo);
           //cuerpo.html(datos);
           //$(".result").html(datos);

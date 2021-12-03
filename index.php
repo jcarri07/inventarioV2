@@ -71,9 +71,8 @@
             </div><!-- /.col -->
           </div>
         </form>
-
-      </div>/.login-box-body
-    </div><!-- /.login-box -->
+      </div>
+    </div>
 
     <!-- jQuery 2.1.3 -->
     <script src="assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
