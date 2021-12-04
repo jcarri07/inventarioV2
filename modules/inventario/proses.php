@@ -86,7 +86,8 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=inventario&alert=1");  
+                                            
+                header("location: ../../main.php?module=form_inventario&form=add");  
             }
         }   
     }

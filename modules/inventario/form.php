@@ -51,7 +51,7 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
         <div role = "tabpanel">
-          <ul class="nav nav-tabs" role="tablist">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li role="presentation" class="active"><a href="#agregar" aria-controls="" data-toggle="tab" role="tab">Agregar</a></li>
             <li role="presentation" ><a href="#internos" aria-controls="" data-toggle="tab" role="tab">Componentes Internos</a></li>
           </ul>
@@ -197,8 +197,8 @@ if ($_GET['form']=='add') { ?>
             </div>
 
             <div class="form-group" >
-                <label class="col-sm-6 control-label">Foto</label>
-                <div class="col-sm-6">
+                <label class="col-sm-4 control-label">Foto</label>
+                <div class="col-sm-4">
                   <input type="file" name="foto">
                   <br/>
                 <?php  
@@ -224,6 +224,8 @@ if ($_GET['form']=='add') { ?>
             </div><!-- /.box footer -->
           </form>
     </div>
+
+
 
 <!--MOBILIARIO-->
     <div role= "tabpanel" class="tab-pane" id="internos">
@@ -880,5 +882,29 @@ $( "#qr" ).click(function( event ) {
 			
 		  event.preventDefault();*/
 	});
-
+  $(document).ready(() => {
+  let url = location.href.replace(/\/$/, "");
+ 
+  if (location.hash) {
+    const hash = url.split("#");
+    $('#myTab a[href="#'+hash[1]+'"]').tab("show");
+    url = location.href.replace(/\/#/, "#");
+    history.replaceState(null, null, url);
+    setTimeout(() => {
+      $(window).scrollTop(0);
+    }, 400);
+  } 
+   
+  $('a[data-toggle="tab"]').on("click", function() {
+    let newUrl;
+    const hash = $(this).attr("href");
+    if(hash == "#agregar") {
+      newUrl = url.split("#")[0];
+    } else {
+      newUrl = url.split("#")[0] + hash;
+    }
+    newUrl += "/";
+    history.replaceState(null, null, newUrl);
+  });
+}); 
 </script>

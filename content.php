@@ -16,6 +16,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 
 	} elseif ($_GET['module'] == 'form_inventario') {
 		include "modules/inventario/form.php";
+
 	}
 	//Equipos de refrigeracion y electrodomesticos
 	elseif ($_GET['module'] == 'refrigeracion_electrodomesticos') {

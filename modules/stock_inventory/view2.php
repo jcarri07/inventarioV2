@@ -59,11 +59,11 @@
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#comunicacion" aria-controls="" data-toggle="tab" role="tab">Comunicacion</a></li>
-            <li role="presentation"><a href="#mobiliario" aria-controls="" data-toggle="tab" role="tab">Mobiliario y de Oficina</a></li>
-            <li role="presentation"><a href="#refrigeracion" aria-controls="" data-toggle="tab" role="tab">Refrigeracion y Electrodomesticos</a></li>
-            <li role="presentation"><a href="#cientificos" aria-controls="" data-toggle="tab" role="tab"> Cientificos y Electronicos</a></li>
+            <li role="presentation"><a href="#mobiliario" aria-controls="" data-toggle="tab" role="tab">Mobiliario</a></li>
+            <li role="presentation"><a href="#refrigeracion" aria-controls="" data-toggle="tab" role="tab">Electrodomesticos</a></li>
+            <li role="presentation"><a href="#cientificos" aria-controls="" data-toggle="tab" role="tab">Electronicos</a></li>
             <li role="presentation"><a href="#seguridad" aria-controls="" data-toggle="tab" role="tab"> Seguridad </a></li>
-            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Biblioteca</a></li>
+            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehiculos </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
           </ul>
@@ -134,21 +134,21 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">SERIAL</th>
-                                <th class="center">DESCRIPCION</th>
-                                <th class="center">MARCA</th>
-                                <th class="center">MODELO</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">N_BIEN</th>
-                                <th class="center">CONDICION</th>
-                                <th class="center">DIRECCION/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
-                                <th class="center">SEDE</th>
-                                <th class="center">PERTENECE</th>
+                              <th class="center">No.</th>
+                <th class="center">CODIGO</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">MARCA</th>
+				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
+                <th class="center">COLOR</th>
+                <th class="center">CONDICION</th>
+                <th class="center">DIREC/UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>   
                                 <th class="center">QR
                                 </th>
                               </tr>
@@ -166,22 +166,22 @@
                                 $precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
-                <td class='center'  width='100'>
+                                <td width='30' class='center'>$no</td>
+                                <td width='50' class='center'>$data[codigo]</td>
+                                <td width='90' class='center'>$data[descripcion]</td>
+                                <td width='90' class='center'>$data[marca]</td>
+                                <td width='90' class='center'>$data[modelo]</td>
+                                <td width='90' class='center'>$data[serial]</td>
+                                <td width='90' class='center'>$data[bienesN]</td>
+                                <td width='90' class='center'>$data[color]</td>
+                                <td width='90' class='center'>$data[condicion]</td>
+                                <td width='90' class='center'>$data[unidad]</td>
+                                <td width='130' class='center'>$data[responsable]</td>
+                                <td width='90' class='center'>$data[cedula]</td>
+                                <td width='90' class='center'>$data[ubicacion]</td>
+                                <td width='90' class='center'>$data[sede]</td>
+                                <td width='90' class='center'>$data[pertenece]</td>   
+                <td class='center'  width='40'>
                 <div>
   
                     <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -265,22 +265,22 @@
             <thead>
               <tr>
               <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
+              <th class="center">No.</th>
+              <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
-                <th class="center">EDITAR</th>
+                <th class="center">PERTENECE</th>   
+                <th class="center">QR
                
               
               </tr>
@@ -297,22 +297,21 @@
               $precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[marca]</td>
-                      <td width='90' class='center'>$data[modelo]</td>
-                      <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[unidad]</td>
-                      <td width='130' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[pertenece]</td>
-                      
+              <td width='30' class='center'>$no</td>
+              <td width='50' class='center'>$data[codigo]</td>
+              <td width='90' class='center'>$data[descripcion]</td>
+              <td width='90' class='center'>$data[marca]</td>
+              <td width='90' class='center'>$data[modelo]</td>
+              <td width='90' class='center'>$data[serial]</td>
+              <td width='90' class='center'>$data[bienesN]</td>
+              <td width='90' class='center'>$data[color]</td>
+              <td width='90' class='center'>$data[condicion]</td>
+              <td width='90' class='center'>$data[unidad]</td>
+              <td width='130' class='center'>$data[responsable]</td>
+              <td width='90' class='center'>$data[cedula]</td>
+              <td width='90' class='center'>$data[ubicacion]</td>
+              <td width='90' class='center'>$data[sede]</td>
+              <td width='90' class='center'>$data[pertenece]</td> 
                   
                       <td class='center'  width='100'>
                           <div>
@@ -401,20 +400,20 @@
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">SERIAL</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
-                <th class="center">N_BIEN</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
-                <th class="center">EDITAR</th>
+                <th class="center">PERTENECE</th>   
+                <th class="center">QR
                
               
               </tr>
@@ -430,21 +429,21 @@
               $precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[marca]</td>
-                      <td width='60' class='center'>$data[modelo]</td>
-                      <td width='60' class='center'>$data[color]</td>
-                      <td width='60' class='center'>$data[bienesN]</td>
-                      <td width='70' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[unidad]</td>
-                      <td width='100' class='center'>$data[responsable]</td>
-                      <td width='90' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[pertenece]</td>
+              <td width='30' class='center'>$no</td>
+              <td width='50' class='center'>$data[codigo]</td>
+              <td width='90' class='center'>$data[descripcion]</td>
+              <td width='90' class='center'>$data[marca]</td>
+              <td width='90' class='center'>$data[modelo]</td>
+              <td width='90' class='center'>$data[serial]</td>
+              <td width='90' class='center'>$data[bienesN]</td>
+              <td width='90' class='center'>$data[color]</td>
+              <td width='90' class='center'>$data[condicion]</td>
+              <td width='90' class='center'>$data[unidad]</td>
+              <td width='130' class='center'>$data[responsable]</td>
+              <td width='90' class='center'>$data[cedula]</td>
+              <td width='90' class='center'>$data[ubicacion]</td>
+              <td width='90' class='center'>$data[sede]</td>
+              <td width='90' class='center'>$data[pertenece]</td> 
                       
                   
                       <td class='center'  width='100'>
@@ -532,20 +531,20 @@
       <tr>
           <th class="center">No.</th>
           <th class="center">CODIGO</th>
-          <th class="center">SERIAL</th>
-          <th class="center">DESCRIPCION</th>
-          <th class="center">MARCA</th>
-          <th class="center">MODELO</th>
-          <th class="center">COLOR</th>
-          <th class="center">N_BIEN</th>
-          <th class="center">CONDICION</th>
-          <th class="center">DIREC/UNIDAD</th>
-          <th class="center">RESPONSABLE</th>
-          <th class="center">CEDULA</th>
-          <th class="center">UBICACION</th>
-          <th class="center">SEDE</th>
-          <th class="center">PERTENECE</th>
-          <th class="center">EDITAR</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">MARCA</th>
+				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
+                <th class="center">COLOR</th>
+                <th class="center">CONDICION</th>
+                <th class="center">DIREC/UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>   
+                <th class="center">QR
          
         
         </tr>
@@ -561,22 +560,21 @@
         $precio_venta = format_rupiah($data['precio_venta']);
      
         echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
-                
+        <td width='30' class='center'>$no</td>
+        <td width='50' class='center'>$data[codigo]</td>
+        <td width='90' class='center'>$data[descripcion]</td>
+        <td width='90' class='center'>$data[marca]</td>
+        <td width='90' class='center'>$data[modelo]</td>
+        <td width='90' class='center'>$data[serial]</td>
+        <td width='90' class='center'>$data[bienesN]</td>
+        <td width='90' class='center'>$data[color]</td>
+        <td width='90' class='center'>$data[condicion]</td>
+        <td width='90' class='center'>$data[unidad]</td>
+        <td width='130' class='center'>$data[responsable]</td>
+        <td width='90' class='center'>$data[cedula]</td>
+        <td width='90' class='center'>$data[ubicacion]</td>
+        <td width='90' class='center'>$data[sede]</td>
+        <td width='90' class='center'>$data[pertenece]</td> 
             
                 <td class='center'  width='100'>
                     <div>
@@ -663,20 +661,20 @@
       <tr>
           <th class="center">No.</th>
           <th class="center">CODIGO</th>
-          <th class="center">SERIAL</th>
-          <th class="center">DESCRIPCION</th>
-          <th class="center">MARCA</th>
-          <th class="center">MODELO</th>
-          <th class="center">COLOR</th>
-          <th class="center">N_BIEN</th>
-          <th class="center">CONDICION</th>
-          <th class="center">DIREC/UNIDAD</th>
-          <th class="center">RESPONSABLE</th>
-          <th class="center">CEDULA</th>
-          <th class="center">UBICACION</th>
-          <th class="center">SEDE</th>
-          <th class="center">PERTENECE</th>
-          <th class="center">EDITAR</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">MARCA</th>
+				        <th class="center">MODELO</th>
+                <th class="center">SERIAL</th>
+                <th class="center">Nº BIEN</th>
+                <th class="center">COLOR</th>
+                <th class="center">CONDICION</th>
+                <th class="center">DIREC/UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>   
+                <th class="center">QR
          
         
         </tr>
@@ -694,19 +692,20 @@
         echo "<tr>
                 <td width='30' class='center'>$no</td>
                 <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[descripcion]</td>
                 <td width='90' class='center'>$data[marca]</td>
                 <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[color]</td>
+                <td width='90' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[bienesN]</td>
+                <td width='90' class='center'>$data[color]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[unidad]</td>
                 <td width='130' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>
+                <td width='90' class='center'>$data[pertenece]</td> 
+                    
                 
             
                 <td class='center'  width='100'>
@@ -798,21 +797,22 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">TIPO</th>
-                                <th class="center">TITULO</th>
-                                <th class="center">AUTOR</th>
-                                <th class="center">EDITORIAL</th>
-                                <th class="center">CANTIDAD</th>
-                                <th class="center">ISBN</th>
-                                <th class="center">N_BIEN</th>
-                                <th class="center">CONDICION</th>
-                                <th class="center">UBICACION</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">SEDE</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">EDITAR</th>
+                              <th class="center">No.</th>
+                <th class="center">CODIGO</th>
+                <th class="center">TIPO</th>
+                <th class="center">TITULO</th>
+                <th class="center">AUTOR</th>
+				        <th class="center">EDITORIAL</th>
+                <th class="center">ISBN</th>
+                <th class="center">NºBIEN</th>
+                <th class="center">COLOR</th>
+                <th class="center">CONDICION</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">CANTIDAD</th>
+                                <th class="center">QR</th>
 
 
                               </tr>
@@ -827,20 +827,21 @@
                               while ($data = mysqli_fetch_assoc($query)) {
 
                                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[tipo]</td>
-                <td width='90' class='center'>$data[titulo]</td>
-                <td width='90' class='center'>$data[autor]</td>
-                <td width='90' class='center'>$data[editorial]</td>
-                <td width='90' class='center'>$data[cantidad]</td>
-                <td width='50' class='center'>$data[isbn]</td>
-                <td width='50' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='50' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[color]</td>           
+                                <td width='30' class='center'>$no</td>
+                                <td width='50' class='center'>$data[codigo]</td>
+                                <td width='90' class='center'>$data[tipo]</td>
+                                <td width='90' class='center'>$data[titulo]</td>
+                                <td width='90' class='center'>$data[autor]</td>
+                                <td width='90' class='center'>$data[editorial]</td>
+                                <td width='50' class='center'>$data[isbn]</td>
+                                <td width='50' class='center'>$data[bienesN]</td>
+                                <td width='90' class='center'>$data[color]</td>
+                                <td width='90' class='center'>$data[condicion]</td>
+                                <td width='50' class='center'>$data[responsable]</td>
+                                <td width='50' class='center'>$data[cedula]</td>
+                                <td width='90' class='center'>$data[ubicacion]</td>
+                                <td width='90' class='center'>$data[sede]</td>
+                                <td width='90' class='center'>$data[cantidad]</td>          
                 <td class='center'  width='100'>
                     <div>
       
@@ -928,21 +929,24 @@
                           <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">MARCA</th>
-                                <th class="center">TIPO</th>
-                                <th class="center">MODELO</th>
-                                <th class="center">PLACA</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">TIPO COMBUSTIBLE</th>
-                                <th class="center">Nº CARROCERIA</th>
-                                <th class="center">CONDICION</th>
-                                <th class="center">UNIDAD</th>
-                                <th class="center">UBICACION</th>
-                                <th class="center">SEDE</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">EDITAR</th>
+                              <th class="center">No.</th>
+                <th class="center">CODIGO</th>
+                <th class="center">TIPO</th>
+                <th class="center">MARCA</th>
+				        <th class="center">MODELO</th>
+                <th class="center">Nº CARROCERIA</th>
+                <th class="center">COLOR</th>
+                <th class="center">AÑO</th>
+                <th class="center">PLACA</th>
+                <th class="center">TIPO COMBUSTIBLE</th>
+                <th class="center">CONDICION</th>
+                <th class="center">UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">UBICACION</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>
+                <th class="center">QR</th>
 
                               </tr>
                             </thead>
@@ -957,21 +961,23 @@
                                 //$precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-        <td width='20' class='center'>$no</td>
-        <td width='50' class='center'>$data[codigo]</td>
-        <td width='80' class='center'>$data[marca]</td>
-        <td width='80' class='center'>$data[tipo]</td>
-        <td width='80' class='center'>$data[modelo]</td>
-        <td width='80' class='center'>$data[placa]</td>
-        <td width='80' class='center'>$data[color]</td>
-        <td width='50' class='center'>$data[tipoCombustible]</td>
-        <td width='80' class='center'>$data[nmroCarroceria]</td>
-        <td width='50' class='center'>$data[condicion]</td>
-        <td width='80' class='center'>$data[unidad]</td>
-        <td width='90' class='center'>$data[ubicacion]</td>
-        <td width='90' class='center'>$data[sede]</td>
-        <td width='90' class='center'>$data[responsable]</td>
-  
+                                <td width='20' class='center'>$no</td>
+                                <td width='50' class='center'>$data[codigo]</td>
+                                <td width='80' class='center'>$data[tipo]</td>
+                                <td width='80' class='center'>$data[marca]</td>
+                                <td width='80' class='center'>$data[modelo]</td>
+                                <td width='80' class='center'>$data[nmroCarroceria]</td>
+                                <td width='80' class='center'>$data[color]</td>
+                                <td width='80' class='center'>$data[anio]</td>
+                                <td width='80' class='center'>$data[placa]</td>
+                                <td width='50' class='center'>$data[tipoCombustible]</td>
+                                <td width='50' class='center'>$data[condicion]</td>
+                                <td width='80' class='center'>$data[unidad]</td>
+                                <td width='90' class='center'>$data[responsable]</td>
+                                <td width='90' class='center'>$data[cedula]</td>
+                                <td width='90' class='center'>$data[ubicacion]</td>
+                                <td width='90' class='center'>$data[sede]</td>
+                                <td width='90' class='center'>$data[pertenece]</td>
             
                 <td class='center'  width='100'>
                     <div>
@@ -1066,19 +1072,20 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">TIPO</th>
-                                <th class="center">DESCRIPCION</th>
-                                <th class="center">MTRS CUADRADOS</th>
-                                <th class="center">NRO CUARTOS</th>
-                                <th class="center">PISOS</th>
-                                <th class="center">CONDICION</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">HABITANTES</th>
-                                <th class="center">DIRECCION</th>
-                                <th class="center">SEDE</th>
+                              <th class="center">No.</th>
+                <th class="center">CODIGO</th>
+                <th class="center">TIPO</th>
+                <th class="center">DESCRIPCION</th>
+                <th class="center">M²</th>
+                <th class="center">Nº PISOS</th>
+                <th class="center">Nº CUARTOS</th>
+                <th class="center">Nº HABITANTES</th>
+                <th class="center">DIRECCION</th>
+                <th class="center">CONDICION</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
+                <th class="center">SEDE</th>
+                <th class="center">QR</th>
 
 
                               </tr>
@@ -1093,20 +1100,20 @@
                               while ($data = mysqli_fetch_assoc($query)) {
 
                                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[tipo]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[metrosCuadrados]</td>
-                <td width='90' class='center'>$data[nmroCuartos]</td>
-                <td width='90' class='center'>$data[pisos]</td>
-                <td width='50' class='center'>$data[condicion]</td>
-                <td width='50' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[habitantes]</td>
-                <td width='50' class='center'>$data[direccion]</td>
-                <td width='90' class='center'>$data[sede]</td>              
-                <td class='center'  width='100'>
+                                <td width='30' class='center'>$no</td>
+                                <td width='50' class='center'>$data[codigo]</td>
+                                <td width='90' class='center'>$data[tipo]</td>
+                                <td width='90' class='center'>$data[descripcion]</td>
+                                <td width='90' class='center'>$data[metrosCuadrados]</td>
+                                <td width='90' class='center'>$data[pisos]</td>
+                                <td width='90' class='center'>$data[nmroCuartos]</td>
+                                <td width='90' class='center'>$data[habitantes]</td> 
+                                <td width='90' class='center'>$data[direccion]</td>
+                                <td width='50' class='center'>$data[condicion]</td>
+                                <td width='90' class='center'>$data[responsable]</td>
+                                <td width='50' class='center'>$data[cedula]</td> 
+                                <td width='50' class='center'>$data[sede]</td>            
+                <td class='center'  width='30'>
                     <div>
       
               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
