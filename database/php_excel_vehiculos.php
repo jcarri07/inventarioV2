@@ -12,18 +12,21 @@
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">MARCA</th>
                 <th class="center">TIPO</th>
+                <th class="center">MARCA</th>
                 <th class="center">MODELO</th>
-                <th class="center">PLACA</th>
+                <th class="center">N CARROCERIA</th>
                 <th class="center">COLOR</th>
+                <th class="center">ANIO</th>
+                <th class="center">PLACA</th>
                 <th class="center">TIPO COMBUSTIBLE</th>
-                <th class="center">NMRO CARROCERIA</th>
                 <th class="center">CONDICION</th>
                 <th class="center">UNIDAD</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
                 <th class="center">SEDE</th>
-                <th class="center">RESPONSABLE</th>
+                <th class="center">PERTENECE</th>
               </tr>
             </thead>
             <tbody>
@@ -57,27 +60,30 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo ASC")
-                                            or die('error: '.mysqli_error($mysqli));
+      $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo DESC")
+          or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
-                <td width='30' class='center'>$no</td>
-                <center><td width='80' class='center' align='center'>$data[codigo]</td></center>
-                <td width='180' class='center' align='center' >$data[marca]</td>
+                <td width='30' class='center' align='center'>$no</td>
+                <td width='100' class='center' align='center'>$data[codigo]</td>
                 <td width='180' class='center' align='center'>$data[tipo]</td>
+                <td width='180' class='center' align='center'>$data[marca]</td>
                 <td width='180' class='center' align='center'>$data[modelo]</td>
-                <td width='180' class='center' align='center'>$data[placa]</td>
-                <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='center' align='center'>$data[tipoCombustible]</td>
                 <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
-                <td width='180' class='center' align='center'>$data[condicion]</td>
+                <td width='180' class='center' align='center'>$data[color]</td>
+                <td width='180' class='centeR' align='center'>$data[anio]</td>
+                <td width='180' class='center' align='center'>$data[placa]</td>
+                <td width='150' class='center' align='center'>$data[tipoCombustible]</td>
+                <td width='150' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                <td width='180' class='center'align='center' >$data[sede]</td>
-                <td width='180' class='center'align='center' >$data[responsable]</td>
+                <td width='190' class='center' align='center'>$data[responsable]</td>
+                <td width='190' class='center' align='center'>$data[cedula]</td>
+                <td width='190' class='center' align='center'>$data[ubicacion]</td>
+                <td width='190' class='center' align='center'>$data[sede]</td>
+                <td width='190' class='center' align='center'>$data[pertenece]</td>
                 <td class='center' width='85'>
                       
                 <div>
@@ -86,7 +92,7 @@
                   </a>";
     ?>
     
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
+    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
     </a>
   

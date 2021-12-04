@@ -171,7 +171,7 @@ if ($_GET['form']=='add') { ?>
               </div>
       
               <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicacion</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
@@ -491,9 +491,9 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>
 

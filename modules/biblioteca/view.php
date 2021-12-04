@@ -146,7 +146,7 @@ function validarExt()
                 <th class="center">AUTOR</th>
 				        <th class="center">EDITORIAL</th>
                 <th class="center">ISBN</th>
-                <th class="center">N_BIEN</th>
+                <th class="center">Nº BIEN</th>
                 <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
                 <th class="center">RESPONSABLE</th>

@@ -122,7 +122,7 @@ else {
 
             
 
-                $query = mysqli_query($mysqli, "UPDATE inventario SET  
+                $query = mysqli_query($mysqli, "UPDATE inventario SET 
                                                                     responsable       = '$responsable',
                                                                     marca             = '$marca',
                                                                     serial             = '$serial',

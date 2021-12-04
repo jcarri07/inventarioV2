@@ -109,16 +109,10 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <div class="form-group" >
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo Combustible</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="items0" type="text" placeholder="--Especificar--" name="tipoCombustible" autocomplete="off" required>
-                  <datalist id="items0">
-                    <option value=""></option>
-                    <option value="Gas">Gas</option>
-                    <option value="Gasoil">(Diesel)</option>
-                    <option value="Gasolina">Gasolina</option>
-                    <option value="Mixto">(Gasolina y Gas)</option>
+                  <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" required>
                 </div>
               </div>
 
@@ -132,13 +126,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Unidad</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="unidad" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""></option>
-                    <option value="USMI">USMI</option>
-                    <option value="UDLP">UDLP</option>
-                    <option value="UDPP">UDPP</option>
-                    <option value="UDIT">UDIT</option>
-                  </select>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['tipoCombustible']; ?>" required>
                 </div>
               </div>
 
@@ -170,13 +158,15 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="pertenece"  autocomplete="off" required>
+                <input class="form-control" list="item" type="text" name="pertenece" autocomplete="off" required>
+                  <datalist id="item">
+                    <option  selected value="ABAE">ABAE</option>
+                    </datalist>
                 </div>
-              </div>
-            </div><!-- /.box body -->
+              </div><!-- /.box body -->
 
             <div class="box-footer">
               <div class="form-group">
@@ -310,7 +300,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>      
 
