@@ -37,7 +37,7 @@ function validarExt()
   </script>
 
 <section class="content-header">
-  <h1>
+  <h2>
     <i class="fa fa-sign-in icon-title"></i> Control de Inmuebles
      
     <form action="database/excel_to_mysql_control_inmuebles.php" method="POST" enctype="multipart/form-data">
@@ -57,7 +57,7 @@ function validarExt()
       </a>
 
     </form>
-  </h1>
+  </h2>
  <br/> 
 </section>
 <br/>

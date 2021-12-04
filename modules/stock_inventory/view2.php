@@ -41,9 +41,9 @@
 </script>
 
 <section class="content-header">
-  <h1>
+  <h2>
     <i class="fa fa-edit icon-title"></i> Reportes
-  </h1>
+  </h2>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
     <li><a href="?module=inventario"> Agregar </a></li>

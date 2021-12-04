@@ -1,12 +1,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  <h1>
-    <i class="fa fa-file-text-o icon-title"></i>Control de movimientos de equipos
-  </h1>
+  <h2>
+    <i class="fa fa-calendar-o icon-title"></i> Control de Movimientos
+  </h2>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio</a></li>
     <li class="active">Informe</li>
-    <li class="active"> Control de movimientos</li>
+    <li class="active"> Control de Movimientos</li>
   </ol>
 </section>
 
@@ -14,84 +14,320 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      
       <div class="box box-primary">
-        <!-- form start -->
-        <form role="form" class="form-horizontal" method="GET" action="modules/stock_report/print.php" target="_blank">
-          <div class="box-body">
+        <div role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
+            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Control de Biblioteca</a></li>
+            <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab"> Control de Vehiculos </a></li>
+            <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Control de Inmuebles </a></li>
+          </ul>
 
-            <div class="form-group">
-              <label class="col-sm-1">Fecha</label>
-              <div class="col-sm-2">
-                <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
-              </div>
 
-              <label class="col-sm-1">Hasta</label>
-              <div class="col-sm-2">
-                <input style="margin-left:-35px" type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
-              </div>
+          <!-- EQUIPOS -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="equipos">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" method="GET" action="modules/stock_report/print.php" target="_blank">
+             <div class="box-body">
+             </br>
+               <h4 class="text-center">
+                <i class="fa fa-archive"></i> Control de Equipos: 
+               </h4>
+               </br> </br>
+                <table class="table table-striped table-hover">
+                      <thead>
+                      <tr>
+                        </tr>
+                        <tr>
+                          <th class="center" width='100'>FECHA:</th>
+                          <th width='300'>
+                             <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
+                          </th>
+                         
+                          <th class="center" width='100'>HASTA:</th>
+                          <th  width='300'> 
+                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
+                          </th>
+                          <th>
+                             <button   type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                               <i class="fa fa-print"></i> Imprimir
+                             </button>
+                          </th>                   
+                        </tr>
+               </div>
+               </form>
+               </thead>
+              </table>
+                       
+</br></br> </br>      
+                        <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
+                          
+                        <table  class="table table-bordered table-striped table-hover">
+                      <thead>
+                          <th class="center" width='130'>FILTRAR POR:</th>
+                          <th>
+                          <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
+                                 <option value=""></option>
+                                <option value="codigo_transaccion">Cod. Transaccion</option>
+                               <option value="tipo_transaccion">Tipo. Transaccion</option>
+                               <option value="cedula_e">Cedula Resp. entrega</option>
+                                <option value="cedula_r">Cedula Resp. recibe</option>
+                                <option value="created_date">Fecha (AAAA-MM-DD)</option>
+                                 <option value="empresa">Empresa</option>
+                                </select>
+                          </th>
+                          
+                          <th  > 
+                          <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
+                          </th>
+                          <th  width='100'> <input style="width: 100px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_report.php" type="submit" value="Filtrar" />
+                          </th> 
+                          <th width='1000' > </th> 
+                         
+
+                        </form>                 
+                        </tr>
+
+                      </thead>
+                    </table>
+                    </br></br> 
+            
             </div>
-        
-          
-          <div class="box-footer">
-            <div class="form-group">
-              <div class="col-sm-offset-1 col-sm-11">
-                <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
-                  <i class="fa fa-print"></i> Imprimir
-                </button>
-              </div>
             </div>
-          </div>
-          
-        </form>
-      </div><!-- /.box -->
-    </div><!--/.col -->
-  </div>   <!-- /.row -->
 
+            <!--BIBLIOTECA-->
+            <div role="tabpanel" class="tab-pane" id="biblioteca">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_biblioteca.php" method="POST">
+                <div class="box-body">
 
-    <section class="content">
-      <div class="row">
-       <div class="col-md-12">
-    
-        <div class="box box-primary">
-        <div class="box-body">
-              <div class="form-group">
-              <label class="col-sm-1">Filtrar por:</label>
-      
-          <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
-          <div class="form-group input-group-sm" >
-            <div class="col-sm-2">
-                  <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
-                    <option value=""></option>
-                    <option value="codigo_transaccion">Cod. Transaccion</option>
-                    <option value="tipo_transaccion">Tipo. Transaccion</option>
-                    <option value="cedula_e">Cedula Resp. entrega</option>
-                    <option value="cedula_r">Cedula Resp. recibe</option>
-                    <option value="created_date">Fecha (AAAA-MM-DD)</option>
-                    <option value="codigo">Codigo</option>
-                    <option value="motivo">Motivo</option>
-                    <option value="empresa">Empresa</option>
-              
-                  </select>
-            </div>
-          </div>
-                <!--<input class="col-mb-3 control-label" type="text" name="nombre" value="" placeholder="">-->
-                <div class="col-sm-2" >
-                  <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_bibliotecas.php" target="_blank">
+                  </br>
+               <h4 class="text-center">
+                <i class="fa fa-book"></i> Control de Biblioteca: 
+               </h4>
+               </br> </br>
+                  <table class="table table-striped table-hover">
+                      <thead>
+                      <tr>
+                        </tr>
+                        <tr>
+                          <th class="center" width='100'>FECHA:</th>
+                          <th width='300'>
+                             <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
+                          </th>
+                         
+                          <th class="center" width='100'>HASTA:</th>
+                          <th  width='300'> 
+                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
+                          </th>
+                          <th>
+                             <button   type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                               <i class="fa fa-print"></i> Imprimir
+                             </button>
+                          </th>                   
+                        </tr>
+               </div>
+               </form>
+               </thead>
+              </table>
+                       
+</br></br> </br>      
+                        <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
+                          
+                        <table  class="table table-bordered table-striped table-hover">
+                      <thead>
+                          <th class="center" width='130'>FILTRAR POR:</th>
+                          <th width='180'>
+                          <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
+                                 <option value=""></option>
+                                <option value="codigo_transaccion">Cod. Transaccion</option>
+                               <option value="tipo_transaccion">Tipo. Transaccion</option>
+                               <option value="cedula_e">Cedula Resp. entrega</option>
+                                <option value="cedula_r">Cedula Resp. recibe</option>
+                                <option value="created_date">Fecha (AAAA-MM-DD)</option>
+                                 <option value="empresa">Empresa</option>
+                                </select>
+                          </th>
+                          
+                          <th  > 
+                          <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
+                          </th>
+                          <th> <input style="width: 100px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_report.php" type="submit" value="Filtrar" />
+                          </th> 
+                          <th width='1000' > </th> 
+                         
+
+                        </form>                 
+                        </tr>
+
+                      </thead>
+                    </table>
+                    </br></br> 
+
                 </div>
-                <div class="col-2">
-                  <input class="btn btn-primary" href="modules/stock_report/print.php" type="submit" value="Filtrar" />
+              </form>
             </div>
-       
-            </form>
-            </div>
-        </div>
-        </div>
-</div>
-</div>
-</div>
 
-      </div><!-- /.box -->
-    </div><!--/.col -->
-  </div>   <!-- /.row -->
-</section><!-- /.conten -->
+
+            <!--VEHICULOS-->
+            <div role="tabpanel" class="tab-pane" id="vehiculos">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_vehiculos.php" method="POST">
+                <div class="box-body">
+
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_vehiculos.php" target="_blank">
+
+                  </br>
+               <h4 class="text-center">
+                <i class="fa fa-car"></i> Control de Vehiculos: 
+               </h4>
+               </br> </br>
+
+                  <table class="table table-striped table-hover">
+                      <thead>
+                      <tr>
+                        </tr>
+                        <tr>
+                          <th class="center" width='100'>FECHA:</th>
+                          <th width='300'>
+                             <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
+                          </th>
+                         
+                          <th class="center" width='100'>HASTA:</th>
+                          <th  width='300'> 
+                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
+                          </th>
+                          <th>
+                             <button   type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                               <i class="fa fa-print"></i> Imprimir
+                             </button>
+                          </th>                   
+                        </tr>
+               </div>
+               </form>
+               </thead>
+              </table>
+                       
+</br></br> </br>      
+                        <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
+                          
+                        <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                          <th class="center" width='130'>FILTRAR POR:</th>
+                          <th width='180'>
+                          <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
+                                 <option value=""></option>
+                                <option value="codigo_transaccion">Cod. Transaccion</option>
+                               <option value="tipo_transaccion">Tipo. Transaccion</option>
+                               <option value="cedula_e">Cedula Resp. entrega</option>
+                                <option value="cedula_r">Cedula Resp. recibe</option>
+                                <option value="created_date">Fecha (AAAA-MM-DD)</option>
+                                 <option value="empresa">Empresa</option>
+                                </select>
+                          </th>
+                          
+                          <th  > 
+                          <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
+                          </th>
+                          <th > <input style="width: 100px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_report.php" type="submit" value="Filtrar" />
+                          </th> 
+                          <th width='1000' > </th> 
+                         
+
+                        </form>                 
+                        </tr>
+
+                      </thead>
+                    </table>
+                    </br></br> 
+
+                </div>
+              </form>
+            </div>
+
+            <!--INMUEBLES-->
+            <div role="tabpanel" class="tab-pane" id="inmuebles">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_inmuebles.php" method="POST">
+                <div class="box-body">
+
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_inmuebles.php" target="_blank">
+                  </br>
+               <h4 class="text-center">
+                <i class="fa fa-home"></i> Control de Inmuebles: 
+               </h4>
+               </br> </br>
+
+                  <table class="table table-striped table-hover">
+                      <thead>
+                      <tr>
+                        </tr>
+                        <tr>
+                          <th class="center" width='100'>FECHA:</th>
+                          <th width='300'>
+                             <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
+                          </th>
+                         
+                          <th class="center" width='100'>HASTA:</th>
+                          <th  width='300'> 
+                            <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
+                          </th>
+                          <th>
+                             <button   type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                               <i class="fa fa-print"></i> Imprimir
+                             </button>
+                          </th>                   
+                        </tr>
+               </div>
+               </form>
+               </thead>
+              </table>
+                       
+</br></br> </br>      
+                        <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
+                          
+                        <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                          <th class="center" width='130'>FILTRAR POR:</th>
+                          <th width='180'>
+                          <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
+                                 <option value=""></option>
+                                <option value="codigo_transaccion">Cod. Transaccion</option>
+                               <option value="tipo_transaccion">Tipo. Transaccion</option>
+                               <option value="cedula_e">Cedula Resp. entrega</option>
+                                <option value="cedula_r">Cedula Resp. recibe</option>
+                                <option value="created_date">Fecha (AAAA-MM-DD)</option>
+                                 <option value="empresa">Empresa</option>
+                                </select>
+                          </th>
+                          
+                          <th  > 
+                          <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
+                          </th>
+                          <th > <input style="width: 100px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_report.php" type="submit" value="Filtrar" />
+                          </th> 
+                          <th width='1000' > </th> 
+                         
+
+                        </form>                 
+                        </tr>
+
+                      </thead>
+                    </table>
+                    </br></br> 
+
+                </div>
+              </form>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</section><!-- /.content-->
+
