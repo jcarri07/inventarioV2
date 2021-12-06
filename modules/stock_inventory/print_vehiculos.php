@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
 
 
     <div id="title">
-        REPORTE DE INVENTARIO VEHICULOS
+        REPORTE DE INVENTARIO (VEHICULOS)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
