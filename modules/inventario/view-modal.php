@@ -112,7 +112,7 @@ function validarExt()
 
                 /*$(document).ready( function () {
                 $('#dataTables1').DataTable();*/
-            } );
+            // } );
       
             $(document).ready(function(){
               load(1);

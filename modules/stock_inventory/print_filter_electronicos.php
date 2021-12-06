@@ -13,14 +13,15 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, pe
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre'];
-$var2 = $_POST['nombre2'];
-$var3 = $_POST['nombre3'];
-$filtro = $_POST['filtrado_inmuebles'];
+$var = $_POST['filtro_elect'];
+$var2 = $_POST['filtro_elect2'];
+$var3 = $_POST['filtro_elect3'];
+
+$filtro = $_POST['filtrado_elect'];
 trim($filtro);
-$filtro2 = $_POST['filtrado_inmuebles2'];
+$filtro2 = $_POST['filtrado2_elect'];
 trim($filtro2);
-$filtro3 = $_POST['filtrado_inmuebles3'];
+$filtro3 = $_POST['filtrado3_elect'];
 trim($filtro3);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
@@ -30,21 +31,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%'")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -114,19 +115,21 @@ if ($var != "" && $var2 != "" && $var3 != "") {
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>NO.</small></th>
+                    <th class="center">No.</th>
                     <th class="center">CODIGO</th>
                     <th class="center">DESCRIPCION</th>
-                    <th class="center">METROS CUADRADOS</th>
-                    <th class="center">UBICACION</th>
-                    <th class="center">DIRECCION</th>
-                    <th class="center">TIPO</th>
-                    <th class="center">NRO CUARTOS</th>
+                    <th class="center">MARCA</th>
+                    <th class="center">MODELO</th>
+                    <th class="center">SERIAL</th>
+                    <th class="center">N_BIEN</th>
+                    <th class="center">COLOR</th>
                     <th class="center">CONDICION</th>
-                    <th class="center">PISOS</th>
+                    <th class="center">DIREC/UNIDAD</th>
                     <th class="center">RESPONSABLE</th>
                     <th class="center">CEDULA</th>
-                    <th class="center">NRO HABITANTES</th>
+                    <th class="center">UBICACION</th>
+                    <th class="center">SEDE</th>
+                    <th class="center">PERTENECE</th>
                     <th class="center">EDITAR</th>
                 </tr>
             </thead>
@@ -137,20 +140,22 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 
                     echo "  <tr>
-                      <td width='25' height='13' align='center' valign='middle'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[metrosCuadrados]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[direccion]</td>
-                      <td width='90' class='center'>$data[tipo]</td>
-                      <td width='90' class='center'>$data[nmroCuartos]</td>
-                      <td width='50' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[pisos]</td>
-                      <td width='90' class='center'>$data[responsable]</td>
-                      <td width='50' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[habitantes]</td>               
-                    </tr>";
+                <td width='30' class='center'>$no</td>
+                <td width='50' class='center'>$data[codigo]</td>
+                <td width='90' class='center'>$data[descripcion]</td>
+                <td width='90' class='center'>$data[marca]</td>
+                <td width='90' class='center'>$data[modelo]</td>
+                <td width='90' class='center'>$data[serial]</td>
+                <td width='90' class='center'>$data[bienesN]</td>
+                <td width='90' class='center'>$data[color]</td>
+                <td width='90' class='center'>$data[condicion]</td>
+                <td width='90' class='center'>$data[unidad]</td>
+                <td width='130' class='center'>$data[responsable]</td>
+                <td width='90' class='center'>$data[cedula]</td>
+                <td width='90' class='center'>$data[ubicacion]</td>
+                <td width='90' class='center'>$data[sede]</td>
+                <td width='90' class='center'>$data[pertenece]</td>                           
+                </tr>";
                     $no++;
                 }
                 ?>
@@ -161,7 +166,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO INMUEBLES.pdf";
+$filename = "REPORTE DE INVENTARIO FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

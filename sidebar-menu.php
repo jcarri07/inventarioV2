@@ -336,21 +336,6 @@ elseif ($_SESSION['permisos_acceso'] == 'Trabajador') { ?>
 		<?php
 		}
 
-		//Inventarios
-		/*if ($_GET["module"]=="inventario" || $_GET["module"]=="form_inventario") { ?>
-    <li class="active">
-      <a href="?module=inventario"><i class="fa fa-folder"></i> Inventarios </a>
-      </li>
-  <?php
-  }
-
-  else { ?>
-    <li>
-      <a href="?module=inventario"><i class="fa fa-folder"></i> Inventarios </a>
-      </li>
-  <?php
-  }*/
-
 		//Informes
 		if ($_GET["module"] == "stock_inventory") { ?>
 			<li class="active treeview">

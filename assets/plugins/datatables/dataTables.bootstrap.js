@@ -4,9 +4,9 @@ $.extend( true, $.fn.dataTable.defaults, {
 		"<'row'<'col-xs-6'l><'col-xs-6'f>r>"+
 		"t"+
 		"<'row'<'col-xs-6'i><'col-xs-6'p>>",
-	"oLanguage": {
-		 "Mostrar _MENU_ registros",
-	}
+	"oLanguage": 
+		 "Mostrar _MENU_ registros"
+	
 } );
 
 

@@ -40,14 +40,13 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		include "modules/equiposcientificos_electricos/form.php";
 	}
 	
-
-		//equipos inmuebles
-		elseif ($_GET['module'] == 'inmuebles') {
-			include "modules/inmuebles/view.php";
+	//equipos inmuebles
+	elseif ($_GET['module'] == 'inmuebles') {
+		include "modules/inmuebles/view.php";
 	
-		} elseif ($_GET['module'] == 'form_inmuebles') {
-			include "modules/inmuebles/form.php";
-		} 
+	} elseif ($_GET['module'] == 'form_inmuebles') {
+		include "modules/inmuebles/form.php";
+	} 
 
 	//Equipos de seguridad
 	elseif ($_GET['module'] == 'equipos_seguridad') {

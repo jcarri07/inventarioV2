@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
 
 
     <div id="title">
-        REPORTE DE INVENTARIO
+        REPORTE DE INVENTARIO VEHICULOS
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -89,17 +89,13 @@ $count  = mysqli_num_rows($query);
                     <th class="center">MODELO</th>
                     <th class="center">PLACA</th>
                     <th class="center">COLOR</th>
-                    <th class="center">CILINDROS</th>
-                    <th class="center">TRANSMISION</th>
                     <th class="center">TIPO COMBUSTIBLE</th>
                     <th class="center">Nº CARROCERIA</th>
                     <th class="center">CONDICION</th>
                     <th class="center">UNIDAD</th>
                     <th class="center">UBICACION</th>
                     <th class="center">SEDE</th>
-                    <th class="center">RESGUARDO</th>
                     <th class="center">RESPONSABLE</th>
-                    <th class="center">SERVICIO</th>
                 </tr>
             </thead>
             <tbody>
@@ -116,17 +112,13 @@ $count  = mysqli_num_rows($query);
                 <td width='80' class='center'>$data[modelo]</td>
                 <td width='80' class='center'>$data[placa]</td>
                 <td width='80' class='center'>$data[color]</td>
-                <td width='80' class='center'>$data[cilindros]</td>
-                <td width='80' class='center'>$data[transmision]</td>
                 <td width='50' class='center'>$data[tipoCombustible]</td>
                 <td width='80' class='center'>$data[nmroCarroceria]</td>
                 <td width='50' class='center'>$data[condicion]</td>
                 <td width='80' class='center'>$data[unidad]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[resguardo]</td>
-                <td width='90' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[servicio]</td>                       
+                <td width='90' class='center'>$data[responsable]</td>                       
             </tr>";
                     $no++;
                 }

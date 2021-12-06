@@ -55,7 +55,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIO</title>
+    <title>REPORTE DE INVENTARIO (COMUNICACION)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 
 </head>
@@ -86,7 +86,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     </div>
 
     <div id="title-tanggal">
-        Filtrando: <?php echo $filtro . " " . "=" . " " . $var; ?>
+         <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
 
@@ -147,7 +149,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 <td width='90' class='center'>$data[color]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[nombre]</td>
+                <td width='130' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[cedula]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>

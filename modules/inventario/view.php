@@ -265,12 +265,20 @@ modalpdf.modal('show');
             
             ?>
 
-           <a class="btn btn-primary pull-right" href="modules/inventario/proses.php?act=reset"  style="height:35px;">
+           <a class="btn btn-primary pull-right" id="reset"  style="height:35px;">
             <i></i> Reset Check
            </a>
 
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+            <script>
+              btn = document.getElementById("reset");
+              btn.addEventListener("click", ()=> {
+                if(confirm("Deseas quitar el chequeo de todos los equipos?")) {
+                    window.location.href = "modules/inventario/proses.php?act=reset";
+                  } 
+              })
+            </script>
             <script>
 
 
