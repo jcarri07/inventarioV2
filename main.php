@@ -14,7 +14,6 @@ session_start();
     
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" />
-
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->
@@ -236,7 +235,6 @@ session_start();
               </div>
           </div>
         </div>
-
       <footer class="main-footer">
         
       </footer>

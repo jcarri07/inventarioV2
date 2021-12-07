@@ -86,7 +86,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     </div>
 
     <div id="title-tanggal">
-        Filtrando: <?php echo $filtro . " " . "=" . " " . $var; ?>
+    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
 
@@ -127,7 +129,6 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     <th class="center" align="center" valign="middle">RESPONSABLE</th>
                     <th class="center" align="center" valign="middle">CEDULA</th>
                     <th class="center" align="center" valign="middle">COLOR</th>
-                    <th class="center" align="center" valign="middle">ENVOLTURA</th>
                     <th class="center" align="center" valign="middle">CANTIDAD</th>
                 </tr>
             </thead>
@@ -143,7 +144,6 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                         <td width='100' height='13' align='center' valign='middle'>$data[autor]</td>
                         <td width='100' height='13' align='center' valign='middle'>$data[editorial]</td>                       
                         <td width='50' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[isbn]</td>
-                        <td width='50' height='13' align='center' valign='middle'>$data[envoltura]</td>
                         <td width='50' height='13' align='center' valign='middle'>$data[color]</td>                        
                         <td width='30' style='padding-left:5px;' height='15' align='center' valign='middle'>$data[bienesN]</td>                       
                         <td width='50' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[condicion]</td>

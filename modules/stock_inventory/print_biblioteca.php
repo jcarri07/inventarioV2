@@ -56,7 +56,7 @@ $count  = mysqli_num_rows($query);
 
 
     <div id="title">
-        REPORTE DE INVENTARIO
+        REPORTE DE INVENTARIO (BIBLIOTECA)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -96,7 +96,6 @@ $count  = mysqli_num_rows($query);
                     <th class="center">RESPONSABLE</th>
                     <th class="center">SEDE</th>
                     <th class="center">COLOR</th>
-                    <th class="center">ENVOLTURA</th>
                     <th class="center">CANTIDAD</th>>
                 </tr>
             </thead>
@@ -119,8 +118,7 @@ $count  = mysqli_num_rows($query);
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='50' class='center'>$data[responsable]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[envoltura]</td>  
+                <td width='90' class='center'>$data[color]</td> 
                 <td width='90' class='center'>$data[cantidad]</td>                        
                 </tr>";
                     $no++;

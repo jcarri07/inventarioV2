@@ -86,7 +86,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     </div>
 
     <div id="title-tanggal">
-        Filtrando: <?php echo $filtro . " " . "=" . " " . $var; ?>
+    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
 
@@ -119,17 +121,13 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     <th class="center">MODELO</th>
                     <th class="center">PLACA</th>
                     <th class="center">COLOR</th>
-                    <th class="center">CILINDROS</th>
-                    <th class="center">TRANSMISION</th>
                     <th class="center">TIPO COMBUSTIBLE</th>
                     <th class="center">Nº CARROCERIA</th>
                     <th class="center">CONDICION</th>
                     <th class="center">UNIDAD</th>
                     <th class="center">UBICACION</th>
                     <th class="center">SEDE</th>
-                    <th class="center">RESGUARDO</th>
                     <th class="center">RESPONSABLE</th>
-                    <th class="center">SERVICIO</th>
                 </tr>
             </thead>
             <tbody>
@@ -146,17 +144,14 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 <td width='80' class='center'>$data[modelo]</td>
                 <td width='80' class='center'>$data[placa]</td>
                 <td width='80' class='center'>$data[color]</td>
-                <td width='80' class='center'>$data[cilindros]</td>
-                <td width='80' class='center'>$data[transmision]</td>
                 <td width='50' class='center'>$data[tipoCombustible]</td>
                 <td width='80' class='center'>$data[nmroCarroceria]</td>
                 <td width='50' class='center'>$data[condicion]</td>
                 <td width='80' class='center'>$data[unidad]</td>
                 <td width='90' class='center'>$data[ubicacion]</td>
                 <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[resguardo]</td>
                 <td width='90' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[servicio]</td>                       
+                                  
                 </tr>";
                     $no++;
                 }

@@ -19,7 +19,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Seguridad' ORDER BY codigo ASC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
 
 
     <div id="title">
-        REPORTE DE INVENTARIO (MOBILIARIO)
+        REPORTE DE INVENTARIO (SEGURIDAD)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">

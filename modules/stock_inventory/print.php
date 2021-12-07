@@ -19,7 +19,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT codigo,descripcion,marca,modelo,serial,color,bienesN,condicion,ubicacion,nombre,cedula,sede,pertenece FROM inventario ORDER BY nombre ASC")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Comunicacion' ORDER BY codigo ASC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
 
 
     <div id="title">
-        REPORTE DE INVENTARIO
+        REPORTE DE INVENTARIO (COMUNICACION)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -116,7 +116,7 @@ $count  = mysqli_num_rows($query);
                         <td width='30' style='padding-left:5px;' height='15' align='center' valign='middle'>$data[bienesN]</td>                       
                         <td width='50' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[condicion]</td>
                         <td width='50' height='13' align='center' valign='middle'>$data[ubicacion]</td>                       
-                        <td width='140' height='13' align='center' valign='middle'>$data[nombre]</td>
+                        <td width='140' height='13' align='center' valign='middle'>$data[responsable]</td>
                         <td width='55' height='13' align='center' valign='middle'>$data[cedula]</td>                       
                         <td width='55' height='13' align='center' valign='middle'>$data[sede]</td>
                         <td width='40' height='13' align='center' valign='middle'>$data[pertenece]</td>                       

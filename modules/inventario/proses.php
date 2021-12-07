@@ -1,4 +1,3 @@
-
 <?php
 
 function buscaRepetido($codigo,$mysqli) {
@@ -208,6 +207,7 @@ else {
             }
 		}
 	}
+
 
 if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
         
