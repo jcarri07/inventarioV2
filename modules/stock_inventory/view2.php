@@ -1216,7 +1216,7 @@ function visible_div(){
   
 //document.getElementById("contenido");
 
-var qr= document.getElementById("contenido2");
+var qr= document.getElementById("contenido");
 console.log(qr);
 var cuerpo = $('#cuerpoModal');
 
@@ -1224,10 +1224,10 @@ qr.addEventListener("click",
   function(e){
     
     if(e.target.id=="qr"){
-      //console.log(qr);
-      //console.log(e.target.firstChild.nextSibling.id);
+     // console.log(qr);
+     // console.log(e.target.firstChild.nextSibling.id);
       serial = e.target.firstChild.nextSibling.id;
-      //console.log(e.target);
+    // console.log(e.target);
       var parametros={"textqr":serial,"sizeqr":300};
       $.ajax({
 				type: "POST",

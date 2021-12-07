@@ -8,6 +8,8 @@ $coma = ".";
 $var1=$_POST['textqr'];//Recibo la variable pasada por post
 $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
 
+
+
 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'")
                                     or die('error'.mysqli_error($mysqli));
 
@@ -52,7 +54,6 @@ $qrCode->setSize($sizeqr);//Establece el tamaño del qr
 $image= $qrCode->writeString();//Salida en formato de texto 
 
  $imageData = base64_encode($image);//Codifico la imagen usando base64_encode
-
 
 echo '<img src="data:image/png;base64,'.$imageData.'">';
 
