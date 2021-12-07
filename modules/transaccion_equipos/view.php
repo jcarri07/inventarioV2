@@ -125,9 +125,8 @@ function validarExt()
             <tbody>
             <?php  
             $no = 1;
-            $sede = $_SESSION['sede'];
             $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.nombre, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.serial, b.descripcion, b.condicion
-                                            FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo and sede LIKE '$sede'  ORDER BY codigo_transaccion DESC")
+                                            FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
            
@@ -162,35 +161,6 @@ function validarExt()
             ?>
             </tbody>
           </table>
-          <script src="assets/js/datatables.min.js" type="text/javascript"></script>
-            <script>
-
-
-                $(document).ready( function () {
-                $('#dataTables1').DataTable();
-            } );
-      
-            $(document).ready(function(){
-              load(1);
-            });
-
-            function load(page){
-              var parametros = {"action":"ajax","page":page};
-              $("#loader").fadeIn('slow');
-              $.ajax({
-              url:'paises_ajax.php',
-              data: parametros,
-              beforeSend: function(objeto){
-              $("#loader").html("<img src='loader.gif'>");
-            },
-
-            success:function(data){
-              $(".outer_div").html(data).fadeIn('slow');
-              $("#loader").html("");
-            }
-            })
-          }
-          </script>
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!--/.col -->

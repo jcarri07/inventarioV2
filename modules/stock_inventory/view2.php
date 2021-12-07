@@ -858,8 +858,8 @@
               </form>
             </div>
 
-
             <!--VEHICULOS-->
+            
             <div role="tabpanel" class="tab-pane" id="vehiculos">
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_vehiculos.php" method="POST" target="_blank">
