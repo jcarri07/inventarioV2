@@ -229,34 +229,6 @@ function validarExt()
 
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
-            <script>
-
-
-                $(document).ready( function () {
-                $('#dataTables1').DataTable();
-            } );
-      
-            $(document).ready(function(){
-              load(1);
-            });
-
-            function load(page){
-              var parametros = {"action":"ajax","page":page};
-              $("#loader").fadeIn('slow');
-              $.ajax({
-              url:'paises_ajax.php',
-              data: parametros,
-              beforeSend: function(objeto){
-              $("#loader").html("<img src='loader.gif'>");
-            },
-
-            success:function(data){
-              $(".outer_div").html(data).fadeIn('slow');
-              $("#loader").html("");
-            }
-            })
-          }
-          </script>
             </tbody>
           </table>
         </div><!-- /.box-body -->

@@ -343,6 +343,11 @@ var idioma_español= {
 }
 
     </script>
+    <script>
+		function hola() {
+			console.log("hola");
+		}
 
+	</script>
   </body>
 </html>

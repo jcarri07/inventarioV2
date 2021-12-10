@@ -1,7 +1,8 @@
 <style>
   .botones{
     height: 36px;
-    margin-right: 2px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   input[type=file] {
@@ -53,14 +54,16 @@ function validarExt()
               Cargar Archivo
             </div>  
           </a>-->
-
+          <div class="row">
           <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_mobiliario.php" title="Exportar" data-toggle="tooltip">
-            <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
-          </a>
+              <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
+            </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_mobiliario_equipoOficina&form=add"  title="Agregar" data-toggle="tooltip">
-            <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
-          </a>
+            <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_mobiliario_equipoOficina&form=add"  title="Agregar" data-toggle="tooltip">
+              <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
+            </a>
+          </div>
+            
 
         </div>
     </form>
@@ -224,41 +227,15 @@ function validarExt()
               $no++;
             }
             ?>
-
-           <a class="btn btn-primary pull-right" href="modules/mobiliario_equipoOficina/proses.php?act=reset"  style="height:35px;">
-            <i></i> Reset Check
-           </a>
+          <div class="row" style="height:35px;">
+            <a class="btn btn-primary pull-right botones" href="modules/mobiliario_equipoOficina/proses.php?act=reset"  style="height:35px;">
+              <i></i> Reset Check
+            </a>
+          </div>
+           
 
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
-            <script>
-
-
-                $(document).ready( function () {
-                $('#dataTables1').DataTable();
-            } );
-      
-            $(document).ready(function(){
-              load(1);
-            });
-
-            function load(page){
-              var parametros = {"action":"ajax","page":page};
-              $("#loader").fadeIn('slow');
-              $.ajax({
-              url:'paises_ajax.php',
-              data: parametros,
-              beforeSend: function(objeto){
-              $("#loader").html("<img src='loader.gif'>");
-            },
-
-            success:function(data){
-              $(".outer_div").html(data).fadeIn('slow');
-              $("#loader").html("");
-            }
-            })
-          }
-          </script>
             </tbody>
           </table>
         </div><!-- /.box-body -->
