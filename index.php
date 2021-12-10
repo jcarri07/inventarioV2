@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Login | Inventario </title>
+    <title> Login | Yoseli</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Aplikasi Persediaan Obat pada Apotek">
@@ -71,8 +71,14 @@
             </div><!-- /.col -->
           </div>
         </form>
+<<<<<<< HEAD
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+=======
       </div>
     </div>
+>>>>>>> 20d7b602f8c2f03c02740d145d7c3f354c7fef28
 
     <!-- jQuery 2.1.3 -->
     <script src="assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
