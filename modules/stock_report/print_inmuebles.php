@@ -18,20 +18,20 @@ $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $hari_ini = date("d-m-Y");
 
-$tgl1     = $_GET['tgl_awal'];
+$tgl1     = $_GET['tgl_awal_inmuebles'];
 $explode  = explode('-',$tgl1);
 $tgl_awal = $explode[2]."-".$explode[1]."-".$explode[0];
 
-$tgl2      = $_GET['tgl_akhir'];
+$tgl2      = $_GET['tgl_akhir_inmuebles'];
 $explode   = explode('-',$tgl2);
 $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 
 $limit =  date("d-m-Y",strtotime($tgl_akhir."+ 1 days")); 
 
-if (isset($_GET['tgl_awal'])) {
+if (isset($_GET['tgl_awal_inmuebles'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.descripcion,b.unidad,b.cedula,b.serial
-                                    FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo
+    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.descripcion,b.direccion,b.cedula,b.tipo
+                                    FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$tgl_akhir'
                                     ORDER BY a.codigo_transaccion ASC") 
                                     or die('error '.mysqli_error($mysqli));

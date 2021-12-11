@@ -81,4 +81,4 @@
     <!-- PRUEBA -->
     <script src="assets/js/stock_inventory.js" type="text/javascript"></script>
   </body>
-</html>
+</html>0

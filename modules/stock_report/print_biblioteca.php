@@ -18,20 +18,22 @@ $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $hari_ini = date("d-m-Y");
 
-$tgl1     = $_GET['tgl_awal'];
+$tgl1     = $_GET['tgl_awal_biblioteca'];
 $explode  = explode('-',$tgl1);
 $tgl_awal = $explode[2]."-".$explode[1]."-".$explode[0];
 
-$tgl2      = $_GET['tgl_akhir'];
+$tgl2      = $_GET['tgl_akhir_biblioteca'];
 $explode   = explode('-',$tgl2);
 $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 
+
+
 $limit =  date("d-m-Y",strtotime($tgl_akhir."+ 1 days")); 
 
-if (isset($_GET['tgl_awal'])) {
+if (isset($_GET['tgl_awal_biblioteca'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.descripcion,b.unidad,b.cedula,b.serial
-                                    FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo
+    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.titulo, b.ubicacion, b.cedula, b.isbn
+                                    FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$tgl_akhir'
                                     ORDER BY a.codigo_transaccion ASC") 
                                     or die('error '.mysqli_error($mysqli));
@@ -75,6 +77,7 @@ if (isset($_GET['tgl_awal'])) {
     <table border="0.7" cellpadding="0" cellspacing="0"  style="margin: left;"  >
                 <tr>
                     <td width="90">Generado por: </td>
+                    
                     <td><?php echo $nombre ?></td>
                 </tr>
                 <tr>
@@ -138,7 +141,7 @@ if (isset($_GET['tgl_awal'])) {
                         <td style='padding-left:5px;'width='100' height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
                         <td style='padding-left:5px;' width='50' height='13' align='center' valign='middle'>$data[tipo_transaccion]</td>
                         <td style='padding-left:5px;'width='30' height='13' align='center' valign='middle'>$data[codigo]</td>
-                        <td style='padding-left:5px;'width='100' height='13' align='center' valign='middle'>$data[descripcion]</td>
+                        <td style='padding-left:5px;'width='100' height='13' align='center' valign='middle'>$data[titulo]</td>
                         <td style='padding-left:5px;' width='100' height='13' align='center' valign='middle'>$data[motivo]</td>
                         <td style='padding-left:5px;' width='70' height='13' align='center' valign='middle'>$data[entrega]</td>
                         <td style='padding-left:5px;' width='60' height='13' align='center' valign='middle'>$data[cedula_e]</td>
