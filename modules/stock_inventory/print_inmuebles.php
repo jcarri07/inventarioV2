@@ -19,7 +19,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC")
+$query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria LIKE 'Inmuebles' ORDER BY codigo ASC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
@@ -82,20 +82,20 @@ $count  = mysqli_num_rows($query);
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>NO.</small></th>
-                    <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
-                    <th height="20" align="center" valign="middle"><small>MARCA</small></th>
-                    <th height="20" align="center" valign="middle"><small>MODELO</small></th>
-                    <th height="20" align="center" valign="middle"><small>SERIAL</small></th>
-                    <th height="20" align="center" valign="middle"><small>COLOR</small></th>
-                    <th height="20" align="center" valign="middle"><small>N. BIEN</small></th>
-                    <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
-                    <th height="20" align="center" valign="middle"><small>UNIDAD</small></th>
-                    <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
-                    <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
-                    <th height="20" align="center" valign="middle"><small>SEDE</small></th>
-                    <th height="20" align="center" valign="middle"><small>PERTENECE</small></th>
+                              <th class="center">No.</th>
+                              <th class="center">CODIGO</th>
+                              <th class="center">TIPO</th>
+                              <th class="center">DESCRIPCION</th>
+                              <th class="center">M²</th>
+                              <th class="center">Nº PISOS</th>
+                              <th class="center">Nº CUARTOS</th>
+                              <th class="center">Nº HABITANTES</th>
+                              <th class="center">DIRECCION</th>
+                              <th class="center">CONDICION</th>
+                              <th class="center">RESPONSABLE</th>
+                              <th class="center">CEDULA</th>
+                              <th class="center">SEDE</th>
+                              <th class="center">EDITAR</th>
 
                 </tr>
             </thead>
@@ -106,24 +106,22 @@ $count  = mysqli_num_rows($query);
 
 
                     echo "  <tr>
-                        <td width='25' height='13' align='center' valign='middle'>$no</td>
-                        <td width='40' height='13' align='center' valign='middle'>$data[codigo]</td>                       
-                        <td width='90' height='13' align='center' valign='middle'>$data[descripcion]</td>
-                        <td width='60' height='13' align='center' valign='middle'>$data[marca]</td>                       
-                        <td width='70' height='13' align='center' valign='middle'>$data[modelo]</td>
-                        <td width='100' height='13' align='center' valign='middle'>$data[serial]</td>                       
-                        <td width='40' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[color]</td>
-                        <td width='30' style='padding-left:5px;' height='15' align='center' valign='middle'>$data[bienesN]</td>                       
-                        <td width='50' style='padding-left:5px;' height='13' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='50' height='13' align='center' valign='middle'>$data[ubicacion]</td>                       
-                        <td width='140' height='13' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='55' height='13' align='center' valign='middle'>$data[cedula]</td>                       
-                        <td width='55' height='13' align='center' valign='middle'>$data[sede]</td>
-                        <td width='40' height='13' align='center' valign='middle'>$data[pertenece]</td>                       
-                
+                            <td width='30' class='center'>$no</td>
+                            <td width='50' class='center'>$data[codigo]</td>
+                            <td width='90' class='center'>$data[tipo]</td>
+                            <td width='90' class='center'>$data[descripcion]</td>
+                            <td width='90' class='center'>$data[metrosCuadrados]</td>
+                            <td width='90' class='center'>$data[pisos]</td>
+                            <td width='90' class='center'>$data[nmroCuartos]</td>
+                            <td width='50' class='center'>$data[habitantes]</td>
+                            <td width='50' class='center'>$data[direccion]</td>
+                            <td width='90' class='center'>$data[condicion]</td>
+                            <td width='90' class='center'>$data[responsable]</td>
+                            <td width='50' class='center'>$data[cedula]</td>
+                            <td width='90' class='center'>$data[sede]</td>                      
                     </tr>";
                     $no++;
-                }
+                } 
                 ?>
             </tbody>
         </table>
