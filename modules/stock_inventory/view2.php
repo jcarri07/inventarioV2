@@ -65,6 +65,7 @@
             <li role="presentation"><a href="#seguridad" aria-controls="" data-toggle="tab" role="tab">Seguridad</a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehiculos</a></li>
+            <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles</a></li>
           </ul>
 
           <!-- COMUNICACION -->
@@ -983,6 +984,140 @@
               </div>
             </form>
           </div>
+
+            <!--INMUEBLES-->
+
+            <div role="tabpanel" class="tab-pane" id="inmuebles">
+              <!-- form start -->
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_inmuebles.php" method="POST" target="_blank">
+                <div class="box-body">
+
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_inmuebles.php" target="_blank">
+
+                    <table id="dataTables1" class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th class="center">
+                            <input list="items_inmuebles" type="text" name="filtrado_inmuebles" id="filtrado_inmuebles" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_inmuebles">
+                              <option value=""></option>
+                              <option value="titulo"></option>
+                              <option value="codigo"></option>
+                              <option value="isbn"></option>
+                              <option value="bienesN"></option>
+                              <option value="autor"></option>
+                              <option value="tipo"></option>
+                              <option value="color"></option>
+                              <option value="editorial"></option>
+                              <option value="codicion"></option>
+                              <option value="ubicacion"></option>
+                              <option value="responsable"></option>
+                              <option value="cedula"></option>
+                              <option value="sede"></option>
+                            </datalist>
+                          </th>
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
+                              <i style="color:#fff" class="fa fa-minus"></i>
+                          </th>
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_v">
+                              <i style="color:#fff" class="fa fa-plus"></i>
+                          </th>
+
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --" ></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --" ></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
+                      </tr>
+                    </table>
+                  </form>
+                  </br>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box box-primary">
+                        <div class="box-body" id="contenido">
+
+                          <section>
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_inmuebles.php" target="_blank">
+                              <i class="fa fa-print"></i> Imprimir
+                            </a>
+                            </br>
+                          </section>
+
+                          <table id="dataTables2" class="table table-bordered table-striped table-hover">
+                            <thead>
+                              <tr>
+                              <th class="center">No.</th>
+                              <th class="center">CODIGO</th>
+                              <th class="center">TIPO</th>
+                              <th class="center">DESCRIPCION</th>
+                              <th class="center">M²</th>
+                              <th class="center">Nº PISOS</th>
+                              <th class="center">Nº CUARTOS</th>
+                              <th class="center">Nº HABITANTES</th>
+                              <th class="center">DIRECCION</th>
+                              <th class="center">CONDICION</th>
+                              <th class="center">RESPONSABLE</th>
+                              <th class="center">CEDULA</th>
+                              <th class="center">SEDE</th>
+                              <th class="center">EDITAR</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              $no = 1;
+
+                              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' ORDER BY codigo ASC")
+                                or die('error: ' . mysqli_error($mysqli));
+
+                              while ($data = mysqli_fetch_assoc($query)) {
+
+                                echo "<tr>
+                                  <td width='30' class='center'>$no</td>
+                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='90' class='center'>$data[tipo]</td>
+                                  <td width='90' class='center'>$data[descripcion]</td>
+                                  <td width='90' class='center'>$data[metrosCuadrados]</td>
+                                  <td width='90' class='center'>$data[pisos]</td>
+                                  <td width='90' class='center'>$data[nmroCuartos]</td>
+                                  <td width='50' class='center'>$data[habitantes]</td>
+                                  <td width='50' class='center'>$data[direccion]</td>
+                                  <td width='90' class='center'>$data[condicion]</td>
+                                  <td width='90' class='center'>$data[responsable]</td>
+                                  <td width='50' class='center'>$data[cedula]</td>
+                                  <td width='90' class='center'>$data[sede]</td>         
+                                  <td class='center'  width='100'>
+                                <div>
+      
+                              <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
+                                    <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              </a>";
+
+                                $no++;
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.box -->
+                    </div>
+                    <!--/.col -->
+                  </div> <!-- /.row -->
+
+                </div>
+              </form>
+            </div>
+
+
+
+
+
         </div>
       </div>
     </div>
