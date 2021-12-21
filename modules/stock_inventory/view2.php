@@ -1488,9 +1488,9 @@
 </script>
 
 <script>
+  
   //document.getElementById("contenido");
-
-  var qr = document.getElementById("contenido2");
+  var qr = document.getElementById("contenido");
   console.log(qr);
   var cuerpo = $('#cuerpoModal');
 
@@ -1499,6 +1499,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1526,7 +1527,7 @@
   );
 
   $("#qr").click(function(event) {
-    //console.log(this.id);
+    console.log("HOLAaaaaaa");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
