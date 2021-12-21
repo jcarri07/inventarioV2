@@ -17,7 +17,7 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
+            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Control de Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab"> Control de Vehiculos </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Control de Inmuebles </a></li>
