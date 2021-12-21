@@ -1001,33 +1001,32 @@
                             <input list="items_inmuebles" type="text" name="filtrado_inmuebles" id="filtrado_inmuebles" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_inmuebles">
                               <option value=""></option>
-                              <option value="titulo"></option>
-                              <option value="codigo"></option>
-                              <option value="isbn"></option>
-                              <option value="bienesN"></option>
-                              <option value="autor"></option>
                               <option value="tipo"></option>
-                              <option value="color"></option>
-                              <option value="editorial"></option>
-                              <option value="codicion"></option>
-                              <option value="ubicacion"></option>
+                              <option value="codigo"></option>
+                              <option value="descripcion"></option>
+                              <option value="metrosCuadrados"></option>
+                              <option value="pisos"></option>
+                              <option value="nmroCuartos"></option>
+                              <option value="habitantes"></option>
+                              <option value="direccion"></option>
+                              <option value="condicion"></option>
                               <option value="responsable"></option>
                               <option value="cedula"></option>
-                              <option value="sede"></option>
+                              <option value="sede "></option>
                             </datalist>
                           </th>
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
+                          <th class="center"><input list="items_inmuebles" type="text" name="filtrado_inmuebles2" id="filtrado_inmuebles2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_inmuebles" type="text" name="filtrado_inmuebles3" id="filtrado_inmuebles3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="ivbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_v">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="ivbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --" ></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --" ></th>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fi" value="" placeholder="-- Filtro 1 --" ></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fi2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fi3" value="" placeholder="-- Filtro 3 --" ></th>
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                           <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
@@ -1113,11 +1112,6 @@
                 </div>
               </form>
             </div>
-
-
-
-
-
         </div>
       </div>
     </div>
@@ -1484,6 +1478,55 @@
       vbsermelementos2.push(vbsermelement2);
       vbsermelementos[1].style.display = '';
       vbsermelementos2[1].style.display = '';     
+  }})
+</script>
+
+<script name="filtros_Inmubles"type="text/javascript">
+  // VEHICULOS
+
+  //SELECCION DEL FILTRO
+  var ivbsermelementos = [ivbsermelemento = document.getElementById("filtrado_inmuebles2"), ivbsermelemento2 = document.getElementById("filtrado_inmuebles3")];
+  
+  //INPUT DEL FILTRO
+  var ivbsermelementos2 = [ivbsermelement = document.getElementById("fi2"), ivbsermelement2 = document.getElementById("fi3")];
+  
+  //BOTONES PARA OCULTAR Y !OCULTAR
+  btn_ocultar = document.getElementById("ivbtn_o");
+  btn_visible = document.getElementById("ivbtn_v"); 
+  
+  //FUNCION PARA OCULTAR
+  btn_ocultar.addEventListener("click",()=>{
+    if (ivbsermelementos.length > 1) {
+      ivbsermelementos2[1].style.display = 'none';
+      ivbsermelementos[1].style.display = 'none';
+      ivbsermelementos[1].value = "";
+      ivbsermelementos2[1].value = "";
+      var ultimo = ivbsermelementos.pop();
+      var ultimox = ivbsermelementos2.pop();
+
+    } else if (ivbsermelementos.length == 1) {
+      ivbsermelementos2[0].style.display = 'none';
+      ivbsermelementos[0].style.display = 'none';
+      ivbsermelementos[0].value = "";
+      ivbsermelementos2[0].value = "";
+      var ultimo = ivbsermelementos.pop();
+      var ultimox = ivbsermelementos2.pop();
+    }
+  })
+
+  //FUNCION PARA !OCULTAR
+  btn_visible.addEventListener("click", ()=>{
+    if (ivbsermelementos.length < 1) {
+      ivbsermelementos.push(ivbsermelemento);
+      ivbsermelementos2.push(ivbsermelement);
+      ivbsermelementos[0].style.display = '';
+      ivbsermelementos2[0].style.display = '';
+
+    } else if (ivbsermelementos.length < 2) {
+      ivbsermelementos.push(ivbsermelemento2);
+      ivbsermelementos2.push(ivbsermelement2);
+      ivbsermelementos[1].style.display = '';
+      ivbsermelementos2[1].style.display = '';     
   }})
 </script>
 
