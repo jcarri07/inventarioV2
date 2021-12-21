@@ -143,9 +143,7 @@ session_start();
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-      </div><!-- /.content-wrapper -->
-
-      <div class="modal fade" id="respaldo">
+      <div class="modal fade" id="respaldo1">
           <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -163,24 +161,6 @@ session_start();
           </div>
         </div>
 
-        <div class="modal fade" id="respaldo1">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar control de movimientos</i></h4>
-                </div>
-                <div class="modal-body">
-                    <p>Pulse aceptar para descargar respaldo </p>
-                </div>
-                <div class="modal-footer">
-                    <a type="button" class="btn btn-primary" href="modules\backup\php_excel_control.php">Aceptar</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
-              </div>
-          </div>
-        </div>
-
 
         <div class="modal fade" id="respaldo2">
           <div class="modal-dialog">
@@ -190,7 +170,7 @@ session_start();
                     <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Biblioteca</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse aceptar para descargar respaldo </p>
+                    <p>Pulse Aceptar Para Descargar Respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_biblioteca.php">Aceptar</a>
@@ -205,10 +185,29 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Vehiculos</i></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Pulse Aceptar Para Descargar Respaldo</p>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-primary" href="modules\backup\php_excel_vehiculos.php">Aceptar</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+    
+        <div class="modal fade" id="respaldo4">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Inmuebles</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse aceptar para descargar respaldo </p>
+                    <p>Pulse Aceptar Para Descargar Respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_inmueble.php">Aceptar</a>
@@ -218,29 +217,26 @@ session_start();
           </div>
         </div>
 
-        <div class="modal fade" id="respaldo4">
+        <div class="modal fade" id="respaldo5">
           <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Vehiculos</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar control de Movimientos</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse aceptar para descargar respaldo </p>
+                    <p>Pulse Aceptar Para Descargar Respaldo</p>
                 </div>
                 <div class="modal-footer">
-                    <a type="button" class="btn btn-primary" href="modules\backup\php_excel_vehiculos.php">Aceptar</a>
+                    <a type="button" class="btn btn-primary" href="modules\backup\php_excel_control.php">Aceptar</a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
               </div>
           </div>
         </div>
-      <footer class="main-footer">
-        
-      </footer>
+     
     </div><!-- ./wrapper -->
 
-    
     <!-- Bootstrap 3.3.2 JS -->
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>    
     <!-- datepicker -->

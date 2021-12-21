@@ -17,12 +17,13 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
+            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Control de Biblioteca</a></li>
             <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab"> Control de Vehiculos </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Control de Inmuebles </a></li>
           </ul>
 
+          
 
           <!-- EQUIPOS -->
           <div class="tab-content">
@@ -77,7 +78,6 @@
                         <option value="empresa">Empresa</option>
                       </select>
                     </th>
-
                     <th>
                       <input class="col-mb-2 form-control" type="text" name="nombre" value="" placeholder="">
 
@@ -85,8 +85,6 @@
                     <th> <input style="width: 100px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_report.php" type="submit" value="Filtrar" />
                     </th>
                     <th width='1000'> </th>
-
-
               </form>
               </tr>
 
@@ -132,7 +130,7 @@
             </thead>
             </table>
 
-            </br></br> </br>
+            </br></br> 
             <form name="formulario" method="POST" action="modules/stock_report/print_filter_biblioteca.php" target="_blank">
 
               <table class="table table-bordered table-striped table-hover">
@@ -149,7 +147,6 @@
                       <option value="empresa">Empresa</option>
                     </select>
                   </th>
-
                   <th>
                     <input class="col-mb-2 form-control" type="text" name="nombre_biblioteca" value="" placeholder="">
                   </th>

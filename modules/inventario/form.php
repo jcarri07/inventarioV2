@@ -217,7 +217,7 @@ if ($_GET['form']=='add') { ?>
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+               <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
                   <a href="?module=inventario" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
