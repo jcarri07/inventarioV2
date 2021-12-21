@@ -236,7 +236,6 @@ modalpdf.modal('show');
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
 
-  
                     <a class="btn btn-primary btn-xs internos" class="modal-dialog modal-lg" id="<?php echo $data['serial'];?>">
                           <i  style='color:#fff' class='glyphicon glyphicon-list'></i>
                     </a>
