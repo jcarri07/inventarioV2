@@ -10,36 +10,38 @@ $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
 
 
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'")
+$query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE codigo = '$var1'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);
 
     if ($rows > 0) {
         $data = mysqli_fetch_assoc($query);
-        $var2   = $data['descripcion'];
+        $var2   = $data['codigo'];
     	$var3	= $data['marca'];
-    	$var4	= $data['modelo'];	
-    	$var5	= $data['color'];
-    	$var6	= $data['bienesN'];
-    	$var7	= $data['condicion'];
-    	$var8	= $data['sede'];
-    	$var9   = $data['pertenece'];
-    	$var10   = $data['nombre'];
-    	$var11   = $data['cedula'];
-    	$var12   = $data['ubicacion'];
+    	$var4	= $data['tipo'];	
+    	$var5	= $data['modelo'];
+    	$var6	= $data['placa'];
+    	$var7	= $data['color'];
+    	$var8	= $data['tipoCombustible'];
+    	$var9   = $data['nmroCarroceria'];
+    	$var10   = $data['condicion'];
+    	$var11   = $data['unidad'];
+        $var12   = $data['ubicacion'];
+        $var13   = $data['responsable'];
+        $var14   = $data['cedula'];
     }
 
-    $var1 = " SERIAL: ".$data['serial'];
-    $var2 = " DESCRIPCION: ".$data['descripcion'];
-    $var3 = " MARCA: ".$data['marca'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " MARCA: ".$data['marca'];
+    $var3 = " TIPO: ".$data['tipo'];
     $var4 = " MODELO: ".$data['modelo'];
-    $var5 = " COLOR: ".$data['color'];
-    $var6 = " COD. BIENES NAC.: ".$data['bienesN'];
-    $var7 = " CONDICION: ".$data['condicion'];
-    $var8 = " SEDE: ".$data['sede'];
-    $var9 = " PERTENECE: ".$data['pertenece'];
-    $var10 = " RESPONSABLE: ".$data['nombre'];
+    $var5 = " PLACA: ".$data['placa'];
+    $var6 = " COLOR: ".$data['color'];
+    $var7 = " COMBUSTIBLE: ".$data['tipoCombustible'];
+    $var8 = " CARROCERIA: ".$data['nmroCarroceria'];
+    $var9 = " CONDICION: ".$data['condicion'];
+    $var10 = " RESPONSABLE: ".$data['responsable'];
     $var11 = " CEDULA: ".$data['cedula'];
     $var12 = " UBICACION: ".$data['ubicacion'];
 

@@ -10,40 +10,39 @@ $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
 
 
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'")
+$query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE codigo = '$var1'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);
 
     if ($rows > 0) {
         $data = mysqli_fetch_assoc($query);
-        $var2   = $data['descripcion'];
-    	$var3	= $data['marca'];
-    	$var4	= $data['modelo'];	
-    	$var5	= $data['color'];
-    	$var6	= $data['bienesN'];
-    	$var7	= $data['condicion'];
-    	$var8	= $data['sede'];
-    	$var9   = $data['pertenece'];
-    	$var10   = $data['nombre'];
+        $var2   = $data['codigo'];
+    	$var3	= $data['isbn'];
+    	$var4	= $data['tipo'];	
+    	$var5	= $data['titulo'];
+    	$var6	= $data['autor'];
+    	$var7	= $data['editorial'];
+    	$var8	= $data['cantidad'];
+    	$var9   = $data['bienesN'];
+    	$var10   = $data['responsable'];
     	$var11   = $data['cedula'];
     	$var12   = $data['ubicacion'];
     }
 
-    $var1 = " SERIAL: ".$data['serial'];
-    $var2 = " DESCRIPCION: ".$data['descripcion'];
-    $var3 = " MARCA: ".$data['marca'];
-    $var4 = " MODELO: ".$data['modelo'];
-    $var5 = " COLOR: ".$data['color'];
-    $var6 = " COD. BIENES NAC.: ".$data['bienesN'];
-    $var7 = " CONDICION: ".$data['condicion'];
-    $var8 = " SEDE: ".$data['sede'];
-    $var9 = " PERTENECE: ".$data['pertenece'];
-    $var10 = " RESPONSABLE: ".$data['nombre'];
-    $var11 = " CEDULA: ".$data['cedula'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " ISBN: ".$data['isbn'];
+    $var3 = " TIPO: ".$data['tipo'];
+    $var4 = " TITULO: ".$data['titulo'];
+    $var5 = " AUTOR: ".$data['autor'];
+    $var6 = " EDITORIAL: ".$data['editorial'];
+    $var7 = " CANTIDAD: ".$data['cantidad'];
+    $var8 = " B/N: ".$data['bienesN'];
+    $var9 = " RESPONSABLE: ".$data['responsable'];
+    $var10 = " CEDULA: ".$data['cedula'];
     $var12 = " UBICACION: ".$data['ubicacion'];
 
-$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
+$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9;
 
 include('vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
 use Endroid\QrCode\QrCode;

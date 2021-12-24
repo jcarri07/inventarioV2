@@ -51,7 +51,7 @@
   </ol>
 </section>
 
-<!-- Main content -->
+<!-- Main content anal-->
 <section class="content">
   <div class="row">
     <div class="col-md-12">
@@ -69,7 +69,6 @@
           </ul>
 
           <!-- COMUNICACION -->
-
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="comunicacion">
               <!-- form start -->
@@ -95,27 +94,26 @@
                               <option value="ubicacion"></option>
                               <option value="sede"></option>
                             </datalist>
-                          </th>
-                          <th class="center"><input list="items" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_o">
-                              <i style="color:#fff" class="fa fa-minus"></i>
-                          </th>
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_v">
-                              <i style="color:#fff" class="fa fa-plus"></i>
-                          </th>
-
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
-                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                          </th>
+                            </th>
+                                <th class="center"><input list="items" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                                <th class="center"><input list="items" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                                <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_o">
+                                <i style="color:#fff" class="fa fa-minus"></i>
+                            </th>
+                            <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_v">
+                                <i style="color:#fff" class="fa fa-plus"></i>
+                            </th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2" id="filtro2" value="" placeholder="-- Filtro 2 --"></th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro3" id="filtro3" value="" placeholder="-- Filtro 3 --"></th>
+                              <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                              <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                            </th>
+                            </tr>
+                          </thead>
                         </tr>
-                      </thead>
-                      </tr>
-                    </table>
-                  </form>
+                      </table>
+                    </form>
                   </br>
 
                   <div class="row">
@@ -253,7 +251,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido2">
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_mobiliario.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
@@ -385,7 +383,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido3">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_refrigeracion.php" target="_blank">
@@ -514,7 +512,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido4">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_electronicos.php" target="_blank">
@@ -542,8 +540,6 @@
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">EDITAR</th>
-
-
                               </tr>
                             </thead>
                             <tbody>
@@ -599,9 +595,7 @@
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_seguridad.php" method="POST" target="_blank">
                 <div class="box-body">
-
                   <form name="formulario" method="post" action="modules/stock_inventory/print_filter_seguridad.php" target="_blank">
-
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
@@ -629,12 +623,11 @@
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="sbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
-
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_sec" id="sfiltro2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_sec" id="sfiltro3" value="" placeholder="-- Filtro 3 --"></th>
-                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                            <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
+                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_sec" id="sfiltro2" value="" placeholder="-- Filtro 2 --"></th>
+                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_sec" id="sfiltro3" value="" placeholder="-- Filtro 3 --"></th>
+                            <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                            <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
                         </tr>
                       </thead>
@@ -646,7 +639,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido5">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_seguridad.php" target="_blank">
@@ -674,8 +667,6 @@
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">EDITAR</th>
-
-
                               </tr>
                             </thead>
                             <tbody>
@@ -706,7 +697,6 @@
                                   <td width='90' class='center'>$data[pertenece]</td>
                                 <td class='center'  width='100'>
                                   <div>
-
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
                                       <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                                 </a>";
@@ -721,7 +711,6 @@
                     </div>
                     <!--/.col -->
                   </div> <!-- /.row -->
-
                 </div>
               </form>
             </div>
@@ -732,9 +721,7 @@
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_biblioteca.php" method="POST" target="_blank">
                 <div class="box-body">
-
                   <form name="formulario" method="post" action="modules/stock_inventory/print_biblioteca.php" target="_blank">
-
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
@@ -757,20 +744,19 @@
                               <option value="sede"></option>
                             </datalist>
                           </th>
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
+                              <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
-
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --" ></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --" ></th>
-                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                            <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --" ></th>
+                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
+                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --" ></th>
+                            <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                            <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
                         </tr>
                       </thead>
@@ -782,7 +768,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido6">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_biblioteca.php" target="_blank">
@@ -809,8 +795,6 @@
                                 <th class="center">SEDE</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">EDITAR</th>
-
-
                               </tr>
                             </thead>
                             <tbody>
@@ -851,10 +835,8 @@
                           </table>
                         </div><!-- /.box-body -->
                       </div><!-- /.box -->
-                    </div>
-                    <!--/.col -->
+                    </div> <!--/.col -->
                   </div> <!-- /.row -->
-
                 </div>
               </form>
             </div>
@@ -865,7 +847,6 @@
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_vehiculos.php" method="POST" target="_blank">
                 <div class="box-body">
-
                   <form name="formulario" method="post" action="modules/stock_inventory/print_vehiculos.php" target="_blank">
                     <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
                       <thead>
@@ -886,33 +867,31 @@
                               <option value="condicion"></option>
                             </datalist>
                           </th>
-                          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos2" id="filtrado_vehiculos2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3" id="filtrado_vehiculos3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_o">
+                              <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos2" id="filtrado_vehiculos2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3" id="filtrado_vehiculos3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
-                          </th>
-
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fv2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fv3" value="" placeholder="-- Filtro 3 --"></th>
-                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                          </th>
-                        </tr>
-                      </thead>
+                            </th>
+                              <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fv2" value="" placeholder="-- Filtro 2 --"></th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fv3" value="" placeholder="-- Filtro 3 --"></th>
+                              <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                              <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                            </th>
+                          </tr>
+                        </thead>
                       </tr>
                     </table>
                   </form>
-                  </br>
+                </br>
 
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
-
+                        <div class="box-body" id="contenido7">
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_vehiculos.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
@@ -941,6 +920,7 @@
 
                               </tr>
                             </thead>
+
                             <tbody>
                               <?php
                               $no = 1;
@@ -1040,7 +1020,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido8">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_inmuebles.php" target="_blank">
@@ -1586,4 +1566,418 @@
 			
 		  event.preventDefault();*/
   });
+
+</script>
+
+<script name="qr-mobiliario">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido2");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-electrodomesticos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido3");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-electricos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido4");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-seguridad">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido5");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-biblioteca">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido6");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalBiblioteca.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-vehiculos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido7");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalVehiculos.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-inmuebles">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido8");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalInmuebles.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
 </script>
