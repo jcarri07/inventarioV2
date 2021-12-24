@@ -1,8 +1,8 @@
 <script src="js/alertifyjs/alertify.js"></script>
 <?php
-  $modal = "";
-  if(isset($_GET["modal"])){
-    $modal = $_GET["modal"];
+  $codigo = "";
+  if(isset($_GET["codigo"])){
+    $codigo = $_GET["codigo"];
   }
 ?>
 <script type="text/javascript">
@@ -36,13 +36,16 @@
 
 
   $(document).ready(function() {
-    if("<?php echo $modal;?>" == "1"){
+    var codigo = "<?php echo $codigo;?>";
+    if(codigo != ""){
       $('#modalInterno').modal('show');
     }
   });
 
   function mostrarFormularioInternos(){
+    var codigo = "<?php echo $codigo;?>";
     document.getElementById("internosItem").click();
+    $('#internos #codigoInternos').val(codigo);
   }
 </script>
 
@@ -274,7 +277,7 @@ if ($_GET['form']=='add') { ?>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >CODIGO </label>
                 <div class="col-sm-3">
-                  <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" readonly required>
+                  <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" id="codigoInternos" readonly required>
                 </div>
               </div>
 

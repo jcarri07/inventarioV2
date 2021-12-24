@@ -88,7 +88,7 @@ else {
                                             
                 //header("location: ../../main.php?module=form_inventario&form=add");  
                 //header("location: ../../main.php?module=inventario&alert=1");
-                header("location: ../../main.php?module=form_inventario&form=add&modal=1");
+                header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
             }
         }   
     }
