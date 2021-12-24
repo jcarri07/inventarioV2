@@ -251,7 +251,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido2">
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_mobiliario.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
@@ -383,7 +383,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido3">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_refrigeracion.php" target="_blank">
@@ -512,7 +512,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido4">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_electronicos.php" target="_blank">
@@ -639,7 +639,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido5">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_seguridad.php" target="_blank">
@@ -768,7 +768,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido6">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_biblioteca.php" target="_blank">
@@ -891,7 +891,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido7">
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_vehiculos.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
@@ -1020,7 +1020,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="box box-primary">
-                        <div class="box-body" id="contenido">
+                        <div class="box-body" id="contenido8">
 
                           <section>
                             <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_inmuebles.php" target="_blank">
@@ -1566,4 +1566,418 @@
 			
 		  event.preventDefault();*/
   });
+
+</script>
+
+<script name="qr-mobiliario">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido2");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-electrodomesticos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido3");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-electricos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido4");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-seguridad">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido5");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModal.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-biblioteca">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido6");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalBiblioteca.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-vehiculos">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido7");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalVehiculos.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
+</script>
+
+<script name="qr-inmuebles">
+  
+  //document.getElementById("contenido");
+  var qr = document.getElementById("contenido8");
+  console.log(qr);
+  var cuerpo = $('#cuerpoModal');
+
+  qr.addEventListener("click",
+    function(e) {
+
+      if (e.target.id == "qr") {
+        //console.log(qr);
+        console.log("HOlaaaaaaaaaa");
+        //console.log(e.target.firstChild.nextSibling.id);
+        serial = e.target.firstChild.nextSibling.id;
+        //console.log(e.target);
+        var parametros = {
+          "textqr": serial,
+          "sizeqr": 300
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "modules/generateQr/qrModalInmuebles.php",
+          data: parametros,
+          //success: function(datos){
+          //console.log(cuerpo);
+          //cuerpo.html(datos);
+          //$(".result").html(datos);
+          //console.log(datos);
+          //}
+
+        }).done(function(data) {
+          cuerpo.html(data);
+        })
+      }
+    }
+  );
+
+  $("#qr").click(function(event) {
+    console.log("HOLAaaaaaa");
+    /*var textqr=$("#textqr").val();
+    var sizeqr=$("#sizeqr").val();
+    parametros={"textqr":textqr,"sizeqr":sizeqr};*/
+    /*$.ajax({
+				type: "POST",
+				url: "qr.php",
+				data: parametros,
+				success: function(datos){
+					$(".result").html(datos);
+				}
+				 
+			 })
+			
+		  event.preventDefault();*/
+  });
+
 </script>
