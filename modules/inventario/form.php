@@ -1,5 +1,10 @@
 <script src="js/alertifyjs/alertify.js"></script>
-
+<?php
+  $modal = "";
+  if(isset($_GET["modal"])){
+    $modal = $_GET["modal"];
+  }
+?>
 <script type="text/javascript">
 
   function validaNumericos(event) {
@@ -28,6 +33,17 @@
         alert(data);
         alert(prev);
   })
+
+
+  $(document).ready(function() {
+    if("<?php echo $modal;?>" == "1"){
+      $('#modalInterno').modal('show');
+    }
+  });
+
+  function mostrarFormularioInternos(){
+    document.getElementById("internosItem").click();
+  }
 </script>
 
 <?php
@@ -45,6 +61,27 @@ if ($_GET['form']=='add') { ?>
     </ol>
   </section>
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalInterno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="height:45px;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="font-size: 25px; text-align:center;">
+         ¿Desea registrar los componentes internos de este equipo?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="mostrarFormularioInternos();" data-dismiss="modal">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main content -->
   <section class="content">
     <div class="row">
@@ -52,8 +89,8 @@ if ($_GET['form']=='add') { ?>
         <div class="box box-primary">
         <div role = "tabpanel">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li role="presentation" class="active"><a href="#agregar" aria-controls="" data-toggle="tab" role="tab">Agregar</a></li>
-            <li role="presentation" ><a href="#internos" aria-controls="" data-toggle="tab" role="tab">Componentes Internos</a></li>
+            <li role="presentation" class="active"><a href="#agregar" aria-controls="" id="agregarItem" data-toggle="tab" role="tab">Agregar</a></li>
+            <li role="presentation"><a href="#internos" aria-controls="" id="internosItem" data-toggle="tab" role="tab">Componentes Internos</a></li>
           </ul>
 
 <!-- COMUNICACION -->
