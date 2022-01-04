@@ -1,8 +1,8 @@
 <script src="js/alertifyjs/alertify.js"></script>
 <?php
-  $modal = "";
-  if(isset($_GET["modal"])){
-    $modal = $_GET["modal"];
+  $codigo = "";
+  if(isset($_GET["codigo"])){
+    $codigo = $_GET["codigo"];
   }
 ?>
 <script type="text/javascript">
@@ -36,13 +36,22 @@
 
 
   $(document).ready(function() {
-    if("<?php echo $modal;?>" == "1"){
+    var codigo = "<?php echo $codigo;?>";
+    if(codigo != ""){
       $('#modalInterno').modal('show');
     }
   });
 
   function mostrarFormularioInternos(){
+    var codigo = "<?php echo $codigo;?>";
     document.getElementById("internosItem").click();
+    $('#internos #codigoInternos').val(codigo);
+  }
+</script>
+
+<script>
+  function cambiarLocation() {
+    window.location.href = "?module=inventario&alert=1";;
   }
 </script>
 
@@ -67,16 +76,13 @@ if ($_GET['form']=='add') { ?>
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header" style="height:45px;">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <div class="modal-body" style="font-size: 25px; text-align:center;">
          ¿Desea registrar los componentes internos de este equipo?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" onclick="mostrarFormularioInternos();" data-dismiss="modal">Registrar</button>
+          <a type="button" onclick="cambiarLocation();" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+          <a type="button" class="btn btn-primary" onclick="mostrarFormularioInternos();" data-dismiss="modal">Registrar</a>
         </div>
       </div>
     </div>
@@ -90,7 +96,7 @@ if ($_GET['form']=='add') { ?>
         <div role = "tabpanel">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li role="presentation" class="active"><a href="#agregar" aria-controls="" id="agregarItem" data-toggle="tab" role="tab">Agregar</a></li>
-            <li role="presentation"><a href="#internos" aria-controls="" id="internosItem" data-toggle="tab" role="tab">Componentes Internos</a></li>
+            <li role="presentation"><a href="#internos" aria-controls="" id="internosItem" data-toggle="tab" role="tab" >Componentes Internos</a></li>
           </ul>
 
 <!-- COMUNICACION -->
@@ -265,7 +271,7 @@ if ($_GET['form']=='add') { ?>
 
 
 <!--MOBILIARIO-->
-    <div role= "tabpanel" class="tab-pane" id="internos">
+    <div role= "tabpanel" class="tab-pane" id="internos" >
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/inventario/proses copy.php?act=insert" method="POST">
             <div class="box-body">
@@ -274,7 +280,7 @@ if ($_GET['form']=='add') { ?>
             <div class="form-group">
                 <label class="col-sm-4 control-label" >CODIGO </label>
                 <div class="col-sm-3">
-                  <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" readonly required>
+                  <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" id="codigoInternos" readonly required>
                 </div>
               </div>
 
@@ -297,7 +303,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="capd1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modd1" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="seriald1" autocomplete="off" required></td>
+            <td><input type="text" class="form-control" name="seriald1" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="cond1" autocomplete="off" ></td>
           </tr>
           <tr>
@@ -306,7 +312,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="capd2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modd2" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="seriald2" autocomplete="off" required></td>
+            <td><input type="text" class="form-control" name="seriald2" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="cond2" autocomplete="off" ></td>
           </tr>
 
@@ -325,7 +331,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="certfp" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcafp" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modfp" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="serialfp" autocomplete="off"required ></td>
+            <td><input type="text" class="form-control" name="serialfp" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="condfp" autocomplete="off" ></td>
           </tr>
 
@@ -345,7 +351,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="clasetv" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcatv" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modtv" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="serialtv" autocomplete="off" required></td>
+            <td><input type="text" class="form-control" name="serialtv" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="contv" autocomplete="off" ></td>
           </tr>
 
@@ -366,7 +372,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="clasemr1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcamr1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modmr1" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="serialmr1" autocomplete="off" required ></td>
+            <td><input type="text" class="form-control" name="serialmr1" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="conmr1" autocomplete="off" ></td>
           </tr>
 
@@ -386,7 +392,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="clasemr2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcamr2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modmr2" autocomplete="off" ></td>
-            <td><input type="text" class="form-control" name="serialmr2" autocomplete="off"required ></td>
+            <td><input type="text" class="form-control" name="serialmr2" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="conmr2" autocomplete="off" ></td>
           </tr>
           <thead>
