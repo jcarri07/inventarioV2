@@ -28,8 +28,10 @@ $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'"
     	$var10   = $data['nombre'];
     	$var11   = $data['cedula'];
     	$var12   = $data['ubicacion'];
+        $var13   = $data['codigo'];
     }
 
+    $var13 = " CODIGO: ".$data['codigo'];
     $var1 = " SERIAL: ".$data['serial'];
     $var2 = " DESCRIPCION: ".$data['descripcion'];
     $var3 = " MARCA: ".$data['marca'];
@@ -43,7 +45,7 @@ $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'"
     $var11 = " CEDULA: ".$data['cedula'];
     $var12 = " UBICACION: ".$data['ubicacion'];
 
-$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
+$textqr = $var13.$coma.$var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
 
 include('vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
 use Endroid\QrCode\QrCode;
