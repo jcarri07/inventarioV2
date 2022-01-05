@@ -19,7 +19,7 @@
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab"> Control de Equipos </a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab"> Control de Biblioteca</a></li>
-            <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab"> Control de Vehiculos </a></li>
+            <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab"> Control de Vehículos </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Control de Inmuebles </a></li>
           </ul>
 
@@ -70,13 +70,12 @@
                     <th width='180'>
                       <select class="chosen-select" name="filtrar" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                         <option value=""></option>
-                        <option value="codigo_transaccion">Cod. Transaccion</option>
-                        <option value="tipo_transaccion">Tipo. Transaccion</option>
-                        <option value="cedula_e">Cedula Resp. entrega</option>
-                        <option value="cedula_r">Cedula Resp. recibe</option>
+                        <option value="codigo_transaccion">Transaccion</option>
+                        <option value="tipo_transaccion">Tipo</option>
+                        <option value="cedula_e">C.I. Entrega</option>
+                        <option value="cedula_r">C.I. Recibe</option>
                         <option value="created_date">Fecha (AAAA-MM-DD)</option>
-                        <option value="empresa">Empresa</option>
-                        
+                        <option value="empresa">Pertenece</option>
                       </select>
                     </th>
                     <th>
@@ -140,12 +139,12 @@
                   <th width='180'>
                     <select class="chosen-select" name="filtrar_biblioteca" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                       <option value=""></option>
-                      <option value="codigo_transaccion">Cod. Transaccion</option>
-                      <option value="tipo_transaccion">Tipo. Transaccion</option>
-                      <option value="cedula_e">Cedula Resp. entrega</option>
-                      <option value="cedula_r">Cedula Resp. recibe</option>
+                      <option value="codigo_transaccion">Transaccion</option>
+                      <option value="tipo_transaccion">Tipo</option>
+                      <option value="cedula_e">C.I. Entrega</option>
+                      <option value="cedula_r">C.I. Recibe</option>
                       <option value="created_date">Fecha (AAAA-MM-DD)</option>
-                      <option value="empresa">Empresa</option>
+                      <option value="empresa">Pertenece</option>
                     </select>
                   </th>
                   <th>
@@ -173,7 +172,7 @@
             <div class="box-body">
                 </br>
                 <h4 class="text-center">
-                  <i class="fa fa-car"></i> Control de Vehiculos:
+                  <i class="fa fa-car"></i> Control de Vehículos:
                 </h4>
                 </br> </br>
 
@@ -211,12 +210,12 @@
                 <th width='180'>
                   <select class="chosen-select" name="filtrar_vehiculos" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                     <option value=""></option>
-                    <option value="codigo_transaccion">Cod. Transaccion</option>
-                    <option value="tipo_transaccion">Tipo. Transaccion</option>
-                    <option value="cedula_e">Cedula Resp. entrega</option>
-                    <option value="cedula_r">Cedula Resp. recibe</option>
+                    <option value="codigo_transaccion">Transaccion</option>
+                    <option value="tipo_transaccion">Tipo</option>
+                    <option value="cedula_e">C.I. Entrega</option>
+                    <option value="cedula_r">C.I. Recibe</option>
                     <option value="created_date">Fecha (AAAA-MM-DD)</option>
-                    <option value="empresa">Empresa</option>
+                    <option value="empresa">Pertenece</option>
                   </select>
                 </th>
 
@@ -280,12 +279,12 @@
               <th width='180'>
                 <select class="chosen-select" name="filtrar_inmuebles" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                   <option value=""></option>
-                  <option value="codigo_transaccion">Cod. Transaccion</option>
-                  <option value="tipo_transaccion">Tipo. Transaccion</option>
-                  <option value="cedula_e">Cedula Resp. entrega</option>
-                  <option value="cedula_r">Cedula Resp. recibe</option>
+                  <option value="codigo_transaccion">Transaccion</option>
+                  <option value="tipo_transaccion">Tipo</option>
+                  <option value="cedula_e">C.I. Entrega</option>
+                  <option value="cedula_r">C.I. Recibe</option>
                   <option value="created_date">Fecha (AAAA-MM-DD)</option>
-                  <option value="empresa">Empresa</option>
+                  <option value="empresa">Pertenece</option>
                 </select>
               </th>
 

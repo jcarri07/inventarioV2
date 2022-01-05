@@ -5,7 +5,7 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from inventario
+      $result = mysqli_query($mysqli,"SELECT codigo from componentes
       where codigo ='$codigo'");
 
       if(mysqli_num_rows($result) > 0){
@@ -40,7 +40,7 @@ $rows  = mysqli_num_rows($query);
 $hari_ini = date("d-m-Y");
 $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de componentes internos de codigo";
+$accion = "Registro de componentes internos";
 $cedulauser = $_SESSION['cedula_user'];
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){

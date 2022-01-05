@@ -139,11 +139,11 @@ function validarExt()
                 <th class="center">TIPO</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
-                <th class="center">Nº CARROCERIA</th>
+                <th class="center">CARROCERIA</th>
                 <th class="center">COLOR</th>
                 <th class="center">AÑO</th>
                 <th class="center">PLACA</th>
-                <th class="center">TIPO COMBUSTIBLE</th>
+                <th class="center">COMBUSTIBLE</th>
                 <th class="center">CONDICION</th>
                 <th class="center">UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
