@@ -67,22 +67,15 @@ function validarExt()
             <?php  
             $no = 1;
 
-            $serial = $_POST['codigo'];
+            
+               
+            if (isset($_GET['id'])) {
 
-            /*$query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
-                                or die('error: '.mysqli_error($mysqli));
-            $data = mysqli_fetch_assoc($query);
-            $_SESSION['sede'] = $data['sede'];
-            $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
-            $permiso = $_SESSION['permisos_acceso'];
-            $sede = $_SESSION['sede'];*/
+           $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]'") 
+          or die('error: '.mysqli_error($mysqli));
 
-            /*$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicacion' ORDER BY codigo ASC")
-                                            or die('error: '.mysqli_error($mysqli));*/
-
-            $mysqli = new mysqli('localhost', 'root', '', 'inventario3');
-            $query = $mysqli -> query ("SELECT * FROM inventario WHERE categoria= 'Comunicacion' AND codigo= '$codigo'");
-
+            }            
+  
             while ($data = mysqli_fetch_assoc($query)) { 
               /*$precio_compra = format_rupiah($data['precio_compra']);
               $precio_venta = format_rupiah($data['precio_venta']);*/

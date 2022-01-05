@@ -51,14 +51,13 @@
 </script>
 
 
-
-<?php  
+<?php 
 
 if ($_GET['form']=='add') { ?> 
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Datos de Entradas / Salidas de equipos
+      <i class="fa fa-edit icon-title"></i> Datos de Entradas / Salidas de Equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -76,7 +75,13 @@ if ($_GET['form']=='add') { ?>
           <form role="form" class="form-horizontal" action="modules/transaccion_equipos/proses.php?act=insert" method="POST" name="formObatMasuk">
             <div class="box-body">
               <?php  
-            
+
+              $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+              or die('error: '.mysqli_error($mysqli));
+              $data = mysqli_fetch_assoc($query);
+              $_SESSION['sede'] = $data['sede'];
+              $sede = $_SESSION['sede'];
+
               $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
@@ -91,14 +96,13 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
 
-              $sede = $_SESSION['sede'];
               $tahun          = date("Y");
               $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
               $codigo_transaccion = "TM-$tahun-$buat_id";
               ?>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Codigo de Transacción </label>
+                <label class="col-sm-2 control-label">Transacción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="codigo_transaccion" value="<?php echo $codigo_transaccion; ?>" readonly required>
                 </div>
@@ -112,6 +116,16 @@ if ($_GET['form']=='add') { ?>
               </div>
               <hr>
    
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Tipo</label>
+                <div class="col-sm-5">
+                  <select name="transaccion" id="transaccion" required class='form-control' onchange="hitung_total_stok();">
+					        <option value="Salida">Salida</option>
+				         	<option value="Entrada">Entrada</option>
+				          </select>
+                </div>
+              </div>
+
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Equipo</label>
                 <div class="col-sm-5">
@@ -129,76 +143,68 @@ if ($_GET['form']=='add') { ?>
               </div>
               
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable entrega</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="entrega" autocomplete="off"  required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula_e" onkeypress='return validaNumericos(event)' autocomplete="off"  required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Empresa</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="empresa" autocomplete="off" required>
-                </div>
-              </div>  
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Sede/Ubicacion</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="lugar_e" value="<?php echo $sede; ?>" autocomplete="off" required readonly>
-                </div>
-              </div>  
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable recibe</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="recibe" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula_r" onkeypress='return validaNumericos(event)' autocomplete="off" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Empresa</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="empresa_r" autocomplete="off" required>
-                </div>
-              </div>  
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Sede/Ubicacion</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="lugar_r" 
-                   autocomplete="off" required>
-                </div>
-              </div> 
-			  
-			  <div class="form-group">
-                <label class="col-sm-2 control-label">Transacción</label>
-                <div class="col-sm-5">
-                  <select name="transaccion" id="transaccion" required class='form-control' onchange="hitung_total_stok();">
-					        <option value="Salida">Salida</option>
-				         	<option value="Entrada">Entrada</option>
-				          </select>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Motivo</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="motivo" autocomplete="off" required>
                 </div>
               </div>  
 
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Entrega</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="entrega" autocomplete="off"  required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cédula</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cedula_e" onkeypress='return validaNumericos(event)' autocomplete="off"  required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Sede</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="lugar_e" value="<?php echo $sede; ?>" autocomplete="off" required readonly>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Pertenece</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="empresa" autocomplete="off" required>
+                </div>
+              </div>    
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Recibe</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="recibe" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cédula</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cedula_r" onkeypress='return validaNumericos(event)' autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Sede</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="lugar_r" 
+                   autocomplete="off" required>
+                </div>
+              </div> 
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Pertenece</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="empresa_r" autocomplete="off" required>
+                </div>
+              </div>  
                    
             
             </div><!-- /.box body -->
