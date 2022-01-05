@@ -683,29 +683,6 @@
                                 $precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-<<<<<<< HEAD
-                                  <td width='50' class='center'>$no</td>
-                                  <td width='100' class='center'>$data[codigo]</td>
-                                  <td width='100' class='center'>$data[descripcion]</td>
-                                  <td width='100' class='center'>$data[marca]</td>
-                                  <td width='100' class='center'>$data[modelo]</td>3
-                                  <td width='100' class='center'>$data[serial]</td>
-                                  <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td>
-                                  <td width='100' class='center'>$data[condicion]</td>
-                                  <td width='100' class='center'>$data[unidad]</td>
-                                  <td width='100' class='center'>$data[responsable]</td>
-                                  <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
-                                  <td width='100' class='center'>$data[sede]</td>
-                                  <td width='100' class='center'>$data[pertenece]</td>
-
-                                <td class='center'  width='100'>
-                                  <div>
-                                <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
-                                </a>";
-=======
                                 <td width='30' class='center'>$no</td>
                                 <td width='50' class='center'>$data[codigo]</td>
                                 <td width='90' class='center'>$data[descripcion]</td>
@@ -721,7 +698,6 @@
                                 <td width='90' class='center'>$data[ubicacion]</td>
                                 <td width='90' class='center'>$data[sede]</td>
                                 <td width='90' class='center'>$data[pertenece]</td>
->>>>>>> f60476eedd4bc240f27e9c195514c2c2b7480cca
 
                               <td class='center'  width='100'>
                                 <div>
