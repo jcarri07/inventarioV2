@@ -82,7 +82,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carrocería</label>
+                <label class="col-sm-2 control-label">Carrocería</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
                 </div>
@@ -110,7 +110,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo Combustible</label>
+                <label class="col-sm-2 control-label">Combustible</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" required>
                 </div>
@@ -126,7 +126,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Unidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['tipoCombustible']; ?>" required>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="" required>
                 </div>
               </div>
 

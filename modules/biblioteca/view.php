@@ -177,22 +177,22 @@ function validarExt()
               //$precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[tipo]</td>
-                      <td width='90' class='center'>$data[titulo]</td>
-                      <td width='90' class='center'>$data[autor]</td>
-                      <td width='90' class='center'>$data[editorial]</td>
-                      <td width='50' class='center'>$data[isbn]</td>
-                      <td width='50' class='center'>$data[bienesN]</td>
-                      <td width='90' class='center'>$data[color]</td>
-                      <td width='90' class='center'>$data[condicion]</td>
-                      <td width='50' class='center'>$data[responsable]</td>
-                      <td width='50' class='center'>$data[cedula]</td>
-                      <td width='90' class='center'>$data[ubicacion]</td>
-                      <td width='90' class='center'>$data[sede]</td>
-                      <td width='90' class='center'>$data[cantidad]</td>             
-                      <td class='center'  width='100'>
+                      <td width='50' class='center'>$no</td>
+                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[tipo]</td>
+                      <td width='100' class='center'>$data[titulo]</td>
+                      <td width='100' class='center'>$data[autor]</td>
+                      <td width='100' class='center'>$data[editorial]</td>
+                      <td width='100' class='center'>$data[isbn]</td>
+                      <td width='100' class='center'>$data[bienesN]</td>
+                      <td width='100' class='center'>$data[color]</td>
+                      <td width='100' class='center'>$data[condicion]</td>
+                      <td width='100' class='center'>$data[responsable]</td>
+                      <td width='100' class='center'>$data[cedula]</td>
+                      <td width='100' class='center'>$data[ubicacion]</td>
+                      <td width='100' class='center'>$data[sede]</td>
+                      <td width='100' class='center'>$data[cantidad]</td>             
+                      <td class='center'  width='200'>
                           <div>
             
                         <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_biblioteca&form=edit&id=$data[codigo]'>

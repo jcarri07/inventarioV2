@@ -3,16 +3,6 @@
 
 function buscaRepetido($serial,$mysqli) {
 
-    require_once "../../config/database.php"; 
-
-      $result = mysqli_query($mysqli,"SELECT serial from equiposcientificos_electricos
-      where serial='$serial'");
-
-      if(mysqli_num_rows($result) > 0){
-        return 1;
-      } else {
-        return 0;
-    }
 }
 
 session_start();

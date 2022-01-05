@@ -144,9 +144,9 @@ function validarExt()
                 <th class="center">TIPO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">M²</th>
-                <th class="center">Nº PISOS</th>
-                <th class="center">Nº CUARTOS</th>
-                <th class="center">Nº HABITANTES</th>
+                <th class="center">PISOS</th>
+                <th class="center">HABITACIONES</th>
+                <th class="center">HABITANTES</th>
                 <th class="center">DIRECCION</th>
                 <th class="center">CONDICION</th>
                 <th class="center">RESPONSABLE</th>
@@ -175,20 +175,20 @@ function validarExt()
               //$precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[tipo]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[metrosCuadrados]</td>
-                      <td width='90' class='center'>$data[pisos]</td>
-                      <td width='90' class='center'>$data[nmroCuartos]</td>
-                      <td width='90' class='center'>$data[habitantes]</td> 
-                      <td width='90' class='center'>$data[direccion]</td>
-                      <td width='50' class='center'>$data[condicion]</td>
-                      <td width='90' class='center'>$data[responsable]</td>
-                      <td width='50' class='center'>$data[cedula]</td> 
-                      <td width='50' class='center'>$data[sede]</td>           
-                      <td class='center'  width='100'>
+                      <td width='50' class='center'>$no</td>
+                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[tipo]</td>
+                      <td width='100' class='center'>$data[descripcion]</td>
+                      <td width='100' class='center'>$data[metrosCuadrados]</td>
+                      <td width='100' class='center'>$data[pisos]</td>
+                      <td width='100' class='center'>$data[nmroCuartos]</td>
+                      <td width='100' class='center'>$data[habitantes]</td> 
+                      <td width='100' class='center'>$data[direccion]</td>
+                      <td width='100' class='center'>$data[condicion]</td>
+                      <td width='100' class='center'>$data[responsable]</td>
+                      <td width='100' class='center'>$data[cedula]</td> 
+                      <td width='100' class='center'>$data[sede]</td>           
+                      <td class='center'  width='200'>
                     <div>
             
                         <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inmuebles&form=edit&id=$data[codigo]'>

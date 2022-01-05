@@ -137,23 +137,23 @@ function validarExt()
 
              
               echo "<tr>
-                      <td width='25' class='center'>$no</td>
+                      <td width='50' class='center'>$no</td>
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
-                      <td width='50' class='center'>$data[tipo_transaccion]</td>
-                      <td width='80' class='center'>$data[codigo]</td>
-                      <td width='80' class='center'>$data[tipo]</td>
-                      <td width='80' class='center'>$data[descripcion]</td>
-                      <td width='80' class='center'>$data[condicion]</td>
-                      <td width='80' class='center'>$data[motivo]</td>
-                      <td width='80' class='center'>$data[entrega]</td>
-                      <td width='80' class='center'>$data[cedula_e]</td>
-                      <td width='80' class='center'>$data[lugar_e]</td>
-                      <td width='80' class='center'>$data[empresa]</td>
-                      <td width='80' class='center'>$data[recibe]</td>
-                      <td width='80' class='center'>$data[cedula_r]</td>
-                      <td width='80' class='center'>$data[lugar_r]</td>
-                      <td width='80' class='center'>$data[empresa_r]</td>
-                      <td width='80' class='center'>$data[created_date]</td>
+                      <td width='100' class='center'>$data[tipo_transaccion]</td>
+                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[tipo]</td>
+                      <td width='100' class='center'>$data[descripcion]</td>
+                      <td width='100' class='center'>$data[condicion]</td>
+                      <td width='100' class='center'>$data[motivo]</td>
+                      <td width='100' class='center'>$data[entrega]</td>
+                      <td width='100' class='center'>$data[cedula_e]</td>
+                      <td width='100' class='center'>$data[lugar_e]</td>
+                      <td width='100' class='center'>$data[empresa]</td>
+                      <td width='100' class='center'>$data[recibe]</td>
+                      <td width='100' class='center'>$data[cedula_r]</td>
+                      <td width='100' class='center'>$data[lugar_r]</td>
+                      <td width='100' class='center'>$data[empresa_r]</td>
+                      <td width='100' class='center'>$data[created_date]</td>
                     
                     </tr>";
               $no++;
