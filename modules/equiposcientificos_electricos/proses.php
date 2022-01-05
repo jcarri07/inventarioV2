@@ -3,8 +3,6 @@
 
 function buscaRepetido($serial,$mysqli) {
 
-<<<<<<< HEAD
-=======
     require_once "../../config/database.php"; 
 
       $result = mysqli_query($mysqli,"SELECT serial from inventario
@@ -15,7 +13,6 @@ function buscaRepetido($serial,$mysqli) {
       } else {
         return 0;
     }
->>>>>>> f60476eedd4bc240f27e9c195514c2c2b7480cca
 }
 
 session_start();

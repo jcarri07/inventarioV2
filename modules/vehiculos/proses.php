@@ -65,11 +65,7 @@ else {
             $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
 			$cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-<<<<<<< HEAD
 			$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-=======
-			$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));	
->>>>>>> f60476eedd4bc240f27e9c195514c2c2b7480cca
 			$nmroCarroceria  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCarroceria']));
 			$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
 			$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
