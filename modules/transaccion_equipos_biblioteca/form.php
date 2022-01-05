@@ -91,7 +91,12 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
 
+              $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+              or die('error: '.mysqli_error($mysqli));
+              $data = mysqli_fetch_assoc($query);
+              $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
+
               $tahun          = date("Y");
               $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
               $codigo_transaccion = "TM-$tahun-$buat_id";

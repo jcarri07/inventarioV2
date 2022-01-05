@@ -51,8 +51,7 @@
 </script>
 
 
-
-<?php  
+<?php 
 
 if ($_GET['form']=='add') { ?> 
 
@@ -76,7 +75,13 @@ if ($_GET['form']=='add') { ?>
           <form role="form" class="form-horizontal" action="modules/transaccion_equipos/proses.php?act=insert" method="POST" name="formObatMasuk">
             <div class="box-body">
               <?php  
-            
+
+              $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+              or die('error: '.mysqli_error($mysqli));
+              $data = mysqli_fetch_assoc($query);
+              $_SESSION['sede'] = $data['sede'];
+              $sede = $_SESSION['sede'];
+
               $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
@@ -91,7 +96,6 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
 
-              $sede = $_SESSION['sede'];
               $tahun          = date("Y");
               $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
               $codigo_transaccion = "TM-$tahun-$buat_id";
