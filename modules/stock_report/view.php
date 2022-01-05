@@ -76,6 +76,7 @@
                         <option value="cedula_r">Cedula Resp. recibe</option>
                         <option value="created_date">Fecha (AAAA-MM-DD)</option>
                         <option value="empresa">Empresa</option>
+                        
                       </select>
                     </th>
                     <th>
