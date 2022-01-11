@@ -123,11 +123,11 @@
                       }
 
               echo "  
-                      <td>$data[username]</td>
-                      <td>$data[id_user]</td>
-                      <td>$data[name_user]</td>
-                      <td>$data[sede]</td>
-                      <td>$data[permisos_acceso]</td>
+                      <td class='center'>$data[username]</td>
+                      <td class='center'>$data[id_user]</td>
+                      <td class='center'>$data[name_user]</td>
+                      <td class='center'>$data[sede]</td>
+                      <td class='center'>$data[permisos_acceso]</td>
                       <td class='center'>$data[status]</td>
 
                       <td class='center' width='100'>
