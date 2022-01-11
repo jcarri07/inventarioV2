@@ -35,7 +35,7 @@ function validarExt()
     }
 }
 
-
+/*
 $('body').on('click', '.internos', function(e){
 
 //console.log("estas intentando visualizar los internos"); 
@@ -62,7 +62,24 @@ $.ajax({
     });
 
 modalpdf.modal('show');
-});
+});*/
+
+
+function mostrar_modal_internos(id){
+
+  $.ajax({
+    data: {id: id}, 
+    dataType: 'html', 
+    type: 'POST', 
+    // url: 'php/visualizarpdfodt.php' //url que recibe las variables
+    url: 'modules/inventario/view-modal.php'
+
+  }).done(function(data){              
+    $('#cuerpo_internos').html(data); 
+  });
+
+  $('#modal_internos').modal('show');
+}
 
 
   </script>
@@ -236,15 +253,15 @@ modalpdf.modal('show');
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
 
-                    <a class="btn btn-primary btn-xs internos" class="modal-dialog modal-lg" id="<?php echo $data['codigo'];?>">
-                          <i  style='color:#fff' class='glyphicon glyphicon-list'></i>
+                    <a class="btn btn-primary btn-xs internos"  data-toggle="tooltip"  data-placement="top" title="Detalles" class="modal-dialog modal-lg" id="<?php echo $data['codigo'];?>" onclick="mostrar_modal_internos(this.id);">
+                          <i class="fa fa-clipboard" style='color:#fff'></i>
                     </a>
                     <!--data-toggle='modal' data-target='#modal_internos'-->
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
                   <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/inventario/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
-                  <i style="color:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
+                  <i style="color:#8D8B8B" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
@@ -289,7 +306,7 @@ modalpdf.modal('show');
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h3 class="modal-title" id="exampleModalLabel">FICHA RESUMEN</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
