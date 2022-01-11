@@ -42,58 +42,53 @@ function validarExt()
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-  
       <div class="box box-primary">
-        <div class="box-body">
+        <div class="box-body table-responsive">
 
           <table class="table table-bordered table-striped table-hover">
       
             <thead>
               <tr>
                 <th class="center">No.</th>
+                <th class="center">CODIGO</th>
+                <th class="center">DESCRIPCION</th>
+				        <th class="center">MARCA</th>
+                <th class="center">MODELO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">CLICKUP</th>
-				        <th class="center">MODELO</th>
-                <th class="center">CONDICION</th>
-                <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-              
+                <th class="center">N° BIEN</th>
               </tr>
-
-
-              
+           
             </thead>
             <tbody>
+           
             <?php  
             $no = 1;
-
+            require "../../config/database.php";
+            //echo $_POST['id'];
             
-               
-            if (isset($_GET['id'])) {
-
-           $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]'") 
+            if (isset($_POST['id'])) {
+              $id = $_POST['id'];
+           $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo='$id'") 
           or die('error: '.mysqli_error($mysqli));
-
-            }            
-  
+         // $data = mysqli_fetch_assoc($query);        
+        
             while ($data = mysqli_fetch_assoc($query)) { 
-              /*$precio_compra = format_rupiah($data['precio_compra']);
-              $precio_venta = format_rupiah($data['precio_venta']);*/
            
+
               echo "<tr>
-                      <td width='30' class='center'>$no</td>
-                      <td width='50' class='center'>$data[codigo]</td>
-                      <td width='90' class='center'>$data[serial]</td>
-                      <td width='90' class='center'>$data[descripcion]</td>
-                      <td width='90' class='center'>$data[marca]</td>
-                      <td width='90' class='center'>$data[modelo]</td>
-                      <td width='90' class='center'>$data[color]</td>";
+                       <td width='50' class='center'>$no</td>
+                       <td width='100' class='center'>$data[codigo]</td>
+                       <td width='100' class='center'>$data[descripcion]</td>
+                       <td width='100' class='center'>$data[marca]</td>
+                       <td width='100' class='center'>$data[modelo]</td>
+                       <td width='100' class='center'>$data[serial]</td>
+                       <td width='100' class='center'>$data[bienesN]</td>";
               echo "    </div>
                       </td>
                     </tr>";
               $no++;
             }
-
+          }
             
             ?>
 
@@ -130,8 +125,99 @@ function validarExt()
           </script>
             </tbody>
           </table>
+
+
+          <table class="table table-bordered table-striped table-hover">
+      
+      <thead>
+        <tr>
+          <th class="center">No.</th>
+          <th class="center">SERIAL</th>
+          <th class="center">COMPONENTE</th>
+          <th class="center">CLASE</th>
+          <th class="center">CAPACIDAD</th>
+          <th class="center">MARCA</th>
+          <th class="center">MODELO</th>
+          <th class="center">CONDICION</th>
+          <th class="center">VOLTAJE</th>
+          <th class="center">CERTIFICACION</th>
+        </tr>
+     
+      </thead>
+      <tbody>
+     
+      <?php  
+      $no = 1;
+      require "../../config/database.php";
+      //echo $_POST['id'];
+      
+      if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+     $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$id'") 
+    or die('error: '.mysqli_error($mysqli));
+   // $data = mysqli_fetch_assoc($query);        
+  
+      while ($data = mysqli_fetch_assoc($query)) { 
+     
+
+        echo "<tr>
+                <td width='30' class='center'>$no</td>
+                <td width='50' class='center'>$data[serial]</td>
+                <td width='90' class='center'>$data[componente]</td>
+                <td width='90' class='center'>$data[clase]</td>
+                <td width='90' class='center'>$data[capacidad]</td>
+                <td width='90' class='center'>$data[marca]</td>
+                <td width='90' class='center'>$data[modelo]</td>
+                <td width='90' class='center'>$data[condicion]</td>
+                <td width='90' class='center'>$data[voltaje]</td>
+                <td width='90' class='center'>$data[certificacion]</td>";
+        echo "    </div>
+                </td>
+              </tr>";
+        $no++;
+      }
+    }
+      
+      ?>
+
+
+
+      <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+      <script>
+
+
+          /*$(document).ready( function () {
+          $('#dataTables1').DataTable();*/
+      // } );
+
+      $(document).ready(function(){
+        load(1);
+      });
+
+      function load(page){
+        var parametros = {"action":"ajax","page":page};
+        $("#loader").fadeIn('slow');
+        $.ajax({
+        url:'paises_ajax.php',
+        data: parametros,
+        beforeSend: function(objeto){
+        $("#loader").html("<img src='loader.gif'>");
+      },
+
+      success:function(data){
+        $(".outer_div").html(data).fadeIn('slow');
+        $("#loader").html("");
+      }
+      })
+    }
+    </script>
+      </tbody>
+    </table>
+
+
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!--/.col -->
   </div>   <!-- /.row -->
 </section><!-- /.content
+<section class="content-header">
