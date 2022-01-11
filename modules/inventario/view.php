@@ -38,7 +38,7 @@ function validarExt()
 
 $('body').on('click', '.internos', function(e){
 
-console.log("estas intentando visualizar los internos"); 
+//console.log("estas intentando visualizar los internos"); 
 var boton = $(this);
 var id = boton[0].id;
 cadena = "serial=" + id;

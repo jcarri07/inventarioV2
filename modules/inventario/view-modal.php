@@ -52,33 +52,29 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">SERIAL</th>
-                <th class="center">CLICKUP</th>
+                <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
               
               </tr>
-
-
-              
+           
             </thead>
             <tbody>
+           
             <?php  
             $no = 1;
 
+            echo $_GET['id'];
             
-               
             if (isset($_GET['id'])) {
-
+              
            $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]'") 
           or die('error: '.mysqli_error($mysqli));
-
-            }            
-  
+         // $data = mysqli_fetch_assoc($query);        
+       
             while ($data = mysqli_fetch_assoc($query)) { 
-              /*$precio_compra = format_rupiah($data['precio_compra']);
-              $precio_venta = format_rupiah($data['precio_venta']);*/
            
               echo "<tr>
                       <td width='30' class='center'>$no</td>
@@ -93,7 +89,7 @@ function validarExt()
                     </tr>";
               $no++;
             }
-
+          }
             
             ?>
 
