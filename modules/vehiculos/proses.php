@@ -66,7 +66,6 @@ else {
             $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
 			$cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
 			$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-			$bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));	
 			$nmroCarroceria  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCarroceria']));
 			$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
 			$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
@@ -77,8 +76,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO vehiculos (pertenece , categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, bienesN, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
-                VALUES('$pertenece' ,'Vehiculos','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$bienesN', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
+                $query = mysqli_query($mysqli, "INSERT INTO vehiculos (pertenece , categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
+                VALUES('$pertenece' ,'Vehiculos','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             

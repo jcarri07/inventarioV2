@@ -48,7 +48,7 @@ if ($_GET['form']=='add') { ?>
 
               <?php  
           
-              $query_id = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
+              $query_select = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
                                                 where categoria = 'inmuebles' ORDER BY codigo DESC LIMIT 1")
                                                 or die('error '.mysqli_error($mysqli));
 
@@ -62,6 +62,9 @@ if ($_GET['form']=='add') { ?>
               } else {
                   $codigo = 1;
               }
+              
+              $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
+              $codigo = "$buat_id";
 
               ?>
 

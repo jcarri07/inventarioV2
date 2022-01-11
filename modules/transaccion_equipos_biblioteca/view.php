@@ -101,21 +101,21 @@ function validarExt()
             <thead>
               <tr>
                 <th class="center">No.</th>
-                <th class="center">COD. TRANSACCION</th>
+                <th class="center">TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
-                <th class="center">ISBN</th>
                 <th class="center">TITULO</th>
+                <th class="center">ISBN</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>
-                <th class="center">RESPONSABLE ENTREGA</th>
+                <th class="center">ENTREGA</th>
 				        <th class="center">CEDULA</th>
-                <th class="center">EMPRESA</th>
-                <th class="center">SEDE/LUGAR</th>
-                <th class="center">RESPONSABLE RECIBE</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>
+                <th class="center">RECIBE</th>
                 <th class="center">CEDULA </th>
-                <th class="center">EMPRESA</th>
-                <th class="center">SEDE/LUGAR</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERTENECE</th>
                 <th class="center">FECHA</th>
                 
                 
@@ -137,23 +137,23 @@ function validarExt()
 
              
               echo "<tr>
-                      <td width='25' class='center'>$no</td>
+                      <td width='50' class='center'>$no</td>
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
-                      <td width='50' class='center'>$data[tipo_transaccion]</td>
-                      <td width='80' class='center'>$data[codigo]</td>
-                      <td width='80'>$data[isbn]</td>
-                      <td width='80' class='center'>$data[titulo]</td>
-                      <td width='80' class='center'>$data[condicion]</td>
-                      <td width='80' class='center'>$data[motivo]</td>
-                      <td width='80' class='center'>$data[entrega]</td>
-                      <td width='80' class='center'>$data[cedula_e]</td>
-                      <td width='80' class='center'>$data[empresa]</td>
-                      <td width='80' class='center'>$data[lugar_e]</td>
-                      <td width='80' class='center'>$data[recibe]</td>
-                      <td width='80' class='center'>$data[cedula_r]</td>
-                      <td width='80' class='center'>$data[empresa_r]</td>
-                      <td width='80' class='center'>$data[lugar_r]</td>
-                      <td width='80' class='center'>$data[created_date]</td>
+                      <td width='100' class='center'>$data[tipo_transaccion]</td>
+                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[titulo]</td>
+                      <td width='100' class='center'>$data[isbn]</td>
+                      <td width='100' class='center'>$data[condicion]</td>
+                      <td width='100' class='center'>$data[motivo]</td>
+                      <td width='100' class='center'>$data[entrega]</td>
+                      <td width='100' class='center'>$data[cedula_e]</td>
+                      <td width='100' class='center'>$data[lugar_e]</td>
+                      <td width='100' class='center'>$data[empresa]</td>
+                      <td width='100' class='center'>$data[recibe]</td>
+                      <td width='100' class='center'>$data[cedula_r]</td>
+                      <td width='100' class='center'>$data[lugar_r]</td>
+                      <td width='100' class='center'>$data[empresa_r]</td>
+                      <td width='100' class='center'>$data[created_date]</td>
                     
                     </tr>";
               $no++;

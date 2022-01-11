@@ -48,7 +48,7 @@ if ($_GET['form']=='add') { ?>
 
               <?php  
           
-              $query_id = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
+              $query_select = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
                                                 where categoria = 'inmuebles' ORDER BY codigo DESC LIMIT 1")
                                                 or die('error '.mysqli_error($mysqli));
 
@@ -62,6 +62,9 @@ if ($_GET['form']=='add') { ?>
               } else {
                   $codigo = 1;
               }
+
+              $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
+              $codigo = "$buat_id";
 
               ?>
 
@@ -94,21 +97,21 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Pisos</label>
+                <label class="col-sm-2 control-label">Pisos</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="pisos" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">N° Cuartos </label>
+                <label class="col-sm-2 control-label">Habitaciones </label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="nmroCuartos" onkeypress="return validaNumericos(event)" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">N° Habitantes</label>
+                <label class="col-sm-2 control-label">Habitantes</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="habitantes" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
