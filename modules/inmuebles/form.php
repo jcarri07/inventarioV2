@@ -76,7 +76,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Clase</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
