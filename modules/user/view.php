@@ -88,14 +88,14 @@
             <thead>
               <tr>
                 <th class="center">No.</th>
-                <th class="center">Foto</th>
-                <th class="center">Usuario</th>
+                <th class="center">FOTO</th>
+                <th class="center">USUARIO</th>
                 <th class="center">ID</th>
-                <th class="center">Nombre del usuario</th>
-                <th class="center">Permisos de acceso</th>
-                <th class="center">Sede</th>
-                <th class="center">Status</th>
-                <th class="center"></th>
+                <th class="center">NOMBRE DEL USUARIO</th>
+                <th class="center">SEDE</th>
+                <th class="center">PERMISOS DE ACCESO</th>
+                <th class="center">ESTATUS</th>
+                <th class="center">EDITAR</th>
               </tr>
             </thead>
 
@@ -126,8 +126,8 @@
                       <td>$data[username]</td>
                       <td>$data[id_user]</td>
                       <td>$data[name_user]</td>
-                      <td>$data[permisos_acceso]</td>
                       <td>$data[sede]</td>
+                      <td>$data[permisos_acceso]</td>
                       <td class='center'>$data[status]</td>
 
                       <td class='center' width='100'>

@@ -38,14 +38,14 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">nombre del usuario</label>
+                <label class="col-sm-2 control-label">Nombre del usuario</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="name_user" autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Cedula</label>
+                <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula_user" autocomplete="off" required>
                 </div>
