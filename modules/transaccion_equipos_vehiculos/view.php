@@ -104,7 +104,7 @@ function validarExt()
                 <th class="center">TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
-                <th class="center">TIPO DE VEHICULO</th>
+                <th class="center">CLASE</th>
                 <th class="center">PLACA</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>

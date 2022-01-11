@@ -130,7 +130,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Texto</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar equipo--" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar texto--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT codigo, titulo FROM biblioteca ORDER BY titulo ASC")
@@ -160,7 +160,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula_e" onkeypress='return validaNumericos(event)' autocomplete="off"  required>
+                  <input type="text" class="form-control" name="cedula_e" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off"  required>
                 </div>
               </div>
 
@@ -188,7 +188,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula_r" onkeypress='return validaNumericos(event)' autocomplete="off" required>
+                  <input type="text" class="form-control" name="cedula_r" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 
