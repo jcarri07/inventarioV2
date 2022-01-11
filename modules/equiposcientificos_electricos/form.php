@@ -99,7 +99,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Nº Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
                 </div>
               </div>
 
@@ -255,7 +255,7 @@ elseif ($_GET['form']=='edit') {
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Nº Bien</label>
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" name="bienesN" autocomplete="off" onkeypress='return validaNumericos(event)'  value="<?php echo $data['bienesN']; ?>" required>
+                    <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
                   </div>
                 </div> 
   
