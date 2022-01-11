@@ -911,7 +911,7 @@
                               <tr>
                                 <th class="center">No.</th>
                                 <th class="center">CODIGO</th>
-                                <th class="center">TIPO</th>
+                                <th class="center">CLASE</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">CARROCERIA</th>
@@ -1048,7 +1048,7 @@
                               <tr>
                               <th class="center">No.</th>
                               <th class="center">CODIGO</th>
-                              <th class="center">TIPO</th>
+                              <th class="center">CLASE</th>
                               <th class="center">DESCRIPCION</th>
                               <th class="center">M²</th>
                               <th class="center">PISOS</th>
