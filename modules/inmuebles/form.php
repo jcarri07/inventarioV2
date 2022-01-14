@@ -76,7 +76,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Clase</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
@@ -92,7 +92,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">M²</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="metrosCuadrados" autocomplete="off" required>
+                  <input type="text" class="form-control" name="metrosCuadrados" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 
@@ -106,7 +106,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Habitaciones </label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCuartos" onkeypress="return validaNumericos(event)" autocomplete="off" required>
+                  <input type="text" class="form-control" name="nmroCuartos" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 

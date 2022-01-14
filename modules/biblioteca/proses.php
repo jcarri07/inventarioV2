@@ -7,6 +7,9 @@ function buscaRepetido($codigo,$mysqli) {
 
       $result = mysqli_query($mysqli,"SELECT codigo from biblioteca
       WHERE codigo = '$codigo'");
+      
+      $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
+      $codigo = "$buat_id";
 
       if(mysqli_num_rows($result) > 0){
         return 1;
