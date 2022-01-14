@@ -177,6 +177,29 @@ function mostrar_modal_internos(id){
               <h4>  <i class='icon fa fa-check-circle'></i> por favor seleccione el archivo que desea importar.</h4>
             </div>";
     }
+    elseif ($_GET['alert'] == 9) {
+      echo "<div class='alert alert-danger alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
+             Asegúrese de que el archivo que sube es correcto.
+            </div>";
+    }
+
+    elseif ($_GET['alert'] == 10) {
+      echo "<div class='alert alert-danger alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
+            Asegúrese de que la imagen no pese más de 1 MB.
+            </div>";
+    }
+ 
+    elseif ($_GET['alert'] == 11) {
+      echo "<div class='alert alert-danger alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
+             Asegúrese de que el tipo de archivo subido sea  *.JPG, *.JPEG, *.PNG.
+            </div>";
+    }
 
     ?>
 
@@ -303,7 +326,7 @@ function mostrar_modal_internos(id){
   </div>   <!-- /.row -->
 
   <div class="modal fade bd-example-modal-lg" id="modal_internos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-lg" style="max-width: 100%;"  role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">FICHA RESUMEN</h3>

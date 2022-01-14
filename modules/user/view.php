@@ -58,7 +58,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el archivo que se sube es correcto.
+             Asegúrese de que el archivo que sube es correcto.
             </div>";
     }
 
@@ -66,7 +66,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-            Asegúrese de que la imagen no es más de 1 MB.
+            Asegúrese de que la imagen no pese más de 1 MB.
             </div>";
     }
  

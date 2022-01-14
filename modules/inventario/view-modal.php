@@ -49,7 +49,6 @@ function validarExt()
       
             <thead>
               <tr>
-                <th class="center">No.</th>
                 <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
 				        <th class="center">MARCA</th>
@@ -62,7 +61,6 @@ function validarExt()
             <tbody>
            
             <?php  
-            $no = 1;
             require "../../config/database.php";
             //echo $_POST['id'];
             
@@ -76,7 +74,6 @@ function validarExt()
            
 
               echo "<tr>
-                       <td width='50' class='center'>$no</td>
                        <td width='100' class='center'>$data[codigo]</td>
                        <td width='100' class='center'>$data[descripcion]</td>
                        <td width='100' class='center'>$data[marca]</td>
@@ -86,7 +83,6 @@ function validarExt()
               echo "    </div>
                       </td>
                     </tr>";
-              $no++;
             }
           }
             
@@ -131,7 +127,6 @@ function validarExt()
       
       <thead>
         <tr>
-          <th class="center">No.</th>
           <th class="center">SERIAL</th>
           <th class="center">COMPONENTE</th>
           <th class="center">CLASE</th>
@@ -147,7 +142,6 @@ function validarExt()
       <tbody>
      
       <?php  
-      $no = 1;
       require "../../config/database.php";
       //echo $_POST['id'];
       
@@ -161,7 +155,19 @@ function validarExt()
      
 
         echo "<tr>
-                <td width='30' class='center'>$no</td>
+                      <td width='50' class='center'>$no</td>";
+
+                      if ($data['foto']=="") { ?>
+                        <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
+                      <?php
+                      } else { ?>
+                        
+                        <td class='center'><img class='img-user' src='images/inventario/<?php echo $data['foto_equipo']; ?>' width='25'></td>
+                      <?php
+                      }
+
+              echo "  
+        
                 <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[componente]</td>
                 <td width='90' class='center'>$data[clase]</td>
@@ -174,7 +180,6 @@ function validarExt()
         echo "    </div>
                 </td>
               </tr>";
-        $no++;
       }
     }
       
