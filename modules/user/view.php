@@ -123,14 +123,13 @@
                       }
 
               echo "  
-                      <td class='center'>$data[username]</td>
-                      <td class='center'>$data[id_user]</td>
-                      <td class='center'>$data[name_user]</td>
-                      <td class='center'>$data[sede]</td>
-                      <td class='center'>$data[permisos_acceso]</td>
-                      <td class='center'>$data[status]</td>
-
-                      <td class='center' width='100'>
+                      <td width='200' class='center'>$data[username]</td>
+                      <td width='50' class='center'>$data[id_user]</td>
+                      <td width='200' class='center'>$data[name_user]</td>
+                      <td width='200' class='center'>$data[sede]</td>
+                      <td width='200' class='center'>$data[permisos_acceso]</td>
+                      <td width='200' class='center'>$data[status]</td>
+                      <td width='200' class='center' width='200'>
                           <div>";
 
                           if ($data['status']=='activo') { ?>

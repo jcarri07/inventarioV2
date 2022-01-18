@@ -242,7 +242,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carrocería</label>
+                <label class="col-sm-2 control-label">Carrocería</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off"  value="<?php echo $data['nmroCarroceria']; ?>" required>
                 </div>
