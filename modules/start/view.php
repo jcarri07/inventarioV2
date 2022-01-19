@@ -77,15 +77,15 @@ $data = mysqli_fetch_assoc($query);
 
             $data = mysqli_fetch_assoc($query);
             ?>
-            <h2 class = "titulo">Movimientos</h2>
+            <h2 class = "titulo"> Movimientos </h2>
             <h2 class="prueba cantidad"><?php echo $data['numero']; ?></h2>
             
           </div>
           <div class="icon iconoMenu">
-            <a href="?module=form_transaccion_equipos&form=add"><i class="fa fa-sign-in fa-2x" style="color:#000000;opacity:0.1"></i>
+            <a href="?module=transaccion_equipos"><i class="fa fa-sign-in fa-2x" style="color:#000000;opacity:0.1"></i>
           </div>
      
-            <a href="?module=form_transaccion_equipos&form=add" class="small-box-footer bordes" title="Agregar" style="height: 5vh" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
+            <a href="?module=transaccion_equipos" class="small-box-footer bordes" title="Agregar" style="height: 5vh" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
           
         </div>
       </div><!-- ./col -->
@@ -102,7 +102,7 @@ $data = mysqli_fetch_assoc($query);
             $data = mysqli_fetch_assoc($query);
             ?>
             <h2 class="prueba cantidad" ><?php echo $data['numero']; ?></h2>
-            <h2 class="titulo">Reportes</h2>
+            <h2 class="titulo"> Reportes </h2>
           </div>
           <div class="icon iconoMenu">
           <a href="?module=stock_inventory"><i class="fa fa-file-text-o fa-2x" style="color:#000000;opacity:0.1"></i>
@@ -124,7 +124,7 @@ $data = mysqli_fetch_assoc($query);
             $data = mysqli_fetch_assoc($query);
             ?>
             <h2 class="prueba cantidad"><?php echo $data['numero']; ?></h2>
-            <h2  class= "titulo">Movimientos</h2>
+            <h2  class= "titulo"> Eliminar o vincular a otro </h2>
 
           </div>
           <div class="icon iconoMenu">
