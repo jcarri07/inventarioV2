@@ -124,7 +124,7 @@ $data = mysqli_fetch_assoc($query);
             $data = mysqli_fetch_assoc($query);
             ?>
             <h2 class="prueba cantidad"><?php echo $data['numero']; ?></h2>
-            <h2  class= "titulo"> Eliminar o vincular a otro </h2>
+            <h2  class= "titulo"> Historial </h2>
 
           </div>
           <div class="icon iconoMenu">
