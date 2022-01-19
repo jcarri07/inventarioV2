@@ -1,8 +1,14 @@
 <section class="content-header">
-      <section class="content-header">
   <h1>
     <i class="fa fa-history icon-title"></i> Historial   
   </h1>
+  <ol class="breadcrumb">
+    <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
+    <li class="active"> Historial </li>
+    <li class="active"> Historial </li>
+  </ol>
+</section>
+
   <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">-->
   <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
   <link rel="stylesheet" type="text/css" href="datatables/Datatables-10.10.20/css/dataTables.bootstrap4.min.css">
@@ -49,13 +55,12 @@
             <thead>
               <tr>
                 <th class="center">No.</th>
-                <th class="center">No. Cedula</th>
-                <th class="center">Usuario</th>
+                <th class="center">CEDULA</th>
+                <th class="center">USUARIO</th>
                 <th class="center">ID</th>
-                <th class="center">Fecha</th>
-                
-                <th class="center">Hora</th>
-                <th class="center">Accion</th>
+                <th class="center">FECHA</th>
+                <th class="center">HORA</th>
+                <th class="center">ACCION</th>
               </tr>
             </thead>
           
@@ -72,13 +77,13 @@
               while ($data = mysqli_fetch_assoc($query)) { 
               
                 echo "<tr>
-                <td width='30' class='center'>$no</td>
-                <td width='80' class='center'>$data[cedula]</td>
-                <td width='180' class='center'>$data[nombre]</td>
-                <td width='40' class='center'>$data[permiso]</td>
-                <td width='80' class='center'>$data[fecha]</td>
-                <td width='80' class='center'>$data[hora]</td>
-                <td width='180' class='center'>$data[accion]</td>
+                <td width='50' class='center'>$no</td>
+                <td width='200' class='center'>$data[cedula]</td>
+                <td width='200' class='center'>$data[nombre]</td>
+                <td width='50' class='center'>$data[permiso]</td>
+                <td width='200' class='center'>$data[fecha]</td>
+                <td width='200' class='center'>$data[hora]</td>
+                <td width='200' class='center'>$data[accion]</td>
                     </tr>";
                 $no++;
               }

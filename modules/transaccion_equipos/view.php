@@ -38,7 +38,7 @@ function validarExt()
 
 <section class="content-header">
   <h2>
-    <i class="fa fa-sign-in icon-title"></i> Control de Equipos
+    <i class="fa fa-sign-in icon-title"></i> Equipos
      
     <form action="database/excel_to_mysql_control.php" method="POST" enctype="multipart/form-data">
       <button class="btn btn-primary pull-right botones" title="Importar" name="archivo" data-toggle="tooltip">Importar</button>

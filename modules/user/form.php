@@ -10,8 +10,8 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=user"> Usuario </a></li>
-      <li class="active"> agregar </li>
+      <li><a href="?module=user"> Usuarios </a></li>
+      <li class="active"> Agregar </li>
     </ol>
   </section>
 

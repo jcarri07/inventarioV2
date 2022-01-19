@@ -24,7 +24,7 @@ $data = mysqli_fetch_assoc($query);
         <div class="alert alert-info alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <p style="font-size:15px">
-            <i class="icon fa fa-user"></i> Bienvenid@ <strong><?php echo $_SESSION['name_user']; ?></strong> a la aplicación de inventarios.
+            <i class="icon fa fa-user"></i> Bienvenid@ <strong><?php echo $_SESSION['name_user']; ?></strong> a la aplicación de inventarios
           </p>        
         </div>
       </div>  
@@ -44,7 +44,7 @@ $data = mysqli_fetch_assoc($query);
            
             $data = mysqli_fetch_assoc($query);
             ?>
-             <h2 class = "titulo"> Inventario </h2>
+             <h2 class = "titulo"> Inventarios </h2>
             <h2 class="prueba cantidad"> <?php echo $data['numero'];?> </h2>
             
           </div>
@@ -77,7 +77,7 @@ $data = mysqli_fetch_assoc($query);
 
             $data = mysqli_fetch_assoc($query);
             ?>
-            <h2 class = "titulo"> Control de Equipos</h2>
+            <h2 class = "titulo">Movimientos</h2>
             <h2 class="prueba cantidad"><?php echo $data['numero']; ?></h2>
             
           </div>
@@ -102,7 +102,7 @@ $data = mysqli_fetch_assoc($query);
             $data = mysqli_fetch_assoc($query);
             ?>
             <h2 class="prueba cantidad" ><?php echo $data['numero']; ?></h2>
-            <h2 class="titulo" >Reportes</h2>
+            <h2 class="titulo">Reportes</h2>
           </div>
           <div class="icon iconoMenu">
           <a href="?module=stock_inventory"><i class="fa fa-file-text-o fa-2x" style="color:#000000;opacity:0.1"></i>
@@ -124,7 +124,7 @@ $data = mysqli_fetch_assoc($query);
             $data = mysqli_fetch_assoc($query);
             ?>
             <h2 class="prueba cantidad"><?php echo $data['numero']; ?></h2>
-            <h2  class= "titulo">Control de Movimientos</h2>
+            <h2  class= "titulo">Movimientos</h2>
 
           </div>
           <div class="icon iconoMenu">
