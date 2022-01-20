@@ -17,17 +17,18 @@ $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE codigo = '$var1'")
 
     if ($rows > 0) {
         $data = mysqli_fetch_assoc($query);
-        $var2   = $data['codigo'];
-    	$var3	= $data['tipo'];
-    	$var4	= $data['descripcion'];	
-    	$var5	= $data['metrosCuadrados'];
-    	$var6	= $data['pisos'];
-    	$var7	= $data['nmroCuartos'];
-    	$var8	= $data['habitantes'];
-    	$var9   = $data['direccion'];
-    	$var10   = $data['condicion'];
-    	$var11   = $data['responsable'];
-    	$var12   = $data['cedula'];
+        $var1 = $data['codigo'];
+    	$var2 = $data['tipo'];
+    	$var3 = $data['descripcion'];	
+    	$var4 = $data['metrosCuadrados'];
+    	$var5 = $data['pisos'];
+    	$var6 = $data['nmroCuartos'];
+    	$var7 = $data['habitantes'];
+    	$var8 = $data['direccion'];
+    	$var9 = $data['condicion'];
+    	$var10 = $data['responsable'];
+        $var11 = $data['cedula'];
+        $var12 = $data['sede'];
     }
 
     $var1 = " CODIGO: ".$data['codigo'];
@@ -41,8 +42,9 @@ $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE codigo = '$var1'")
     $var9 = " CONDICION: ".$data['condicion'];
     $var10 = " RESPONSABLE: ".$data['responsable'];
     $var11 = " CEDULA: ".$data['cedula'];
+    $var12 = " SEDE: ".$data['sede'];
 
-$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11;
+$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
 
 include('vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
 use Endroid\QrCode\QrCode;

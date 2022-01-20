@@ -128,11 +128,11 @@ $data = mysqli_fetch_assoc($query);
 
           </div>
           <div class="icon iconoMenu">
-          <a href="?module=stock_report"><i class="fa fa-clone fa-2x" style="color:#000000;opacity:0.1"></i>
+          <a href="?module=history"><i class="fa fa-clone fa-2x" style="color:#000000;opacity:0.1"></i>
             
           </div>
           
-          <a href="?module=stock_report" class="small-box-footer bordes" title="Imprimir" data-toggle="tooltip"><i class="fa fa-print"></i></a>
+          <a href="?module=history" class="small-box-footer bordes" title="Imprimir" data-toggle="tooltip"><i class="fa fa-print"></i></a>
           
         </div>
       </div><!-- ./col -->
