@@ -9,12 +9,13 @@ include "../../config/fungsi_tanggal.php";
 
 include "../../config/fungsi_rupiah.php";
 
-$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, sede, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
+$sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
@@ -53,7 +54,6 @@ $count  = mysqli_num_rows($query);
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/ABAE_logo.png" />
     </div>-->
 
-
     <div id="title">
         REPORTE DE INVENTARIO (COMUNICACION)
     </div>
@@ -70,7 +70,11 @@ $count  = mysqli_num_rows($query);
         </tr>
         <tr>
             <td>Fecha:</td>
-            <td width="80" align="center"> <?= date('d/m/Y'); ?></td>
+            <td width="80" align="center"> <?php echo date('d/m/Y'); ?></td>
+        </tr>
+        <tr>
+            <td>Sede:</td>
+            <td width="80" align="center"> <?php echo $sede ?></td>
         </tr>
 
     </table>
