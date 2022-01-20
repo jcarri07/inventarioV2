@@ -46,7 +46,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])){
      echo "<meta http-equiv='refresh' content='0; url=index.php?alert=1'>";
 }
 
-else {
+/*else {
     if ($_GET['act']=='insert') {
         if (isset($_POST['Guardar'])) {
      
@@ -91,9 +91,108 @@ else {
                 header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
             }
         }   
-    }
+    }*/
+//--------------------------------------
+else {
+    if ($_GET['act']=='insert') {
+       if (isset($_POST['Guardar'])) {
+
+            $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
+                $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
+                $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
+                $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
+                $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
+                $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
+                $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
+                $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+                $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+                // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+                $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
+                $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
+                $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+                $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+                $foto_equipo  = mysqli_real_escape_string($mysqli, trim($_POST['foto_equipo']));
+                $created_user = $_SESSION['id_user'];
+            $name_file          = $_FILES['foto_equipo']['name'];
+            $ukuran_file        = $_FILES['foto_equipo']['size'];
+            $tipe_file          = $_FILES['foto_equipo']['type'];
+            $tmp_file           = $_FILES['foto_equipo']['tmp_name'];
+            
     
-    elseif ($_GET['act']=='update') {
+            $allowed_extensions = array('jpg','jpeg','png');
+            
+        
+            $path_file          = "../../images/inventario/".$name_file;
+    
+            $file               = explode(".", $name_file);
+            $extension          = array_pop($file);
+
+            if(buscaRepetido($serial,$mysqli) == 1){
+
+                header("location: ../../main.php?module=inventario&alert=5");
+
+            }elseif (empty($_FILES['foto_equipo']['name'])) {
+                
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user) 
+                VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date')")
+                or die('error '.mysqli_error($mysqli)); 
+
+
+                $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli));
+                                            
+                //header("location: ../../main.php?module=form_inventario&form=add");  
+
+               if($query){
+                header("location: ../../main.php?module=inventario&alert=1");
+                header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+               }
+            } elseif (!empty($_FILES['foto_equipo']['name'])) {
+        
+                if (in_array($extension, $allowed_extensions)) {
+                
+                    if($ukuran_file <= 1000000) { 
+                        
+                        if(move_uploaded_file($tmp_file, $path_file)) { 
+                            
+                         
+                        $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user,foto_equipo) 
+                                            VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date','$foto_equipo')")
+                                            or die('error '.mysqli_error($mysqli)); 
+
+                            if ($query) {
+                            
+                                  $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli));
+                                            
+                              //header("location: ../../main.php?module=form_inventario&form=add");  
+                             header("location: ../../main.php?module=inventario&alert=1");
+                             header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                            }
+                        } else {
+                           
+                            header("location: ../../main.php?module=inventario&alert=9");
+                        }
+                    } else {
+                       
+                        header("location: ../../main.php?module=inventario&alert=10");
+                    }
+                } else {
+                   
+                    header("location: ../../main.php?module=inventario&alert=11");
+                } 
+            }
+            
+    
+        }
+    }
+
+   //-------------------------------------------- 
+    /*elseif ($_GET['act']=='update') {
         if (isset($_POST['Guardar'])) {
             if (isset($_POST['codigo'])) {
         
@@ -148,8 +247,131 @@ else {
                 }        
             }
         }
-    }
+    }*/
 
+    
+    
+
+
+//------------------------------
+elseif ($_GET['act']=='update') {
+    if (isset($_POST['Guardar'])) {
+        if (isset($_POST['codigo'])) {
+
+            $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
+                $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
+                $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
+                $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
+                $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
+                $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
+                $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
+                $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+                $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+                // $categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+                $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
+                $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
+                $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+                $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+                $foto_equipo  = mysqli_real_escape_string($mysqli, trim($_POST['foto_equipo']));
+
+            $name_file          = $_FILES['foto_equipo']['name'];
+            $ukuran_file        = $_FILES['foto_equipo']['size'];
+            $tipe_file          = $_FILES['foto_equipo']['type'];
+            $tmp_file           = $_FILES['foto_equipo']['tmp_name'];
+            
+    
+            $allowed_extensions = array('jpg','jpeg','png');
+            
+        
+            $path_file          = "../../images/inventario/".$name_file;
+    
+            $file               = explode(".", $name_file);
+            $extension          = array_pop($file);
+
+            if (empty($_FILES['foto_equipo']['name'])) {
+                
+                 $query = mysqli_query($mysqli, "UPDATE inventario SET 
+                                                                    responsable       = '$responsable',
+                                                                    marca             = '$marca',
+                                                                    serial             = '$serial',
+                                                                    modelo             = '$modelo',
+                                                                    sede               = '$sede',
+                                                                    pertenece            = '$pertenece',
+                                                                    cedula            = '$cedula',
+                                                                    bienesN             = '$bienesN',
+                                                                    color             = '$color',
+                                                                    descripcion             = '$descripcion',
+                                                                    condicion             = '$condicion',
+                                                                    ubicacion             = '$ubicacion',
+                                                                    unidad          = '$unidad',
+                                                                    cantidad          = '$cantidad',
+                                                                    updated_user    = '$updated_user'
+                                                              WHERE codigo       = '$codigo'")
+                                                or die('error: '.mysqli_error($mysqli));
+
+
+            
+                if ($query) {
+              
+                    header("location: ../../main.php?module=inventario&alert=2");
+                }
+            }
+    
+            elseif (!empty($_FILES['foto_equipo']['name'])) {
+        
+                if (in_array($extension, $allowed_extensions)) {
+                
+                    if($ukuran_file <= 1000000) { 
+                        
+                        if(move_uploaded_file($tmp_file, $path_file)) { 
+                            
+                                                            $query = mysqli_query($mysqli, "UPDATE inventario SET 
+                                                            responsable       = '$responsable',
+                                                            marca             = '$marca',
+                                                            serial             = '$serial',
+                                                            modelo             = '$modelo',
+                                                            sede               = '$sede',
+                                                            pertenece            = '$pertenece',
+                                                            cedula            = '$cedula',
+                                                            bienesN             = '$bienesN',
+                                                            color             = '$color',
+                                                            descripcion             = '$descripcion',
+                                                            condicion             = '$condicion',
+                                                            ubicacion             = '$ubicacion',
+                                                            unidad          = '$unidad',
+                                                            cantidad          = '$cantidad',
+                                                            updated_user    = '$updated_user'
+                                                            foto_equipo 		= '$name_file',
+                                                      WHERE codigo       = '$codigo'")
+                                        or die('error: '.mysqli_error($mysqli));
+
+
+                            if ($query) {
+                            
+                                header("location: ../../main.php?module=inventario&alert=2");
+                            }
+                        } else {
+                           
+                            header("location: ../../main.php?module=inventario&alert=9");
+                        }
+                    } else {
+                       
+                        header("location: ../../main.php?module=inventario&alert=10");
+                    }
+                } else {
+                   
+                    header("location: ../../main.php?module=inventario&alert=11");
+                } 
+            }
+            
+    
+        }
+    }
+}
+}
+//---------------------------------------------
     if ($_GET['act']=='delete') {
 
         if (isset($_GET['id'])) {

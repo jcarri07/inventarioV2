@@ -67,8 +67,8 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Agregar </a></li>
-      <li class="active"> Más </li>
+      <li><a href="?module=inventario"> Comunicación </a></li>
+      <li class="active"> Agregar </li>
     </ol>
   </section>
 
@@ -241,18 +241,9 @@ if ($_GET['form']=='add') { ?>
             <div class="form-group" >
                 <label class="col-sm-4 control-label">Foto</label>
                 <div class="col-sm-4">
-                  <input type="file" name="foto">
+                  <input type="file" name="foto_equipo">
                   <br/>
-                <?php  
-                if ($data['foto']=="") { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/user-default.png" width="128">
-                <?php
-                }
-                else { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/<?php echo $data['foto']; ?>" width="128">
-                <?php
-                }
-                ?>
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
                 </div>
               </div>
 
@@ -467,7 +458,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario">Item</a></li>
+      <li><a href="?module=inventario"> Comunicación </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -591,6 +582,24 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
             </div><!-- /.box body -->
+
+            <div class="form-group" >
+                <label class="col-sm-4 control-label">Foto</label>
+                <div class="col-sm-4">
+                  <input type="file" name="foto_equipo">
+                  <br/>
+                <?php  
+                if ($data['foto_equipo']=="") { ?>
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                <?php
+                }
+                else { ?>
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto_equipo']; ?>" width="128">
+                <?php
+                }
+                ?>
+                </div>
+              </div>
 
             <div class="box-footer">
               <div class="form-group">

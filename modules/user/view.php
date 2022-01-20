@@ -58,7 +58,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el archivo que se sube es correcto.
+             Asegúrese de que el archivo que sube es correcto.
             </div>";
     }
 
@@ -66,7 +66,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-            Asegúrese de que la imagen no es más de 1 MB.
+            Asegúrese de que la imagen no pese más de 1 MB.
             </div>";
     }
  
@@ -123,14 +123,13 @@
                       }
 
               echo "  
-                      <td class='center'>$data[username]</td>
-                      <td class='center'>$data[id_user]</td>
-                      <td class='center'>$data[name_user]</td>
-                      <td class='center'>$data[sede]</td>
-                      <td class='center'>$data[permisos_acceso]</td>
-                      <td class='center'>$data[status]</td>
-
-                      <td class='center' width='100'>
+                      <td width='200' class='center'>$data[username]</td>
+                      <td width='50' class='center'>$data[id_user]</td>
+                      <td width='200' class='center'>$data[name_user]</td>
+                      <td width='200' class='center'>$data[sede]</td>
+                      <td width='200' class='center'>$data[permisos_acceso]</td>
+                      <td width='200' class='center'>$data[status]</td>
+                      <td width='200' class='center' width='200'>
                           <div>";
 
                           if ($data['status']=='activo') { ?>

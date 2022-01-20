@@ -60,7 +60,7 @@ function validarExt()
             </a>
 
             <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_mobiliario_equipoOficina&form=add"  title="Agregar" data-toggle="tooltip">
-              <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
+              <i class="fa fa-plus"></i>Agregar&nbsp;&nbsp; 
             </a>
           </div>
             

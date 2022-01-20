@@ -19,8 +19,8 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equipos_seguridad"> Agregar </a></li>
-      <li class="active"> Más </li>
+      <li><a href="?module=equipos_seguridad"> Seguridad </a></li>
+      <li class="active"> Agregar </li>
     </ol>
   </section>
 
@@ -196,7 +196,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equipos_seguridad">Item</a></li>
+      <li><a href="?module=equipos_seguridad"> Seguridad </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>

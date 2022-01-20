@@ -2,41 +2,43 @@
 
 <?php  
 	require_once "../../config/database.php";
-	$var1=$_GET['var'];
+	$var4=$_GET['var'];
 	$coma = ".";
 
-	$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var1'")
+	$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var4'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);
 
     if ($rows > 0) {
         $data = mysqli_fetch_assoc($query);
-        $var2   = $data['descripcion'];
-    	$var3	= $data['marca'];
-    	$var4	= $data['modelo'];	
-    	$var5	= $data['color'];
-    	$var6	= $data['bienesN'];
-    	$var7	= $data['condicion'];
-    	$var8	= $data['sede'];
-    	$var9   = $data['pertenece'];
-    	$var10   = $data['nombre'];
-    	$var11   = $data['cedula'];
-    	$var12   = $data['ubicacion'];
+        $var1   = $data['descripcion'];
+    	$var2	= $data['marca'];
+		$var3	= $data['modelo'];
+		$var5	= $data['bienesN'];	
+    	$var6	= $data['color'];
+		$var7	= $data['condicion'];
+		$var8   = $data['nombre'];
+		$var9   = $data['cedula'];
+		$var10   = $data['ubicacion'];
+		$var11	= $data['sede'];
+		$var12   = $data['pertenece'];
+    	
     }
 
-    $var1 = " SERIAL: ".$data['serial'];
-    $var2 = " DESCRIPCION: ".$data['descripcion'];
-    $var3 = " MARCA: ".$data['marca'];
-    $var4 = " MODELO: ".$data['modelo'];
-    $var5 = " COLOR: ".$data['color'];
-    $var6 = " COD. BIENES NAC.: ".$data['bienesN'];
-    $var7 = " CONDICION: ".$data['condicion'];
-    $var8 = " SEDE: ".$data['sede'];
-    $var9 = " PERTENECE: ".$data['pertenece'];
-    $var10 = " RESPONSABLE: ".$data['nombre'];
-    $var11 = " CEDULA: ".$data['cedula'];
-    $var12 = " UBICACION: ".$data['ubicacion'];
+	$var1 = " DESCRIPCION: ".$data['descripcion'];
+	$var2 = " MARCA: ".$data['marca'];
+    $var3 = " MODELO: ".$data['modelo'];
+	$var4 = " SERIAL: ".$data['serial'];
+	$var5 = " COD. BIENES NAC.: ".$data['bienesN'];
+    $var6 = " COLOR: ".$data['color'];
+	$var7 = " CONDICION: ".$data['condicion'];
+	$var8 = " RESPONSABLE: ".$data['nombre'];
+    $var9 = " CEDULA: ".$data['cedula'];
+    $var10 = " UBICACION: ".$data['ubicacion'];
+    $var11 = " SEDE: ".$data['sede'];
+    $var12 = " PERTENECE: ".$data['pertenece'];
+    
 ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -54,16 +56,16 @@
 	<div class="row">
 	<div class="col-md-1">
 		  <div class="form-group">
-			<textarea name="textarea" hidden="hidden" rows="10" cols="50" class="form-control" id="textqr" required><?php echo $var1.$coma. PHP_EOL ;
+			<textarea name="textarea" hidden="hidden" rows="10" cols="50" class="form-control" id="textqr" required><?php echo $var4.$coma. PHP_EOL ;
 			echo $var2.$coma. PHP_EOL; 
-			echo $var3.$coma. PHP_EOL; 
-			echo $var4.$coma. PHP_EOL; 
+			echo $var3.$coma. PHP_EOL;
+			echo $var4.$coma. PHP_EOL;
 			echo $var5.$coma. PHP_EOL; 
 			echo $var6.$coma. PHP_EOL; 
-			echo $var7.$coma. PHP_EOL; 
-			echo $var8.$coma. PHP_EOL; 
+			echo $var7.$coma. PHP_EOL;
+			echo $var8.$coma. PHP_EOL;  
 			echo $var9.$coma. PHP_EOL; 
-			echo $var10.$coma. PHP_EOL;  
+			echo $var10.$coma. PHP_EOL;
 			echo $var11.$coma. PHP_EOL; 
 			echo $var12.$coma. PHP_EOL; ?></textarea>
 			

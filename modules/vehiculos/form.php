@@ -16,6 +16,13 @@ if ($_GET['form']=='add') { ?>
   <section class="content-header">
     <h1>
       <i class="fa fa-edit icon-title"></i> Agregar Vehículos
+      </h1>
+    <ol class="breadcrumb">
+      <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
+      <li><a href="?module=vehiculos"> Vehículos </a></li>
+      <li class="active"> Agregar </li>
+    </ol>
+  </section>
 
   <!-- Main content -->
   <section class="content">
@@ -199,7 +206,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=vehiculos">Item</a></li>
+      <li><a href="?module=vehiculos"> Vehículos </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -242,7 +249,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Carrocería</label>
+                <label class="col-sm-2 control-label">Carrocería</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off"  value="<?php echo $data['nmroCarroceria']; ?>" required>
                 </div>

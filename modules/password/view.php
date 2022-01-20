@@ -3,9 +3,9 @@
     <i class="fa fa-lock icon-title"></i> Modificar Contraseña
   </h1>
   <ol class="breadcrumb">
-    <li><a href="?module=start"><i class="fa fa-home"></i> Inicio</a></li>
-    <li class="active">Contraseña</li>
-    <li class="active">Modificar</li>
+    <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
+    <li class="active"> Contraseña </li>
+    <li class="active"> Modificar </li>
   </ol>
 </section>
 
@@ -52,14 +52,14 @@
           <div class="box-body">
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Contraseña Antigua</label>
+              <label class="col-sm-2 control-label">Contraseña antigua</label>
               <div class="col-sm-5">
                 <input type="password" class="form-control" name="old_pass" autocomplete="off" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Contraseña Nueva</label>
+              <label class="col-sm-2 control-label">Contraseña nueva</label>
               <div class="col-sm-5">
                 <input type="password" class="form-control" name="new_pass" autocomplete="off" required>
               </div>

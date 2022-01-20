@@ -42,12 +42,12 @@
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-edit icon-title"></i> Reportes
+    <i class="fa fa-edit icon-title"></i> Inventarios
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-    <li><a href="?module=inventario"> Agregar </a></li>
-    <li class="active"> Más </li>
+    <li class="active"> Reportes </li>
+    <li class="active"> Inventarios </li>
   </ol>
 </section>
 
