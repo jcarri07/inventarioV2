@@ -110,12 +110,12 @@
                       <tr>
                       </tr>
                       <tr>
-                        <th class="center" width='100'>FECHA</th>
+                        <th class="center" width='100'>Fecha</th>
                         <th width='300'>
                           <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_biblioteca" autocomplete="off" required>
                         </th>
 
-                        <th class="center" width='100'>HASTA</th>
+                        <th class="center" width='100'>Hasta</th>
                         <th width='300'>
                           <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_biblioteca" autocomplete="off" required>
                         </th>
@@ -135,7 +135,7 @@
 
               <table class="table table-bordered table-striped table-hover">
                 <thead>
-                  <th class="center" width='130'>FILTRAR POR</th>
+                  <th class="center" width='130'>Filtrar por</th>
                   <th width='180'>
                     <select class="chosen-select" name="filtrar_biblioteca" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                       <option value=""></option>
@@ -181,12 +181,12 @@
                     <tr>
                     </tr>
                     <tr>
-                      <th class="center" width='100'>FECHA</th>
+                      <th class="center" width='100'>Fecha</th>
                       <th width='300'>
                         <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_vehiculos" autocomplete="off" required>
                       </th>
 
-                      <th class="center" width='100'>HASTA</th>
+                      <th class="center" width='100'>Hasta</th>
                       <th width='300'>
                         <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_vehiculos" autocomplete="off" required>
                       </th>
@@ -206,7 +206,7 @@
 
             <table class="table table-bordered table-striped table-hover">
               <thead>
-                <th class="center" width='130'>FILTRAR POR</th>
+                <th class="center" width='130'>Filtrar por</th>
                 <th width='180'>
                   <select class="chosen-select" name="filtrar_vehiculos" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                     <option value=""></option>
@@ -250,12 +250,12 @@
                   <tr>
                   </tr>
                   <tr>
-                    <th class="center" width='100'>FECHA</th>
+                    <th class="center" width='100'>Fecha</th>
                     <th width='300'>
                       <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_inmuebles" autocomplete="off" required>
                     </th>
 
-                    <th class="center" width='100'>HASTA</th>
+                    <th class="center" width='100'>Hasta</th>
                     <th width='300'>
                       <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_inmuebles" autocomplete="off" required>
                     </th>
@@ -275,7 +275,7 @@
 
           <table class="table table-bordered table-striped table-hover">
             <thead>
-              <th class="center" width='130'>FILTRAR POR</th>
+              <th class="center" width='130'>Filtrar por</th>
               <th width='180'>
                 <select class="chosen-select" name="filtrar_inmuebles" id="filtrar" data-placeholder="-- Especifique --" autocomplete="off" required="true">
                   <option value=""></option>

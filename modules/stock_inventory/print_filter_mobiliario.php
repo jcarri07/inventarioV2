@@ -9,7 +9,7 @@ include "../../config/fungsi_tanggal.php";
 
 include "../../config/fungsi_rupiah.php";
 
-$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, sede, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
@@ -22,8 +22,10 @@ $filtro2 = $_POST['filtrado2_mobi'];
 trim($filtro2);
 $filtro3 = $_POST['filtrado3_mobi'];
 trim($filtro3);
+
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
+$sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
@@ -57,20 +59,17 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>REPORTE DE INVENTARIO</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
-
 </head>
 
 <body>
 
-
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/norma.png" width="550" align='right' ;></td>
-            <td width="900"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="150" align='right' ;></td>
+            <td><img src="../../assets/img/norma.png" width="400" align='center' ;></td>
+            <td width="550"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
         </tr>
     </table>
-
 
     <!-- <div id="imagen2">
     <img src="http://apis.mppeuct.gob.ve/img/comun/normativa-izquierda-transparente.png" />
@@ -80,9 +79,10 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/ABAE_logo.png" />
     </div>-->
 
+    <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO
+        REPORTE DE INVENTARIO (MOBILIARIO)
     </div>
 
     <div id="title-tanggal">
@@ -91,22 +91,28 @@ if ($var != "" && $var2 != "" && $var3 != "") {
          <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
-
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
         <tr>
-            <td width="90">Generado por: </td>
-            <td><?php echo $nombre ?></td>
+            <td width="100">Generado por:</td>
+            <td width="100" align="center"><?php echo $nombre ?></td>
         </tr>
+
         <tr>
             <td>Cedula:</td>
             <td align="center"><?php echo $data['cedula_user'] ?></td>
         </tr>
+
         <tr>
-            <td>Fecha:</td>
-            <td width="80" align="center"> <?= date('d/m/Y'); ?></td>
+            <td>Sede:</td>
+            <td align="center"><?php echo $sede?></td>
         </tr>
 
+        <tr>
+            <td>Fecha:</td>
+            <td align="center"> <?= date('d/m/Y'); ?></td>
+        </tr>
     </table>
+
     <br>
     <hr><br>
 
@@ -114,24 +120,19 @@ if ($var != "" && $var2 != "" && $var3 != "") {
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th class="center">No.</th>
-                    <th class="center">CODIGO</th>
-                    <th class="center">DESCRIPCION</th>
-                    <th class="center">MARCA</th>
-                    <th class="center">MODELO</th>
-                    <th class="center">SERIAL</th>
-                    <th class="center">N_BIEN</th>
-                    <th class="center">COLOR</th>
-                    <th class="center">CONDICION</th>
-                    <th class="center">DIREC/UNIDAD</th>
-                    <th class="center">RESPONSABLE</th>
-                    <th class="center">CEDULA</th>
-                    <th class="center">UBICACION</th>
-                    <th class="center">SEDE</th>
-                    <th class="center">PERTENECE</th>
-                    <th class="center">EDITAR</th>
+                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
+                    <th height="20" align="center" valign="middle"><small>MARCA</small></th>
+                    <th height="20" align="center" valign="middle"><small>SERIAL</small></th>
+                    <th height="20" align="center" valign="middle"><small>No. BIEN</small></th>
+                    <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
+                    <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
+                    <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
+                    <th height="20" align="center" valign="middle"><small>PERTENECE</small></th>
                 </tr>
             </thead>
+
             <tbody>
                 <?php
 
@@ -139,22 +140,17 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 
                     echo "  <tr>
-                <td width='30' class='center'>$no</td>
-                <td width='50' class='center'>$data[codigo]</td>
-                <td width='90' class='center'>$data[descripcion]</td>
-                <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
-                <td width='90' class='center'>$data[serial]</td>
-                <td width='90' class='center'>$data[bienesN]</td>
-                <td width='90' class='center'>$data[color]</td>
-                <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[unidad]</td>
-                <td width='130' class='center'>$data[responsable]</td>
-                <td width='90' class='center'>$data[cedula]</td>
-                <td width='90' class='center'>$data[ubicacion]</td>
-                <td width='90' class='center'>$data[sede]</td>
-                <td width='90' class='center'>$data[pertenece]</td>                           
-                </tr>";
+                        <td width='50'  height='16' align='center' valign='middle'>$no</td>
+                        <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>                       
+                        <td width='200' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>                       
+                        <td width='120' height='16' align='center' valign='middle'>$data[serial]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[bienesN]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>                     
+                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                       
+                    </tr>";
                     $no++;
                 }
                 ?>
@@ -165,7 +161,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO FILTRADO.pdf";
+$filename = "REPORTE DE INVENTARIO MOBILIARIO FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';
