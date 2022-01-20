@@ -19,12 +19,12 @@
             <div class="form-group">
               <label class="col-sm-1">Fecha</label>
               <div class="col-sm-2">
-                <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal2" autocomplete="off" required>
+                <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal2" autocomplete="off" required>
               </div>
 
               <label class="col-sm-1">Hasta</label>
               <div class="col-sm-2">
-                <input style="margin-left:-35px" type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir2" autocomplete="off" required>
+                <input style="margin-left:-35px" type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy"  name="tgl_akhir2" autocomplete="off" required>
               </div>
             </div>
           
