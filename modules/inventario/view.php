@@ -99,7 +99,7 @@ function mostrar_modal_internos(id){
             <i class="fa fa-file-excel-o"></i> 
             <input method="post" type="file" id = "archivoInput" name="archivoInput" onchange="return validarExt()">
             <div class="textoInput">
-              Cargar archivo
+              Cargar Archivo
             </div>  
           </a>
 
