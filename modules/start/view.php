@@ -44,7 +44,7 @@ $data = mysqli_fetch_assoc($query);
            
             $data = mysqli_fetch_assoc($query);
             ?>
-             <h2 class = "titulo"> Inventarios </h2>
+            <h2 class = "titulo"> Inventarios </h2>
             <h2 class="prueba cantidad"> <?php echo $data['numero'];?> </h2>
             
           </div>
@@ -61,7 +61,7 @@ $data = mysqli_fetch_assoc($query);
             }?>
            
           </div>
-            <a  class="small-box-footer bordes"  title="Vista" data-toggle="tooltip"><i class="fa fa-folder"></i></a>
+            <a href="?module=inventario" class="small-box-footer bordes" title="Agregar" style="height: 5vh" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
         </div>
       </div><!-- ./col -->
  
