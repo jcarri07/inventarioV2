@@ -76,13 +76,6 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Clase</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipo" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="descripcion" autocomplete="off" required>
@@ -115,14 +108,7 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="habitantes" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Dirección</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="direccion" autocomplete="off" required>
-                </div>
-              </div>  
+              </div> 
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
@@ -145,6 +131,13 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="cedula" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Dirección</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="direccion" autocomplete="off" required>
+                </div>
+              </div> 
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
@@ -209,13 +202,6 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
@@ -230,30 +216,23 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nº Pisos</label>
+                <label class="col-sm-2 control-label">Pisos</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="pisos" autocomplete="off" onkeypress="return validaNumericos(event)"  value="<?php echo $data['pisos']; ?>" required>
                 </div>
               </div>  
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">N° Cuartos</label>
+                <label class="col-sm-2 control-label">Habitaciones</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="nmroCuartos" autocomplete="off"  onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['nmroCuartos']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">N° Habitantes</label>
+                <label class="col-sm-2 control-label">Habitantes</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="habitantes" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['habitantes']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Dirección</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="direccion" autocomplete="off" value="<?php echo $data['direccion']; ?>" required>
                 </div>
               </div>
 
@@ -275,6 +254,13 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Dirección</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="direccion" autocomplete="off" value="<?php echo $data['direccion']; ?>" required>
                 </div>
               </div>
 

@@ -68,7 +68,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Clase</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
@@ -89,16 +89,9 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Carrocería</label>
+                <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Color</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" required>
+                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
                 </div>
               </div>
 
@@ -110,16 +103,9 @@ if ($_GET['form']=='add') { ?>
               </div>
    
               <div class="form-group">
-                <label class="col-sm-2 control-label">Placa</label>
+                <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Combustible</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" required>
+                  <input type="text" class="form-control" name="color" autocomplete="off" required>
                 </div>
               </div>
 
@@ -131,7 +117,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="unidad" autocomplete="off" value="" required>
                 </div>
@@ -228,7 +214,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
                 </div>
@@ -249,18 +235,11 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Carrocería</label>
+                <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nmroCarroceria" autocomplete="off"  value="<?php echo $data['nmroCarroceria']; ?>" required>
+                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
                 </div>
-              </div>     
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Color</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
-                </div>
-              </div>  
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Año</label>
@@ -270,18 +249,11 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Placa</label>
+                <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
+                  <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
                 </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo Combustible</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipoCombustible" autocomplete="off" value="<?php echo $data['tipoCombustible']; ?>" required>
-                </div>
-              </div>
+              </div>  
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
@@ -291,7 +263,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Unidad</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['unidad']; ?>" required>
                 </div>

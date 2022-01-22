@@ -76,7 +76,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
@@ -222,7 +222,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
                 </div>

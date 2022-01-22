@@ -1,7 +1,8 @@
 <style>
   .botones{
-    height: 36px;
-    margin-right: 2px;
+    height: 35px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   input[type=file] {
@@ -11,12 +12,12 @@
   }
 
   .textoInput{
-    margin-top:-22px;
+    margin-top:-21px;
     text-align: center;
   }
 
   .anchoInput{
-    width:160px;
+    width:140px;
   }
 
 </style>
@@ -93,23 +94,22 @@ function mostrar_modal_internos(id){
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
-    
+
           <a class="btn btn-primary btn-social pull-right botones anchoInput"  title="Cargar archivo" data-toggle="tooltip"> 
             <i class="fa fa-file-excel-o"></i> 
             <input method="post" type="file" id = "archivoInput" name="archivoInput" onchange="return validarExt()">
             <div class="textoInput">
-              Cargar Archivo
+              Cargar archivo
             </div>  
           </a>
 
           <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_comunicacion.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
-
+          
           <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_inventario&form=add"  title="Agregar" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
-
         </div>
     </form>
   </h2>
@@ -149,34 +149,44 @@ function mostrar_modal_internos(id){
             Se eliminaron los datos correctamente.
             </div>";
     }
+
     elseif ($_GET['alert'] == 4) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
             Datos importados correctamente.
             </div>";
-    } elseif ($_GET['alert'] == 5) {
+    }
+    
+    elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-ban'></i> Error!</h4> El serial ya existe 
             </div>";
-    }   elseif ($_GET['alert'] == 6) {
+    }
+    
+    elseif ($_GET['alert'] == 6) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
              Equipo chequeado!
             </div>";
-    }   elseif ($_GET['alert'] == 7) {
+    }
+    
+    elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Datos de bibblioteca exportados correctamente </h4>
             </div>";
-    } elseif ($_GET['alert'] == 8) {
+    }
+    
+    elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> por favor seleccione el archivo que desea importar.</h4>
             </div>";
     }
+    
     elseif ($_GET['alert'] == 9) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -210,7 +220,7 @@ function mostrar_modal_internos(id){
       
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">NO.</th>
                 <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
@@ -248,8 +258,8 @@ function mostrar_modal_internos(id){
               $precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='50' class='center'>$no</td>
-                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='50'  class='center'>$no</td>
+                      <td width='50'  class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
@@ -263,10 +273,10 @@ function mostrar_modal_internos(id){
                       <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>    
-                      <td class='center'  width='200'>
-                          <div>
+                      <td width='150' class='center'  >
+                    <div>
             
-                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
                     
@@ -300,20 +310,19 @@ function mostrar_modal_internos(id){
                     </tr>";
               $no++;
             }
-
-            
             ?>
 
-           <a class="btn btn-primary pull-right" id="reset"  style="height:35px;">
-            <i></i> Reset Check
-           </a>
-
+          <div class="row" style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="reset" href="modules/inventario/proses.php?act=reset" style="height:35px;">
+              <i></i> Reset Check
+            </a>
+          </div>
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
               btn = document.getElementById("reset");
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas quitar el chequeo de todos los equipos?")) {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos?")) {
                     window.location.href = "modules/inventario/proses.php?act=reset";
                   } 
               })

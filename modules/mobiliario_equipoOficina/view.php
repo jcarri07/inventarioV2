@@ -1,6 +1,6 @@
 <style>
   .botones{
-    height: 36px;
+    height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
   }
@@ -12,12 +12,12 @@
   }
 
   .textoInput{
-    margin-top:-22px;
+    margin-top:-21px;
     text-align: center;
   }
 
   .anchoInput{
-    width:160px;
+    width:140px;
   }
 
 </style>
@@ -54,16 +54,14 @@ function validarExt()
               Cargar Archivo
             </div>  
           </a>-->
-          <div class="row">
+          
           <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_mobiliario.php" title="Exportar" data-toggle="tooltip">
-              <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
-            </a>
+            <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
+          </a>
 
-            <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_mobiliario_equipoOficina&form=add"  title="Agregar" data-toggle="tooltip">
-              <i class="fa fa-plus"></i>Agregar&nbsp;&nbsp; 
-            </a>
-          </div>
-            
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_mobiliario_equipoOficina&form=add"  title="Agregar" data-toggle="tooltip">
+            <i class="fa fa-plus"></i>Agregar&nbsp;&nbsp; 
+          </a>
 
         </div>
     </form>
@@ -104,24 +102,31 @@ function validarExt()
             Se eliminaron los datos correctamente.
             </div>";
     }
+
     elseif ($_GET['alert'] == 4) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
             Datos importados correctamente.
             </div>";
-    } elseif ($_GET['alert'] == 5) {
+    }
+    
+    elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-ban'></i> Error!</h4> El serial ya existe 
             </div>";
-    }   elseif ($_GET['alert'] == 6) {
+    }
+    
+    elseif ($_GET['alert'] == 6) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
              Equipo chequeado!
             </div>";
-    } elseif ($_GET['alert'] == 8) {
+    }
+    
+    elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> por favor seleccione el archivo que desea importar.</h4>
@@ -137,7 +142,7 @@ function validarExt()
       
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">NO.</th>
                 <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
@@ -154,8 +159,6 @@ function validarExt()
                 <th class="center">PERTENECE</th>
                 <th class="center">CANTIDAD</th>
                 <th class="center">EDITAR</th>
-               
-              
               </tr>
             </thead>
             <tbody>
@@ -178,8 +181,8 @@ function validarExt()
               $precio_venta = format_rupiah($data['precio_venta']);
            
               echo "<tr>
-                      <td width='50' class='center'>$no</td>
-                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='50'  class='center'>$no</td>
+                      <td width='50'  class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
@@ -194,12 +197,10 @@ function validarExt()
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>
                       <td width='100' class='center'>$data[cantidad]</td>
-                      
-                  
-                      <td class='center'  width='200'>
-                          <div>
+                      <td width='120' class='center'>
+                    <div>
             
-                        <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_mobiliario_equipoOficina&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_mobiliario_equipoOficina&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
@@ -227,19 +228,25 @@ function validarExt()
               $no++;
             }
             ?>
+
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" href="modules/mobiliario_equipoOficina/proses.php?act=reset"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="reset" href="modules/mobiliario_equipoOficina/proses.php?act=reset"  style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>
            
-
-
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+            <script>
+              btn = document.getElementById("reset");
+              btn.addEventListener("click", ()=> {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos?")) {
+                    window.location.href = "modules/mobiliario_equipoOficina/proses.php?act=reset";
+                  } 
+              })
+            </script>
             </tbody>
           </table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!--/.col -->
   </div>   <!-- /.row -->
-</section><!-- /.content
