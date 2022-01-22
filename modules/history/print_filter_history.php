@@ -13,7 +13,6 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, se
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$hari_ini = date("d-m-Y");
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
@@ -33,7 +32,7 @@ $count = 0;
  
 if (isset($_GET['tgl_awal2'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY fecha ASC") 
+    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY fecha DESC") 
         or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -145,9 +144,9 @@ if (isset($_GET['tgl_awal2'])) {
                 else {
    
                     while ($data = mysqli_fetch_assoc($query)) {
-                    /* $tanggal       = $data['created_date'];
-                    $exp           = explode('-',$tanggal);
-                    $fecha = $exp[2]."-".$exp[1]."-".$exp[0];*/
+                        /* $tanggal       = $data['created_date'];
+                        $exp           = explode('-',$tanggal);
+                        $fecha = $exp[2]."-".$exp[1]."-".$exp[0];*/
 
                     echo "  <tr>
                         <td width='50' height='16' align='center' valign='middle'>$no</td>
