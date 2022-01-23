@@ -41,11 +41,25 @@ $data = mysqli_fetch_assoc($query);
           
             $query = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM inventario")
                                             or die('Error '.mysqli_error($mysqli));
-           
+            
+            $query_bilioteca = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM biblioteca")
+                                            or die('Error '.mysqli_error($mysqli));
+
+            $query_vehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM vehiculos")
+                                            or die('Error '.mysqli_error($mysqli));
+            
+            $query_inmuebles = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM inmuebles")
+                                            or die('Error '.mysqli_error($mysqli));
+
             $data = mysqli_fetch_assoc($query);
+            $data_vehiculos = mysqli_fetch_assoc($query_vehiculos);
+            $data_inmuebles = mysqli_fetch_assoc($query_inmuebles);
+            $data_biblioteca = mysqli_fetch_assoc($query_bilioteca);
+
+            $total = $data['numero']+$data_vehiculos['numero']+$data_inmuebles['numero']+$data_biblioteca['numero'];
             ?>
             <h2 class = "titulo"> Inventarios </h2>
-            <h2 class="prueba cantidad"> <?php echo $data['numero'];?> </h2>
+            <h2 class="prueba cantidad"> <?php echo $total;?> </h2>
             
           </div>
           </div>
