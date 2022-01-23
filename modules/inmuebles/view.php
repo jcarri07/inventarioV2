@@ -229,14 +229,14 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" id="reset" href="modules/inmuebles/proses.php?act=reset"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="btnInmueble"  style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("reset");
+              btn = document.getElementById("btnInmueble");
               btn.addEventListener("click", ()=> {
                 if(confirm("Deseas eliminar el chequeo de todos los inmuebles?")) {
                     window.location.href = "modules/inmuebles/proses.php?act=reset";

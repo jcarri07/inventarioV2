@@ -226,7 +226,7 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" id="reset" href="modules/vehiculos/proses.php?act=reset"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="btnVehiculos"  style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>
@@ -234,10 +234,10 @@ function validarExt()
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("reset");
+              btn = document.getElementById("btnVehiculos");
               btn.addEventListener("click", ()=> {
                 if(confirm("Deseas eliminar el chequeo de todos los vehículos?")) {
-                    window.location.href = "modules/biblioteca/proses.php?act=reset";
+                    window.location.href = "modules/vehiculos/proses.php?act=reset";
                   } 
               })
             </script>

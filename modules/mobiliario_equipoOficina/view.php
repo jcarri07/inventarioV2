@@ -230,7 +230,7 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" id="reset" href="modules/mobiliario_equipoOficina/proses.php?act=reset"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="reset" style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>

@@ -235,7 +235,7 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" id="reset" href="modules/biblioteca/proses.php?act=reset"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="btnBiblioteca"  style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>
@@ -243,7 +243,7 @@ function validarExt()
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("reset");
+              btn = document.getElementById("btnBiblioteca");
               btn.addEventListener("click", ()=> {
                 if(confirm("Deseas eliminar el chequeo de todos los textos?")) {
                     window.location.href = "modules/biblioteca/proses.php?act=reset";
