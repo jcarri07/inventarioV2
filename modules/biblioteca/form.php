@@ -44,14 +44,6 @@ if ($_GET['form']=='add') { ?>
                                                 ORDER BY codigo DESC LIMIT 1")
                                                 or die('error '.mysqli_error($mysqli));
 
-              ?>
-
-              <?php  
-          
-              $query_select = mysqli_query($mysqli, "SELECT categoria, codigo FROM inmuebles
-                                                where categoria = 'inmuebles' ORDER BY codigo DESC LIMIT 1")
-                                                or die('error '.mysqli_error($mysqli));
-
               $count = mysqli_num_rows($query_id);
 
               if ($count <> 0) {
