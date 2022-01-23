@@ -96,9 +96,9 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
 
-              $tahun          = date("Y");
-              $buat_id        = str_pad($codigo, 6, "0", STR_PAD_LEFT);
-              $codigo_transaccion = "TM-$tahun-$buat_id";
+                $tahun          = date("Y");
+                $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
+                $codigo_transaccion = "TM-$tahun-$buat_id";
               ?>
 
               <div class="form-group">
