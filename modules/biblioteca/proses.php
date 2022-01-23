@@ -43,7 +43,6 @@ $rows  = mysqli_num_rows($query);
 $hari_ini = date("d-m-Y");
 $tituloUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de equipo";
 $cedulauser = $_SESSION['cedula_user'];
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
@@ -91,8 +90,10 @@ else {
                 
             
              
+                
+                $accion = "Registro de equipo";
 
-                $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                $query1 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
 
@@ -147,9 +148,9 @@ else {
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));
 
-                 $accion = "Modificacion de equipo";
+                $accion = "Modificacion de equipo";
 
-                $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                $query5 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
                                             
