@@ -97,7 +97,7 @@ if ($_GET['form']=='add') { ?>
               }
 
               $tahun          = date("Y");
-              $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
+              $buat_id        = str_pad($codigo, 6, "0", STR_PAD_LEFT);
               $codigo_transaccion = "TM-$tahun-$buat_id";
               ?>
 
@@ -171,7 +171,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="empresa" autocomplete="off" required>
                 </div>
@@ -200,7 +200,7 @@ if ($_GET['form']=='add') { ?>
               </div> 
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="empresa_r" autocomplete="off" required>
                 </div>
