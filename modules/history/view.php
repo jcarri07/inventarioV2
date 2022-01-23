@@ -74,14 +74,13 @@
 
            
               while ($data = mysqli_fetch_assoc($query)) { 
-                $originalDate = $data['fecha'];
-                $fecha = date("d-m-Y", strtotime($originalDate));
+              
                 echo "<tr>
                 <td width='50' class='center'>$no</td>
                 <td width='200' class='center'>$data[cedula]</td>
                 <td width='200' class='center'>$data[nombre]</td>
                 <td width='50' class='center'>$data[permiso]</td>
-                <td width='200' class='center'>$fecha</td>
+                <td width='200' class='center'>$data[fecha]</td>
                 <td width='200' class='center'>$data[hora]</td>
                 <td width='200' class='center'>$data[accion]</td>
                     </tr>";

@@ -100,12 +100,12 @@ function validarExt()
            
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">NO.</th>
                 <th class="center">TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
-                <th class="center">CLASE</th>
                 <th class="center">DESCRIPCION</th>
+                <th class="center">DIRECCION</th>
                 <th class="center">CONDICION</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">ENTREGA</th>
@@ -131,8 +131,9 @@ function validarExt()
 
            
             while ($data = mysqli_fetch_assoc($query)) { 
-              $originalDate = $data['created_date'];
-              $fecha = date("d-m-Y", strtotime($originalDate));
+             /* $fecha         = $data['created_date'];
+              $exp             = explode('-',$fecha);
+              $fecha2   = $exp[2]."-".$exp[1]."-".$exp[0];*/
 
              
               echo "<tr>
@@ -140,8 +141,8 @@ function validarExt()
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
                       <td width='100' class='center'>$data[tipo_transaccion]</td>
                       <td width='100' class='center'>$data[codigo]</td>
-                      <td width='100' class='center'>$data[tipo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
+                      <td width='100' class='center'>$data[tipo]</td>
                       <td width='100' class='center'>$data[condicion]</td>
                       <td width='100' class='center'>$data[motivo]</td>
                       <td width='100' class='center'>$data[entrega]</td>
@@ -152,7 +153,7 @@ function validarExt()
                       <td width='100' class='center'>$data[cedula_r]</td>
                       <td width='100' class='center'>$data[lugar_r]</td>
                       <td width='100' class='center'>$data[empresa_r]</td>
-                      <td width='100' class='center'>$fecha</td>
+                      <td width='100' class='center'>$data[created_date]</td>
                     
                     </tr>";
               $no++;

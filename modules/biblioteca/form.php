@@ -41,21 +41,20 @@ if ($_GET['form']=='add') { ?>
               $sede = $_SESSION['sede'];
 
               $query_id = mysqli_query($mysqli, "SELECT codigo FROM biblioteca
-              ORDER BY codigo DESC LIMIT 1")
-              or die('error '.mysqli_error($mysqli));
+                                                ORDER BY codigo DESC LIMIT 1")
+                                                or die('error '.mysqli_error($mysqli));
 
               $count = mysqli_num_rows($query_id);
 
               if ($count <> 0) {
-
-              $data_id = mysqli_fetch_assoc($query_id);
-              $codigo = $data_id['codigo']+1;
-              error_reporting(E_ERROR | E_WARNING | E_PARSE);
+            
+                  $data_id = mysqli_fetch_assoc($query_id);
+                  $codigo = $data_id['codigo']+1;
+                  error_reporting(E_ERROR | E_WARNING | E_PARSE);
               } else {
-              $codigo = 1;
+                  $codigo = 1;
               }
-
-
+              
               $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
               $codigo = "$buat_id";
 
