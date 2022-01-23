@@ -7,6 +7,9 @@ function buscaRepetido($codigo,$mysqli) {
       $result = mysqli_query($mysqli,"SELECT codigo from inventario
       where codigo ='$codigo'");
 
+      $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
+      $codigo = "$buat_id";
+
       if(mysqli_num_rows($result) > 0){
         return 1;
       } else {
@@ -96,8 +99,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])){
 else {
     if ($_GET['act']=='insert') {
        if (isset($_POST['Guardar'])) {
-
-            $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
+                $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
                 $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
                 $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
                 $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
@@ -115,10 +117,10 @@ else {
                 $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
                 $foto_equipo  = mysqli_real_escape_string($mysqli, trim($_POST['foto_equipo']));
                 $created_user = $_SESSION['id_user'];
-            $name_file          = $_FILES['foto_equipo']['name'];
-            $ukuran_file        = $_FILES['foto_equipo']['size'];
-            $tipe_file          = $_FILES['foto_equipo']['type'];
-            $tmp_file           = $_FILES['foto_equipo']['tmp_name'];
+                $name_file          = $_FILES['foto_equipo']['name'];
+                $ukuran_file        = $_FILES['foto_equipo']['size'];
+                $tipe_file          = $_FILES['foto_equipo']['type'];
+                $tmp_file           = $_FILES['foto_equipo']['tmp_name'];
             
     
             $allowed_extensions = array('jpg','jpeg','png');
