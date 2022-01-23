@@ -1,7 +1,8 @@
 <style>
   .botones{
-    height: 36px;
-    margin-left: 2px;
+    height: 35px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   input[type=file] {
@@ -11,12 +12,12 @@
   }
 
   .textoInput{
-    margin-top:-22px;
+    margin-top:-21px;
     text-align: center;
   }
 
   .anchoInput{
-    width:160px;
+    width:140px;
   }
 
 </style>
@@ -60,7 +61,6 @@ function validarExt()
   </h2>
  <br/> 
 </section>
-<br/>
 
 <section class="content">
   <div class="row">
@@ -100,7 +100,7 @@ function validarExt()
            
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">NO.</th>
                 <th class="center">TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
@@ -111,20 +111,18 @@ function validarExt()
                 <th class="center">ENTREGA</th>
 				        <th class="center">CEDULA</th>
                 <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
+                <th class="center">EMPRESA</th>
                 <th class="center">RECIBE</th>
                 <th class="center">CEDULA </th>
                 <th class="center">SEDE</th>
-                <th class="center">PERTENECE</th>
+                <th class="center">EMPRESA</th>
                 <th class="center">FECHA</th>
-                
-                
               </tr>
             </thead>
-         
             <tbody>
             <?php  
             $no = 1;
+
             $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,b.codigo,a.motivo,a.created_date,b.titulo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.isbn, b.autor, b.condicion
                                             FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
@@ -154,7 +152,6 @@ function validarExt()
                       <td width='100' class='center'>$data[lugar_r]</td>
                       <td width='100' class='center'>$data[empresa_r]</td>
                       <td width='100' class='center'>$data[created_date]</td>
-                    
                     </tr>";
               $no++;
             }
