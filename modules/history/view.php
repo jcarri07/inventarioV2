@@ -7,12 +7,11 @@
     <li class="active"> Historial </li>
     <li class="active"> Historial </li>
   </ol>
-</section>
 
   <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">-->
-  <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
+<link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
   <link rel="stylesheet" type="text/css" href="datatables/Datatables-10.10.20/css/dataTables.bootstrap4.min.css">
-<div class="box box-primary">
+    <div class="box box-primary">
         <form role="form" class="form-horizontal" method="GET" action="modules/history/print_filter_history.php" target="_blank">
           <div class="box-body">
 
@@ -50,7 +49,7 @@
 
         <div class="box-body"> <!--Tabla-->
           <p STYLE="color: #EEEEEE;"></p>
-          <table id="dataTables1" class="table table-bordered table-striped table-hover" >
+          <table id="dataTables" class="table table-bordered table-striped table-hover" >
           
             <thead>
               <tr>
@@ -93,9 +92,9 @@
         </div><!-- /.box-body -->
        </div><!-- /.box -->
 
-<a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_history.php"  style="height:35px;" target="_blank">
-            <i class="fa fa-print"></i> Imprimir historial
-           </a>
+      <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_history.php"  style="height:35px;" target="_blank">
+              <i class="fa fa-print"></i> Imprimir historial
+      </a>
 
     </div><!--/.col -->
   </div>   <!-- /.row -->
@@ -108,33 +107,16 @@
 
     <!--Bootstrap 3.3.2 JS -->
     <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+
     <script>
 
 
       $(document).ready( function () {
-      $('#dataTables1').DataTable();
+        $('#dataTables').DataTable();
       } );
       
       $(document).ready(function(){
         load(1);
       });
 
-      function load(page){
-        var parametros = {"action":"ajax","page":page};
-        $("#loader").fadeIn('slow');
-        $.ajax({
-          url:'paises_ajax.php',
-          data: parametros,
-          beforeSend: function(objeto){
-          $("#loader").html("<img src='loader.gif'>");
-        },
-
-        success:function(data){
-          $(".outer_div").html(data).fadeIn('slow');
-          $("#loader").html("");
-      }
-    })
-    }
-      </script>
-
-  </section>
+    </script>

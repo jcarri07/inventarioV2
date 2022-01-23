@@ -160,7 +160,7 @@ $data = mysqli_fetch_assoc($query);
           <div class="inner" style="height: 30vh;">
             <?php   
   
-            $query = mysqli_query($mysqli, "SELECT COUNT(codigo_transaccion) as numero FROM transaccion_equipos")
+            $query = mysqli_query($mysqli, "SELECT COUNT(nombre) as numero FROM history")
                                             or die('Error: '.mysqli_error($mysqli));
 
             $data = mysqli_fetch_assoc($query);
