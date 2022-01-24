@@ -129,7 +129,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Título</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar texto--" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar texto --" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT codigo, titulo FROM biblioteca ORDER BY titulo ASC")

@@ -82,7 +82,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO (MOBILIARIO)
+        REPORTE DE INVENTARIO (OFICINA Y MOBILIARIO)
     </div>
 
     <div id="title-tanggal">
@@ -161,7 +161,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO MOBILIARIO FILTRADO.pdf";
+$filename = "REPORTE DE INVENTARIO OFICINA Y MOBILIARIO FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

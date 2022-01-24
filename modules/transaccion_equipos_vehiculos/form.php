@@ -130,7 +130,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar vehículo--" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar vehículo --" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT codigo, marca FROM vehiculos ORDER BY marca ASC")

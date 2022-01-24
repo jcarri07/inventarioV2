@@ -83,7 +83,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO (ELECTRODOMESTICOS)
+        REPORTE DE INVENTARIO (REFRIGERACION Y ELECTRODOMESTICOS)
     </div>
 
     <div id="title-tanggal">
@@ -162,7 +162,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO ELECTRODOMESTICOS FILTRADO.pdf";
+$filename = "REPORTE DE INVENTARIO REFRIGERACION Y ELECTRODOMESTICOS FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';
