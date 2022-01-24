@@ -55,7 +55,7 @@ if ($_GET['form']=='add') { ?>
                   $codigo = 1;
               }
               
-              $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
+              $buat_id   = str_pad($codigo, 7, "0", STR_PAD_LEFT);
               $codigo = "$buat_id";
 
               ?>
