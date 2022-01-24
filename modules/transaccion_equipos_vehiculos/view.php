@@ -138,7 +138,7 @@ function validarExt()
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
                       <td width='100' class='center'>$data[tipo_transaccion]</td>
                       <td width='100' class='center'>$data[codigo]</td>
-                      <td width='100' class='center'>$data[tipo]</td>
+                      <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[placa]</td>
                       <td width='100' class='center'>$data[condicion]</td>
                       <td width='100' class='center'>$data[motivo]</td>

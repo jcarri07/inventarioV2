@@ -97,7 +97,7 @@ if ($_GET['form']=='add') { ?>
               }
 
                 $tahun          = date("Y");
-                $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
+                $buat_id        = str_pad($codigo, 6, "0", STR_PAD_LEFT);
                 $codigo_transaccion = "TM-$tahun-$buat_id";
               ?>
 
@@ -127,7 +127,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">  
-                <label class="col-sm-2 control-label">Equipo</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar equipo--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>

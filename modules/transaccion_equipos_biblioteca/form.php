@@ -127,7 +127,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">  
-                <label class="col-sm-2 control-label">Texto</label>
+                <label class="col-sm-2 control-label">Título</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar texto--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
@@ -171,7 +171,7 @@ if ($_GET['form']=='add') { ?>
               </div>  
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="empresa" autocomplete="off" required>
                 </div>
@@ -200,7 +200,7 @@ if ($_GET['form']=='add') { ?>
               </div> 
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Pertenece</label>
+                <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="empresa_r" autocomplete="off" required>
                 </div>
