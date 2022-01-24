@@ -868,9 +868,7 @@
                               <option value="modelo"></option>
                               <option value="placa"></option>
                               <option value="color"></option>
-                              <option value="nmroCarroceria"></option>
                               <option value="sede"></option>
-                              <option value="tipoCombustible"></option>
                               <option value="condicion"></option>
                             </datalist>
                           </th>
@@ -911,14 +909,12 @@
                               <tr>
                                 <th class="center">No.</th>
                                 <th class="center">CODIGO</th>
-                                <th class="center">CLASE</th>
+                                <th class="center">DESCRIPCION</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
-                                <th class="center">CARROCERIA</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">AÑO</th>
                                 <th class="center">PLACA</th>
-                                <th class="center">COMBUSTIBLE</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">UNIDAD</th>
                                 <th class="center">RESPONSABLE</th>
@@ -947,11 +943,9 @@
                                   <td width='100' class='center'>$data[tipo]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
-                                  <td width='100' class='center'>$data[nmroCarroceria]</td>
                                   <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[anio]</td>
                                   <td width='100' class='center'>$data[placa]</td>
-                                  <td width='100' class='center'>$data[tipoCombustible]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
@@ -995,7 +989,6 @@
                             <input list="items_inmuebles" type="text" name="filtrado_inmuebles" id="filtrado_inmuebles" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_inmuebles">
                               <option value=""></option>
-                              <option value="tipo"></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
                               <option value="metrosCuadrados"></option>
@@ -1048,7 +1041,6 @@
                               <tr>
                               <th class="center">No.</th>
                               <th class="center">CODIGO</th>
-                              <th class="center">CLASE</th>
                               <th class="center">DESCRIPCION</th>
                               <th class="center">M²</th>
                               <th class="center">PISOS</th>
@@ -1074,7 +1066,6 @@
                                 echo "<tr>
                                   <td width='50' class='center'>$no</td>
                                   <td width='100' class='center'>$data[codigo]</td>
-                                  <td width='100' class='center'>$data[tipo]</td>
                                   <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[metrosCuadrados]</td>
                                   <td width='100' class='center'>$data[pisos]</td>
