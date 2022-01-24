@@ -128,9 +128,8 @@ function validarExt()
 
            
             while ($data = mysqli_fetch_assoc($query)) { 
-             /* $fecha         = $data['created_date'];
-              $exp             = explode('-',$fecha);
-              $fecha2   = $exp[2]."-".$exp[1]."-".$exp[0];*/
+              $originalDate = $data['created_date'];
+              $fecha = date("d-m-Y", strtotime($originalDate));
 
              
               echo "<tr>
@@ -150,7 +149,7 @@ function validarExt()
                       <td width='100' class='center'>$data[cedula_r]</td>
                       <td width='100' class='center'>$data[lugar_r]</td>
                       <td width='100' class='center'>$data[empresa_r]</td>
-                      <td width='100' class='center'>$data[created_date]</td>
+                      <td width='100' class='center'>$fecha</td>
                     
                     </tr>";
               $no++;
