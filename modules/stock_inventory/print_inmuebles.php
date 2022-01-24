@@ -89,14 +89,14 @@ $count  = mysqli_num_rows($query);
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>CLASE</small></th>
-                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCON</small></th>
                     <th height="20" align="center" valign="middle"><small>M2</small></th>
+                    <th height="20" align="center" valign="middle"><small>PISOS</small></th>
                     <th height="20" align="center" valign="middle"><small>HABITACIONES</small></th>
-                    <th height="20" align="center" valign="middle"><small>DIRECCION</small></th>
                     <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
                     <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
+                    <th height="20" align="center" valign="middle"><small>DIRECCION</small></th>
                 </tr>
             </thead>
 
@@ -109,14 +109,14 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[tipo]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[descripcion]</td>
-                        <td width='60'  height='16' align='center' valign='middle'>$data[metrosCuadrados]</td>
-                        <td width='100' height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
-                        <td width='240' height='16' align='center' valign='middle'>$data[direccion]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[metrosCuadrados]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[pisos]</td>
+                        <td width='80' height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                  
+                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>   
+                        <td width='240' height='16' align='center' valign='middle'>$data[direccion]</td>               
                     </tr>";
                     $no++;
                 } 

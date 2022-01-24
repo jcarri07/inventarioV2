@@ -145,7 +145,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                         <td width='200' height='16' align='center' valign='middle'>$data[tipo]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[placa]</td>
-                        <td width='80' height='16' align='center' valign='middle'>$data[anio]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[anio]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
