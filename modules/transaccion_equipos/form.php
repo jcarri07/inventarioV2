@@ -82,7 +82,7 @@ if ($_GET['form']=='add') { ?>
               $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
 
-              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,7) as codigo FROM transaccion_equipos
+              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,6) as codigo FROM transaccion_equipos
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
 
@@ -97,7 +97,7 @@ if ($_GET['form']=='add') { ?>
               }
 
                 $tahun          = date("Y");
-                $buat_id        = str_pad($codigo, 7, "0", STR_PAD_LEFT);
+                $buat_id        = str_pad($codigo, 6, "0", STR_PAD_LEFT);
                 $codigo_transaccion = "TM-$tahun-$buat_id";
               ?>
 
