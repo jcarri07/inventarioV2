@@ -120,7 +120,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <select name="transaccion" id="transaccion" required class='form-control' onchange="hitung_total_stok();">
+                  <select name="transaccion" id="tipo_transaccion" required class='form-control' onchange="hitung_total_stok();">
 					        <option value="Salida">Salida</option>
 				         	<option value="Entrada">Entrada</option>
 				          </select>
@@ -167,14 +167,14 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="lugar_e" value="<?php echo $sede; ?>" autocomplete="off" required readonly>
+                  <input type="text" class="form-control" id="sede_entrega" name="lugar_e" value="<?php echo $sede; ?>" autocomplete="off" required readonly>
                 </div>
               </div>  
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="empresa" autocomplete="off" required>
+                  <input type="text" class="form-control" name="empresa" id="empresa_entrega" value="ABAE" autocomplete="off" required readonly>
                 </div>
               </div>  
 
@@ -195,15 +195,14 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="lugar_r" 
-                   autocomplete="off" required>
+                  <input type="text" class="form-control" id="sede_recibe" name="lugar_r"autocomplete="off" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="empresa_r" autocomplete="off" required>
+                  <input type="text" class="form-control" name="empresa_r" id="empresa_recibe" autocomplete="off" required>
                 </div>
               </div> 
 			                     
@@ -223,6 +222,44 @@ if ($_GET['form']=='add') { ?>
       </div><!--/.col -->
     </div>   <!-- /.row -->
   </section><!-- /.content -->
+  <script>
+    const tipo_transaccion = document.getElementById('tipo_transaccion');
+    const sede_entrega = document.getElementById('sede_entrega');
+    const sede_recibe = document.getElementById('sede_recibe');
+    const empresa_entrega = document.getElementById('empresa_entrega');
+    const empresa_recibe = document.getElementById('empresa_recibe');
+
+    tipo_transaccion.addEventListener('change', ()=> {
+
+    if (tipo_transaccion.value == "Entrada") {
+        sede_entrega.value = "";
+        empresa_entrega.value = "";
+        empresa_recibe.setAttribute('readonly', 'readonly');
+        sede_recibe.setAttribute('readonly','readonly');
+
+        empresa_entrega.readOnly = false;
+        sede_entrega.readOnly = false;
+
+
+        sede_recibe.value = "<?php echo $sede; ?>";
+        empresa_recibe.value = "ABAE";
+
+    } else {
+        sede_entrega.value = "<?php echo $sede; ?>";
+
+        empresa_entrega.value = "ABAE";
+
+        empresa_entrega.setAttribute('readonly', 'readonly');
+        sede_entrega.setAttribute('readonly','readonly');
+
+        empresa_recibe.readOnly = false;
+        sede_recibe.readOnly =false;
+
+        sede_recibe.value = "";
+        empresa_recibe.value = "";
+    }
+    });
+  </script>
 <?php
 }
 ?>
