@@ -128,15 +128,15 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">  
-                <label class="col-sm-2 control-label">Vehículo</label>
+                <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar vehículo--" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, tipo FROM vehiculos ORDER BY tipo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, marca FROM vehiculos ORDER BY marca ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[tipo] </option>";
+                        echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[marca] </option>";
                       }
                     ?>
                   </select>
