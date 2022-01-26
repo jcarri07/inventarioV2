@@ -34,7 +34,7 @@ if (isset($_SESSION['id_user'])) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-         Perfil de usuario cambiado correctamente.
+         Perfil de usuario modificado correctamente.
             </div>";
     }
 
