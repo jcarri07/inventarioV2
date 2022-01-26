@@ -5,7 +5,6 @@
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
     <li class="active"> Historial </li>
-    <li class="active"> Historial </li>
   </ol>
 
   <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">-->

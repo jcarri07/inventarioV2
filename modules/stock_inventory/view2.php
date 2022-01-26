@@ -46,8 +46,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-    <li class="active"> Reportes </li>
-    <li class="active"> Inventarios </li>
+    <li><a href="?module=stock_inventory"> Inventarios </a></li>
   </ol>
 </section>
 
@@ -212,7 +211,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_mobiliario" type="text" name="filtrado_mobi" id="do" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_mobiliario" type="text" name="filtrado_mobi" id="do" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_mobiliario">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -346,7 +345,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_refrigeracion" type="text" name="filtrado_refri" id="ado" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_refrigeracion" type="text" name="filtrado_refri" id="ado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_refrigeracion">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -476,7 +475,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_cientificos" type="text" name="filtrado_elect" id="rado" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_cientificos" type="text" name="filtrado_elect" id="rado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_cientificos">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -607,7 +606,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_seguridad" type="text" name="filtrado_sec" id="trado" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_seguridad" type="text" name="filtrado_sec" id="trado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_seguridad">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -736,7 +735,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_biblioteca" type="text" name="filtrado_biblioteca" id="filtrado_biblioteca" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_biblioteca" type="text" name="filtrado_biblioteca" id="filtrado_biblioteca" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_biblioteca">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -864,7 +863,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_vehiculos" type="text" name="filtrado_vehiculos" id="filtrado_vehiculos" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_vehiculos" type="text" name="filtrado_vehiculos" id="filtrado_vehiculos" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_vehiculos">
                               <option value=""></option>
                               <option value="codigo"></option>
@@ -991,7 +990,7 @@
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_inmuebles" type="text" name="filtrado_inmuebles" id="filtrado_inmuebles" autocomplete="off" required="true" placeholder="-- Especificar--" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <input list="items_inmuebles" type="text" name="filtrado_inmuebles" id="filtrado_inmuebles" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_inmuebles">
                               <option value=""></option>
                               <option value="codigo"></option>

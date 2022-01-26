@@ -30,7 +30,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIO</title>
+    <title>REPORTE DE INVENTARIOS (REFRIGERACION Y ELECTRODOMESTICOS)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO (REFRIGERACION Y ELECTRODOMESTICOS)
+        REPORTE DE INVENTARIOS (REFRIGERACION Y ELECTRODOMESTICOS)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO REFRIGERACION Y ELECTRODOMESTICOS.pdf";
+$filename = "REPORTE DE INVENTARIOS REFRIGERACION Y ELECTRODOMESTICOS.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

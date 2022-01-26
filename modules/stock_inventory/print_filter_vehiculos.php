@@ -57,7 +57,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIO</title>
+    <title>REPORTE DE INVENTARIOS (VEHICULOS)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -82,7 +82,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO (VEHICULOS)
+        REPORTE DE INVENTARIOS (VEHICULOS)
     </div>
 
     <div id="title-tanggal">
@@ -161,7 +161,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO VEHICULOS FILTRADO.pdf";
+$filename = "REPORTE DE INVENTARIOS VEHICULOS FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';
