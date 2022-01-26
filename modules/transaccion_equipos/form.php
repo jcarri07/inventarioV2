@@ -119,7 +119,8 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <select name="transaccion" id="tipo_transaccion" required class='form-control' onchange="hitung_total_stok();">
+                  <select class="chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" required class='form-control' onchange="hitung_total_stok();">
+                  <option value=""></option>
 					        <option value="Salida">Salida</option>
 				         	<option value="Entrada">Entrada</option>
 				          </select>

@@ -1,15 +1,39 @@
+<style>
+  .botones{
+    height: 35px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 
+  input[type=file] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;  
+  }
+
+  .textoInput{
+    margin-top:-21px;
+    text-align: center;
+  }
+
+  .anchoInput{
+    width:140px;
+  }
+
+</style>
 
 <section class="content-header">
-  <h1>
+  <h2>
     <i class="fa fa-user icon-title"></i> Gestión de Usuarios
 
-    <a class="btn btn-primary btn-social pull-right" href="?module=form_user&form=add" title="Agregar" data-toggle="tooltip">
-      <i class="fa fa-plus"></i> Agregar
-    </a>
-  </h1>
-
+    <form action="database/excel_to_mysql_control.php" method="POST" enctype="multipart/form-data">
+      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_user&form=add" title="Agregar" data-toggle="tooltip">
+        <i class="fa fa-plus"></i> Agregar
+      </a>
+    </form>
+  </h2>
 </section>
+
 
 <!-- Main content -->
 <section class="content">
@@ -87,11 +111,11 @@
        
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">NO.</th>
                 <th class="center">FOTO</th>
                 <th class="center">USUARIO</th>
                 <th class="center">ID</th>
-                <th class="center">NOMBRE DEL USUARIO</th>
+                <th class="center">NOMBRE DE USUARIO</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERMISOS DE ACCESO</th>
                 <th class="center">ESTATUS</th>
@@ -122,15 +146,15 @@
                       <?php
                       }
 
-              echo "  
-                      <td width='200' class='center'>$data[username]</td>
-                      <td width='50' class='center'>$data[id_user]</td>
-                      <td width='200' class='center'>$data[name_user]</td>
-                      <td width='200' class='center'>$data[sede]</td>
-                      <td width='200' class='center'>$data[permisos_acceso]</td>
-                      <td width='200' class='center'>$data[status]</td>
-                      <td width='200' class='center' width='200'>
-                          <div>";
+                    echo "  
+                      <td width='250' class='center'>$data[username]</td>
+                      <td width='150'  class='center'>$data[id_user]</td>
+                      <td width='250' class='center'>$data[name_user]</td>
+                      <td width='150' class='center'>$data[sede]</td>
+                      <td width='250' class='center'>$data[permisos_acceso]</td>
+                      <td width='150' class='center'>$data[status]</td>
+                      <td width='85' class='center'>
+                    <div>";
 
                           if ($data['status']=='activo') { ?>
                             <a data-toggle="tooltip" data-placement="top" title="Bloqueado" style="margin-right:1px" class="btn btn-warning btn-xs" href="modules/user/proses.php?act=off&id=<?php echo $data['id_user'];?>">

@@ -43,7 +43,7 @@ if (isset($_GET['tgl_awal2'])) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>REPORTE </title>
+    <title>REPORTE DE HISTORIAL</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -115,8 +115,8 @@ if (isset($_GET['tgl_awal2'])) {
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
-                    <th height="20" align="center" valign="middle"><small>NOMBRE</small></th>
+                    <th height="20" align="center" valign="middle"><small>NO.</small></th>
+                    <th height="20" align="center" valign="middle"><small>USUARIO</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
                     <th height="20" align="center" valign="middle"><small>ID</small></th>
                     <th height="20" align="center" valign="middle"><small>FECHA</small></th>
@@ -133,10 +133,10 @@ if (isset($_GET['tgl_awal2'])) {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'></td>
                         <td width='120' height='16' align='center' valign='middle'></td>
-                        <td width='80' height='16' align='center' valign='middle'></td>
-                        <td width='60' height='16' align='center' valign='middle'></td>
-                        <td width='80' height='16' align='center' valign='middle'></td>
-                        <td width='80' height='16' align='center' valign='middle'></td>
+                        <td width='80'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='80'  height='16' align='center' valign='middle'></td>
+                        <td width='80'  height='16' align='center' valign='middle'></td>
                         <td width='200' height='16' align='center' valign='middle'></td>
                     </tr>";
                 }       
@@ -149,12 +149,12 @@ if (isset($_GET['tgl_awal2'])) {
                         $fecha = $exp[2]."-".$exp[1]."-".$exp[0];*/
 
                     echo "  <tr>
-                        <td width='50' height='16' align='center' valign='middle'>$no</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[nombre]</td>
-                        <td width='80' height='16' align='center' valign='middle'>$data[cedula]</td>
-                        <td width='60' height='16' align='center' valign='middle'>$data[permiso]</td>
-                        <td width='80' height='16' align='center' valign='middle'>$data[fecha]</td>
-                        <td width='80' height='16' align='center' valign='middle'>$data[hora]</td>
+                        <td width='50'  height='16' align='center' valign='middle'>$no</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[name_user]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula_user]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[permiso]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[fecha]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[hora]</td>
                         <td width='200' height='16' align='center' valign='middle'>$data[accion]</td>
                     </tr>";
                     $no++;
@@ -168,7 +168,7 @@ if (isset($_GET['tgl_awal2'])) {
 
 </html>
 <?php
-$filename="REPORTE DE HISTORIAL.pdf";
+$filename="REPORTE DE HISTORIAL FILTRADO.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';
