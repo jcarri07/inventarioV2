@@ -56,7 +56,6 @@ else {
 
            // $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            $serial = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
             $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
             $titulo  = mysqli_real_escape_string($mysqli, trim($_POST['titulo']));
             $autor  = mysqli_real_escape_string($mysqli, trim($_POST['autor']));
@@ -85,8 +84,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, updated_user) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, created_date) 
+                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             

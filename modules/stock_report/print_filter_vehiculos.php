@@ -122,6 +122,8 @@ $count  = mysqli_num_rows($query);*/
         <?php
        
         while ($data = mysqli_fetch_assoc($query)) {
+                $originalDate = $data['created_date'];
+                $fecha = date("d-m-Y", strtotime($originalDate));
            
                 echo "  <tr>
                     <td style= width='45'  height='16' align='center' valign='middle'>$no</td>
@@ -136,7 +138,7 @@ $count  = mysqli_num_rows($query);*/
                     <td style= width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
                     <td style= width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
                     <td style= width='40'  height='16' align='center' valign='middle'>$data[empresa]</td>  
-                    <td style= width='65'  height='16' align='center' valign='middle'>$data[created_date]</td>                      
+                    <td style= width='65'  height='16' align='center' valign='middle'>$fecha</td>                      
                 </tr>";
             $no++;
         }

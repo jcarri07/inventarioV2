@@ -42,7 +42,7 @@ else {
                                             VALUES('$codigo_transaccion',NOW(),'$codigo','$motivo','$recibe','$cedula_r','$empresa_r','$entrega','$cedula_e','$empresa','$lugar_r','$lugar_e','$created_user','$tipo_transaccion')")
                                             or die('Error: '.mysqli_error($mysqli));    
 
-            $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+            $query2 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
            

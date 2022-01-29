@@ -144,9 +144,8 @@ if (isset($_GET['tgl_awal_biblioteca'])) {
     else {
    
         while ($data = mysqli_fetch_assoc($query)) {
-           /* $tanggal       = $data['created_date'];
-            $exp           = explode('-',$tanggal);
-            $fecha = $exp[2]."-".$exp[1]."-".$exp[0];*/
+            $originalDate = $data['created_date'];
+            $fecha = date("d-m-Y", strtotime($originalDate));
 
             echo "  <tr>
                         <td width='45'  height='13' align='center' valign='middle'>$no</td>
@@ -161,7 +160,7 @@ if (isset($_GET['tgl_awal_biblioteca'])) {
                         <td width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
                         <td width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
                         <td width='40'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
-                        <td width='65'  height='16' align='center' valign='middle'>$data[created_date]</td>
+                        <td width='65'  height='16' align='center' valign='middle'>$fecha</td>
                     </tr>";
             $no++;
         }
