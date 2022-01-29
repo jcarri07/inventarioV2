@@ -34,7 +34,7 @@ if (isset($_SESSION['id_user'])) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-         Perfil de usuario cambiado correctamente.
+         Perfil de usuario modificado correctamente.
             </div>";
     }
 
@@ -90,35 +90,37 @@ if (isset($_SESSION['id_user'])) {
             </div>
             <hr>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Nombre de Usuario : </label>
+              <label class="col-sm-2 control-label">Usuario</label>
               <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['username']; ?></label>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Email :</label>
+              <label class="col-sm-2 control-label">ID</label>
+              <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['id_user']; ?></label>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">E-mail</label>
               <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['email']; ?></label>
             </div>
           
             <div class="form-group">
-              <label class="col-sm-2 control-label">Telefono :</label>
+              <label class="col-sm-2 control-label">Teléfono</label>
               <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['telefono']; ?></label>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Permisos de acceso :</label>
+              <label class="col-sm-2 control-label">Permisos de acceso</label>
               <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['permisos_acceso']; ?></label>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Status :</label>
+              <label class="col-sm-2 control-label"> Estatus</label>
               <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['status']; ?></label>
             </div>
          
 
-          <div class="form-group">
-              <label class="col-sm-2 control-label">Identificador :</label>
-              <label style="text-align:left" class="col-sm-8 control-label"> <?php echo $data['id_user']; ?></label>
-            </div>
+
           </div><!-- /.box body -->
 
           <div class="box-footer">

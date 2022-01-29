@@ -30,7 +30,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIO</title>
+    <title>REPORTE DE INVENTARIOS (VEHICULOS)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIO (VEHICULOS)
+        REPORTE DE INVENTARIOS (VEHICULOS)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -89,10 +89,10 @@ $count  = mysqli_num_rows($query);
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>CLASE</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>MARCA</small></th>
                     <th height="20" align="center" valign="middle"><small>PLACA</small></th>
-                    <th height="20" align="center" valign="middle"><small>COMBUSTIBLE</small></th>
+                    <th height="20" align="center" valign="middle"><small>ANIO</small></th>
                     <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
                     <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
@@ -109,10 +109,10 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='130' height='16' align='center' valign='middle'>$data[tipo]</td>
-                        <td width='130' height='16' align='center' valign='middle'>$data[marca]</td>
-                        <td width='130' height='16' align='center' valign='middle'>$data[placa]</td>
-                        <td width='130' height='16' align='center' valign='middle'>$data[tipoCombustible]</td>
+                        <td width='200' height='16' align='center' valign='middle'>$data[tipo]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[placa]</td>
+                        <td width='80' height='16' align='center' valign='middle'>$data[anio]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIO VEHICULOS.pdf";
+$filename = "REPORTE DE INVENTARIOS VEHICULOS.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

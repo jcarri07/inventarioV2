@@ -38,7 +38,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nombre del usuario</label>
+                <label class="col-sm-2 control-label">Nombre de usuario</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="name_user" autocomplete="off" required>
                 </div>
@@ -54,7 +54,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <select class="form-control" name="sede" required>
+                  <select class="chosen-select" name="sede" data-placeholder="-- Especificar --" required>
                     <option value=""></option>
                     <option value="CIDE">CIDE</option>
                     <option value="SAT">SAT</option>
@@ -68,7 +68,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Permisos de acceso</label>
                 <div class="col-sm-5">
-                  <select class="form-control" name="permisos_acceso" required>
+                  <select class="chosen-select" name="permisos_acceso" data-placeholder="-- Especificar --" required>
                     <option value=""></option>
                     <option value="Super Admin">Super Admin</option>
                     <option value="Admin">Admin</option>

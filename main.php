@@ -148,10 +148,10 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventarios Equipos</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse Aceptar Para Descargar Respaldo </p>
+                    <p>Pulse aceptar para descargar respaldo </p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel2.php">Aceptar</a>
@@ -167,10 +167,10 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Biblioteca</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventarios Biblioteca</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse Aceptar Para Descargar Respaldo</p>
+                    <p>Pulse aceptar para descargar respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_biblioteca.php">Aceptar</a>
@@ -185,10 +185,10 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Vehiculos</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventarios Vehiculos</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse Aceptar Para Descargar Respaldo</p>
+                    <p>Pulse aceptar para descargar respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_vehiculos.php">Aceptar</a>
@@ -204,10 +204,10 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventario Inmuebles</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Inventarios Inmuebles</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse Aceptar Para Descargar Respaldo</p>
+                    <p>Pulse aceptar para descargar respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_inmueble.php">Aceptar</a>
@@ -222,10 +222,10 @@ session_start();
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar control de Movimientos</i></h4>
+                    <h4 class="modal-title"><i class="fa fa-download"> Respaldar Movimientos</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Pulse Aceptar Para Descargar Respaldo</p>
+                    <p>Pulse aceptar para descargar respaldo</p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" href="modules\backup\php_excel_control.php">Aceptar</a>

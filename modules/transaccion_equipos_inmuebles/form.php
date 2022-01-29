@@ -120,7 +120,8 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <select name="transaccion" id="tipo_transaccion" required class='form-control' onchange="hitung_total_stok();">
+                <select class="chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" required class='form-control' onchange="hitung_total_stok();">
+                  <option value=""></option>
 					        <option value="Salida">Salida</option>
 				         	<option value="Entrada">Entrada</option>
 				          </select>
@@ -130,7 +131,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar inmueble--" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo" data-placeholder="-- Seleccionar inmueble --" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT codigo, descripcion FROM inmuebles ORDER BY descripcion ASC")
