@@ -9,7 +9,7 @@ include "../../config/fungsi_tanggal.php";
 
 include "../../config/fungsi_rupiah.php";
 
-$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, sede, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, sede, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")  
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
