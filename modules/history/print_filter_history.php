@@ -26,16 +26,16 @@ $tgl2      = $_GET['tgl_akhir2'];
 $explode   = explode('-',$tgl2);
 $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 
-$limit =  date("d-m-Y",strtotime($tgl_akhir."+ 1 days")); 
+$limit =  date("Y-m-d",strtotime($tgl2."+ 1 days")); 
 
 $count = 0;
  
 if (isset($_GET['tgl_awal2'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY fecha DESC") 
+    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl1' AND '$tgl2' ORDER BY fecha DESC") 
         or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
-}
+} 
 
 
 ?>
@@ -72,15 +72,17 @@ if (isset($_GET['tgl_awal2'])) {
     </div>
 
     <?php  
+
+    $fecha1 = date("d-m-Y", strtotime($tgl_awal));
+    $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
     if ($tgl_awal==$tgl_akhir) { ?>
         <div id="title-tanggal">
-            Fecha: <?php echo $tgl_awal; ?>
+            Fecha: <?php echo $fecha1; ?>
         </div>
     <?php
-    }
-    else { ?>
+    } else { ?>
         <div id="title-tanggal">
-            Desde: <?php echo $tgl_awal; ?> Hasta: <?php echo $tgl_akhir; ?>
+            Desde:  <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
         </div>
     <?php
     }
@@ -144,16 +146,15 @@ if (isset($_GET['tgl_awal2'])) {
                 else {
    
                     while ($data = mysqli_fetch_assoc($query)) {
-                        /* $tanggal       = $data['created_date'];
-                        $exp           = explode('-',$tanggal);
-                        $fecha = $exp[2]."-".$exp[1]."-".$exp[0];*/
+                    $originalDate = $data['fecha'];
+                    $fecha = date("d-m-Y", strtotime($originalDate));
 
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[name_user]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula_user]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[nombre]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
                         <td width='60'  height='16' align='center' valign='middle'>$data[permiso]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[fecha]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$fecha</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[hora]</td>
                         <td width='200' height='16' align='center' valign='middle'>$data[accion]</td>
                     </tr>";

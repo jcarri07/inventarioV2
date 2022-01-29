@@ -24,7 +24,7 @@
 
             <label style="margin-left:-10px" class="col-sm-1">Hasta</label>
             <div class="col-sm-2">
-              <input style="margin-left:-40px" type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir2" autocomplete="off" required>
+              <input style="margin-left:-40px" type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_akhir2" autocomplete="off" required>
             </div>
           </div>
           
@@ -80,13 +80,15 @@
 
            
               while ($data = mysqli_fetch_assoc($query)) { 
+                $originalDate = $data['fecha'];
+                $fecha = date("d-m-Y", strtotime($originalDate));
               
                 echo "<tr>
                 <td width='50'  class='center'>$no</td>
                 <td width='200' class='center'>$data[nombre]</td>
                 <td width='200' class='center'>$data[cedula]</td>
                 <td width='200' class='center'>$data[permiso]</td>
-                <td width='200' class='center'>$data[fecha]</td>
+                <td width='200' class='center'>$fecha</td>
                 <td width='200' class='center'>$data[hora]</td>
                 <td width='200' class='center'>$data[accion]</td>
                     </tr>";

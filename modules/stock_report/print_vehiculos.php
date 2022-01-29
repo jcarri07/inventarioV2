@@ -33,7 +33,7 @@ if ($tgl_awal !== $tgl_akhir) {
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.tipo,b.unidad,b.cedula,b.placa, b.marca
                                     FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
+                                    ORDER BY a.codigo_transaccion ASC") 
                                     or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 } else {
@@ -41,7 +41,7 @@ if ($tgl_awal !== $tgl_akhir) {
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.tipo,b.unidad,b.cedula,b.placa, b.marca
                                     FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
+                                    ORDER BY a.codigo_transaccion ASC") 
                                     or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
