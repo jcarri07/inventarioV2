@@ -120,7 +120,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                <select class="chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" required class='form-control' onchange="hitung_total_stok();">
+                <select class="form-control chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" onchange="changeTipo();" required>
                   <option value=""></option>
 					        <option value="Salida">Salida</option>
 				         	<option value="Entrada">Entrada</option>
@@ -231,36 +231,36 @@ if ($_GET['form']=='add') { ?>
     const empresa_entrega = document.getElementById('empresa_entrega');
     const empresa_recibe = document.getElementById('empresa_recibe');
 
-    tipo_transaccion.addEventListener('change', ()=> {
+    function changeTipo() {
+      
+      if (tipo_transaccion.value == "Entrada" || "") {
+          sede_entrega.value = "";
+          empresa_entrega.value = "";
+          empresa_recibe.setAttribute('readonly', 'readonly');
+          sede_recibe.setAttribute('readonly','readonly');
 
-    if (tipo_transaccion.value == "Entrada") {
-        sede_entrega.value = "";
-        empresa_entrega.value = "";
-        empresa_recibe.setAttribute('readonly', 'readonly');
-        sede_recibe.setAttribute('readonly','readonly');
+          empresa_entrega.readOnly = false;
+          sede_entrega.readOnly = false;
+  
 
-        empresa_entrega.readOnly = false;
-        sede_entrega.readOnly = false;
+          sede_recibe.value = "<?php echo $sede; ?>";
+          empresa_recibe.value = "ABAE";
 
+      } else {
+          sede_entrega.value = "<?php echo $sede; ?>";
 
-        sede_recibe.value = "<?php echo $sede; ?>";
-        empresa_recibe.value = "ABAE";
+          empresa_entrega.value = "ABAE";
 
-    } else {
-        sede_entrega.value = "<?php echo $sede; ?>";
+          empresa_entrega.setAttribute('readonly', 'readonly');
+          sede_entrega.setAttribute('readonly','readonly');
 
-        empresa_entrega.value = "ABAE";
+          empresa_recibe.readOnly = false;
+          sede_recibe.readOnly =false;
 
-        empresa_entrega.setAttribute('readonly', 'readonly');
-        sede_entrega.setAttribute('readonly','readonly');
-
-        empresa_recibe.readOnly = false;
-        sede_recibe.readOnly =false;
-
-        sede_recibe.value = "";
-        empresa_recibe.value = "";
+          sede_recibe.value = "";
+          empresa_recibe.value = "";
+      }
     }
-    });
   </script>
 <?php
 }

@@ -119,10 +119,10 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" required class='form-control' onchange="hitung_total_stok();">
-                  <option value=""></option>
-					        <option value="Salida">Salida</option>
-				         	<option value="Entrada">Entrada</option>
+                  <select class="form-control chosen-select" name="transaccion" id="tipo_transaccion" data-placeholder="-- Especificar --" onchange="changeTipo();" required> <!--onchange="hitung_total_stok();"-->
+                    <option value=""></option>
+                    <option value="Salida">Salida</option>
+                    <option value="Entrada">Entrada</option>
 				          </select>
                 </div>
               </div>
@@ -228,10 +228,10 @@ if ($_GET['form']=='add') { ?>
     const empresa_entrega = document.getElementById('empresa_entrega');
     const empresa_recibe = document.getElementById('empresa_recibe');
     const sede_recibe = document.getElementById('sede_recibe');
-
-    tipo_transaccion.addEventListener('change', ()=> {
-
-      if (tipo_transaccion.value == "Entrada") {
+    
+    function changeTipo() {
+      
+      if (tipo_transaccion.value == "Entrada" || "") {
           sede_entrega.value = "";
           empresa_entrega.value = "";
           empresa_recibe.setAttribute('readonly', 'readonly');
@@ -258,7 +258,7 @@ if ($_GET['form']=='add') { ?>
           sede_recibe.value = "";
           empresa_recibe.value = "";
       }
-    });
+    }
   </script>
 <?php
 }
