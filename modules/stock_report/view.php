@@ -42,12 +42,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
@@ -112,12 +112,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_biblioteca" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_biblioteca" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_biblioteca" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_biblioteca" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
@@ -181,12 +181,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_vehiculos" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_vehiculos" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_vehiculos" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_vehiculos" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
@@ -249,12 +249,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_inmuebles" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_inmuebles" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_inmuebles" autocomplete="off" required>
+                          <input type="date" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" name="tgl_akhir_inmuebles" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
