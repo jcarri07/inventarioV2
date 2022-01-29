@@ -24,7 +24,7 @@ $no = 1;
 
 $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e,a.empresa,a.created_date,b.codigo,b.titulo
                                     FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo
-                                    WHERE a.$filtro LIKE '$var%'")
+                                    WHERE a.$filtro LIKE '$var%' ORDER BY a.codigo_transaccion DESC")
                                 or die('Error'.mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
