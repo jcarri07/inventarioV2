@@ -73,14 +73,17 @@ if ($tgl_awal !== $tgl_akhir) {
     </div>
 
     <?php  
+
+    $fecha1 = date("d-m-Y", strtotime($tgl_awal));
+    $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
     if ($tgl_awal==$tgl_akhir) { ?>
         <div id="title-tanggal">
-            Fecha: <?php echo $tgl_awal; ?>
+            Fecha: <?php echo $fecha1; ?>
         </div>
     <?php
     } else { ?>
         <div id="title-tanggal">
-            Desde:  <?php echo $tgl_awal; ?> Hasta: <?php echo $tgl_akhir; ?>
+            Desde:  <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
         </div>
     <?php
     }

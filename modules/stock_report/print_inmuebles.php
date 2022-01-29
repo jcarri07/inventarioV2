@@ -38,10 +38,10 @@ if ($tgl_awal !== $tgl_akhir) {
     $count  = mysqli_num_rows($query);
 } else {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa, a.lugar_e, a.lugar_r, a.created_date, b.codigo, b.descripcion, b.unidad, b.cedula, b.serial
-                                    FROM transaccion_equipos as a INNER JOIN inmuebles as b ON a.codigo=b.codigo
+    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.descripcion,b.direccion,b.cedula,b.tipo
+                                    FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
+                                    ORDER BY a.codigo_transaccion ASC") 
                                     or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -70,14 +70,17 @@ if ($tgl_awal !== $tgl_akhir) {
             REPORTE DE MOVIMIENTOS (INMUEBLES)
         </div>
     <?php  
+
+    $fecha1 = date("d-m-Y", strtotime($tgl_awal));
+    $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
     if ($tgl_awal==$tgl_akhir) { ?>
         <div id="title-tanggal">
-            Fecha: <?php echo $tgl_awal; ?>
+            Fecha: <?php echo $fecha1; ?>
         </div>
     <?php
     } else { ?>
         <div id="title-tanggal">
-            Desde:  <?php echo $tgl_awal; ?> Hasta: <?php echo $tgl_akhir; ?>
+            Desde:  <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
         </div>
     <?php
     }
