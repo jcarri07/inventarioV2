@@ -157,7 +157,7 @@
                             <?php
                             $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicacion' ORDER BY codigo ASC ")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicacion' ORDER BY codigo DESC ")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -287,7 +287,7 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo ASC ")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo DESC ")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -420,7 +420,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -550,7 +550,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -681,7 +681,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -811,7 +811,7 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -935,7 +935,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'Vehiculos' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'Vehiculos' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -1064,7 +1064,7 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' ORDER BY codigo ASC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {

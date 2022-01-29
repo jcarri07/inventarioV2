@@ -20,7 +20,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo ASC")
+$query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo DESC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 

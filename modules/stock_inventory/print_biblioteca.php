@@ -20,7 +20,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY titulo ASC")
+$query = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY titulo DESC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
