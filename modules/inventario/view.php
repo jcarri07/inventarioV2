@@ -216,7 +216,7 @@ function mostrar_modal_internos(id){
       <div class="box box-primary">
         <div class="box-body">
 
-          <table id="dataTables1" class="table table-bordered table-striped table-hover">
+          <table id="de" class="table table-bordered table-striped table-hover">
       
             <thead>
               <tr>
@@ -327,6 +327,7 @@ function mostrar_modal_internos(id){
                     window.location.href = "modules/inventario/proses.php?act=reset";
                 } 
               })
+            </script>
             </script>
             </tbody>
           </table>
