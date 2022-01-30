@@ -32,21 +32,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%'")
+    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }

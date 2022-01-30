@@ -17,11 +17,11 @@ $var = $_POST['filtro_elect'];
 $var2 = $_POST['filtro_elect2'];
 $var3 = $_POST['filtro_elect3'];
 $filtro = $_POST['filtrado_elect'];
-trim($filtro);
+//trim($filtro);
 $filtro2 = $_POST['filtrado2_elect'];
-trim($filtro2);
+//trim($filtro2);
 $filtro3 = $_POST['filtrado3_elect'];
-trim($filtro3);
+//trim($filtro3);
 
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
@@ -32,21 +32,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Electronicos'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Electronicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Electronicos'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Electronicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Electronicos'")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Electronicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }

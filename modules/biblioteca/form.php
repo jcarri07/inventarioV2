@@ -147,7 +147,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" value="<?php echo $sede; ?>" autocomplete="off" readonly required>
+                  <input type="text" class="form-control" name="sede" value="<?php echo $sede; ?>" autocomplete="off" readonly>
                 </div>
               </div>
 
@@ -293,7 +293,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
+                  <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" readonly>
                 </div>
               </div>
 

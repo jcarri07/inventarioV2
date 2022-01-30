@@ -102,7 +102,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $sede?></td>
+            <td align="center"><?php echo $data['sede']?></td>
         </tr>
 
         <tr>

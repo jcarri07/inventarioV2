@@ -282,12 +282,6 @@
 <input type="button" onclick="javascript:visible_div();" value="div visible" />
 <div id="capa">esto es una capa</div>-->
 
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
 <!--Nivel Academico-->
 <div role="tabpanel" class="tab-pane" id="refrigeracion">
 
