@@ -104,7 +104,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $sede?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>

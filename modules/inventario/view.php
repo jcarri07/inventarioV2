@@ -83,7 +83,7 @@ function mostrar_modal_internos(id){
 }
 
 
-  </script>
+</script>
 
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
@@ -216,7 +216,7 @@ function mostrar_modal_internos(id){
       <div class="box box-primary">
         <div class="box-body">
 
-          <table id="de" class="table table-bordered table-striped table-hover">
+          <table id="example" class="table table-bordered table-striped table-hover">
       
             <thead>
               <tr>
@@ -328,6 +328,17 @@ function mostrar_modal_internos(id){
                 } 
               })
             </script>
+
+            <script src="">
+              $(document).ready(function() {
+              $('#example').DataTable( {
+                  ajax:           "../data/2500.txt",
+                  deferRender:    true,
+                  scrollY:        200,
+                  scrollCollapse: true,
+                  scroller:       true
+                } );
+              } );
             </script>
             </tbody>
           </table>

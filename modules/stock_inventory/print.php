@@ -71,7 +71,7 @@ $count  = mysqli_num_rows($query);
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $sede?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
