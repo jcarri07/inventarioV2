@@ -26,13 +26,15 @@ $tgl2      = $_GET['tgl_akhir2'];
 $explode   = explode('-',$tgl2);
 $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 
-$limit =  date("Y-m-d",strtotime($tgl2."+ 1 days")); 
+$limit =  date("Y-m-d",strtotime($tgl2."+ 1 days"));
+$fecha_actual = date("d-m-Y",strtotime($tgl2."+ 0 days"));
+$fecha1 =  date("Y-m-d",strtotime($tgl2."+ 1 days"));
 
 $count = 0;
  
 if (isset($_GET['tgl_awal2'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl1' AND '$tgl2' ORDER BY fecha DESC") 
+    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl1' AND '$limit' ORDER BY fecha DESC") 
         or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 } 
@@ -77,7 +79,7 @@ if (isset($_GET['tgl_awal2'])) {
     $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
     if ($tgl_awal==$tgl_akhir) { ?>
         <div id="title-tanggal">
-            Fecha: <?php echo $fecha1; ?>
+            Fecha: <?php echo $fecha_actual; ?>
         </div>
     <?php
     } else { ?>
@@ -98,15 +100,10 @@ if (isset($_GET['tgl_awal2'])) {
             <td>Cedula:</td>
             <td align="center"><?php echo $data['cedula_user'] ?></td>
         </tr>
-
-        <tr>
-            <td>Sede:</td>
-            <td align="center"><?php echo $sede?></td>
-        </tr>
-
         <tr>
             <td>Fecha:</td>
-            <td align="center"> <?= date('d/m/Y'); ?></td>
+            
+            <td align="center"> <?= $fecha_actual;  ?></td>
         </tr>
     </table>
 

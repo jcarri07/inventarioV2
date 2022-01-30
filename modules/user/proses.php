@@ -65,6 +65,7 @@ else {
 					
                     $query = mysqli_query($mysqli, "UPDATE usuarios SET username 	= '$username',
                     													name_user 	= '$name_user',
+																		cedula_user 		= '$cedula',
                     													sede        = '$sede',
                     													cedula_user = '$cedula', 
                     													email       = '$email',
