@@ -34,7 +34,7 @@ $count = 0;
  
 if (isset($_GET['tgl_awal2'])) {
     $no    = 1;
-    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl1' AND '$limit' ORDER BY fecha DESC") 
+    $query = mysqli_query($mysqli, "SELECT * FROM history WHERE fecha BETWEEN '$tgl_awal' AND '$limit' ORDER BY fecha DESC") 
         or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 } 
