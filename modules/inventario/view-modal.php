@@ -80,13 +80,21 @@ function validarExt()
                        <td width='100' class='center'>$data[modelo]</td>
                        <td width='100' class='center'>$data[serial]</td>
                        <td width='100' class='center'>$data[bienesN]</td>";
+
               echo "    </div>
                       </td>
                     </tr>";
             }
+            if (!$data['foto']) { ?>
+              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+            <?php
+            }
+            else { ?>
+              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
+            <?php
+            }
           }
-            
-            ?>
+                ?>
 
 
 
@@ -151,23 +159,11 @@ function validarExt()
     or die('error: '.mysqli_error($mysqli));
    // $data = mysqli_fetch_assoc($query);        
   
+
       while ($data = mysqli_fetch_assoc($query)) { 
-     
-
+                          
         echo "<tr>
-                      <td width='50' class='center'>$no</td>";
-
-                      if ($data['foto']=="") { ?>
-                        <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
-                      <?php
-                      } else { ?>
-                        
-                        <td class='center'><img class='img-user' src='images/inventario/<?php echo $data['foto_equipo']; ?>' width='25'></td>
-                      <?php
-                      }
-
-              echo "  
-        
+  
                 <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[componente]</td>
                 <td width='90' class='center'>$data[clase]</td>
