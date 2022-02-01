@@ -27,7 +27,7 @@
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-        <img style="margin-top:-12px" src="assets/img/logo-blue2.png" alt="Logo" height="50"> <b>IN@BAE </b>
+        <img style="margin-top:-12px" src="assets/img/logo-blue2.png" alt="Logo" height="50"><b>IN@BAE</b>
       </div><!-- /.login-logo -->
       <?php  
  
@@ -52,7 +52,7 @@
       ?>
 
       <div class="login-box-body">
-        <p class="login-box-msg"><i class="fa fa-user icon-title"></i> Por favor Inicie Sesión</p>
+        <p class="login-box-msg"><i class="fa fa-user icon-title"></i>Por favor Inicie Sesión</p>
         <br/>
         <form action="login-check.php" method="POST">
           <div class="form-group has-feedback">
