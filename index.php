@@ -52,7 +52,7 @@
       ?>
 
       <div class="login-box-body">
-        <p class="login-box-msg"><i class="fa fa-user icon-title"></i> Por favor Inicie Sesión</p>
+        <p class="login-box-msg"><i class="fa fa-user icon-title"></i>Por favor Inicie Sesión</p>
         <br/>
         <form action="login-check.php" method="POST">
           <div class="form-group has-feedback">
