@@ -100,10 +100,15 @@ if (isset($_GET['tgl_awal2'])) {
             <td>Cedula:</td>
             <td align="center"><?php echo $data['cedula_user'] ?></td>
         </tr>
+
+        <tr>
+            <td>Sede:</td>
+            <td align="center"><?php echo $data['sede'] ?></td>
+        </tr>
+
         <tr>
             <td>Fecha:</td>
-            
-            <td align="center"> <?= $fecha_actual;  ?></td>
+            <td align="center"> <?= date('d/m/Y'); ?></td>
         </tr>
     </table>
 

@@ -9,12 +9,13 @@ include "../../config/fungsi_tanggal.php";
 
 include "../../config/fungsi_rupiah.php";
 
-$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+$query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, sede, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
+$sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 $fecha_actual = date("d-m-Y",strtotime($tgl2."- 1 days")); 
 
@@ -29,20 +30,17 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>HISTORIAL</title>
+    <title>REPORTE DE HISTORIAL</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
-
 </head>
 
 <body>
 
-
-
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/norma.png" width="550" align='right' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="150" align='right' ;></td>
+            <td><img src="../../assets/img/norma.png" width="400" align='center' ;></td>
+            <td width="220"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
         </tr>
     </table>
 
@@ -55,26 +53,32 @@ $count  = mysqli_num_rows($query);
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/ABAE_logo.png" />
     </div>-->
 
+    <br><br>
 
     <div id="title">
-        HISTORIAL
+        REPORTE DE HISTORIAL
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
         <tr>
-            <td width="90">Generado por: </td>
-            <td><?php echo $nombre ?></td>
-
+            <td width="100">Generado por:</td>
+            <td width="100" align="center"><?php echo $nombre ?></td>
         </tr>
+
         <tr>
             <td>Cedula:</td>
             <td align="center"><?php echo $data['cedula_user'] ?></td>
         </tr>
+
         <tr>
-            <td>Fecha:</td>
-            <td width="80" align="center"> <?= $fecha_actual; ?></td>
+            <td>Sede:</td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
+        <tr>
+            <td>Fecha:</td>
+            <td align="center"> <?= date('d/m/Y'); ?></td>
+        </tr>
     </table>
 
     <br>
@@ -93,6 +97,7 @@ $count  = mysqli_num_rows($query);
                     <th height="20" align="center" valign="middle"><small>ACCION</small></th>
                 </tr>
             </thead>
+
             <tbody>
                 <?php
 
@@ -101,13 +106,13 @@ $count  = mysqli_num_rows($query);
                     $fecha = date("d-m-Y", strtotime($originalDate));
 
                     echo "  <tr>
-                        <td width='25' height='13' align='center' valign='middle'>$no</td>
-                        <td width='170' height='13' align='center' valign='middle'>$data[nombre]</td>    
-                        <td width='70' height='13' align='center' valign='middle'>$_SESSION[cedula_user]</td>                       
-                        <td width='30' height='13' align='center' valign='middle'>$data[permiso]</td>                 
-                        <td width='70' height='13' align='center' valign='middle'>$fecha</td>
-                        <td width='70' height='13' align='center' valign='middle'>$data[hora]</td>
-                        <td width='200' height='13' align='center' valign='middle'>$data[accion]</td>                       
+                        <td width='50' height='16' align='center' valign='middle'>$no</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[nombre]</td>    
+                        <td width='80' height='16' align='center' valign='middle'>$_SESSION[cedula_user]</td>                       
+                        <td width='60' height='16' align='center' valign='middle'>$data[permiso]</td>                 
+                        <td width='80' height='16' align='center' valign='middle'>$fecha</td>
+                        <td width='80' height='16' align='center' valign='middle'>$data[hora]</td>
+                        <td width='200' height='16' align='center' valign='middle'>$data[accion]</td>                       
                         
                     </tr>";
                     $no++;
@@ -122,7 +127,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "HISTORIAL INVENTARIO.pdf";
+$filename = "REPORTE DE HISTORIAL.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

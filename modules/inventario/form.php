@@ -46,7 +46,6 @@
     /*var codigo = "<?php echo $codigo;?>";
     document.getElementById("internosItem").click();
     $('#internos #codigoInternos').val(codigo);*/
-
     window.location.href = "?module=form_inventario&form=addcomp";
   }
 </script>
@@ -54,7 +53,9 @@
 <script>
   function cambiarLocation() {
     window.location.href = "?module=inventario&alert=1";
+    
   }
+
 </script>
 
 <?php
@@ -83,7 +84,7 @@ if ($_GET['form']=='add') { ?>
          ¿Desea registrar los componentes internos de este equipo?
         </div>
         <div class="modal-footer">
-          <a type="button" onclick="cambiarLocation();" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+          <a type="button" onclick="cambiarLocation();"  class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
           <a type="button" class="btn btn-primary" onclick="mostrarFormularioInternos();" data-dismiss="modal">Registrar</a>
         </div>
       </div>
@@ -102,7 +103,7 @@ if ($_GET['form']=='add') { ?>
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="agregar">             
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=insert" method="POST"  enctype="multipart/form-data">
             <div class="box-body">
               <?php  
               
@@ -241,7 +242,7 @@ if ($_GET['form']=='add') { ?>
             <div class="form-group" >
                 <label class="col-sm-4 control-label">Foto</label>
                 <div class="col-sm-4">
-                  <input type="file" name="foto_equipo">
+                  <input type="file" name="foto">
                   <br/>
                   <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
                 </div>
@@ -286,7 +287,7 @@ if ($_GET['form']=='add') { ?>
         <!--MOBILIARIO-->
          <div role= "tabpanel" class="tab-pane" id="internos" >
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/inventario/proses copy.php?act=insert" method="POST">
+          <form id="form_int" role="form" class="form-horizontal" action="modules/inventario/proses copy.php?act=insert" method="POST"  enctype="multipart/form-data">
             <div class="box-body">
             <?php  
               
@@ -479,7 +480,7 @@ elseif ($_GET['form']=='edit') {
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="modificar"> 
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=update" method="POST">
+          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=update" method="POST" >
             <div class="box-body">
 
               <div class="form-group">
@@ -586,15 +587,15 @@ elseif ($_GET['form']=='edit') {
             <div class="form-group" >
                 <label class="col-sm-4 control-label">Foto</label>
                 <div class="col-sm-4">
-                  <input type="file" name="foto_equipo">
+                  <input type="file" name="foto">
                   <br/>
                 <?php  
-                if ($data['foto_equipo']=="") { ?>
+                if ($data['foto']=="") { ?>
                   <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
                 <?php
                 }
                 else { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto_equipo']; ?>" width="128">
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
                 <?php
                 }
                 ?>

@@ -56,11 +56,11 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="sede" data-placeholder="-- Especificar --" required>
                     <option value=""></option>
-                    <option value="CIDE">CIDE</option>
-                    <option value="SAT">SAT</option>
-                    <option value="ETCS-Luepa">ETCS-Luepa</option>
-                    <option value="ETCS-Baemari">ETCS-Baemari</option>
                     <option value="CTSR">CTSR</option>
+                    <option value="SAT">SAT</option>
+                    <option value="ETCS-Baemari">ETCS-Baemari</option>
+                    <option value="ETCS-Luepa">ETCS-Luepa</option>
+                    <option value="CIDE">CIDE</option>
                   </select>
                 </div>
               </div>
@@ -151,11 +151,11 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="form-control" name="sede" required>
                     <option value="<?php echo $data['sede']; ?>"><?php echo $data['sede']; ?></option>
-                    <option value="CIDE">CIDE</option>
-                    <option value="SAT">SAT</option>
-                    <option value="ETCS-Luepa">ETCS-Luepa</option>
-                    <option value="ETCS-Baemari">ETCS-Baemari</option>
                     <option value="CTSR">CTSR</option>
+                    <option value="SAT">SAT</option>
+                    <option value="ETCS-Baemari">ETCS-Baemari</option>
+                    <option value="ETCS-Luepa">ETCS-Luepa</option>
+                    <option value="CIDE">CIDE</option>
                   </select>
                 </div>
               </div>
