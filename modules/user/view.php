@@ -173,7 +173,7 @@
                                 <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                           </a>";
               ?>   
-              <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/user/proses.php?act=delete&id=<?php echo $data['id_user'];?>" onclick="return confirm('estas seguro de eliminar este usuario <?php echo $data['name_user']; ?> ?');">
+              <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/user/proses.php?act=delete&id=<?php echo $data['id_user'];?>" onclick="return confirm('Estás seguro de eliminar este usuario <?php echo $data['name_user']; ?> ?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
               </a>
               
