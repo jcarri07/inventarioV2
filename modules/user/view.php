@@ -156,7 +156,7 @@
                       <td width='85' class='center'>
                     <div>";
 
-                          if ($data['status']=='activo') { ?>
+                          if ($data['status']=='Activo') { ?>
                             <a data-toggle="tooltip" data-placement="top" title="Bloqueado" style="margin-right:1px" class="btn btn-warning btn-xs" href="modules/user/proses.php?act=off&id=<?php echo $data['id_user'];?>">
                                 <i style="color:#fff" class="glyphicon glyphicon-off"></i>
                             </a>
