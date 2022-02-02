@@ -41,7 +41,7 @@ $rows  = mysqli_num_rows($query);
     }
 
 $hari_ini = date("d-m-Y");
-$tituloUser = $_SESSION['name_user'];
+$NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
 $accion = "Registro de equipo";
 $cedulauser = $_SESSION['cedula_user'];
@@ -74,7 +74,7 @@ else {
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-          //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            //$unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
 
             $created_user = $_SESSION['id_user'];
