@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2022 a las 20:57:12
+-- Tiempo de generación: 02-02-2022 a las 20:51:26
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -34,7 +34,7 @@ CREATE TABLE `biblioteca` (
   `autor` varchar(300) DEFAULT NULL,
   `editorial` varchar(300) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `bienesN` varchar(5) DEFAULT NULL,
+  `bienesN` varchar(20) DEFAULT NULL,
   `responsable` varchar(300) DEFAULT NULL,
   `cedula` varchar(15) DEFAULT NULL,
   `sede` varchar(300) NOT NULL,
@@ -54,25 +54,8 @@ CREATE TABLE `biblioteca` (
 --
 
 INSERT INTO `biblioteca` (`codigo`, `isbn`, `tipo`, `titulo`, `autor`, `editorial`, `cantidad`, `bienesN`, `responsable`, `cedula`, `sede`, `color`, `condicion`, `ubicacion`, `created_user`, `updated_user`, `created_date`, `updated_date`, `estado`, `categoria`) VALUES
-('001282', '3513', '15', '15153', '15', '1531', 1531, '515', '5313', '5135', 'CIDE', '151', '31', '153153', 23, 0, NULL, NULL, 'nochequeado', 'Biblioteca'),
-('1264', 'SA5464', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20134', 'JOSE CARRIZALES', '24642029', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 22', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1265', 'SA5465', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20135', 'JOSE CARRIZALES', '24642030', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 23', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1266', 'SA5466', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20136', 'JOSE CARRIZALES', '24642031', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 24', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1267', 'SA5467', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20137', 'JOSE CARRIZALES', '24642032', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 25', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1268', 'SA5468', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20138', 'JOSE CARRIZALES', '24642033', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 26', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1269', 'SA5469', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20139', 'JOSE CARRIZALES', '24642034', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 27', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1270', 'SA5470', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20140', 'JOSE CARRIZALES', '24642035', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 28', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1271', 'SA5471', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20141', 'JOSE CARRIZALES', '24642036', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 29', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1272', 'SA5472', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20142', 'JOSE CARRIZALES', '24642037', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 30', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1273', 'SA5473', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20143', 'JOSE CARRIZALES', '24642038', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 31', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1274', 'SA5474', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20144', 'JOSE CARRIZALES', '24642039', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 32', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1275', 'SA5475', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20145', 'JOSE CARRIZALES', '24642040', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 33', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1276', 'SA5476', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20146', 'JOSE CARRIZALES', '24642041', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 34', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1277', 'SA5477', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20147', 'JOSE CARRIZALES', '24642042', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 35', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1278', 'SA5478', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20148', 'JOSE CARRIZALES', '24642043', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 36', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1279', 'SA5479', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20149', 'JOSE CARRIZALES', '24642044', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 37', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1280', 'SA5480', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20150', 'JOSE CARRIZALES', '24642045', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 38', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca'),
-('1281', 'SA5481', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R. R. MARTIN', 'SALESIANA', 21, '20151', 'JOSE CARRIZALES', '24642046', 'CIDE', 'NEGRO', 'BUENA', 'ESTANTE 39', 23, 23, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'nochequeado', 'Biblioteca');
+('000005', '262626', 'LIBRO', 'FESTIN DE CUERVOS', 'R.R. MARTIN', 'N/A', 1, '5158', 'JOSE CARRIZALES', '24642009', 'CIDE', 'NEGRO', 'EN USO', 'BORBURATA', 23, 23, '2022-01-29 17:01:59', NULL, 'nochequeado', 'Biblioteca'),
+('000006', '52551', 'LIBRO', 'CANCION DE FUEGO Y HIELO', 'R.R. MARTIN', 'N/A', 1, '5626', 'JOSE CARRIZALES', '24642009', 'CIDE', 'AMARILLO', 'EN USO', 'BORBURATA', 23, 23, '2022-01-29 17:13:28', NULL, 'nochequeado', 'Biblioteca');
 
 -- --------------------------------------------------------
 
@@ -116,7 +99,7 @@ CREATE TABLE `history` (
   `cedula` varchar(30) NOT NULL,
   `permiso` varchar(50) NOT NULL,
   `accion` varchar(50) NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `hora` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -125,21 +108,31 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`nombre`, `cedula`, `permiso`, `accion`, `fecha`, `hora`) VALUES
-('admin', '12345', '23', 'Transaccion de Salida', '2022-01-23', '15:03:24'),
-('', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:16'),
-('', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:23'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:52'),
-('admin', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:24'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:00'),
-('admin', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:34'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:43'),
-('admin', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:18'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:29'),
-('admin', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:03'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:14'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:06'),
-('admin', '12345', '23', 'Eliminacion de equipo', '2022-01-23', '15:03:10'),
-('admin', '12345', '23', 'Registro de equipo', '2022-01-23', '15:03:46');
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-24 01:44:46', '21:09:46'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 01:45:39', '21:09:39'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-31 01:46:35', '21:09:35'),
+('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-01-30 01:56:17', '21:09:17'),
+('Jose Carrizales', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 02:09:46', '22:10:46'),
+('Jose Carrizales', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 02:09:48', '22:10:48'),
+('Jose Carrizales', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 02:09:51', '22:10:51'),
+('Jose Carrizales', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 02:09:57', '22:10:57'),
+('Jose Carrizales', '24642009', '23', 'Transaccion de Entrada', '2022-01-30 13:41:52', '09:09:52'),
+('Jose Carrizales', '24642009', '23', 'Transaccion de Salida', '2022-01-30 13:50:23', '09:09:23'),
+('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-01-30 13:51:47', '09:09:47'),
+('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-01-30 13:54:14', '09:09:14'),
+('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-01-30 13:55:51', '09:09:51'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 13:57:16', '09:09:16'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 13:57:56', '09:09:56'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 13:58:56', '09:09:56'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:06:32', '10:10:32'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:07:06', '10:10:06'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:07:57', '10:10:57'),
+('Jose Carrizales', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 14:08:05', '10:10:05'),
+('Jose Carrizales', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:08:55', '10:10:55'),
+('', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:11:01', '10:10:01'),
+('', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:11:19', '10:10:19'),
+('', '24642009', '23', 'Modificacion de equipo', '2022-01-30 14:13:05', '10:10:05'),
+('', '24642009', '23', 'Eliminacion de equipo', '2022-01-30 14:13:34', '10:10:34');
 
 -- --------------------------------------------------------
 
@@ -191,7 +184,7 @@ INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nm
 ('10016', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52166', 'BORBURATA', 1, 'CIDE', '38', '1900-02-06 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 ('10017', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52167', 'BORBURATA', 1, 'CIDE', '39', '1900-02-07 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 ('10018', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52168', 'BORBURATA', 1, 'CIDE', '40', '1900-02-08 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10019', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52169', 'BORBURATA', 1, 'CIDE', '41', '23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+('10019', 'CASA ABAE', '50', '', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52169', 'BORBURATA', 1, 'CIDE', '41', '23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -236,8 +229,20 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`) VALUES
-('Comunicacion', '000002', '3153', '', '15', '131', 0, '', 'CIDE', '5153', '115', '153131', '3153', '1515', '11', '3153', 0, 0, '313', 0, '', 23, '2022-01-23 19:54:06', 0, '2022-01-23 19:54:06', NULL, '5153', NULL, ''),
-('Mobiliario', '000003', '35135', '', '131', '31', 351351, '', 'CIDE', '51551', '135', '1351', '35135', '51', '135', '131', 0, 0, '135', 0, '', 23, '2022-01-23 19:55:46', 0, '2022-01-23 19:55:46', NULL, '15313135', NULL, '');
+('Electrodomesticos', '0000007', '256G1G55A', '', 'MABE', '514A5A', 0, '', 'CIDE', 'ABAE', '515151462', '2651', 'NEGRO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-24 14:54:46', 23, '2022-01-24 14:54:46', NULL, 'JOSE CARRIZALES', NULL, ''),
+('', '0000008', 'dasdas', '', 'dasdasd', 'sadsa', 0, '', 'CIDE', 'ABAE', '11651', 'dasdas', 'dsadsad', 'sda', 'sadsd', 'asdsad', 0, 0, 'sadsad', 0, '', 23, '2022-01-24 15:05:09', 0, '2022-01-24 15:05:09', NULL, 'sadsad', NULL, ''),
+('Comunicacion', '000002', '14F1A44AA', '', 'VIT', '4A151AA', 0, '', 'CIDE', 'ABAE', '24642009', '153131', 'NEGRO', 'Teclado', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-23 19:54:06', 0, '2022-01-23 19:54:06', NULL, 'Jose Carrizales', NULL, ''),
+('Mobiliario', '000003', 'N/A', '', 'N/A', 'PEQUEÃ‘O', 1, '', 'CIDE', 'ABAE', '24642009', '02525', 'MARRON', 'ESCRITORIO', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-23 19:55:46', 23, '2022-01-23 19:55:46', NULL, 'Jose Carrizales', NULL, ''),
+('Electronicos', '000005', '541D6A', '', 'ARDUINO', 'NANO', 1, '', 'CIDE', 'ABAE', '246420009', '6416', 'AZUL', 'ARDUINO NANO', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-23 23:38:05', 23, '2022-01-23 23:38:05', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Seguridad', '000006', '64G5A4A', '', 'MICROSOFT', '45AA', 0, '', 'CIDE', 'ABAE', '24642009', '5246', 'NEGRO', 'CAMARA DE SEGURIDAD', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-23 23:38:32', 23, '2022-01-23 23:38:32', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Mobiliario', '000007', 'A4545F45A2', '', 'DELL', 'SILLA OFICINA TIPO 1', 1, '', 'CIDE', 'ABAE', '24642009', '22541', 'AZUL', 'SILLA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-24 14:56:18', 23, '2022-01-24 14:56:18', NULL, 'Jose Carrizales', NULL, ''),
+('Electrodomesticos', '000009', '21F165A1', '', 'OSTER', '514A21', 0, '', 'CIDE', 'ABAE', '24642009', '25544', 'BLANCO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-29 16:24:33', 23, '2022-01-29 16:24:33', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Seguridad', '000011', '364S5A1D56', '', 'ZTE', '54A514D', 0, '', 'CIDE', 'ABAE', '24642009', '4777', 'NEGRO', 'CAMARA DE SEGURIDAD', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-29 16:25:04', 23, '2022-01-29 16:25:04', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Comunicacion', '000012', '55A4112S', '', 'Inspur', '2ASDD', 0, '', 'CIDE', 'ABAE', '24642009', '25000', 'NEGRO', 'Mouse', 'EN USO', 'Borburata', 0, 0, 'UDLP', 0, '', 23, '2022-01-30 01:31:26', 0, '2022-01-30 01:31:26', NULL, 'Jose Carrizales', NULL, ''),
+('Electronicos', '000013', '012502320JHGD', '', 'ARDUINO', 'UNO', 1, '', 'CIDE', 'ABAE', '24642009', '51AA', 'AZUL', 'ARDUINO UNO', 'SIN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-30 01:56:17', 0, '2022-01-30 01:56:17', NULL, 'Jose Carrizales', NULL, ''),
+('Comunicacion', '000014', '151GG15SA1', '', 'MSI', 'NVIDIA GT730', 0, '', 'CIDE', 'ABA', '246420009', '25541', 'BLANCO', 'GPU GT730', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-30 13:51:47', 0, '2022-01-30 13:51:47', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Comunicacion', '000015', '45KL6T6', '', 'GENIUS', '25A51', 0, '', 'CIDE', 'ABAE', '24642009', '56521', 'NEGRO', 'Teclado', 'EN USO', 'BORBURATA', 0, 0, 'UDPL', 0, '', 23, '2022-01-30 13:54:14', 0, '2022-01-30 13:54:14', NULL, 'JOSE CARRIZALES', NULL, ''),
+('Mobiliario', '000016', '63MNSJK', '', 'DELL', '255A136A', 1, '', 'CIDE', 'ABAE', '24642009', '5144', 'NEGRO', 'SILLA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, '', 23, '2022-01-30 13:55:51', 0, '2022-01-30 13:55:51', NULL, 'JOSE CARRIZALES', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -267,7 +272,10 @@ CREATE TABLE `transaccion_equipos` (
 --
 
 INSERT INTO `transaccion_equipos` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '5151', 'asds', '3453543', 5345, '35434', 'dada', 453343, '45343', 'CIDE', '3453', 23, '2022-01-23 17:53:06', 'Salida');
+('TM-2022-000001', '0000007', 'sa', 'fyu', 2044, 'ABAE', 'dSDFad', 4543, 'fyu', 'yfyf', 'CIDE', 23, '2022-01-27 01:05:24', 'Entrada'),
+('TM-2022-000002', '000010', 'vsdfgdfg', '25460', 405404, '45045045', 'gfdgds', 852472, 'ABAE', 'CIDE', '0450450', 23, '2022-01-29 16:44:33', 'Salida'),
+('TM-2022-000003', '0000007', 'asfsff', 'fsdsdfsd', 66, 'dsf', 'sdfsdaf', 511531, 'ABAE', 'CIDE', 'dfsf', 23, '2022-01-30 18:13:13', 'Salida'),
+('TM-2022-000004', '000012', 'PRESTAMO', 'JUAN RUIZ', 26545854, 'ABAE', 'JOSE CARRIZALES', 24642009, 'ABAE', 'CIDE', 'CIDE', 23, '2022-01-30 13:50:23', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -297,7 +305,8 @@ CREATE TABLE `transaccion_equipos_biblioteca` (
 --
 
 INSERT INTO `transaccion_equipos_biblioteca` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-0000001', '1263', 'sadfsd', '543354', 3453, '543', 'sfsdf', 35435, '543543', 'CIDE', '543453', 23, '2022-01-23 18:13:31', 'Salida');
+('TM-2022-000001', '000004', 'dfsadf', 'fdafsd', 55254, '542', 'dsfsdf', 5156, 'ABAE', 'CIDE', '54542', 23, '2022-01-29 17:16:46', 'Salida'),
+('TM-2022-000002', '000006', 'asdds', 'dsffs', 66262, 'dfsfdf', 'dfdsfsda', 515611, 'ABAE', 'CIDE', 'fdfsd', 23, '2022-01-30 18:22:25', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -327,7 +336,8 @@ CREATE TABLE `transaccion_equipos_inmuebles` (
 --
 
 INSERT INTO `transaccion_equipos_inmuebles` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-0000001', '10001', '103103', '135135', 135, '153153', '153153151', 51, '1', 'CIDE', '13', 23, '2022-01-23 18:14:53', 'Entrada');
+('TM-2022-000001', '10001', 'dsaf', 'vvguyy', 0, 'hjfjh', 'sdfsdaf', 654165, 'ABAE', 'CIDE', 'vvtvtyvty', 23, '2022-01-29 17:11:41', 'Salida'),
+('TM-2022-000002', '10001', 'dsaf', 'vvguyy', 0, 'hjfjh', 'sdfsdaf', 654165, 'ABAE', 'CIDE', 'vvtvtyvty', 23, '2022-01-30 17:11:41', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -357,7 +367,9 @@ CREATE TABLE `transaccion_equipos_vehiculos` (
 --
 
 INSERT INTO `transaccion_equipos_vehiculos` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-0000001', '214471', '54345', '45345', 3453, '453453', '34534', 53453, '453543', 'CIDE', '453453', 23, '2022-01-23 19:01:24', 'Salida');
+('TM-2022-000001', '214471', 'sf', 'fcsadf', 552832, 'sdafsadf', 'sdafdsf', 2873284, 'ABAE', 'CIDE', 'sdfsaf', 23, '2022-01-29 17:10:44', 'Salida'),
+('TM-2022-000002', '214471', 'sf', 'fcsadf', 552832, 'sdafsadf', 'sdafdsf', 2873284, 'ABAE', 'CIDE', 'sdfsaf', 23, '2022-01-30 17:10:44', 'Salida'),
+('TM-2022-000003', '214475', 'ENTREGA', 'KARLA MIERES', 155225411, 'ABAE', 'GUSTAVO GUEDEZ', 125544565, 'ABAE', 'CIDE', 'CIDE', 23, '2022-01-30 13:41:52', 'Entrada');
 
 -- --------------------------------------------------------
 
@@ -389,7 +401,7 @@ INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `pass
 (18, 'Administrador', 'Administrador', 24642009, '1234', '', '', NULL, 'Super Admin', 'activo', '2019-12-05 14:53:22', '2021-04-27 08:40:36', 'SAT'),
 (21, 'Trabajador', 'Trabajador', 0, '1234', 'carrizalesj5@gmai.com', '0414147005', NULL, 'Super Admin', 'activo', '2020-01-30 17:38:08', '2021-04-27 08:40:22', 'ETCS-Baemari'),
 (22, 'Alfredo', 'acalderon', 214456544, '1234', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 07:01:41', '2021-06-15 07:01:41', 'CIDE'),
-(23, 'Admin', 'admin', 12345, '1234', '', '', NULL, 'Super Admin', 'activo', '2021-06-15 07:02:14', '2021-11-10 01:54:48', 'CIDE'),
+(23, 'admin', 'Jose Carrizales', 24642009, '1234', 'carrizalesj5@gmail.com', '04144001564', 'PhotoRoom-20220104_134307.jpg', 'Super Admin', 'activo', '2021-06-15 07:02:14', '2022-01-30 01:37:06', 'CIDE'),
 (24, 'adminluepa', 'admin', 12345, '1234', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 07:04:36', '2021-06-15 07:04:36', 'ETCS-Luepa'),
 (25, 'adminctsr', 'admin', 12345, '12345', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 07:05:01', '2021-06-15 07:05:01', 'CTSR'),
 (26, 'adminsat', 'admin', 12345, '1234', 'fasdfa@safas', '2251511', NULL, 'Super Admin', 'activo', '2021-06-15 07:05:19', '2021-11-25 06:25:57', 'SAT'),
@@ -431,10 +443,6 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`codigo`, `placa`, `marca`, `tipo`, `modelo`, `color`, `condicion`, `unidad`, `ubicacion`, `responsable`, `pertenece`, `cedula`, `sede`, `nmroCarroceria`, `anio`, `tipoCombustible`, `created_user`, `created_date`, `updated_date`, `estado`, `updated_user`, `categoria`) VALUES
-('214471', '515SAD1D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11616', 'CIDE', 'D5151', '2012', 'GASOLINA', 23, '2020-11-25 12:00:00', '2020-11-25 12:00:00', 'nochequeado', 23, 'Vehiculos'),
-('214472', '515SAD2D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11617', 'CIDE', 'D5152', '2013', 'GASOLINA', 24, '2020-11-26 12:00:00', '2020-11-26 12:00:00', 'nochequeado', 24, 'Vehiculos'),
-('214473', '515SAD3D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11618', 'CIDE', 'D5153', '2014', 'GASOLINA', 25, '2020-11-27 12:00:00', '2020-11-27 12:00:00', 'nochequeado', 25, 'Vehiculos'),
-('214474', '515SAD4D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11619', 'CIDE', 'D5154', '2015', 'GASOLINA', 26, '2020-11-28 12:00:00', '2020-11-28 12:00:00', 'nochequeado', 26, 'Vehiculos'),
 ('214475', '515SAD5D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11620', 'CIDE', 'D5155', '2016', 'GASOLINA', 27, '2020-11-29 12:00:00', '2020-11-29 12:00:00', 'nochequeado', 27, 'Vehiculos'),
 ('214476', '515SAD6D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11621', 'CIDE', 'D5156', '2017', 'GASOLINA', 28, '2020-11-30 12:00:00', '2020-11-30 12:00:00', 'nochequeado', 28, 'Vehiculos'),
 ('214477', '515SAD7D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11622', 'CIDE', 'D5157', '2018', 'GASOLINA', 29, '2020-12-01 12:00:00', '2020-12-01 12:00:00', 'nochequeado', 29, 'Vehiculos'),
@@ -449,7 +457,7 @@ INSERT INTO `vehiculos` (`codigo`, `placa`, `marca`, `tipo`, `modelo`, `color`, 
 ('214486', '515SAD16D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11631', 'CIDE', 'D5166', '2027', 'GASOLINA', 38, '2020-12-10 12:00:00', '2020-12-10 12:00:00', 'nochequeado', 38, 'Vehiculos'),
 ('214487', '515SAD17D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11632', 'CIDE', 'D5167', '2028', 'GASOLINA', 39, '2020-12-11 12:00:00', '2020-12-11 12:00:00', 'nochequeado', 39, 'Vehiculos'),
 ('214488', '515SAD18D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11633', 'CIDE', 'D5168', '2029', 'GASOLINA', 40, '2020-12-12 12:00:00', '2020-12-12 12:00:00', 'nochequeado', 40, 'Vehiculos'),
-('214489', '515SAD19D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11634', 'CIDE', 'D5169', '2030', 'GASOLINA', 41, '2020-12-13 12:00:00', '2020-12-13 12:00:00', 'nochequeado', 41, 'Vehiculos');
+('214489', '515SAD19D', 'DONGFENG', 'PICKUP', 'ZNA', 'BLANCO', 'EN USO', 'UDLP', 'BORBURATA', 'KARLA MIERES', 'ABAE', '11634', 'CIDE', '', '2030', '', 41, '2020-12-13 12:00:00', '2020-12-13 12:00:00', 'nochequeado', 23, 'Vehiculos');
 
 --
 -- Índices para tablas volcadas
