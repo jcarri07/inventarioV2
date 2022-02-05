@@ -133,7 +133,7 @@ session_start();
                     <h4 class="modal-title"><i class="fa fa-sign-out"> Salir</i></h4>
                 </div>
                 <div class="modal-body">
-                    <p>¿Seguro que quieres salir? </p>
+                    <p>¿Seguro que desea salir? </p>
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-danger" href="logout.php">Si, salir</a>

@@ -50,7 +50,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-              Datos de usuario registrados correcamente.
+              Datos almacenados correctamente
             </div>";
     }
 
@@ -58,7 +58,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-           Datos de usuario cambiados satisfactoriamente.
+              Datos modificados correctamente
             </div>";
     }
 
@@ -66,7 +66,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-            El usuario ha sido activado correctamente.
+              Usuario activado correctamente
             </div>";
     }
  
@@ -74,7 +74,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-             El usuario se bloqueó con éxito.
+              Usuario bloqueado correctamente
             </div>";
     }
    
@@ -82,7 +82,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el archivo que sube es correcto.
+              Asegúrese que el archivo que sube es correcto
             </div>";
     }
 
@@ -90,7 +90,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-            Asegúrese de que la imagen no pese más de 1 MB.
+              Asegúrese que la imagen no pese más de 1 MB
             </div>";
     }
  
@@ -98,7 +98,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el tipo de archivo subido sea  *.JPG, *.JPEG, *.PNG.
+              Asegúrese que el tipo de archivo subido sea  *.JPG, *.JPEG, *.PNG
             </div>";
     }
 
@@ -111,7 +111,7 @@
        
             <thead>
               <tr>
-                <th class="center">NO.</th>
+                <th class="center">No.</th>
                 <th class="center">FOTO</th>
                 <th class="center">USUARIO</th>
                 <th class="center">ID</th>
@@ -148,22 +148,22 @@
 
                     echo "  
                       <td width='250' class='center'>$data[username]</td>
-                      <td width='150'  class='center'>$data[id_user]</td>
+                      <td width='150' class='center'>$data[id_user]</td>
                       <td width='250' class='center'>$data[name_user]</td>
                       <td width='150' class='center'>$data[sede]</td>
                       <td width='250' class='center'>$data[permisos_acceso]</td>
                       <td width='150' class='center'>$data[status]</td>
-                      <td width='85' class='center'>
+                      <td width='85'  class='center'>
                     <div>";
 
-                          if ($data['status']=='activo') { ?>
+                          if ($data['status']=='Activo') { ?>
                             <a data-toggle="tooltip" data-placement="top" title="Bloqueado" style="margin-right:1px" class="btn btn-warning btn-xs" href="modules/user/proses.php?act=off&id=<?php echo $data['id_user'];?>">
                                 <i style="color:#fff" class="glyphicon glyphicon-off"></i>
                             </a>
             <?php
                           } 
                           else { ?>
-                            <a data-toggle="tooltip" data-placement="top" title="activo" style="margin-right:5px" class="btn btn-success btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
+                            <a data-toggle="tooltip" data-placement="top" title="Activo" style="margin-right:5px" class="btn btn-success btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
                                 <i style="color:#fff" class="glyphicon glyphicon-ok"></i>
                             </a>
             <?php
@@ -173,7 +173,7 @@
                                 <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                           </a>";
               ?>   
-              <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/user/proses.php?act=delete&id=<?php echo $data['id_user'];?>" onclick="return confirm('Estás seguro de eliminar este usuario <?php echo $data['name_user']; ?> ?');">
+              <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/user/proses.php?act=delete&id=<?php echo $data['id_user'];?>" onclick="return confirm('¿Seguro de eliminar a <?php echo $data['name_user']; ?> ?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
               </a>
               

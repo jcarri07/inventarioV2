@@ -30,7 +30,7 @@ function validarExt()
     var extPermitidas = /(.xlsx)$/i;
     
     if(!extPermitidas.exec(archivoRuta)){
-        alert('Asegurese de haber seleccionado un archivo de extension xlsx');
+        alert('Asegúrese de haber seleccionado un archivo de extensión .xlsx');
         archivo.value = '';
         return false;
     }
@@ -76,18 +76,18 @@ function validarExt()
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-              Datos registrados correctamente.
+              Datos almacenados correctamente
             </div>";
     } elseif ($_GET['alert'] == 2) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> por favor seleccione el archivo que desea importar.</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
     } elseif ($_GET['alert'] == 3) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-              Datos importados correctamente.
+              Datos importados correctamente
             </div>";
     }
     
@@ -100,7 +100,7 @@ function validarExt()
            
             <thead>
               <tr>
-                <th class="center">NO.</th>
+                <th class="center">No.</th>
                 <th class="center">TRANSACCION</th>
                 <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>

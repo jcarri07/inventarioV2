@@ -30,7 +30,7 @@ function validarExt()
     var extPermitidas = /(.xlsx)$/i;
     
     if(!extPermitidas.exec(archivoRuta)){
-        alert('Asegurese de haber seleccionado un archivo de extension xlsx');
+        alert('Asegúrese de haber seleccionado un archivo de extensión .xlsx');
         archivoInput.value = '';
         return false;
     }
@@ -130,7 +130,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-             Nuevos datos almacenados correctamente.
+              Datos almacenados correctamente
             </div>";
     }
 
@@ -138,7 +138,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-             Datos modificados correcamente.
+              Datos modificados correctamente
             </div>";
     }
 
@@ -146,7 +146,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-            Se eliminaron los datos correctamente.
+              Datos eliminados correctamente
             </div>";
     }
 
@@ -154,7 +154,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-            Datos importados correctamente.
+              Datos importados correctamente
             </div>";
     }
     
@@ -169,21 +169,21 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-             Equipo chequeado!
+              Equipo chequeado
             </div>";
     }
     
     elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos de bibblioteca exportados correctamente </h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
             </div>";
     }
     
     elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> por favor seleccione el archivo que desea importar.</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
     }
     
@@ -191,7 +191,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el archivo que sube es correcto.
+              Asegúrese que el archivo que sube es correcto
             </div>";
     }
 
@@ -199,7 +199,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-            Asegúrese de que la imagen no pese más de 1 MB.
+              Asegúrese que la imagen no pese más de 1 MB
             </div>";
     }
  
@@ -207,7 +207,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Asegúrese de que el tipo de archivo subido sea  *.JPG, *.JPEG, *.PNG.
+              Asegúrese que el tipo de archivo subido sea  *.JPG, *.JPEG, *.PNG
             </div>";
     }
 
@@ -220,13 +220,13 @@ function mostrar_modal_internos(id){
       
             <thead>
               <tr>
-                <th class="center">NO.</th>
+                <th class="center">No.</th>
                 <th class="center">CODIGO</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
                 <th class="center">SERIAL</th>
-                <th class="center">Nº BIEN</th>
+                <th class="center">No. BIEN</th>
                 <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
@@ -273,7 +273,7 @@ function mostrar_modal_internos(id){
                       <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>    
-                      <td width='150' class='center'  >
+                      <td width='120' class='center'  >
                     <div>
             
                     <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
@@ -282,7 +282,7 @@ function mostrar_modal_internos(id){
                     
             ?>
             
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
 
@@ -323,7 +323,7 @@ function mostrar_modal_internos(id){
               btn = document.getElementById("reset");
 
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos?")) {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos de comunicación?")) {
                     window.location.href = "modules/inventario/proses.php?act=reset";
                 } 
               })
