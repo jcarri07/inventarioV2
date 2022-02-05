@@ -323,7 +323,7 @@ function mostrar_modal_internos(id){
               btn = document.getElementById("reset");
 
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos?")) {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos de comunicación?")) {
                     window.location.href = "modules/inventario/proses.php?act=reset";
                 } 
               })

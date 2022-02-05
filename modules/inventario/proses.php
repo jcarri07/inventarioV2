@@ -120,7 +120,7 @@ else {
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
-               // $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+                //$cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
                
                 $created_user = $_SESSION['id_user'];
             
@@ -144,8 +144,8 @@ else {
 
             }elseif (empty($_FILES['foto']['name'])) {
                 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user) 
-                VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,,ubicacion,unidad,created_user,updated_user) 
+                VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
                 or die('error '.mysqli_error($mysqli)); 
 
 
@@ -168,8 +168,8 @@ else {
                         if(move_uploaded_file($tmp_file, $path_file)) { 
                             
                          
-                        $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,cantidad,ubicacion,unidad,created_user,updated_user,foto) 
-                                            VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$cantidad','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
+                        $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user,foto) 
+                                            VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
                                             or die('error '.mysqli_error($mysqli)); 
 
                             if ($query) {
@@ -458,10 +458,11 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
         
         //$codigo = $_GET['codigo'];
         $estado  = "nochequeado";
+        $codigo= $_GET['codigo'];
 
-    
+        
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado'")
+                                                        WHERE estado = 'chequeado' AND categoria = 'Comunicacion'")
                                         or die('error: '.mysqli_error($mysqli));
 
 

@@ -240,7 +240,7 @@ function validarExt()
             <script>
               btn = document.getElementById("btnElect");
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos?")) {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos científicos y electrónicos?")) {
                     window.location.href = "modules/equiposcientificos_electricos/proses.php?act=reset";
                   } 
               })
