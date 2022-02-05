@@ -115,7 +115,7 @@ if ($tgl_awal !== $tgl_akhir) {
             <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;">
                 <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>NO.</small></th>
+                    <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>TRANSACCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TIPO </small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
