@@ -140,7 +140,7 @@
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">SERIAL</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">DIREC/UNIDAD</th>
@@ -270,7 +270,7 @@
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">SERIAL</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">DIREC/UNIDAD</th>
@@ -405,7 +405,7 @@
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">SERIAL</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">DIREC/UNIDAD</th>
@@ -534,7 +534,7 @@
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">SERIAL</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">DIREC/UNIDAD</th>
@@ -666,7 +666,7 @@
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">SERIAL</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">DIREC/UNIDAD</th>
@@ -796,7 +796,7 @@
                                 <th class="center">AUTOR</th>
                                 <th class="center">EDITORIAL</th>
                                 <th class="center">ISBN</th>
-                                <th class="center">Nº BIEN</th>
+                                <th class="center">No. BIEN</th>
                                 <th class="center">COLOR</th>
                                 <th class="center">CONDICION</th>
                                 <th class="center">RESPONSABLE</th>
