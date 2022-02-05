@@ -41,7 +41,7 @@ $rows  = mysqli_num_rows($query);
     }
 
 $hari_ini = date("d-m-Y");
-$tituloUser = $_SESSION['name_user'];
+$NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
 $accion = "Registro de equipo";
 $cedulauser = $_SESSION['cedula_user'];

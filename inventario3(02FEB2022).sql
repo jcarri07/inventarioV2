@@ -166,25 +166,25 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`) VALUES
-('10001', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52151', 'BORBURATA', 1, 'CIDE', '23', '1900-01-22 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10002', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52152', 'BORBURATA', 1, 'CIDE', '24', '1900-01-23 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10003', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52153', 'BORBURATA', 1, 'CIDE', '25', '1900-01-24 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10004', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52154', 'BORBURATA', 1, 'CIDE', '26', '1900-01-25 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10005', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52155', 'BORBURATA', 1, 'CIDE', '27', '1900-01-26 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10006', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52156', 'BORBURATA', 1, 'CIDE', '28', '1900-01-27 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10007', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52157', 'BORBURATA', 1, 'CIDE', '29', '1900-01-28 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10008', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52158', 'BORBURATA', 1, 'CIDE', '30', '1900-01-29 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10009', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52159', 'BORBURATA', 1, 'CIDE', '31', '1900-01-30 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10010', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52160', 'BORBURATA', 1, 'CIDE', '32', '1900-01-31 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10011', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52161', 'BORBURATA', 1, 'CIDE', '33', '1900-02-01 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10012', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52162', 'BORBURATA', 1, 'CIDE', '34', '1900-02-02 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10013', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52163', 'BORBURATA', 1, 'CIDE', '35', '1900-02-03 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10014', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52164', 'BORBURATA', 1, 'CIDE', '36', '1900-02-04 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10015', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52165', 'BORBURATA', 1, 'CIDE', '37', '1900-02-05 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10016', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52166', 'BORBURATA', 1, 'CIDE', '38', '1900-02-06 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10017', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52167', 'BORBURATA', 1, 'CIDE', '39', '1900-02-07 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10018', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52168', 'BORBURATA', 1, 'CIDE', '40', '1900-02-08 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-('10019', 'CASA ABAE', '50', '', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52169', 'BORBURATA', 1, 'CIDE', '41', '23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+('010001', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52151', 'BORBURATA', 1, 'CIDE', '23', '1900-01-22 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010002', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52152', 'BORBURATA', 1, 'CIDE', '24', '1900-01-23 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010003', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52153', 'BORBURATA', 1, 'CIDE', '25', '1900-01-24 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010004', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52154', 'BORBURATA', 1, 'CIDE', '26', '1900-01-25 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010005', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52155', 'BORBURATA', 1, 'CIDE', '27', '1900-01-26 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010006', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52156', 'BORBURATA', 1, 'CIDE', '28', '1900-01-27 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010007', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52157', 'BORBURATA', 1, 'CIDE', '29', '1900-01-28 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010008', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52158', 'BORBURATA', 1, 'CIDE', '30', '1900-01-29 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010009', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52159', 'BORBURATA', 1, 'CIDE', '31', '1900-01-30 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010010', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52160', 'BORBURATA', 1, 'CIDE', '32', '1900-01-31 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010011', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52161', 'BORBURATA', 1, 'CIDE', '33', '1900-02-01 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010012', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52162', 'BORBURATA', 1, 'CIDE', '34', '1900-02-02 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010013', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52163', 'BORBURATA', 1, 'CIDE', '35', '1900-02-03 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010014', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52164', 'BORBURATA', 1, 'CIDE', '36', '1900-02-04 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010015', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52165', 'BORBURATA', 1, 'CIDE', '37', '1900-02-05 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010016', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52166', 'BORBURATA', 1, 'CIDE', '38', '1900-02-06 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010017', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52167', 'BORBURATA', 1, 'CIDE', '39', '1900-02-07 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010018', 'CASA ABAE', '50', 'CASA', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52168', 'BORBURATA', 1, 'CIDE', '40', '1900-02-08 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+('010019', 'CASA ABAE', '50', '', 4, 'EN USO', 'nochequeado', 'Inmuebles', '1', 'ELIEZER', '52169', 'BORBURATA', 1, 'CIDE', '41', '23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
