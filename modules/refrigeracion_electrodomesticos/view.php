@@ -245,11 +245,7 @@ function validarExt()
             <script>
               btn = document.getElementById("btnRefri");
               btn.addEventListener("click", ()=> {
-<<<<<<< HEAD
                 if(confirm("Deseas eliminar el chequeo de todos los equipos  de refrigeración y electrodomésticos?")) {
-=======
-                if(confirm("¿Desea eliminar el chequeo de todos los equipos?")) {
->>>>>>> c56c0e1577eaf2a052cf2ee18282c42639d3c01c
                     window.location.href = "modules/refrigeracion_electrodomesticos/proses.php?act=reset";
                   } 
               })

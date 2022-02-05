@@ -245,11 +245,7 @@ function validarExt()
             <script>
               btn = document.getElementById("btnSeguridad");
               btn.addEventListener("click", ()=> {
-<<<<<<< HEAD
                 if(confirm("Deseas eliminar el chequeo de todos los equipos de seguridad?")) {
-=======
-                if(confirm("¿Desea eliminar el chequeo de todos los equipos?")) {
->>>>>>> c56c0e1577eaf2a052cf2ee18282c42639d3c01c
                     window.location.href = "modules/equipos_seguridad/proses.php?act=reset";
                   } 
               })

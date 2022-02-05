@@ -253,11 +253,7 @@ function validarExt()
             <script>
               btn = document.getElementById("btnBiblioteca");
               btn.addEventListener("click", ()=> {
-<<<<<<< HEAD
                 if(confirm("Deseas eliminar el chequeo de todos los libros?")) {
-=======
-                if(confirm("¿Desea eliminar el chequeo de todos los textos?")) {
->>>>>>> c56c0e1577eaf2a052cf2ee18282c42639d3c01c
                     window.location.href = "modules/biblioteca/proses.php?act=reset";
                   } 
               })
