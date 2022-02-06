@@ -87,10 +87,10 @@
                 <td width='50'  class='center'>$no</td>
                 <td width='200' class='center'>$data[nombre]</td>
                 <td width='200' class='center'>$_SESSION[cedula_user]</td>
-                <td width='200' class='center'>$data[permiso]</td>
+                <td width='100' class='center'>$data[permiso]</td>
                 <td width='200' class='center'>$fecha</td>
                 <td width='200' class='center'>$data[hora]</td>
-                <td width='200' class='center'>$data[accion]</td>
+                <td width='300' class='center'>$data[accion]</td>
                     </tr>";
                 $no++;
               }

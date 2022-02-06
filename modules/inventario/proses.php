@@ -42,7 +42,7 @@ $rows  = mysqli_num_rows($query);
 $hari_ini = date("d-m-Y");
 $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de equipo";
+$accion = "Registro de equipo (Comunicacion)";
 $cedulauser = $_SESSION['cedula_user'];
 
 
@@ -324,7 +324,7 @@ elseif ($_GET['act']=='update') {
             
                 if ($query) {
 
-                    $accion = "Modificacion de equipo";
+                    $accion = "Modificacion de equipo (Comunicacion)";
 
                     $query2 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                                 VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -365,7 +365,7 @@ elseif ($_GET['act']=='update') {
                         
                             if ($query) {
                             
-                                $accion = "Modificacion de equipo";
+                                $accion = "Modificacion de equipo (Comunicacion)";
 
                                 $query2 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -401,7 +401,7 @@ elseif ($_GET['act']=='update') {
             $query = mysqli_query($mysqli, "DELETE FROM inventario WHERE codigo='$codigo'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de equipo";
+            $accion = "Eliminacion de equipo (Comunicacion)";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
