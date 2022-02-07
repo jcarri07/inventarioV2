@@ -204,8 +204,8 @@ function validarExt()
                       <td width='50'  class='center'>$no</td>
                       <td width='50'  class='center'>$data[codigo]</td>
                       <td width='160' class='center'>$data[tipo]</td>
-                      <td width='160' class='center'>$data[titulo]</td>
-                      <td width='160' class='center'>$data[autor]</td>
+                      <td width='220' class='center'>$data[titulo]</td>
+                      <td width='200' class='center'>$data[autor]</td>
                       <td width='160' class='center'>$data[editorial]</td>
                       <td width='100' class='center'>$data[isbn]</td>
                       <td width='100' class='center'>$data[bienesN]</td>
