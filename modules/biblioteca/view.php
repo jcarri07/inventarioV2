@@ -159,7 +159,7 @@ function validarExt()
               <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">TIPO</th>
                 <th class="center">TITULO</th>
                 <th class="center">AUTOR</th>
 				        <th class="center">EDITORIAL</th>

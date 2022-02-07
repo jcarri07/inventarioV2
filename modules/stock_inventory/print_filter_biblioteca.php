@@ -123,7 +123,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
+                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
                     <th height="20" align="center" valign="middle"><small>TITULO</small></th>
                     <th height="20" align="center" valign="middle"><small>AUTOR</small></th>
                     <th height="20" align="center" valign="middle"><small>ISBN</small></th>
