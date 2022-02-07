@@ -160,7 +160,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS BIBLIOTECA FILTRADO.pdf";
+$filename = "Reporte Inventarios Biblioteca Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

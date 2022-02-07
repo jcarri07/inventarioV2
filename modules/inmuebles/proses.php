@@ -43,7 +43,7 @@ $rows  = mysqli_num_rows($query);
 $hari_ini = date("d-m-Y");
 $tituloUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de inmueble";
+$accion = "Registro de Inmueble";
 $cedulauser = $_SESSION['cedula_user'];
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
@@ -140,7 +140,7 @@ else {
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));
 
-                 $accion = "Modificacion de inmueble";
+                 $accion = "Modificacion de Inmueble";
 
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -160,7 +160,7 @@ else {
             $query = mysqli_query($mysqli, "DELETE FROM inmuebles WHERE codigo = '$codigo'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de inmueble";
+            $accion = "Eliminacion de Inmueble";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

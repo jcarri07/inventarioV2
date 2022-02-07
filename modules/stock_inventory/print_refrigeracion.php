@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS REFRIGERACION Y ELECTRODOMESTICOS.pdf";
+$filename = "Reporte Inventarios Refrigeracion Electrodomesticos.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

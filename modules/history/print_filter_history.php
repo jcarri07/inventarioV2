@@ -155,10 +155,10 @@ if (isset($_GET['tgl_awal2'])) {
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[nombre]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
-                        <td width='40'  height='16' align='center' valign='middle'>$data[permiso]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[permiso]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$fecha</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[hora]</td>
-                        <td width='220' height='16' align='center' valign='middle'>$data[accion]</td>
+                        <td width='200' height='16' align='center' valign='middle'>$data[accion]</td>
                     </tr>";
                     $no++;
                     }
@@ -171,7 +171,7 @@ if (isset($_GET['tgl_awal2'])) {
 
 </html>
 <?php
-$filename="REPORTE DE HISTORIAL FILTRADO.pdf";
+$filename="Reporte Historial Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';

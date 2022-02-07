@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Reporte_Equipos_Comuniacion.xlsx');
+	header('Content-Disposition: attachment; filename=Exportacion_Equipos_Comunicacion.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -97,7 +97,7 @@
     $no++;
           	}
             
-    $accion = "Exportacion Modulo Comunicacion";
+    $accion = "Exportacion de Equipos";
     $query3 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                           VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                           or die('error '.mysqli_error($mysqli));

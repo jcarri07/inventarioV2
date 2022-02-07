@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Reporte_General_Vehiculos.xlsx');
+	header('Content-Disposition: attachment; filename=Exportacion_Vehiculos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -92,7 +92,7 @@
                   </a>";
     ?>
     
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
+    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar<?php echo $data['nombre']; ?> ?');">
         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
     </a>
   
@@ -104,7 +104,7 @@
     $no++;
           	}
 
-    $accion = "Eportacion Modulo Vehiculos";
+    $accion = "Exportacion de Vehiculos";
 
     $query3 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                   VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

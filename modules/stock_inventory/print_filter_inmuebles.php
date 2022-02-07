@@ -162,7 +162,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS INMUEBLES FILTRADO.pdf";
+$filename = "Reporte Inventarios Inmuebles Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

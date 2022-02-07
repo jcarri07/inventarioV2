@@ -188,7 +188,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
 </html>
 <?php
-$filename="REPORTE DE MOVIMIENTOS COMUNICACION.pdf"; 
+$filename="Reporte Movimientos Comunicacion.pdf"; 
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';

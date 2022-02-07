@@ -161,7 +161,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS COMUNICACION FILTRADO.pdf";
+$filename = "Reporte Inventarios Comunicacion Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

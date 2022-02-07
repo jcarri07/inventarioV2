@@ -5,7 +5,7 @@ session_start();
 
 $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de equipo";
+$accion = "Registro de Equipo";
 $cedulauser = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
 

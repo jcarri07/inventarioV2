@@ -5,7 +5,7 @@ session_start();
 
 $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de equipo";
+$accion = "Registro de Biblioteca";
 $cedulauser = $_SESSION['cedula_user'];
 
 require_once "../../config/database.php";

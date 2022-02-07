@@ -150,7 +150,7 @@ $count  = mysqli_num_rows($query);*/
     </body>
 </html>
 <?php
-    $filename="REPORTE DE MOVIMIENTOS BIBLIOTECA FILTRADO.pdf"; 
+    $filename="Reporte Movimientos Biblioteca Filtrado.pdf"; 
 //==========================================================================================================
     $content = ob_get_clean();
     $content = '<page style="font-family: freeserif">'.($content).'</page>';
