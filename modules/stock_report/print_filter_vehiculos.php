@@ -149,7 +149,7 @@ $count  = mysqli_num_rows($query);*/
     </body>
 </html>
 <?php
-    $filename="REPORTE DE MOVIMIENTOS VEHICULOS FILTRADO.pdf"; 
+    $filename="Reporte Movimientos Vehiculos Filtrado.pdf"; 
 //==========================================================================================================
     $content = ob_get_clean();
     $content = '<page style="font-family: freeserif">'.($content).'</page>';

@@ -171,7 +171,7 @@ if (isset($_GET['tgl_awal2'])) {
 
 </html>
 <?php
-$filename="REPORTE DE HISTORIAL FILTRADO.pdf";
+$filename="Reporte Historial Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';

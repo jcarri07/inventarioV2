@@ -162,7 +162,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS REFRIGERACION Y ELECTRODOMESTICOS FILTRADO.pdf";
+$filename = "Reporte Inventarios Refrigeracion Electrodomesticos Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

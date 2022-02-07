@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Respaldo_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Respaldo_Equipos.xlsx');
 ?>
 
   <div class="box box-primary">

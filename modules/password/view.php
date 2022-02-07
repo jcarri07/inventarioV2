@@ -23,7 +23,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-             Contraseña
+              Contraseña
             </div>";
     }
     
@@ -31,7 +31,7 @@
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-              La nueva contraseña  ingresada no coinciden .
+              La nueva contraseña ingresada no coincide
             </div>";
     }
  
@@ -39,7 +39,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exitp!</h4>
-          Contraseña cambiada con éxito.
+              Contraseña modificada correctamente
             </div>";
     }
     ?>

@@ -130,7 +130,7 @@ function mostrar_modal_internos(id){
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-              Datos almacenados correctamente
+              Datos registrados correctamente
             </div>";
     }
 

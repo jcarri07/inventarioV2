@@ -20,7 +20,7 @@
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
-    $accion = "Registro de equipo";
+    $accion = "Registro de Biblioteca";
     $cedulauser = $_SESSION['cedula_user'];
 
     include 'simplexlsx.class.php';
@@ -88,7 +88,7 @@ if ($parametro != null) {
             $stmt->bindParam( 19, $estado);
             $stmt->bindParam( 20, $categoria);
             
-            $accion = "Importacion Modulo Biblioteca";
+            $accion = "Importacion de Biblioteca";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

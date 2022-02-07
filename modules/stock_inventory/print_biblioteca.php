@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "REPORTE DE INVENTARIOS BIBLIOTECA.pdf";
+$filename = "Reporte Inventarios Biblioteca.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

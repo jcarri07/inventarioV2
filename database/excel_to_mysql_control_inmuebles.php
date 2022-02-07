@@ -21,7 +21,7 @@
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
-    $accion = "Registro de equipo";
+    $accion = "Registro de Inmueble";
     $cedulauser = $_SESSION['cedula_user'];
     
     include 'simplexlsx.class.php';
@@ -80,7 +80,7 @@ if ($parametro != null) {
             $stmt->bindParam( 13, $created_date);
             $stmt->bindParam( 14, $tipo_transaccion);
 
-            $accion = "Importacion Modulo Control de Equipos";
+            $accion = "Importacion de Transaccion de Inmuebles";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

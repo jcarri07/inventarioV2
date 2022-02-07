@@ -21,7 +21,7 @@
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
-    $accion = "Registro de equipo";
+    $accion = "Registro de Inmueble";
     $cedulauser = $_SESSION['cedula_user'];
 
     include 'simplexlsx.class.php';
@@ -65,7 +65,7 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, tipo, descripcion, metrosCuadrados, pisos, nmroCuartos, habitantes, direccion, condicion, responsable, cedula, sede, created_user, updated_user, created_date, update_date, estado, categoria) 
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, tipo, descripcion, metrosCuadrados, pisos, nmroCuartos, habitantes, condicion, responsable, cedula, direccion, sede, created_user, updated_user, created_date, update_date, estado, categoria) 
         VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
         
             $stmt->bindParam( 1, $codigo);
@@ -75,10 +75,10 @@ if ($parametro != null) {
             $stmt->bindParam( 5, $pisos);
             $stmt->bindParam( 6, $nmroCuartos);
             $stmt->bindParam( 7, $habitantes);
-            $stmt->bindParam( 8, $direccion);
-            $stmt->bindParam( 9, $condicion);
-            $stmt->bindParam( 10, $responsable);
-            $stmt->bindParam( 11, $cedula);
+            $stmt->bindParam( 8, $condicion);
+            $stmt->bindParam( 9, $responsable);
+            $stmt->bindParam( 10, $cedula);
+            $stmt->bindParam( 11, $direccion);
             $stmt->bindParam( 12, $sede);
             $stmt->bindParam( 13, $created_user);
             $stmt->bindParam( 14, $updated_user);
@@ -87,7 +87,7 @@ if ($parametro != null) {
             $stmt->bindParam( 17, $estado);
             $stmt->bindParam( 18, $categoria);
             
-            $accion = "Importacion Modulo Inmuebles";
+            $accion = "Importacion de Inmuebles";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -105,10 +105,10 @@ if ($parametro != null) {
             $pisos = $fields[4];
             $nmroCuartos = $fields[5];
             $habitantes = $fields[6];
-            $direccion = $fields[7];
-            $condicion = $fields[8];
-            $responsable= $fields[9];
-            $cedula = $fields[10];
+            $condicion = $fields[7];
+            $responsable= $fields[8];
+            $cedula = $fields[9];
+            $direccion = $fields[10];
             $sede = $fields[11];
             $created_user= $fields[12];
             $updated_user = $fields[13];

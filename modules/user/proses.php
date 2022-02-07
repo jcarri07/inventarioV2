@@ -227,7 +227,7 @@ else {
             $query = mysqli_query($mysqli, "DELETE FROM usuarios WHERE id_user =  '$id_user'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de usuario";
+            $accion = "Eliminacion de Usuario";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

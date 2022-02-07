@@ -29,7 +29,7 @@ function validarExt()
     var extPermitidas = /(.xlsx)$/i;
     
     if(!extPermitidas.exec(archivoRuta)){
-        alert('Asegurese de haber seleccionado un archivo de extension xlsx');
+        alert('Asegúrese de haber seleccionado un archivo de extensión .xlsx');
         archivoInput.value = '';
         return false;
     }

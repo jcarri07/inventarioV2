@@ -184,7 +184,7 @@ if ($tgl_awal !== $tgl_akhir) {
     </body>
 </html>
 <?php
-$filename="REPORTE DE MOVIMIENTOS INMUEBLES.pdf"; 
+$filename="Reporte Movimientos Inmuebles.pdf"; 
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';
