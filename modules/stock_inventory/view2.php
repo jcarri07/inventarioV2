@@ -791,7 +791,7 @@
                               <tr>
                                 <th class="center">No.</th>
                                 <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">TIPO</th>
                                 <th class="center">TITULO</th>
                                 <th class="center">AUTOR</th>
                                 <th class="center">EDITORIAL</th>
@@ -914,7 +914,7 @@
                               <tr>
                                 <th class="center">No.</th>
                                 <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">TIPO</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
                                 <th class="center">PLACA</th>
@@ -1073,14 +1073,14 @@
                                   <td width='50'  class='center'>$no</td>
                                   <td width='50'  class='center'>$data[codigo]</td>
                                   <td width='150' class='center'>$data[descripcion]</td>
-                                  <td width='150' class='center'>$data[metrosCuadrados]</td>
-                                  <td width='150' class='center'>$data[pisos]</td>
+                                  <td width='100' class='center'>$data[metrosCuadrados]</td>
+                                  <td width='100' class='center'>$data[pisos]</td>
                                   <td width='150' class='center'>$data[nmroCuartos]</td>
                                   <td width='150' class='center'>$data[habitantes]</td>
-                                  <td width='150' class='center'>$data[direccion]</td>
                                   <td width='150' class='center'>$data[condicion]</td>
                                   <td width='150' class='center'>$data[responsable]</td>
-                                  <td width='150' class='center'>$data[cedula]</td>
+                                  <td width='100' class='center'>$data[cedula]</td>
+                                  <td width='300' class='center'>$data[direccion]</td>
                                   <td width='150' class='center'>$data[sede]</td> 
                                   <td width='80'  class='center'>
                                 <div>

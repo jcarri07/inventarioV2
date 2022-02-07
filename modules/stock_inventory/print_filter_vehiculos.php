@@ -122,7 +122,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
+                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
                     <th height="20" align="center" valign="middle"><small>MARCA</small></th>
                     <th height="20" align="center" valign="middle"><small>PLACA</small></th>
                     <th height="20" align="center" valign="middle"><small>ANIO</small></th>
@@ -142,13 +142,13 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='200' height='16' align='center' valign='middle'>$data[tipo]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[placa]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[anio]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
+                        <td width='180' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='120'  height='16' align='center' valign='middle'>$data[cedula]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                  
                     </tr>";
                     $no++;
