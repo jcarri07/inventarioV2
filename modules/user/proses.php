@@ -3,6 +3,10 @@
 <?php
 session_start();
 
+$NombreUser = $_SESSION['name_user'];
+$iduser = $_SESSION['id_user'];
+$accion = "";
+$cedulauser = $_SESSION['cedula_user'];
 
 require_once "../../config/database.php";
 
@@ -10,6 +14,8 @@ require_once "../../config/database.php";
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
 	echo "<meta http-equiv='refresh' content='0; url=index.php?alert=1'>";
 }
+
+
 
 else {
 
@@ -25,8 +31,13 @@ else {
 
             $query = mysqli_query($mysqli, "INSERT INTO usuarios(username,password,name_user,permisos_acceso,sede,cedula_user)
                                             VALUES('$username','$password','$name_user','$permisos_acceso','$sede','$cedula')")
-                                            or die('error: '.mysqli_error($mysqli));    
+                                            or die('error: '.mysqli_error($mysqli)); 
 
+			$accion = "Usurio Creado";
+
+            $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli)); 
           
             if ($query) {
                 header("location: ../../main.php?module=user&alert=1");
@@ -73,6 +84,12 @@ else {
                     													permisos_acceso   = '$permisos_acceso'
                                                                   WHERE id_user 	= '$id_user'")
                                                     or die('error: '.mysqli_error($mysqli));
+					
+					$accion = "Usuario Modificado";
+
+            		$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli)); 
 
                 
                     if ($query) {
@@ -93,6 +110,12 @@ else {
                     													permisos_acceso   = '$permisos_acceso'
                                                                   WHERE id_user 	= '$id_user'")
                                                     or die('error : '.mysqli_error($mysqli));
+
+					$accion = "Usuario Modificado";
+
+            		$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli)); 
 
              
                     if ($query) {
@@ -157,6 +180,12 @@ else {
 			                    													permisos_acceso   = '$permisos_acceso'
 			                                                                  WHERE id_user 	= '$id_user'")
 			                                                    or die('error: '.mysqli_error($mysqli));
+								
+								$accion = "Usuario Modificado";
+
+            					$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
+                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                            or die('error '.mysqli_error($mysqli)); 
 
 			                    
 			                    if ($query) {
@@ -227,7 +256,7 @@ else {
             $query = mysqli_query($mysqli, "DELETE FROM usuarios WHERE id_user =  '$id_user'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de Usuario";
+            $accion = "Usuario Eliminado";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
