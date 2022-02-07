@@ -21,7 +21,7 @@
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
-    $accion = "Registro de equipo";
+    $accion = "Registro de Equipo";
     $cedulauser = $_SESSION['cedula_user'];
 
     include 'simplexlsx.class.php';

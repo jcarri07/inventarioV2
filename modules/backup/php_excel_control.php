@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Reporte_Control_Inventario.xlsx');
+	header('Content-Disposition: attachment; filename=Respaldo_Movimientos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -11,18 +11,16 @@
             <thead>
               <tr>
                 <th class="center">No.</th>
-                <th class="center">CODIGO TRANSACCION</th>
+                <th class="center">TRANSACCION</th>
+                <th class="center">TIPO</th>
                 <th class="center">CODIGO</th>
                 <th class="center">MOTIVO</th>
-                <th class="center">RECIBE</th>
-			        	<th class="center">CEDULA RECEPTOR</th>
-                <th class="center">EMPRESA RECEPTORA</th>
                 <th class="center">ENTREGA</th>
-                <th class="center">CEDULA EMISOR</th>
-                <th class="center">EMPRESA EMISORA</th>
-                <th class="center">LUGAR EMISION</th>
-                <th class="center">LUGAR RECEPCION</th>
-                <th class="center">TIPO TRANSACCION</th>
+                <th class="center">CEDULA</th>
+                <th class="center">SEDE</th>
+                <th class="center">RECIBE</th>
+			        	<th class="center">CEDULA</th>
+                <th class="center">SEDE</th>
               </tr>
             </thead>
             <tbody>
@@ -50,19 +48,15 @@
               <tr>
                 <td width='30' class='center'>$no</td>
                 <center><td width='80' class='center' align='center'>$data[codigo_transaccion]</td></center>
+                <td width='180' class='center' align='center'>$data[tipo_transaccion]</td>
                 <td width='180' class='center' align='center' >$data[codigo]</td>
                 <td width='180' class='center' align='center'>$data[motivo]</td>
-                <td width='180' class='center' align='center'>$data[recibe]</td>
-                <td width='180' class='center' align='center'>$data[cedula_r]</td>
-                <td width='180' class='center' align='center'>$data[empresa_r]</td>
-                <td width='180' class='center' align='center'>$data[lugar_r]</td>
                 <td width='180' class='center' align='center'>$data[entrega]</td>
                 <td width='180' class='center' align='center'>$data[cedula_e]</td>
-                <td width='180' class='center' align='center'>$data[empresa]</td>
                 <td width='180' class='center' align='center'>$data[lugar_e]</td>
-                <td width='180' class='center' align='center'>$data[created_user]</td>
-                <td width='180' class='center' align='center'>$data[created_date]</td>
-                <td width='180' class='center' align='center'>$data[tipo_transaccion]</td>
+                <td width='180' class='center' align='center'>$data[recibe]</td>
+                <td width='180' class='center' align='center'>$data[cedula_r]</td>
+                <td width='180' class='center' align='center'>$data[lugar_r]</td>
                <td class='center' width='85'>
                       
                 <div>

@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Respaldo_Inmueble.xlsx');
+	header('Content-Disposition: attachment; filename=Respaldo_Inmuebles.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -41,10 +41,10 @@
                 <td width='180' class='center' align='center'>$data[pisos]</td>
                 <td width='180' class='center' align='center'>$data[nmroCuartos]</td>
                 <td width='180' class='center' align='center'>$data[habitantes]</td>
-                <td width='180' class='center' align='center'>$data[direccion]</td>
                 <td width='180' class='center' align='center'>$data[condicion]</td>
                 <td width='180' class='center' align='center'>$data[responsable]</td>
                 <td width='180' class='center' align='center'>$data[cedula]</td>
+                <td width='180' class='center' align='center'>$data[direccion]</td>
                 <td width='180' class='center' align='center'>$data[sede]</td>
                 <td width='180' class='center' align='center'>$data[created_user]</td>
                 <td width='180' class='center' align='center'>$data[updated_user]</td>
