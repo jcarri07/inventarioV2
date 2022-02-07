@@ -41,7 +41,7 @@ $rows  = mysqli_num_rows($query);
     }
 
 $hari_ini = date("d-m-Y");
-$tituloUser = $_SESSION['name_user'];
+$NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
 $accion = "Registro de Inmueble";
 $cedulauser = $_SESSION['cedula_user'];
@@ -82,7 +82,7 @@ else {
              } else {
 
                 $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo,  descripcion, metrosCuadrados, tipo, nmroCuartos, condicion, estado, categoria, pisos, responsable, cedula, sede, direccion, habitantes, created_user, created_date) 
-                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', 'nochequeado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', NOW())")
+                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', 'chequeado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -174,11 +174,11 @@ else {
         }
     }  
     
-    if ($_GET['act']=='OFF' && $_SESSION['permisos_acceso'] == "Super Admin") {
+    if ($_GET['act']=='on' && $_SESSION['permisos_acceso'] == "Super Admin") {
 		if (isset($_GET['codigo'])) {
 			
 			$codigo = $_GET['codigo'];
-			$estado  = "chequeado";
+			$estado  = "nochequeado";
 
 		
             $query = mysqli_query($mysqli, "UPDATE inmuebles SET estado  = '$estado'

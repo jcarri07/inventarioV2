@@ -246,7 +246,7 @@ function validarExt()
             <script>
               btn = document.getElementById("reset");
               btn.addEventListener("click", ()=> {
-                if(confirm("¿Desea eliminar el chequeo de todos los equipos?")) {
+                if(confirm("Deseas eliminar el chequeo de todo el mobiliario?")) {
                     window.location.href = "modules/mobiliario_equipoOficina/proses.php?act=reset";
                   } 
               })

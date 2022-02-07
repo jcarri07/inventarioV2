@@ -51,11 +51,25 @@
 </script>
 
 <script>
-  function cambiarLocation() {
-    window.location.href = "?module=inventario&alert=1";
-    
-  }
+const submit_internos = document.getElementById('submit_internos');
+const form_int = document.getElementById('form_int');
+const component_submit = document.getElementById('comp');
+const prueba = document.getElementById('prueba');
 
+console.log("aaa")
+
+// submit_internos.addEventListener('click', ()=> {
+//     console.log(component_submit.value);
+// })
+
+function cambiarLocation() {
+    // form_int.submit();
+    // console.log("Guardando datos");
+    // window.location.href = "?module=inventario&alert=1";
+    // //submitComponent.click();
+    console.log("._.")
+    console.log(prueba.value);
+}
 </script>
 
 <?php
@@ -84,7 +98,7 @@ if ($_GET['form']=='add') { ?>
          ¿Desea registrar los componentes internos de este equipo?
         </div>
         <div class="modal-footer">
-          <a type="button" onclick="cambiarLocation();"  class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+          <a id="submit_internos" type="button"  class="btn btn-secondary" onclick="cambiarLocation()" data-dismiss="modal">Cerrar</a>
           <a type="button" class="btn btn-primary" onclick="mostrarFormularioInternos();" data-dismiss="modal">Registrar</a>
         </div>
       </div>
@@ -280,14 +294,14 @@ if ($_GET['form']=='add') { ?>
     <li class="active"> Más </li>
   </ol>
 </section>
-     <section class="content">
+  <section class="content">
     <div class="row">
       <div class="col-md-12">
         <div class="box box-primary">
         <!--MOBILIARIO-->
          <div role= "tabpanel" class="tab-pane" id="internos" >
           <!-- form start -->
-          <form id="form_int" role="form" class="form-horizontal" action="modules/inventario/proses copy.php?act=insert" method="POST"  enctype="multipart/form-data">
+          <form id="form_int" class="form-horizontal" action="modules/inventario/proses copy.php?act=insert" method="POST" enctype="multipart/form-data">
             <div class="box-body">
             <?php  
               
@@ -322,7 +336,7 @@ if ($_GET['form']=='add') { ?>
           </tr>
           <tr>
             <td class="center">DISCO DURO 1 : </td>
-            <td><input type="text" class="form-control" name="clased1" autocomplete="off"></td>
+            <td><input id="prueba" type="text" class="form-control" name="clased1" value="DISCO 1" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="capd1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modd1" autocomplete="off" ></td>
@@ -378,8 +392,6 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="contv" autocomplete="off" ></td>
           </tr>
 
-          
-       
           <tr> 
             <th class="center"></th>
             <th class="center">CAPACIDAD</th>
@@ -426,13 +438,13 @@ if ($_GET['form']=='add') { ?>
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-10 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input id="comp" type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
                   <a href="?module=inventario" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
 
-            </form>
+        </form>
     </div>
 
    </div>
@@ -828,6 +840,7 @@ elseif ($_GET['form']=='edit') {
 <?php
 }
 ?>
+
 <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
 
@@ -856,14 +869,13 @@ elseif ($_GET['form']=='edit') {
             }
             })
           }
-          </script>
+</script>
 
 <script type="text/javascript">
 
   var elemento = document.getElementById("filtro2");
   var elemento2 = document.getElementById("filtro3");
   var elementos = [elemento, elemento2];
-  var elementos2 = [filtrado2, filtrado3];
 
 </script>
 
@@ -915,33 +927,33 @@ var qr= document.getElementById("contenido2");
 console.log(qr);
 var cuerpo = $('#cuerpoModal');
 
-qr.addEventListener("click",
-  function(e){
+// qr.addEventListener("click",
+//   function(e){
     
-    if(e.target.id=="qr"){
-      //console.log(qr);
-      //console.log(e.target.firstChild.nextSibling.id);
-      serial = e.target.firstChild.nextSibling.id;
-      //console.log(e.target);
-      var parametros={"textqr":serial,"sizeqr":300};
-      $.ajax({
-				type: "POST",
-        dataType: "html",
-				url: "modules/generateQr/qrModal.php",
-				data: parametros,
-				//success: function(datos){
-          //console.log(cuerpo);
-          //cuerpo.html(datos);
-					//$(".result").html(datos);
-          //console.log(datos);
-				//}
+//     if(e.target.id=="qr"){
+//       //console.log(qr);
+//       //console.log(e.target.firstChild.nextSibling.id);
+//       serial = e.target.firstChild.nextSibling.id;
+//       //console.log(e.target);
+//       var parametros={"textqr":serial,"sizeqr":300};
+//       $.ajax({
+// 				type: "POST",
+//         dataType: "html",
+// 				url: "modules/generateQr/qrModal.php",
+// 				data: parametros,
+// 				//success: function(datos){
+//           //console.log(cuerpo);
+//           //cuerpo.html(datos);
+// 					//$(".result").html(datos);
+//           //console.log(datos);
+// 				//}
 				 
-			 }).done(function(data){
-        cuerpo.html(data);
-       })
-    }
-  }
-);
+// 			 }).done(function(data){
+//         cuerpo.html(data);
+//        })
+//     }
+//   }
+// );
 
 $( "#qr" ).click(function( event ) {
       //console.log(this.id);
