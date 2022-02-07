@@ -179,8 +179,13 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
-            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' and sede LIKE '$sede' ORDER BY codigo DESC")
+            if ($sede == 'CTSR' && $permiso == 'Super Admin') {
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo DESC")
+                or die('error: '.mysqli_error($mysqli));
+            } else {
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
+            }
 
             while ($data = mysqli_fetch_assoc($query)) { 
               $precio_compra = format_rupiah($data['precio_compra']);

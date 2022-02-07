@@ -285,6 +285,7 @@ elseif ($_GET['act']=='update') {
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $foto = mysqli_real_escape_string($mysqli, trim($_POST['foto']));
                // $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
                 $updated_user = $_SESSION['id_user'];
                 $name_file          = $_FILES['foto']['name'];
@@ -317,6 +318,7 @@ elseif ($_GET['act']=='update') {
                                                                     condicion             = '$condicion',
                                                                     ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
+                                                                    foto            = '$foto',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

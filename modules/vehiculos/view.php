@@ -181,12 +181,21 @@ function validarExt()
 
             $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
-              $data = mysqli_fetch_assoc($query);
-              $_SESSION['sede'] = $data['sede'];
-              $sede = $_SESSION['sede'];
+            $data = mysqli_fetch_assoc($query);
 
-            $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo DESC")
-                                            or die('error: '.mysqli_error($mysqli));
+            $_SESSION['sede'] = $data['sede'];
+            $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
+            $permiso = $_SESSION['permisos_acceso'];
+            $sede = $_SESSION['sede'];
+
+            if ($sede == 'CTSR' && $permiso == 'Super Admin') {
+              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' ORDER BY codigo DESC")
+                  or die('error: '.mysqli_error($mysqli));
+            } else {
+              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'vehiculos' and sede LIKE '$sede' ORDER BY codigo DESC")
+                                              or die('error: '.mysqli_error($mysqli));
+            }
+            
 
             while ($data = mysqli_fetch_assoc($query)) { 
               //$precio_compra = format_rupiah($data['precio_compra']);

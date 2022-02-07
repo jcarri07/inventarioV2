@@ -184,6 +184,14 @@ function validarExt()
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
 
+            if ($sede == 'CTSR' && $permiso == 'Super Admin') {
+              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles' ORDER BY codigo DESC")
+                or die('error: '.mysqli_error($mysqli));
+            } else {
+              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles' and sede LIKE '$sede' ORDER BY codigo DESC")
+                                            or die('error: '.mysqli_error($mysqli));
+            }
+
             $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles'  ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
