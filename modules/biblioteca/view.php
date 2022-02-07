@@ -129,7 +129,7 @@ function validarExt()
     elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Datos importados correctamente </h4>
             </div>";
     }
 
