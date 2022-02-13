@@ -33,7 +33,7 @@ else {
                                             VALUES('$username','$password','$name_user','$permisos_acceso','$sede','$cedula')")
                                             or die('error: '.mysqli_error($mysqli)); 
 
-			$accion = "Usuario Creado";
+			$accion = "Registro de Usuario";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -85,7 +85,7 @@ else {
                                                                   WHERE id_user 	= '$id_user'")
                                                     or die('error: '.mysqli_error($mysqli));
 					
-					$accion = "Usuario Modificado";
+					$accion = "Modificacion de Usuario";
 
             		$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -111,7 +111,7 @@ else {
                                                                   WHERE id_user 	= '$id_user'")
                                                     or die('error : '.mysqli_error($mysqli));
 
-					$accion = "Usuario Modificado";
+					$accion = "Modificacion de Usuario";
 
             		$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -181,7 +181,7 @@ else {
 			                                                                  WHERE id_user 	= '$id_user'")
 			                                                    or die('error: '.mysqli_error($mysqli));
 								
-								$accion = "Usuario Modificado";
+								$accion = "Modificacion de Usuario";
 
             					$query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -256,7 +256,7 @@ else {
             $query = mysqli_query($mysqli, "DELETE FROM usuarios WHERE id_user =  '$id_user'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Usuario Eliminado";
+            $accion = "Eliminacion de Usuario";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")

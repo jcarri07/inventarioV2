@@ -15,13 +15,11 @@
                 <th class="center">TIPO</th>
                 <th class="center">MARCA</th>
                 <th class="center">MODELO</th>
-                <th class="center">N CARROCERIA</th>
-                <th class="center">COLOR</th>
-                <th class="center">ANIO</th>
                 <th class="center">PLACA</th>
-                <th class="center">TIPO COMBUSTIBLE</th>
+                <th class="center">ANIO</th>
+                <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
-                <th class="center">UNIDAD</th>
+                <th class="center">DIREC/UNIDAD</th>
                 <th class="center">RESPONSABLE</th>
                 <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
@@ -67,24 +65,22 @@
               echo "
 
               <tr>
-                <td width='30' class='center' align='center'>$no</td>
-                <td width='100' class='center' align='center'>$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[tipo]</td>
-                <td width='180' class='center' align='center'>$data[marca]</td>
-                <td width='180' class='center' align='center'>$data[modelo]</td>
-                <td width='180' class='center' align='center'>$data[nmroCarroceria]</td>
-                <td width='180' class='center' align='center'>$data[color]</td>
-                <td width='180' class='centeR' align='center'>$data[anio]</td>
-                <td width='180' class='center' align='center'>$data[placa]</td>
-                <td width='150' class='center' align='center'>$data[tipoCombustible]</td>
+                <td width='50'  class='center' align='center'>$no</td>
+                <td width='150' class='center' align='center'>$data[codigo]</td>
+                <td width='150' class='center' align='center'>$data[tipo]</td>
+                <td width='150' class='center' align='center'>$data[marca]</td>
+                <td width='150' class='center' align='center'>$data[modelo]</td>
+                <td width='150' class='center' align='center'>$data[placa]</td>
+                <td width='150' class='centeR' align='center'>$data[anio]</td>
+                <td width='150' class='center' align='center'>$data[color]</td>
                 <td width='150' class='center' align='center'>$data[condicion]</td>
-                <td width='180' class='center' align='center'>$data[unidad]</td>
-                <td width='190' class='center' align='center'>$data[responsable]</td>
-                <td width='190' class='center' align='center'>$data[cedula]</td>
-                <td width='190' class='center' align='center'>$data[ubicacion]</td>
-                <td width='190' class='center' align='center'>$data[sede]</td>
-                <td width='190' class='center' align='center'>$data[pertenece]</td>
-                <td class='center' width='85'>
+                <td width='150' class='center' align='center'>$data[unidad]</td>
+                <td width='150' class='center' align='center'>$data[responsable]</td>
+                <td width='150' class='center' align='center'>$data[cedula]</td>
+                <td width='150' class='center' align='center'>$data[ubicacion]</td>
+                <td width='150' class='center' align='center'>$data[sede]</td>
+                <td width='150' class='center' align='center'>$data[pertenece]</td>
+                <td class='center' width='150'>
                       
                 <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>

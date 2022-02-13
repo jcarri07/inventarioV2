@@ -17,7 +17,7 @@
                   <th class="center">AUTOR</th>
                   <th class="center">EDITORIAL</th>
                   <th class="center">ISBN</th>
-                  <th class="center">N BIEN</th>
+                  <th class="center">No. BIEN</th>
                   <th class="center">COLOR</th>
                   <th class="center">CONDICION</th>
                   <th class="center">RESPONSABLE</th>
@@ -58,30 +58,31 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria = 'biblioteca' and sede LIKE '$sede' ORDER BY codigo ASC")
+      $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria = 'biblioteca' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
-                  <td width='30' class='center'>$no</td>
-                  <td width='180' class='center' align='center'>$data[codigo]</td>
-                  <td width='180' class='center' align='center'>$data[tipo]</td>
-                  <td width='180' class='center' align='center'>$data[titulo]</td>
-                  <td width='180' class='center' align='center'>$data[autor]</td>
-                  <td width='180' class='center' align='center' >$data[editorial]</td>
-                  <td width='180' class='center' align='center'>$data[isbn]</td>
-                  <td width='180' class='center' align='center'>$data[bienesN]</td>
-                  <td width='180' class='center' align='center'>$data[color]</td>
-                  <td width='180' class='center' align='center'>$data[condicion]</td>
-                  <td width='180' class='center' align='center'>$data[responsable]</td>
-                  <td width='180' class='center' align='center'>$data[cedula]</td>
-                  <td width='180' class='center' align='center'>$data[ubicacion]</td>
-                  <td width='180' class='center' align='center'>$data[sede]</td>
-                  <td width='100' class='center' align='center'>$data[cantidad]</td>
-                  <td class='center' width='85'>
-              <div>
+                  <td width='50'  class='center'>$no</td>
+                  <td width='150' class='center' align='center'>$data[codigo]</td>
+                  <td width='150' class='center' align='center'>$data[tipo]</td>
+                  <td width='200' class='center' align='center'>$data[titulo]</td>
+                  <td width='150' class='center' align='center'>$data[autor]</td>
+                  <td width='150' class='center' align='center'>$data[editorial]</td>
+                  <td width='150' class='center' align='center'>$data[isbn]</td>
+                  <td width='150' class='center' align='center'>$data[bienesN]</td>
+                  <td width='150' class='center' align='center'>$data[color]</td>
+                  <td width='150' class='center' align='center'>$data[condicion]</td>
+                  <td width='150' class='center' align='center'>$data[responsable]</td>
+                  <td width='150' class='center' align='center'>$data[cedula]</td>
+                  <td width='150' class='center' align='center'>$data[ubicacion]</td>
+                  <td width='150' class='center' align='center'>$data[sede]</td>
+                  <td width='150' class='center' align='center'>$data[cantidad]</td>
+                  <td class='center' width='150'>
+
+                <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                   </a>";

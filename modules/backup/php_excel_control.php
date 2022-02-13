@@ -18,9 +18,13 @@
                 <th class="center">ENTREGA</th>
                 <th class="center">CEDULA</th>
                 <th class="center">SEDE</th>
+                <th class="center">EMPRESA</th>
                 <th class="center">RECIBE</th>
 			        	<th class="center">CEDULA</th>
                 <th class="center">SEDE</th>
+                <th class="center">EMPRESA</th>
+                <th class="center">FECHA</th>
+                <th class="center">ID USER CREACION</th>
               </tr>
             </thead>
             <tbody>
@@ -46,18 +50,22 @@
               echo "
              
               <tr>
-                <td width='30' class='center'>$no</td>
-                <center><td width='80' class='center' align='center'>$data[codigo_transaccion]</td></center>
-                <td width='180' class='center' align='center'>$data[tipo_transaccion]</td>
-                <td width='180' class='center' align='center' >$data[codigo]</td>
-                <td width='180' class='center' align='center'>$data[motivo]</td>
-                <td width='180' class='center' align='center'>$data[entrega]</td>
-                <td width='180' class='center' align='center'>$data[cedula_e]</td>
-                <td width='180' class='center' align='center'>$data[lugar_e]</td>
-                <td width='180' class='center' align='center'>$data[recibe]</td>
-                <td width='180' class='center' align='center'>$data[cedula_r]</td>
-                <td width='180' class='center' align='center'>$data[lugar_r]</td>
-               <td class='center' width='85'>
+                <td width='50'  class='center' align='center'>$no</td>
+                <td width='150' class='center' align='center'>$data[codigo_transaccion]</td>
+                <td width='150' class='center' align='center'>$data[tipo_transaccion]</td>
+                <td width='150' class='center' align='center'>$data[codigo]</td>
+                <td width='150' class='center' align='center'>$data[motivo]</td>
+                <td width='150' class='center' align='center'>$data[entrega]</td>
+                <td width='150' class='center' align='center'>$data[cedula_e]</td>
+                <td width='150' class='center' align='center'>$data[lugar_e]</td>
+                <td width='150' class='center' align='center'>$data[empresa]</td>
+                <td width='150' class='center' align='center'>$data[recibe]</td>
+                <td width='150' class='center' align='center'>$data[cedula_r]</td>
+                <td width='150' class='center' align='center'>$data[lugar_r]</td>
+                <td width='150' class='center' align='center'>$data[empresa_r]</td>
+                <td width='150' class='center' align='center'>$data[created_date]</td>
+                <td width='150' class='center' align='center'>$data[created_user]</td>
+               <td class='center' width='150'>
                       
                 <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>
@@ -65,7 +73,7 @@
                   </a>";
     ?>
     
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('estas seguro de eliminar<?php echo $data['nombre']; ?> ?');">
+    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar<?php echo $data['nombre']; ?> ?');">
         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
     </a>
   

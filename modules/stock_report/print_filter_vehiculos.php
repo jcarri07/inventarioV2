@@ -22,7 +22,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e,a.empresa,a.created_date,b.codigo,b.tipo, b.marca
+$query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.cedula_e, lugar_e, a.recibe, a.cedula_r, a.lugar_r, a.created_date,b.codigo,b.tipo, b.marca
                                     FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
                                     WHERE a.$filtro LIKE '$var%' ORDER BY a.codigo_transaccion DESC")
                                 or die('Error'.mysqli_error($mysqli));
@@ -134,10 +134,10 @@ $count  = mysqli_num_rows($query);*/
                     <td style= width='75'  height='16' align='center' valign='middle'>$data[motivo]</td>
                     <td style= width='100' height='16' align='center' valign='middle'>$data[entrega]</td>
                     <td style= width='55'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
-                    <td style= width='40'  height='16' align='center' valign='middle'>$data[empresa]</td>
+                    <td style= width='40'  height='16' align='center' valign='middle'>$data[lugar_e]</td>
                     <td style= width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
                     <td style= width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
-                    <td style= width='40'  height='16' align='center' valign='middle'>$data[empresa]</td>  
+                    <td style= width='40'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
                     <td style= width='65'  height='16' align='center' valign='middle'>$fecha</td>                      
                 </tr>";
             $no++;

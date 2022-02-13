@@ -64,21 +64,21 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO transaccion_equipos_inmuebles (codigo_transaccion, codigo, motivo, recibe, cedula_r, empresa_r, entrega, cedula_e, empresa, lugar_e, lugar_r, created_user, created_date, tipo_transaccion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare( "INSERT INTO transaccion_equipos_inmuebles (codigo_transaccion, tipo_transaccion, codigo, motivo, entrega, cedula_e, lugar_e, empresa, recibe, cedula_r, lugar_r, empresa_r, created_date, created_user) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             $stmt->bindParam( 1, $codigo_transaccion);
-            $stmt->bindParam( 2, $codigo);
-            $stmt->bindParam( 3, $motivo);
-            $stmt->bindParam( 4, $recibe);
-            $stmt->bindParam( 5, $cedula_r);
-            $stmt->bindParam( 6, $empresa_r);
-            $stmt->bindParam( 7, $lugar_r);
-            $stmt->bindParam( 8, $entrega);
-            $stmt->bindParam( 9, $cedula_e);
-            $stmt->bindParam( 10, $empresa);
-            $stmt->bindParam( 11, $lugar_e);
-            $stmt->bindParam( 12, $created_user);
+            $stmt->bindParam( 2, $tipo_transaccion);
+            $stmt->bindParam( 3, $codigo);
+            $stmt->bindParam( 4, $motivo);
+            $stmt->bindParam( 5, $entrega);
+            $stmt->bindParam( 6, $cedula_e);
+            $stmt->bindParam( 7, $lugar_e);
+            $stmt->bindParam( 8, $empresa);
+            $stmt->bindParam( 9, $recibe);
+            $stmt->bindParam( 10, $cedula_r);
+            $stmt->bindParam( 11, $lugar_r);
+            $stmt->bindParam( 12, $empresa_r);
             $stmt->bindParam( 13, $created_date);
-            $stmt->bindParam( 14, $tipo_transaccion);
+            $stmt->bindParam( 14, $created_user);
 
             $accion = "Importacion de Transaccion de Inmuebles";
 
@@ -91,19 +91,19 @@ if ($parametro != null) {
         foreach ($xlsx->rows() as $fields)
         {
             $codigo_transaccion = $fields[0];
-            $codigo = $fields[1];
-            $motivo = $fields[2];
-            $recibe = $fields[3];
-            $cedula_r = $fields[4];
-            $empresa_r = $fields[5];
-            $lugar_r = $fields[6];
-            $entrega = $fields[7];
-            $cedula_e = $fields[8];
-            $empresa = $fields[9];
-            $lugar_e = $fields[10];
-            $created_user = $fields[11];
+            $tipo_transaccion = $fields[1];
+            $codigo = $fields[2];
+            $motivo = $fields[3];
+            $entrega = $fields[4];
+            $cedula_e = $fields[5];
+            $lugar_e = $fields[6];
+            $empresa = $fields[7];
+            $recibe = $fields[8];
+            $cedula_r = $fields[9];
+            $lugar_r = $fields[10];
+            $empresa_r = $fields[11];
             $created_date = $fields[12];
-            $tipo_transaccion = $fields[13];
+            $created_user = $fields[13];
             $stmt->execute();
         }
     }

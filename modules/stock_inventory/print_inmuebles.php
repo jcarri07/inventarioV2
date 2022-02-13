@@ -112,7 +112,7 @@ $count  = mysqli_num_rows($query);
                         <td width='120' height='16' align='center' valign='middle'>$data[descripcion]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[metrosCuadrados]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[pisos]</td>
-                        <td width='80' height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>   

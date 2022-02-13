@@ -144,7 +144,7 @@ else {
 
             }elseif (empty($_FILES['foto']['name'])) {
                 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,,ubicacion,unidad,created_user,updated_user) 
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
                 VALUES('Comunicacion','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
                 or die('error '.mysqli_error($mysqli)); 
 

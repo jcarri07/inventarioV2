@@ -60,7 +60,7 @@
           <table id="dataTables" class="table table-bordered table-striped table-hover" >
             <thead>
               <tr>
-                <th class="center">NO.</th>
+                <th class="center">No.</th>
                 <th class="center">USUARIO</th>
                 <th class="center">CEDULA</th>
                 <th class="center">ID</th>
@@ -86,11 +86,11 @@
                 echo "<tr>
                 <td width='50'  class='center'>$no</td>
                 <td width='200' class='center'>$data[nombre]</td>
-                <td width='200' class='center'>$_SESSION[cedula_user]</td>
-                <td width='100' class='center'>$data[permiso]</td>
-                <td width='200' class='center'>$fecha</td>
-                <td width='200' class='center'>$data[hora]</td>
-                <td width='200' class='center'>$data[accion]</td>
+                <td width='150' class='center'>$_SESSION[cedula_user]</td>
+                <td width='150' class='center'>$data[permiso]</td>
+                <td width='150' class='center'>$fecha</td>
+                <td width='150' class='center'>$data[hora]</td>
+                <td width='300' class='center'>$data[accion]</td>
                     </tr>";
                 $no++;
               }

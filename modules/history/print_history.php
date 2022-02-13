@@ -88,7 +88,7 @@ $count  = mysqli_num_rows($query);
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>NO.</small></th>
+                    <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>USUARIO</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
                     <th height="20" align="center" valign="middle"><small>ID</small></th>
@@ -108,11 +108,11 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[nombre]</td>    
-                        <td width='80'  height='16' align='center' valign='middle'>$_SESSION[cedula_user]</td>                       
-                        <td width='60'  height='16' align='center' valign='middle'>$data[permiso]</td>                 
-                        <td width='80'  height='16' align='center' valign='middle'>$fecha</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[hora]</td>
-                        <td width='200' height='16' align='center' valign='middle'>$data[accion]</td>                       
+                        <td width='70'  height='16' align='center' valign='middle'>$_SESSION[cedula_user]</td>                       
+                        <td width='40'  height='16' align='center' valign='middle'>$data[permiso]</td>                 
+                        <td width='70'  height='16' align='center' valign='middle'>$fecha</td>
+                        <td width='70'  height='16' align='center' valign='middle'>$data[hora]</td>
+                        <td width='250' height='16' align='center' valign='middle'>$data[accion]</td>                       
                         
                     </tr>";
                     $no++;
