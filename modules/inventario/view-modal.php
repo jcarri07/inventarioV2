@@ -84,15 +84,16 @@ function validarExt()
               echo "    </div>
                       </td>
                     </tr>";
+              if (!$data['foto']) { ?>
+                <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+              <?php
+              }
+              else { ?>
+                <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
+              <?php
+              }
             }
-            if (!$data['foto']) { ?>
-              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
-            <?php
-            }
-            else { ?>
-              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
-            <?php
-            }
+            
           }
                 ?>
 
