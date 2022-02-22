@@ -65,7 +65,7 @@ console.log("aaa")
 function cambiarLocation() {
     // form_int.submit();
     // console.log("Guardando datos");
-    // window.location.href = "?module=inventario&alert=1";
+    window.location.href = "?module=form_inventario&form=add&alert=1";
     // //submitComponent.click();
     console.log("._.")
     console.log(prueba.value);
