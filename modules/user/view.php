@@ -153,7 +153,7 @@
                       <td width='150' class='center'>$data[sede]</td>
                       <td width='250' class='center'>$data[permisos_acceso]</td>
                       <td width='150' class='center'>$data[status]</td>
-                      <td width='85'  class='center'>
+                      <td width='85'  class='center' style='min-width: 90px;'>
                     <div>";
 
                           if ($data['status']=='Activo') { ?>
@@ -163,7 +163,7 @@
             <?php
                           } 
                           else { ?>
-                            <a data-toggle="tooltip" data-placement="top" title="Activo" style="margin-right:5px" class="btn btn-success btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
+                            <a data-toggle="tooltip" data-placement="top" title="Activo" style="margin-right:0px" class="btn btn-success btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
                                 <i style="color:#fff" class="glyphicon glyphicon-ok"></i>
                             </a>
             <?php

@@ -268,8 +268,8 @@ elseif ($_GET['act']=='update') {
         if (isset($_POST['codigo'])) {
 
             $target = 'images/'; 
-            $target = $target . basename( $_FILES['foto']['name']); 
-
+            //echo $target = $target . basename( $_FILES['foto']['name']); 
+            
                $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
                 $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
                 $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
@@ -285,14 +285,14 @@ elseif ($_GET['act']=='update') {
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
-                $foto = mysqli_real_escape_string($mysqli, trim($_POST['foto']));
+                //$foto = mysqli_real_escape_string($mysqli, trim($_POST['foto']));
                // $cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+                
                 $updated_user = $_SESSION['id_user'];
                 $name_file          = $_FILES['foto']['name'];
                 $ukuran_file        = $_FILES['foto']['size'];
                 $tipe_file          = $_FILES['foto']['type'];
                 $tmp_file           = $_FILES['foto']['tmp_name'];
-                print_r($name_file );
     
             $allowed_extensions = array('jpg','jpeg','png');
             
@@ -318,7 +318,6 @@ elseif ($_GET['act']=='update') {
                                                                     condicion             = '$condicion',
                                                                     ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
-                                                                    foto            = '$foto',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));

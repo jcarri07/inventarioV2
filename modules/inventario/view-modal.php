@@ -68,10 +68,10 @@ function validarExt()
               $id = $_POST['id'];
            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo='$id'") 
           or die('error: '.mysqli_error($mysqli));
-         // $data = mysqli_fetch_assoc($query);        
-        
-            while ($data = mysqli_fetch_assoc($query)) { 
-           
+
+         
+            while ($data= mysqli_fetch_assoc($query)) { 
+              
 
               echo "<tr>
                        <td width='100' class='center'>$data[codigo]</td>
@@ -80,11 +80,11 @@ function validarExt()
                        <td width='100' class='center'>$data[modelo]</td>
                        <td width='100' class='center'>$data[serial]</td>
                        <td width='100' class='center'>$data[bienesN]</td>";
+             echo "    </div>
+                       </td>
+                     </tr>";
 
-              echo "    </div>
-                      </td>
-                    </tr>";
-            }
+                     
             if (!$data['foto']) { ?>
               <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
             <?php
@@ -93,6 +93,9 @@ function validarExt()
               <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
             <?php
             }
+            
+            }
+            
           }
                 ?>
 

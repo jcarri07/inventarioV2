@@ -204,8 +204,35 @@ else {
 
                 $updated_user = $_SESSION['id_user'];
 
-            
+            if(buscaRepetido($codigo,$mysqli) == 0){
 
+                $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','disco1','$clased1','$capd1','$marcad1','$modd1','$seriald1','$cond1')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','disco2','$clased2','$capd2','$marcad2','$modd2','$seriald2','$cond2')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,voltaje,certificacion,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','fuente de poder','$volfp','$certfp','$marcafp','$modfp','$serialfp','$condfp')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','tarjeta de video','$clasetv','$captv','$marcatv','$modtv','$serialtv','$contv')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','memoria ram1','$clasemr1','$capmr1','$marcamr1','$modmr1','$serialmr1','$conmr1')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
+                 VALUES('$codigo','memoria ram2','$clasemr2','$capmr2','$marcamr2','$modmr2','$serialmr2','$conmr2')")
+                 or die('error '.mysqli_error($mysqli)); 
+
+                header("location: ../../main.php?module=inventario&alert=2");
+            }
+            else{
                 $query = mysqli_query($mysqli, "UPDATE componentes SET 
                                                                     clase             = '$clased1',
                                                                     capacidad             = '$capd1',
@@ -235,7 +262,7 @@ else {
                                                                     marca             = '$marcafp',
                                                                     serial             = '$serialfp',
                                                                     modelo             = '$modfp',
-                                                                    condicion             = '$confp'
+                                                                    condicion             = '$condfp'
                                           WHERE codigo       = '$codigo' AND componente = 'fuente de poder'")
                             or die('error: '.mysqli_error($mysqli));  
 
@@ -272,8 +299,6 @@ else {
                                           WHERE codigo       = '$codigo' AND componente = 'tarjeta de video'")
                             or die('error: '.mysqli_error($mysqli));                           
 
-
-
                             
                  $accion = "Modificacion de componentes internos";
 
@@ -282,7 +307,9 @@ else {
                                             or die('error '.mysqli_error($mysqli)); 
 
                 header("location: ../../main.php?module=inventario&alert=2");
-                }        
+                }     
+            }  
+                
             }
         }
     }

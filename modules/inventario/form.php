@@ -65,7 +65,7 @@ console.log("aaa")
 function cambiarLocation() {
     // form_int.submit();
     // console.log("Guardando datos");
-    // window.location.href = "?module=inventario&alert=1";
+    window.location.href = "?module=form_inventario&form=add&alert=1";
     // //submitComponent.click();
     console.log("._.")
     console.log(prueba.value);
@@ -266,7 +266,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=inventario" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=inventario" class="btn btn-default btn-reset">Atras</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
@@ -492,7 +492,7 @@ elseif ($_GET['form']=='edit') {
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="modificar"> 
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=update" method="POST" >
+          <form role="form" class="form-horizontal" action="modules/inventario/proses.php?act=update" method="POST" enctype="multipart/form-data">
             <div class="box-body">
 
               <div class="form-group">
@@ -708,7 +708,7 @@ elseif ($_GET['form']=='edit') {
               $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]' AND componente='fuente de poder'") 
              or die('error: '.mysqli_error($mysqli));
              $data  = mysqli_fetch_assoc($query);
-   
+                
                }            
                 ?>
 
@@ -790,7 +790,7 @@ elseif ($_GET['form']=='edit') {
                
                if (isset($_GET['id'])) {
    
-              $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]' AND componente='memoria ram1'") 
+              $query = mysqli_query($mysqli, "SELECT * FROM componentes WHERE codigo='$_GET[id]' AND componente='memoria ram2'") 
              or die('error: '.mysqli_error($mysqli));
              $data  = mysqli_fetch_assoc($query);
    
@@ -798,7 +798,7 @@ elseif ($_GET['form']=='edit') {
                 ?>
 
           <tr>
-            <td class="center">MEMORIA RAM 1: </td>
+            <td class="center">MEMORIA RAM 2: </td>
             <td><input type="text" class="form-control" name="capmr2" autocomplete="off"value="<?php echo $data['capacidad']; ?>" ></td>
             <td><input type="text" class="form-control" name="clasemr2" autocomplete="off" value="<?php echo $data['clase']; ?>"></td>
             <td><input type="text" class="form-control" name="marcamr2" autocomplete="off" value="<?php echo $data['marca']; ?>"></td>
