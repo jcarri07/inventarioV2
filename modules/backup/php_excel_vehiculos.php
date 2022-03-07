@@ -12,11 +12,11 @@
             <tr>
                 <th class="center">No.</th>
                 <th class="center">CODIGO</th>
-                <th class="center">TIPO</th>
+                <th class="center">PLACA</th>
                 <th class="center">MARCA</th>
                 <th class="center">MODELO</th>
-                <th class="center">PLACA</th>
                 <th class="center">ANIO</th>
+                <th class="center">TIPO</th>
                 <th class="center">COLOR</th>
                 <th class="center">CONDICION</th>
 			        	<th class="center">DIREC/UNIDAD</th>
@@ -58,11 +58,11 @@
               <tr>
                 <td width='50'  class='center' align='center'>$no</td>
                 <td width='150' class='center' align='center'>$data[codigo]</td>
-                <td width='150' class='center' align='center'>$data[tipo]</td>
+                <td width='150' class='center' align='center'>$data[placa]</td>
                 <td width='150' class='center' align='center'>$data[marca]</td>
                 <td width='150' class='center' align='center'>$data[modelo]</td>
-                <td width='150' class='center' align='center'>$data[placa]</td>
                 <td width='150' class='center' align='center'>$data[anio]</td>
+                <td width='150' class='center' align='center'>$data[tipo]</td>
                 <td width='150' class='center' align='center'>$data[color]</td>
                 <td width='150' class='center' align='center'>$data[condicion]</td>
                 <td width='150' class='center' align='center'>$data[unidad]</td>

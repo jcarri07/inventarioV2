@@ -68,9 +68,9 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipo" autocomplete="off" required>
+                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
                 </div>
               </div>
 
@@ -89,16 +89,16 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Placa</label>
+                <label class="col-sm-2 control-label">Año</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" required>
+                  <input type="text" class="form-control" name="anio" autocomplete="off" onkeypress='return validaNumericos(event)' onpaste="return false" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Año</label>
+                <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="anio" autocomplete="off" onkeypress='return validaNumericos(event)' onpaste="return false" required>
+                  <input type="text" class="form-control" name="tipo" autocomplete="off" required>
                 </div>
               </div>
    
@@ -216,9 +216,9 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tipo</label>
+                <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
+                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
                 </div>
               </div>
 
@@ -237,18 +237,19 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Placa</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="placa" autocomplete="off" value="<?php echo $data['placa']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Año</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="anio" autocomplete="off" value="<?php echo $data['anio']; ?>" required>
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Tipo</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="tipo" autocomplete="off" value="<?php echo $data['tipo']; ?>" required>
+                </div>
+              </div>
+
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>

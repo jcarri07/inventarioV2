@@ -65,15 +65,15 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, tipo, marca, modelo, placa, anio, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
+        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, placa, marca, modelo, anio, tipo, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $tipo);
+            $stmt->bindParam( 2, $placa);
             $stmt->bindParam( 3, $marca);
             $stmt->bindParam( 4, $modelo);
-            $stmt->bindParam( 5, $placa);
-            $stmt->bindParam( 6, $anio);
+            $stmt->bindParam( 5, $anio);
+            $stmt->bindParam( 6, $tipo);
             $stmt->bindParam( 7, $color);
             $stmt->bindParam( 8, $condicion);
             $stmt->bindParam( 9, $unidad);
@@ -102,11 +102,11 @@ if ($parametro != null) {
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $tipo = $fields[1];
+            $placa = $fields[1];
             $marca = $fields[2];
             $modelo = $fields[3];
-            $placa = $fields[4];
-            $anio = $fields[5];
+            $anio = $fields[4];
+            $tipo = $fields[5];
             $color = $fields[6];
             $condicion = $fields[7];
             $unidad = $fields[8];
