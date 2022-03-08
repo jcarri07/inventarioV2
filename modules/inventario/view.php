@@ -36,6 +36,8 @@ function validarExt()
     }
 }
 
+
+
 /*
 $('body').on('click', '.internos', function(e){
 
@@ -352,11 +354,10 @@ function mostrar_modal_internos(id){
     </div><!--/.col -->
   </div>   <!-- /.row -->
 
-  <div class="modal fade bd-example-modal-lg" id="modal_internos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade bd-example-modal-lg" id="modal_internos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" style="max-width: 100%;"  role="document">
-    <div class="modal-content">
+    <div class="modal-content" >
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">FICHA RESUMEN</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -364,10 +365,13 @@ function mostrar_modal_internos(id){
       <div id="cuerpo_internos" class="modal-body">
         ...
       </div>
+      <div class="modal-footer">
+          <a  type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+        </div>
+
     </div>
   </div>
 </div>
-
 </section><!-- /.content -->
 
 

@@ -336,7 +336,7 @@ if ($_GET['form']=='add') { ?>
           </tr>
           <tr>
             <td class="center">DISCO DURO 1 : </td>
-            <td><input id="prueba" type="text" class="form-control" name="clased1" value="DISCO 1" autocomplete="off"></td>
+            <td><input id="prueba" type="text" class="form-control" name="clased1" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="capd1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="modd1" autocomplete="off" ></td>

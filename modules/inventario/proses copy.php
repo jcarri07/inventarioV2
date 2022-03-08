@@ -124,27 +124,27 @@ else {
                                             or die('error '.mysqli_error($mysqli)); */
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','disco1','$clased1','$capd1','$marcad1','$modd1','$seriald1','$cond1')")
+                 VALUES('$codigo','Disco1','$clased1','$capd1','$marcad1','$modd1','$seriald1','$cond1')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','disco2','$clased2','$capd2','$marcad2','$modd2','$seriald2','$cond2')")
+                 VALUES('$codigo','Disco2','$clased2','$capd2','$marcad2','$modd2','$seriald2','$cond2')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,voltaje,certificacion,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','fuente de poder','$volfp','$certfp','$marcafp','$modfp','$serialfp','$condfp')")
+                 VALUES('$codigo','Fuente de Poder','$volfp','$certfp','$marcafp','$modfp','$serialfp','$condfp')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','tarjeta de video','$clasetv','$captv','$marcatv','$modtv','$serialtv','$contv')")
+                 VALUES('$codigo','Tarjeta de Video','$clasetv','$captv','$marcatv','$modtv','$serialtv','$contv')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','memoria ram1','$clasemr1','$capmr1','$marcamr1','$modmr1','$serialmr1','$conmr1')")
+                 VALUES('$codigo','Memoria Ram1','$clasemr1','$capmr1','$marcamr1','$modmr1','$serialmr1','$conmr1')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','memoria ram2','$clasemr2','$capmr2','$marcamr2','$modmr2','$serialmr2','$conmr2')")
+                 VALUES('$codigo','Memoria Ram2','$clasemr2','$capmr2','$marcamr2','$modmr2','$serialmr2','$conmr2')")
                  or die('error '.mysqli_error($mysqli)); 
                 
                 
@@ -207,27 +207,27 @@ else {
             if(buscaRepetido($codigo,$mysqli) == 0){
 
                 $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','disco1','$clased1','$capd1','$marcad1','$modd1','$seriald1','$cond1')")
+                 VALUES('$codigo','Disco1','$clased1','$capd1','$marcad1','$modd1','$seriald1','$cond1')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','disco2','$clased2','$capd2','$marcad2','$modd2','$seriald2','$cond2')")
+                 VALUES('$codigo','Disco2','$clased2','$capd2','$marcad2','$modd2','$seriald2','$cond2')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,voltaje,certificacion,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','fuente de poder','$volfp','$certfp','$marcafp','$modfp','$serialfp','$condfp')")
+                 VALUES('$codigo','Fuente de Poder','$volfp','$certfp','$marcafp','$modfp','$serialfp','$condfp')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','tarjeta de video','$clasetv','$captv','$marcatv','$modtv','$serialtv','$contv')")
+                 VALUES('$codigo','Tarjeta de video','$clasetv','$captv','$marcatv','$modtv','$serialtv','$contv')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','memoria ram1','$clasemr1','$capmr1','$marcamr1','$modmr1','$serialmr1','$conmr1')")
+                 VALUES('$codigo','Memoria Ram1','$clasemr1','$capmr1','$marcamr1','$modmr1','$serialmr1','$conmr1')")
                  or die('error '.mysqli_error($mysqli)); 
 
                  $query = mysqli_query($mysqli, "INSERT INTO componentes(codigo,componente,clase,capacidad,marca,modelo,serial,condicion) 
-                 VALUES('$codigo','memoria ram2','$clasemr2','$capmr2','$marcamr2','$modmr2','$serialmr2','$conmr2')")
+                 VALUES('$codigo','Memoria Ram2','$clasemr2','$capmr2','$marcamr2','$modmr2','$serialmr2','$conmr2')")
                  or die('error '.mysqli_error($mysqli)); 
 
                 header("location: ../../main.php?module=inventario&alert=2");

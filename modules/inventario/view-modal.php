@@ -39,11 +39,25 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
 
+  <table border="0">
+        <tr>
+            <td><img src="assets/img/norma.png" width="500" align='center' ;></td>
+            <td width="160"></td>
+            <td><img src="assets/img/ABAE_logo.png" width="150" align='center' ;></td>
+        </tr>
+    </table>
+
+
 <section class="content">
   <div class="row">
     <div class="col-md-12">
       <div class="box box-primary">
         <div class="box-body table-responsive">
+
+   
+        <h3 align='center'><b>FICHA RESUMEN DEL EQUIPO</b></h3>
+        </br>
+
 
           <table class="table table-bordered table-striped table-hover">
       
@@ -68,11 +82,9 @@ function validarExt()
               $id = $_POST['id'];
            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo='$id'") 
           or die('error: '.mysqli_error($mysqli));
-
-         
+             $foto = "";
             while ($data= mysqli_fetch_assoc($query)) { 
               
-
               echo "<tr>
                        <td width='100' class='center'>$data[codigo]</td>
                        <td width='100' class='center'>$data[descripcion]</td>
@@ -80,73 +92,47 @@ function validarExt()
                        <td width='100' class='center'>$data[modelo]</td>
                        <td width='100' class='center'>$data[serial]</td>
                        <td width='100' class='center'>$data[bienesN]</td>";
-             echo "    </div>
-                       </td>
-                     </tr>";
-
-                     
-            if (!$data['foto']) { ?>
-              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
-            <?php
+                      
+                        $foto = $data['foto'];
             }
-            else { ?>
-              <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $data['foto']; ?>" width="128">
-            <?php
-            }
-            
-            }
-            
           }
-                ?>
+
+          ?> </tbody>
 
 
+          </table><?php
 
-            <script src="assets/js/datatables.min.js" type="text/javascript"></script>
-            <script>
+          if (!$foto) { ?> 
+          </br>
+            <div class="center" > <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128"></div>
+            </br>
+           <?php
+           }
+           else {  ?>
+           </br>
+              <div class="center" ><img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $foto; ?>" width="150"></div>
+              </br>
+             <?php
+           }
+           
 
-
-                /*$(document).ready( function () {
-                $('#dataTables1').DataTable();*/
-            // } );
-      
-            $(document).ready(function(){
-              load(1);
-            });
-
-            function load(page){
-              var parametros = {"action":"ajax","page":page};
-              $("#loader").fadeIn('slow');
-              $.ajax({
-              url:'paises_ajax.php',
-              data: parametros,
-              beforeSend: function(objeto){
-              $("#loader").html("<img src='loader.gif'>");
-            },
-
-            success:function(data){
-              $(".outer_div").html(data).fadeIn('slow');
-              $("#loader").html("");
-            }
-            })
-          }
-          </script>
-            </tbody>
-          </table>
+          
+        ?></script>
+            
 
 
           <table class="table table-bordered table-striped table-hover">
       
       <thead>
         <tr>
-          <th class="center">SERIAL</th>
           <th class="center">COMPONENTE</th>
+          <th class="center">SERIAL</th>
           <th class="center">CLASE</th>
           <th class="center">CAPACIDAD</th>
           <th class="center">MARCA</th>
           <th class="center">MODELO</th>
           <th class="center">CONDICION</th>
           <th class="center">VOLTAJE</th>
-          <th class="center">CERTIFICACION</th>
         </tr>
      
       </thead>
@@ -167,18 +153,16 @@ function validarExt()
                           
         echo "<tr>
   
-                <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[componente]</td>
+                <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[clase]</td>
                 <td width='90' class='center'>$data[capacidad]</td>
                 <td width='90' class='center'>$data[marca]</td>
                 <td width='90' class='center'>$data[modelo]</td>
                 <td width='90' class='center'>$data[condicion]</td>
                 <td width='90' class='center'>$data[voltaje]</td>
-                <td width='90' class='center'>$data[certificacion]</td>";
-        echo "    </div>
-                </td>
               </tr>";
+
       }
     }
       
@@ -217,7 +201,6 @@ function validarExt()
     </script>
       </tbody>
     </table>
-
 
         </div><!-- /.box-body -->
       </div><!-- /.box -->
