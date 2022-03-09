@@ -103,7 +103,10 @@ ventimp.close();
            $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo='$id'") 
           or die('error: '.mysqli_error($mysqli));
              $foto = "";
+
             while ($data= mysqli_fetch_assoc($query)) { 
+
+           
               
               echo "<tr>
                        <td width='100' class='center'>$data[codigo]</td>
@@ -114,6 +117,7 @@ ventimp.close();
                        <td width='100' class='center'>$data[bienesN]</td>";
                       
                         $foto = $data['foto'];
+              
             }
           }
 
@@ -124,13 +128,13 @@ ventimp.close();
 
           if (!$foto) { ?> 
           </br>
-            <div class="center" > <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128"></div>
+            <div align='center'> <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128"></div>
             </br>
            <?php
            }
            else {  ?>
            </br>
-              <div class="center" ><img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $foto; ?>" width="150"></div>
+              <div align='center' ><img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $foto; ?>" width="150"></div>
               </br>
              <?php
            }
@@ -141,7 +145,7 @@ ventimp.close();
             
 
 
-          <table class="table table-bordered table-striped table-hover">
+          <table class="table table-bordered table-striped table-hover" align='center'>
       
       <thead>
         <tr>
@@ -228,7 +232,7 @@ ventimp.close();
 </section><!-- /.content-->
   </body>
   <div style='text-align:right' >
-  <a type="button"  href="javascript:imprimirSeleccion('div_print')" class="btn btn-secondary">Imprimir</a>
-  <a type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+  <a type="button" href="javascript:imprimirSeleccion('div_print')" class="btn btn-default">Imprimir</a>
+  <a type="button" class="btn btn-default" data-dismiss="modal">Cerrar</a>
   </div>
 </html> 

@@ -381,7 +381,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado'")
+                                                        WHERE estado = 'chequeado' AND categoria='Comunicacion'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
