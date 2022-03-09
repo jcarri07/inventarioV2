@@ -20,6 +20,13 @@
   }
 
 </style>
+
+
+
+<html>
+<head>
+<title>Nuevo documento</title>
+
 <script type="text/javascript">
 
 function validarExt()
@@ -34,9 +41,25 @@ function validarExt()
         return false;
     }
 }
-  </script>
 
-<section class="content-header">
+function imprimirSeleccion(nombre) {
+var ficha = document.getElementById(nombre);
+var ventimp = window.open(' ', 'popimpr');
+ventimp.document.write('<html><head><title></title>');
+ventimp.document.write('<link rel="stylesheet" type="text/css" href="assets/css/style.css">'); //Aquí agregué la hoja de estilos
+ventimp.document.write('<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">');
+ventimp.document.write('</head><body >');
+ventimp.document.write( ficha.innerHTML );
+ventimp.document.close();
+ventimp.print( );
+ventimp.close();
+}
+
+</script>
+
+</head>
+<body>
+<section class="content-header" id="div_print">
   <!--<div id="visorArchivo"></div>-->
 
   <table border="0">
@@ -49,17 +72,14 @@ function validarExt()
 
 
 <section class="content">
-  <div class="row">
+  <div class="row" id="div_print">
     <div class="col-md-12">
       <div class="box box-primary">
         <div class="box-body table-responsive">
-
-   
         <h3 align='center'><b>FICHA RESUMEN DEL EQUIPO</b></h3>
         </br>
 
-
-          <table class="table table-bordered table-striped table-hover">
+          <table class="table table-bordered table-striped table-hover" align='center'>
       
             <thead>
               <tr>
@@ -201,10 +221,14 @@ function validarExt()
     </script>
       </tbody>
     </table>
-
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!--/.col -->
   </div>   <!-- /.row -->
-</section><!-- /.content
-<section class="content-header">
+</section><!-- /.content-->
+  </body>
+  <div style='text-align:right' >
+  <a type="button"  href="javascript:imprimirSeleccion('div_print')" class="btn btn-secondary">Imprimir</a>
+  <a type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+  </div>
+</html> 

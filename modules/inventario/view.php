@@ -365,9 +365,6 @@ function mostrar_modal_internos(id){
       <div id="cuerpo_internos" class="modal-body">
         ...
       </div>
-      <div class="modal-footer">
-          <a  type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
-        </div>
 
     </div>
   </div>
