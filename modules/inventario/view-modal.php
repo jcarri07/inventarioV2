@@ -48,6 +48,7 @@ var ventimp = window.open(' ', 'popimpr');
 ventimp.document.write('<html><head><title></title>');
 ventimp.document.write('<link rel="stylesheet" type="text/css" href="assets/css/style.css">'); //Aquí agregué la hoja de estilos
 ventimp.document.write('<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">');
+//ventimp.document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">');
 ventimp.document.write('</head><body >');
 ventimp.document.write( ficha.innerHTML );
 ventimp.document.close();
@@ -150,13 +151,12 @@ ventimp.close();
       <thead>
         <tr>
           <th class="center">COMPONENTE</th>
-          <th class="center">SERIAL</th>
           <th class="center">CLASE</th>
           <th class="center">CAPACIDAD</th>
           <th class="center">MARCA</th>
-          <th class="center">MODELO</th>
+          <th class="center">MODELO</th>          
+          <th class="center">SERIAL</th>
           <th class="center">CONDICION</th>
-          <th class="center">VOLTAJE</th>
         </tr>
      
       </thead>
@@ -178,13 +178,12 @@ ventimp.close();
         echo "<tr>
   
                 <td width='90' class='center'>$data[componente]</td>
-                <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[clase]</td>
                 <td width='90' class='center'>$data[capacidad]</td>
                 <td width='90' class='center'>$data[marca]</td>
-                <td width='90' class='center'>$data[modelo]</td>
+                <td width='90' class='center'>$data[modelo]</td>                
+                <td width='50' class='center'>$data[serial]</td>
                 <td width='90' class='center'>$data[condicion]</td>
-                <td width='90' class='center'>$data[voltaje]</td>
               </tr>";
 
       }
