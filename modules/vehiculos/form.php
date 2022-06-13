@@ -67,6 +67,22 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
+              <div class="form-group">  
+                <label class="col-sm-2 control-label">Descripcion</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select" name="descripcion" data-placeholder="-- Seleccionar vehículo --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] | $data_obat[nombre] </option>";
+                      }
+                    ?>
+                  </select>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Placa</label>
                 <div class="col-sm-5">
@@ -212,6 +228,13 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Código</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="codigo" value="<?php echo $data['codigo']; ?>" readonly required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Descripcion</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
                 </div>
               </div>
 

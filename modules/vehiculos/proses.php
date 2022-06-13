@@ -55,6 +55,7 @@ else {
         if (isset($_POST['Guardar'])) {
      
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
+            $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $placa  = mysqli_real_escape_string($mysqli, trim($_POST['placa']));
             $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
             $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
@@ -79,8 +80,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO vehiculos (pertenece , categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
-                VALUES('$pertenece' ,'Vehiculos','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
+                $query = mysqli_query($mysqli, "INSERT INTO vehiculos (pertenece, descripcion, categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
+                VALUES('$pertenece' ,'$descripcion','Vehiculos','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -99,7 +100,7 @@ else {
             if (isset($_POST['codigo'])) {
         
                 $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            	$marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
+            	$descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             	$tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
             	$modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
             	$placa  = mysqli_real_escape_string($mysqli, trim($_POST['placa']));
@@ -122,6 +123,7 @@ else {
             
 
                 $query = mysqli_query($mysqli, "UPDATE vehiculos SET marca             = '$marca',
+                                                                    descripcion             = '$descripcion',
                                                                     tipo             = '$tipo',
                                                                     modelo               = '$modelo',
                                                                     placa            = '$placa',

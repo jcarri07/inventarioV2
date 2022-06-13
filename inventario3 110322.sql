@@ -516,6 +516,53 @@ INSERT INTO `vehiculos` (`codigo`, `placa`, `marca`, `tipo`, `modelo`, `color`, 
 ('214491', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'ABAE', '22', 'CIDE', '', '22', '', 23, NULL, NULL, 'chequeado', 0, 'Vehiculos'),
 ('214492', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'VEHICULO', 'ABAE', '7527', 'CIDE', '', '785', '', 23, NULL, NULL, 'chequeado', 0, 'Vehiculos');
 
+
+--
+-- Table structure for table `vehiculos`
+--
+
+CREATE TABLE `guia` (
+  `codigo` varchar(20) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `categoria` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vehiculos`
+--
+
+INSERT INTO `guia` (`codigo`, `nombre`,`categoria`) VALUES
+('15010-0001','Ambulancias',	'vehiculos'),
+('15010-0002', 'Autobuses',	'vehiculos'),
+('15010-0003',	'Automoviles',	'vehiculos'),
+('15010-0004',	'Camiones cisterna para asfalto',	'vehiculos'),
+('15010-0005',	'Camiones cisterna para agua',	'vehiculos'),
+('15010-0006',	'Camiones cisterna para gasolina',	'vehiculos'),
+('15010-0007',	'Camiones cisterna para gas',	'vehiculos'),
+('15010-0008',	'Camiones chasis',	'vehiculos'),
+('15010-0009',	'Camiones de estacas',	'vehiculos'),
+('15010-0010',	'Camiones volteos',	'vehiculos'),
+('15010-0011',	'Camiones ganaderos',	'vehiculos'),
+('15010-0012',	'Camiones gruas',	'vehiculos'),
+('15010-0013',	'Camiones para basura',	'vehiculos'),
+('15010-0014',	'Camionetas de carga cubiertas',	'vehiculos'),
+('15010-0015',	'Camionetas de carga pick-up', 	'vehiculos'),
+('15010-0016',	'Camionetas de pasajeros', 	'vehiculos'),
+('15010-0017',	'Camionetas (ómnibus rurales)', 	'vehiculos'),
+('15010-0018',	'Carros bombas para incendios', 'vehiculos'),
+('15010-0019',	'Carros de bomberos', 'vehiculos'),
+('15010-0020',	'Chutos', 	'vehiculos'),
+('15010-0021',	'Escaleras automoviles para bomberos','vehiculos'),
+('15010-0022',	'Furgones',	'vehiculos'),
+('15010-0023',	'Gandolas', 	'vehiculos'),
+('15010-0024',	'Microbuses', 	'vehiculos'),
+('15010-0025',	'Motocicletas', 	'vehiculos'),
+('15010-0026',	'Motocicletas de reparto',	'vehiculos'),
+('15010-0027',	'Motonetas', 	'vehiculos'),
+('15010-0028',	'Motonetas de reparto', 	'vehiculos'),
+('15010-0029',	'Radiopatrullas', 	'vehiculos'),
+('15010-0030',	'Transportadores de vehículos',	'vehiculos');
+
 --
 -- Indexes for dumped tables
 --
