@@ -90,9 +90,9 @@ function mostrar_modal_internos(id){
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos de Comunicación
+  <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de Comunicaciones y Señalamiento
 
-    <form action="database/excel_to_mysql_comunicacion.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_Comunicaciones.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -105,7 +105,7 @@ function mostrar_modal_internos(id){
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_comunicacion.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
           
@@ -253,10 +253,10 @@ function mostrar_modal_internos(id){
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicacion' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicaciones' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicacion' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicaciones' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 
@@ -330,7 +330,7 @@ function mostrar_modal_internos(id){
               btn = document.getElementById("reset");
 
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos de comunicación?")) {
+                if(confirm("Deseas eliminar el chequeo de todos los equipos de Comunicaciones?")) {
                     window.location.href = "modules/inventario/proses.php?act=reset";
                 } 
               })

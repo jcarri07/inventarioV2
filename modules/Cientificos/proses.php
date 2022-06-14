@@ -1,15 +1,12 @@
 
 <?php
 
-function buscaRepetido($codigo,$mysqli) {
+function buscaRepetido($serial,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from vehiculos
-      where codigo ='$codigo'");
-
-    $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
-    $codigo = "$buat_id";
+      $result = mysqli_query($mysqli,"SELECT codigo from inventario
+      where codigo='$codigo'");
 
       if(mysqli_num_rows($result) > 0){
         return 1;
@@ -43,7 +40,7 @@ $rows  = mysqli_num_rows($query);
 $hari_ini = date("d-m-Y");
 $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
-$accion = "Registro de Vehiculo";
+$accion = "Registro de Equipo";
 $cedulauser = $_SESSION['cedula_user'];
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
@@ -55,33 +52,33 @@ else {
         if (isset($_POST['Guardar'])) {
      
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
-            $placa  = mysqli_real_escape_string($mysqli, trim($_POST['placa']));
+            $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
+            $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
-            $tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
             $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
+            $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
+            $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
+            $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
+            $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+          //  $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
+            $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-            $unidad  = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
-            $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
-            $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
-			$cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-			$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-			$nmroCarroceria  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCarroceria']));
-			$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
-			$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
+            $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $cantidad    = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
-                header("location: ../../main.php?module=vehiculos&alert=5");
+            if (buscaRepetido($serial,$mysqli) == 1) {
+                 header("location: ../../main.php?module=Cientificos&alert=5");
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO vehiculos (pertenece, descripcion, categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
-                VALUES('$pertenece' ,'$descripcion','Vehiculos','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
+                                            VALUES('Cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -90,7 +87,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=vehiculos&alert=1");  
+                header("location: ../../main.php?module=Cientificos&alert=1");  
             }
         }   
     }
@@ -100,56 +97,53 @@ else {
             if (isset($_POST['codigo'])) {
         
                 $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
-            	$descripcion = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
-            	$tipo  = mysqli_real_escape_string($mysqli, trim($_POST['tipo']));
-            	$modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
-            	$placa  = mysqli_real_escape_string($mysqli, trim($_POST['placa']));
-            	$color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
-            	$condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-            	$unidad  = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-            	$ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
-            	//$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
-           	 	//$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
-            	$responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
-				$cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-				$sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-				$nmroCarroceria  = mysqli_real_escape_string($mysqli, trim($_POST['nmroCarroceria']));
-				$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
+                $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
+                $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
+                $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
+                $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
                 $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
-				$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
+                $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
+               // $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+                $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+                $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
+                $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
+                $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
+                $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+               // $pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
+                //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
+                $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+                $cantidad     = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
             
 
-                $query = mysqli_query($mysqli, "UPDATE vehiculos SET marca             = '$marca',
+                $query = mysqli_query($mysqli, "UPDATE inventario SET  responsable      = '$nombre',
+                                                                    marca             = '$marca',
+                                                                    serial             = '$serial',
+                                                                    modelo             = '$modelo',
+                                                                    sede               = '$sede',
+                                                                    pertenece            = '$pertenece',
+                                                                    cedula            = '$cedula',
+                                                                    bienesN             = '$bienesN',
+                                                                    color             = '$color',
                                                                     descripcion             = '$descripcion',
-                                                                    tipo             = '$tipo',
-                                                                    modelo               = '$modelo',
-                                                                    placa            = '$placa',
-                                                                    color            = '$color',
                                                                     condicion             = '$condicion',
-                                                                    pertenece             = '$pertenece',
+                                                                    ubicacion             = '$ubicacion',
                                                                     unidad          = '$unidad',
-                                                                    ubicacion          = '$ubicacion',
-                                                                    responsable          = '$responsable',
-                                                                    cedula          = '$cedula',
-                                                                    sede          = '$sede',
-                                                                    nmroCarroceria          = '$nmroCarroceria',
-                                                                    anio         = '$anio',
-                                                                    tipo         = '$tipo',
-                                                                    tipoCombustible          = '$tipoCombustible',
+                                                                    cantidad          = '$cantidad',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")
                                                 or die('error: '.mysqli_error($mysqli));
 
-                 $accion = "Modificacion de Vehiculo";
+                 $accion = "Modificacion de Equipo";
 
                  $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=vehiculos&alert=2");
+                header("location: ../../main.php?module=Cientificos&alert=2");
                 }        
             }
         }
@@ -160,10 +154,10 @@ else {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
       
-            $query = mysqli_query($mysqli, "DELETE FROM vehiculos WHERE codigo='$codigo'")
+            $query = mysqli_query($mysqli, "DELETE FROM inventario WHERE codigo='$codigo'")
                                             or die('error '.mysqli_error($mysqli));
 
-            $accion = "Eliminacion de Vehiculo";
+            $accion = "Eliminacion de Equipo";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
@@ -172,7 +166,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=vehiculos&alert=3");
+                header("location: ../../main.php?module=Cientificos&alert=3");
             }
         }
     }  
@@ -184,14 +178,14 @@ else {
 			$estado  = "nochequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE vehiculos SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE inventario SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('error: '.mysqli_error($mysqli));
 
   
             if ($query) {
                
-                header("location: ../../main.php?module=vehiculos");
+                header("location: ../../main.php?module=Cientificos");
             }
 		}
 	} 
@@ -203,14 +197,14 @@ else {
 			$estado  = "chequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE vehiculos SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE inventario SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('Error : '.mysqli_error($mysqli));
 
         
             if ($query) {
               
-                header("location: ../../main.php?module=vehiculos");
+                header("location: ../../main.php?module=Cientificos");
             }
 		}
 	}
@@ -221,14 +215,14 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
         $estado  = "nochequeado";
 
     
-        $query = mysqli_query($mysqli, "UPDATE vehiculos SET estado = '$estado'
-                                                        WHERE estado = 'chequeado'")
+        $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
+                                                        WHERE estado = 'chequeado' AND categoria ='Cientificos'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=vehiculos");
+            header("location: ../../main.php?module=Cientificos");
         }
     
 }      

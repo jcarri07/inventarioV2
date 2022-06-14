@@ -15,11 +15,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos Científicos y Electrónicos
+      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Oficina
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equiposcientificos_electricos"> Electrónicos </a></li>
+      <li><a href="?module=Oficina"> Oficina </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -30,10 +30,10 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/equiposcientificos_electricos/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Oficina/proses.php?act=insert" method="POST">
             <div class="box-body">
               <?php  
-              
+          
               $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
               $data = mysqli_fetch_assoc($query);
@@ -59,7 +59,9 @@ if ($_GET['form']=='add') { ?>
               $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
               $codigo = "$buat_id";
               ?>
-              <div class="form-group">
+
+
+            <div class="form-group">
                 <label class="col-sm-2 control-label">Código </label>
                 <div class="col-sm-5">
                   <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" readonly required>
@@ -137,7 +139,7 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
-
+      
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ubicación</label>
                 <div class="col-sm-5">
@@ -162,24 +164,25 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
-
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Cantidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cantidad" onkeypress='return validaNumericos(event)' onpaste="return false"  autocomplete="off" required>
+                  <input type="text" class="form-control" name="cantidad" value="" autocomplete="off" onkeypress='return validaNumericos(event)' onpaste="return false" required>
                 </div>
               </div>
-
-            </div><!-- /.box body -->
-
+            </div>
+              
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=equiposcientificos_electricos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Oficina" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div><!-- /.box footer -->
+            </div>
+            
+
           </form>
         </div><!-- /.box -->
       </div><!--/.col -->
@@ -199,11 +202,11 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos Científicos y Electrónicos
+      <i class="fa fa-edit icon-title"></i> Modificar Equipos de  Oficina
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equiposcientificos_electricos"> Electrónicos </a></li>
+      <li><a href="?module=Oficina"> Oficina </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -214,7 +217,7 @@ elseif ($_GET['form']=='edit') {
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/equiposcientificos_electricos/proses.php?act=update" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Oficina/proses.php?act=update" method="POST">
           <div class="box-body">
               
               <div class="form-group">
@@ -324,17 +327,16 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
             </div>
-
+          
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=equiposcientificos_electricos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Oficina" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
-            </div>
-            <!-- /.box footer -->
-    
+            </div><!-- /.box footer -->
+
           </form>
         </div><!-- /.box -->
       </div><!--/.col -->

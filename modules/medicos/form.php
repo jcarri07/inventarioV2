@@ -15,11 +15,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Seguridad
+      <i class="fa fa-edit icon-title"></i> Agregar Equipos Médicos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equipos_seguridad"> Seguridad </a></li>
+      <li><a href="?module=Medicos"> Médicos </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -30,7 +30,7 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/equipos_seguridad/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Medicos/proses.php?act=insert" method="POST">
             <div class="box-body">
               <?php  
               
@@ -169,7 +169,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=equipos_seguridad" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Medicos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
@@ -192,11 +192,11 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos de Seguridad
+      <i class="fa fa-edit icon-title"></i> Modificar Equipos Médicos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=equipos_seguridad"> Seguridad </a></li>
+      <li><a href="?module=Medicos"> Médicos </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -207,7 +207,7 @@ elseif ($_GET['form']=='edit') {
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/equipos_seguridad/proses.php?act=update" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Medicos/proses.php?act=update" method="POST">
             <div class="box-body">
               
             <div class="form-group">
@@ -315,7 +315,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=equipos_seguridad" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Medicos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div>

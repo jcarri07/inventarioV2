@@ -10,7 +10,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	if ($_GET['module'] == 'start') {
 		include "modules/start/view.php";
 	}
-	//Equipos comunicacion
+	//Equipos Comunicaciones
 	elseif ($_GET['module'] == 'inventario') {
 		include "modules/inventario/view.php";
 
@@ -27,18 +27,18 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	}
 	//Mobiliario y equipos de oficina
 
-	elseif ($_GET['module'] == 'mobiliario_equipoOficina') {
-		include "modules/mobiliario_equipoOficina/view.php";
+	elseif ($_GET['module'] == 'Oficina') {
+		include "modules/Oficina/view.php";
 
-	} elseif ($_GET['module'] == 'form_mobiliario_equipoOficina') {
-		include "modules/mobiliario_equipoOficina/form.php";
+	} elseif ($_GET['module'] == 'form_Oficina') {
+		include "modules/Oficina/form.php";
 	}
 	//equipos cientificos y electronicos
-	elseif ($_GET['module'] == 'equiposcientificos_electricos') {
-		include "modules/equiposcientificos_electricos/view.php";
+	elseif ($_GET['module'] == 'Cientificos') {
+		include "modules/Cientificos/view.php";
 
-	} elseif ($_GET['module'] == 'form_equiposcientificos_electricos') {
-		include "modules/equiposcientificos_electricos/form.php";
+	} elseif ($_GET['module'] == 'form_Cientificos') {
+		include "modules/Cientificos/form.php";
 	}
 	
 	//equipos inmuebles
@@ -50,11 +50,11 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	} 
 
 	//Equipos de seguridad
-	elseif ($_GET['module'] == 'equipos_seguridad') {
-		include "modules/equipos_seguridad/view.php";
+	elseif ($_GET['module'] == 'Medicos') {
+		include "modules/Medicos/view.php";
 
-	} elseif ($_GET['module'] == 'form_equipos_seguridad') {
-		include "modules/equipos_seguridad/form.php";
+	} elseif ($_GET['module'] == 'form_Medicos') {
+		include "modules/Medicos/form.php";
 	}
 
 	//Equipos de biblioteca
@@ -65,12 +65,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		include "modules/biblioteca/form.php";
 	}
 
-	//Vehiculos
-	elseif ($_GET['module'] == 'vehiculos') {
-		include "modules/vehiculos/view.php";
+	//Transporte
+	elseif ($_GET['module'] == 'Transporte') {
+		include "modules/Transporte/view.php";
 
-	} elseif ($_GET['module'] == 'form_vehiculos') {
-		include "modules/vehiculos/form.php";
+	} elseif ($_GET['module'] == 'form_Transporte') {
+		include "modules/Transporte/form.php";
 	
 
 	//transaccion equipos
@@ -87,12 +87,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	} elseif ($_GET['module'] == 'form_transaccion_equipos_biblioteca') {
 		include "modules/transaccion_equipos_biblioteca/form.php";
 
-	//transaccion equipos vehiculos
-	} elseif ($_GET['module'] == 'transaccion_equipos_vehiculos') {
-		include "modules/transaccion_equipos_vehiculos/view.php";
+	//transaccion equipos Transporte
+	} elseif ($_GET['module'] == 'transaccion_equipos_Transporte') {
+		include "modules/transaccion_equipos_Transporte/view.php";
 
-	} elseif ($_GET['module'] == 'form_transaccion_equipos_vehiculos') {
-		include "modules/transaccion_equipos_vehiculos/form.php";
+	} elseif ($_GET['module'] == 'form_transaccion_equipos_Transporte') {
+		include "modules/transaccion_equipos_Transporte/form.php";
 
 	//transaccion inmuebles
 	} elseif ($_GET['module'] == 'transaccion_equipos_inmuebles') {

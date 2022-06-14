@@ -40,9 +40,9 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos Científicos y Electrónicos
+  <i class="fa fa-folder-o icon-title"></i> 20000 | Maquinas, muebles y demás equipos de oficina y de alojamiento
 
-    <form action="database/excel_to_mysql_cientificos.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_Oficina.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -54,13 +54,13 @@ function validarExt()
               Cargar Archivo
             </div>  
           </a>-->
-
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_cientificos.php" title="Exportar" data-toggle="tooltip">
+          
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Oficina.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_equiposcientificos_electricos&form=add"  title="Agregar" data-toggle="tooltip">
-            <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_Oficina&form=add"  title="Agregar" data-toggle="tooltip">
+            <i class="fa fa-plus"></i>Agregar&nbsp;&nbsp; 
           </a>
 
         </div>
@@ -109,14 +109,14 @@ function validarExt()
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
               Datos importados correctamente
             </div>";
-    } 
+    }
     
     elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-ban'></i> Error!</h4> El serial ya existe 
             </div>";
-    }   
+    }
     
     elseif ($_GET['alert'] == 6) {
       echo "<div class='alert alert-success alert-dismissable'>
@@ -124,7 +124,7 @@ function validarExt()
               <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
               Equipo chequeado
             </div>";
-    } 
+    }
     
     elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
@@ -132,7 +132,7 @@ function validarExt()
               <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
             </div>";
     }
-
+    
     elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -179,12 +179,12 @@ function validarExt()
             $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
             $permiso = $_SESSION['permisos_acceso'];
             $sede = $_SESSION['sede'];
-            
+
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 
@@ -209,26 +209,26 @@ function validarExt()
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>
                       <td width='100' class='center'>$data[cantidad]</td>
-                      <td width='120' class='center'  >
+                      <td width='120' class='center'>
                     <div>
             
-                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_equiposcientificos_electricos&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_Oficina&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/equiposcientificos_electricos/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/Oficina/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/equiposcientificos_electricos/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/Oficina/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="color:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/equiposcientificos_electricos/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/Oficina/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="color:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -242,18 +242,17 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-           <a class="btn btn-primary pull-right botones" id="btnElect" style="height:35px;">
-            <i></i> Reset Check
-           </a>
+            <a class="btn btn-primary pull-right botones" id="reset" style="height:35px;">
+              <i></i> Reset Check
+            </a>
           </div>
-
-
+           
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("btnElect");
+              btn = document.getElementById("reset");
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos científicos y electrónicos?")) {
-                    window.location.href = "modules/equiposcientificos_electricos/proses.php?act=reset";
+                if(confirm("Deseas eliminar el chequeo de todo el Oficina?")) {
+                    window.location.href = "modules/Oficina/proses.php?act=reset";
                   } 
               })
             </script>
@@ -263,4 +262,3 @@ function validarExt()
       </div><!-- /.box -->
     </div><!--/.col -->
   </div>   <!-- /.row -->
-</section><!-- /.content

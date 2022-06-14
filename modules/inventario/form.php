@@ -78,11 +78,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicación
+      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicaciones
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicación </a></li>
+      <li><a href="?module=inventario"> Comunicaciones </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -113,7 +113,7 @@ if ($_GET['form']=='add') { ?>
         <div role = "tabpanel">
          
 
-<!-- COMUNICACION -->
+<!-- COMUNICACIONES -->
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="agregar">             
           <!-- form start -->
@@ -286,7 +286,7 @@ if ($_GET['form']=='add') { ?>
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicación
+    <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicaciones
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -467,11 +467,11 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos de Comunicación
+      <i class="fa fa-edit icon-title"></i> Modificar Equipos de Comunicaciones
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicación </a></li>
+      <li><a href="?module=inventario"> Comunicaciones </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>

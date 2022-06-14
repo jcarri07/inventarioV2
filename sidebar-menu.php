@@ -41,13 +41,13 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-table"></i> <span>Inventarios</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación</a></li>
-					<li><a class="btn_mblr" href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
+					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicaciones</a></li>
+					<li><a class="btn_mblr" href="?module=Oficina"><i class="fa fa-circle-o"></i>Oficina</a></li>
 					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
-					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
+					<li><a href="?module=Cientificos"><i class="fa fa-circle-o"></i>Científicos</a></li>
+					<li><a href="?module=Medicos"><i class="fa fa-circle-o"></i>Médicos</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
+					<li><a href="?module=Transporte"><i class="fa fa-circle-o"></i>Transporte</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>
@@ -58,13 +58,13 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-table"></i> <span>Inventarios</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
-					<li onclick=hola()><a class="btn_mblr" href="?module=mobiliario_equipoOficina" ><i class="fa fa-circle-o"></i>Mobiliario</a></li>
+					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicaciones </a></li>
+					<li onclick=hola()><a class="btn_mblr" href="?module=Oficina" ><i class="fa fa-circle-o"></i>Oficina</a></li>
 					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
-					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
+					<li><a href="?module=Cientificos"><i class="fa fa-circle-o"></i>Científicos</a></li>
+					<li><a href="?module=Medicos"><i class="fa fa-circle-o"></i>Médicos</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
+					<li><a href="?module=Transporte"><i class="fa fa-circle-o"></i>Transporte</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>
@@ -75,13 +75,13 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<i class="fa fa-table"></i> <span>Inventarios</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
-					<li ><a class="btn_mblr" href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
+					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicaciones </a></li>
+					<li ><a class="btn_mblr" href="?module=Oficina"><i class="fa fa-circle-o"></i>Oficina</a></li>
 					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
-					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
-					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
+					<li><a href="?module=Cientificos"><i class="fa fa-circle-o"></i>Cientificos</a></li>
+					<li><a href="?module=Medicos"><i class="fa fa-circle-o"></i>Médicos</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
-					<li><a href="?module=vehiculos"><i class="fa fa-circle-o"></i>Vehículos</a></li>
+					<li><a href="?module=Transporte"><i class="fa fa-circle-o"></i>Transporte</a></li>
 					<li><a href="?module=inmuebles"><i class="fa fa-circle-o"></i>Inmuebles</a></li>
 				</ul>
 			</li>
@@ -113,7 +113,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
-				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehículos </a></li>
+				<li><a href="?module=transaccion_equipos_Transporte"><i class="fa fa-circle-o"></i> Transporte </a></li>
 				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
@@ -126,7 +126,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
-				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehículos </a></li>
+				<li><a href="?module=transaccion_equipos_Transporte"><i class="fa fa-circle-o"></i> Transporte </a></li>
 				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
@@ -139,7 +139,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 				<li class="active"> <a href="?module=transaccion_equipos"><i class="fa fa-circle-o"></i> Equipos </a></li>
 				<li> <a href="?module=transaccion_equipos_biblioteca"><i class="fa fa-circle-o"></i> Biblioteca </a></li>
-				<li><a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-circle-o"></i> Vehículos </a></li>
+				<li><a href="?module=transaccion_equipos_Transporte"><i class="fa fa-circle-o"></i> Transporte </a></li>
 				<li><a href="?module=transaccion_equipos_inmuebles"><i class="fa fa-circle-o"></i> Inmuebles </a></li>
 				</ul>
 			</li>
@@ -161,15 +161,15 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 		<?php
 		}
 
-		//Control de equipos vehiculos 
-		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+		//Control de equipos Transporte 
+		if ($_GET["module"] == "transaccion_equipos_Transporte" || $_GET["module"] == "form_transaccion_equipos_Transporte") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		}
@@ -246,7 +246,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a data-toggle="modal" href="#respaldo1"><i class="fa fa-circle-o"></i> Equipos </a></li>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
-					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Vehículos</a></li>
+					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
@@ -260,7 +260,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 				<li class="active"><a data-toggle="modal" href="#respaldo1"><i class="fa fa-circle-o"></i> Equipos </a></li>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
-					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Vehículos</a></li>
+					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
@@ -274,7 +274,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 				<li class="active"><a data-toggle="modal" href="#respaldo1"><i class="fa fa-circle-o"></i> Equipos </a></li>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
-					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Vehículos</a></li>
+					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
 					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
@@ -397,15 +397,15 @@ elseif ($_SESSION['permisos_acceso'] == 'Trabajador') { ?>
 		<?php
 		}
 
-		//Control de equipos vehiculos 
-		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+		//Control de equipos Transporte 
+		if ($_GET["module"] == "transaccion_equipos_Transporte" || $_GET["module"] == "form_transaccion_equipos_Transporte") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		}
@@ -500,15 +500,15 @@ if ($_SESSION['permisos_acceso'] == 'Admin') { ?>
 		<?php
 		}
 
-		//Control de equipos vehiculos 
-		if ($_GET["module"] == "transaccion_equipos_vehiculos" || $_GET["module"] == "form_transaccion_equipos_vehiculos") { ?>
+		//Control de equipos Transporte 
+		if ($_GET["module"] == "transaccion_equipos_Transporte" || $_GET["module"] == "form_transaccion_equipos_Transporte") { ?>
 			<li class="active">
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=transaccion_equipos_vehiculos"><i class="fa fa-clone"></i> Control de Vehiculos</a>
+				<a href="?module=transaccion_equipos_Transporte"><i class="fa fa-clone"></i> Control de Transporte</a>
 			</li>
 		<?php
 		}

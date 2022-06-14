@@ -53,14 +53,16 @@ else {
      
             $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-            $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+            $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
             $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
             $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
             $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-            $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
-          //  $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+           
+            
+            $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+            //$categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
             $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
@@ -68,17 +70,17 @@ else {
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
             $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-            $cantidad    = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+            $cantidad     = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
 
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($serial,$mysqli) == 1) {
-                 header("location: ../../main.php?module=equiposcientificos_electricos&alert=5");
+                 header("location: ../../main.php?module=Oficina&alert=5");
 
              } else {
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
-                                            VALUES('Electronicos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
+                                            VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -87,7 +89,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=equiposcientificos_electricos&alert=1");  
+                header("location: ../../main.php?module=Oficina&alert=1");  
             }
         }   
     }
@@ -98,13 +100,14 @@ else {
         
                 $codigo  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
                 $serial  = mysqli_real_escape_string($mysqli, trim($_POST['serial']));
-                $nombre  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
                 $marca  = mysqli_real_escape_string($mysqli, trim($_POST['marca']));
                 $modelo  = mysqli_real_escape_string($mysqli, trim($_POST['modelo']));
                 $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
                 $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
                 $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-               // $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
+              //  $categoria = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
                 $bienesN = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
                 $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
@@ -119,7 +122,8 @@ else {
 
             
 
-                $query = mysqli_query($mysqli, "UPDATE inventario SET  responsable      = '$nombre',
+                $query = mysqli_query($mysqli, "UPDATE inventario SET 
+                                                                    responsable       = '$responsable',
                                                                     marca             = '$marca',
                                                                     serial             = '$serial',
                                                                     modelo             = '$modelo',
@@ -143,7 +147,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=equiposcientificos_electricos&alert=2");
+                header("location: ../../main.php?module=Oficina&alert=2");
                 }        
             }
         }
@@ -166,7 +170,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=equiposcientificos_electricos&alert=3");
+                header("location: ../../main.php?module=Oficina&alert=3");
             }
         }
     }  
@@ -185,7 +189,7 @@ else {
   
             if ($query) {
                
-                header("location: ../../main.php?module=equiposcientificos_electricos");
+                header("location: ../../main.php?module=Oficina");
             }
 		}
 	} 
@@ -204,7 +208,7 @@ else {
         
             if ($query) {
               
-                header("location: ../../main.php?module=equiposcientificos_electricos");
+                header("location: ../../main.php?module=Oficina");
             }
 		}
 	}
@@ -216,13 +220,13 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria ='Electronicos'")
+                                                        WHERE estado = 'chequeado' AND categoria='Oficina'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=equiposcientificos_electricos");
+            header("location: ../../main.php?module=Oficina");
         }
     
 }      

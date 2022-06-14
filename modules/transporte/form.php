@@ -16,11 +16,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Vehículos
+      <i class="fa fa-edit icon-title"></i> Agregar Vehiculos de Transporte
       </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=vehiculos"> Vehículos </a></li>
+      <li><a href="?module=Transporte"> Transporte </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -31,7 +31,7 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/vehiculos/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Transporte/proses.php?act=insert" method="POST">
             <div class="box-body">
               <?php  
               
@@ -41,7 +41,7 @@ if ($_GET['form']=='add') { ?>
               $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
 
-              $query_id = mysqli_query($mysqli, "SELECT codigo FROM vehiculos
+              $query_id = mysqli_query($mysqli, "SELECT codigo FROM Transporte
                                                 ORDER BY codigo DESC LIMIT 1")
                                                 or die('error '.mysqli_error($mysqli));
 
@@ -93,7 +93,7 @@ if ($_GET['form']=='add') { ?>
                       $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[codigo] | $data_obat[nombre]\"> $data_obat[codigo] | $data_obat[nombre] </option>";
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
                       }
                     ?>
                 </datalist>
@@ -219,7 +219,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=vehiculos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Transporte" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
@@ -234,7 +234,7 @@ if ($_GET['form']=='add') { ?>
 elseif ($_GET['form']=='edit') { 
   if (isset($_GET['id'])) {
 
-      $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE codigo='$_GET[id]'") 
+      $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE codigo='$_GET[id]'") 
                                       or die('error: '.mysqli_error($mysqli));
       $data  = mysqli_fetch_assoc($query);
     }
@@ -242,11 +242,11 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Vehículos
+      <i class="fa fa-edit icon-title"></i> Modificar Vehiculos de Transporte
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=vehiculos"> Vehículos </a></li>
+      <li><a href="?module=Transporte"> Transporte </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -257,7 +257,7 @@ elseif ($_GET['form']=='edit') {
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/vehiculos/proses.php?act=update" method="POST">
+          <form role="form" class="form-horizontal" action="modules/Transporte/proses.php?act=update" method="POST">
             <div class="box-body">
               
               <div class="form-group">
@@ -374,7 +374,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=vehiculos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=Transporte" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
