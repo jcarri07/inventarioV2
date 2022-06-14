@@ -164,7 +164,7 @@ INSERT INTO `history` (`nombre`, `cedula`, `permiso`, `accion`, `fecha`, `hora`)
 ('', '12345', '23', 'Registro de equipo', '2022-02-02 21:42:32', '17:05:32'),
 ('admin', '12345', '23', 'Registro de equipo', '2022-02-02 21:44:34', '17:05:34'),
 ('admin', '12345', '23', 'Registro de equipo', '2022-02-02 21:47:14', '17:05:14'),
-('Jose Carrizales', '24642009', '23', 'Exportacion Modulo Electrodomesticos', '2022-02-02 23:51:36', '19:07:36'),
+('Jose Carrizales', '24642009', '23', 'Exportacion Modulo Maquinaria', '2022-02-02 23:51:36', '19:07:36'),
 ('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-02-03 00:38:45', '20:08:45'),
 ('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-02-03 00:39:14', '20:08:14'),
 ('', '24642009', '23', 'Registro de equipo', '2022-02-03 00:40:25', '20:08:25'),
@@ -275,14 +275,14 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`, `foto`) VALUES
-('Electrodomesticos', '0000007', '256G1G55A', '', 'MABE', '514A5A', 0, '', 'CIDE', 'ABAE', '515151462', '2651', 'NEGRO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 18:54:46', 23, '2022-01-24 18:54:46', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
+('Maquinaria', '0000007', '256G1G55A', '', 'MABE', '514A5A', 0, '', 'CIDE', 'ABAE', '515151462', '2651', 'NEGRO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 18:54:46', 23, '2022-01-24 18:54:46', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
 ('', '0000008', 'dasdas', '', 'dasdasd', 'sadsa', 0, '', 'CIDE', 'ABAE', '11651', 'dasdas', 'dsadsad', 'sda', 'sadsd', 'asdsad', 0, 0, 'sadsad', 0, '', 23, '2022-01-24 19:05:09', 0, '2022-01-24 19:05:09', NULL, 'sadsad', NULL, '', NULL),
 ('Comunicacion', '000002', '14F1A44AA', '', 'VIT', '4A151AA', 0, '', 'CIDE', 'ABAE', '24642009', '153131', 'NEGRO', 'Teclado', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-23 23:54:06', 0, '2022-01-23 23:54:06', NULL, 'Jose Carrizales', NULL, '', NULL),
 ('Mobiliario', '000003', 'N/A', '', 'N/A', 'PEQUEÃ‘O', 1, '', 'CIDE', 'ABAE', '24642009', '02525', 'MARRON', 'ESCRITORIO', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-23 23:55:46', 23, '2022-01-23 23:55:46', NULL, 'Jose Carrizales', NULL, '', NULL),
 ('Electronicos', '000005', '541D6A', '', 'ARDUINO', 'NANO', 1, '', 'CIDE', 'ABAE', '246420009', '6416', 'AZUL', 'ARDUINO NANO', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 03:38:05', 23, '2022-01-24 03:38:05', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
 ('Seguridad', '000006', '64G5A4A', '', 'MICROSOFT', '45AA', 0, '', 'CIDE', 'ABAE', '24642009', '5246', 'NEGRO', 'CAMARA DE SEGURIDAD', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 03:38:32', 23, '2022-01-24 03:38:32', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
 ('Mobiliario', '000007', 'A4545F45A2', '', 'DELL', 'SILLA OFICINA TIPO 1', 1, '', 'CIDE', 'ABAE', '24642009', '22541', 'AZUL', 'SILLA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 18:56:18', 23, '2022-01-24 18:56:18', NULL, 'Jose Carrizales', NULL, '', NULL),
-('Electrodomesticos', '000009', '21F165A1', '', 'OSTER', '514A21', 0, '', 'CIDE', 'ABAE', '24642009', '25544', 'BLANCO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-29 20:24:33', 23, '2022-01-29 20:24:33', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
+('Maquinaria', '000009', '21F165A1', '', 'OSTER', '514A21', 0, '', 'CIDE', 'ABAE', '24642009', '25544', 'BLANCO', 'CAFETERA', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-29 20:24:33', 23, '2022-01-29 20:24:33', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
 ('Seguridad', '000011', '364S5A1D56', '', 'ZTE', '54A514D', 0, '', 'CIDE', 'ABAE', '24642009', '4777', 'NEGRO', 'CAMARA DE SEGURIDAD', 'EN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-29 20:25:04', 23, '2022-01-29 20:25:04', NULL, 'JOSE CARRIZALES', NULL, '', NULL),
 ('Comunicacion', '000012', '55A4112S', '', 'Inspur', '2ASDD', 0, '', 'CIDE', 'ABAE', '24642009', '25000', 'NEGRO', 'Mouse', 'EN USO', 'Borburata', 0, 0, 'UDLP', 0, 'nochequeado', 23, '2022-01-30 05:31:26', 0, '2022-01-30 05:31:26', NULL, 'Jose Carrizales', NULL, '', NULL),
 ('Electronicos', '000013', '012502320JHGD', '', 'ARDUINO', 'UNO', 1, '', 'CIDE', 'ABAE', '24642009', '51AA', 'AZUL', 'ARDUINO UNO', 'SIN USO', 'BORBURATA', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-30 05:56:17', 0, '2022-01-30 05:56:17', NULL, 'Jose Carrizales', NULL, '', NULL),
@@ -469,6 +469,7 @@ INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `pass
 
 CREATE TABLE `vehiculos` (
   `codigo` varchar(10) NOT NULL,
+  `descripcion` varchar(40) NOT NULL,
   `placa` varchar(15) NOT NULL,
   `marca` varchar(300) DEFAULT NULL,
   `tipo` varchar(300) DEFAULT NULL,
@@ -518,7 +519,7 @@ INSERT INTO `vehiculos` (`codigo`, `placa`, `marca`, `tipo`, `modelo`, `color`, 
 
 
 --
--- Table structure for table `vehiculos`
+-- Table structure for table `guia`
 --
 
 CREATE TABLE `guia` (
@@ -562,6 +563,60 @@ INSERT INTO `guia` (`codigo`, `nombre`,`categoria`) VALUES
 ('15010-0028',	'Motonetas de reparto', 	'vehiculos'),
 ('15010-0029',	'Radiopatrullas', 	'vehiculos'),
 ('15010-0030',	'Transportadores de vehículos',	'vehiculos');
+
+
+--
+-- Table structure for table `guia`
+--
+
+CREATE TABLE `colores` (
+  `nombre` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vehiculos`
+--
+
+INSERT INTO `colores` ( `nombre`) VALUES
+('NEGRO'),
+('AZUL'),
+('PALO ROSA'),
+('NARANJA'),
+('VERDE'),
+('BEIGE'),
+('CROMATICO'),
+('VINOTINTO'),
+('GRIS / NEGRO'),
+('PLATEADO'),
+('BEIGE AUSTRALIA'),
+('PLATEADO FERROSO'),
+('PERLA'),
+('BEIGE OLIMPICO'),
+('ARENA METALIZADO'),
+('PLATA'),
+('ROJO'),
+('AMARILLO'),
+('BEIGE DUNA'),
+('MARRON / NEGRO'),
+('AZUL / BEIGE'),
+('MARRÓN / BEIGE'),
+('VERDE ESMERALDA'),
+('PLATA CLARO'),
+('PLATEADO BRILLANTE'),
+('MARRON PARDILLO BICAPA'),
+('GRIS PALMERA'),
+('DORADO'),
+('MADERA NATURAL'),
+('NEGRO/AMARILLO MOSTAZA'),
+('MARRON'),
+('BLANCO'),
+('GRIS'),
+('AZUL / GRIS'),
+('AZUL / NEGRO'),
+('ACERO'),
+('OTRO COLOR');
+
+
 
 --
 -- Indexes for dumped tables

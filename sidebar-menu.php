@@ -43,7 +43,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación</a></li>
 					<li><a class="btn_mblr" href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
 					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
@@ -60,7 +60,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
 					<li onclick=hola()><a class="btn_mblr" href="?module=mobiliario_equipoOficina" ><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
 					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>
@@ -77,7 +77,7 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 				<ul class="treeview-menu">
 					<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i>Comunicación </a></li>
 					<li ><a class="btn_mblr" href="?module=mobiliario_equipoOficina"><i class="fa fa-circle-o"></i>Mobiliario</a></li>
-					<li><a href="?module=refrigeracion_electrodomesticos"><i class="fa fa-circle-o"></i>Electrodomésticos</a></li>
+					<li><a href="?module=Maquinaria"><i class="fa fa-circle-o"></i>Maquinaria</a></li>
 					<li><a href="?module=equiposcientificos_electricos"><i class="fa fa-circle-o"></i>Electrónicos</a></li>
 					<li><a href="?module=equipos_seguridad"><i class="fa fa-circle-o"></i>Seguridad</a></li>
 					<li><a href="?module=biblioteca"><i class="fa fa-circle-o"></i>Biblioteca</a></li>

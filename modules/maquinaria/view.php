@@ -40,7 +40,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> Equipos de Refrigeración y Electrodomésticos
+  <i class="fa fa-folder-o icon-title"></i> Equipos de Maquinaria
 
     <form action="database/excel_to_mysql_refrigeracion.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
@@ -59,7 +59,7 @@ function validarExt()
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_refrigeracion_electrodomesticos&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_Maquinaria&form=add"  title="Agregar" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
 
@@ -180,10 +180,10 @@ function validarExt()
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 
@@ -210,23 +210,23 @@ function validarExt()
                       <td width='100' class='center'>
                     <div>
             
-                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_refrigeracion_electrodomesticos&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_Maquinaria&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/refrigeracion_electrodomesticos/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/Maquinaria/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/refrigeracion_electrodomesticos/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/Maquinaria/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="color:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/refrigeracion_electrodomesticos/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/Maquinaria/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="color:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -250,8 +250,8 @@ function validarExt()
             <script>
               btn = document.getElementById("btnRefri");
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos  de refrigeración y electrodomésticos?")) {
-                    window.location.href = "modules/refrigeracion_electrodomesticos/proses.php?act=reset";
+                if(confirm("Deseas eliminar el chequeo de todos los equipos  de Maquinaria?")) {
+                    window.location.href = "modules/Maquinaria/proses.php?act=reset";
                   } 
               })
             </script>

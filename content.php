@@ -18,12 +18,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		include "modules/inventario/form.php";
 
 	}
-	//Equipos de refrigeracion y electrodomesticos
-	elseif ($_GET['module'] == 'refrigeracion_electrodomesticos') {
-		include "modules/refrigeracion_electrodomesticos/view.php";
+	//Equipos de Maquinaria
+	elseif ($_GET['module'] == 'Maquinaria') {
+		include "modules/Maquinaria/view.php";
 
-	} elseif ($_GET['module'] == 'form_refrigeracion_electrodomesticos') {
-		include "modules/refrigeracion_electrodomesticos/form.php";
+	} elseif ($_GET['module'] == 'form_Maquinaria') {
+		include "modules/Maquinaria/form.php";
 	}
 	//Mobiliario y equipos de oficina
 
