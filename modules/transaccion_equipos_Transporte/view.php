@@ -39,9 +39,9 @@ function validarExt()
 
 <section class="content-header">
   <h2>
-    <i class="fa fa-sign-in icon-title"></i> Vehículos
+    <i class="fa fa-sign-in icon-title"></i> Vehículos de Transporte
      
-    <form action="database/excel_to_mysql_control_vehiculos.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_control_Transporte.php" method="POST" enctype="multipart/form-data">
       <button class="btn btn-primary pull-right botones" title="Importar" name="archivo" data-toggle="tooltip">Importar</button>
 
       <a class="btn btn-primary btn-social pull-right botones anchoInput" title="Cargar archivo" data-toggle="tooltip">      
@@ -53,7 +53,7 @@ function validarExt()
       </a>
  
 
-      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_vehiculos&form=add" title="Agregar" data-toggle="tooltip">
+      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_Transporte&form=add" title="Agregar" data-toggle="tooltip">
         <i class="fa fa-plus"></i> Entradas / Salidas
       </a>
 
@@ -123,7 +123,7 @@ function validarExt()
             <?php  
             $no = 1;
             $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.placa, b.marca, b.condicion
-                                            FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
+                                            FROM transaccion_equipos_Transporte as a INNER JOIN Transporte as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
                                             or die('error '.mysqli_error($mysqli));
 
            
