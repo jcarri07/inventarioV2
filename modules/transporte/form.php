@@ -86,11 +86,11 @@ if ($_GET['form']=='add') { ?>
                  <div class="form-group">
                 <label class="col-sm-2 control-label">Descripcion</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar vehículo --" required>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
                  <datalist id="datalistOptions">
                  <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia ORDER BY codigo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria='Transporte' ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
