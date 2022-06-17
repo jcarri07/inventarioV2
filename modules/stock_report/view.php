@@ -16,9 +16,9 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos </a></li>
+            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos Generales</a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
-            <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehículos </a></li>
+            <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
           </ul>
 
@@ -32,7 +32,7 @@
                 <form name="formulario" method="GET" action="modules/stock_report/print.php" target="_blank">
                   </br>
                   <h4 class="text-center">
-                    <i class="fa fa-archive"></i> Equipos
+                    <i class="fa fa-archive"></i> Equipos Generales
                   </h4>
                   </br> </br>
                   <table class="table table-striped table-hover">
@@ -74,7 +74,6 @@
                         <option value="tipo_transaccion">Tipo</option>
                         <option value="cedula_e">C.I. Entrega</option>
                         <option value="cedula_r">C.I. Recibe</option>
-                        <option value="created_date">Fecha (dd-mm-aaaa)</option>
                         <option value="empresa">Empresa</option>
                       </select>
                     </th>
@@ -143,7 +142,6 @@
                       <option value="tipo_transaccion">Tipo</option>
                       <option value="cedula_e">C.I. Entrega</option>
                       <option value="cedula_r">C.I. Recibe</option>
-                      <option value="created_date">Fecha (dd-mm-aaaa)</option>
                       <option value="empresa">Empresa</option>
                     </select>
                   </th>
@@ -164,14 +162,14 @@
         </div>
 
 
-        <!--VEHICULOS-->
-        <div role="tabpanel" class="tab-pane" id="vehiculos">
+        <!--Transporte-->
+        <div role="tabpanel" class="tab-pane" id="Transporte">
           <!-- form start -->
           <div class="box-body">
-                <form name="formulario" method="GET" action="modules/stock_report/print_vehiculos.php" target="_blank">
+                <form name="formulario" method="GET" action="modules/stock_report/print_Transporte.php" target="_blank">
                   </br>
                   <h4 class="text-center">
-                    <i class="fa fa-car"></i> Vehículos
+                    <i class="fa fa-car"></i> Transporte
                   </h4>
                   </br> </br>
                   <table class="table table-striped table-hover">
@@ -181,12 +179,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_vehiculos" placeholder="dd/mm/aaaa" autocomplete="off" required>
+                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_Transporte" placeholder="dd/mm/aaaa" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir_vehiculos" autocomplete="off" required>
+                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir_Transporte" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
@@ -200,27 +198,26 @@
             </table>
 
           </br></br>
-          <form name="formulario" method="POST" action="modules/stock_report/print_filter_vehiculos.php" target="_blank">
+          <form name="formulario" method="POST" action="modules/stock_report/print_filter_Transporte.php" target="_blank">
 
             <table class="table table-bordered table-striped table-hover">
               <thead>
                 <th class="center" width='150'>Filtrar por</th>
                 <th width='200'>
-                  <select class="chosen-select" name="filtrar_vehiculos" id="filtrar" data-placeholder="-- Especificar --" autocomplete="off" required="true">
+                  <select class="chosen-select" name="filtrar_Transporte" id="filtrar" data-placeholder="-- Especificar --" autocomplete="off" required="true">
                     <option value=""></option>
                     <option value="codigo_transaccion">Transaccion</option>
                     <option value="tipo_transaccion">Tipo</option>
                     <option value="cedula_e">C.I. Entrega</option>
                     <option value="cedula_r">C.I. Recibe</option>
-                    <option value="created_date">Fecha (dd-mm-aaaa)</option>
                     <option value="empresa">Empresa</option>
                   </select>
                 </th>
 
                 <th>
-                  <input class="col-mb-2 form-control" type="text" name="nombre_vehiculos" value="" placeholder="">
+                  <input class="col-mb-2 form-control" type="text" name="nombre_Transporte" value="" placeholder="">
                 </th>
-                <th> <input style="width: 120px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_vehiculos.php" type="submit" value="Filtrar" />
+                <th> <input style="width: 120px;" class="btn btn-primary  btn-submit" href="modules/stock_report/print_filter_Transporte.php" type="submit" value="Filtrar" />
                 </th>
                 <th width='700'> </th>
           </form>
@@ -280,7 +277,6 @@
                   <option value="tipo_transaccion">Tipo</option>
                   <option value="cedula_e">C.I. Entrega</option>
                   <option value="cedula_r">C.I. Recibe</option>
-                  <option value="created_date">Fecha (dd-mm-aaaa)</option>
                   <option value="empresa">Empresa</option>
                 </select>
               </th>

@@ -20,7 +20,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo DESC")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Cientificos' ORDER BY codigo DESC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
@@ -30,7 +30,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (OFICINA Y MOBILIARIO)</title>
+    <title>REPORTE DE INVENTARIOS (CIENTIFICOS Y Cientificos)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (OFICINA Y MOBILIARIO)
+        REPORTE DE INVENTARIOS (CIENTIFICOS Y Cientificos)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -113,7 +113,7 @@ $count  = mysqli_num_rows($query);
                         <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>                       
                         <td width='120' height='16' align='center' valign='middle'>$data[serial]</td>                       
                         <td width='80'  height='16' align='center' valign='middle'>$data[bienesN]</td>                       
-                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>                     
+                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>                      
                         <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                       
                         <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                       
@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "Reporte Inventarios Oficina Mobiliario.pdf";
+$filename = "Reporte Inventarios Cientificos Cientificos.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

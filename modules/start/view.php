@@ -45,7 +45,7 @@ $data = mysqli_fetch_assoc($query);
             $query_bilioteca = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM biblioteca")
                                             or die('Error '.mysqli_error($mysqli));
 
-            $query_vehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM vehiculos")
+            $query_vehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM Transporte")
                                             or die('Error '.mysqli_error($mysqli));
             
             $query_inmuebles = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM inmuebles")
@@ -91,7 +91,7 @@ $data = mysqli_fetch_assoc($query);
             $query_tbiblioteca = mysqli_query($mysqli, "SELECT COUNT(codigo_transaccion) as numero FROM transaccion_equipos_biblioteca")
                                             or die('Error '.mysqli_error($mysqli));
             
-            $query_tvehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo_transaccion) as numero FROM transaccion_equipos_vehiculos")
+            $query_tvehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo_transaccion) as numero FROM transaccion_equipos_Transporte")
                                             or die('Error '.mysqli_error($mysqli)); 
                                             
             $query_tinmuebles = mysqli_query($mysqli, "SELECT COUNT(codigo_transaccion) as numero FROM transaccion_equipos_inmuebles")
@@ -130,7 +130,7 @@ $data = mysqli_fetch_assoc($query);
             $query_bilioteca = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM biblioteca")
               or die('Error '.mysqli_error($mysqli));
 
-            $query_vehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM vehiculos")
+            $query_vehiculos = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM Transporte")
               or die('Error '.mysqli_error($mysqli));
 
             $query_inmuebles = mysqli_query($mysqli, "SELECT COUNT(codigo) as numero FROM inmuebles")

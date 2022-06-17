@@ -13,14 +13,14 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, se
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre'];
-$var2 = $_POST['nombre2'];
-$var3 = $_POST['nombre3'];
-$filtro = $_POST['filtrado_vehiculos'];
+$var = $_POST['filtro_sec'];
+$var2 = $_POST['filtro2_sec'];
+$var3 = $_POST['filtro3_sec'];
+$filtro = $_POST['filtrado_sec'];
 trim($filtro);
-$filtro2 = $_POST['filtrado_vehiculos2'];
+$filtro2 = $_POST['filtrado2_sec'];
 trim($filtro2);
-$filtro3 = $_POST['filtrado_vehiculos3'];
+$filtro3 = $_POST['filtrado3_sec'];
 trim($filtro3);
 
 $nombre = $_SESSION['name_user'];
@@ -32,21 +32,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Medicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Medicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Medicos' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -57,8 +57,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (VEHICULOS)</title>
+    <title>REPORTE DE INVENTARIOS (Medicos)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
+
 </head>
 
 <body>
@@ -82,7 +83,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (VEHICULOS)
+        REPORTE DE INVENTARIOS (Medicos)
     </div>
 
     <div id="title-tanggal">
@@ -122,10 +123,10 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>PLACA</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>MARCA</small></th>
-                    <th height="20" align="center" valign="middle"><small>ANIO</small></th>
-                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
+                    <th height="20" align="center" valign="middle"><small>SERIAL</small></th>
+                    <th height="20" align="center" valign="middle"><small>No. BIEN</small></th>
                     <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
                     <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>
@@ -141,15 +142,15 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
-                        <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[placa]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[anio]</td>
-                        <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='180' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[cedula]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                  
+                        <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>                       
+                        <td width='200' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>                       
+                        <td width='120' height='16' align='center' valign='middle'>$data[serial]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[bienesN]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>                   
+                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                       
+                        <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                       
                     </tr>";
                     $no++;
                 }
@@ -161,7 +162,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "Reporte Inventarios Vehiculos Filtrado.pdf";
+$filename = "Reporte Inventarios Medicos Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

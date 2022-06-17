@@ -32,21 +32,21 @@ $no = 1;
 
 if ($var != "" && $var2 == "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Comunicacion' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Comunicaciones' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 == "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Comunicacion' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Comunicaciones' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 if ($var != "" && $var2 != "" && $var3 != "") {
 
-    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Comunicacion' ORDER BY codigo DESC")
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Comunicaciones' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -57,7 +57,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (COMUNICACION)</title>
+    <title>REPORTE DE INVENTARIOS (Comunicaciones)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -82,7 +82,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (COMUNICACION)
+        REPORTE DE INVENTARIOS (Comunicaciones)
     </div>
 
     <div id="title-tanggal">
@@ -161,7 +161,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 </html>
 <?php
-$filename = "Reporte Inventarios Comunicacion Filtrado.pdf";
+$filename = "Reporte Inventarios Comunicaciones Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

@@ -13,6 +13,16 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, se
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
+$var = $_POST['filtro_refri'];
+$var2 = $_POST['filtro2_refri'];
+$var3 = $_POST['filtro3_refri'];
+$filtro = $_POST['filtrado_refri'];
+trim($filtro);
+$filtro2 = $_POST['filtrado2_refri'];
+trim($filtro2);
+$filtro3 = $_POST['filtrado3_refri'];
+trim($filtro3);
+
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
@@ -20,9 +30,26 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Electrodomesticos' ORDER BY codigo DESC")
-    or die('Error ' . mysqli_error($mysqli));
-$count  = mysqli_num_rows($query);
+if ($var != "" && $var2 == "" && $var3 == "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' AND categoria LIKE 'Maquinaria' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
+
+if ($var != "" && $var2 != "" && $var3 == "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND categoria LIKE 'Maquinaria' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
+
+if ($var != "" && $var2 != "" && $var3 != "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND categoria LIKE 'Maquinaria' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
 
 
 ?>
@@ -30,8 +57,9 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (REFRIGERACION Y ELECTRODOMESTICOS)</title>
+    <title>REPORTE DE INVENTARIOS (REFRIGERACION Y Maquinaria)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
+
 </head>
 
 <body>
@@ -55,7 +83,13 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (REFRIGERACION Y ELECTRODOMESTICOS)
+        REPORTE DE INVENTARIOS (REFRIGERACION Y Maquinaria)
+    </div>
+
+    <div id="title-tanggal">
+    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -128,7 +162,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "Reporte Inventarios Refrigeracion Electrodomesticos.pdf";
+$filename = "Reporte Inventarios Refrigeracion Maquinaria Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

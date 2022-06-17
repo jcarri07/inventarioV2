@@ -39,7 +39,7 @@ $count  = mysqli_num_rows($query);*/
     <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>REPORTE DE MOVIMIENTOS (COMUNICACION)</title>
+        <title>REPORTE DE MOVIMIENTOS (gGENERAL)</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
        
     </head>
@@ -68,7 +68,7 @@ $count  = mysqli_num_rows($query);*/
 
 
     <div id="title">
-        REPORTE DE MOVIMIENTOS (COMUNICACION)
+        REPORTE DE MOVIMIENTOS (GENERAL)
         </div>
         <div id="title-tanggal">
             Filtrado: <?php echo $filtro ." "."="." ". $var; ?>
@@ -151,7 +151,7 @@ $count  = mysqli_num_rows($query);*/
     </body>
 </html>
 <?php
-    $filename="Reporte Movimientos Comunicacion Filtrado.pdf"; 
+    $filename="Reporte Movimientos General Filtrado.pdf"; 
 //==========================================================================================================
     $content = ob_get_clean();
     $content = '<page style="font-family: freeserif">'.($content).'</page>';

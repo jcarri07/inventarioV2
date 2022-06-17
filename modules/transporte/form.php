@@ -155,15 +155,15 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="condicion" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
-                    <option value="">Óptimo</option>
-                    <option value="">Regular</option>
-                    <option value="">Deteriorado</option>
-                    <option value="">Averiado</option>
-                    <option value="">Chatarra</option>
-                    <option value="">No operativo</option>
-                    <option value="">Otra condición</option>
+                    <option value="Optimo">Óptimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
                     </select>
                 </div>
               </div>

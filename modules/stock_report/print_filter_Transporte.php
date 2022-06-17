@@ -13,8 +13,8 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, se
                                 or die('error: '.mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
-$var = $_POST['nombre_vehiculos'];
-$filtro = $_POST['filtrar_vehiculos']; trim($filtro);
+$var = $_POST['nombre_Transporte'];
+$filtro = $_POST['filtrar_Transporte']; trim($filtro);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
@@ -23,7 +23,7 @@ $hari_ini = date("d-m-Y");
 $no = 1;
 
 $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.cedula_e, lugar_e, a.recibe, a.cedula_r, a.lugar_r, a.created_date,b.codigo,b.tipo, b.marca
-                                    FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
+                                    FROM transaccion_equipos_Transporte as a INNER JOIN Transporte as b ON a.codigo=b.codigo
                                     WHERE a.$filtro LIKE '$var%' ORDER BY a.codigo_transaccion DESC")
                                 or die('Error'.mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
@@ -39,7 +39,7 @@ $count  = mysqli_num_rows($query);*/
     <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>REPORTE DE MOVIMIENTOS (VEHICULOS)</title>
+        <title>REPORTE DE MOVIMIENTOS (Transporte)</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
        
     </head>
@@ -68,7 +68,7 @@ $count  = mysqli_num_rows($query);*/
 
 
     <div id="title">
-        REPORTE DE MOVIMIENTOS (VEHICULOS)
+        REPORTE DE MOVIMIENTOS (Transporte)
         </div>
         <div id="title-tanggal">
             Filtrado: <?php echo $filtro ." "."="." ". $var; ?>
@@ -149,7 +149,7 @@ $count  = mysqli_num_rows($query);*/
     </body>
 </html>
 <?php
-    $filename="Reporte Movimientos Vehiculos Filtrado.pdf"; 
+    $filename="Reporte Movimientos Transporte Filtrado.pdf"; 
 //==========================================================================================================
     $content = ob_get_clean();
     $content = '<page style="font-family: freeserif">'.($content).'</page>';

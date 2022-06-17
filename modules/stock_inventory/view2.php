@@ -57,20 +57,20 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#comunicacion" aria-controls="" data-toggle="tab" role="tab">Comunicación</a></li>
-            <li role="presentation"><a href="#mobiliario" aria-controls="" data-toggle="tab" role="tab">Mobiliario</a></li>
-            <li role="presentation"><a href="#refrigeracion" aria-controls="" data-toggle="tab" role="tab">Electrodomésticos</a></li>
-            <li role="presentation"><a href="#cientificos" aria-controls="" data-toggle="tab" role="tab">Electrónicos</a></li>
-            <li role="presentation"><a href="#seguridad" aria-controls="" data-toggle="tab" role="tab">Seguridad</a></li>
+            <li role="presentation" class="active"><a href="#Comunicaciones" aria-controls="" data-toggle="tab" role="tab">Comunicaciones</a></li>
+            <li role="presentation"><a href="#Oficina" aria-controls="" data-toggle="tab" role="tab">Oficina</a></li>
+            <li role="presentation"><a href="#Maquinaria" aria-controls="" data-toggle="tab" role="tab">Maquinaria</a></li>
+            <li role="presentation"><a href="#Cientificos" aria-controls="" data-toggle="tab" role="tab">Científicos</a></li>
+            <li role="presentation"><a href="#Medicos" aria-controls="" data-toggle="tab" role="tab">Médicos</a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
-            <li role="presentation"><a href="#vehiculos" aria-controls="" data-toggle="tab" role="tab">Vehículos</a></li>
+            <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte</a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles</a></li>
           </ul>
 
-          <!-- COMUNICACION -->
+          <!-- Comunicaciones -->
 
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="comunicacion">
+            <div role="tabpanel" class="tab-pane active" id="Comunicaciones">
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST" target="_blank">
                 <div class="box-body">
@@ -80,8 +80,8 @@
                       <thead>
                         <tr>
                           <th class="center"> 
-                            <input list="items_comunicacion" type="text" name="filtrado" id="f_comu" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_comunicacion">
+                            <input list="items_Comunicaciones" type="text" name="filtrado" id="f_comu" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Comunicaciones">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
@@ -96,8 +96,8 @@
                             </datalist>
                           </th>
 
-                          <th class="center"><input list="items_comunicacion" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_comunicacion" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Comunicaciones" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Comunicaciones" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_o">
                           <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -157,7 +157,7 @@
                             <?php
                             $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicacion' ORDER BY codigo DESC ")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones' ORDER BY codigo DESC ")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -200,19 +200,19 @@
               </form>
             </div>
 
-          <!--MOBILIARIO-->
+          <!--Oficina-->
 
-            <div role="tabpanel" class="tab-pane" id="mobiliario">
+            <div role="tabpanel" class="tab-pane" id="Oficina">
               <!-- form start -->
-              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_mobiliario.php" method="POST" target="_blank">
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Oficina.php" method="POST" target="_blank">
                 <div class="box-body">
-                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_mobiliario.php" target="_blank">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_Oficina.php" target="_blank">
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_mobiliario" type="text" name="filtrado_mobi" id="do" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_mobiliario">
+                            <input list="items_Oficina" type="text" name="filtrado_mobi" id="do" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Oficina">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
@@ -227,8 +227,8 @@
                             </datalist>
                           </th>
 
-                          <th class="center"><input list="items_mobiliario" type="text" name="filtrado2_mobi" id="do2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_mobiliario" type="text" name="filtrado3_mobi" id="do3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Oficina" type="text" name="filtrado2_mobi" id="do2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Oficina" type="text" name="filtrado3_mobi" id="do3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="mbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -255,7 +255,7 @@
                       <div class="box box-primary">
                         <div class="box-body" id="contenido2">
                           <section>
-                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_mobiliario.php" target="_blank">
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_Oficina.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
@@ -287,7 +287,7 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Mobiliario' ORDER BY codigo DESC ")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Oficina' ORDER BY codigo DESC ")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -332,21 +332,21 @@
             </form>
           </div>
 
-          <!--ELECTRODOMESTICOS-->
+          <!--Maquinaria-->
 
-            <div role="tabpanel" class="tab-pane" id="refrigeracion">
+            <div role="tabpanel" class="tab-pane" id="Maquinaria">
               <!-- form start -->
-              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_refrigeracion.php" method="POST" target="_blank" target="_blank">
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Maquinaria.php" method="POST" target="_blank" target="_blank">
                 <div class="box-body">
 
-                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_refrigeracion.php" target="_blank">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_Maquinaria.php" target="_blank">
 
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_refrigeracion" type="text" name="filtrado_refri" id="ado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_refrigeracion">
+                            <input list="items_Maquinaria" type="text" name="filtrado_refri" id="ado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Maquinaria">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
@@ -361,8 +361,8 @@
                             </datalist>
                           </th>
 
-                          <th class="center"><input list="items_refrigeracion" type="text" name="filtrado2_refri" id="ado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_refrigeracion" type="text" name="filtrado3_refri" id="ado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Maquinaria" type="text" name="filtrado2_refri" id="ado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Maquinaria" type="text" name="filtrado3_refri" id="ado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="rbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -390,7 +390,7 @@
                         <div class="box-body" id="contenido3">
 
                           <section>
-                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_refrigeracion.php" target="_blank">
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_Maquinaria.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
@@ -420,7 +420,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Electrodomesticos' ORDER BY codigo DESC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -463,20 +463,20 @@
               </form>
             </div>
 
-            <!--ELECTRONICOS-->
+            <!--Cientificos-->
 
-            <div role="tabpanel" class="tab-pane" id="cientificos">
+            <div role="tabpanel" class="tab-pane" id="Cientificos">
               <!-- form start -->
-              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_electronicos.php" method="POST" target="_blank">
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Cientificos.php" method="POST" target="_blank">
                 <div class="box-body">
-                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_electronicos.php" target="_blank">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_Cientificos.php" target="_blank">
 
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_cientificos" type="text" name="filtrado_elect" id="rado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_cientificos">
+                            <input list="items_Cientificos" type="text" name="filtrado_elect" id="rado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Cientificos">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
@@ -491,8 +491,8 @@
                             </datalist>
                           </th>
 
-                          <th class="center"><input list="items_cientificos" type="text" name="filtrado2_elect" id="rado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_cientificos" type="text" name="filtrado3_elect" id="rado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Cientificos" type="text" name="filtrado2_elect" id="rado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Cientificos" type="text" name="filtrado3_elect" id="rado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="ebtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -520,7 +520,7 @@
                         <div class="box-body" id="contenido4">
 
                           <section>
-                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_electronicos.php" target="_blank">
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_Cientificos.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
@@ -550,7 +550,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Electronicos' ORDER BY codigo DESC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -595,19 +595,19 @@
               </form>
             </div>
 
-            <!--SEGURIDAD-->
+            <!--Medicos-->
 
-            <div role="tabpanel" class="tab-pane" id="seguridad">
+            <div role="tabpanel" class="tab-pane" id="Medicos">
               <!-- form start -->
-              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_seguridad.php" method="POST" target="_blank">
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Medicos.php" method="POST" target="_blank">
                 <div class="box-body">
-                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_seguridad.php" target="_blank">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_filter_Medicos.php" target="_blank">
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_seguridad" type="text" name="filtrado_sec" id="trado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_seguridad">
+                            <input list="items_Medicos" type="text" name="filtrado_sec" id="trado" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Medicos">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="descripcion"></option>
@@ -622,8 +622,8 @@
                             </datalist>
                           </th>
 
-                          <th class="center"><input list="items_seguridad" type="text" name="filtrado2_sec" id="trado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
-                          <th class="center"><input list="items_seguridad" type="text" name="filtrado3_sec" id="trado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Medicos" type="text" name="filtrado2_sec" id="trado2" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Medicos" type="text" name="filtrado3_sec" id="trado3" placeholder="-- Especificar --" autocomplete="off" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="sbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -651,7 +651,7 @@
                         <div class="box-body" id="contenido5">
 
                           <section>
-                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_seguridad.php" target="_blank">
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_Medicos.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
@@ -681,7 +681,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Seguridad' ORDER BY codigo DESC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Medicos' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -852,19 +852,19 @@
               </form>
             </div>
 
-            <!--VEHICULOS-->
+            <!--Transporte-->
             
-            <div role="tabpanel" class="tab-pane" id="vehiculos">
+            <div role="tabpanel" class="tab-pane" id="Transporte">
               <!-- form start -->
-              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_vehiculos.php" method="POST" target="_blank">
+              <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Transporte.php" method="POST" target="_blank">
                 <div class="box-body">
-                  <form name="formulario" method="post" action="modules/stock_inventory/print_vehiculos.php" target="_blank">
-                    <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
+                  <form name="formulario" method="post" action="modules/stock_inventory/print_Transporte.php" target="_blank">
+                    <table id="dataTables_Transporte" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th class="center">
-                            <input list="items_vehiculos" type="text" name="filtrado_vehiculos" id="filtrado_vehiculos" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                            <datalist id="items_vehiculos">
+                            <input list="items_Transporte" type="text" name="filtrado_Transporte" id="filtrado_Transporte" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                            <datalist id="items_Transporte">
                               <option value=""></option>
                               <option value="codigo"></option>
                               <option value="tipo"></option>
@@ -877,8 +877,8 @@
                               <option value="sede"></option>
                             </datalist>
                           </th>
-                              <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos2" id="filtrado_vehiculos2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                              <th class="center"><input list="items_vehiculos" type="text" name="filtrado_vehiculos3" id="filtrado_vehiculos3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte2" id="filtrado_Transporte2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                              <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte3" id="filtrado_Transporte3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                               <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
@@ -903,13 +903,13 @@
                       <div class="box box-primary">
                         <div class="box-body" id="contenido7">
                           <section>
-                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_vehiculos.php" target="_blank">
+                            <a class="btn btn-primary btn-social pull-right" href="modules/stock_inventory/print_Transporte.php" target="_blank">
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
 
                           </section>
-                          <table id="dataTables_vehiculos" class="table table-bordered table-striped table-hover">
+                          <table id="dataTables_Transporte" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
                                 <th class="center">No.</th>
@@ -935,7 +935,7 @@
                             <tbody>
                               <?php
                               $no = 1;
-                              $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE categoria= 'Vehiculos' ORDER BY codigo DESC")
+                              $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' ORDER BY codigo DESC")
                                 or die('error: ' . mysqli_error($mysqli));
 
                               while ($data = mysqli_fetch_assoc($query)) {
@@ -1129,8 +1129,8 @@
 
 <script src="assets/js/datatables.min.js" type="text/javascript"></script>
 
-<script name="filtros_Comunicacion" type="text/javascript">
-  // COMUNICACION
+<script name="filtros_Comunicaciones" type="text/javascript">
+  // Comunicaciones
 
   //SELECCION DEL FILTRO
   var elementos = [elemento = document.getElementById("f_comu2"), elemento2 = document.getElementById("f_comu3")];
@@ -1178,8 +1178,8 @@
   }})
 </script>
 
-<script name="filtros_Mobiliario"type="text/javascript">
-  // MOBILIARIO
+<script name="filtros_Oficina"type="text/javascript">
+  // Oficina
 
   //SELECCION DEL FILTRO
   var melementos = [melemento = document.getElementById("do2"), melemento2 = document.getElementById("do3")];
@@ -1227,8 +1227,8 @@
   }})
 </script>
 
-<script name="filtros_Refrigeracion"type="text/javascript">
-  // REFRIGERACION
+<script name="filtros_Maquinaria"type="text/javascript">
+  // Maquinaria
 
   //SELECCION DEL FILTRO
   var rmelementos = [rmelemento = document.getElementById("ado2"), rmelemento2 = document.getElementById("ado3")];
@@ -1277,7 +1277,7 @@
 </script>
 
 <script name="filtros_Cientificos"type="text/javascript">
-  // CIENTIFICOS
+  // Cientificos
 
   //SELECCION DEL FILTRO
   var ermelementos = [ermelemento = document.getElementById("rado2"), ermelemento2 = document.getElementById("rado3")];
@@ -1325,8 +1325,8 @@
   }})
 </script>
 
-<script name="filtros_Seguridad"type="text/javascript">
-  // SEGURIDAD
+<script name="filtros_Medicos"type="text/javascript">
+  // Medicos
 
   //SELECCION DEL FILTRO
   var sermelementos = [sermelemento = document.getElementById("trado2"), sermelemento2 = document.getElementById("trado3")];
@@ -1423,11 +1423,11 @@
   }})
 </script>
 
-<script name="filtros_Vehiculos"type="text/javascript">
-  // VEHICULOS
+<script name="filtros_Transporte"type="text/javascript">
+  // Transporte
 
   //SELECCION DEL FILTRO
-  var vbsermelementos = [vbsermelemento = document.getElementById("filtrado_vehiculos2"), vbsermelemento2 = document.getElementById("filtrado_vehiculos3")];
+  var vbsermelementos = [vbsermelemento = document.getElementById("filtrado_Transporte2"), vbsermelemento2 = document.getElementById("filtrado_Transporte3")];
   
   //INPUT DEL FILTRO
   var vbsermelementos2 = [vbsermelement = document.getElementById("fv2"), vbsermelement2 = document.getElementById("fv3")];
@@ -1473,7 +1473,7 @@
 </script>
 
 <script name="filtros_Inmubles"type="text/javascript">
-  // VEHICULOS
+  // Transporte
 
   //SELECCION DEL FILTRO
   var ivbsermelementos = [ivbsermelemento = document.getElementById("filtrado_inmuebles2"), ivbsermelemento2 = document.getElementById("filtrado_inmuebles3")];
@@ -1580,7 +1580,7 @@
 
 </script>
 
-<script name="qr-mobiliario">
+<script name="qr-Oficina">
   
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido2");
@@ -1639,7 +1639,7 @@
 
 </script>
 
-<script name="qr-electrodomesticos">
+<script name="qr-Maquinaria">
   
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido3");
@@ -1757,7 +1757,7 @@
 
 </script>
 
-<script name="qr-seguridad">
+<script name="qr-Medicos">
   
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido5");
@@ -1875,7 +1875,7 @@
 
 </script>
 
-<script name="qr-vehiculos">
+<script name="qr-Transporte">
   
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido7");
@@ -1898,7 +1898,7 @@
         $.ajax({
           type: "POST",
           dataType: "html",
-          url: "modules/generateQr/qrModalVehiculos.php",
+          url: "modules/generateQr/qrModalTransporte.php",
           data: parametros,
           //success: function(datos){
           //console.log(cuerpo);

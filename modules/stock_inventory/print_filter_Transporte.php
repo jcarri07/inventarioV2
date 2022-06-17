@@ -13,6 +13,16 @@ $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, se
     or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
+$var = $_POST['nombre'];
+$var2 = $_POST['nombre2'];
+$var3 = $_POST['nombre3'];
+$filtro = $_POST['filtrado_Transporte'];
+trim($filtro);
+$filtro2 = $_POST['filtrado_Transporte2'];
+trim($filtro2);
+$filtro3 = $_POST['filtrado_Transporte3'];
+trim($filtro3);
+
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
@@ -20,9 +30,26 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM vehiculos ORDER BY codigo DESC")
-    or die('Error ' . mysqli_error($mysqli));
-$count  = mysqli_num_rows($query);
+if ($var != "" && $var2 == "" && $var3 == "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE $filtro LIKE '$var%' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
+
+if ($var != "" && $var2 != "" && $var3 == "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
+
+if ($var != "" && $var2 != "" && $var3 != "") {
+
+    $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
 
 
 ?>
@@ -30,7 +57,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (VEHICULOS)</title>
+    <title>REPORTE DE INVENTARIOS (Transporte)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -55,7 +82,13 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (VEHICULOS)
+        REPORTE DE INVENTARIOS (Transporte)
+    </div>
+
+    <div id="title-tanggal">
+    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
+         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -71,7 +104,7 @@ $count  = mysqli_num_rows($query);
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -115,7 +148,7 @@ $count  = mysqli_num_rows($query);
                         <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
                         <td width='180' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='120'  height='16' align='center' valign='middle'>$data[cedula]</td>
+                        <td width='120' height='16' align='center' valign='middle'>$data[cedula]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                  
                     </tr>";
                     $no++;
@@ -128,7 +161,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "Reporte Inventarios Vehiculos.pdf";
+$filename = "Reporte Inventarios Transporte Filtrado.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

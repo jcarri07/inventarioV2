@@ -18,11 +18,11 @@ $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
-$tgl1     = $_GET['tgl_awal_vehiculos'];
+$tgl1     = $_GET['tgl_awal_Transporte'];
 $explode  = explode('-',$tgl1);
 $tgl_awal = $explode[2]."-".$explode[1]."-".$explode[0];
 
-$tgl2      = $_GET['tgl_akhir_vehiculos'];
+$tgl2      = $_GET['tgl_akhir_Transporte'];
 $explode   = explode('-',$tgl2);
 $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 
@@ -31,7 +31,7 @@ $limit =  date("Y-m-d",strtotime($tgl_akhir."+ 1 days"));
 if ($tgl_awal !== $tgl_akhir) {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.tipo,b.unidad,b.cedula,b.placa, b.marca
-                                    FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
+                                    FROM transaccion_equipos_Transporte as a INNER JOIN Transporte as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
                                     ORDER BY a.codigo_transaccion DESC") 
                                     or die('error '.mysqli_error($mysqli));
@@ -39,7 +39,7 @@ if ($tgl_awal !== $tgl_akhir) {
 } else {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.tipo,b.unidad,b.cedula,b.placa, b.marca
-                                    FROM transaccion_equipos_vehiculos as a INNER JOIN vehiculos as b ON a.codigo=b.codigo
+                                    FROM transaccion_equipos_Transporte as a INNER JOIN Transporte as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
                                     ORDER BY a.codigo_transaccion DESC") 
                                     or die('error '.mysqli_error($mysqli));
@@ -50,7 +50,7 @@ if ($tgl_awal !== $tgl_akhir) {
 <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>REPORTE DE MOVIMIENTOS (VEHICULOS)</title>
+        <title>REPORTE DE MOVIMIENTOS (Transporte)</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
     </head>
     <body>
@@ -68,7 +68,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
 
         <div id="title">
-            REPORTE DE MOVIMIENTOS (VEHICULOS)
+            REPORTE DE MOVIMIENTOS (Transporte)
         </div>
     <?php  
 
@@ -184,7 +184,7 @@ if ($tgl_awal !== $tgl_akhir) {
     </body>
 </html>
 <?php
-$filename="Reporte Movimientos Vehiculos.pdf"; 
+$filename="Reporte Movimientos Transporte.pdf"; 
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';

@@ -40,7 +40,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 18000-0000 | Equipos científicos, religiosos, de enseñanza y recreación 
+  <i class="fa fa-folder-o icon-title"></i> 18000-0000 | Equipos Científicos, Religiosos, de Enseñanza y Recreación 
 
     <form action="database/excel_to_mysql_cientificos.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->

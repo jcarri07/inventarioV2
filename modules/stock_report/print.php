@@ -51,7 +51,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>REPORTE DE MOVIMIENTOS (COMUNICACION)</title>
+    <title>REPORTE DE MOVIMIENTOS (GENERAL)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -69,7 +69,7 @@ if ($tgl_awal !== $tgl_akhir) {
     <br><br>
 
     <div id="title">
-        REPORTE DE MOVIMIENTOS (COMUNICACION)
+        REPORTE DE MOVIMIENTOS (GENERAL)
     </div>
 
     <?php  
@@ -188,7 +188,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
 </html>
 <?php
-$filename="Reporte Movimientos Comunicacion.pdf"; 
+$filename="Reporte Movimientos General.pdf"; 
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';

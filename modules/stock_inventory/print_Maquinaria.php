@@ -20,7 +20,7 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Electronicos' ORDER BY codigo DESC")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Maquinaria' ORDER BY codigo DESC")
     or die('Error ' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
@@ -30,7 +30,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (CIENTIFICOS Y ELECTRONICOS)</title>
+    <title>REPORTE DE INVENTARIOS (REFRIGERACION Y Maquinaria)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -55,7 +55,7 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (CIENTIFICOS Y ELECTRONICOS)
+        REPORTE DE INVENTARIOS (REFRIGERACION Y Maquinaria)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -128,7 +128,7 @@ $count  = mysqli_num_rows($query);
 
 </html>
 <?php
-$filename = "Reporte Inventarios Cientificos Electronicos.pdf";
+$filename = "Reporte Inventarios Refrigeracion Maquinaria.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';

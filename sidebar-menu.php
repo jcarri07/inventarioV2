@@ -248,7 +248,6 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
-					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
 			</li>
 		<?php
@@ -262,7 +261,6 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
-					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
 			</li>
 		<?php
@@ -276,7 +274,6 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 					<li><a data-toggle="modal" href="#respaldo2"><i class="fa fa-circle-o"></i> Biblioteca</a></li>
 					<li><a data-toggle="modal" href="#respaldo3"><i class="fa fa-circle-o"></i> Transporte</a></li>
 					<li><a data-toggle="modal" href="#respaldo4"><i class="fa fa-circle-o"></i> Inmuebles</a></li>
-					<li><a data-toggle="modal" href="#respaldo5"><i class="fa fa-circle-o"></i> Movimientos</a></li>
 				</ul>
 			</li>
 
