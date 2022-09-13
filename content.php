@@ -18,12 +18,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		include "modules/inventario/form.php";
 
 	}
-	//Equipos de Maquinaria
-	elseif ($_GET['module'] == 'Maquinaria') {
-		include "modules/Maquinaria/view.php";
+	//Equipos de maquinaria
+	elseif ($_GET['module'] == 'maquinaria') {
+		include "modules/maquinaria/view.php";
 
-	} elseif ($_GET['module'] == 'form_Maquinaria') {
-		include "modules/Maquinaria/form.php";
+	} elseif ($_GET['module'] == 'form_maquinaria') {
+		include "modules/maquinaria/form.php";
 	}
 	//Mobiliario y equipos de oficina
 
@@ -50,11 +50,11 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	} 
 
 	//Equipos de seguridad
-	elseif ($_GET['module'] == 'Medicos') {
-		include "modules/Medicos/view.php";
+	elseif ($_GET['module'] == 'medicos') {
+		include "modules/medicos/view.php";
 
-	} elseif ($_GET['module'] == 'form_Medicos') {
-		include "modules/Medicos/form.php";
+	} elseif ($_GET['module'] == 'form_medicos') {
+		include "modules/medicos/form.php";
 	}
 
 	//Equipos de biblioteca
@@ -65,12 +65,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 		include "modules/biblioteca/form.php";
 	}
 
-	//Transporte
-	elseif ($_GET['module'] == 'Transporte') {
-		include "modules/Transporte/view.php";
+	//transporte
+	elseif ($_GET['module'] == 'transporte') {
+		include "modules/transporte/view.php";
 
-	} elseif ($_GET['module'] == 'form_Transporte') {
-		include "modules/Transporte/form.php";
+	} elseif ($_GET['module'] == 'form_transporte') {
+		include "modules/transporte/form.php";
 	
 
 	//transaccion equipos
@@ -87,12 +87,12 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	} elseif ($_GET['module'] == 'form_transaccion_equipos_biblioteca') {
 		include "modules/transaccion_equipos_biblioteca/form.php";
 
-	//transaccion equipos Transporte
-	} elseif ($_GET['module'] == 'transaccion_equipos_Transporte') {
-		include "modules/transaccion_equipos_Transporte/view.php";
+	//transaccion equipos transporte
+	} elseif ($_GET['module'] == 'transaccion_equipos_transporte') {
+		include "modules/transaccion_equipos_transporte/view.php";
 
-	} elseif ($_GET['module'] == 'form_transaccion_equipos_Transporte') {
-		include "modules/transaccion_equipos_Transporte/form.php";
+	} elseif ($_GET['module'] == 'form_transaccion_equipos_transporte') {
+		include "modules/transaccion_equipos_transporte/form.php";
 
 	//transaccion inmuebles
 	} elseif ($_GET['module'] == 'transaccion_equipos_inmuebles') {

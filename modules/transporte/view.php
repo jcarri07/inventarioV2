@@ -40,9 +40,9 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 15000-0000 | Equipos de Transporte, Tracción y Elevación
+  <i class="fa fa-folder-o icon-title"></i> 15000-0000 | Equipos de transporte, Tracción y Elevación
 
-    <form action="database/excel_to_mysql_Transporte.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_transporte.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -55,11 +55,11 @@ function validarExt()
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Transporte.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_transporte.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_Transporte&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_transporte&form=add"  title="Agregar" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
 
@@ -190,10 +190,10 @@ function validarExt()
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM transporte WHERE categoria= 'transporte' ORDER BY codigo DESC")
                   or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM transporte WHERE categoria= 'transporte' and sede LIKE '$sede' ORDER BY codigo DESC")
                                               or die('error: '.mysqli_error($mysqli));
             }
             
@@ -222,23 +222,23 @@ function validarExt()
                       <td width='100' class='center'>
                     <div>
             
-                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_Transporte&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_transporte&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/Transporte/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['tipo'].' '.$data['placa']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/transporte/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['tipo'].' '.$data['placa']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/Transporte/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/transporte/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="color:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/Transporte/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/transporte/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="color:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -252,7 +252,7 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-            <a class="btn btn-primary pull-right botones" id="btnTransporte"  style="height:35px;">
+            <a class="btn btn-primary pull-right botones" id="btntransporte"  style="height:35px;">
               <i></i> Reset Check
             </a>
           </div>
@@ -260,10 +260,10 @@ function validarExt()
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("btnTransporte");
+              btn = document.getElementById("btntransporte");
               btn.addEventListener("click", ()=> {
-                if(confirm("¿Desea eliminar el chequeo de todos los Transporte?")) {
-                    window.location.href = "modules/Transporte/proses.php?act=reset";
+                if(confirm("¿Desea eliminar el chequeo de todos los transporte?")) {
+                    window.location.href = "modules/transporte/proses.php?act=reset";
                   } 
               })
             </script>

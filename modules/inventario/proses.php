@@ -120,6 +120,7 @@ else {
                 $descripcion  = mysqli_real_escape_string($mysqli, trim($_POST['descripcion']));
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                 $ubicacion  = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $estado = "chequeado";
                 //$cantidad  = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
                
                 $created_user = $_SESSION['id_user'];
