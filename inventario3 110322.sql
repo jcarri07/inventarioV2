@@ -7,10 +7,8 @@
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE DATABASE inventario3;
+USE inventario3;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
