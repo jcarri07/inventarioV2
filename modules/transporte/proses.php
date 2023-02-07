@@ -5,7 +5,7 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from Transporte
+      $result = mysqli_query($mysqli,"SELECT codigo from transporte
       where codigo ='$codigo'");
 
     $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
@@ -74,14 +74,16 @@ else {
 			$anio  = mysqli_real_escape_string($mysqli, trim($_POST['anio']));
 			$tipoCombustible  = mysqli_real_escape_string($mysqli, trim($_POST['tipoCombustible']));
             $created_user = $_SESSION['id_user'];
+            $updated_user = $_SESSION['id_user'];
+
 
             if (buscaRepetido($codigo,$mysqli) == 1) {
-                header("location: ../../main.php?module=Transporte&alert=5");
+                header("location: ../../main.php?module=transporte&alert=5");
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO Transporte (pertenece, descripcion, categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
-                VALUES('$pertenece' ,'$descripcion','Transporte','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
+                $query = mysqli_query($mysqli, "INSERT INTO transporte (pertenece, descripcion, categoria, codigo, marca, tipo, modelo, placa, color, condicion, unidad, ubicacion, responsable, cedula, sede, nmroCarroceria, anio, tipoCombustible, created_user, updated_user) 
+                VALUES('$pertenece' ,'$descripcion','transporte','$codigo', '$marca', '$tipo', '$modelo', '$placa', '$color', '$condicion', '$unidad', '$ubicacion', '$responsable', '$cedula', '$sede', '$nmroCarroceria', '$anio','$tipoCombustible', '$created_user', '$updated_user')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -90,7 +92,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=Transporte&alert=1");  
+                header("location: ../../main.php?module=transporte&alert=1");  
             }
         }   
     }
@@ -123,7 +125,7 @@ else {
 
             
 
-                $query = mysqli_query($mysqli, "UPDATE Transporte SET marca             = '$marca',
+                $query = mysqli_query($mysqli, "UPDATE transporte SET marca             = '$marca',
                                                                     descripcion             = '$descripcion',
                                                                     tipo             = '$tipo',
                                                                     modelo               = '$modelo',
@@ -150,7 +152,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=Transporte&alert=2");
+                header("location: ../../main.php?module=transporte&alert=2");
                 }        
             }
         }
@@ -161,7 +163,7 @@ else {
         if (isset($_GET['id'])) {
             $codigo = $_GET['id'];
       
-            $query = mysqli_query($mysqli, "DELETE FROM Transporte WHERE codigo='$codigo'")
+            $query = mysqli_query($mysqli, "DELETE FROM transporte WHERE codigo='$codigo'")
                                             or die('error '.mysqli_error($mysqli));
 
             $accion = "Eliminacion de Vehiculo";
@@ -173,7 +175,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=Transporte&alert=3");
+                header("location: ../../main.php?module=transporte&alert=3");
             }
         }
     }  
@@ -185,14 +187,14 @@ else {
 			$estado  = "nochequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE Transporte SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE transporte SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('error: '.mysqli_error($mysqli));
 
   
             if ($query) {
                
-                header("location: ../../main.php?module=Transporte");
+                header("location: ../../main.php?module=transporte");
             }
 		}
 	} 
@@ -204,14 +206,14 @@ else {
 			$estado  = "chequeado";
 
 		
-            $query = mysqli_query($mysqli, "UPDATE Transporte SET estado  = '$estado'
+            $query = mysqli_query($mysqli, "UPDATE transporte SET estado  = '$estado'
                                                           WHERE codigo = '$codigo'")
                                             or die('Error : '.mysqli_error($mysqli));
 
         
             if ($query) {
               
-                header("location: ../../main.php?module=Transporte");
+                header("location: ../../main.php?module=transporte");
             }
 		}
 	}
@@ -222,14 +224,14 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
         $estado  = "nochequeado";
 
     
-        $query = mysqli_query($mysqli, "UPDATE Transporte SET estado = '$estado'
+        $query = mysqli_query($mysqli, "UPDATE transporte SET estado = '$estado'
                                                         WHERE estado = 'chequeado'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=Transporte");
+            header("location: ../../main.php?module=transporte");
         }
     
 }      
