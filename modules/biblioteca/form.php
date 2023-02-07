@@ -68,6 +68,23 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
+                <label class="col-sm-2 control-label">Descripcion</label>
+                <div class="col-sm-5">
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'biblioteca' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="tipo" autocomplete="off" required>
@@ -112,17 +129,35 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" required>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
+                      }
+                    ?>
+                    </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" required>
+                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=""></option>
+                    <option value="Optimo">Óptimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
+                    </select>
                 </div>
               </div>
-
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Responsable</label>
                 <div class="col-sm-5">

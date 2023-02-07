@@ -76,11 +76,21 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Descripción</label>
+                <label class="col-sm-2 control-label">Descripcion</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" autocomplete="off" required>
-                </div>
-              </div>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'inmuebles' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">M²</label>
@@ -111,11 +121,23 @@ if ($_GET['form']=='add') { ?>
               </div> 
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Condición</label>
+                <label class="col-sm-2 control-label">Uso</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" required>
+                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=""></option>
+                    <option value="En uso">En uso</option>
+                    <option value="En comodato">En comodato</option>
+                    <option value="En arrendamiento">En arrendamiento</option>
+                    <option value="En mantenimiento">En mantenimiento</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="En proceso de disposición">En proceso de disposición</option>
+                    <option value="En desuso por obsolescencia ">En desuso por obsolescencia </option>
+                    <option value="En desuso por inservibilidad">En desuso por inservibilidad </option>
+                    <option value="En desuso por obsolescencia">En desuso por obsolescencia </option>
+                    <option value="En Almacén o Depósito para su asignación">En Almacén o Depósito para su asignación</option>
+                    <option value="Otra uso">Otro uso</option>
+                    </select>
                 </div>
-                <div id="resultado"></div>
               </div>
 
               <div class="form-group">
@@ -236,12 +258,26 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
+
               <div class="form-group">
-                <label class="col-sm-2 control-label">Condicón</label>
+                <label class="col-sm-2 control-label">Uso</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" value="<?php echo $data['condicion']; ?>" required>
+                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=" "><?php echo $data['condicion'];?></option>
+                    <option value="En uso">En uso</option>
+                    <option value="En comodato">En comodato</option>
+                    <option value="En arrendamiento">En arrendamiento</option>
+                    <option value="En mantenimiento">En mantenimiento</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="En proceso de disposición">En proceso de disposición</option>
+                    <option value="En desuso por obsolescencia ">En desuso por obsolescencia </option>
+                    <option value="En desuso por inservibilidad">En desuso por inservibilidad </option>
+                    <option value="En desuso por obsolescencia">En desuso por obsolescencia </option>
+                    <option value="En Almacén o Depósito para su asignación">En Almacén o Depósito para su asignación</option>
+                    <option value="Otra uso">Otro uso</option>
+                    </select>
                 </div>
-              </div>  
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Responsable</label>

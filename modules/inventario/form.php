@@ -201,6 +201,7 @@ if ($_GET['form']=='add') { ?>
                   <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
                 </div>
               </div>
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
@@ -563,18 +564,36 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
                 </div>
               </div> 
-
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""><?php echo $data['color']; ?></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
+                      }
+                    ?>
+                    </select>
                 </div>
-              </div>     
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" value="<?php echo $data['condicion']; ?>" required>
+                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=""><?php echo $data['condicion'];?></option>
+                    <option value="Optimo">Optimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
+                    </select>
                 </div>
               </div>
 
