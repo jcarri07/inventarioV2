@@ -55,7 +55,7 @@ function validarExt()
             </div>  
           </a>-->
           
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Oficina.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_oficina.php" title="Exportar" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 

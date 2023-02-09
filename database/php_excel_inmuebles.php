@@ -33,7 +33,7 @@
 
     $server   = "localhost";
 	$username = "root";
-	$password = "Negro04149468207*";
+	$password = "";
 	$database = "inventario3";
 
     session_start();
@@ -58,7 +58,7 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria = 'inmuebles' and sede LIKE '$sede' ORDER BY codigo DESC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 

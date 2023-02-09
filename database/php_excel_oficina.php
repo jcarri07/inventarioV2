@@ -10,22 +10,22 @@
       
             <thead>
               <tr>
-                <th class="center">No.</th>
+              <th class="center">No.</th>
                 <th class="center">CODIGO</th>
+                <th class="center">COD. DE CTA. CONTABLE</th>
                 <th class="center">DESCRIPCION</th>
                 <th class="center">MARCA</th>
 			        	<th class="center">MODELO</th>
-                <th class="center">SERIAL</th>
-                <th class="center">No. BIEN</th>
                 <th class="center">COLOR</th>
+                <th class="center">SERIAL</th>
+                <th class="center">No. BIEN</th>                
                 <th class="center">CONDICION</th>
                 <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
+                <th class="center">RESPONSABLE</th>
+                <th class="center">CEDULA</th>                
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
-                <th class="center">CANTIDAD</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
 
     $server   = "localhost";
 		$username = "root";
-		$password = "Negro04149468207*";
+		$password = "";
 		$database = "inventario3";
 
     session_start();
@@ -59,7 +59,7 @@
 	  }
 
       $no = 1;
-       $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Mobiliario' and sede LIKE '$sede' ORDER BY codigo DESC")
+       $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
@@ -67,21 +67,21 @@
 
               <tr>
               <td width='50'  class='center'  align='center'>$no</td>
-              <td width='150' class='center' align='center'>$data[codigo]</td>
+              <td width='150' class='center' align='center'>$data[codigo]</td>              
+              <td width='150' class='center' align='center'> </td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[marca]</td>
-              <td width='150' class='center' align='center'>$data[modelo]</td>
+              <td width='150' class='center' align='center'>$data[modelo]</td>              
+              <td width='150' class='center' align='center'>$data[color]</td>
               <td width='150' class='center' align='center'>$data[serial]</td>
               <td width='150' class='center' align='center'>$data[bienesN]</td>
-              <td width='150' class='center' align='center'>$data[color]</td>
               <td width='150' class='center' align='center'>$data[condicion]</td>
               <td width='150' class='center' align='center'>$data[unidad]</td>
-              <td width='150' class='center' align='center'>$data[responsable]</td>
-              <td width='150' class='center' align='center'>$data[cedula]</td>
               <td width='150' class='center' align='center'>$data[ubicacion]</td>
+              <td width='150' class='center' align='center'>$data[responsable]</td>
+              <td width='150' class='center' align='center'>$data[cedula]</td>              
               <td width='150' class='center' align='center'>$data[sede]</td>
               <td width='150' class='center' align='center'>$data[pertenece]</td>
-              <td width='150' class='center'align='center' >$data[cantidad]</td>
               <td class='center' width='150'>
               <div>
                       

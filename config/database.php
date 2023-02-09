@@ -2,7 +2,7 @@
 
 $server   = "localhost";
 $username = "root";
-$password = "Negro04149468207*";
+$password = "";
 $database = "inventario3";
 
 

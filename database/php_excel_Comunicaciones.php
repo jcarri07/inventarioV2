@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Exportacion_Equipos_Cientificos_Electronicos.xlsx');
+	header('Content-Disposition: attachment; filename=Exportacion_Equipos_Comunicacion.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -10,7 +10,7 @@
       
             <thead>
               <tr>
-              <th class="center">No.</th>
+                <th class="center">No.</th>
                 <th class="center">CODIGO</th>
                 <th class="center">COD. DE CTA. CONTABLE</th>
                 <th class="center">DESCRIPCION</th>
@@ -59,7 +59,7 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' and sede LIKE '$sede' ORDER BY codigo DESC")
+      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Comunicaciones' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
@@ -89,23 +89,20 @@
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                   </a>";
     ?>
-    
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar<?php echo $data['nombre']; ?> ?');">
-        <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
-    </a>
+  
   
   <?php
     echo "    </div>
                </td>
               </tr>";
+
     $no++;
           	}
-
+            
     $accion = "Exportacion de Equipos";
-
     $query3 = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
-                                            VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
-                                            or die('error '.mysqli_error($mysqli));
+                                          VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
+                                          or die('error '.mysqli_error($mysqli));
             ?>
             </tbody>
           </table>
