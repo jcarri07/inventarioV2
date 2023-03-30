@@ -59,7 +59,7 @@ function validarExt()
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_Maquinaria&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_maquinaria&form=add"  title="Agregar" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
 
