@@ -88,8 +88,8 @@ session_start();
       <header class="main-header">
         <!-- Logo --> 
         <a href="?module=start" class="logo">
-          <img style="margin-top:-15px;margin-right:5px" src="assets/img/logo-blue3.png" alt="Logo"> 
-          <span style="font-size:20px">IN@BAE</span>
+          <img style="margin-top:-3px" src="assets/img/INABAE Logo.png" alt="Logo" height="40"> 
+          <span style="font-size:20px">ABAE</span>
         </a>
 
         <nav class="navbar navbar-static-top" role="navigation">

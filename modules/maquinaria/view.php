@@ -40,7 +40,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 14000-0000 | Maquinaria y demás equipos de Construcción, Campo, Industria y Taller
+  <i class="fa fa-folder-o icon-title"></i> 14000-0000 | Maquinaria y demás equipos de construcción, campo, industria y taller
 
     <form action="database/excel_to_mysql_refrigeracion.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
@@ -149,19 +149,19 @@ function validarExt()
       
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">ÍTEM</th>
                 <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
+                <th class="center">COLOR</th>
                 <th class="center">SERIAL</th>
                 <th class="center">No. BIEN</th>
-                <th class="center">COLOR</th>
-                <th class="center">CONDICION</th>
+                <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
+                <th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
                 <th class="center">EDITAR</th>
@@ -197,14 +197,14 @@ function validarExt()
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
+                      <td width='100' class='center'>$data[color]</td>
                       <td width='100' class='center'>$data[serial]</td>
                       <td width='100' class='center'>$data[bienesN]</td>
-                      <td width='100' class='center'>$data[color]</td>
                       <td width='100' class='center'>$data[condicion]</td>
                       <td width='100' class='center'>$data[unidad]</td>
+                      <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[responsable]</td>
                       <td width='100' class='center'>$data[cedula]</td>
-                      <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>
                       <td width='100' class='center'>

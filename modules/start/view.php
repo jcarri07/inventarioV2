@@ -70,12 +70,12 @@ $data = mysqli_fetch_assoc($query);
           <a ><i class="fa fa-folder fa-2x" style="color:#000000;opacity:0.1"></i></a>
           <?php 
             }else {?>
-            <a href="?module=inventario"><i class="fa fa-folder fa-2x" style="color:#000000;opacity:0.1"></i></a>
+            <a href="?module=maquinaria"><i class="fa fa-folder fa-2x" style="color:#000000;opacity:0.1"></i></a>
             <?php 
             }?>
            
           </div>
-            <a href="?module=inventario" class="small-box-footer bordes" title="Agregar" style="height: 5vh" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
+            <a href="?module=maquinaria" class="small-box-footer bordes" title="Agregar" style="height: 5vh" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
         </div>
       </div><!-- ./col -->
  
