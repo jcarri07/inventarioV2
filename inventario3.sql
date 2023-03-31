@@ -76,7 +76,7 @@ CREATE TABLE `colores` (
 --
 
 INSERT INTO `colores` (`nombre`) VALUES
-('NEGRO'),
+('Negro'),
 ('AZUL'),
 ('PALO ROSA'),
 ('NARANJA'),

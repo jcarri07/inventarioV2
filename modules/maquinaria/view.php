@@ -150,7 +150,7 @@ function validarExt()
             <thead>
               <tr>
                 <th class="center">ÍTEM</th>
-                <th class="center">CODIGO</th>
+                <th class="center">CÓDIGO</th>
                 <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
@@ -159,7 +159,7 @@ function validarExt()
                 <th class="center">No. BIEN</th>
                 <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
-                <th class="center">UBICACION</th>
+                <th class="center">UBICACIÓN</th>
                 <th class="center">NOMBRE</th>
                 <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
