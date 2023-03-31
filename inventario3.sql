@@ -2108,14 +2108,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `password`, `email`, `telefono`, `foto`, `permisos_acceso`, `status`, `created_at`, `updated_at`, `sede`) VALUES
-(18, 'Administrador', 'Administrador', 24642009, '1234', '', '', NULL, 'Super Admin', 'activo', '2019-12-05 18:53:22', '2021-04-27 12:40:36', 'SAT'),
-(21, 'Trabajador', 'Trabajador', 0, '1234', 'carrizalesj5@gmai.com', '0414147005', NULL, 'Super Admin', 'activo', '2020-01-30 21:38:08', '2021-04-27 12:40:22', 'ETCS-Baemari'),
-(22, 'Alfredo', 'acalderon', 214456544, '1234', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 11:01:41', '2021-06-15 11:01:41', 'CIDE'),
-(23, 'admin', 'Jose Carrizales', 24642009, '1234', 'carrizalesj5@gmail.com', '04144001564', 'PhotoRoom-20220104_134307.jpg', 'Super Admin', 'activo', '2021-06-15 11:02:14', '2022-01-30 05:37:06', 'CIDE'),
-(24, 'adminluepa', 'admin', 12345, '1234', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 11:04:36', '2021-06-15 11:04:36', 'ETCS-Luepa'),
-(25, 'adminctsr', 'admin', 12345, '12345', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR'),
-(26, 'adminsat', 'admin', 12345, '1234', 'fasdfa@safas', '2251511', NULL, 'Super Admin', 'activo', '2021-06-15 11:05:19', '2021-11-25 10:25:57', 'SAT'),
-(27, 'adminbaemari', 'admin', 0, '1234', 'dsdsdad@a', '5485415', 'DIIE_LOGO-ABAE.png', 'Super Admin', 'activo', '2021-06-15 11:05:36', '2022-01-15 23:01:58', 'ETCS-Baemari');
+(00, 'adminctsr', 'admin', 12345, '12345', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR');
 
 --
 -- Índices para tablas volcadas
