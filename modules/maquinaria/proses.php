@@ -74,12 +74,12 @@ else {
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($serial,$mysqli) == 1) {
-                 header("location: ../../main.php?module=Maquinaria&alert=5");
+                 header("location: ../../main.php?module=maquinaria&alert=5");
 
              } else {
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('Maquinaria','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+                                            VALUES('maquinaria','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -88,7 +88,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=Maquinaria&alert=1");  
+                header("location: ../../main.php?module=maquinaria&alert=1");  
             }
         }   
     }
@@ -143,7 +143,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=Maquinaria&alert=2");
+                header("location: ../../main.php?module=maquinaria&alert=2");
                 }        
             }
         }
@@ -166,7 +166,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=Maquinaria&alert=3");
+                header("location: ../../main.php?module=maquinaria&alert=3");
             }
         }
     }  
@@ -185,7 +185,7 @@ else {
   
             if ($query) {
                
-                header("location: ../../main.php?module=Maquinaria");
+                header("location: ../../main.php?module=maquinaria");
             }
 		}
 	} 
@@ -204,7 +204,7 @@ else {
         
             if ($query) {
               
-                header("location: ../../main.php?module=Maquinaria");
+                header("location: ../../main.php?module=maquinaria");
             }
 		}
 	}
@@ -216,13 +216,13 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='Maquinaria'")
+                                                        WHERE estado = 'chequeado' AND categoria='maquinaria'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=Maquinaria");
+            header("location: ../../main.php?module=maquinaria");
         }
     
 }      

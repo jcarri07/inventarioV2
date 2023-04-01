@@ -19,7 +19,7 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=Maquinaria"> Maquinaria </a></li>
+      <li><a href="?module=maquinaria"> Maquinaria </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -196,7 +196,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=Maquinaria" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=maquinaria" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div>
@@ -224,7 +224,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=Maquinaria"> Maquinaria </a></li>
+      <li><a href="?module=maquinaria"> Maquinaria </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -343,7 +343,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=Maquinaria" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=maquinaria" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div>

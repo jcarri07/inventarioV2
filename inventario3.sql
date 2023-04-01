@@ -1990,7 +1990,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `password`, `email`, `telefono`, `foto`, `permisos_acceso`, `status`, `created_at`, `updated_at`, `sede`) VALUES
-(00, 'inabae', 'Admin INABAE', 0, 'inabae123', NULL, NULL, NULL, 'Super Admin', 'Activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR');
+(00, 'inabae', 'Super Admin INABAE', 0, 'inabae123', NULL, NULL, NULL, 'Super Admin', 'Activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR');
 
 --
 -- Índices para tablas volcadas

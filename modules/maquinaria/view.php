@@ -180,10 +180,10 @@ function validarExt()
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'maquinaria' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'maquinaria' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 
@@ -210,23 +210,23 @@ function validarExt()
                       <td width='100' class='center'>
                     <div>
             
-                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_Maquinaria&form=edit&id=$data[codigo]'>
+                    <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_maquinaria&form=edit&id=$data[codigo]'>
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/Maquinaria/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/maquinaria/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['serial']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
 
               if ($data['estado']=='nochequeado') { ?>
-                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/Maquinaria/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
+                  <a data-toggle="tooltip" data-placement="top" title="No chequeado"  class="btn btn-default btn-xs" href="modules/maquinaria/proses.php?act=off&codigo=<?php echo $data['codigo'];?>">
                   <i style="color:#F3EFEF" class="glyphicon glyphicon-unchecked"></i>
               </a> 
              <?php
              } 
              else { ?>
-                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/Maquinaria/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
+                   <a data-toggle="tooltip" data-placement="top" title="Chequeado"  class="btn btn-success btn-xs" href="modules/maquinaria/proses.php?act=on&codigo=<?php echo $data['codigo'];?>">
                    <i style="color:#fff" class="glyphicon glyphicon-check"></i>
               </a>
             <?php
@@ -240,18 +240,18 @@ function validarExt()
             ?>
 
           <div class="row" style="height:35px;">
-           <a class="btn btn-primary pull-right botones" id="btnRefri"  style="height:35px;">
-            <i></i> Reset Check
-           </a>
+            <a class="btn btn-primary pull-right botones" id="btnmaquinaria"  style="height:35px;">
+              <i></i> Reset Check
+            </a>
           </div>
 
 
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
-              btn = document.getElementById("btnRefri");
+              btn = document.getElementById("btnmaquinaria");
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos  de Maquinaria?")) {
-                    window.location.href = "modules/Maquinaria/proses.php?act=reset";
+                if(confirm("¿Desea eliminar el chequeo de todos las maquinaria?")) {
+                    window.location.href = "modules/maquinaria/proses.php?act=reset";
                   } 
               })
             </script>
