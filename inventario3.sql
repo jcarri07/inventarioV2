@@ -54,7 +54,7 @@ CREATE TABLE `biblioteca` (
 --
 
 INSERT INTO `biblioteca` (`codigo`, `isbn`, `tipo`, `titulo`, `autor`, `editorial`, `cantidad`, `bienesN`, `responsable`, `cedula`, `sede`, `color`, `condicion`, `ubicacion`, `created_user`, `updated_user`, `created_date`, `updated_date`, `estado`, `categoria`) VALUES
-('000001', '978-980-6588-07-3', 'Libros', 'Cálculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'nochequeado', 'Biblioteca');
+('000001', '978-980-6588-07-3', 'Libros', 'Calculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'chequeado', 'Biblioteca');
 
 -- --------------------------------------------------------
 
@@ -1752,7 +1752,7 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`) VALUES
-('000001', 'Casa', 200, '', 4, 'En uso', 'nochequeado', 'inmuebles', 1, 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', NULL);
+('000001', 'Casa', 200, '', 4, 'En uso', 'chequeado', 'inmuebles', 1, 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46');
 
 -- --------------------------------------------------------
 
@@ -1798,7 +1798,7 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`, `foto`) VALUES
-('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Depósito', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
+('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Deposito', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
 ('Comunicaciones', '000002', 'N/A', '', 'EAR ZOOM', 'PRO', 0, '', 'CIDE', 'ABAE', '14299653', 'N/A', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'USMI', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Emerson Aguiar', NULL, '', NULL),
 ('Medicos', '000003', 'N/A', '', 'JZIICr', 'N/A', 1, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Plateado', 'Pinza', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
 ('Cientificos', '000004', 'N/A', '', 'N/A', 'N/A', 0, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Negro', 'Lupas', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
