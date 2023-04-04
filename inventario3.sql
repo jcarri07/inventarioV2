@@ -54,7 +54,7 @@ CREATE TABLE `biblioteca` (
 --
 
 INSERT INTO `biblioteca` (`codigo`, `isbn`, `tipo`, `titulo`, `autor`, `editorial`, `cantidad`, `bienesN`, `responsable`, `cedula`, `sede`, `color`, `condicion`, `ubicacion`, `created_user`, `updated_user`, `created_date`, `updated_date`, `estado`, `categoria`) VALUES
-('000001', '0-0000', 'Libro', 'Festin de Cuervos', 'R.R. Martin', 'Gigamesh', 1, 'N/A', 'Jose Carrizales', '24642009', 'CIDE', 'Negro', 'En uso', 'DC-1', 23, 23, '2022-01-29 21:01:59', NULL, 'nochequeado', 'Biblioteca');
+('000001', '978-980-6588-07-3', 'Libros', 'Cálculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'nochequeado', 'Biblioteca');
 
 -- --------------------------------------------------------
 
@@ -1718,7 +1718,7 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`nombre`, `cedula`, `permiso`, `accion`, `fecha`, `hora`) VALUES
-('Jose Carrizales', '24642009', '23', 'Registro de equipo', '2022-01-23 05:56:17', '21:09:17');
+('Jose Carrizales', '24642009', '', 'Registro de equipo', '2022-01-24', '18:54:46');
 
 -- --------------------------------------------------------
 
@@ -1752,7 +1752,7 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`) VALUES
-('000001', 'Casa', '60', '', 3, 'En uso', 'nochequeado', 'inmuebles', '2', 'Jose Carrizales', '24642009', 'Borburata', 4, 'CIDE', '23', '23', '2022-02-03 00:40:25', NULL);
+('000001', 'Casa', 200, '', 4, 'En uso', 'nochequeado', 'inmuebles', 1, 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -1798,11 +1798,11 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`, `foto`) VALUES
-('Maquinaria', '000001', '256G1G55A', '', 'MABE', '514A5A', 0, '', 'CIDE', 'ABAE', '24642009', '2651', 'Negro', 'Alicates', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'chequeado', 23, '2022-01-24 18:54:46', 23, '2022-01-24 18:54:46', NULL, 'Jose Carrizales', NULL, '', NULL),
-('Comunicaciones', '000002', '14F1A44AA', '', 'VIT', '4A151AA', 0, '', 'CIDE', 'ABAE', '24642009', '2652', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-23 23:54:06', 0, '2022-01-23 23:54:06', NULL, 'Jose Carrizales', NULL, '', NULL),
-('Medicos', '00003', '364S5A1D56', '', 'ZTE', '54A514D', 0, '', 'CIDE', 'ABAE', '24642009', '2653', 'Negro', 'Curetas', 'En uso', 'AIT', 0, 0, 'UDPP', 0, 'chequeado', 23, '2022-01-29 20:25:04', 23, '2022-01-29 20:25:04', NULL, 'Jose Carrizales', NULL, '', NULL),
-('Cientificos', '000004', '541D6A', '', 'NANO', '2652JK', 1, '', 'CIDE', 'ABAE', '246420009', '2654', 'Azul', 'Agitadores', 'En uso', 'DC-1', 0, 0, 'UDLP', 0, 'chequeado', 23, '2022-01-24 03:38:05', 23, '2022-01-24 03:38:05', NULL, 'Jose Carrizales', NULL, '', NULL),
-('Oficina', '000005', 'N/A', '', 'N/A', 'ZX256898', 1, '', 'CIDE', 'ABAE', '24642009', '2655', 'Marron', 'Cafetera', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'nochequeado', 23, '2022-01-23 23:55:46', 23, '2022-01-23 23:55:46', NULL, 'Jose Carrizales', NULL, '', NULL);
+('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Depósito', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
+('Comunicaciones', '000002', 'N/A', '', 'EAR ZOOM', 'PRO', 0, '', 'CIDE', 'ABAE', '14299653', 'N/A', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'USMI', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Emerson Aguiar', NULL, '', NULL),
+('Medicos', '000003', 'N/A', '', 'JZIICr', 'N/A', 1, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Plateado', 'Pinza', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
+('Cientificos', '000004', 'N/A', '', 'N/A', 'N/A', 0, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Negro', 'Lupas', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
+('Oficina', '000005', 'N/A', '', 'OSTER', '3291', 1, '', 'CIDE', 'ABAE', 'N/A', '2386', 'Blanco', 'Cafeteras', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'No hay usuario', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -1832,7 +1832,7 @@ CREATE TABLE `transaccion_equipos` (
 --
 
 INSERT INTO `transaccion_equipos` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Transferencia', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 23, '2022-01-27 05:05:24', 'Entrada');
+('TM-2022-000001', '000001', 'Prestamo', 'Karla Mieres', 18344910, 'ABAE', 'Gustavo Guedez', 14062579, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1862,7 +1862,7 @@ CREATE TABLE `transaccion_equipos_biblioteca` (
 --
 
 INSERT INTO `transaccion_equipos_biblioteca` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CIDE', 'CTSR', 23, '2022-01-29 21:16:46', 'Entrada');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1892,7 +1892,7 @@ CREATE TABLE `transaccion_equipos_inmuebles` (
 --
 
 INSERT INTO `transaccion_equipos_inmuebles` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CIDE', 'CTSR', 23, '2022-01-29 21:16:46', 'Entrada');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1922,7 +1922,7 @@ CREATE TABLE `transaccion_equipos_transporte` (
 --
 
 INSERT INTO `transaccion_equipos_transporte` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CIDE', 'CTSR', 23, '2022-01-29 21:16:46', 'Entrada');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1961,7 +1961,7 @@ CREATE TABLE `transporte` (
 --
 
 INSERT INTO `transporte` (`codigo`, `descripcion`, `placa`, `marca`, `tipo`, `modelo`, `color`, `condicion`, `unidad`, `ubicacion`, `responsable`, `pertenece`, `cedula`, `sede`, `nmroCarroceria`, `anio`, `tipoCombustible`, `created_user`, `created_date`, `updated_date`, `estado`, `updated_user`, `categoria`) VALUES
-('000001', 'Ambulancias', 'A13BC4G', 'Dong Feng', 'Pickup', 'ZNA', 'Blanco', 'En uso', 'DGA', 'Borburata', 'Karla Mieres', 'ABAE', '18344910', 'CIDE', 'D5155', '2012', 'Gasolina', 27, '2020-11-29 16:00:00', '2020-11-29 16:00:00', 'nochequeado', 27, 'Transporte');
+('000001', 'Camionetas de carga pick-up', 'A13BC4G', 'Dong Feng ZNA', '', 'PICKUP', 'Blanco', 'En uso', 'DGA', 'Borburata', 'Irlanda Molina', 'ABAE', '18343688', 'CIDE', '', 'N/A', '', 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'chequeado', 05, 'transporte');
 
 -- --------------------------------------------------------
 
