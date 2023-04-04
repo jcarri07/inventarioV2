@@ -2000,8 +2000,7 @@ INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `pass
 (07, 'inabaesat7', 'Trabajador INABAE SAT', 0, 'inabaesat7', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
 (08, 'inabaebaemari8', 'Trabajador INABAE Baemari', 0, 'inabaebaemari8', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
 (09, 'inabaeluepa9', 'Trabajador INABAE Luepa', 0, 'inabaeluepa9', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(10, 'inabaecide10', 'Trabajador INABAE CIDE', 0, 'inabaecide10', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE'),
-;
+(10, 'inabaecide10', 'Trabajador INABAE CIDE', 0, 'inabaecide10', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
 
 --
 -- Índices para tablas volcadas
