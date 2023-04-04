@@ -3,6 +3,7 @@
     height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 120px;
   }
 
   input[type=file] {
@@ -17,7 +18,7 @@
   }
 
   .anchoInput{
-    width:140px;
+    width:130px;
   }
 
 </style>
@@ -42,19 +43,20 @@ function validarExt()
     <i class="fa fa-sign-in icon-title"></i> Biblioteca
      
     <form action="database/excel_to_mysql_control_biblioteca.php" method="POST" enctype="multipart/form-data">
-      <button class="btn btn-primary pull-right botones" title="Importar" name="archivo" data-toggle="tooltip">Importar</button>
+      <button class="btn btn-primary btn-social pull-right botones" name="archivo" data-toggle="tooltip">
+        <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
+      </button>
 
-      <a class="btn btn-primary btn-social pull-right botones anchoInput" title="Cargar archivo" data-toggle="tooltip">      
+      <a class="btn btn-primary btn-social pull-right botones " data-toggle="tooltip">      
           <i class="fa fa-file-excel-o"></i>        
           <input method="post" type="file" id = "archivo" name="archivo" onchange="return validarExt()">   
           <div class="textoInput">
-            Cargar Archivo
+            Cargar
           </div>       
       </a>
  
-
-      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_transaccion_equipos_biblioteca&form=add" title="Agregar" data-toggle="tooltip">
-        <i class="fa fa-plus"></i> Entradas / Salidas
+      <a class="btn btn-primary btn-social pull-right botones anchoInput" href="?module=form_transaccion_equipos_biblioteca&form=add" data-toggle="tooltip">
+        <i class="fa fa-plus"></i> Transacción
       </a>
 
     </form>
@@ -100,20 +102,20 @@ function validarExt()
            
             <thead>
               <tr>
-                <th class="center">No.</th>
-                <th class="center">TRANSACCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">TRANSACCIÓN</th>
                 <th class="center">TIPO</th>
-                <th class="center">CODIGO</th>
-                <th class="center">TITULO</th>
+                <th class="center">CÓDIGO</th>
+                <th class="center">TÍTULO</th>
                 <th class="center">ISBN</th>
-                <th class="center">CONDICION</th>
+                <th class="center">CONDICIÓN</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">ENTREGA</th>
-				        <th class="center">CEDULA</th>
+				        <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">RECIBE</th>
-                <th class="center">CEDULA </th>
+                <th class="center">CÉDULA </th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">FECHA</th>
@@ -135,7 +137,7 @@ function validarExt()
 
              
               echo "<tr>
-                      <td width='50' class='center'>$no</td>
+                      <td width='50'  class='center'>$no</td>
                       <td width='100' class='center'>$data[codigo_transaccion]</td>
                       <td width='100' class='center'>$data[tipo_transaccion]</td>
                       <td width='100' class='center'>$data[codigo]</td>

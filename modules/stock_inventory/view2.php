@@ -46,7 +46,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-    <li><a href="?module=stock_inventory"> Inventarios </a></li>
+    <li class="active"> Inventarios </li>
   </ol>
 </section>
 
@@ -57,20 +57,20 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#Comunicaciones" aria-controls="" data-toggle="tab" role="tab">Comunicaciones</a></li>
-            <li role="presentation"><a href="#Oficina" aria-controls="" data-toggle="tab" role="tab">Oficina</a></li>
-            <li role="presentation"><a href="#Maquinaria" aria-controls="" data-toggle="tab" role="tab">Maquinaria</a></li>
-            <li role="presentation"><a href="#Cientificos" aria-controls="" data-toggle="tab" role="tab">Científicos</a></li>
-            <li role="presentation"><a href="#Medicos" aria-controls="" data-toggle="tab" role="tab">Médicos</a></li>
-            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
+            <li role="presentation" class="active"><a href="#Maquinaria" aria-controls="" data-toggle="tab" role="tab">Maquinaria</a></li>
             <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte</a></li>
+            <li role="presentation"><a href="#Comunicaciones" aria-controls="" data-toggle="tab" role="tab">Comunicaciones</a></li>
+            <li role="presentation"><a href="#Medicos" aria-controls="" data-toggle="tab" role="tab">Médicos</a></li>
+            <li role="presentation"><a href="#Cientificos" aria-controls="" data-toggle="tab" role="tab">Científicos</a></li>
+            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
+            <li role="presentation"><a href="#Oficina" aria-controls="" data-toggle="tab" role="tab">Oficina</a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles</a></li>
           </ul>
 
           <!-- Comunicaciones -->
 
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="Comunicaciones">
+            <div role="tabpanel" class="tab-pane" id="Comunicaciones">
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter.php" method="POST" target="_blank">
                 <div class="box-body">
@@ -90,8 +90,8 @@
                               <option value="serial"></option>
                               <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -134,19 +134,19 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">SERIAL</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">QR</th>
@@ -166,21 +166,21 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
                                   <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
+                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[serial]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
                                   <td width='100' class='center'>$data[pertenece]</td>
-                                  <td width='80'  class='center'>
+                                  <td width='100' class='center'>
                                 <div>
   
                     <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -221,8 +221,8 @@
                               <option value="serial"></option>
                               <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -264,19 +264,19 @@
                             <thead>
                               <tr>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">SERIAL</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">CANTIDAD</th>
@@ -295,23 +295,23 @@
                                 $precio_venta = format_rupiah($data['precio_venta']);
 
                                 echo "<tr>
-                                  <td width='50' class='center'>$no</td>
-                                  <td width='50' class='center'>$data[codigo]</td>
+                                  <td width='50'  class='center'>$no</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
                                   <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
+                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[serial]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
                                   <td width='100' class='center'>$data[pertenece]</td>
                                   <td width='100' class='center'>$data[cantidad]</td>
-                                  <td width='80'  class='center'>
+                                  <td width='100'  class='center'>
                                 <div>
             
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -334,7 +334,7 @@
 
           <!--Maquinaria-->
 
-            <div role="tabpanel" class="tab-pane" id="Maquinaria">
+            <div role="tabpanel" class="tab-pane active" id="Maquinaria">
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Maquinaria.php" method="POST" target="_blank" target="_blank">
                 <div class="box-body">
@@ -355,8 +355,8 @@
                               <option value="serial"></option>
                               <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -399,19 +399,19 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">SERIAL</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">QR</th>
@@ -429,21 +429,21 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
                                   <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
+                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[serial]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
                                   <td width='100' class='center'>$data[pertenece]</td>
-                                  <td width='80'  class='center'>
+                                  <td width='100' class='center'>
                                 <div>
 
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -485,8 +485,8 @@
                               <option value="serial"></option>
                               <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -528,19 +528,19 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">SERIAL</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">CANTIDAD</th>
@@ -559,22 +559,22 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
                                   <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
+                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[serial]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
                                   <td width='100' class='center'>$data[pertenece]</td>
                                   <td width='100' class='center'>$data[cantidad]</td>
-                                  <td width='80' class='center'>
+                                  <td width='100' class='center'>
                                   <div>
 
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -616,8 +616,8 @@
                               <option value="serial"></option>
                               <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -632,7 +632,7 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                            <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
+                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
                             <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_sec" id="sfiltro2" value="" placeholder="-- Filtro 2 --"></th>
                             <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_sec" id="sfiltro3" value="" placeholder="-- Filtro 3 --"></th>
                             <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -660,19 +660,19 @@
                             <table id="dataTables1" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">DESCRIPCION</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">SERIAL</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECE</th>
                                 <th class="center">QR</th>
@@ -690,21 +690,21 @@
 
                                 echo "<tr>
                                 <td width='50'  class='center'>$no</td>
-                                <td width='50'  class='center'>$data[codigo]</td>
+                                <td width='100' class='center'>$data[codigo]</td>
                                 <td width='100' class='center'>$data[descripcion]</td>
                                 <td width='100' class='center'>$data[marca]</td>
                                 <td width='100' class='center'>$data[modelo]</td>
+                                <td width='100' class='center'>$data[color]</td>
                                 <td width='100' class='center'>$data[serial]</td>
                                 <td width='100' class='center'>$data[bienesN]</td>
-                                <td width='100' class='center'>$data[color]</td>
                                 <td width='100' class='center'>$data[condicion]</td>
                                 <td width='100' class='center'>$data[unidad]</td>
+                                <td width='100' class='center'>$data[ubicacion]</td>
                                 <td width='100' class='center'>$data[responsable]</td>
                                 <td width='100' class='center'>$data[cedula]</td>
-                                <td width='100' class='center'>$data[ubicacion]</td>
                                 <td width='100' class='center'>$data[sede]</td>
                                 <td width='100' class='center'>$data[pertenece]</td>
-                                <td width='80'  class='center'>
+                                <td width='100' class='center'>
                                 <div>
 
                               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -742,13 +742,13 @@
                               <option value="tipo"></option>
                               <option value="titulo"></option>
                               <option value="autor"></option>
-                              <option value="editorial"></option>
                               <option value="isbn"></option>
                               <option value="bienesN"></option>
                               <option value="codicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
+                              <option value="editorial"></option>
                             </datalist>
                           </th>
                               <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
@@ -789,20 +789,21 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">TIPO</th>
-                                <th class="center">TITULO</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
+                                <th class="center">TÍTULO</th>
                                 <th class="center">AUTOR</th>
-                                <th class="center">EDITORIAL</th>
+                                <th class="center">COLOR</th>
                                 <th class="center">ISBN</th>
                                 <th class="center">No. BIEN</th>
-                                <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">CONDICIÓN</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
+                                <th class="center">PERTENECE</th>
                                 <th class="center">CANTIDAD</th>
                                 <th class="center">QR</th>
                               </tr>
@@ -818,21 +819,22 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
                                   <td width='100' class='center'>$data[tipo]</td>
                                   <td width='100' class='center'>$data[titulo]</td>
                                   <td width='100' class='center'>$data[autor]</td>
-                                  <td width='100' class='center'>$data[editorial]</td>
+                                  <td width='100' class='center'>$data[color]</td> 
                                   <td width='100' class='center'>$data[isbn]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
-                                  <td width='100' class='center'>$data[color]</td> 
                                   <td width='100' class='center'>$data[condicion]</td>
+                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
+                                  <td width='100' class='center'>$data[editorial]</td>
                                   <td width='100' class='center'>$data[cantidad]</td>
-                                  <td width='80'  class='center'  >
+                                  <td width='100' class='center'  >
                                 <div>
       
                               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
@@ -867,13 +869,14 @@
                             <datalist id="items_Transporte">
                               <option value=""></option>
                               <option value="codigo"></option>
-                              <option value="tipo"></option>
+                              <option value="descripcion"></option>
                               <option value="marca"></option>
                               <option value="modelo"></option>
                               <option value="placa"></option>
+                              <option value="bienesN"></option>
                               <option value="condicion"></option>
-                              <option value="cedula"></option>
                               <option value="ubicacion"></option>
+                              <option value="cedula"></option>
                               <option value="sede"></option>
                             </datalist>
                           </th>
@@ -885,7 +888,7 @@
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
                             </th>
-                              <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
+                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
                               <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fv2" value="" placeholder="-- Filtro 2 --"></th>
                               <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fv3" value="" placeholder="-- Filtro 3 --"></th>
                               <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -912,23 +915,22 @@
                           <table id="dataTables_Transporte" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                                <th class="center">No.</th>
-                                <th class="center">CODIGO</th>
-                                <th class="center">PLACA</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
                                 <th class="center">MARCA</th>
                                 <th class="center">MODELO</th>
-                                <th class="center">AÑO</th>
-                                <th class="center">TIPO</th>
                                 <th class="center">COLOR</th>
-                                <th class="center">CONDICION</th>
+                                <th class="center">PLACA</th>
+                                <th class="center">No. BIEN</th>
+                                <th class="center">CONDICIÓN</th>
                                 <th class="center">DIREC/UNIDAD</th>
-                                <th class="center">RESPONSABLE</th>
-                                <th class="center">CEDULA</th>
-                                <th class="center">UBICACION</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
                                 <th class="center">SEDE</th>
                                 <th class="center">PERTENECEE</th>
                                 <th class="center">QR</th>
-
                               </tr>
                             </thead>
 
@@ -944,22 +946,23 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
-                                  <td width='100' class='center'>$data[placa]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[marca]</td>
                                   <td width='100' class='center'>$data[modelo]</td>
-                                  <td width='100' class='center'>$data[anio]</td>
-                                  <td width='100' class='center'>$data[tipo]</td>
                                   <td width='100' class='center'>$data[color]</td>
+                                  <td width='100' class='center'>$data[placa]</td>
+                                  <td width='100' class='center'>$data[anio]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
                                   <td width='100' class='center'>$data[unidad]</td>
+                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[sede]</td>
                                   <td width='100' class='center'>$data[pertenece]</td>
-                                  <td width='80'  class='center'>
+                                  <td width='100' class='center'>
                                 <div>
+                                
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
                                       <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                                 </a>";
@@ -976,6 +979,7 @@
               </div>
             </form>
           </div>
+
 
             <!--INMUEBLES-->
 
@@ -1000,9 +1004,8 @@
                               <option value="nmroCuartos"></option>
                               <option value="habitantes"></option>
                               <option value="condicion"></option>
-                              <option value="responsable"></option>
-                              <option value="cedula"></option>
                               <option value="direccion"></option>
+                              <option value="cedula"></option>
                               <option value="sede "></option>
                             </datalist>
                           </th>
@@ -1045,18 +1048,21 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                              <th class="center">No.</th>
-                              <th class="center">CODIGO</th>
-                              <th class="center">DESCRIPCION</th>
+                              <th class="center">ÍTEM</th>
+                              <th class="center">CÓDIGO</th>
+                              <th class="center">DESCRIPCIÓN</th>
                               <th class="center">M²</th>
                               <th class="center">PISOS</th>
                               <th class="center">HABITACIONES</th>
                               <th class="center">HABITANTES</th>
-                              <th class="center">CONDICION</th>
-                              <th class="center">RESPONSABLE</th>
-                              <th class="center">CEDULA</th>
-                              <th class="center">DIRECCION</th>
+                              <th class="center">No. BIEN</th>
+                              <th class="center">CONDICIÓN</th>
+                              <th class="center">DIREC/UNIDAD</th>
+                              <th class="center">UBICACIÓN</th>
+                              <th class="center">NOMBRE</th>
+                              <th class="center">CÉDULA</th>
                               <th class="center">SEDE</th>
+                              <th class="center">PERTENECEE</th>
                               <th class="center">QR</th>
                               </tr>
                             </thead>
@@ -1071,18 +1077,21 @@
 
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
-                                  <td width='50'  class='center'>$data[codigo]</td>
-                                  <td width='150' class='center'>$data[descripcion]</td>
+                                  <td width='100' class='center'>$data[codigo]</td>
+                                  <td width='100' class='center'>$data[descripcion]</td>
                                   <td width='100' class='center'>$data[metrosCuadrados]</td>
                                   <td width='100' class='center'>$data[pisos]</td>
-                                  <td width='150' class='center'>$data[nmroCuartos]</td>
-                                  <td width='150' class='center'>$data[habitantes]</td>
-                                  <td width='150' class='center'>$data[condicion]</td>
-                                  <td width='150' class='center'>$data[responsable]</td>
+                                  <td width='100' class='center'>$data[nmroCuartos]</td>
+                                  <td width='100' class='center'>$data[habitantes]</td>
+                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[condicion]</td>
+                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[direccion]</td>
+                                  <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
-                                  <td width='300' class='center'>$data[direccion]</td>
-                                  <td width='150' class='center'>$data[sede]</td> 
-                                  <td width='80'  class='center'>
+                                  <td width='100' class='center'>$data[sede]</td> 
+                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>
                                 <div>
       
                               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>

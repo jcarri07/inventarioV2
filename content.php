@@ -27,18 +27,18 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	}
 	//Mobiliario y equipos de oficina
 
-	elseif ($_GET['module'] == 'Oficina') {
-		include "modules/Oficina/view.php";
+	elseif ($_GET['module'] == 'oficina') {
+		include "modules/oficina/view.php";
 
-	} elseif ($_GET['module'] == 'form_Oficina') {
-		include "modules/Oficina/form.php";
+	} elseif ($_GET['module'] == 'form_oficina') {
+		include "modules/oficina/form.php";
 	}
 	//equipos cientificos y electronicos
-	elseif ($_GET['module'] == 'Cientificos') {
-		include "modules/Cientificos/view.php";
+	elseif ($_GET['module'] == 'cientificos') {
+		include "modules/cientificos/view.php";
 
-	} elseif ($_GET['module'] == 'form_Cientificos') {
-		include "modules/Cientificos/form.php";
+	} elseif ($_GET['module'] == 'form_cientificos') {
+		include "modules/cientificos/form.php";
 	}
 	
 	//equipos inmuebles

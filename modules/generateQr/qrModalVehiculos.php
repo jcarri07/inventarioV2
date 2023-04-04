@@ -21,31 +21,31 @@ $query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE codigo = '$var1'")
         $var2 = $data['tipo'];
     	$var3 = $data['marca'];
         $var4 = $data['modelo'];
-        $var5 = $data['nmroCarroceria'];
-        $var6 = $data['color'];
-    	$var7 = $data['placa'];
-    	$var8 = $data['tipoCombustible'];
-        $var9 = $data['condicion'];
-        $var10 = $data['responsable'];
-        $var11 = $data['cedula'];
-        $var12 = $data['ubicacion'];
+        $var5 = $data['color'];
+        $var6 = $data['placa'];
+        $var7 = $data['bienesN'];	
+        $var8 = $data['condicion'];
+        $var9 = $data['unidad'];	
+        $var10 = $data['ubicacion'];
+        $var11 = $data['responsable'];
+        $var12 = $data['cedula'];
         $var13 = $data['sede'];
     	$var14 = $data['pertenece'];
         
     }
 
-    $var1 = " CODIGO: ".$data['codigo'];
-    $var2 = " TIPO: ".$data['tipo'];
+    $var1 = " CÓDIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCIÓN: ".$data['tipo'];
     $var3 = " MARCA: ".$data['marca'];
     $var4 = " MODELO: ".$data['modelo'];
-    $var5 = " CARROCERIA: ".$data['nmroCarroceria'];
-    $var6 = " COLOR: ".$data['color'];
-    $var7 = " PLACA: ".$data['placa'];
-    $var8 = " COMBUSTIBLE: ".$data['tipoCombustible'];
-    $var9 = " CONDICION: ".$data['condicion'];
-    $var10 = " RESPONSABLE: ".$data['responsable'];
-    $var11 = " CEDULA: ".$data['cedula'];
-    $var12 = " UBICACION: ".$data['ubicacion'];
+    $var5 = " COLOR: ".$data['color'];
+    $var6 = " PLACA: ".$data['placa'];
+    $var7 = " B/N: ".$data['bienesN'];
+    $var8 = " CONDICIÓN: ".$data['condicion'];
+    $var9 = " DIREC/UNIDAD: ".$data['unidad'];
+    $var10 = " UBICACIÓN: ".$data['ubicacion'];
+    $var11 = " NOMBRE: ".$data['responsable'];
+    $var12 = " CÉDULA: ".$data['cedula'];
     $var13 = " SEDE: ".$data['sede'];
     $var14 = " PERTENECE: ".$data['pertenece'];
 

@@ -65,9 +65,9 @@ ventimp.close();
 
   <table border="0">
         <tr>
-            <td><img src="assets/img/norma.png" width="500" align='center' ;></td>
-            <td width="160"></td>
-            <td><img src="assets/img/ABAE_logo.png" width="150" align='center' ;></td>
+            <td><img src="assets/img/Cintillo MINCYT.png" width="300" align='center' ;></td>
+            <td width="400"></td>
+            <td><img src="assets/img/ABAE Logo.png" width="150" align='center' ;></td>
         </tr>
     </table>
 
@@ -84,12 +84,12 @@ ventimp.close();
       
             <thead>
               <tr>
-                <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
-				        <th class="center">MARCA</th>
-                <th class="center">MODELO</th>
-                <th class="center">SERIAL</th>
-                <th class="center">N° BIEN</th>
+                <th class="center">Código</th>
+                <th class="center">Descripción</th>
+				        <th class="center">Marca</th>
+                <th class="center">Modelo</th>
+                <th class="center">Serial</th>
+                <th class="center">N° Bien</th>
               </tr>
            
             </thead>
@@ -150,13 +150,13 @@ ventimp.close();
       
       <thead>
         <tr>
-          <th class="center">COMPONENTE</th>
-          <th class="center">CLASE</th>
-          <th class="center">CAPACIDAD</th>
-          <th class="center">MARCA</th>
-          <th class="center">MODELO</th>          
-          <th class="center">SERIAL</th>
-          <th class="center">CONDICION</th>
+          <th class="center">Componente</th>
+          <th class="center">Clase</th>
+          <th class="center">Capacidad</th>
+          <th class="center">Marca</th>
+          <th class="center">Modelo</th>          
+          <th class="center">Serial</th>
+          <th class="center">Condición</th>
         </tr>
      
       </thead>

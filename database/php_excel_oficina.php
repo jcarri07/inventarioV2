@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Exportacion_Equipos_Oficina_Mobiliario.xlsx');
+	header('Content-Disposition: attachment; filename=Exportación_Oficina.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -10,20 +10,19 @@
       
             <thead>
               <tr>
-              <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">COD. DE CTA. CONTABLE</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO DE CUENTA CONTABLE</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
 			        	<th class="center">MODELO</th>
                 <th class="center">COLOR</th>
                 <th class="center">SERIAL</th>
-                <th class="center">No. BIEN</th>                
-                <th class="center">CONDICION</th>
-                <th class="center">DIREC/UNIDAD</th>
-                <th class="center">UBICACION</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>                
+                <th class="center">No. DEL BIEN</th>                
+                <th class="center">CONDICIÓN</th>
+                <th class="center">DIRECCIÓN O UNIDAD</th>
+                <th class="center">UBICACIÓN</th>
+                <th class="center">NOMBRE</th>
+                <th class="center">No. DE CÉDULA</th>                
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
               </tr>
@@ -59,15 +58,14 @@
 	  }
 
       $no = 1;
-       $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
+       $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
-              <td width='50'  class='center'  align='center'>$no</td>
-              <td width='150' class='center' align='center'>$data[codigo]</td>              
+              <td width='50'  class='center'  align='center'>$no</td>          
               <td width='150' class='center' align='center'> </td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[marca]</td>

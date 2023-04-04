@@ -58,11 +58,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Datos de Entradas / Salidas de Vehículos de Transporte
+      <i class="fa fa-edit icon-title"></i> Agregar transacción
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=transaccion_equipos_Transporte">Transporte </a></li>
+      <li><a href="?module=transaccion_equipos_transporte">Transporte </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -73,11 +73,11 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/transaccion_equipos_Transporte/proses.php?act=insert" method="POST" name="formObatMasuk">
+          <form role="form" class="form-horizontal" action="modules/transaccion_equipos_transporte/proses.php?act=insert" method="POST" name="formObatMasuk">
             <div class="box-body">
               <?php  
             
-              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,6) as codigo FROM transaccion_equipos_Transporte
+              $query_id = mysqli_query($mysqli, "SELECT RIGHT(codigo_transaccion,6) as codigo FROM transaccion_equipos_transporte
                                                 ORDER BY codigo_transaccion DESC LIMIT 1")
                                                 or die('Error : '.mysqli_error($mysqli));
 
@@ -134,7 +134,7 @@ if ($_GET['form']=='add') { ?>
                   <select class="chosen-select" name="descripcion" data-placeholder="-- Seleccionar vehículo --" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, descripcion FROM Transporte ORDER BY descripcion ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, descripcion FROM transporte ORDER BY descripcion ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[codigo]\"> $data_obat[codigo] | $data_obat[descripcion] </option>";
@@ -214,7 +214,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=transaccion_equipos_Transporte" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=transaccion_equipos_transporte" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->

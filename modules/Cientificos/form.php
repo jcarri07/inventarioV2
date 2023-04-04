@@ -15,11 +15,11 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos Científicos
+      <i class="fa fa-edit icon-title"></i> Agregar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=Cientificos"> Científicos </a></li>
+      <li><a href="?module=cientificos"> Científicos </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -30,7 +30,7 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/Cientificos/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/cientificos/proses.php?act=insert" method="POST">
             <div class="box-body">
               <?php  
               
@@ -67,13 +67,13 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Descripcion</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                 <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
                  <datalist id="datalistOptions">
                  <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Cientificos' ORDER BY codigo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'cientificos' ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
@@ -97,22 +97,6 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
-              
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Serial</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
-                </div>
-                <div id="resultado"></div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">No. Bien</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
-                </div>
-              </div>
-
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
@@ -130,9 +114,24 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
+                <label class="col-sm-2 control-label">Serial</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
+                </div>
+                <div id="resultado"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">No. Bien</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
@@ -153,7 +152,14 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="responsable" autocomplete="off" required>
                 </div>
@@ -163,13 +169,6 @@ if ($_GET['form']=='add') { ?>
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
                 </div>
               </div>
 
@@ -204,7 +203,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=Cientificos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=cientificos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div><!-- /.box footer -->
@@ -227,11 +226,11 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos Científicos
+      <i class="fa fa-edit icon-title"></i> Modificar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=Cientificos"> Científicos </a></li>
+      <li><a href="?module=cientificos"> Científicos </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -242,7 +241,7 @@ elseif ($_GET['form']=='edit') {
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/Cientificos/proses.php?act=update" method="POST">
+          <form role="form" class="form-horizontal" action="modules/cientificos/proses.php?act=update" method="POST">
           <div class="box-body">
               
               <div class="form-group">
@@ -274,6 +273,22 @@ elseif ($_GET['form']=='edit') {
                 </div>
   
                 <div class="form-group">
+                <label class="col-sm-2 control-label">Color</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""><?php echo $data['color']; ?></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
+                      }
+                    ?>
+                    </select>
+                </div>
+              </div>
+
+                <div class="form-group">
                   <label class="col-sm-2 control-label">Serial</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
@@ -288,18 +303,20 @@ elseif ($_GET['form']=='edit') {
                 </div> 
   
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Color</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
-                  </div>
-                </div>     
-  
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Condición</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" name="condicion" autocomplete="off" value="<?php echo $data['condicion']; ?>" required>
-                  </div>
+                <label class="col-sm-2 control-label">Condición</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=""><?php echo $data['condicion'];?></option>
+                    <option value="Optimo">Óptimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
+                    </select>
                 </div>
+              </div>
   
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Dirección / Unidad</label>
@@ -309,7 +326,14 @@ elseif ($_GET['form']=='edit') {
                 </div>
   
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Responsable</label>
+                  <label class="col-sm-2 control-label">Ubicación</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Nombre</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" name="responsable" autocomplete="off" value="<?php echo $data['responsable']; ?>" required>
                   </div>
@@ -318,13 +342,6 @@ elseif ($_GET['form']=='edit') {
                   <label class="col-sm-2 control-label">Cédula</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" name="cedula" autocomplete="off" value="<?php echo $data['cedula']; ?>" required>
-                  </div>
-                </div>
-  
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Ubicación</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                   </div>
                 </div>
   
@@ -357,7 +374,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=Cientificos" class="btn btn-default btn-reset">Cancelar</a>
+                  <a href="?module=cientificos" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
             </div>

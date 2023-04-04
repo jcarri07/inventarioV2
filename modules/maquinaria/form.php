@@ -15,7 +15,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos
+      <i class="fa fa-edit icon-title"></i> Agregar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -30,7 +30,7 @@ if ($_GET['form']=='add') { ?>
       <div class="col-md-12">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/Maquinaria/proses.php?act=insert" method="POST">
+          <form role="form" class="form-horizontal" action="modules/maquinaria/proses.php?act=insert" method="POST">
             <div class="box-body">
               <?php  
               
@@ -220,7 +220,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos
+      <i class="fa fa-edit icon-title"></i> Modificar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -267,6 +267,22 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
+                <label class="col-sm-2 control-label">Color</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""><?php echo $data['color']; ?></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
+                      }
+                    ?>
+                    </select>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
@@ -281,16 +297,18 @@ elseif ($_GET['form']=='edit') {
               </div> 
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Color</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="color" autocomplete="off" value="<?php echo $data['color']; ?>" required>
-                </div>
-              </div>     
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="condicion" autocomplete="off" value="<?php echo $data['condicion']; ?>" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                    <option value=""><?php echo $data['condicion'];?></option>
+                    <option value="Optimo">Óptimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
+                    </select>
                 </div>
               </div>
 
@@ -302,22 +320,23 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="responsable" autocomplete="off" value="<?php echo $data['responsable']; ?>" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Cédula</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
+                  <input type="text" class="form-control" name="responsable" autocomplete="off" value="<?php echo $data['responsable']; ?>" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Cédula</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
                 </div>
               </div>
 

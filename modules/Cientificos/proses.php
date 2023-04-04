@@ -73,12 +73,12 @@ else {
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($serial,$mysqli) == 1) {
-                 header("location: ../../main.php?module=Cientificos&alert=5");
+                 header("location: ../../main.php?module=cientificos&alert=5");
 
              } else {
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
-                                            VALUES('Cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
+                                            VALUES('cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -87,7 +87,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=Cientificos&alert=1");  
+                header("location: ../../main.php?module=cientificos&alert=1");  
             }
         }   
     }
@@ -143,7 +143,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=Cientificos&alert=2");
+                header("location: ../../main.php?module=cientificos&alert=2");
                 }        
             }
         }
@@ -166,7 +166,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=Cientificos&alert=3");
+                header("location: ../../main.php?module=cientificos&alert=3");
             }
         }
     }  
@@ -185,7 +185,7 @@ else {
   
             if ($query) {
                
-                header("location: ../../main.php?module=Cientificos");
+                header("location: ../../main.php?module=cientificos");
             }
 		}
 	} 
@@ -204,7 +204,7 @@ else {
         
             if ($query) {
               
-                header("location: ../../main.php?module=Cientificos");
+                header("location: ../../main.php?module=cientificos");
             }
 		}
 	}
@@ -216,13 +216,13 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria ='Cientificos'")
+                                                        WHERE estado = 'chequeado' AND categoria ='cientificos'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=Cientificos");
+            header("location: ../../main.php?module=cientificos");
         }
     
 }      

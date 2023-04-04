@@ -78,7 +78,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicaciones
+      <i class="fa fa-edit icon-title"></i> Agregar Equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -156,7 +156,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Descripcion</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                 <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
                  <datalist id="datalistOptions">
@@ -186,6 +186,21 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Color</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                    <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
+                      }
+                    ?>
+                    </select>
+                </div>
+              </div>
               
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
@@ -203,25 +218,9 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Color</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
-                    <option value=""></option>
-                    <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
-                                                            or die('error '.mysqli_error($mysqli));
-                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[nombre]\">$data_obat[nombre]</option>";
-                      }
-                    ?>
-                    </select>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
@@ -242,7 +241,14 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="responsable" autocomplete="off" required>
                 </div>
@@ -255,13 +261,6 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
       
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" required>
-                </div>
-              </div>
-
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
@@ -314,11 +313,11 @@ if ($_GET['form']=='add') { ?>
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-edit icon-title"></i> Agregar Equipos de Comunicaciones
+    <i class="fa fa-edit icon-title"></i> Agregar Equipos
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-    <li><a href="?module=inventario"> Agregar </a></li>
+    <li><a href="?module=form_inventario&form=add"> Agregar </a></li>
     <li class="active"> Más </li>
   </ol>
 </section>
@@ -343,7 +342,7 @@ if ($_GET['form']=='add') { ?>
               ?>
               
             <div class="form-group">
-                <label class="col-sm-4 control-label" >CODIGO </label>
+                <label class="col-sm-4 control-label" >Código </label>
                 <div class="col-sm-3">
                   <input type="text"  class="form-control" name="codigo" value="<?php echo $codigo; ?>" id="codigoInternos" readonly required>
                 </div>
@@ -354,16 +353,16 @@ if ($_GET['form']=='add') { ?>
             <thead>
 
           <tr> 
-            <th class="center">COMPONENTE</th>
-            <th class="center">CLASE</th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Componente</th>
+            <th class="center">Clase</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <tr>
-            <td class="center">DISCO DURO 1 : </td>
+            <td class="center">Disco duro 1 : </td>
             <td><input id="prueba" type="text" class="form-control" name="clased1" autocomplete="off"></td>
             <td><input type="text" class="form-control" name="capd1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad1" autocomplete="off" ></td>
@@ -372,7 +371,7 @@ if ($_GET['form']=='add') { ?>
             <td><input type="text" class="form-control" name="cond1" autocomplete="off" ></td>
           </tr>
           <tr>
-            <td class="center">DISCO DURO 2 : </td>
+            <td class="center">Disco duro 2 : </td>
             <td><input type="text" class="form-control" name="clased2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="capd2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcad2" autocomplete="off" ></td>
@@ -383,15 +382,15 @@ if ($_GET['form']=='add') { ?>
 
           <tr> 
             <th class="center"></th>
-            <th class="center">VOLTAJE</th>
-            <th class="center">CERTIFICACION</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Voltaje</th>
+            <th class="center">Certificación</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <tr>
-            <td class="center">FUENTE DE PODER : </td>
+            <td class="center">Fuenta de poder : </td>
             <td><input type="text" class="form-control" name="volfp" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="certfp" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcafp" autocomplete="off" ></td>
@@ -403,15 +402,15 @@ if ($_GET['form']=='add') { ?>
          
           <tr> 
             <th class="center"></th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">CLASE</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Clase</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <tr>
-            <td class="center">TARJETA DE VIDEO : </td>
+            <td class="center">Tarjeta de video : </td>
             <td><input type="text" class="form-control" name="captv" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="clasetv" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcatv" autocomplete="off" ></td>
@@ -422,15 +421,15 @@ if ($_GET['form']=='add') { ?>
 
           <tr> 
             <th class="center"></th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">CLASE</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Clase</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <tr>
-            <td class="center">MEMORIA RAM 1: </td>
+            <td class="center">Memoria ram 1: </td>
             <td><input type="text" class="form-control" name="capmr1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="clasemr1" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcamr1" autocomplete="off" ></td>
@@ -441,16 +440,16 @@ if ($_GET['form']=='add') { ?>
 
           
           <tr> 
-            <th class="center"></th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">CLASE</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+          <th class="center"></th>
+            <th class="center">Capacidad</th>
+            <th class="center">Clase</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <tr>
-            <td class="center">MEMORIA RAM 2 : </td>
+            <td class="center">Memoria ram 2 : </td>
             <td><input type="text" class="form-control" name="capmr2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="clasemr2" autocomplete="off" ></td>
             <td><input type="text" class="form-control" name="marcamr2" autocomplete="off" ></td>
@@ -495,7 +494,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos de Comunicaciones
+      <i class="fa fa-edit icon-title"></i> Modificar Equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -513,7 +512,7 @@ elseif ($_GET['form']=='edit') {
         <div role = "tabpanel">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#modificar" aria-controls="" data-toggle="tab" role="tab">Modificar</a></li>
-            <li role="presentation" ><a href="#internos2" aria-controls="" data-toggle="tab" role="tab">Componentes Internos</a></li>
+            <li role="presentation" ><a href="#internos2" aria-controls="" data-toggle="tab" role="tab">Componentes internos</a></li>
           </ul>
 
 <!-- COMUNICACION -->
@@ -536,7 +535,7 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="descripcion" autocomplete="off" value="<?php echo $data['descripcion']; ?>" required>
                 </div>
               </div>
-                        
+                  
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
@@ -551,20 +550,6 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Serial</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">No. Bien</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
-                </div>
-              </div> 
-              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
@@ -582,11 +567,25 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
+                <label class="col-sm-2 control-label">Serial</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">No. Bien</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
+                </div>
+              </div> 
+
+              <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""><?php echo $data['condicion'];?></option>
-                    <option value="Optimo">Optimo</option>
+                    <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
                     <option value="Averiado">Averiado</option>
@@ -605,7 +604,14 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="responsable" autocomplete="off" value="<?php echo $data['responsable']; ?>" required>
                 </div>
@@ -614,13 +620,6 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Cédula</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="cedula" autocomplete="off" onkeypress="return validaNumericos(event)" onpaste="return false" value="<?php echo $data['cedula']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Ubicación</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="ubicacion" autocomplete="off" value="<?php echo $data['ubicacion']; ?>" required>
                 </div>
               </div>
 
@@ -687,17 +686,15 @@ elseif ($_GET['form']=='edit') {
             <thead>
 
           <tr> 
-            <th class="center">COMPONENTE</th>
-            <th class="center">CLASE</th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Componente</th>
+            <th class="center">Clase</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
-
-
-               <?php
+          <?php
                
             if (isset($_GET['id'])) {
 
@@ -709,7 +706,7 @@ elseif ($_GET['form']=='edit') {
              ?>
 
           <tr>
-            <td class="center">DISCO DURO 1 : </td>
+            <td class="center">Disco duro 1 : </td>
             <td><input type="text" class="form-control" name="clased1" autocomplete="off" value="<?php echo $data['clase']; ?>"></td>
             <td><input type="text" class="form-control" name="capd1" autocomplete="off" value="<?php echo $data['capacidad']; ?>" ></td>
             <td><input type="text" class="form-control" name="marcad1" autocomplete="off" value="<?php echo $data['marca']; ?>"></td>
@@ -729,7 +726,7 @@ elseif ($_GET['form']=='edit') {
                 ?>
           
           <tr>
-            <td class="center">DISCO DURO 2 : </td>
+            <td class="center">Disco duro 2 : </td>
             <td><input type="text" class="form-control" name="clased2" autocomplete="off" value="<?php echo $data['clase']; ?>"></td>
             <td><input type="text" class="form-control" name="capd2" autocomplete="off" value="<?php echo $data['capacidad']; ?>" ></td>
             <td><input type="text" class="form-control" name="marcad2" autocomplete="off" value="<?php echo $data['marca']; ?>"></td>
@@ -740,12 +737,12 @@ elseif ($_GET['form']=='edit') {
 
           <tr> 
             <th class="center"></th>
-            <th class="center">VOLTAJE</th>
-            <th class="center">CERTIFICACION</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Voltaje</th>
+            <th class="center">Certificación</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <?php
                
@@ -759,7 +756,7 @@ elseif ($_GET['form']=='edit') {
                 ?>
 
           <tr>
-            <td class="center">FUENTE DE PODER : </td>
+            <td class="center">Fuente de poder : </td>
             <td><input type="text" class="form-control" name="volfp" autocomplete="off" value="<?php echo $data['voltaje']; ?>" ></td>
             <td><input type="text" class="form-control" name="certfp" autocomplete="off" value="<?php echo $data['certificacion']; ?>" ></td>
             <td><input type="text" class="form-control" name="marcafp" autocomplete="off" value="<?php echo $data['marca']; ?>" ></td>
@@ -771,14 +768,13 @@ elseif ($_GET['form']=='edit') {
          
           <tr> 
             <th class="center"></th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">CLASE</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Clase</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
-
           <?php
                
                if (isset($_GET['id'])) {
@@ -790,7 +786,7 @@ elseif ($_GET['form']=='edit') {
                }            
                 ?>
           <tr>
-            <td class="center">TARJETA DE VIDEO : </td>
+            <td class="center">Tarjeta de video : </td>
             <td><input type="text" class="form-control" name="captv" autocomplete="off" value="<?php echo $data['capacidad']; ?>"></td>
             <td><input type="text" class="form-control" name="clasetv" autocomplete="off" value="<?php echo $data['clase']; ?>" ></td>
             <td><input type="text" class="form-control" name="marcatv" autocomplete="off"value="<?php echo $data['marca']; ?>"  ></td>
@@ -799,16 +795,14 @@ elseif ($_GET['form']=='edit') {
             <td><input type="text" class="form-control" name="contv" autocomplete="off" value="<?php echo $data['condicion']; ?>" ></td>
           </tr>
 
-          
-       
           <tr> 
             <th class="center"></th>
-            <th class="center">CAPACIDAD</th>
-            <th class="center">CLASE</th>
-            <th class="center">MARCA</th>
-            <th class="center">MODELO</th>
-            <th class="center">SERIAL</th>
-				    <th class="center">CONDICION</th>
+            <th class="center">Capacidad</th>
+            <th class="center">Clase</th>
+            <th class="center">Marca</th>
+            <th class="center">Modelo</th>
+            <th class="center">Serial</th>
+				    <th class="center">Condición</th>
           </tr>
           <?php
                
@@ -822,7 +816,7 @@ elseif ($_GET['form']=='edit') {
                 ?>
 
           <tr>
-            <td class="center">MEMORIA RAM 1: </td>
+            <td class="center">Memoria ram 1: </td>
             <td><input type="text" class="form-control" name="capmr1" autocomplete="off"value="<?php echo $data['capacidad']; ?>" ></td>
             <td><input type="text" class="form-control" name="clasemr1" autocomplete="off" value="<?php echo $data['clase']; ?>"></td>
             <td><input type="text" class="form-control" name="marcamr1" autocomplete="off" value="<?php echo $data['marca']; ?>"></td>
@@ -844,7 +838,7 @@ elseif ($_GET['form']=='edit') {
                 ?>
 
           <tr>
-            <td class="center">MEMORIA RAM 2: </td>
+            <td class="center">Memoria ram 2: </td>
             <td><input type="text" class="form-control" name="capmr2" autocomplete="off"value="<?php echo $data['capacidad']; ?>" ></td>
             <td><input type="text" class="form-control" name="clasemr2" autocomplete="off" value="<?php echo $data['clase']; ?>"></td>
             <td><input type="text" class="form-control" name="marcamr2" autocomplete="off" value="<?php echo $data['marca']; ?>"></td>

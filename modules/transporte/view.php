@@ -3,6 +3,7 @@
     height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 120px;
   }
 
   input[type=file] {
@@ -40,26 +41,28 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 15000-0000 | Equipos de transporte, Tracción y Elevación
+  <i class="fa fa-folder-o icon-title"></i> 15000-0000 | Equipos de transporte, tracción y elevación
 
     <form action="database/excel_to_mysql_transporte.php" method="POST" enctype="multipart/form-data">
-        <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
+        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
+          <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
+        </button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
     
-          <a class="btn btn-primary btn-social pull-right botones anchoInput"  title="Cargar archivo" data-toggle="tooltip"> 
-            <i class="fa fa-file-excel-o"></i> 
+          <a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip"> 
+            <i class="fa fa-file-excel-o"></i>
             <input method="post" type="file" id = "archivoInput" name="archivoInput" onchange="return validarExt()">
             <div class="textoInput">
-              Cargar Archivo
+            Cargar
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_transporte.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social pull-right botones" href="database\php_excel_transporte.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_transporte&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_transporte&form=add" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
 
@@ -157,20 +160,19 @@ function validarExt()
       
             <thead>
               <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
-                <th class="center">PLACA</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
-                <th class="center">AÑO</th>
-                <th class="center">TIPO</th>
                 <th class="center">COLOR</th>
-                <th class="center">CONDICION</th>
+                <th class="center">PLACA</th>
+                <th class="center">No. BIEN</th>
+                <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">UBICACION</th>
+                <th class="center">UBICACIÓN</th>
+                <th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
                 <th class="center">EDITAR</th>
@@ -204,19 +206,18 @@ function validarExt()
            
               echo "<tr>
                       <td width='50'  class='center'>$no</td>
-                      <td width='50'  class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
-                      <td width='100' class='center'>$data[placa]</td>
-                      <td width='120' class='center'>$data[marca]</td>
+                      <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
-                      <td width='100' class='center'>$data[anio]</td>
-                      <td width='100' class='center'>$data[tipo]</td>
                       <td width='100' class='center'>$data[color]</td>
+                      <td width='100' class='center'>$data[placa]</td>
+                      <td width='100' class='center'>$data[anio]</td>
                       <td width='100' class='center'>$data[condicion]</td>
                       <td width='100' class='center'>$data[unidad]</td>
-                      <td width='120' class='center'>$data[responsable]</td>
-                      <td width='100' class='center'>$data[cedula]</td>
                       <td width='100' class='center'>$data[ubicacion]</td>
+                      <td width='100' class='center'>$data[responsable]</td>
+                      <td width='100' class='center'>$data[cedula]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100'  class='center'>$data[pertenece]</td>
                       <td width='100' class='center'>
@@ -226,7 +227,7 @@ function validarExt()
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
             ?>
-                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/transporte/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['tipo'].' '.$data['placa']; ?>?');">
+                    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/transporte/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'].' '.$data['placa']; ?>?');">
                         <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                     </a>         
             <?php
@@ -253,7 +254,7 @@ function validarExt()
 
           <div class="row" style="height:35px;">
             <a class="btn btn-primary pull-right botones" id="btntransporte"  style="height:35px;">
-              <i></i> Reset Check
+              <i></i> Reset check
             </a>
           </div>
 
@@ -262,7 +263,7 @@ function validarExt()
             <script>
               btn = document.getElementById("btntransporte");
               btn.addEventListener("click", ()=> {
-                if(confirm("¿Desea eliminar el chequeo de todos los transporte?")) {
+                if(confirm("¿Desea eliminar el chequeo de todos los equipos?")) {
                     window.location.href = "modules/transporte/proses.php?act=reset";
                   } 
               })

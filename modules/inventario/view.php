@@ -3,6 +3,7 @@
     height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 120px;
   }
 
   input[type=file] {
@@ -90,26 +91,28 @@ function mostrar_modal_internos(id){
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de Comunicaciones y Señalamiento
+  <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
     <form action="database/excel_to_mysql_Comunicaciones.php" method="POST" enctype="multipart/form-data">
-        <button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>
-        
+        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
+          <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
+        </button>
+
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
 
-          <a class="btn btn-primary btn-social pull-right botones anchoInput"  title="Cargar archivo" data-toggle="tooltip"> 
+          <a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip"> 
             <i class="fa fa-file-excel-o"></i> 
             <input method="post" type="file" id = "archivoInput" name="archivoInput" onchange="return validarExt()">
             <div class="textoInput">
-              Cargar Archivo
+              Cargar
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
           
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_inventario&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_inventario&form=add" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
         </div>
@@ -222,19 +225,19 @@ function mostrar_modal_internos(id){
       
             <thead>
               <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
 				        <th class="center">MODELO</th>
+                <th class="center">COLOR</th>
                 <th class="center">SERIAL</th>
                 <th class="center">No. BIEN</th>
-                <th class="center">COLOR</th>
-                <th class="center">CONDICION</th>
+                <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
                 <th class="center">UBICACION</th>
+                <th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
                 <th class="center">EDITAR</th>            
@@ -266,21 +269,21 @@ function mostrar_modal_internos(id){
            
               echo "<tr>
                       <td width='50'  class='center'>$no</td>
-                      <td width='50'  class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
+                      <td width='100' class='center'>$data[color]</td>
                       <td width='100' class='center'>$data[serial]</td>
                       <td width='100' class='center'>$data[bienesN]</td>
-                      <td width='100' class='center'>$data[color]</td>
                       <td width='100' class='center'>$data[condicion]</td>
                       <td width='100' class='center'>$data[unidad]</td>
+                      <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[responsable]</td>
                       <td width='100' class='center'>$data[cedula]</td>
-                      <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>    
-                      <td width='120' class='center'  >
+                      <td width='130' class='center'  >
                     <div>
             
                     <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
@@ -321,7 +324,7 @@ function mostrar_modal_internos(id){
 
           <div class="row" style="height:35px;">
             <a class="btn btn-primary pull-right botones" id="reset" style="height:35px;">
-              <i></i> Reset Check
+              <i></i> Reset check
             </a>
           </div>
 
@@ -330,7 +333,7 @@ function mostrar_modal_internos(id){
               btn = document.getElementById("reset");
 
               btn.addEventListener("click", ()=> {
-                if(confirm("Deseas eliminar el chequeo de todos los equipos de Comunicaciones?")) {
+                if(confirm("¿Deseas eliminar el chequeo de todos los equipos?")) {
                     window.location.href = "modules/inventario/proses.php?act=reset";
                 } 
               })

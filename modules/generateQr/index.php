@@ -12,32 +12,37 @@
 
     if ($rows > 0) {
         $data = mysqli_fetch_assoc($query);
-        $var1   = $data['descripcion'];
-    	$var2	= $data['marca'];
-		$var3	= $data['modelo'];
-		$var5	= $data['bienesN'];	
-    	$var6	= $data['color'];
-		$var7	= $data['condicion'];
-		$var8   = $data['nombre'];
-		$var9   = $data['cedula'];
-		$var10   = $data['ubicacion'];
-		$var11	= $data['sede'];
-		$var12   = $data['pertenece'];
-    	
+        $var1 = $data['codigo'];
+        $var2 = $data['descripcion'];
+    	$var3 = $data['marca'];
+        $var4 = $data['modelo'];
+        $var5 = $data['color'];
+        $var6 = $data['serial'];	
+        $var7 = $data['bienesN'];	
+        $var8 = $data['condicion'];
+        $var9 = $data['unidad'];	
+        $var10 = $data['ubicacion'];
+        $var11 = $data['responsable'];
+        $var12 = $data['cedula'];
+    	$var13 = $data['sede'];
+    	$var14 = $data['pertenece'];
+        
     }
 
-	$var1 = " DESCRIPCION: ".$data['descripcion'];
-	$var2 = " MARCA: ".$data['marca'];
-    $var3 = " MODELO: ".$data['modelo'];
-	$var4 = " SERIAL: ".$data['serial'];
-	$var5 = " COD. BIENES NAC.: ".$data['bienesN'];
-    $var6 = " COLOR: ".$data['color'];
-	$var7 = " CONDICION: ".$data['condicion'];
-	$var8 = " RESPONSABLE: ".$data['nombre'];
-    $var9 = " CEDULA: ".$data['cedula'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCION: ".$data['descripcion'];
+    $var3 = " MARCA: ".$data['marca'];
+    $var4 = " MODELO: ".$data['modelo'];
+    $var5 = " COLOR: ".$data['color'];
+    $var6 = " SERIAL: ".$data['serial'];
+    $var7 = " B/N: ".$data['bienesN'];
+    $var8 = " CONDICION: ".$data['condicion'];
+    $var9 = " DIREC/UNIDAD: ".$data['unidad'];
     $var10 = " UBICACION: ".$data['ubicacion'];
-    $var11 = " SEDE: ".$data['sede'];
-    $var12 = " PERTENECE: ".$data['pertenece'];
+    $var11 = " RESPONSABLE: ".$data['responsable'];
+    $var12 = " CEDULA: ".$data['cedula'];
+    $var13 = " SEDE: ".$data['sede'];
+    $var14 = " PERTENECE: ".$data['pertenece'];
     
 ?>
     <!-- Required meta tags -->

@@ -11,11 +11,11 @@ if (isset($_SESSION['id_user'])) {
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-user icon-title"></i> Perfil de Usuario
+    <i class="fa fa-user icon-title"></i> Perfil de usuario
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio</a></li>
-    <li class="active"> Perfil de Usuario</li>
+    <li class="active"> Perfil de usuario</li>
   </ol>
 </section>
 

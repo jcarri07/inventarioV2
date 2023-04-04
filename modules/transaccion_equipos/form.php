@@ -57,7 +57,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Datos de Entradas / Salidas de Equipos
+      <i class="fa fa-edit icon-title"></i> Agregar transacción
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -206,7 +206,6 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>  
                    
-            
             </div><!-- /.box body -->
 
             <div class="box-footer">

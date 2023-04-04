@@ -75,7 +75,7 @@ else {
             $created_user = $_SESSION['id_user'];
 
             if (buscaRepetido($serial,$mysqli) == 1) {
-                 header("location: ../../main.php?module=Oficina&alert=5");
+                 header("location: ../../main.php?module=oficina&alert=5");
 
              } else {
 
@@ -89,7 +89,7 @@ else {
                 $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
-                header("location: ../../main.php?module=Oficina&alert=1");  
+                header("location: ../../main.php?module=oficina&alert=1");  
             }
         }   
     }
@@ -147,7 +147,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli)); 
 
-                header("location: ../../main.php?module=Oficina&alert=2");
+                header("location: ../../main.php?module=oficina&alert=2");
                 }        
             }
         }
@@ -170,7 +170,7 @@ else {
 
             if ($query) {
      
-                header("location: ../../main.php?module=Oficina&alert=3");
+                header("location: ../../main.php?module=oficina&alert=3");
             }
         }
     }  
@@ -189,7 +189,7 @@ else {
   
             if ($query) {
                
-                header("location: ../../main.php?module=Oficina");
+                header("location: ../../main.php?module=oficina");
             }
 		}
 	} 
@@ -208,7 +208,7 @@ else {
         
             if ($query) {
               
-                header("location: ../../main.php?module=Oficina");
+                header("location: ../../main.php?module=oficina");
             }
 		}
 	}
@@ -220,13 +220,13 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='Oficina'")
+                                                        WHERE estado = 'chequeado' AND categoria='oficina'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
         if ($query) {
            
-            header("location: ../../main.php?module=Oficina");
+            header("location: ../../main.php?module=oficina");
         }
     
 }      

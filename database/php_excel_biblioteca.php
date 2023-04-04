@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Exportacion_Biblioteca.xlsx');
+	header('Content-Disposition: attachment; filename=Exportación_Biblioteca.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -10,21 +10,21 @@
       
             <thead>
               <tr>
-                  <th class="center">No.</th>
-                  <th class="center">CODIGO</th>
-                  <th class="center">TIPO</th>
-                  <th class="center">TITULO</th>
+                  <th class="center">ÍTEM</th>
+                  <th class="center">CÓDIGO DE CUENTA CONTABLE</th>
+                  <th class="center">DESCRIPCIÓN</th>
+                  <th class="center">TÍTULO</th>
                   <th class="center">AUTOR</th>
-                  <th class="center">EDITORIAL</th>
-                  <th class="center">ISBN</th>
-                  <th class="center">No. BIEN</th>
                   <th class="center">COLOR</th>
-                  <th class="center">CONDICION</th>
-                  <th class="center">RESPONSABLE</th>
-                  <th class="center">CEDULA</th>
-                  <th class="center">UBICACION</th>
+                  <th class="center">SERIAL</th>
+                  <th class="center">No. DEL BIEN</th>               
+                  <th class="center">CONDICIÓN</th>
+                  <th class="center">DIRECCIÓN O UNIDAD</th>
+                  <th class="center">UBICACIÓN</th>
+                  <th class="center">NOMBRE</th>
+                  <th class="center">No. DE CÉDULA</th>                
                   <th class="center">SEDE</th>
-                  <th class="center">CANTIDAD</th>
+                  <th class="center">PERTENECE</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,16 +70,16 @@
                   <td width='150' class='center' align='center'>$data[tipo]</td>
                   <td width='200' class='center' align='center'>$data[titulo]</td>
                   <td width='150' class='center' align='center'>$data[autor]</td>
-                  <td width='150' class='center' align='center'>$data[editorial]</td>
+                  <td width='150' class='center' align='center'>$data[color]</td>
                   <td width='150' class='center' align='center'>$data[isbn]</td>
                   <td width='150' class='center' align='center'>$data[bienesN]</td>
-                  <td width='150' class='center' align='center'>$data[color]</td>
                   <td width='150' class='center' align='center'>$data[condicion]</td>
+                  <td width='150' class='center' align='center'></td>
+                  <td width='150' class='center' align='center'>$data[ubicacion]</td>
                   <td width='150' class='center' align='center'>$data[responsable]</td>
                   <td width='150' class='center' align='center'>$data[cedula]</td>
-                  <td width='150' class='center' align='center'>$data[ubicacion]</td>
                   <td width='150' class='center' align='center'>$data[sede]</td>
-                  <td width='150' class='center' align='center'>$data[cantidad]</td>
+                  <td width='150' class='center' align='center'>$data[editorial]</td>
                   <td class='center' width='150'>
 
                 <div>

@@ -21,31 +21,35 @@ $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE codigo = '$var1'"
         $var2 = $data['tipo'];
         $var3 = $data['titulo'];
     	$var4 = $data['autor'];
-    	$var5 = $data['editorial'];
+        $var5 = $data['color'];
         $var6 = $data['isbn'];
         $var7 = $data['bienesN'];
-    	$var8 = $data['responsable'];
-    	$var9 = $data['cedula'];
-        $var10 = $data['ubicacion'];
-        $var11 = $data['sede'];
-    	$var12 = $data['cantidad'];
+        $var8 = $data['condicion'];
+        $var9 = $data['ubicacion'];
+    	$var10 = $data['responsable'];
+    	$var11= $data['cedula'];
+        $var12 = $data['sede'];
+    	$var13= $data['editorial'];
+    	$var14 = $data['cantidad'];
     	
     }
 
-    $var1 = " CODIGO: ".$data['codigo'];
-    $var2 = " TIPO: ".$data['tipo'];
+    $var1 = " CÓDIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCIÓN: ".$data['tipo'];
     $var3 = " TITULO: ".$data['titulo'];
     $var4 = " AUTOR: ".$data['autor'];
-    $var5 = " EDITORIAL: ".$data['editorial'];
+    $var5 = " COLOR: ".$data['color'];
     $var6 = " ISBN: ".$data['isbn'];
     $var7 = " B/N: ".$data['bienesN'];
-    $var8 = " RESPONSABLE: ".$data['responsable'];
-    $var9 = " CEDULA: ".$data['cedula'];
-    $var10 = " UBICACION: ".$data['ubicacion'];
-    $var11 = " SEDE: ".$data['sede'];
-    $var12 = " CANTIDAD: ".$data['cantidad'];
+    $var8 = " CONDICIÓN: ".$data['condicion'];
+    $var9 = " UBICACIÓN: ".$data['ubicacion'];
+    $var10 = " NOMBRE: ".$data['responsable'];
+    $var11= " CÉDULA: ".$data['cedula'];
+    $var12 = " SEDE: ".$data['sede'];
+    $var13= " PERTENECE: ".$data['editorial'];
+    $var14 = " CANTIDAD: ".$data['cantidad'];
 
-$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12;
+$textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11.$coma.$var12.$coma.$var13.$coma.$var14;
 
 include('vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
 use Endroid\QrCode\QrCode;

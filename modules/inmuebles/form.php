@@ -15,7 +15,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Inmuebles
+      <i class="fa fa-edit icon-title"></i> Agregar inmuebles
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -76,7 +76,7 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Descripcion</label>
+                <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
                 <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" placeholder="-- Seleccionar --" required>
                  <datalist id="datalistOptions">
@@ -118,12 +118,19 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="habitantes" onkeypress="return validaNumericos(event)" onpaste="return false" autocomplete="off" required>
                 </div>
-              </div> 
+              </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Uso</label>
+                <label class="col-sm-2 control-label">No. Bien</label>
                 <div class="col-sm-5">
-                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <input type="text" class="form-control" name="" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Condición</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
                     <option value="En uso">En uso</option>
                     <option value="En comodato">En comodato</option>
@@ -141,7 +148,21 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="" autocomplete="off" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="direccion" autocomplete="off" required>
+                </div>
+              </div> 
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="responsable" autocomplete="off" required>
                 </div>
@@ -155,19 +176,23 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Dirección</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="direccion" autocomplete="off" required>
-                </div>
-              </div> 
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="sede" value="<?php echo $sede; ?>" autocomplete="off" readonly required>
                 </div>
               </div>
-            </div><!-- /.bosede body -->
+
+              <div class="form-group" >
+                <label class="col-sm-2 control-label">Pertenece</label>
+                <div class="col-sm-5">
+                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="" autocomplete="off" required>
+                  <datalist id="item">
+                    <option value=""></option>
+                    <option value="ABAE">ABAE</option>
+                    </datalist>
+                </div>
+              </div>
+            </div>
 
             <div class="box-footer">
               <div class="form-group">
@@ -197,7 +222,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Inmuebles
+      <i class="fa fa-edit icon-title"></i> Modificar inmuebles
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -258,11 +283,17 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
+              <div class="form-group">
+                <label class="col-sm-2 control-label">No. Bien</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
+                </div>
+              </div>  
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Uso</label>
+                <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="form-control"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=" "><?php echo $data['condicion'];?></option>
                     <option value="En uso">En uso</option>
                     <option value="En comodato">En comodato</option>
@@ -280,7 +311,21 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Responsable</label>
+                <label class="col-sm-2 control-label">Dirección / Unidad</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" value="<?php echo $data['unidad']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Ubicación</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" name="direccion" autocomplete="off" value="<?php echo $data['direccion']; ?>" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="responsable" autocomplete="off" value="<?php echo $data['responsable']; ?>" required>
                 </div>
@@ -294,36 +339,37 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">Dirección</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="direccion" autocomplete="off" value="<?php echo $data['direccion']; ?>" required>
-                </div>
-              </div>
-
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="sede" autocomplete="off" value="<?php echo $data['sede']; ?>" required>
                 </div>
               </div>
-            </div>
 
-
-
-          <div class="box-footer">
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
-                  <a href="?module=inmuebles" class="btn btn-default btn-reset">Cancelar</a>
+              <div class="form-group" >
+                <label class="col-sm-2 control-label">Pertenece</label>
+                <div class="col-sm-5">
+                <input class="form-control" list="item" type="text" value="<?php echo $data['pertenece'];?>" name="pertenece" autocomplete="off" required>
+                  <datalist id="item">
+                    <option  selected value="ABAE">ABAE</option>
+                    </datalist>
+                </div>
               </div>
             </div>
-          </div><!-- /.box footer -->
 
-        </form>
-      </div><!-- /.box -->
-    </div><!--/.col -->
-  </div>   <!-- /.row -->
-</section><!-- /.content -->
+            <div class="box-footer">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <a href="?module=inmuebles" class="btn btn-default btn-reset">Cancelar</a>
+                </div>
+              </div>
+            </div>
+            <!-- /.box footer -->
+          </form>
+        </div><!-- /.box -->
+      </div><!--/.col -->
+   </div>   <!-- /.row -->
+  </section><!-- /.content -->
 <?php
 }
 ?>

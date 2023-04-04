@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Exportacion_Inmuebles.xlsx');
+	header('Content-Disposition: attachment; filename=Exportación_Inmuebles.xlsx');
 
 ?>
 
@@ -11,20 +11,21 @@
       
             <thead>
               <tr>
-              <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">TIPO</th>
-                <th class="center">DESCRIPCION</th>
-                <th class="center">M2</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO DE CUENTA CONTABLE</th>
+                <th class="center">DESCRIPCIÓN</th>
+                <th class="center">M²</th>
                 <th class="center">PISOS</th>
                 <th class="center">HABITACIONES</th>
                 <th class="center">HABITANTES</th>
-                <th class="center">CONDICION</th>
-                <th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">DIRECCION</th>
+                <th class="center">No. DEL BIEN</th>   
+                <th class="center">CONDICIÓN</th>
+                <th class="center">DIRECCIÓN O UNIDAD</th>
+                <th class="center">UBICACIÓN</th>
+                <th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
-
+                <th class="center">PERTENECE</th>
               </tr>
             </thead>
             <tbody>
@@ -65,19 +66,21 @@
               echo "
 
               <tr>
-              <td width='50'  class='center' align='center'>$no</td>
-              <td width='150' class='center' align='center'>$data[codigo]</td>
-              <td width='150' class='center' align='center'>$data[tipo]</td>
-              <td width='150' class='center' align='center'>$data[descripcion]</td>
+              <td width='50'  class='center' align='center'>$no</td>      
+              <td width='150' class='center' align='center'> </td>
+              <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[metrosCuadrados]</td>
               <td width='150' class='center' align='center'>$data[pisos]</td>
               <td width='150' class='center' align='center'>$data[nmroCuartos]</td>
               <td width='150' class='center' align='center'>$data[habitantes]</td> 
+              <td width='150' class='center' align='center'> </td>
               <td width='150' class='center' align='center'>$data[condicion]</td>
+              <td width='150' class='center' align='center'> </td>
+              <td width='200' class='center' align='center'>$data[direccion]</td>
               <td width='150' class='center' align='center'>$data[responsable]</td>
               <td width='150' class='center' align='center'>$data[cedula]</td> 
-              <td width='200' class='center' align='center'>$data[direccion]</td>
-              <td width='150' class='center' align='center'>$data[sede]</td>           
+              <td width='150' class='center' align='center'>$data[sede]</td>
+              <td width='150' class='center' align='center'> </td>           
               <td class='center'  width='150'>
               <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>

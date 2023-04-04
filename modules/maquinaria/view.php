@@ -3,6 +3,7 @@
     height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 120px;
   }
 
   input[type=file] {
@@ -55,11 +56,11 @@ function validarExt()
             </div>  
           </a>-->
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_maquinaria.php" title="Exportar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_maquinaria.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_maquinaria&form=add"  title="Agregar" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="?module=form_maquinaria&form=add" data-toggle="tooltip">
             <i class="fa fa-plus"></i> Agregar&nbsp;&nbsp; 
           </a>
 
@@ -193,7 +194,7 @@ function validarExt()
            
               echo "<tr>
                       <td width='50'  class='center'>$no</td>
-                      <td width='50'  class='center'>$data[codigo]</td>
+                      <td width='100'  class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
@@ -241,16 +242,15 @@ function validarExt()
 
           <div class="row" style="height:35px;">
             <a class="btn btn-primary pull-right botones" id="btnmaquinaria"  style="height:35px;">
-              <i></i> Reset Check
+              <i></i> Reset check
             </a>
           </div>
-
-
+            
             <script src="assets/js/datatables.min.js" type="text/javascript"></script>
             <script>
               btn = document.getElementById("btnmaquinaria");
               btn.addEventListener("click", ()=> {
-                if(confirm("¿Desea eliminar el chequeo de todos las maquinaria?")) {
+                if(confirm("¿Desea eliminar el chequeo de todos los equipos?")) {
                     window.location.href = "modules/maquinaria/proses.php?act=reset";
                   } 
               })

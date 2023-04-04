@@ -3,6 +3,7 @@
     height: 35px;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 120px;
   }
 
   input[type=file] {
@@ -24,10 +25,10 @@
 
 <section class="content-header">
   <h2>
-    <i class="fa fa-user icon-title"></i> Gestión de Usuarios
+    <i class="fa fa-user icon-title"></i> Gestión de usuarios
 
     <form action="database/excel_to_mysql_control.php" method="POST" enctype="multipart/form-data">
-      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_user&form=add" title="Agregar" data-toggle="tooltip">
+      <a class="btn btn-primary btn-social pull-right botones" href="?module=form_user&form=add" data-toggle="tooltip">
         <i class="fa fa-plus"></i> Agregar
       </a>
     </form>
@@ -111,7 +112,7 @@
        
             <thead>
               <tr>
-                <th class="center">No.</th>
+                <th class="center">ÍTEM</th>
                 <th class="center">FOTO</th>
                 <th class="center">USUARIO</th>
                 <th class="center">ID</th>
@@ -135,7 +136,7 @@
             while ($data = mysqli_fetch_assoc($query)) { 
                 
               echo "<tr>
-                      <td width='50' class='center'>$no</td>";
+                      <td width='45' class='center'>$no</td>";
 
                       if ($data['foto']=="") { ?>
                         <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
@@ -148,23 +149,23 @@
 
                     echo "  
                       <td width='250' class='center'>$data[username]</td>
-                      <td width='150' class='center'>$data[id_user]</td>
+                      <td width='100' class='center'>$data[id_user]</td>
                       <td width='250' class='center'>$data[name_user]</td>
-                      <td width='150' class='center'>$data[sede]</td>
-                      <td width='250' class='center'>$data[permisos_acceso]</td>
-                      <td width='150' class='center'>$data[status]</td>
-                      <td width='85'  class='center' style='min-width: 90px;'>
+                      <td width='200' class='center'>$data[sede]</td>
+                      <td width='200' class='center'>$data[permisos_acceso]</td>
+                      <td width='200' class='center'>$data[status]</td>
+                      <td width='85'  class='center'>
                     <div>";
 
-                          if ($data['status']=='Activo') { ?>
-                            <a data-toggle="tooltip" data-placement="top" title="Bloqueado" style="margin-right:1px" class="btn btn-warning btn-xs" href="modules/user/proses.php?act=off&id=<?php echo $data['id_user'];?>">
-                                <i style="color:#fff" class="glyphicon glyphicon-off"></i>
+                          if ($data['status']=='activo') { ?>
+                            <a data-toggle="tooltip" data-placement="top" title="Activo" class="btn btn-success btn-xs" href="modules/user/proses.php?act=off&id=<?php echo $data['id_user'];?>">
+                                <i style="color:#fff" class="glyphicon glyphicon-check"></i>
                             </a>
             <?php
                           } 
                           else { ?>
-                            <a data-toggle="tooltip" data-placement="top" title="Activo" style="margin-right:0px" class="btn btn-success btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
-                                <i style="color:#fff" class="glyphicon glyphicon-ok"></i>
+                            <a data-toggle="tooltip" data-placement="top" title="Bloqueado" class="btn btn-warning btn-xs" href="modules/user/proses.php?act=on&id=<?php echo $data['id_user'];?>">
+                                <i style="color:#F3EFEF" class="glyphicon glyphicon-off"></i>
                             </a>
             <?php
                           }

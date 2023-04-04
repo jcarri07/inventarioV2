@@ -16,7 +16,7 @@
       <div class="box box-primary">
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos Generales</a></li>
+            <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos</a></li>
             <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte </a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
@@ -32,7 +32,7 @@
                 <form name="formulario" method="GET" action="modules/stock_report/print.php" target="_blank">
                   </br>
                   <h4 class="text-center">
-                    <i class="fa fa-archive"></i> Equipos Generales
+                    <i class="fa fa-archive"></i> Equipos
                   </h4>
                   </br> </br>
                   <table class="table table-striped table-hover">
