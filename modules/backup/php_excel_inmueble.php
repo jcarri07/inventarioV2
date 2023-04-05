@@ -10,23 +10,25 @@
       
             <thead>
             <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">TIPO</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">M2</th>
                 <th class="center">PISOS</th>
                 <th class="center">HABITACIONES</th>
                 <th class="center">HABITANTES</th>
-                <th class="center">CONDICION</th>
-			        	<th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">DIRECCION</th>
+                <th class="center">No. BIEN</th>
+                <th class="center">CONDICIÓN</th>
+                <th class="center">DIREC/UNIDAD</th>
+                <th class="center">UBICACIÓN</th>
+			        	<th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
-                <th class="center">ID USER CREACION</th>
-                <th class="center">ID USER ACTUALIZACION</th>
-                <th class="center">FECHA DE CREACION</th>
-                <th class="center">FECHA DE ACTUALIZACION</th>
+                <th class="center">PERTENECE</th>
+                <th class="center">ID USER CREACIÓN</th>
+                <th class="center">ID USER ACTUALIZACiÓN</th>
+                <th class="center">FECHA DE CREACIÓN</th>
+                <th class="center">FECHA DE ACTUALIZACIÓN</th>
                 <th class="center">ESTADO</th>
                 <th class="center">CATEGORIA</th>
               </tr>
@@ -56,17 +58,19 @@
               <tr>
                 <td width='50'  class='center' align='center'>$no</td>
                 <td width='150' class='center' align='center'>$data[codigo]</td>
-                <td width='150' class='center' align='center'>$data[tipo]</td>
                 <td width='150' class='center' align='center'>$data[descripcion]</td>
                 <td width='150' class='center' align='center'>$data[metrosCuadrados]</td>
                 <td width='150' class='center' align='center'>$data[pisos]</td>
                 <td width='150' class='center' align='center'>$data[nmroCuartos]</td>
                 <td width='150' class='center' align='center'>$data[habitantes]</td>
+                <td width='150' class='center' align='center'></td>
                 <td width='150' class='center' align='center'>$data[condicion]</td>
+                <td width='150' class='center' align='center'></td>
+                <td width='200' class='center' align='center'>$data[direccion]</td>
                 <td width='150' class='center' align='center'>$data[responsable]</td>
                 <td width='150' class='center' align='center'>$data[cedula]</td>
-                <td width='200' class='center' align='center'>$data[direccion]</td>
                 <td width='150' class='center' align='center'>$data[sede]</td>
+                <td width='150' class='center' align='center'></td>
                 <td width='200' class='center' align='center'>$data[created_user]</td>
                 <td width='200' class='center' align='center'>$data[updated_user]</td>
                 <td width='200' class='center' align='center'>$data[created_date]</td>

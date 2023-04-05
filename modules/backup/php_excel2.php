@@ -10,26 +10,26 @@
       
             <thead>
             <tr>
-                <th class="center">No.</th>
-                <th class="center">CODIGO</th>
-                <th class="center">DESCRIPCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">CÓDIGO</th>
+                <th class="center">DESCRIPCIÓN</th>
                 <th class="center">MARCA</th>
                 <th class="center">MODELO</th>
+                <th class="center">COLOR</th>
                 <th class="center">SERIAL</th>
                 <th class="center">No. BIEN</th>
-                <th class="center">COLOR</th>
-                <th class="center">CONDICION</th>
+                <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
-			        	<th class="center">RESPONSABLE</th>
-                <th class="center">CEDULA</th>
-                <th class="center">UBICACION</th>
+                <th class="center">UBICACIÓN</th>
+			        	<th class="center">NOMBRE</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">PERTENECE</th>
                 <th class="center">CANTIDAD</th>
-                <th class="center">ID USER CREACION</th>
-                <th class="center">ID USER ACTUALIZACION</th>
-                <th class="center">FECHA DE CREACION</th>
-                <th class="center">FECHA DE ACTUALIZACION</th>
+                <th class="center">ID USER CREACIÓN</th>
+                <th class="center">ID USER ACTUALIZACIÓN</th>
+                <th class="center">FECHA DE CREACIÓN</th>
+                <th class="center">FECHA DE ACTUALIZACIÓN</th>
                 <th class="center">ESTADO</th>
                 <th class="center">CATEGORIA</th>
               </tr>
@@ -62,14 +62,14 @@
                 <td width='200' class='center' align='center'>$data[descripcion]</td>
                 <td width='150' class='center' align='center'>$data[marca]</td>
                 <td width='150' class='center' align='center'>$data[modelo]</td>
+                <td width='150' class='center' align='center'>$data[color]</td>
                 <td width='150' class='center' align='center'>$data[serial]</td>
                 <td width='150' class='center' align='center'>$data[bienesN]</td>
-                <td width='150' class='center' align='center'>$data[color]</td>
                 <td width='150' class='center' align='center'>$data[condicion]</td>
                 <td width='150' class='center' align='center'>$data[unidad]</td>
+                <td width='150' class='center' align='center'>$data[ubicacion]</td>
                 <td width='150' class='center' align='center'>$data[responsable]</td>
                 <td width='150' class='center' align='center'>$data[cedula]</td>
-                <td width='150' class='center' align='center'>$data[ubicacion]</td>
                 <td width='150' class='center' align='center'>$data[sede]</td>
                 <td width='150' class='center' align='center'>$data[pertenece]</td>
                 <td width='150' class='center' align='center'>$data[cantidad]</td>

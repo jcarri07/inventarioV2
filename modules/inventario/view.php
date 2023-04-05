@@ -93,7 +93,7 @@ function mostrar_modal_internos(id){
   <h2>
   <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
-    <form action="database/excel_to_mysql_Comunicaciones.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
           <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
         </button>
@@ -134,7 +134,7 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 1) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos registrados correctamente
             </div>";
     }
@@ -142,7 +142,7 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 2) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos modificados correctamente
             </div>";
     }
@@ -150,7 +150,7 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 3) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos eliminados correctamente
             </div>";
     }
@@ -158,7 +158,7 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 4) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos importados correctamente
             </div>";
     }
@@ -173,7 +173,7 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 6) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Equipo chequeado
             </div>";
     }

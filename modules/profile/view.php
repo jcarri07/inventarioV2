@@ -33,8 +33,8 @@ if (isset($_SESSION['id_user'])) {
     elseif ($_GET['alert'] == 1) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
-         Perfil de usuario modificado correctamente.
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
+         Perfil de usuario modificado correctamente
             </div>";
     }
 
@@ -43,7 +43,7 @@ if (isset($_SESSION['id_user'])) {
               <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                   <span aria-hidden='true'>&times;</span>
               </button>
-              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese de que el archivo que se sube es correcto.
+              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese que el archivo que sube es correcto
             </div>";
     }
 
@@ -52,7 +52,7 @@ if (isset($_SESSION['id_user'])) {
               <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                   <span aria-hidden='true'>&times;</span>
               </button>
-              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese de que la imagen no es más de 1 MB.
+              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese que la imagen no sea mayor a 1 MB
             </div>";
     }
 
@@ -61,7 +61,7 @@ if (isset($_SESSION['id_user'])) {
               <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                   <span aria-hidden='true'>&times;</span>
               </button>
-              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese de que el tipo de archivo subido *.JPG, *.JPEG, *.PNG.
+              <strong><i class='fa fa-check-circle'></i> Error!</strong> Asegúrese que el tipo de archivo subido sea *.JPG, *.JPEG, *.PNG
             </div>";
     }
     ?>

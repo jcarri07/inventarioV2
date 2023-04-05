@@ -78,7 +78,7 @@ if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Equipos
+      <i class="fa fa-edit icon-title"></i> Agregar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -313,7 +313,7 @@ if ($_GET['form']=='add') { ?>
 
 <section class="content-header">
   <h1>
-    <i class="fa fa-edit icon-title"></i> Agregar Equipos
+    <i class="fa fa-edit icon-title"></i> Agregar equipos
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
@@ -494,7 +494,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Equipos
+      <i class="fa fa-edit icon-title"></i> Modificar equipos
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>

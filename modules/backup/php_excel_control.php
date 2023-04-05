@@ -10,21 +10,21 @@
       
             <thead>
               <tr>
-                <th class="center">No.</th>
-                <th class="center">TRANSACCION</th>
+                <th class="center">ÍTEM</th>
+                <th class="center">TRANSACCIÓN</th>
                 <th class="center">TIPO</th>
-                <th class="center">CODIGO</th>
+                <th class="center">CÓDIGO</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">ENTREGA</th>
-                <th class="center">CEDULA</th>
+                <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">RECIBE</th>
-			        	<th class="center">CEDULA</th>
+			        	<th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">FECHA</th>
-                <th class="center">ID USER CREACION</th>
+                <th class="center">ID USER CREACIÓN</th>
               </tr>
             </thead>
             <tbody>

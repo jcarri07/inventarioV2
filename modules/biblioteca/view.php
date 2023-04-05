@@ -41,10 +41,12 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 18040-0000 | Libros y Revistas
+  <i class="fa fa-folder-o icon-title"></i> 18040-0000 | Libros y revistas
 
     <form action="database/excel_to_mysql_biblioteca.php" method="POST" enctype="multipart/form-data">
-        <button class="btn btn-primary pull-right botones" name="archivoInput" data-toggle="tooltip">Importar</button>
+        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
+        <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
+        </button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
     
@@ -83,7 +85,7 @@ function validarExt()
     elseif ($_GET['alert'] == 1) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos registrados correctamente
             </div>";
     }
@@ -91,7 +93,7 @@ function validarExt()
     elseif ($_GET['alert'] == 2) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos modificados correctamente
             </div>";
     }
@@ -99,7 +101,7 @@ function validarExt()
     elseif ($_GET['alert'] == 3) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos eliminados correctamente
             </div>";
     }
@@ -107,7 +109,7 @@ function validarExt()
     elseif ($_GET['alert'] == 4) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos importados correctamente
             </div>";
     } 
@@ -122,7 +124,7 @@ function validarExt()
     elseif ($_GET['alert'] == 6) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Equipo chequeado
             </div>";
     }   
