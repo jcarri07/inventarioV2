@@ -5,7 +5,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-    <li><a href="?module=stock_report"> Movimientos </a></li>
+    <li class="active"> Movimientos </li>
   </ol>
 </section>
 
