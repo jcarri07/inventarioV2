@@ -1996,11 +1996,11 @@ INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `pass
 (03, 'inabaebaemari1', 'Admin INABAE Baemari', 0, 'inabaebaemari1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
 (04, 'inabaeluepa1', 'Admin INABAE Luepa', 0, 'inabaeluepa1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
 (05, 'inabaecide1', 'Admin INABAE CIDE', 0, 'inabaecide1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE'),
-(06, 'inabaectsr2', 'Trabajador INABAE CTSR', 0, 'inabaectsr2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
-(07, 'inabaesat2', 'Trabajador INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
-(08, 'inabaebaemari2', 'Trabajador INABAE Baemari', 0, 'inabaebaemari2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
-(09, 'inabaeluepa2', 'Trabajador INABAE Luepa', 0, 'inabaeluepa2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(10, 'inabaecide2', 'Trabajador INABAE CIDE', 0, 'inabaecide2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
+(06, 'inabaectsr2', 'Trabajador INABAE CTSR', 0, 'inabaectsr2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
+(07, 'inabaesat2', 'Trabajador INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
+(08, 'inabaebaemari2', 'Trabajador INABAE Baemari', 0, 'inabaebaemari2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
+(09, 'inabaeluepa2', 'Trabajador INABAE Luepa', 0, 'inabaeluepa2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
+(10, 'inabaecide2', 'Trabajador INABAE CIDE', 0, 'inabaecide2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
 
 --
 -- Índices para tablas volcadas
