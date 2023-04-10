@@ -1992,15 +1992,15 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `password`, `email`, `telefono`, `foto`, `permisos_acceso`, `status`, `created_at`, `updated_at`, `sede`) VALUES
 (00, 'inabae', 'Super Admin INABAE', 0, 'inabae', NULL, NULL, NULL, 'Super Admin', 'Activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR'),
 (01, 'inabaectsr1', 'Admin INABAE CTSR', 0, 'inabaectsr1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
-(02, 'inabaesat2', 'Admin INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
-(03, 'inabaebaemari3', 'Admin INABAE Baemari', 0, 'inabaebaemari3', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
-(04, 'inabaeluepa4', 'Admin INABAE Luepa', 0, 'inabaeluepa4', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(05, 'inabaecide5', 'Admin INABAE CIDE', 0, 'inabaecide5', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE'),
-(06, 'inabaectsr6', 'Trabajador INABAE CTSR', 0, 'inabaectsr6', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
-(07, 'inabaesat7', 'Trabajador INABAE SAT', 0, 'inabaesat7', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
-(08, 'inabaebaemari8', 'Trabajador INABAE Baemari', 0, 'inabaebaemari8', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
-(09, 'inabaeluepa9', 'Trabajador INABAE Luepa', 0, 'inabaeluepa9', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(10, 'inabaecide10', 'Trabajador INABAE CIDE', 0, 'inabaecide10', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
+(02, 'inabaesat1', 'Admin INABAE SAT', 0, 'inabaesat1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
+(03, 'inabaebaemari1', 'Admin INABAE Baemari', 0, 'inabaebaemari1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
+(04, 'inabaeluepa1', 'Admin INABAE Luepa', 0, 'inabaeluepa1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
+(05, 'inabaecide1', 'Admin INABAE CIDE', 0, 'inabaecide1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE'),
+(06, 'inabaectsr2', 'Trabajador INABAE CTSR', 0, 'inabaectsr2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
+(07, 'inabaesat2', 'Trabajador INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
+(08, 'inabaebaemari2', 'Trabajador INABAE Baemari', 0, 'inabaebaemari2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
+(09, 'inabaeluepa2', 'Trabajador INABAE Luepa', 0, 'inabaeluepa2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
+(10, 'inabaecide2', 'Trabajador INABAE CIDE', 0, 'inabaecide2', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
 
 --
 -- Índices para tablas volcadas
