@@ -10,7 +10,7 @@ $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
 
 
 
-$query = mysqli_query($mysqli, "SELECT * FROM vehiculos WHERE codigo = '$var1'")
+$query = mysqli_query($mysqli, "SELECT * FROM transporte WHERE codigo = '$var1'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);

@@ -112,7 +112,7 @@
                   <div>
 
                     <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                          <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                          <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                     </a>";
 
               $no++;
@@ -235,9 +235,9 @@
 
       if (e.target.id == "qr") {
         console.log(e.target.firstChild.nextSibling.id);
-        serial = e.target.firstChild.nextSibling.id;
+        codigo = e.target.firstChild.id;
         var parametros = {
-          "textqr": serial,
+          "textqr": codigo,
           "sizeqr": 300
         };
         $.ajax({
@@ -276,6 +276,7 @@
 			
 		  event.preventDefault();*/
   });
+
 </script>
 
 <!--<input type="button" onclick="javascript:esconde_div();" value="Ocultar div" />
@@ -401,7 +402,7 @@
                               <div>
     
                         <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                              <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                         </a>";
 
                     $no++;
@@ -542,7 +543,7 @@
                               <div>
     
                         <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                              <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                         </a>";
 
                     $no++;
@@ -683,7 +684,7 @@
                               <div>
     
                         <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                              <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                         </a>";
 
                     $no++;
@@ -821,7 +822,7 @@
                               <div>
                 
                         <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                              <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                         </a>";
 
                     $no++;
@@ -963,7 +964,7 @@
                 
     
                         <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                              <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                              <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                         </a>";
 
                     $no++;

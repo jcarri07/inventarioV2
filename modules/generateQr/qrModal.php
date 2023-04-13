@@ -7,10 +7,11 @@ require_once "../../config/database.php";
 $coma = "\n";
 $var5=$_POST['textqr'];//Recibo la variable pasada por post
 $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
+echo $var5;
 
 
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var5'")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo = '$var5'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);

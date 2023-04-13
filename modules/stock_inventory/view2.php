@@ -184,7 +184,7 @@
                                 <div>
   
                     <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                          <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                          <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                     </a>";
 
                             $no++;
@@ -315,7 +315,7 @@
                                 <div>
             
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                      <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                                 </a>";
 
                                 $no++;
@@ -447,7 +447,7 @@
                                 <div>
 
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                      <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                                 </a>";
 
                                 $no++;
@@ -578,7 +578,7 @@
                                   <div>
 
                                 <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                                      <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                      <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                                 </a>";
 
                                 $no++;
@@ -708,7 +708,7 @@
                                 <div>
 
                               <a class='btn btn-primary btn-social pull-right' id='qr' data-toggle='modal' data-target='#exampleModal'>
-                                    <i id='$data[serial]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
+                                    <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                               </a>";
                                 $no++;
                               }
@@ -1542,7 +1542,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa222");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1570,7 +1570,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa919191");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1601,7 +1601,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa22222");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1629,7 +1629,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa111111");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1660,12 +1660,12 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa00000111");
         //console.log(e.target.firstChild.nextSibling.id);
-        serial = e.target.firstChild.nextSibling.id;
+        codigo = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
         var parametros = {
-          "textqr": serial,
+          "textqr": codigo,
           "sizeqr": 300
         };
         $.ajax({
@@ -1688,7 +1688,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa9999");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1719,7 +1719,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa22222");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1747,7 +1747,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa222");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1778,7 +1778,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa33333");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1806,7 +1806,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa44444");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1837,7 +1837,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa5555");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1865,7 +1865,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa66666");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
@@ -1896,18 +1896,18 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa7777s");
         //console.log(e.target.firstChild.nextSibling.id);
-        serial = e.target.firstChild.nextSibling.id;
+        codigo = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
         var parametros = {
-          "textqr": serial,
+          "textqr": codigo,
           "sizeqr": 300
         };
         $.ajax({
           type: "POST",
           dataType: "html",
-          url: "modules/generateQr/qrModalTransporte.php",
+          url: "modules/generateQr/qrModalVehiculos.php",
           data: parametros,
           //success: function(datos){
           //console.log(cuerpo);
@@ -1955,7 +1955,7 @@
 
       if (e.target.id == "qr") {
         //console.log(qr);
-        console.log("HOlaaaaaaaaaa");
+        console.log("HOlaaaaaaaaaa8888");
         //console.log(e.target.firstChild.nextSibling.id);
         serial = e.target.firstChild.nextSibling.id;
         //console.log(e.target);
@@ -1983,7 +1983,7 @@
   );
 
   $("#qr").click(function(event) {
-    console.log("HOLAaaaaaa");
+    console.log("HOLAaaaaaa99999");
     /*var textqr=$("#textqr").val();
     var sizeqr=$("#sizeqr").val();
     parametros={"textqr":textqr,"sizeqr":sizeqr};*/
