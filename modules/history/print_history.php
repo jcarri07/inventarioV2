@@ -38,7 +38,7 @@ $count  = mysqli_num_rows($query);
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/norma.png" width="400" align='center' ;></td>
+            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
             <td width="220"></td>
             <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
         </tr>
