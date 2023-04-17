@@ -31,10 +31,7 @@
   
   <?php
 
-    $server   = "localhost";
-		$username = "root";
-		$password = "";
-		$database = "inventario3";
+    require('../config/database.php');
 
     session_start();
 
@@ -42,8 +39,6 @@
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
     $cedulauser = $_SESSION['cedula_user'];
-
-		$mysqli = new mysqli($server, $username, $password, $database);
 
     $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
@@ -58,10 +53,15 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE sede LIKE '$sede' ORDER BY codigo DESC")
-                                            or die('error: '.mysqli_error($mysqli));
+      if($permiso != 'Super Admin') {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM biblioteca and sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('error: ' . mysqli_error($mysqli));
+      } else {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY codigo DESC")
+        or die('error: ' . mysqli_error($mysqli));
+      }
 
-      while ($data = mysqli_fetch_assoc($query)) { 
+      while ($data = mysqli_fetch_assoc($query2)) { 
               echo "
 
               <tr>
@@ -87,10 +87,7 @@
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                   </a>";
     ?>
-    
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar<?php echo $data['nombre']; ?> ?');">
-        <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
-    </a>
+  
   
   <?php
     echo "    </div>

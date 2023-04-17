@@ -31,10 +31,7 @@
   
   <?php
 
-    $server   = "localhost";
-		$username = "root";
-		$password = "";
-		$database = "inventario3";
+    require('../config/database.php');
 
     session_start();
 
@@ -58,10 +55,15 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' and sede LIKE '$sede' ORDER BY codigo DESC")
+      if($permiso =! 'Super Admin') {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
+      } else {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' ORDER BY codigo DESC")
+                                            or die('error: '.mysqli_error($mysqli));
+      }
 
-      while ($data = mysqli_fetch_assoc($query)) { 
+      while ($data = mysqli_fetch_assoc($query2)) { 
               echo "
 
               <tr>
