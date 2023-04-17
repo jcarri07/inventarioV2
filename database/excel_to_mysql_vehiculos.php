@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "Negro04149468207*";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -61,33 +61,34 @@ if ($parametro != null) {
         }
     catch(PDOException $e)
     {
-        echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
+        echo '<script language="javascript">alert("El documento importado puede que contenga errores");</script>';
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, placa, marca, modelo, anio, tipo, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO transporte (codigo, descripcion, placa, marca, modelo, anio, tipo, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
             $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $placa);
-            $stmt->bindParam( 3, $marca);
-            $stmt->bindParam( 4, $modelo);
-            $stmt->bindParam( 5, $anio);
-            $stmt->bindParam( 6, $tipo);
-            $stmt->bindParam( 7, $color);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $unidad);
-            $stmt->bindParam( 10, $responsable);
-            $stmt->bindParam( 11, $cedula);
-            $stmt->bindParam( 12, $ubicacion);
-            $stmt->bindParam( 13, $sede);
-            $stmt->bindParam( 14, $pertenece);
-            $stmt->bindParam( 15, $created_user);
-            $stmt->bindParam( 16, $updated_user);
-            $stmt->bindParam( 17, $created_date);
-            $stmt->bindParam( 18, $updated_date);
-            $stmt->bindParam( 19, $estado);
-            $stmt->bindParam( 20, $categoria);
+            $stmt->bindParam( 2, $descripcion);
+            $stmt->bindParam( 3, $placa);
+            $stmt->bindParam( 4, $marca);
+            $stmt->bindParam( 5, $modelo);
+            $stmt->bindParam( 6, $anio);
+            $stmt->bindParam( 7, $tipo);
+            $stmt->bindParam( 8, $color);
+            $stmt->bindParam( 9, $condicion);
+            $stmt->bindParam( 10, $unidad);
+            $stmt->bindParam( 11, $responsable);
+            $stmt->bindParam( 12, $cedula);
+            $stmt->bindParam( 13, $ubicacion);
+            $stmt->bindParam( 14, $sede);
+            $stmt->bindParam( 15, $pertenece);
+            $stmt->bindParam( 16, $created_user);
+            $stmt->bindParam( 17, $updated_user);
+            $stmt->bindParam( 18, $created_date);
+            $stmt->bindParam( 19, $updated_date);
+            $stmt->bindParam( 20, $estado);
+            $stmt->bindParam( 21, $categoria);
             
             $accion = "Importacion de Vehiculos";
 
@@ -95,7 +96,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-            header('Location:/inventariov2/main.php?module=vehiculos&alert=4');
+            header('Location:/inventariov2/main.php?module=transporte&alert=4');
                
             
 

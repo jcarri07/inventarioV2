@@ -34,17 +34,17 @@ $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE codigo = '$var1'"
     	
     }
 
-    $var1 = " CÓDIGO: ".$data['codigo'];
-    $var2 = " DESCRIPCIÓN: ".$data['tipo'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCION: ".$data['tipo'];
     $var3 = " TITULO: ".$data['titulo'];
     $var4 = " AUTOR: ".$data['autor'];
     $var5 = " COLOR: ".$data['color'];
     $var6 = " ISBN: ".$data['isbn'];
     $var7 = " B/N: ".$data['bienesN'];
-    $var8 = " CONDICIÓN: ".$data['condicion'];
-    $var9 = " UBICACIÓN: ".$data['ubicacion'];
+    $var8 = " CONDICION: ".$data['condicion'];
+    $var9 = " UBICACION: ".$data['ubicacion'];
     $var10 = " NOMBRE: ".$data['responsable'];
-    $var11= " CÉDULA: ".$data['cedula'];
+    $var11= " CEDULA: ".$data['cedula'];
     $var12 = " SEDE: ".$data['sede'];
     $var13= " PERTENECE: ".$data['editorial'];
     $var14 = " CANTIDAD: ".$data['cantidad'];

@@ -245,12 +245,24 @@ elseif ($_GET['form']=='edit') {
                 </div>
               </div>
 
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" autocomplete="off" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Maquinaria' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
+
                         
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
@@ -269,7 +281,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off">
                     <option value=""><?php echo $data['color']; ?></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
@@ -299,7 +311,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" >
                     <option value=""><?php echo $data['condicion'];?></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>

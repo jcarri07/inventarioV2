@@ -80,15 +80,15 @@ else {
 			                    }
                         	} else {
 	                           
-	                            header("location: ../../main.php?module=user&alert=2");
+	                            header("location: ../../main.php?module=profile&alert=2");
 	                        }
 	                    } else {
 	                       
-	                        header("location: ../../main.php?module=user&alert=3");
+	                        header("location: ../../main.php?module=profile&alert=3");
 	                    }
 	                } else {
 	                   
-	                    header("location: ../../main.php?module=user&alert=4");
+	                    header("location: ../../main.php?module=profile&alert=4");
 	                } 
 				}
 			}

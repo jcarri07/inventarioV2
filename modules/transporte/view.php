@@ -43,7 +43,7 @@ function validarExt()
   <h2>
   <i class="fa fa-folder-o icon-title"></i> 15000-0000 | Equipos de transporte, tracción y elevación
 
-    <form action="database/excel_to_mysql_transporte.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_vehiculos.php" method="POST" enctype="multipart/form-data">
         <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
           <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
         </button>
@@ -120,15 +120,7 @@ function validarExt()
               <h4>  <i class='icon fa fa-ban'></i> Error!</h4> La placa ya existe 
             </div>";
     }   
-    
-    elseif ($_GET['alert'] == 6) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Equipo chequeado
-            </div>";
-    } 
-    
+       
     elseif ($_GET['alert'] == 7) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -143,13 +135,7 @@ function validarExt()
             </div>";
     }
 
-    elseif ($_GET['alert'] == 9) {
-      echo "<div class='alert alert-danger alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-              Asegúrese que el archivo que sube es correcto
-            </div>";
-    }
+  
 
     ?>
 
