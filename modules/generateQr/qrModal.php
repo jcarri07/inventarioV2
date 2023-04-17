@@ -7,7 +7,6 @@ require_once "../../config/database.php";
 $coma = "\n";
 $var5=$_POST['textqr'];//Recibo la variable pasada por post
 $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
-echo $var5;
 
 
 
