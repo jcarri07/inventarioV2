@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2022 a las 15:42:11
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.3.31
+-- Servidor: localhost:8889
+-- Tiempo de generación: 17-04-2023 a las 13:11:37
+-- Versión del servidor: 5.7.39
+-- Versión de PHP: 7.4.33
 
 CREATE DATABASE inventario3;
 USE inventario3;
@@ -54,7 +54,7 @@ CREATE TABLE `biblioteca` (
 --
 
 INSERT INTO `biblioteca` (`codigo`, `isbn`, `tipo`, `titulo`, `autor`, `editorial`, `cantidad`, `bienesN`, `responsable`, `cedula`, `sede`, `color`, `condicion`, `ubicacion`, `created_user`, `updated_user`, `created_date`, `updated_date`, `estado`, `categoria`) VALUES
-('000001', '978-980-6588-07-3', 'Libros', 'Calculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'chequeado', 'Biblioteca');
+('000001', '978-980-6588-07-3', 'Libros', 'Calculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 5, 5, '2022-01-24 22:54:46', '2022-01-24 22:54:46', 'chequeado', 'Biblioteca');
 
 -- --------------------------------------------------------
 
@@ -500,7 +500,7 @@ INSERT INTO `guia` (`codigo`, `nombre`, `categoria`) VALUES
 ('20090-0136', 'Tostadoras', 'Oficina'),
 ('20090-0137', 'Vajillas de lujo', 'Oficina'),
 ('20090-0138', 'Video grabadores', 'Oficina'),
-('20990-0001', 'Otras maquinas, muebles y demas equipos de oficina y alojamiento', 'Oficina'),
+('20990-0001', 'Otras maquinas, muebles y demas equipos de oficina y alojami', 'Oficina'),
 ('	14010-0001', ' Abecedarios de golpe (punzones)', 'Maquinaria'),
 ('	14010-0002', ' Abecedarios metalicos', 'Maquinaria'),
 ('	14010-0003', ' Acanaladoras', 'Maquinaria'),
@@ -626,7 +626,7 @@ INSERT INTO `guia` (`codigo`, `nombre`, `categoria`) VALUES
 ('	14010-0123', ' Maquinas soldadoras de punto', 'Maquinaria'),
 ('	14010-0124', ' Maquinas selladoras de paquetes', 'Maquinaria'),
 ('	14010-0125', ' Maquinas torcedoras y formadoras', 'Maquinaria'),
-('  14010-0126', ' Maquinas universales para latoneria dobladora y envarillador', 'Maquinaria'),
+('  14010-0126', ' Maquinas universales para latoneria dobladora y envarillado', 'Maquinaria'),
 ('	14010-0127', ' Marcos para segueta', 'Maquinaria'),
 ('	14010-0128', ' Martillos', 'Maquinaria'),
 ('	14010-0129', ' Martillos neumaticos', 'Maquinaria'),
@@ -995,7 +995,7 @@ INSERT INTO `guia` (`codigo`, `nombre`, `categoria`) VALUES
 ('	14070-0001', ' Maquinarias y equipos de riego', 'Maquinaria'),
 ('	14070-0002', ' Maquinarias y equipos de acueductos', 'Maquinaria'),
 ('	14080-0001', ' Equipos de almacen', 'Maquinaria'),
-('	14990-0001', ' Otras maquinarias y demas equipos de construccion, campo, industria y taller', 'Maquinaria'),
+('	14990-0001', ' Otras maquinarias y demas equipos de construccion, campo, i', 'Maquinaria'),
 ('	18010-0001', ' Agitadores', 'Cientificos'),
 ('	18010-0002', ' Alambiques', 'Cientificos'),
 ('	18010-0003', ' Alcalimetros', 'Cientificos'),
@@ -1352,7 +1352,7 @@ INSERT INTO `guia` (`codigo`, `nombre`, `categoria`) VALUES
 ('	18060-0044', ' Violines', 'Cientificos'),
 ('	18060-0045', ' Violoncelos', 'Cientificos'),
 ('	18060-0046', ' Xilofonos', 'Cientificos'),
-('	18990-0001', ' Otros equipos cientificos, religiosos, de enseñanza y recreacion', 'Cientificos'),
+('	18990-0001', ' Otros equipos cientificos, religiosos, de enseñanza y recre', 'Cientificos'),
 ('	17010-0001', ' Agitadores de pipetas', 'Medicos'),
 ('	17010-0002', ' Agitadores serologicos', 'Medicos'),
 ('	17010-0003', ' Analizadores de cido-alcalinidad de la sangre', 'Medicos'),
@@ -1709,7 +1709,7 @@ CREATE TABLE `history` (
   `cedula` varchar(30) NOT NULL,
   `permiso` varchar(50) NOT NULL,
   `accion` varchar(50) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `hora` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1718,7 +1718,10 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`nombre`, `cedula`, `permiso`, `accion`, `fecha`, `hora`) VALUES
-('Jose Carrizales', '24642009', '', 'Registro de equipo', '2022-01-24', '18:54:46');
+('Jose Carrizales', '24642009', '', 'Registro de equipo', '2022-01-24 04:00:00', '18:54:46'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:02:35', '09:09:35'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:03:13', '09:09:13'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:05:46', '09:09:46');
 
 -- --------------------------------------------------------
 
@@ -1752,7 +1755,7 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`) VALUES
-('000001', 'Casa', 200, '', 4, 'En uso', 'chequeado', 'inmuebles', 1, 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', 05, 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46');
+('000001', 'Casa', '200', '', 4, 'En uso', 'chequeado', 'inmuebles', '1', 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', '5', '5', '2022-01-24 22:54:46', '2022-01-24 22:54:46');
 
 -- --------------------------------------------------------
 
@@ -1783,9 +1786,9 @@ CREATE TABLE `inventario` (
   `stock` int(11) NOT NULL,
   `estado` enum('chequeado','nochequeado') NOT NULL DEFAULT 'chequeado',
   `created_user` int(3) NOT NULL,
-  `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_user` int(3) NOT NULL,
-  `updated_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo` varchar(300) DEFAULT NULL,
   `responsable` varchar(300) DEFAULT NULL,
   `uso` varchar(20) DEFAULT NULL,
@@ -1798,11 +1801,11 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`, `foto`) VALUES
-('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Deposito', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
-('Comunicaciones', '000002', 'N/A', '', 'EAR ZOOM', 'PRO', 0, '', 'CIDE', 'ABAE', '14299653', 'N/A', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'USMI', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Emerson Aguiar', NULL, '', NULL),
-('Medicos', '000003', 'N/A', '', 'JZIICr', 'N/A', 1, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Plateado', 'Pinza', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
-('Cientificos', '000004', 'N/A', '', 'N/A', 'N/A', 0, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Negro', 'Lupas', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
-('Oficina', '000005', 'N/A', '', 'OSTER', '3291', 1, '', 'CIDE', 'ABAE', 'N/A', '2386', 'Blanco', 'Cafeteras', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'chequeado', 05, '2022-01-24 18:54:46', 05, '2022-01-24 18:54:46', NULL, 'No hay usuario', NULL, '', NULL);
+('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Deposito', 0, 0, 'DGA', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
+('Comunicaciones', '000002', 'N/A', '', 'EAR ZOOM', 'PRO', 0, '', 'CIDE', 'ABAE', '14299653', 'N/A', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'USMI', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Emerson Aguiar', NULL, '', NULL),
+('Medicos', '000003', 'N/A', '', 'JZIICr', 'N/A', 1, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Plateado', 'Pinza', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
+('Cientificos', '000004', 'N/A', '', 'N/A', 'N/A', 0, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Negro', 'Lupas', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
+('Oficina', '000005', 'N/A', '', 'OSTER', '3291', 1, '', 'CIDE', 'ABAE', 'N/A', '2386', 'Blanco', 'Cafeteras', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'No hay usuario', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -1823,7 +1826,7 @@ CREATE TABLE `transaccion_equipos` (
   `lugar_e` varchar(300) NOT NULL,
   `lugar_r` varchar(300) NOT NULL,
   `created_user` int(3) NOT NULL,
-  `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo_transaccion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1832,7 +1835,7 @@ CREATE TABLE `transaccion_equipos` (
 --
 
 INSERT INTO `transaccion_equipos` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Karla Mieres', 18344910, 'ABAE', 'Gustavo Guedez', 14062579, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
+('TM-2022-000001', '000001', 'Prestamo', 'Karla Mieres', 18344910, 'ABAE', 'Gustavo Guedez', 14062579, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1853,7 +1856,7 @@ CREATE TABLE `transaccion_equipos_biblioteca` (
   `lugar_e` varchar(300) NOT NULL,
   `lugar_r` varchar(300) NOT NULL,
   `created_user` int(3) NOT NULL,
-  `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo_transaccion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1862,7 +1865,7 @@ CREATE TABLE `transaccion_equipos_biblioteca` (
 --
 
 INSERT INTO `transaccion_equipos_biblioteca` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1883,7 +1886,7 @@ CREATE TABLE `transaccion_equipos_inmuebles` (
   `lugar_e` varchar(300) NOT NULL,
   `lugar_r` varchar(300) NOT NULL,
   `created_user` int(3) NOT NULL,
-  `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo_transaccion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1892,7 +1895,7 @@ CREATE TABLE `transaccion_equipos_inmuebles` (
 --
 
 INSERT INTO `transaccion_equipos_inmuebles` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1913,7 +1916,7 @@ CREATE TABLE `transaccion_equipos_transporte` (
   `lugar_e` varchar(300) NOT NULL,
   `lugar_r` varchar(300) NOT NULL,
   `created_user` int(3) NOT NULL,
-  `created_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo_transaccion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1922,7 +1925,7 @@ CREATE TABLE `transaccion_equipos_transporte` (
 --
 
 INSERT INTO `transaccion_equipos_transporte` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 05, '2022-01-24 18:54:46', 'Salida');
+('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1961,7 +1964,7 @@ CREATE TABLE `transporte` (
 --
 
 INSERT INTO `transporte` (`codigo`, `descripcion`, `placa`, `marca`, `tipo`, `modelo`, `color`, `condicion`, `unidad`, `ubicacion`, `responsable`, `pertenece`, `cedula`, `sede`, `nmroCarroceria`, `anio`, `tipoCombustible`, `created_user`, `created_date`, `updated_date`, `estado`, `updated_user`, `categoria`) VALUES
-('000001', 'Camionetas de carga pick-up', 'A13BC4G', 'Dong Feng ZNA', '', 'PICKUP', 'Blanco', 'En uso', 'DGA', 'Borburata', 'Irlanda Molina', 'ABAE', '18343688', 'CIDE', '', 'N/A', '', 05, '2022-01-24 18:54:46', '2022-01-24 18:54:46', 'chequeado', 05, 'transporte');
+('000001', 'Camionetas de carga pick-up', 'A13BC4G', 'Dong Feng ZNA', '', 'PICKUP', 'Blanco', 'En uso', 'DGA', 'Borburata', 'Irlanda Molina', 'ABAE', '18343688', 'CIDE', '', 'N/A', '', 5, '2022-01-24 22:54:46', '2022-01-24 22:54:46', 'chequeado', 5, 'transporte');
 
 -- --------------------------------------------------------
 
@@ -1980,8 +1983,8 @@ CREATE TABLE `usuarios` (
   `foto` varchar(100) DEFAULT NULL,
   `permisos_acceso` varchar(30) NOT NULL,
   `status` enum('activo','bloqueado') NOT NULL DEFAULT 'activo',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `sede` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1990,17 +1993,17 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `cedula_user`, `password`, `email`, `telefono`, `foto`, `permisos_acceso`, `status`, `created_at`, `updated_at`, `sede`) VALUES
-(00, 'inabae', 'Super Admin INABAE', 0, 'inabae', NULL, NULL, NULL, 'Super Admin', 'Activo', '2021-06-15 11:05:01', '2021-06-15 11:05:01', 'CTSR'),
-(01, 'inabaectsr1', 'Admin INABAE CTSR', 0, 'inabaectsr1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
-(02, 'inabaesat1', 'Admin INABAE SAT', 0, 'inabaesat1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
-(03, 'inabaebaemari1', 'Admin INABAE Baemari', 0, 'inabaebaemari1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
-(04, 'inabaeluepa1', 'Admin INABAE Luepa', 0, 'inabaeluepa1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(05, 'inabaecide1', 'Admin INABAE CIDE', 0, 'inabaecide1', NULL, NULL, NULL, 'Admin', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE'),
-(06, 'inabaectsr2', 'Trabajador INABAE CTSR', 0, 'inabaectsr2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CTSR'),
-(07, 'inabaesat2', 'Trabajador INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'SAT'),
-(08, 'inabaebaemari2', 'Trabajador INABAE Baemari', 0, 'inabaebaemari2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Baemari'),
-(09, 'inabaeluepa2', 'Trabajador INABAE Luepa', 0, 'inabaeluepa2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'ETCS-Luepa'),
-(10, 'inabaecide2', 'Trabajador INABAE CIDE', 0, 'inabaecide2', NULL, NULL, NULL, 'Trabajador', 'Activo', '2023-04-01 12:34:35', '2023-04-01 12:34:35', 'CIDE');
+(0, 'inabae', 'Super Admin INABAE', 0, 'inabae', NULL, NULL, NULL, 'Super Admin', 'activo', '2021-06-15 15:05:01', '2021-06-15 15:05:01', 'CTSR'),
+(1, 'inabaectsr1', 'Admin INABAE CTSR', 0, 'inabaectsr1', NULL, NULL, NULL, 'Admin', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'CTSR'),
+(2, 'inabaesat1', 'Admin INABAE SAT', 0, 'inabaesat1', NULL, NULL, NULL, 'Admin', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'SAT'),
+(3, 'inabaebaemari1', 'Admin INABAE Baemari', 0, 'inabaebaemari1', NULL, NULL, NULL, 'Admin', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'ETCS-Baemari'),
+(4, 'inabaeluepa1', 'Admin INABAE Luepa', 0, 'inabaeluepa1', NULL, NULL, NULL, 'Admin', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'ETCS-Luepa'),
+(5, 'inabaecide1', 'Admin INABAE CIDE', 0, 'inabaecide1', NULL, NULL, NULL, 'Admin', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'CIDE'),
+(6, 'inabaectsr2', 'Trabajador INABAE CTSR', 0, 'inabaectsr2', NULL, NULL, NULL, 'Trabajador', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'CTSR'),
+(7, 'inabaesat2', 'Trabajador INABAE SAT', 0, 'inabaesat2', NULL, NULL, NULL, 'Trabajador', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'SAT'),
+(8, 'inabaebaemari2', 'Trabajador INABAE Baemari', 0, 'inabaebaemari2', NULL, NULL, NULL, 'Trabajador', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'ETCS-Baemari'),
+(9, 'inabaeluepa2', 'Trabajador INABAE Luepa', 0, 'inabaeluepa2', NULL, NULL, NULL, 'Trabajador', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'ETCS-Luepa'),
+(10, 'inabaecide2', 'Trabajador INABAE CIDE', 0, 'inabaecide2', NULL, NULL, NULL, 'Trabajador', 'activo', '2023-04-01 16:34:35', '2023-04-01 16:34:35', 'CIDE');
 
 --
 -- Índices para tablas volcadas
@@ -2077,7 +2080,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
