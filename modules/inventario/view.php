@@ -108,7 +108,7 @@ function mostrar_modal_internos(id){
             </div>  
           </a>
 
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_comunicaciones.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
           

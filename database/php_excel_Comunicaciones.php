@@ -33,7 +33,7 @@
 
     $server   = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "root";
 		$database = "inventario3";
 
     session_start();
@@ -66,7 +66,7 @@
 
               <tr>
               <td width='50'  class='center' align='center'>$no</td>      
-              <td width='150' class='center' align='center'> </td>
+              <td width='150' class='center' align='center'>$data[codigo]</td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[marca]</td>
               <td width='150' class='center' align='center'>$data[modelo]</td>              
