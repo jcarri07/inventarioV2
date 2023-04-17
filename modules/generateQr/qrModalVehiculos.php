@@ -35,7 +35,7 @@ $query = mysqli_query($mysqli, "SELECT * FROM transporte WHERE codigo = '$var1'"
     }
 
     $var1 = " CÓDIGO: ".$data['codigo'];
-    $var2 = " DESCRIPCION: ".$data['tipo'];
+    $var2 = " DESCRIPCION: ".$data['descripcion'];
     $var3 = " MARCA: ".$data['marca'];
     $var4 = " MODELO: ".$data['modelo'];
     $var5 = " COLOR: ".$data['color'];
