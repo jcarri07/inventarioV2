@@ -139,7 +139,7 @@
                       <td width='45' class='center'>$no</td>";
 
                       if ($data['foto']=="") { ?>
-                        <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
+                        <td class='center'><img class='img-user' src='images/user/INABAE_Logo.png' width='25'></td>
                       <?php
                       } else { ?>
                         

@@ -65,9 +65,9 @@ ventimp.close();
 
   <table border="0">
         <tr>
-            <td><img src="assets/img/Cintillo MINCYT.png" width="300" align='center' ;></td>
+            <td><img src="assets/img/Cintillo_MINCYT.png" width="300" align='center' ;></td>
             <td width="400"></td>
-            <td><img src="assets/img/ABAE Logo.png" width="150" align='center' ;></td>
+            <td><img src="assets/img/ABAE_Logo.png" width="150" align='center' ;></td>
         </tr>
     </table>
 
