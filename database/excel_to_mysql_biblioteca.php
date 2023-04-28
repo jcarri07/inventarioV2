@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "Negro04149468207*";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -136,7 +136,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventariov2/main.php?module=biblioteca&alert=4');
+    header('Location:/inventariov2/main.php?module=biblioteca&alert=8');
  }
 
 ?>

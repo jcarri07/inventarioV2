@@ -4,7 +4,7 @@
 
 	$server   = "localhost";
     $username = "root";
-    $password = "Negro04149468207*";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -86,7 +86,7 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
 
-            header('Location:/inventariov2/main.php?module=transaccion_equipos_vehiculos&alert=3');
+            header('Location:/inventariov2/main.php?module=transaccion_equipos_transporte&alert=3');
            
         foreach ($xlsx->rows() as $fields)
         {
@@ -117,6 +117,6 @@ if ($parametro != null) {
         echo SimpleXLSX::parseError();
     }
 } else {
-    header('Location:/inventariov2/main.php?module=transaccion_equipos_vehiculos&alert=2');
+    header('Location:/inventariov2/main.php?module=transaccion_equipos_transporte&alert=2');
 }
 ?>

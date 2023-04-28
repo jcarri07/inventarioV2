@@ -5,8 +5,8 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from biblioteca
-      WHERE codigo = '$codigo'");
+      $result = mysqli_query($mysqli,"SELECT isbn from biblioteca
+      WHERE isbn = '$codigo'");
       
       $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
       $codigo = "$buat_id";
@@ -79,7 +79,7 @@ else {
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
+            if (buscaRepetido($isbn,$mysqli) == 1) {
                  header("location: ../../main.php?module=biblioteca&alert=5");
 
              } else {
@@ -141,6 +141,7 @@ else {
                                                                     sede          = '$sede',
                                                                     color          = '$color',
                                                                     condicion          = '$condicion',
+                                                                    ubicacion          = '$ubicacion',
                                                                     ubicacion          = '$ubicacion',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")

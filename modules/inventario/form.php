@@ -278,14 +278,13 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
-            </div>
 
             <div class="form-group" >
                 <label class="col-sm-2 control-label">Foto</label>
                 <div class="col-sm-5">
-                  <input type="file" name="foto"  class="form-control">
+                  <input type="file" name="foto" class="form-control" >
                   <br/>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo.png" width="128">
+                  <img  style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo.png" width="128">
                 </div>
               </div>
 
@@ -649,16 +648,15 @@ elseif ($_GET['form']=='edit') {
                     </datalist>
                 </div>
               </div>
-            </div><!-- /.box body -->
 
             <div class="form-group" >
-                <label class="col-sm-4 control-label">Foto</label>
-                <div class="col-sm-4">
-                  <input type="file" name="foto">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-5">
+                  <input type="file" name="foto" class="form-control">
                   <br/>
                 <?php  
                 if ($data['foto']=="") { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo." width="128">
                 <?php
                 }
                 else { ?>
@@ -668,6 +666,8 @@ elseif ($_GET['form']=='edit') {
                 ?>
                 </div>
               </div>
+              
+            </div><!-- /.box body -->
 
             <div class="box-footer">
               <div class="form-group">

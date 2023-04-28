@@ -85,13 +85,14 @@ function validarExt()
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
-    } elseif ($_GET['alert'] == 3) {
+    }  elseif ($_GET['alert'] == 3) {
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos importados correctamente
             </div>";
     }
+    
     
     ?>
 

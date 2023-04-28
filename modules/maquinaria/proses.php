@@ -5,8 +5,8 @@ function buscaRepetido($serial,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from inventario
-      where codigo='$codigo'");
+      $result = mysqli_query($mysqli,"SELECT serial from inventario
+      where serial='$codigo'");
 
       if(mysqli_num_rows($result) > 0){
         return 1;
