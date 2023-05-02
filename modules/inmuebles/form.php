@@ -251,9 +251,19 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'inmuebles' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">M²</label>

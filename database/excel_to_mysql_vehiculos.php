@@ -138,7 +138,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventariov2/main.php?module=vehiculos&alert=8');
+    header('Location:/inventariov2/main.php?module=transporte&alert=8');
  }
 
 ?>

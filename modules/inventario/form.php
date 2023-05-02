@@ -65,7 +65,7 @@ console.log("aaa")
 function cambiarLocation() {
     // form_int.submit();
     // console.log("Guardando datos");
-    window.location.href = "?module=form_inventario&form=add&alert=1";
+    window.location.href = "?module=inventario&alert=1";
     // //submitComponent.click();
     console.log("._.")
     console.log(prueba.value);
@@ -278,14 +278,13 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
-            </div>
 
             <div class="form-group" >
-                <label class="col-sm-4 control-label">Foto</label>
-                <div class="col-sm-4">
-                  <input type="file" name="foto">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-5">
+                  <input type="file" name="foto" class="form-control" >
                   <br/>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                  <img  style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo.png" width="128">
                 </div>
               </div>
 
@@ -532,10 +531,20 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" autocomplete="off" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
-                  
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Comunicaciones' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
@@ -639,16 +648,15 @@ elseif ($_GET['form']=='edit') {
                     </datalist>
                 </div>
               </div>
-            </div><!-- /.box body -->
 
             <div class="form-group" >
-                <label class="col-sm-4 control-label">Foto</label>
-                <div class="col-sm-4">
-                  <input type="file" name="foto">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-5">
+                  <input type="file" name="foto" class="form-control">
                   <br/>
                 <?php  
                 if ($data['foto']=="") { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo." width="128">
                 <?php
                 }
                 else { ?>
@@ -658,6 +666,8 @@ elseif ($_GET['form']=='edit') {
                 ?>
                 </div>
               </div>
+              
+            </div><!-- /.box body -->
 
             <div class="box-footer">
               <div class="form-group">

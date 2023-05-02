@@ -94,7 +94,7 @@ function mostrar_modal_internos(id){
   <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
     <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
-        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
+        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip"  onclick="return validarExt()">
           <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
         </button>
 
@@ -166,25 +166,10 @@ function mostrar_modal_internos(id){
     elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-ban'></i> Error!</h4> El serial ya existe 
+              <h4>  <i class='icon fa fa-ban'></i> Error!</h4> Serial duplicado 
             </div>";
     }
-    
-    elseif ($_GET['alert'] == 6) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Equipo chequeado
-            </div>";
-    }
-    
-    elseif ($_GET['alert'] == 7) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
-            </div>";
-    }
-    
+        
     elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>

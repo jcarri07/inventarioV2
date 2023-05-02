@@ -106,14 +106,6 @@ function validarExt()
             </div>";
     }
     
-    elseif ($_GET['alert'] == 4) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Datos importados correctamente
-            </div>";
-    } 
-    
     elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -121,33 +113,10 @@ function validarExt()
             </div>";
     }   
     
-    elseif ($_GET['alert'] == 6) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Equipo chequeado
-            </div>";
-    }  
-    
-    elseif ($_GET['alert'] == 7) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
-            </div>";
-    } 
-    
     elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
-            </div>";
-    }
-
-    elseif ($_GET['alert'] == 9) {
-      echo "<div class='alert alert-danger alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-              Asegúrese que el archivo que sube es correcto
             </div>";
     }
 
