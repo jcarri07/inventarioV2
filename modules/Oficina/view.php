@@ -43,7 +43,7 @@ function validarExt()
   <h2>
   <i class="fa fa-folder-o icon-title"></i> 20000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
 
-    <form action="database/excel_to_mysql_Oficina.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_oficina.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
