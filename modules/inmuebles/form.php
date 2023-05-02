@@ -294,7 +294,7 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=" "><?php echo $data['condicion'];?></option>
+                    <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
                     <option value="En uso">En uso</option>
                     <option value="En comodato">En comodato</option>
                     <option value="En arrendamiento">En arrendamiento</option>

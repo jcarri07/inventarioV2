@@ -98,6 +98,7 @@ else {
     }
     
     elseif ($_GET['act']=='update') {
+        echo "SIUUUU";
         if (isset($_POST['Guardar'])) {
             if (isset($_POST['codigo'])) {
         
