@@ -189,7 +189,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off">
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
@@ -205,7 +205,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
+                  <input type="text" class="form-control" name="serial" autocomplete="off" >
                 </div>
                 <div id="resultado"></div>
               </div>
@@ -213,14 +213,14 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">No. Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" >
                     <option value=""></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>

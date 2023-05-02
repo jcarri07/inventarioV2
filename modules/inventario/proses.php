@@ -139,11 +139,11 @@ else {
             $file               = explode(".", $name_file);
             $extension          = array_pop($file);
 
-            if(buscaRepetido($serial,$mysqli) == 1){
+           /* if(buscaRepetido($serial,$mysqli) == 1){
 
                 header("location: ../../main.php?module=inventario&alert=5");
 
-            }elseif (empty($_FILES['foto']['name'])) {
+            }else*/ if (empty($_FILES['foto']['name'])) {
                 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
                 VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")

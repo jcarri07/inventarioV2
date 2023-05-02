@@ -76,10 +76,10 @@ else {
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
+           /* if (buscaRepetido($codigo,$mysqli) == 1) {
                  header("location: ../../main.php?module=inmuebles&alert=5");
 
-             } else {
+             } else {*/
 
                 $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo,  descripcion, metrosCuadrados, tipo, nmroCuartos, condicion, estado, categoria, pisos, responsable, cedula, sede, direccion, habitantes, created_user, created_date) 
                 VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', 'chequeado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', NOW())")
@@ -93,7 +93,7 @@ else {
                                             or die('error '.mysqli_error($mysqli));
 
                 header("location: ../../main.php?module=inmuebles&alert=1");  
-            }
+            /*}*/
         }   
     }
     
