@@ -281,13 +281,8 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-<<<<<<< HEAD
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off">
+                    <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off">
                     <option value="<?php echo $data['color']; ?>"><?php echo $data['color']; ?></option>
-=======
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
-                    <option value=""><?php echo $data['color']; ?></option>
->>>>>>> 407bf6522209b8b2195e79a0eccbf53878929bb1
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
                                                             or die('error '.mysqli_error($mysqli));
@@ -302,27 +297,22 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>" required>
+                  <input type="text" class="form-control" name="serial" autocomplete="off" value="<?php echo $data['serial']; ?>">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">No. Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>" required>
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" value="<?php echo $data['bienesN']; ?>">
                 </div>
               </div> 
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-<<<<<<< HEAD
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" >
-                    <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
-=======
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""><?php echo $data['condicion'];?></option>
->>>>>>> 407bf6522209b8b2195e79a0eccbf53878929bb1
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off">
+                    <option value="<?php echo $data['condicion']; ?>"><?php echo $data['condicion'];?></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>

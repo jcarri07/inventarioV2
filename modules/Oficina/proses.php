@@ -74,10 +74,10 @@ else {
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($serial,$mysqli) == 1) {
+          /*  if (buscaRepetido($serial,$mysqli) == 1) {
                  header("location: ../../main.php?module=oficina&alert=5");
 
-             } else {
+             } else {*/
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
                                             VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
@@ -90,7 +90,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
                 header("location: ../../main.php?module=oficina&alert=1");  
-            }
+           /* }*/
         }   
     }
     

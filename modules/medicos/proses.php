@@ -71,11 +71,11 @@ else {
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($serial,$mysqli) == 1) {
+           /* if (buscaRepetido($serial,$mysqli) == 1) {
                  header("location: ../../main.php?module=medicos&alert=5");
 
              } else {
-
+*/
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
                                             VALUES('medicos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
@@ -87,7 +87,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
                 header("location: ../../main.php?module=medicos&alert=1");  
-            }
+            /*}*/
         }   
     }
     
