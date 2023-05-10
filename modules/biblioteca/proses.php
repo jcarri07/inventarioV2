@@ -74,7 +74,7 @@ else {
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-            //$unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
 
             $created_user = $_SESSION['id_user'];
@@ -84,8 +84,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, created_date) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', NOW())")
+                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, unidad, created_date) 
+                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$unidad', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -126,6 +126,7 @@ else {
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                // $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
                 $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
@@ -140,6 +141,7 @@ else {
                                                                     responsable             = '$responsable',
                                                                     sede          = '$sede',
                                                                     color          = '$color',
+                                                                    unidad  = '$unidad',    
                                                                     condicion          = '$condicion',
                                                                     ubicacion          = '$ubicacion',
                                                                     ubicacion          = '$ubicacion',

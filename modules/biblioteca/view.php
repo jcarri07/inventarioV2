@@ -182,7 +182,7 @@ function validarExt()
                       <td width='100' class='center'>$data[isbn]</td>
                       <td width='100' class='center'>$data[bienesN]</td>
                       <td width='100' class='center'>$data[condicion]</td>
-                      <td width='100' class='center'></td>
+                      <td width='100' class='center'>$data[unidad]</td>
                       <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[responsable]</td>
                       <td width='100' class='center'>$data[cedula]</td>

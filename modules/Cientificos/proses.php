@@ -42,6 +42,7 @@ $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
 $accion = "Registro de Equipo";
 $cedulauser = $_SESSION['cedula_user'];
+$estado = 'chequeado';  
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
      echo "<meta http-equiv='refresh' content='0; url=index.php?alert=1'>";
@@ -78,7 +79,7 @@ else {
              } else {*/
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
-                                            VALUES('cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
+                                            VALUES('cientificos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$iduser','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             

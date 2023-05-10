@@ -148,7 +148,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="" autocomplete="off" required>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" required>
                 </div>
               </div>
 

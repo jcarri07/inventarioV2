@@ -59,7 +59,7 @@ else {
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
             $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
-           
+            $estado = 'chequeado';
             
             $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
             //$categoria  = mysqli_real_escape_string($mysqli, trim($_POST['categoria']));
@@ -72,14 +72,15 @@ else {
             $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
 
             $created_user = $_SESSION['id_user'];
+            $created_date = $fechaActual = date('Y-m-d');
 
            /* if (buscaRepetido($serial,$mysqli) == 1) {
                  header("location: ../../main.php?module=maquinaria&alert=5");
 
              } else {*/
 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('maquinaria','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date, updated_user) 
+                                            VALUES('maquinaria','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$created_user')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
