@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 17-04-2023 a las 13:11:37
+-- Tiempo de generación: 17-05-2023 a las 20:17:10
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -29,7 +29,7 @@ USE inventario3;
 CREATE TABLE `biblioteca` (
   `codigo` varchar(10) NOT NULL,
   `isbn` varchar(30) NOT NULL,
-  `tipo` varchar(300) DEFAULT NULL,
+  `descripcion` varchar(300) DEFAULT NULL,
   `titulo` varchar(300) DEFAULT NULL,
   `autor` varchar(300) DEFAULT NULL,
   `editorial` varchar(300) DEFAULT NULL,
@@ -42,19 +42,14 @@ CREATE TABLE `biblioteca` (
   `condicion` varchar(300) DEFAULT NULL,
   `ubicacion` varchar(30) DEFAULT NULL,
   `created_user` int(11) DEFAULT NULL,
-  `updated_user` int(11) DEFAULT NULL,
+  `updated_user` int(30) DEFAULT NULL,
   `created_date` timestamp NULL DEFAULT NULL,
   `updated_date` timestamp NULL DEFAULT NULL,
   `estado` enum('chequeado','nochequeado') DEFAULT 'chequeado',
-  `categoria` varchar(300) DEFAULT NULL
+  `categoria` varchar(300) DEFAULT NULL,
+  `unidad` varchar(100) NOT NULL DEFAULT 'N/A',
+  `pertenece` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `biblioteca`
---
-
-INSERT INTO `biblioteca` (`codigo`, `isbn`, `tipo`, `titulo`, `autor`, `editorial`, `cantidad`, `bienesN`, `responsable`, `cedula`, `sede`, `color`, `condicion`, `ubicacion`, `created_user`, `updated_user`, `created_date`, `updated_date`, `estado`, `categoria`) VALUES
-('000001', '978-980-6588-07-3', 'Libros', 'Calculo Integral', 'Jorge Saenz', 'ABAE', 1, 'N/A', 'Gustavo Guedez', '14062579', 'CIDE', 'N/A', 'En uso', 'DC-1', 5, 5, '2022-01-24 22:54:46', '2022-01-24 22:54:46', 'chequeado', 'Biblioteca');
 
 -- --------------------------------------------------------
 
@@ -156,7 +151,13 @@ INSERT INTO `componentes` (`codigo`, `componente`, `clase`, `capacidad`, `marca`
 (22, 'fuente de poder', 'N/A', 'N/A', 'HOPLY', 'BDX-2539', '678689696', 'En uso', '500W', ''),
 (22, 'tarjeta de video', 'DDR3', '2GB', 'MSi', 'GT 730', '602-V809-779SD2008007080', 'En uso', 'N/A', 'N/A'),
 (22, 'memoria ram1', 'DDR3', '8GB', 'Mushkin', 'MEMORIA', '099202800123', 'En uso', 'N/A', 'N/A'),
-(22, 'memoria ram2', 'DDR3', '8GB', 'Mushkin', 'MEMORIA', '099202800123', 'En uso', 'N/A', 'N/A');
+(22, 'memoria ram2', 'DDR3', '8GB', 'Mushkin', 'MEMORIA', '099202800123', 'En uso', 'N/A', 'N/A'),
+(2, 'Disco1', 'Disco duro', '500gb', 'Seagate', 'HDD', '92719833', 'Buena', 'N/A', 'N/A'),
+(2, 'Disco2', '', '', '', '', '', '', 'N/A', 'N/A'),
+(2, 'Fuente de Poder', 'N/A', 'N/A', '', '', '', '', '', ''),
+(2, 'Tarjeta de Video', '', '', '', '', '', '', 'N/A', 'N/A'),
+(2, 'Memoria Ram1', '', '', '', '', '', '', 'N/A', 'N/A'),
+(2, 'Memoria Ram2', '', '', '', '', '', '', 'N/A', 'N/A');
 
 -- --------------------------------------------------------
 
@@ -1721,7 +1722,199 @@ INSERT INTO `history` (`nombre`, `cedula`, `permiso`, `accion`, `fecha`, `hora`)
 ('Jose Carrizales', '24642009', '', 'Registro de equipo', '2022-01-24 04:00:00', '18:54:46'),
 ('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:02:35', '09:09:35'),
 ('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:03:13', '09:09:13'),
-('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:05:46', '09:09:46');
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:05:46', '09:09:46'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:22:55', '09:09:55'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:35:43', '09:09:43'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:39:25', '09:09:25'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:41:18', '09:09:18'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:49:46', '09:09:46'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 13:58:54', '09:09:54'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:17:39', '10:10:39'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:17:56', '10:10:56'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:18:53', '10:10:53'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:19:57', '10:10:57'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:20:33', '10:10:33'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:21:39', '10:10:39'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:22:25', '10:10:25'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:27:26', '10:10:26'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Vehiculos', '2023-04-17 14:29:26', '10:10:26'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Vehiculos', '2023-04-17 14:30:02', '10:10:02'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Vehiculos', '2023-04-17 14:30:05', '10:10:05'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:33:42', '10:10:42'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:36:47', '10:10:47'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-04-17 14:37:09', '10:10:09'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:39:32', '10:10:32'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:40:08', '10:10:08'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-04-17 14:40:37', '10:10:37'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Inmuebles', '2023-04-17 14:43:03', '10:10:03'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:26:33', '09:09:33'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:26:47', '09:09:47'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:26:52', '09:09:52'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:27:01', '09:09:01'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:29:08', '09:09:08'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:29:14', '09:09:14'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:29:22', '09:09:22'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:31:01', '09:09:01'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:31:21', '09:09:21'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:31:25', '09:09:25'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:35:28', '09:09:28'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:35:33', '09:09:33'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:38:31', '09:09:31'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:38:36', '09:09:36'),
+('Super Admin INABAE', '0', '0', 'Registro de Vehiculo', '2023-05-02 13:40:25', '09:09:25'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:46:04', '09:09:04'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:46:20', '09:09:20'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:46:42', '09:09:42'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:47:27', '09:09:27'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:47:31', '09:09:31'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Vehiculo', '2023-05-02 13:48:45', '09:09:45'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:49:58', '09:09:58'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:55:08', '09:09:08'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:55:16', '09:09:16'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:55:24', '09:09:24'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-02 13:55:40', '09:09:40'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-02 13:57:47', '09:09:47'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-02 13:58:49', '09:09:49'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:58:57', '09:09:57'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-02 13:59:02', '09:09:02'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-02 13:59:19', '09:09:19'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-02 14:07:44', '10:10:44'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 14:19:21', '10:10:21'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Vehiculos', '2023-05-02 15:17:48', '11:11:48'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 19:15:47', '15:03:47'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 19:17:55', '15:03:55'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 19:18:24', '15:03:24'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Biblioteca', '2023-05-02 19:18:50', '15:03:50'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 19:19:31', '15:03:31'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Equipos', '2023-05-02 19:23:12', '15:03:12'),
+('Super Admin INABAE', '0', '0', 'Exportacion de Inmuebles', '2023-05-02 19:23:46', '15:03:46'),
+('Super Admin INABAE', '0', '0', 'Registro de Equipo', '2023-05-10 18:18:48', '14:02:48'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-10 18:20:01', '14:02:01'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-10 18:20:17', '14:02:17'),
+('Super Admin INABAE', '0', '0', 'Registro de Equipo', '2023-05-10 18:31:43', '14:02:43'),
+('Super Admin INABAE', '0', '0', 'Registro de componentes internos', '2023-05-10 18:32:30', '14:02:30'),
+('Super Admin INABAE', '0', '0', 'Registro de Vehiculo', '2023-05-10 18:34:26', '14:02:26'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-10 18:34:45', '14:02:45'),
+('Super Admin INABAE', '0', '0', 'Registro de Equipo', '2023-05-10 18:41:07', '14:02:07'),
+('Super Admin INABAE', '0', '0', 'Registro de Equipo', '2023-05-10 18:46:31', '14:02:31'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-10 18:46:44', '14:02:44'),
+('Super Admin INABAE', '0', '0', 'Registro de Biblioteca', '2023-05-10 18:48:39', '14:02:39'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-10 18:53:23', '14:02:23'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-10 18:53:31', '14:02:31'),
+('Super Admin INABAE', '0', '0', 'Registro de Biblioteca', '2023-05-10 18:55:28', '14:02:28'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-10 18:59:05', '14:02:05'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-10 18:59:13', '14:02:13'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Biblioteca', '2023-05-10 19:01:15', '15:03:15'),
+('Super Admin INABAE', '0', '0', 'Registro de Equipo', '2023-05-10 20:01:23', '16:04:23'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Equipo', '2023-05-10 20:01:30', '16:04:30'),
+('Super Admin INABAE', '0', '0', 'Registro de Inmueble', '2023-05-10 20:02:18', '16:04:18'),
+('Super Admin INABAE', '0', '0', 'Registro de Inmueble', '2023-05-10 20:07:35', '16:04:35'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:08:29', '16:04:29'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-10 20:11:16', '16:04:16'),
+('Super Admin INABAE', '0', '0', 'Registro de Inmueble', '2023-05-10 20:14:23', '16:04:23'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:15:20', '16:04:20'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:16:11', '16:04:11'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:17:38', '16:04:38'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:17:55', '16:04:55'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:19:56', '16:04:56'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:20:27', '16:04:27'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:20:36', '16:04:36'),
+('Super Admin INABAE', '0', '0', 'Modificacion de Inmueble', '2023-05-10 20:20:41', '16:04:41'),
+('Super Admin INABAE', '0', '0', 'Transaccion de Salida', '2023-05-10 20:26:10', '16:04:10'),
+('Super Admin INABAE', '0', '0', 'Transaccion de Salida', '2023-05-10 20:33:21', '16:04:21'),
+('Super Admin INABAE', '0', '0', 'Transaccion de Salida', '2023-05-10 20:37:49', '16:04:49'),
+('Super Admin INABAE', '0', '0', 'Transaccion de Salida', '2023-05-10 20:38:04', '16:04:04'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 15:19:00', '11:11:00'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 15:19:04', '11:11:04'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 15:19:06', '11:11:06'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 15:19:16', '11:11:16'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 15:59:24', '11:11:24'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 15:59:36', '11:11:36'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:00:48', '12:12:48'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:01:11', '12:12:11'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:04:55', '12:12:55'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:06:13', '12:12:13'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:08:32', '12:12:32'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:08:55', '12:12:55'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:09:05', '12:12:05'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:09:12', '12:12:12'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:09:15', '12:12:15'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:09:21', '12:12:21'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:09:51', '12:12:51'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:21:55', '12:12:55'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:22:00', '12:12:00'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:24:16', '12:12:16'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:24:21', '12:12:21'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:25:26', '12:12:26'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:25:42', '12:12:42'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:25:46', '12:12:46'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:28:25', '12:12:25'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:30:08', '12:12:08'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:30:13', '12:12:13'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:30:52', '12:12:52'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:31:04', '12:12:04'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:37:55', '12:12:55'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:38:01', '12:12:01'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:39:20', '12:12:20'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:39:29', '12:12:29'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:39:35', '12:12:35'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:39:47', '12:12:47'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Vehiculo', '2023-05-17 16:40:23', '12:12:23'),
+('Super Admin INABAE', '0', '0', 'Importacion de Vehiculos', '2023-05-17 16:40:30', '12:12:30'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Biblioteca', '2023-05-17 16:47:50', '12:12:50'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Biblioteca', '2023-05-17 16:47:52', '12:12:52'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Biblioteca', '2023-05-17 16:47:54', '12:12:54'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 16:48:27', '12:12:27'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 16:48:50', '12:12:50'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:36:08', '13:01:08'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:38:04', '13:01:04'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:40:03', '13:01:03'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:40:58', '13:01:58'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:42:19', '13:01:19'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:49:33', '13:01:33'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:51:09', '13:01:09'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:51:26', '13:01:26'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:51:55', '13:01:55'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:52:47', '13:01:47'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:53:00', '13:01:00'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:53:13', '13:01:13'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:54:45', '13:01:45'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:54:53', '13:01:53'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 17:55:59', '13:01:59'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 18:03:19', '14:02:19'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 18:06:43', '14:02:43'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Biblioteca', '2023-05-17 18:22:44', '14:02:44'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 18:23:14', '14:02:14'),
+('Super Admin INABAE', '0', '0', 'Importacion de Biblioteca', '2023-05-17 18:23:34', '14:02:34'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Equipo', '2023-05-17 19:11:57', '15:03:57'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-17 19:36:06', '15:03:06'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-17 19:36:09', '15:03:09'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-17 19:36:11', '15:03:11'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:36:22', '15:03:22'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:37:47', '15:03:47'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:38:23', '15:03:23'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:38:50', '15:03:50'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:46:33', '15:03:33'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:47:39', '15:03:39'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:52:11', '15:03:11'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 19:54:21', '15:03:21'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:00:11', '16:04:11'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:00:57', '16:04:57'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:01:42', '16:04:42'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:02:53', '16:04:53'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:08:32', '16:04:32'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:09:00', '16:04:00'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:11:35', '16:04:35'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:12:06', '16:04:06'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-17 20:12:09', '16:04:09'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:12:34', '16:04:34'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:12:45', '16:04:45'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:13:08', '16:04:08'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:13:37', '16:04:37'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:14:17', '16:04:17'),
+('Super Admin INABAE', '0', '0', 'Eliminacion de Inmueble', '2023-05-17 20:14:22', '16:04:22'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:14:45', '16:04:45'),
+('Super Admin INABAE', '0', '0', 'Importacion de Inmuebles', '2023-05-17 20:15:32', '16:04:32');
 
 -- --------------------------------------------------------
 
@@ -1740,22 +1933,30 @@ CREATE TABLE `inmuebles` (
   `categoria` varchar(300) DEFAULT NULL,
   `pisos` varchar(10) DEFAULT NULL,
   `responsable` varchar(300) DEFAULT NULL,
-  `cedula` varchar(10) DEFAULT NULL,
+  `cedula` varchar(20) DEFAULT NULL,
   `direccion` varchar(300) DEFAULT NULL,
   `habitantes` int(10) DEFAULT NULL,
   `sede` varchar(100) DEFAULT NULL,
   `created_user` varchar(50) DEFAULT NULL,
   `updated_user` varchar(50) DEFAULT NULL,
   `created_date` timestamp NULL DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT NULL
+  `update_date` timestamp NULL DEFAULT NULL,
+  `bienesN` varchar(11) DEFAULT NULL,
+  `unidad` varchar(100) NOT NULL DEFAULT 'N/A',
+  `pertenece` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `inmuebles`
 --
 
-INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`) VALUES
-('000001', 'Casa', '200', '', 4, 'En uso', 'chequeado', 'inmuebles', '1', 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', '5', '5', '2022-01-24 22:54:46', '2022-01-24 22:54:46');
+INSERT INTO `inmuebles` (`codigo`, `descripcion`, `metrosCuadrados`, `tipo`, `nmroCuartos`, `condicion`, `estado`, `categoria`, `pisos`, `responsable`, `cedula`, `direccion`, `habitantes`, `sede`, `created_user`, `updated_user`, `created_date`, `update_date`, `bienesN`, `unidad`, `pertenece`) VALUES
+('000001', 'Casa', '200', NULL, 4, 'En uso', 'chequeado', 'Inmuebles', '1', 'Gustavo Guedez', '14062579', 'Borburata', 2, 'CIDE', '5', '5', '2022-01-24 04:00:00', '2022-01-24 04:00:00', 'N/A', 'DIIE', 'ABAE'),
+('000002', 'Casa', '201', NULL, 5, 'En uso', 'chequeado', 'Inmuebles', '2', 'Gustavo Guedez', '14062580', 'Borburata', 3, 'CIDE', '6', '6', '2022-01-25 04:00:00', '2022-01-25 04:00:00', 'N/A', 'DIIE', 'ABAE'),
+('000003', 'Casa', '202', NULL, 6, 'En uso', 'chequeado', 'Inmuebles', '3', 'Gustavo Guedez', '14062581', 'Borburata', 4, 'CIDE', '7', '7', '2022-01-26 04:00:00', '2022-01-26 04:00:00', 'N/A', 'DIIE', 'ABAE'),
+('000004', 'Casa', '203', NULL, 7, 'En uso', 'chequeado', 'Inmuebles', '4', 'Gustavo Guedez', '14062582', 'Borburata', 5, 'CIDE', '8', '8', '2022-01-27 04:00:00', '2022-01-27 04:00:00', 'N/A', 'DIIE', 'ABAE'),
+('000005', 'Casa', '204', NULL, 8, 'En uso', 'chequeado', 'Inmuebles', '5', 'Gustavo Guedez', '14062583', 'Borburata', 6, 'CIDE', '9', '9', '2022-01-28 04:00:00', '2022-01-28 04:00:00', 'N/A', 'DIIE', 'ABAE'),
+('000006', 'Casa', '205', NULL, 9, 'En uso', 'chequeado', 'Inmuebles', '6', 'Gustavo Guedez', '14062584', 'Borburata', 7, 'CIDE', '10', '10', '2022-01-29 04:00:00', '2022-01-29 04:00:00', 'N/A', 'DIIE', 'ABAE');
 
 -- --------------------------------------------------------
 
@@ -1767,11 +1968,11 @@ CREATE TABLE `inventario` (
   `categoria` varchar(300) NOT NULL,
   `codigo` varchar(10) NOT NULL,
   `serial` varchar(20) NOT NULL,
-  `nombre` varchar(300) NOT NULL,
+  `nombre` varchar(300) NOT NULL DEFAULT 'N/A',
   `marca` varchar(300) NOT NULL,
   `modelo` varchar(300) NOT NULL,
-  `cantidad` int(10) NOT NULL,
-  `clasificacion` varchar(300) NOT NULL,
+  `cantidad` int(10) NOT NULL DEFAULT '0',
+  `clasificacion` varchar(300) NOT NULL DEFAULT 'N/A',
   `sede` varchar(300) NOT NULL,
   `pertenece` varchar(300) NOT NULL,
   `cedula` varchar(10) NOT NULL,
@@ -1780,19 +1981,19 @@ CREATE TABLE `inventario` (
   `descripcion` varchar(300) NOT NULL,
   `condicion` varchar(300) NOT NULL,
   `ubicacion` varchar(300) NOT NULL,
-  `precio_compra` int(11) NOT NULL,
-  `precio_venta` int(11) NOT NULL,
+  `precio_compra` int(11) NOT NULL DEFAULT '0',
+  `precio_venta` int(11) NOT NULL DEFAULT '0',
   `unidad` varchar(20) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `estado` enum('chequeado','nochequeado') NOT NULL DEFAULT 'chequeado',
+  `stock` int(11) NOT NULL DEFAULT '0',
+  `estado` enum('chequeado','nochequeado') NOT NULL DEFAULT 'nochequeado',
   `created_user` int(3) NOT NULL,
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_user` int(3) NOT NULL,
-  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_user` int(3) DEFAULT NULL,
+  `updated_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo` varchar(300) DEFAULT NULL,
   `responsable` varchar(300) DEFAULT NULL,
   `uso` varchar(20) DEFAULT NULL,
-  `detalles` varchar(300) NOT NULL,
+  `detalles` varchar(300) NOT NULL DEFAULT 'N/A',
   `foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1801,11 +2002,10 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `modelo`, `cantidad`, `clasificacion`, `sede`, `pertenece`, `cedula`, `bienesN`, `color`, `descripcion`, `condicion`, `ubicacion`, `precio_compra`, `precio_venta`, `unidad`, `stock`, `estado`, `created_user`, `created_date`, `updated_user`, `updated_date`, `tipo`, `responsable`, `uso`, `detalles`, `foto`) VALUES
-('Maquinaria', '000001', 'N/A', '', 'TOTAL', 'THT118082', 0, '', 'CIDE', 'ABAE', '18343688', 'N/A', 'Verde', 'Alicates', 'En uso', 'Deposito', 0, 0, 'DGA', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Irlanda Molina', NULL, '', NULL),
-('Comunicaciones', '000002', 'N/A', '', 'EAR ZOOM', 'PRO', 0, '', 'CIDE', 'ABAE', '14299653', 'N/A', 'Negro', 'Amplificadores', 'En uso', 'DC-1', 0, 0, 'USMI', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Emerson Aguiar', NULL, '', NULL),
-('Medicos', '000003', 'N/A', '', 'JZIICr', 'N/A', 1, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Plateado', 'Pinza', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
-('Cientificos', '000004', 'N/A', '', 'N/A', 'N/A', 0, '', 'CIDE', 'ABAE', '14062579', 'N/A', 'Negro', 'Lupas', 'En uso', 'Piso 3', 0, 0, 'VDA-CD', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'Gustavo Guedez', NULL, '', NULL),
-('Oficina', '000005', 'N/A', '', 'OSTER', '3291', 1, '', 'CIDE', 'ABAE', 'N/A', '2386', 'Blanco', 'Cafeteras', 'En uso', 'Oficina 1', 0, 0, 'DGA', 0, 'chequeado', 5, '2022-01-24 22:54:46', 5, '2022-01-24 22:54:46', NULL, 'No hay usuario', NULL, '', NULL);
+('Comunicaciones', '000002', '928616182', 'N/A', 'hyundai', 'Industrial', 0, 'N/A', 'CTSR', 'ABAE', '24642009', '7733', 'Negro', 'Amplificadores', 'Regular', 'Deposito', 0, 0, 'UDLP', 0, 'chequeado', 0, '2023-05-10 18:31:43', NULL, '2023-05-10 00:00:00', NULL, 'Jose Carrizales', NULL, 'N/A', 'amplificadores.jpeg'),
+('medicos', '000003', 'N/A', 'N/A', 'CAT', 'Obscure', 0, 'N/A', 'CTSR', 'ABAE', '24642009', '3817', 'Negro', 'Anteojos para prueba de vidrios opticos', 'Optimo', 'Almacen', 0, 0, 'UDLP', 0, 'chequeado', 0, '2023-05-10 18:41:07', NULL, '2023-05-10 00:00:00', NULL, 'Jose Carrizales', NULL, 'N/A', NULL),
+('cientificos', '000004', '32134444', 'N/A', 'HASS', '2GGD', 4, 'N/A', 'CTSR', 'ABAE', '24642009', '3222', 'Verde', 'Aparatos de reduccion catalitica', 'Optimo', 'Estante', 0, 0, 'UDLP', 0, 'chequeado', 0, '2023-05-10 18:46:31', 0, '2023-05-10 14:46:31', NULL, 'Jose Carrizales', NULL, 'N/A', NULL),
+('Oficina', '000005', 'N/A', 'N/A', 'hyundai', 'casa', 2, 'N/A', 'CTSR', 'ABAE', '246327282', 'N/A', 'Palo rosa', 'Acondicionadores de aire', 'Optimo', 'Borburata', 0, 0, 'UDLP', 0, 'chequeado', 0, '2023-05-10 20:01:23', 0, '2023-05-10 16:01:23', NULL, 'Jose Carrizales', NULL, 'N/A', NULL);
 
 -- --------------------------------------------------------
 
@@ -1814,20 +2014,20 @@ INSERT INTO `inventario` (`categoria`, `codigo`, `serial`, `nombre`, `marca`, `m
 --
 
 CREATE TABLE `transaccion_equipos` (
-  `codigo_transaccion` varchar(15) NOT NULL,
-  `codigo` varchar(7) NOT NULL,
-  `motivo` varchar(300) NOT NULL,
-  `recibe` varchar(300) NOT NULL,
-  `cedula_r` int(15) NOT NULL,
-  `empresa_r` varchar(300) NOT NULL,
-  `entrega` varchar(300) NOT NULL,
-  `cedula_e` int(15) NOT NULL,
-  `empresa` varchar(300) NOT NULL,
-  `lugar_e` varchar(300) NOT NULL,
-  `lugar_r` varchar(300) NOT NULL,
-  `created_user` int(3) NOT NULL,
+  `codigo_transaccion` varchar(15) NOT NULL DEFAULT '0',
+  `codigo` varchar(7) NOT NULL DEFAULT '0',
+  `motivo` varchar(300) NOT NULL DEFAULT 'N/A',
+  `recibe` varchar(300) NOT NULL DEFAULT 'N/A',
+  `cedula_r` int(15) NOT NULL DEFAULT '0',
+  `empresa_r` varchar(300) DEFAULT NULL,
+  `entrega` varchar(300) DEFAULT NULL,
+  `cedula_e` int(15) DEFAULT NULL,
+  `empresa` varchar(300) DEFAULT NULL,
+  `lugar_e` varchar(300) DEFAULT NULL,
+  `lugar_r` varchar(300) DEFAULT NULL,
+  `created_user` int(3) DEFAULT NULL,
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `tipo_transaccion` varchar(300) NOT NULL
+  `tipo_transaccion` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1835,7 +2035,9 @@ CREATE TABLE `transaccion_equipos` (
 --
 
 INSERT INTO `transaccion_equipos` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Karla Mieres', 18344910, 'ABAE', 'Gustavo Guedez', 14062579, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
+('TM-2022-000001', '000001', 'Prestamo', 'Karla Mieres', 18344910, 'ABAE', 'Gustavo Guedez', 14062579, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida'),
+('TM-2023-000002', '000001', 'dasda', 'dsfsdaf', 213123, 'daDAsd', 'dasdasd', 213313, 'ABAE', 'CTSR', 'asdda', 0, '2023-05-10 20:37:49', 'Salida'),
+('TM-2023-000003', '000002', 'dsfdsaf', 'fsdfdsaf', 2342421, 'dfsdafds', 'dsfsdf', 33243214, 'ABAE', 'CTSR', 'dafdsafs', 0, '2023-05-10 20:38:04', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1859,13 +2061,6 @@ CREATE TABLE `transaccion_equipos_biblioteca` (
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tipo_transaccion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `transaccion_equipos_biblioteca`
---
-
-INSERT INTO `transaccion_equipos_biblioteca` (`codigo_transaccion`, `codigo`, `motivo`, `recibe`, `cedula_r`, `empresa_r`, `entrega`, `cedula_e`, `empresa`, `lugar_e`, `lugar_r`, `created_user`, `created_date`, `tipo_transaccion`) VALUES
-('TM-2022-000001', '000001', 'Prestamo', 'Yoseli Guaramato', 24913526, 'ABAE', 'Jose Carrizales', 24642009, 'ABAE', 'CTSR', 'CIDE', 5, '2022-01-24 22:54:46', 'Salida');
 
 -- --------------------------------------------------------
 
@@ -1956,15 +2151,9 @@ CREATE TABLE `transporte` (
   `updated_date` timestamp NULL DEFAULT NULL,
   `estado` enum('chequeado','nochequeado') DEFAULT 'chequeado',
   `updated_user` int(5) DEFAULT NULL,
-  `categoria` varchar(30) DEFAULT NULL
+  `categoria` varchar(30) DEFAULT NULL,
+  `bienesN` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `transporte`
---
-
-INSERT INTO `transporte` (`codigo`, `descripcion`, `placa`, `marca`, `tipo`, `modelo`, `color`, `condicion`, `unidad`, `ubicacion`, `responsable`, `pertenece`, `cedula`, `sede`, `nmroCarroceria`, `anio`, `tipoCombustible`, `created_user`, `created_date`, `updated_date`, `estado`, `updated_user`, `categoria`) VALUES
-('000001', 'Camionetas de carga pick-up', 'A13BC4G', 'Dong Feng ZNA', '', 'PICKUP', 'Blanco', 'En uso', 'DGA', 'Borburata', 'Irlanda Molina', 'ABAE', '18343688', 'CIDE', '', 'N/A', '', 5, '2022-01-24 22:54:46', '2022-01-24 22:54:46', 'chequeado', 5, 'transporte');
 
 -- --------------------------------------------------------
 
