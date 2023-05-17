@@ -48,7 +48,7 @@ else {
                                             or die('error '.mysqli_error($mysqli));
            
             if ($query) {
-                
+                $total_stock = 0;
                 $query1 = mysqli_query($mysqli, "UPDATE inventario SET stock = '$total_stock'
                                                               WHERE codigo = '$codigo'")
                                                 or die('Error: '.mysqli_error($mysqli));
