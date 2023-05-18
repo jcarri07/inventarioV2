@@ -67,7 +67,7 @@
               <tr>
                   <td width='50'  class='center'>$no</td>
                   <td width='150' class='center' align='center'>$data[codigo]</td>
-                  <td width='150' class='center' align='center'>$data[tipo]</td>
+                  <td width='150' class='center' align='center'>$data[descripcion]</td>
                   <td width='200' class='center' align='center'>$data[titulo]</td>
                   <td width='150' class='center' align='center'>$data[autor]</td>
                   <td width='150' class='center' align='center'>$data[color]</td>
@@ -79,7 +79,7 @@
                   <td width='150' class='center' align='center'>$data[responsable]</td>
                   <td width='150' class='center' align='center'>$data[cedula]</td>
                   <td width='150' class='center' align='center'>$data[sede]</td>
-                  <td width='150' class='center' align='center'>$data[editorial]</td>
+                  <td width='150' class='center' align='center'>$data[pertenece]</td>
                   <td class='center' width='150'>
 
                 <div>
