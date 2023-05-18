@@ -74,7 +74,7 @@
                   <td width='150' class='center' align='center'>$data[isbn]</td>
                   <td width='150' class='center' align='center'>$data[bienesN]</td>
                   <td width='150' class='center' align='center'>$data[condicion]</td>
-                  <td width='150' class='center' align='center'></td>
+                  <td width='150' class='center' align='center'>$data[unidad]</td>
                   <td width='150' class='center' align='center'>$data[ubicacion]</td>
                   <td width='150' class='center' align='center'>$data[responsable]</td>
                   <td width='150' class='center' align='center'>$data[cedula]</td>
