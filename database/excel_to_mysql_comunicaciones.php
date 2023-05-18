@@ -4,7 +4,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -16,7 +16,7 @@
 	$db_host="localhost";
 	$db_name="inventario3";
 	$db_user="root";
-	$db_pass="";
+	$db_pass="root";
 
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
@@ -65,29 +65,29 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inventario (codigo, descripcion, marca, modelo, serial, bienesN, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO inventario (codigo, descripcion, marca, modelo, color, serial, bienesN, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         
-            $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $descripcion);
-            $stmt->bindParam( 3, $marca);
-            $stmt->bindParam( 4, $modelo);
-            $stmt->bindParam( 5, $serial);
-            $stmt->bindParam( 6, $nb);
-            $stmt->bindParam( 7, $color);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $unidad);
-            $stmt->bindParam( 10, $responsable);
-            $stmt->bindParam( 11, $cedula);
-            $stmt->bindParam( 12, $ubicacion);
-            $stmt->bindParam( 13, $sede);
-            $stmt->bindParam( 14, $pertenece);
-            $stmt->bindParam( 15, $cantidad);
-            $stmt->bindParam( 16, $created_user);
-            $stmt->bindParam( 17, $updated_user);
-            $stmt->bindParam( 18, $created_date);
-            $stmt->bindParam( 19, $updated_date);
-            $stmt->bindParam( 20, $estado);
-            $stmt->bindParam( 21, $categoria);
+        $stmt->bindParam(1, $codigo);
+        $stmt->bindParam(2, $descripcion);
+        $stmt->bindParam(3, $marca);
+        $stmt->bindParam(4, $modelo);
+        $stmt->bindParam(5, $color);
+        $stmt->bindParam(6, $serial);
+        $stmt->bindParam(7, $bienesN);
+        $stmt->bindParam(8, $condicion);
+        $stmt->bindParam(9, $unidad);
+        $stmt->bindParam(10, $ubicacion);
+        $stmt->bindParam(11, $responsable);
+        $stmt->bindParam(12, $cedula);
+        $stmt->bindParam(13, $sede);
+        $stmt->bindParam(14, $pertenece);
+        $stmt->bindParam(15, $cantidad);
+        $stmt->bindParam(16, $created_user);
+        $stmt->bindParam(17, $updated_user);
+        $stmt->bindParam(18, $created_date);
+        $stmt->bindParam(19, $updated_date);
+        $stmt->bindParam(20, $estado);
+        $stmt->bindParam(21, $categoria);
             
             $accion = "Importacion de Equipos";
 
@@ -117,11 +117,10 @@ if ($parametro != null) {
             $cantidad = $fields[14];
             $created_user = $fields[15];
             $updated_user = $fields[16];
-            $created_date= $fields[17];
+            $created_date = $fields[17];
             $updated_date = $fields[18];
             $estado = $fields[19];
             $categoria = $fields[20];
-            
             $stmt->execute();
            
         }
