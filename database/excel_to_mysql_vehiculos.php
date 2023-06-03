@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -14,7 +14,7 @@
 
 	$db_host="localhost";
 	$db_name="inventario3";
-	$db_user="root";
+	$db_user="";
 	$db_pass="root";
 
     $hari_ini = date("d-m-Y");
