@@ -183,7 +183,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="editorial" autocomplete="off" required>
+                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
                     <option value=""></option>
                     <option value="ABAE">ABAE</option>
@@ -369,7 +369,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="editorial" autocomplete="off" value="<?php echo $data['editorial']; ?>" required>
+                  <input type="text" class="form-control" name="pertenece" autocomplete="off" value="<?php echo $data['pertenece']; ?>" required>
                 </div>
               </div>
 

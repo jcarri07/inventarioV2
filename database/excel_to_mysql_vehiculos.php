@@ -14,8 +14,8 @@
 
 	$db_host="localhost";
 	$db_name="inventario3";
-	$db_user="";
-	$db_pass="root";
+	$db_user="root";
+	$db_pass="";
 
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];

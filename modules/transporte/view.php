@@ -153,7 +153,7 @@ function validarExt()
 				        <th class="center">MODELO</th>
                 <th class="center">COLOR</th>
                 <th class="center">PLACA</th>
-                <th class="center">No. BIEN</th>
+                <th class="center">AÑO</th>
                 <th class="center">CONDICIÓN</th>
                 <th class="center">DIREC/UNIDAD</th>
                 <th class="center">UBICACIÓN</th>
