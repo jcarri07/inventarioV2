@@ -41,7 +41,7 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 20000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
+  <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
     <form action="database/excel_to_mysql_oficina.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
@@ -160,10 +160,10 @@ function validarExt()
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Comunicaciones' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Comunicaciones' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 

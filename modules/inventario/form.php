@@ -82,7 +82,7 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicaciones </a></li>
+      <li><a href="?module=inventario"> Oficina </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -113,7 +113,7 @@ if ($_GET['form']=='add') { ?>
         <div role = "tabpanel">
          
 
-<!-- COMUNICACIONES -->
+<!-- Oficina -->
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="agregar">             
           <!-- form start -->
@@ -162,7 +162,7 @@ if ($_GET['form']=='add') { ?>
                  <datalist id="datalistOptions">
                  <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Comunicaciones' ORDER BY codigo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Oficina' ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
@@ -497,7 +497,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicaciones </a></li>
+      <li><a href="?module=inventario"> Oficina </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -535,7 +535,7 @@ elseif ($_GET['form']=='edit') {
                  <datalist id="datalistOptions">
                  <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Comunicaciones' ORDER BY codigo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Oficina' ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";

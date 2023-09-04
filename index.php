@@ -10,8 +10,7 @@
     <meta name="author" content="Indra Styawantoro" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="assets/img/encabezado.png" />
-
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->

@@ -13,7 +13,7 @@ session_start();
     <meta name="author" content="Inventario de Equipos" />
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" />
+    <link rel="shortcut icon" href="assets/img/INABAE_ico.png" />
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->

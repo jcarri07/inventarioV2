@@ -81,7 +81,7 @@ else {
              } else {*/
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
-                                            VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$iduser','$cantidad')")
+                                            VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$iduser','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -221,7 +221,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='oficina'")
+                                                        WHERE estado = 'chequeado' AND categoria='Comunicaciones'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
