@@ -43,7 +43,7 @@ function validarExt()
   <h2>
   <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
-    <form action="database/excel_to_mysql_oficina.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -56,7 +56,7 @@ function validarExt()
             </div>  
           </a>-->
           
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_oficina.php" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
