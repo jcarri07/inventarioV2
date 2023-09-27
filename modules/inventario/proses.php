@@ -158,8 +158,11 @@ else {
                 //header("location: ../../main.php?module=form_inventario&form=add");  
 
                if($query){
-                header("location: ../../main.php?module=inventario&alert=1");
-                header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                if($descripcion == "Unidad central de proceso (CPU)") {
+                    header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                } else {
+                    header("location: ../../main.php?module=inventario&alert=1");
+                }
                }
             } elseif (!empty($_FILES['foto']['name'])) {
         
