@@ -123,7 +123,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">No. Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="" autocomplete="off" required>
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
                 </div>
               </div>
 
@@ -150,7 +150,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Dirección / Unidad</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="" autocomplete="off" required>
+                  <input type="text" class="form-control" name="unidad" autocomplete="off" required>
                 </div>
               </div>
 
@@ -185,7 +185,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="" autocomplete="off" required>
+                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
                     <option value=""></option>
                     <option value="ABAE">ABAE</option>
@@ -251,9 +251,19 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'inmuebles' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">M²</label>
@@ -294,7 +304,7 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=" "><?php echo $data['condicion'];?></option>
+                    <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
                     <option value="En uso">En uso</option>
                     <option value="En comodato">En comodato</option>
                     <option value="En arrendamiento">En arrendamiento</option>
@@ -348,7 +358,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" value="<?php echo $data['pertenece'];?>" name="pertenece" autocomplete="off" required>
+                <input class="form-control" list="item" name="pertenece" type="text" value="<?php echo $data['pertenece'];?>" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
                     <option  selected value="ABAE">ABAE</option>
                     </datalist>

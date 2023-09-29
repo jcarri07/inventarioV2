@@ -5,8 +5,8 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from biblioteca
-      WHERE codigo = '$codigo'");
+      $result = mysqli_query($mysqli,"SELECT isbn from biblioteca
+      WHERE isbn = '$codigo'");
       
       $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
       $codigo = "$buat_id";
@@ -64,6 +64,7 @@ else {
             $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
             $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
             $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+            $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
             //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -74,18 +75,18 @@ else {
             $color  = mysqli_real_escape_string($mysqli, trim($_POST['color']));
             $serial  = mysqli_real_escape_string($mysqli, trim($_POST['codigo']));
             $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
-            //$unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
+            if (buscaRepetido($isbn,$mysqli) == 1) {
                  header("location: ../../main.php?module=biblioteca&alert=5");
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, created_date) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', NOW())")
+                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, unidad, pertenece, created_date) 
+                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$unidad', '$pertenece', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -114,6 +115,7 @@ else {
                 $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
                 $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
                 $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
                
                 $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
                 $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -126,6 +128,7 @@ else {
                 $condicion  = mysqli_real_escape_string($mysqli, trim($_POST['condicion']));
                // $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
                 $ubicacion = mysqli_real_escape_string($mysqli, trim($_POST['ubicacion']));
+                $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
 
                 $updated_user = $_SESSION['id_user'];
 
@@ -140,7 +143,10 @@ else {
                                                                     responsable             = '$responsable',
                                                                     sede          = '$sede',
                                                                     color          = '$color',
+                                                                    unidad  = '$unidad',    
+                                                                    pertenece  = '$pertenece', 
                                                                     condicion          = '$condicion',
+                                                                    ubicacion          = '$ubicacion',
                                                                     ubicacion          = '$ubicacion',
                                                                     updated_user    = '$updated_user'
                                                               WHERE codigo       = '$codigo'")

@@ -32,10 +32,7 @@
   
   <?php
 
-    $server   = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "inventario3";
+    require('../config/database.php');
 
     session_start();
 
@@ -59,28 +56,33 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE sede LIKE '$sede' ORDER BY codigo DESC")
+      if($permiso != 'Super Admin') {
+        $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
+      } else {
+        $query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo DESC")
+                                            or die('error: '.mysqli_error($mysqli));
+      }
 
       while ($data = mysqli_fetch_assoc($query)) { 
               echo "
 
               <tr>
               <td width='50'  class='center' align='center'>$no</td>      
-              <td width='150' class='center' align='center'> </td>
+              <td width='150' class='center' align='center'>$data[codigo]</td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[metrosCuadrados]</td>
               <td width='150' class='center' align='center'>$data[pisos]</td>
               <td width='150' class='center' align='center'>$data[nmroCuartos]</td>
               <td width='150' class='center' align='center'>$data[habitantes]</td> 
-              <td width='150' class='center' align='center'> </td>
+              <td width='150' class='center' align='center'>$data[bienesN]</td>
               <td width='150' class='center' align='center'>$data[condicion]</td>
-              <td width='150' class='center' align='center'> </td>
+              <td width='150' class='center' align='center'>$data[unidad]</td>
               <td width='200' class='center' align='center'>$data[direccion]</td>
               <td width='150' class='center' align='center'>$data[responsable]</td>
               <td width='150' class='center' align='center'>$data[cedula]</td> 
               <td width='150' class='center' align='center'>$data[sede]</td>
-              <td width='150' class='center' align='center'> </td>           
+              <td width='150' class='center' align='center'>$data[pertenece] </td>           
               <td class='center'  width='150'>
               <div>
                   <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:3px' class='btn btn-primary btn-xs' href='?module=form_medicines&form=edit&id=$data[codigo]'>

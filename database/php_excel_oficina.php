@@ -31,10 +31,7 @@
   
   <?php
 
-    $server   = "localhost";
-		$username = "root";
-		$password = "";
-		$database = "inventario3";
+    require('../config/database.php');
 
     session_start();
 
@@ -58,15 +55,20 @@
 	  }
 
       $no = 1;
-       $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
+      if($permiso =! 'Super Admin') {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
+      } else {
+        $query2 = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Oficina' ORDER BY codigo DESC")
+                                            or die('error: '.mysqli_error($mysqli));
+      }
 
-      while ($data = mysqli_fetch_assoc($query)) { 
+      while ($data = mysqli_fetch_assoc($query2)) { 
               echo "
 
               <tr>
               <td width='50'  class='center'  align='center'>$no</td>          
-              <td width='150' class='center' align='center'> </td>
+              <td width='150' class='center' align='center'>$data[codigo]</td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[marca]</td>
               <td width='150' class='center' align='center'>$data[modelo]</td>              
@@ -88,10 +90,6 @@
                         <i style='color:#fff' class='glyphicon glyphicon-edit'></i>
                   </a>";
     ?>
-    
-    <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/medicines/proses.php?act=delete&id=<?php echo $data['codigo'];?>" onclick="return confirm('Seguro de eliminar<?php echo $data['nombre']; ?> ?');">
-        <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
-    </a>
   
   <?php
     echo "    </div>

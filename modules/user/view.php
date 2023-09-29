@@ -75,7 +75,7 @@
       echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Usuario bloqueado correctamente
+              Usuario eliminado correctamente
             </div>";
     }
    
@@ -139,7 +139,7 @@
                       <td width='45' class='center'>$no</td>";
 
                       if ($data['foto']=="") { ?>
-                        <td class='center'><img class='img-user' src='images/user/user-default.png' width='25'></td>
+                        <td class='center'><img class='img-user' src='images/user/INABAE_Logo.png' width='25'></td>
                       <?php
                       } else { ?>
                         

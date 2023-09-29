@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "Negro04149468207*";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -61,66 +61,68 @@ if ($parametro != null) {
         }
     catch(PDOException $e)
     {
-        echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
+        echo '<script language="javascript">alert("El documento importado puede que contenga errores");</script>';
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO vehiculos (codigo, placa, marca, modelo, anio, tipo, color, condicion, unidad, responsable, cedula, ubicacion, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        
-            $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $placa);
-            $stmt->bindParam( 3, $marca);
-            $stmt->bindParam( 4, $modelo);
-            $stmt->bindParam( 5, $anio);
-            $stmt->bindParam( 6, $tipo);
-            $stmt->bindParam( 7, $color);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $unidad);
-            $stmt->bindParam( 10, $responsable);
-            $stmt->bindParam( 11, $cedula);
-            $stmt->bindParam( 12, $ubicacion);
-            $stmt->bindParam( 13, $sede);
-            $stmt->bindParam( 14, $pertenece);
-            $stmt->bindParam( 15, $created_user);
-            $stmt->bindParam( 16, $updated_user);
-            $stmt->bindParam( 17, $created_date);
-            $stmt->bindParam( 18, $updated_date);
-            $stmt->bindParam( 19, $estado);
-            $stmt->bindParam( 20, $categoria);
-            
+            $stmt = $conn->prepare("INSERT INTO transporte (codigo, descripcion, marca, placa, tipo, modelo, color, condicion, unidad, ubicacion, responsable, cedula, pertenece, sede, anio, created_user, created_date, estado, updated_user, categoria, bienesN) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->bindParam(1, $codigo);
+            $stmt->bindParam(2, $descripcion);
+            $stmt->bindParam(3, $marca);
+            $stmt->bindParam(4, $modelo);
+            $stmt->bindParam(5, $color);
+            $stmt->bindParam(6, $placa);
+            $stmt->bindParam(7, $bienesN);
+            $stmt->bindParam(8, $condicion);
+            $stmt->bindParam(9, $unidad);
+            $stmt->bindParam(10, $ubicacion);
+            $stmt->bindParam(11, $responsable);
+            $stmt->bindParam(12, $cedula);
+            $stmt->bindParam(13, $sede);
+            $stmt->bindParam(14, $pertenece);
+            $stmt->bindParam(15, $created_user);
+            $stmt->bindParam(16, $updated_user);
+            $stmt->bindParam(17, $created_date);
+            $stmt->bindParam(18, $updated_date);
+            $stmt->bindParam(19, $updated_user);
+            $stmt->bindParam(20, $estado);
+            $stmt->bindParam(21, $categoria);
+
             $accion = "Importacion de Vehiculos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
-                                            or die('error '.mysqli_error($mysqli));
-            
-            header('Location:/inventariov2/main.php?module=vehiculos&alert=4');
-               
-            
+            or die('error ' . mysqli_error($mysqli));
 
-        foreach ($xlsx->rows() as $fields)
+            header('Location:/inventariov2/main.php?module=transporte&alert=4');
+
+
+
+            foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $placa = $fields[1];
+            $descripcion = $fields[1];
             $marca = $fields[2];
             $modelo = $fields[3];
-            $anio = $fields[4];
-            $tipo = $fields[5];
-            $color = $fields[6];
+            $color = $fields[4];
+            $placa = $fields[5];
+            $bienesN = $fields[6];
             $condicion = $fields[7];
             $unidad = $fields[8];
-            $responsable = $fields[9];
-            $cedula = $fields[10];
-            $ubicacion = $fields[11];
+            $ubicacion = $fields[9];
+            $responsable = $fields[10];
+            $cedula = $fields[11];
             $sede = $fields[12];
             $pertenece = $fields[13];
             $created_user = $fields[14];
             $updated_user = $fields[15];
             $created_date = $fields[16];
             $updated_date = $fields[17];
-            $estado = $fields[18];
-            $categoria = $fields[19];
+            $updated_user = $fields[18];
+            $estado = $fields[19];
+            $categoria = $fields[20];
             $stmt->execute();
            
         }
@@ -137,7 +139,7 @@ if ($parametro != null) {
     }
     
  } else {
-    header('Location:/inventariov2/main.php?module=vehiculos&alert=8');
+    header('Location:/inventariov2/main.php?module=transporte&alert=8');
  }
 
 ?>

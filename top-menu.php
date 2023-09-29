@@ -16,7 +16,7 @@ $data = mysqli_fetch_assoc($query);
  
   <?php  
   if ($data['foto']=="") { ?>
-    <img src="images/user/user-default.png" class="user-image" alt="User Image"/>
+    <img src="images/user/INABAE_Logo.png" class="user-image" alt="User Image"/>
   <?php
   }
   else { ?>
@@ -33,7 +33,7 @@ $data = mysqli_fetch_assoc($query);
 
       <?php  
       if ($data['foto']=="") { ?>
-        <img src="images/user/user-default.png" class="img-circle" alt="User Image"/>
+        <img src="images/user/INABAE_Logo.png" class="img-circle" alt="User Image"/>
       <?php
       }
       else { ?>

@@ -65,7 +65,7 @@ console.log("aaa")
 function cambiarLocation() {
     // form_int.submit();
     // console.log("Guardando datos");
-    window.location.href = "?module=form_inventario&form=add&alert=1";
+    window.location.href = "?module=inventario&alert=1";
     // //submitComponent.click();
     console.log("._.")
     console.log(prueba.value);
@@ -82,7 +82,7 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicaciones </a></li>
+      <li><a href="?module=inventario"> Oficina </a></li>
       <li class="active"> Agregar </li>
     </ol>
   </section>
@@ -113,7 +113,7 @@ if ($_GET['form']=='add') { ?>
         <div role = "tabpanel">
          
 
-<!-- COMUNICACIONES -->
+<!-- Oficina -->
     <div class="tab-content" >
         <div role= "tabpanel" class="tab-pane active" id="agregar">             
           <!-- form start -->
@@ -162,7 +162,7 @@ if ($_GET['form']=='add') { ?>
                  <datalist id="datalistOptions">
                  <option value=""></option>
                     <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Comunicaciones' ORDER BY codigo ASC")
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Oficina' ORDER BY codigo ASC")
                                                             or die('error '.mysqli_error($mysqli));
                       while ($data_obat = mysqli_fetch_assoc($query_obat)) {
                         echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
@@ -189,7 +189,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off">
                     <option value=""></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
@@ -205,7 +205,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Serial</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="serial" autocomplete="off" required>
+                  <input type="text" class="form-control" name="serial" autocomplete="off" >
                 </div>
                 <div id="resultado"></div>
               </div>
@@ -213,14 +213,14 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">No. Bien</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="bienesN" autocomplete="off" required>
+                  <input type="text" class="form-control" name="bienesN" autocomplete="off">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" >
                     <option value=""></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
@@ -278,14 +278,13 @@ if ($_GET['form']=='add') { ?>
                     </datalist>
                 </div>
               </div>
-            </div>
 
             <div class="form-group" >
-                <label class="col-sm-4 control-label">Foto</label>
-                <div class="col-sm-4">
-                  <input type="file" name="foto">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-5">
+                  <input type="file" name="foto" class="form-control" >
                   <br/>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                  <img  style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo.png" width="128">
                 </div>
               </div>
 
@@ -498,7 +497,7 @@ elseif ($_GET['form']=='edit') {
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=inventario"> Comunicaciones </a></li>
+      <li><a href="?module=inventario"> Oficina </a></li>
       <li class="active"> Modificar </li>
     </ol>
   </section>
@@ -532,10 +531,20 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" autocomplete="off" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
-                  
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>" required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria = 'Oficina' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+             </div>
+
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
                 <div class="col-sm-5">
@@ -554,7 +563,7 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
-                    <option value=""><?php echo $data['color']; ?></option>
+                    <option value="<?php echo $data['color']; ?>"><?php echo $data['color']; ?></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
                                                             or die('error '.mysqli_error($mysqli));
@@ -584,7 +593,7 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""><?php echo $data['condicion'];?></option>
+                    <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
@@ -639,16 +648,15 @@ elseif ($_GET['form']=='edit') {
                     </datalist>
                 </div>
               </div>
-            </div><!-- /.box body -->
 
             <div class="form-group" >
-                <label class="col-sm-4 control-label">Foto</label>
-                <div class="col-sm-4">
-                  <input type="file" name="foto">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-5">
+                  <input type="file" name="foto" class="form-control">
                   <br/>
                 <?php  
                 if ($data['foto']=="") { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128">
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo." width="128">
                 <?php
                 }
                 else { ?>
@@ -658,6 +666,8 @@ elseif ($_GET['form']=='edit') {
                 ?>
                 </div>
               </div>
+              
+            </div><!-- /.box body -->
 
             <div class="box-footer">
               <div class="form-group">

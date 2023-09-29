@@ -138,9 +138,9 @@ if ($_GET['form']=='add') { ?>
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">No. Bien</label>
+                <label class="col-sm-2 control-label">AÑO</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="anio" autocomplete="off" required>
+                  <input type="numeric" class="form-control" name="anio" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" required>
                 </div>
               </div>
 
@@ -258,13 +258,23 @@ elseif ($_GET['form']=='edit') {
                   <input type="text" class="form-control" name="codigo" value="<?php echo $data['codigo']; ?>" readonly required>
                 </div>
               </div>
-
+              
               <div class="form-group">
                 <label class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
-                </div>
-              </div>
+                <input class="form-control" list="datalistOptions" name="descripcion" id="exampleDataList" value="<?php echo $data['descripcion']; ?>"required>
+                 <datalist id="datalistOptions">
+                 <option value=""></option>
+                    <?php
+                      $query_obat = mysqli_query($mysqli, "SELECT codigo, nombre FROM guia WHERE categoria='transporte' ORDER BY codigo ASC")
+                                                            or die('error '.mysqli_error($mysqli));
+                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
+                        echo"<option value=\"$data_obat[nombre]\"> $data_obat[codigo] </option>";
+                      }
+                    ?>
+                </datalist>
+               </div>
+                    </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Marca</label>
@@ -283,8 +293,8 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Color</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --" onchange="tampil_obat(this)" autocomplete="off" required>
-                    <option value=""><?php echo $data['color']; ?></option>
+                  <select class="chosen-select" name="color" data-placeholder="-- Seleccionar --"  onchange="tampil_obat(this)" autocomplete="off" >
+                    <option value="<?php echo $data['color']; ?>"><?php echo $data['color']; ?></option>
                     <?php
                       $query_obat = mysqli_query($mysqli, "SELECT * FROM colores")
                                                             or die('error '.mysqli_error($mysqli));
@@ -304,17 +314,17 @@ elseif ($_GET['form']=='edit') {
               </div>
 
               <div class="form-group">
-                <label class="col-sm-2 control-label">No. Bien</label>
+                <label class="col-sm-2 control-label">AÑO</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="anio" autocomplete="off" value="<?php echo $data['anio']; ?>" required>
+                  <input type="numeric" class="form-control" name="anio" onkeypress='return validaNumericos(event)' onpaste="return false" autocomplete="off" value="<?php echo $data['anio']; ?>">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Condición</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
-                    <option value=""><?php echo $data['condicion'];?></option>
+                  <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" >
+                    <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
                     <option value="Optimo">Óptimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>

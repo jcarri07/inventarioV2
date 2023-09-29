@@ -42,7 +42,7 @@ function validarExt()
   <h2>
     <i class="fa fa-sign-in icon-title"></i> Transporte
      
-    <form action="database/excel_to_mysql_control_transporte.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_control_vehiculos.php" method="POST" enctype="multipart/form-data">
       <button class="btn btn-primary btn-social pull-right botones" name="archivo" data-toggle="tooltip">
         <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
       </button>

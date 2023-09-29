@@ -1,12 +1,12 @@
 
 <?php
 
-function buscaRepetido($codigo,$mysqli) {
+function buscaRepetido($placa,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from transporte
-      where codigo ='$codigo'");
+      $result = mysqli_query($mysqli,"SELECT placa from transporte
+      where placa ='$placa'");
 
     $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
     $codigo = "$buat_id";
@@ -77,7 +77,7 @@ else {
             $updated_user = $_SESSION['id_user'];
 
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
+            if (buscaRepetido($placa,$mysqli) == 1) {
                 header("location: ../../main.php?module=transporte&alert=5");
 
              } else {
@@ -98,6 +98,7 @@ else {
     }
     
     elseif ($_GET['act']=='update') {
+        echo "SIUUUU";
         if (isset($_POST['Guardar'])) {
             if (isset($_POST['codigo'])) {
         

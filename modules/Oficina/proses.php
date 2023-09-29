@@ -5,8 +5,8 @@ function buscaRepetido($serial,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from inventario
-      where codigo='$codigo'");
+      $result = mysqli_query($mysqli,"SELECT serial from inventario
+      where serial='$codigo'");
 
       if(mysqli_num_rows($result) > 0){
         return 1;
@@ -71,16 +71,17 @@ else {
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
             $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
             $cantidad     = mysqli_real_escape_string($mysqli, trim($_POST['cantidad']));
+            $estado = 'chequeado';
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($serial,$mysqli) == 1) {
+          /*  if (buscaRepetido($serial,$mysqli) == 1) {
                  header("location: ../../main.php?module=oficina&alert=5");
 
-             } else {
+             } else {*/
 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user, cantidad) 
-                                            VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$cantidad')")
+                                            VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$iduser','$cantidad')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -90,7 +91,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
                 header("location: ../../main.php?module=oficina&alert=1");  
-            }
+           /* }*/
         }   
     }
     
@@ -220,7 +221,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
     
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='oficina'")
+                                                        WHERE estado = 'chequeado' AND categoria='Comunicaciones'")
                                         or die('error: '.mysqli_error($mysqli));
 
 

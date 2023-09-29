@@ -5,8 +5,8 @@ function buscaRepetido($serial,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from inventario
-      where codigo='$codigo'");
+      $result = mysqli_query($mysqli,"SELECT serial from inventario
+      where serial='$codigo'");
 
       if(mysqli_num_rows($result) > 0){
         return 1;
@@ -68,16 +68,16 @@ else {
             //$pcompra = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pcompra'])));
             //$pventa = str_replace('.', '', mysqli_real_escape_string($mysqli, trim($_POST['pventa'])));
             $unidad     = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $estado = 'chequeado';
+            $created_date = date('Y-m-d');
 
-            $created_user = $_SESSION['id_user'];
-
-            if (buscaRepetido($serial,$mysqli) == 1) {
+           /* if (buscaRepetido($serial,$mysqli) == 1) {
                  header("location: ../../main.php?module=medicos&alert=5");
 
              } else {
-
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                                            VALUES('medicos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user','$created_date')")
+*/
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date) 
+                                            VALUES('medicos','$codigo','$serial','$nombre','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$iduser','$created_date')")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -87,7 +87,7 @@ else {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
                 header("location: ../../main.php?module=medicos&alert=1");  
-            }
+            /*}*/
         }   
     }
     

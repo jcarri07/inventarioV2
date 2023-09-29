@@ -41,9 +41,9 @@ function validarExt()
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-  <i class="fa fa-folder-o icon-title"></i> 20000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
+  <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
-    <form action="database/excel_to_mysql_Oficina.php" method="POST" enctype="multipart/form-data">
+    <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
         <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
@@ -56,7 +56,7 @@ function validarExt()
             </div>  
           </a>-->
           
-          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_oficina.php" data-toggle="tooltip">
+          <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_Comunicaciones.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
           </a>
 
@@ -111,29 +111,7 @@ function validarExt()
               Datos importados correctamente
             </div>";
     }
-    
-    elseif ($_GET['alert'] == 5) {
-      echo "<div class='alert alert-danger alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-ban'></i> Error!</h4> El serial ya existe 
-            </div>";
-    }
-    
-    elseif ($_GET['alert'] == 6) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Equipo chequeado
-            </div>";
-    }
-    
-    elseif ($_GET['alert'] == 7) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
-            </div>";
-    }
-    
+       
     elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -182,10 +160,10 @@ function validarExt()
             $sede = $_SESSION['sede'];
 
             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Comunicaciones' ORDER BY codigo DESC")
                 or die('error: '.mysqli_error($mysqli));
             } else {
-              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
+              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Comunicaciones' and sede LIKE '$sede' ORDER BY codigo DESC")
                                             or die('error: '.mysqli_error($mysqli));
             }
 

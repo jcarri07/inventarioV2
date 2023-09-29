@@ -4,8 +4,8 @@ function buscaRepetido($codigo,$mysqli) {
 
     require_once "../../config/database.php"; 
 
-      $result = mysqli_query($mysqli,"SELECT codigo from inventario
-      where codigo ='$codigo'");
+      $result = mysqli_query($mysqli,"SELECT serial from inventario
+      where serial ='$codigo'");
 
       $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
       $codigo = "$buat_id";
@@ -44,6 +44,7 @@ $NombreUser = $_SESSION['name_user'];
 $iduser = $_SESSION['id_user'];
 $accion = "Registro de Equipo";
 $cedulauser = $_SESSION['cedula_user'];
+$created_date = date('Y-m-d');
 
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])){
@@ -139,14 +140,14 @@ else {
             $file               = explode(".", $name_file);
             $extension          = array_pop($file);
 
-            if(buscaRepetido($serial,$mysqli) == 1){
+           /* if(buscaRepetido($serial,$mysqli) == 1){
 
                 header("location: ../../main.php?module=inventario&alert=5");
 
-            }elseif (empty($_FILES['foto']['name'])) {
+            }else*/ if (empty($_FILES['foto']['name'])) {
                 
-                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user) 
-                VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
+                $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date) 
+                VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
                 or die('error '.mysqli_error($mysqli)); 
 
 
@@ -157,8 +158,11 @@ else {
                 //header("location: ../../main.php?module=form_inventario&form=add");  
 
                if($query){
-                header("location: ../../main.php?module=inventario&alert=1");
-                header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                if($descripcion == "Unidad central de proceso (CPU)") {
+                    header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                } else {
+                    header("location: ../../main.php?module=inventario&alert=1");
+                }
                }
             } elseif (!empty($_FILES['foto']['name'])) {
         
@@ -169,8 +173,8 @@ else {
                         if(move_uploaded_file($tmp_file, $path_file)) { 
                             
                          
-                        $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_user,foto) 
-                                            VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
+                        $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date,foto) 
+                                            VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
                                             or die('error '.mysqli_error($mysqli)); 
 
                             if ($query) {
@@ -463,7 +467,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
         
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='Comunicaciones'")
+                                                        WHERE estado = 'chequeado' AND categoria='Oficina'")
                                         or die('error: '.mysqli_error($mysqli));
 
 

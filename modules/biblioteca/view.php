@@ -105,15 +105,7 @@ function validarExt()
               Datos eliminados correctamente
             </div>";
     }
-    
-    elseif ($_GET['alert'] == 4) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Datos importados correctamente
-            </div>";
-    } 
-    
+       
     elseif ($_GET['alert'] == 5) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -121,36 +113,12 @@ function validarExt()
             </div>";
     }   
     
-    elseif ($_GET['alert'] == 6) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Equipo chequeado
-            </div>";
-    }   
-      
-    elseif ($_GET['alert'] == 7) {
-      echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Datos exportados correctamente </h4>
-            </div>";
-    }
-
-    elseif ($_GET['alert'] == 8) {
+       elseif ($_GET['alert'] == 8) {
       echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
     }
-
-    elseif ($_GET['alert'] == 9) {
-      echo "<div class='alert alert-danger alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-times-circle'></i> Error!</h4>
-              Asegúrese que el archivo que sube es correcto
-            </div>";
-    }
-
     ?>
 
       <div class="box box-primary">
@@ -214,12 +182,12 @@ function validarExt()
                       <td width='100' class='center'>$data[isbn]</td>
                       <td width='100' class='center'>$data[bienesN]</td>
                       <td width='100' class='center'>$data[condicion]</td>
-                      <td width='100' class='center'></td>
+                      <td width='100' class='center'>$data[unidad]</td>
                       <td width='100' class='center'>$data[ubicacion]</td>
                       <td width='100' class='center'>$data[responsable]</td>
                       <td width='100' class='center'>$data[cedula]</td>
                       <td width='100' class='center'>$data[sede]</td>
-                      <td width='100' class='center'>$data[editorial]</td>
+                      <td width='100' class='center'>$data[pertenece]</td>
                       <td width='50'  class='center'>$data[cantidad]</td>             
                       <td width='120' class='center'>
                     <div>

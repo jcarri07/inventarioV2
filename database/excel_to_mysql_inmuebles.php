@@ -4,7 +4,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "Negro04149468207*";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -65,27 +65,31 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, tipo, descripcion, metrosCuadrados, pisos, nmroCuartos, habitantes, condicion, responsable, cedula, direccion, sede, created_user, updated_user, created_date, update_date, estado, categoria) 
-        VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
+        $stmt = $conn->prepare( "INSERT INTO inmuebles (codigo, descripcion, metrosCuadrados, pisos, nmrocuartos, habitantes, bienesN, condicion, unidad, direccion, responsable, cedula, sede, pertenece, created_user, updated_user, created_date, update_date, estado, categoria) 
+        VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ?)");
         
-            $stmt->bindParam( 1, $codigo);
-            $stmt->bindParam( 2, $tipo);
-            $stmt->bindParam( 3, $descripcion);
-            $stmt->bindParam( 4, $metrosCuadrados);
-            $stmt->bindParam( 5, $pisos);
-            $stmt->bindParam( 6, $nmroCuartos);
-            $stmt->bindParam( 7, $habitantes);
-            $stmt->bindParam( 8, $condicion);
-            $stmt->bindParam( 9, $responsable);
-            $stmt->bindParam( 10, $cedula);
-            $stmt->bindParam( 11, $direccion);
-            $stmt->bindParam( 12, $sede);
-            $stmt->bindParam( 13, $created_user);
-            $stmt->bindParam( 14, $updated_user);
-            $stmt->bindParam( 15, $created_date);
-            $stmt->bindParam( 16, $update_date);
-            $stmt->bindParam( 17, $estado);
-            $stmt->bindParam( 18, $categoria);
+        $stmt->bindParam(1, $codigo);
+        $stmt->bindParam(2, $descripcion);
+        $stmt->bindParam(3, $metrosCuadrados);
+        $stmt->bindParam(4, $pisos);
+        $stmt->bindParam(5, $nmroCuartos);
+        $stmt->bindParam(6, $habitantes);
+        $stmt->bindParam(7, $bienesN);
+        $stmt->bindParam(8, $condicion);
+        $stmt->bindParam(9, $unidad);
+        $stmt->bindParam(10, $direccion);
+        $stmt->bindParam(11, $responsable);
+        $stmt->bindParam(12, $cedula);
+        $stmt->bindParam(13, $sede);
+        $stmt->bindParam(14, $pertenece);
+        $stmt->bindParam(15, $created_user);
+        $stmt->bindParam(16, $updated_user);
+        $stmt->bindParam(17, $created_date);
+        $stmt->bindParam(18, $update_date);
+        $stmt->bindParam(19, $estado);
+        $stmt->bindParam(20, $categoria);
+
+        
             
             $accion = "Importacion de Inmuebles";
 
@@ -93,29 +97,31 @@ if ($parametro != null) {
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
                                             or die('error '.mysqli_error($mysqli));
             
-             header('Location:/inventariov2/main.php?module=inmuebles&alert=4');    
+            header('Location:/inventariov2/main.php?module=inmuebles&alert=4'); 
             
 
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $tipo = $fields[1];
-            $descripcion = $fields[2];
-            $metrosCuadrados = $fields[3];
-            $pisos = $fields[4];
-            $nmroCuartos = $fields[5];
-            $habitantes = $fields[6];
+            $descripcion = $fields[1];
+            $metrosCuadrados = $fields[2];
+            $pisos = $fields[3];
+            $nmroCuartos = $fields[4];
+            $habitantes = $fields[5];
+            $bienesN = $fields[6];
             $condicion = $fields[7];
-            $responsable= $fields[8];
-            $cedula = $fields[9];
-            $direccion = $fields[10];
-            $sede = $fields[11];
-            $created_user= $fields[12];
-            $updated_user = $fields[13];
-            $created_date = $fields[14];
-            $update_date = $fields[15];
-            $estado = $fields[16];
-            $categoria = $fields[17];
+            $unidad = $fields[8];
+            $direccion = $fields[9];
+            $responsable = $fields[10];
+            $cedula = $fields[11];
+            $sede = $fields[12];
+            $pertenece = $fields[13];
+            $created_user = $fields[14];
+            $updated_user = $fields[15];
+            $created_date = $fields[16];
+            $update_date = $fields[17];
+            $estado = $fields[18];
+            $categoria = $fields[19];
             $stmt->execute();
            
         }

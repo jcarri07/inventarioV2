@@ -30,16 +30,16 @@ $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE codigo = '$var1'")
         $var11 = $data['sede'];
     }
 
-    $var1 = " CÓDIGO: ".$data['codigo'];
-    $var2 = " DESCRIPCIÓN: ".$data['descripcion'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCION: ".$data['descripcion'];
     $var3 = " M2: ".$data['metrosCuadrados'];
     $var4 = " No. PISOS: ".$data['pisos'];
     $var5 = " No. CUARTOS: ".$data['nmroCuartos'];
     $var6 = " HABITANTES: ".$data['habitantes'];
-    $var7 = " CONDICIÓN: ".$data['condicion'];
+    $var7 = " CONDICION: ".$data['condicion'];
     $var8 = " UBICACIÓN: ".$data['direccion'];
     $var9 = " NOMBRE: ".$data['responsable'];
-    $var10 = " CÉDULA: ".$data['cedula'];
+    $var10 = " CEDULA: ".$data['cedula'];
     $var11 = " SEDE: ".$data['sede'];
 
 $textqr = $var1.$coma.$var2.$coma.$var3.$coma.$var4.$coma.$var5.$coma.$var6.$coma.$var7.$coma.$var8.$coma.$var9.$coma.$var10.$coma.$var11;

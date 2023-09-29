@@ -181,7 +181,7 @@ elseif ($_GET['form']=='edit') {
                   <br/>
                 <?php  
                 if ($data['foto']=="") { ?>
-                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/user-default.png" width="128">
+                  <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/user/INABAE_Logo.png" width="128">
                 <?php
                 }
                 else { ?>

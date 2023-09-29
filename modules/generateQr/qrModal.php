@@ -10,7 +10,7 @@ $sizeqr=$_POST['sizeqr'];//Recibo la variable pasada por post
 
 
 
-$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var5'")
+$query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE codigo = '$var5'")
                                     or die('error'.mysqli_error($mysqli));
 
     $rows  = mysqli_num_rows($query);
@@ -34,18 +34,18 @@ $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE serial = '$var5'"
         
     }
 
-    $var1 = " CÓDIGO: ".$data['codigo'];
-    $var2 = " DESCRIPCIÓN: ".$data['descripcion'];
+    $var1 = " CODIGO: ".$data['codigo'];
+    $var2 = " DESCRIPCION: ".$data['descripcion'];
     $var3 = " MARCA: ".$data['marca'];
     $var4 = " MODELO: ".$data['modelo'];
     $var5 = " COLOR: ".$data['color'];
     $var6 = " SERIAL: ".$data['serial'];
     $var7 = " B/N: ".$data['bienesN'];
-    $var8 = " CONDICIÓN: ".$data['condicion'];
+    $var8 = " CONDICION: ".$data['condicion'];
     $var9 = " DIREC/UNIDAD: ".$data['unidad'];
-    $var10 = " UBICACIÓN: ".$data['ubicacion'];
+    $var10 = " UBICACION: ".$data['ubicacion'];
     $var11 = " NOMBRE: ".$data['responsable'];
-    $var12 = " CÉDULA: ".$data['cedula'];
+    $var12 = " CEDULA: ".$data['cedula'];
     $var13 = " SEDE: ".$data['sede'];
     $var14 = " PERTENECE: ".$data['pertenece'];
 

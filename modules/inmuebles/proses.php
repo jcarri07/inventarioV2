@@ -72,17 +72,21 @@ else {
             $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
             $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-          //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $unidad  = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $nb  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
+            $pertenece = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
+            //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+            $estado = 'chequeado';
 
             $created_user = $_SESSION['id_user'];
 
-            if (buscaRepetido($codigo,$mysqli) == 1) {
+           /* if (buscaRepetido($codigo,$mysqli) == 1) {
                  header("location: ../../main.php?module=inmuebles&alert=5");
 
-             } else {
+             } else {*/
 
-                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo,  descripcion, metrosCuadrados, tipo, nmroCuartos, condicion, estado, categoria, pisos, responsable, cedula, sede, direccion, habitantes, created_user, created_date) 
-                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', 'chequeado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', NOW())")
+                $query = mysqli_query($mysqli, "INSERT INTO inmuebles (codigo,  descripcion, metrosCuadrados, tipo, nmroCuartos, condicion, estado, categoria, pisos, responsable, cedula, sede, direccion, habitantes, created_user, unidad, bienesN, pertenece, created_date) 
+                VALUES('$codigo', '$descripcion', '$metrosCuadrados', '$tipo ', '$nmroCuartos', '$condicion', '$estado', 'inmuebles', '$pisos', '$responsable', '$cedula', '$sede', '$direccion', '$habitantes', '$created_user', '$unidad', '$nb', '$pertenece', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -93,7 +97,7 @@ else {
                                             or die('error '.mysqli_error($mysqli));
 
                 header("location: ../../main.php?module=inmuebles&alert=1");  
-            }
+            /*}*/
         }   
     }
     
@@ -119,11 +123,16 @@ else {
         $direccion = mysqli_real_escape_string($mysqli, trim($_POST['direccion']));
         $habitantes = mysqli_real_escape_string($mysqli, trim($_POST['habitantes']));
         $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
-      //  $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
-
+        
+        $unidad = mysqli_real_escape_string($mysqli, trim($_POST['unidad']));
+        $pertenece = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
+        $nb = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));                
                 $updated_user = $_SESSION['id_user'];
 
                 $query = mysqli_query($mysqli, "UPDATE inmuebles SET codigo        = '$codigo',
+                                                                    unidad = '$unidad',
+                                                                    pertenece = '$pertenece',
+                                                                    bienesN = '$nb',
                                                                     descripcion           = '$descripcion',
                                                                     metrosCuadrados            = '$metrosCuadrados',
                                                                     tipo             = '$tipo',

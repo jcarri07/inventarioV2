@@ -2,6 +2,9 @@
 session_start();
 ob_start();
 
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 require_once "../../config/database.php";
 
@@ -57,7 +60,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/norma.png" width="400" align='center' ;></td>
+            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
             <td width="550"></td>
             <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
         </tr>
