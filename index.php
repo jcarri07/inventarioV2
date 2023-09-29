@@ -10,7 +10,7 @@
     <meta name="author" content="Indra Styawantoro" />
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="assets/img/INABAE_Logo.png"/>
+    <link rel="icon" type="image/png" href="assets/img/INABAE_ico.png"/>
 
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
