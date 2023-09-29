@@ -6,14 +6,14 @@ session_start();
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ABAE | InventarioV2</title>
+    <title> ABAE | Inventario </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Inventario de equipos ABAE">
     <meta name="author" content="Inventario de Equipos" />
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/img/INABAE_Logo.png"/>
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->
