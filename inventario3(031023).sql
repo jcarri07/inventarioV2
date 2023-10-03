@@ -7,7 +7,7 @@
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 7.4.30
 
-CREATE inventario3;
+CREATE DATABASE inventario3;
 USE inventario3;
 
 
