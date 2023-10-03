@@ -40,7 +40,7 @@
 
     $server   = "localhost";
 		$username = "root";
-		$password = "root";
+		$password = "";
 		$database = "inventario3";
 
 		$mysqli = new mysqli($server, $username, $password, $database);
