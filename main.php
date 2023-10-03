@@ -13,7 +13,7 @@ session_start();
     <meta name="author" content="Inventario de Equipos" />
     
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="assets/img/INABAE_Logo.png"/>
+    <link rel="icon" type="image/png" href="./assets/img/INABAE_Logo.png"/>
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->
@@ -88,7 +88,7 @@ session_start();
       <header class="main-header">
         <!-- Logo --> 
         <a href="?module=start" class="logo">
-          <img style="margin-top:-3px" src="assets/img/INABAE Logo.png" alt="Logo" height="40"> 
+          <img style="margin-top:-3px" src="assets/img/INABAE_Logo.png" alt="Logo" height="40"> 
           <span style="font-size:20px">ABAE</span>
         </a>
 

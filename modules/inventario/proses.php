@@ -476,7 +476,4 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
             header("location: ../../main.php?module=inventario");
         }
     
-    }      
-?>
-
-
+    }
