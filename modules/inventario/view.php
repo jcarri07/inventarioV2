@@ -231,7 +231,7 @@
                       <td width='100' class='center'>$data[cedula]</td>
                       <td width='100' class='center'>$data[sede]</td>
                       <td width='100' class='center'>$data[pertenece]</td>
-                      <td width='100' class='center'>
+                      <td width='130' class='center'>
                     <div>
             
                     <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
