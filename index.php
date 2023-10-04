@@ -27,7 +27,7 @@
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-        <img style="margin-top:-12px" src="./assets/img/ABAE_Logo.png" alt="Logo" height="60"><b>ABAE</b>
+        <img style="margin-top:-12px" src="./assets/img/INABAE_Logo.png" alt="Logo" height="60"><b>ABAE</b>
       </div><!-- /.login-logo -->
       <?php  
  
