@@ -133,7 +133,7 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
-                    <option value="Optimo">Óptimo</option>
+                    <option value="Optimo">Optimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
                     <option value="Averiado">Averiado</option>
@@ -320,7 +320,7 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
-                    <option value="Optimo">Óptimo</option>
+                    <option value="Optimo">Optimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
                     <option value="Averiado">Averiado</option>

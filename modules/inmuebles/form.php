@@ -132,17 +132,13 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
-                    <option value="En uso">En uso</option>
-                    <option value="En comodato">En comodato</option>
-                    <option value="En arrendamiento">En arrendamiento</option>
-                    <option value="En mantenimiento">En mantenimiento</option>
-                    <option value="En reparación">En reparación</option>
-                    <option value="En proceso de disposición">En proceso de disposición</option>
-                    <option value="En desuso por obsolescencia ">En desuso por obsolescencia </option>
-                    <option value="En desuso por inservibilidad">En desuso por inservibilidad </option>
-                    <option value="En desuso por obsolescencia">En desuso por obsolescencia </option>
-                    <option value="En Almacén o Depósito para su asignación">En Almacén o Depósito para su asignación</option>
-                    <option value="Otra uso">Otro uso</option>
+                    <option value="Optimo">Optimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
                     </select>
                 </div>
               </div>
@@ -305,17 +301,13 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
-                    <option value="En uso">En uso</option>
-                    <option value="En comodato">En comodato</option>
-                    <option value="En arrendamiento">En arrendamiento</option>
-                    <option value="En mantenimiento">En mantenimiento</option>
-                    <option value="En reparación">En reparación</option>
-                    <option value="En proceso de disposición">En proceso de disposición</option>
-                    <option value="En desuso por obsolescencia ">En desuso por obsolescencia </option>
-                    <option value="En desuso por inservibilidad">En desuso por inservibilidad </option>
-                    <option value="En desuso por obsolescencia">En desuso por obsolescencia </option>
-                    <option value="En Almacén o Depósito para su asignación">En Almacén o Depósito para su asignación</option>
-                    <option value="Otra uso">Otro uso</option>
+                    <option value="Optimo">Optimo</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Deteriorado">Deteriorado</option>
+                    <option value="Averiado">Averiado</option>
+                    <option value="Chatarra">Chatarra</option>
+                    <option value="No operativo">No operativo</option>
+                    <option value="Otra condición">Otra condición</option>
                     </select>
                 </div>
               </div>

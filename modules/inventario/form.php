@@ -220,7 +220,7 @@ if ($_GET['form'] == 'add') { ?>
                       <div class="col-sm-5">
                         <select class="chosen-select" name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off">
                           <option value=""></option>
-                          <option value="Optimo">Óptimo</option>
+                          <option value="Optimo">Optimo</option>
                           <option value="Regular">Regular</option>
                           <option value="Deteriorado">Deteriorado</option>
                           <option value="Averiado">Averiado</option>
@@ -587,7 +587,7 @@ if ($_GET['form'] == 'add') { ?>
                       <div class="col-sm-5">
                         <select class="chosen-select" name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                           <option value="<?php echo $data['condicion']; ?>"><?php echo $data['condicion']; ?></option>
-                          <option value="Optimo">Óptimo</option>
+                          <option value="Optimo">Optimo</option>
                           <option value="Regular">Regular</option>
                           <option value="Deteriorado">Deteriorado</option>
                           <option value="Averiado">Averiado</option>
@@ -642,7 +642,7 @@ if ($_GET['form'] == 'add') { ?>
                       </div>
                     </div>
 
-                    <div class="form-group">
+                    <!--div class="form-group">
                       <label class="col-sm-2 control-label">Foto</label>
                       <div class="col-sm-5">
                         <input type="file" name="foto" class="form-control">
@@ -657,7 +657,7 @@ if ($_GET['form'] == 'add') { ?>
                         }
                         ?>
                       </div>
-                    </div>
+                    </div-->
 
                   </div><!-- /.box body -->
 

@@ -91,19 +91,19 @@
     <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
 
     <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
-      <button class="btn btn-primary btn-social pull-right botones" type="submit" name="archivoInput" data-toggle="tooltip" onclick="return validarExt()">
+      <!--button class="btn btn-primary btn-social pull-right botones" type="submit" name="archivoInput" data-toggle="tooltip" onclick="return validarExt()">
         <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
-      </button>
+      </button-->
 
       <div class="btn-group pull-right" role="group" aria-label="Basic example">
 
-        <a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip">
+        <!--a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip">
           <i class="fa fa-file-excel-o"></i>
           <input method="post" type="file" id="archivoInput" name="archivoInput" onchange="return validarExt()">
           <div class="textoInput">
             Cargar
           </div>
-        </a>
+        </a-->
 
         <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_oficina.php" data-toggle="tooltip">
           <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
@@ -143,17 +143,6 @@
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos eliminados correctamente
-            </div>";
-      } elseif ($_GET['alert'] == 4) {
-        echo "<div class='alert alert-success alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
-              Datos importados correctamente
-            </div>";
-      } elseif ($_GET['alert'] == 8) {
-        echo "<div class='alert alert-danger alert-dismissable'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
       } elseif ($_GET['alert'] == 9) {
         echo "<div class='alert alert-danger alert-dismissable'>
@@ -226,9 +215,9 @@
                 $precio_compra = format_rupiah($data['precio_compra']);
                 $precio_venta = format_rupiah($data['precio_venta']);
 
-                echo "<tr>
+              echo "<tr>
                       <td width='50'  class='center'>$no</td>
-                      <td width='100' class='center'>$data[codigo]</td>
+                      <td width='100'  class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>
@@ -241,8 +230,8 @@
                       <td width='100' class='center'>$data[responsable]</td>
                       <td width='100' class='center'>$data[cedula]</td>
                       <td width='100' class='center'>$data[sede]</td>
-                      <td width='100' class='center'>$data[pertenece]</td>    
-                      <td width='130' class='center'  >
+                      <td width='100' class='center'>$data[pertenece]</td>
+                      <td width='100' class='center'>
                     <div>
             
                     <a data-toggle='tooltip' data-placement='top' title='Modificar' style='margin-right:0.3px' class='btn btn-primary btn-xs' href='?module=form_inventario&form=edit&id=$data[codigo]'>
