@@ -827,12 +827,12 @@
                                   <td width='100' class='center'>$data[isbn]</td>
                                   <td width='100' class='center'>$data[bienesN]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
-                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[unidad]</td>
                                   <td width='100' class='center'>$data[ubicacion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
                                   <td width='100' class='center'>$data[sede]</td>
-                                  <td width='100' class='center'>$data[editorial]</td>
+                                  <td width='100' class='center'>$data[pertenece]</td>
                                   <td width='100' class='center'>$data[cantidad]</td>
                                   <td width='100' class='center'  >
                                 <div>
@@ -1083,14 +1083,14 @@
                                   <td width='100' class='center'>$data[pisos]</td>
                                   <td width='100' class='center'>$data[nmroCuartos]</td>
                                   <td width='100' class='center'>$data[habitantes]</td>
-                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[bienesN]</td>
                                   <td width='100' class='center'>$data[condicion]</td>
-                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[unidad]</td>
                                   <td width='100' class='center'>$data[direccion]</td>
                                   <td width='100' class='center'>$data[responsable]</td>
                                   <td width='100' class='center'>$data[cedula]</td>
                                   <td width='100' class='center'>$data[sede]</td> 
-                                  <td width='100' class='center'></td>
+                                  <td width='100' class='center'>$data[pertenece]</td>
                                   <td width='100' class='center'>
                                 <div>
       

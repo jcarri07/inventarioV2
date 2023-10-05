@@ -175,7 +175,7 @@ function validarExt()
               echo "<tr>
                       <td width='50'  class='center'>$no</td>
                       <td width='100' class='center'>$data[codigo]</td>
-                      <td width='100' class='center'>$data[tipo]</td>
+                      <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[titulo]</td>
                       <td width='100' class='center'>$data[autor]</td>
                       <td width='100' class='center'>$data[color]</td>

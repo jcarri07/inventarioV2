@@ -65,7 +65,7 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-            $stmt = $conn->prepare("INSERT INTO transporte (codigo, descripcion, marca, placa, tipo, modelo, color, condicion, unidad, ubicacion, responsable, cedula, pertenece, sede, anio, created_user, created_date, estado, updated_user, categoria, bienesN) 
+            $stmt = $conn->prepare("INSERT INTO transporte(codigo, descripcion, marca, placa, tipo, modelo, color, condicion, unidad, ubicacion, responsable, cedula, pertenece, sede, anio, created_user, created_date, estado, updated_user, categoria, bienesN) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->bindParam(1, $codigo);
@@ -80,8 +80,8 @@ if ($parametro != null) {
             $stmt->bindParam(10, $ubicacion);
             $stmt->bindParam(11, $responsable);
             $stmt->bindParam(12, $cedula);
-            $stmt->bindParam(13, $sede);
-            $stmt->bindParam(14, $pertenece);
+            $stmt->bindParam(13, $pertenece);
+            $stmt->bindParam(14, $sede);
             $stmt->bindParam(15, $created_user);
             $stmt->bindParam(16, $updated_user);
             $stmt->bindParam(17, $created_date);

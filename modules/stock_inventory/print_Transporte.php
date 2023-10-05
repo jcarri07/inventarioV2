@@ -94,8 +94,8 @@ $count  = mysqli_num_rows($query);
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
                     <th height="20" align="center" valign="middle"><small>PLACA</small></th>
                     <th height="20" align="center" valign="middle"><small>MARCA</small></th>
-                    <th height="20" align="center" valign="middle"><small>ANIO</small></th>
-                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
+                    <th height="20" align="center" valign="middle"><small>No. BIEN</small></th>
+                    <th height="20" align="center" valign="middle"><small>COLOR</small></th>
                     <th height="20" align="center" valign="middle"><small>CONDICION</small></th>
                     <th height="20" align="center" valign="middle"><small>RESPONSABLE</small></th>
                     <th height="20" align="center" valign="middle"><small>CEDULA</small></th>

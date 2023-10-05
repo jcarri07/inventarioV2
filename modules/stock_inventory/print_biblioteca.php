@@ -92,7 +92,7 @@ $count  = mysqli_num_rows($query);
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>No.</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TITULO</small></th>
                     <th height="20" align="center" valign="middle"><small>AUTOR</small></th>
                     <th height="20" align="center" valign="middle"><small>ISBN</small></th>
@@ -112,7 +112,7 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[tipo]</td>
+                        <td width='80'  height='16' align='center' valign='middle'>$data[descripcion]</td>
                         <td width='240' height='16' align='center' valign='middle'>$data[titulo]</td>
                         <td width='120' height='16' align='center' valign='middle'>$data[autor]</td>
                         <td width='80'  height='16' align='center' valign='middle'>$data[isbn]</td>
