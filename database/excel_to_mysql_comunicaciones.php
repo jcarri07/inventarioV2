@@ -1,4 +1,3 @@
-
 <?php
     session_start();
 
@@ -76,9 +75,9 @@ if ($parametro != null) {
         $stmt->bindParam(7, $bienesN);
         $stmt->bindParam(8, $condicion);
         $stmt->bindParam(9, $unidad);
-        $stmt->bindParam(10, $cedula);
-        $stmt->bindParam(11, $ubicacion);
-        $stmt->bindParam(12, $responsable);
+        $stmt->bindParam(10, $ubicacion);
+        $stmt->bindParam(11, $responsable);
+        $stmt->bindParam(12, $cedula);
         $stmt->bindParam(13, $sede);
         $stmt->bindParam(14, $pertenece);
         $stmt->bindParam(15, $cantidad);
@@ -109,9 +108,9 @@ if ($parametro != null) {
             $bienesN = $fields[6];
             $condicion = $fields[7];
             $unidad = $fields[8];
-            $cedula = $fields[9];
-            $ubicacion = $fields[10];
-            $responsable = $fields[11];
+            $ubicacion = $fields[9];
+            $responsable = $fields[10];
+            $cedula = $fields[11];
             $sede = $fields[12];
             $pertenece = $fields[13];
             $cantidad = $fields[14];

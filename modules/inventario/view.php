@@ -88,7 +88,7 @@
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-    <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
+    <i class="fa fa-folder-o icon-title"></i> 20000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
 
     <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
       <!--button class="btn btn-primary btn-social pull-right botones" type="submit" name="archivoInput" data-toggle="tooltip" onclick="return validarExt()">
@@ -217,7 +217,7 @@
 
               echo "<tr>
                       <td width='50'  class='center'>$no</td>
-                      <td width='100'  class='center'>$data[codigo]</td>
+                      <td width='100' class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
                       <td width='100' class='center'>$data[marca]</td>
                       <td width='100' class='center'>$data[modelo]</td>

@@ -69,9 +69,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -124,7 +124,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
                     <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>MARCA</small></th>
@@ -146,14 +146,14 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>                       
-                        <td width='200' height='16' align='center' valign='middle'>$data[descripcion]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[marca]</td>                       
-                        <td width='120' height='16' align='center' valign='middle'>$data[serial]</td>                       
-                        <td width='80'  height='16' align='center' valign='middle'>$data[bienesN]</td>                       
-                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>                   
-                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                       
-                        <td width='80'  height='16' align='center' valign='middle'>$data[pertenece]</td>                       
+                        <td width='180' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[marca]</td>                       
+                        <td width='100' height='16' align='center' valign='middle'>$data[serial]</td>                       
+                        <td width='100' height='16' align='center' valign='middle'>$data[bienesN]</td>                       
+                        <td width='100' height='16' align='center' valign='middle'>$data[condicion]</td>                   
+                        <td width='100' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[cedula]</td>                       
+                        <td width='100' height='16' align='center' valign='middle'>$data[pertenece]</td>                       
                     </tr>";
                     $no++;
                 }

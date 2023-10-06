@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-	header('Content-Disposition: attachment; filename=Exportación_Cientificos.xlsx');
+	header('Content-Disposition: attachment; filename=Exportación_Científicos.xlsx');
 ?>
 
   <div class="box box-primary">
@@ -67,7 +67,7 @@
               echo "
 
               <tr>
-              <td width='50'  class='center'  align='center'>$no</td>          
+              <td width='50'  class='center' align='center'>$no</td>          
               <td width='150' class='center' align='center'>$data[codigo]</td>
               <td width='150' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[marca]</td>

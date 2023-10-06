@@ -31,28 +31,28 @@ if ($_GET['form']=='add') { ?>
         <div class="box box-primary">
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/biblioteca/proses.php?act=insert" method="POST">
-          <div class="box-body">
+            <div class="box-body">
               <?php  
               
               $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
-                                or die('error: '.mysqli_error($mysqli));
+                or die('error: ' . mysqli_error($mysqli));
               $data = mysqli_fetch_assoc($query);
               $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
 
               $query_id = mysqli_query($mysqli, "SELECT codigo FROM biblioteca
                                                 ORDER BY codigo DESC LIMIT 1")
-                                                or die('error '.mysqli_error($mysqli));
+                or die('error ' . mysqli_error($mysqli));
 
               $count = mysqli_num_rows($query_id);
 
               if ($count <> 0) {
             
-                  $data_id = mysqli_fetch_assoc($query_id);
-                  $codigo = $data_id['codigo']+1;
-                  error_reporting(E_ERROR | E_WARNING | E_PARSE);
+                $data_id = mysqli_fetch_assoc($query_id);
+                $codigo = $data_id['codigo'] + 1;
+                error_reporting(E_ERROR | E_WARNING | E_PARSE);
               } else {
-                  $codigo = 1;
+                $codigo = 1;
               }
               
               $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);

@@ -112,11 +112,11 @@ function validarExt()
                 <th class="center">CONDICIÓN</th>
                 <th class="center">MOTIVO</th>
                 <th class="center">ENTREGA</th>
-				        <th class="center">CEDULA</th>
+				        <th class="center">CÉDULA</th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">RECIBE</th>
-                <th class="center">CEDULA </th>
+                <th class="center">CÉDULA </th>
                 <th class="center">SEDE</th>
                 <th class="center">EMPRESA</th>
                 <th class="center">FECHA</th>

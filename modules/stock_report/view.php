@@ -17,8 +17,8 @@
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos</a></li>
-            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte </a></li>
+            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
           </ul>
 

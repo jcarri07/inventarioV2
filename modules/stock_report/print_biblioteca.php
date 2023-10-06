@@ -52,7 +52,7 @@ if ($tgl_awal !== $tgl_akhir) {
 <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>REPORTE DE MOVIMIENTOS (BIBLIOTECA)</title>
+        <title>REPORTE DE MOVIMIENTOS (Biblioteca)</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
     </head>
     <body>
@@ -60,9 +60,9 @@ if ($tgl_awal !== $tgl_akhir) {
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -70,7 +70,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
     
         <div id="title">
-            REPORTE DE MOVIMIENTOS (BIBLIOTECA)
+            REPORTE DE MOVIMIENTOS (Biblioteca)
         </div>
     <?php  
 
@@ -118,7 +118,7 @@ if ($tgl_awal !== $tgl_akhir) {
             <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;">
                 <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>TRANSACCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TIPO </small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
@@ -139,18 +139,18 @@ if ($tgl_awal !== $tgl_akhir) {
     
     if($count == 0) {
                     echo "  <tr>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='95'  height='16' align='center' valign='middle'></td>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='200' height='16' align='center' valign='middle'></td>
-					    <td width='75'  height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
+                        <td width= 100' height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
                         <td width='100' height='16' align='center' valign='middle'></td>
-                        <td width='55'  height='16' align='center' valign='middle'></td>
-                        <td width='40'  height='16' align='center' valign='middle'></td>
+					    <td width='100' height='16' align='center' valign='middle'></td>
                         <td width='100' height='16' align='center' valign='middle'></td>
-                        <td width='55'  height='16' align='center' valign='middle'></td>
-                        <td width='40'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='100' height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
                         <td width='65'  height='16' align='center' valign='middle'></td>
                     </tr>";
     }
@@ -162,18 +162,18 @@ if ($tgl_awal !== $tgl_akhir) {
             $fecha = date("d-m-Y", strtotime($originalDate));
 
             echo "  <tr>
-                        <td width='45'  height='13' align='center' valign='middle'>$no</td>
-                        <td width='95'  height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
-                        <td width='45'  height='13' align='center' valign='middle'>$data[tipo_transaccion]</td>
-                        <td width='45'  height='13' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='200' height='13' align='center' valign='middle'>$data[titulo]</td>
-                        <td width='75'  height='13' align='center' valign='middle'>$data[motivo]</td>
+                        <td width='50'  height='13' align='center' valign='middle'>$no</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
+                        <td width='50'  height='13' align='center' valign='middle'>$data[tipo_transaccion]</td>
+                        <td width='50'  height='13' align='center' valign='middle'>$data[codigo]</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[titulo]</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[motivo]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[entrega]</td>
-                        <td width='55'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
-                        <td width='40'  height='16' align='center' valign='middle'>$data[lugar_e]</td> 
+                        <td width='60'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[lugar_e]</td> 
                         <td width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
-                        <td width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
-                        <td width='40'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
+                        <td width='60'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
                         <td width='65'  height='16' align='center' valign='middle'>$fecha</td>
                     </tr>";
             $no++;

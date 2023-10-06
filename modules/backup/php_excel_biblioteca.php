@@ -66,12 +66,12 @@
                 <td width='150' class='center' align='center'>$data[isbn]</td>
                 <td width='150' class='center' align='center'>$data[bienesN]</td>
                 <td width='150' class='center' align='center'>$data[condicion]</td>
-                <td width='150' class='center' align='center'></td>
+                <td width='150' class='center' align='center'>$data[unidad]</td>
                 <td width='150' class='center' align='center'>$data[ubicacion]</td>
                 <td width='150' class='center' align='center'>$data[responsable]</td>
                 <td width='150' class='center' align='center'>$data[cedula]</td>
                 <td width='150' class='center' align='center'>$data[sede]</td>
-                <td width='150' class='center' align='center'>$data[editorial]</td>
+                <td width='150' class='center' align='center'>$data[pertenece]</td>
                 <td width='150' class='center' align='center'>$data[cantidad]</td>
                 <td width='200' class='center' align='center'>$data[created_user]</td>
                 <td width='200' class='center' align='center'>$data[updated_user]</td>
