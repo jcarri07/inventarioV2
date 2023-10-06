@@ -112,7 +112,7 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[descripcion]</td>
                         <td width='180' height='16' align='center' valign='middle'>$data[titulo]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[autor]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[isbn]</td>

@@ -59,7 +59,7 @@
               <tr>
                 <td width='50'  class='center' align='center'>$no</td>
                 <td width='150' class='center' align='center'>$data[codigo]</td>
-                <td width='150' class='center' align='center'>$data[tipo]</td>
+                <td width='150' class='center' align='center'>$data[descripcion]</td>
                 <td width='200' class='center' align='center'>$data[titulo]</td>
                 <td width='150' class='center' align='center'>$data[autor]</td>
                 <td width='150' class='center' align='center'>$data[color]</td>
