@@ -13,22 +13,23 @@ include "../../config/fungsi_tanggal.php";
 include "../../config/fungsi_rupiah.php";
 
 $query = mysqli_query($mysqli, "SELECT cedula_user, id_user, name_user, foto, sede, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
-    or die('error: '.mysqli_error($mysqli));
+    or die('error: ' . mysqli_error($mysqli));
 $data = mysqli_fetch_assoc($query);
 
 $var = $_POST['nombre_biblioteca'];
-$filtro = $_POST['filtrar_biblioteca']; trim($filtro);
+$filtro = $_POST['filtrar_biblioteca'];
+trim($filtro);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
-$hari_ini = date("d-m-Y");
+$hari_ini = date("Y-m-d");
 
 $no = 1;
 
 $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.cedula_e, lugar_e, a.recibe, a.cedula_r, a.lugar_r, a.created_date, b.codigo, b.titulo
                                     FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo
                                     WHERE a.$filtro LIKE '$var%' ORDER BY a.codigo_transaccion DESC")
-                                or die('Error'.mysqli_error($mysqli));
+    or die('Error' . mysqli_error($mysqli));
 $count  = mysqli_num_rows($query);
 
 /*$query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.codigo,a.motivo,a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.created_date,b.codigo,b.descripcion
@@ -39,15 +40,17 @@ $count  = mysqli_num_rows($query);*/
 
 
 ?>
-    <html xmlns="http://www.w3.org/1999/xhtml"> 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>REPORTE DE MOVIMIENTOS (Biblioteca)</title>
-        <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
-       
-    </head>
-    <body>
-    
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>REPORTE DE MOVIMIENTOS (Biblioteca)</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
+
+</head>
+
+<body>
+
 
     <table border="0">
         <tr>
@@ -61,7 +64,7 @@ $count  = mysqli_num_rows($query);*/
 
 
 
-   <!-- <div id="imagen2">
+    <!-- <div id="imagen2">
     <img src="http://apis.mppeuct.gob.ve/img/comun/normativa-izquierda-transparente.png" />
     </div>
 
@@ -72,12 +75,12 @@ $count  = mysqli_num_rows($query);*/
 
     <div id="title">
         REPORTE DE MOVIMIENTOS (Biblioteca)
-        </div>
-        <div id="title-tanggal">
-            Filtrado: <?php echo $filtro ." "."="." ". $var; ?>
-        </div>
+    </div>
+    <div id="title-tanggal">
+        Filtrado: <?php echo $filtro . " " . "=" . " " . $var; ?>
+    </div>
 
-        <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
+    <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
         <tr>
             <td width="100">Generado por:</td>
             <td width="100" align="center"><?php echo $nombre ?></td>
@@ -90,7 +93,7 @@ $count  = mysqli_num_rows($query);*/
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -101,10 +104,10 @@ $count  = mysqli_num_rows($query);*/
 
     <br>
     <hr><br>
-        
-        <div id="isi">
-            <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
-                <thead style="background:#e8ecee">
+
+    <div id="isi">
+        <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
+            <thead style="background:#e8ecee">
                 <tr class="tr-title">
                     <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>TRANSACCION</small></th>
@@ -123,13 +126,13 @@ $count  = mysqli_num_rows($query);*/
             </thead>
 
             <tbody>
-            <?php
-       
-        while ($data = mysqli_fetch_assoc($query)) {
-                $originalDate = $data['created_date'];
-                $fecha = date("d-m-Y", strtotime($originalDate));
-           
-                echo "  <tr>
+                <?php
+
+                while ($data = mysqli_fetch_assoc($query)) {
+                    $originalDate = $data['created_date'];
+                    $fecha = date("d-m-Y", strtotime($originalDate));
+
+                    echo "  <tr>
                     <td style= width='50'  height='16' align='center' valign='middle'>$no</td>
                     <td style= width='100' height='16' align='center' valign='middle'>$data[codigo_transaccion]</td>
                     <td style= width='50'  height='16' align='center' valign='middle'>$data[tipo_transaccion]</td>
@@ -144,27 +147,28 @@ $count  = mysqli_num_rows($query);*/
                     <td style= width='60'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
                     <td style= width='65'  height='16' align='center' valign='middle'>$fecha</td>                      
                 </tr>";
-            $no++;
-        }
-        ?>  
-                </tbody>
-            </table>  
-        </div>
-    </body>
+                    $no++;
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+
 </html>
 <?php
-    $filename="Reporte Movimientos Biblioteca Filtrado.pdf"; 
+$filename = "Reporte Movimientos Biblioteca Filtrado.pdf";
 //==========================================================================================================
-    $content = ob_get_clean();
-    $content = '<page style="font-family: freeserif">'.($content).'</page>';
+$content = ob_get_clean();
+$content = '<page style="font-family: freeserif">' . ($content) . '</page>';
 
-    require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
-try
-{
-    $html2pdf = new HTML2PDF('l','A4','en', false,'ISO-8859-15',array(10, 10, 10, 10));
+require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
+try {
+    $html2pdf = new HTML2PDF('l', 'A4', 'en', false, 'ISO-8859-15', array(10, 10, 10, 10));
     $html2pdf->setDefaultFont('Arial');
     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
     $html2pdf->Output($filename);
+} catch (HTML2PDF_exception $e) {
+    echo $e;
 }
-    catch(HTML2PDF_exception $e) { echo $e; }
 ?>

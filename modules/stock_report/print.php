@@ -19,38 +19,38 @@ $data = mysqli_fetch_assoc($query);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
-$hari_ini = date("d-m-Y");
+$hari_ini = date("Y-m-d");
 
 $tgl1     = $_GET['tgl_awal'];
-$explode  = explode('-',$tgl1);
-$tgl_awal = $explode[2]."-".$explode[1]."-".$explode[0];
+$explode  = explode('-', $tgl1);
+$tgl_awal = $explode[0] . "-" . $explode[1] . "-" . $explode[2];
 
 $tgl2      = $_GET['tgl_akhir'];
-$explode   = explode('-',$tgl2);
-$tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
+$explode   = explode('-', $tgl2);
+$tgl_akhir = $explode[0] . "-" . $explode[1] . "-" . $explode[2];
 
-$limit =  date("Y-m-d",strtotime($tgl_akhir."+ 1 days")); 
+$limit =  date("Y-m-d", strtotime($tgl_akhir . "+ 1 days"));
 
 if ($tgl_awal !== $tgl_akhir) {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa, a.lugar_e, a.lugar_r, a.created_date, b.codigo, b.descripcion, b.unidad, b.cedula, b.serial
                                     FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
-                                    or die('error '.mysqli_error($mysqli));
+                                    ORDER BY a.codigo_transaccion DESC")
+        or die('error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 } else {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa, a.lugar_e, a.lugar_r, a.created_date, b.codigo, b.descripcion, b.unidad, b.cedula, b.serial
                                     FROM transaccion_equipos as a INNER JOIN inventario as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
-                                    or die('error '.mysqli_error($mysqli));
+                                    ORDER BY a.codigo_transaccion DESC")
+        or die('error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -75,18 +75,18 @@ if ($tgl_awal !== $tgl_akhir) {
         REPORTE DE MOVIMIENTOS (General)
     </div>
 
-    <?php  
+    <?php
 
-    $fecha1 = date("d-m-Y", strtotime($tgl_awal));
-    $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
-    if ($tgl_awal==$tgl_akhir) { ?>
+    $fecha1 = date("Y-m-d", strtotime($tgl_awal));
+    $fecha2 = date("Y-m-d", strtotime($tgl_akhir));
+    if ($tgl_awal === $tgl_akhir) { ?>
         <div id="title-tanggal">
             Fecha: <?php echo $fecha1; ?>
         </div>
     <?php
     } else { ?>
         <div id="title-tanggal">
-            Desde:  <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
+            Desde: <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
         </div>
     <?php
     }
@@ -105,7 +105,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -139,8 +139,8 @@ if ($tgl_awal !== $tgl_akhir) {
 
             <tbody>
                 <?php
-    
-                if($count == 0) {
+
+                if ($count == 0) {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'></td>
                         <td width='100' height='16' align='center' valign='middle'></td>
@@ -156,10 +156,8 @@ if ($tgl_awal !== $tgl_akhir) {
                         <td width='60'  height='16' align='center' valign='middle'></td>
                         <td width='65'  height='16' align='center' valign='middle'></td>
                     </tr>";
-                }
+                } else {
 
-                else {
-   
                     while ($data = mysqli_fetch_assoc($query)) {
                         $originalDate = $data['created_date'];
                         $fecha = date("d-m-Y", strtotime($originalDate));
@@ -182,7 +180,7 @@ if ($tgl_awal !== $tgl_akhir) {
                         $no++;
                     }
                 }
-                ?>	
+                ?>
             </tbody>
         </table>
 
@@ -191,18 +189,18 @@ if ($tgl_awal !== $tgl_akhir) {
 
 </html>
 <?php
-$filename="Reporte Movimientos General.pdf"; 
+$filename = "Reporte Movimientos General.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
-$content = '<page style="font-family: freeserif">'.($content).'</page>';
+$content = '<page style="font-family: freeserif">' . ($content) . '</page>';
 
 require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
-try
-{
-    $html2pdf = new HTML2PDF('L','F4','en', false, 'ISO-8859-15',array(10, 10, 10, 10));
+try {
+    $html2pdf = new HTML2PDF('L', 'F4', 'en', false, 'ISO-8859-15', array(10, 10, 10, 10));
     $html2pdf->setDefaultFont('Arial');
     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
     $html2pdf->Output($filename);
+} catch (HTML2PDF_exception $e) {
+    echo $e;
 }
-catch(HTML2PDF_exception $e) { echo $e; }
 ?>
