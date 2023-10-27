@@ -147,7 +147,7 @@ else {
             }else*/ if (empty($_FILES['foto']['name'])) {
                 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date) 
-                VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
+                VALUES('oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
                 or die('error '.mysqli_error($mysqli)); 
 
 
@@ -174,7 +174,7 @@ else {
                             
                          
                         $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date,foto) 
-                                            VALUES('Oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
+                                            VALUES('oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
                                             or die('error '.mysqli_error($mysqli)); 
 
                             if ($query) {
@@ -467,7 +467,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
         
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='Oficina'")
+                                                        WHERE estado = 'chequeado' AND categoria='oficina'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
