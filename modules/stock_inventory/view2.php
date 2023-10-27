@@ -1,6 +1,5 @@
 <script src="js/alertifyjs/alertify.js"></script>
 <script type="text/javascript">
-
   function check(e) {
     tecla = (document.all) ? e.keyCode : e.which;
 
@@ -79,7 +78,7 @@
                     <table id="dataTables1" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
-                          <th class="center"> 
+                          <th class="center">
                             <input list="items_Comunicaciones" type="text" name="filtrado" id="f_comu" autocomplete="off" required="true" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                             <datalist id="items_Comunicaciones">
                               <option value=""></option>
@@ -99,11 +98,11 @@
                           <th class="center"><input list="items_Comunicaciones" type="text" name="filtrado2" id="f_comu2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"><input list="items_Comunicaciones" type="text" name="filtrado3" id="f_comu3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_o">
-                          <i style="color:#fff" class="fa fa-minus"></i>
+                              <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
 
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="cbtn_v">
-                            <i style="color:#fff" class="fa fa-plus"></i>
+                              <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
                           <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro" id="filtro" value="" placeholder="-- Filtro 1 --"></th>
@@ -112,12 +111,12 @@
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                           <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
-                          
+
                         </tr>
                       </thead>
                     </table>
                   </form>
-                </br>
+                  </br>
 
                   <div class="row">
                     <div class="col-md-12">
@@ -154,8 +153,8 @@
                             </thead>
 
                             <tbody>
-                            <?php
-                            $no = 1;
+                              <?php
+                              $no = 1;
 
                               $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones' ORDER BY codigo DESC ")
                                 or die('error: ' . mysqli_error($mysqli));
@@ -187,9 +186,9 @@
                           <i id='$data[codigo]' style='color:#000' class='fa fa-qrcode fa-2x'></i> QR
                     </a>";
 
-                            $no++;
-                            }
-                            ?>
+                                $no++;
+                              }
+                              ?>
                             </tbody>
                           </table>
                         </div><!-- /.box-body -->
@@ -200,7 +199,7 @@
               </form>
             </div>
 
-          <!--Oficina-->
+            <!--Oficina-->
 
             <div role="tabpanel" class="tab-pane" id="Oficina">
               <!-- form start -->
@@ -327,12 +326,12 @@
                       </div><!-- /.box -->
                     </div>
                     <!--/.col -->
-                </div> <!-- /.row -->
-              </div>
-            </form>
-          </div>
+                  </div> <!-- /.row -->
+                </div>
+              </form>
+            </div>
 
-          <!--Maquinaria-->
+            <!--Maquinaria-->
 
             <div role="tabpanel" class="tab-pane active" id="Maquinaria">
               <!-- form start -->
@@ -373,7 +372,7 @@
 
                           <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_refri" id="rfiltro" value="" placeholder="-- Filtro 1 --"></th>
                           <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_refri" id="rfiltro2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_refri" id="rfiltro3" value=""  placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_refri" id="rfiltro3" value="" placeholder="-- Filtro 3 --"></th>
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                           <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
@@ -501,7 +500,7 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_elect" value=""  placeholder="-- Filtro 1 --"></th>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_elect" value="" placeholder="-- Filtro 1 --"></th>
                           <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_elect2" id="efiltro2" value="" placeholder="-- Filtro 2 --"></th>
                           <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro_elect3" id="efiltro3" value="" placeholder="-- Filtro 3 --"></th>
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
@@ -524,7 +523,7 @@
                               <i class="fa fa-print"></i> Imprimir
                             </a>
                             </br></br>
-                            </section>
+                          </section>
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
@@ -632,11 +631,11 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
-                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_sec" id="sfiltro2" value="" placeholder="-- Filtro 2 --"></th>
-                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_sec" id="sfiltro3" value="" placeholder="-- Filtro 3 --"></th>
-                            <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                            <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro_sec" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="filtro2_sec" id="sfiltro2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="filtro3_sec" id="sfiltro3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
                         </tr>
                       </thead>
@@ -656,8 +655,8 @@
                             </a>
                             </br></br>
                           </section>
-                          
-                            <table id="dataTables1" class="table table-bordered table-striped table-hover">
+
+                          <table id="dataTables1" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
                                 <th class="center">ÍTEM</th>
@@ -751,9 +750,9 @@
                               <option value="editorial"></option>
                             </datalist>
                           </th>
-                              <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                              <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                              <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca2" id="f2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_biblioteca" type="text" name="filtrado_biblioteca3" id="f3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="bbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
 
@@ -761,11 +760,11 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                            <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --" ></th>
-                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
-                            <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --" ></th>
-                            <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                            <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fb" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fb2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fb3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
                         </tr>
                       </thead>
@@ -820,7 +819,7 @@
                                 echo "<tr>
                                   <td width='50'  class='center'>$no</td>
                                   <td width='100' class='center'>$data[codigo]</td>
-                                  <td width='100' class='center'>$data[descripcion]</td>
+                                  <td width='100' class='center'>$data[tipo]</td>
                                   <td width='100' class='center'>$data[titulo]</td>
                                   <td width='100' class='center'>$data[autor]</td>
                                   <td width='100' class='center'>$data[color]</td> 
@@ -855,7 +854,7 @@
             </div>
 
             <!--Transporte-->
-            
+
             <div role="tabpanel" class="tab-pane" id="Transporte">
               <!-- form start -->
               <form role="form" class="form-horizontal" action="modules/stock_inventory/print_filter_Transporte.php" method="POST" target="_blank">
@@ -880,26 +879,26 @@
                               <option value="sede"></option>
                             </datalist>
                           </th>
-                              <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte2" id="filtrado_Transporte2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                              <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte3" id="filtrado_Transporte3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
-                              <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_o">
+                          <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte2" id="filtrado_Transporte2" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"><input list="items_Transporte" type="text" name="filtrado_Transporte3" id="filtrado_Transporte3" placeholder="-- Especificar --" onpaste="return false" onkeypress="return false" autocomplete="off">
+                          <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_o">
                               <i style="color:#fff" class="fa fa-minus"></i>
                           </th>
                           <th class="center"> <a data-toggle="tooltip" class="btn btn-primary btn-mb" id="vbtn_v">
                               <i style="color:#fff" class="fa fa-plus"></i>
-                            </th>
-                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
-                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fv2" value="" placeholder="-- Filtro 2 --"></th>
-                              <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fv3" value="" placeholder="-- Filtro 3 --"></th>
-                              <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
-                              <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
-                            </th>
-                          </tr>
-                        </thead>
+                          </th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fv" value="" placeholder="-- Filtro 1 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fv2" value="" placeholder="-- Filtro 2 --"></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fv3" value="" placeholder="-- Filtro 3 --"></th>
+                          <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
+                          <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
+                          </th>
+                        </tr>
+                      </thead>
                       </tr>
                     </table>
                   </form>
-                </br>
+                  </br>
 
                   <div class="row">
                     <div class="col-md-12">
@@ -975,10 +974,10 @@
                         </div><!-- /.box-body -->
                       </div><!-- /.box -->
                     </div>
-                </div> 
-              </div>
-            </form>
-          </div>
+                  </div>
+                </div>
+              </form>
+            </div>
 
 
             <!--INMUEBLES-->
@@ -1020,9 +1019,9 @@
                               <i style="color:#fff" class="fa fa-plus"></i>
                           </th>
 
-                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fi" value="" placeholder="-- Filtro 1 --" ></th>
+                          <th class="center"> <input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre" id="fi" value="" placeholder="-- Filtro 1 --"></th>
                           <th class="center"><input class="chosen-select" class="col-mb-2 form-control" class="col-mb-2 form-control" type="text" name="nombre2" id="fi2" value="" placeholder="-- Filtro 2 --"></th>
-                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fi3" value="" placeholder="-- Filtro 3 --" ></th>
+                          <th class="center"><input class="chosen-select" class="col-mb-2 form-control" type="text" name="nombre3" id="fi3" value="" placeholder="-- Filtro 3 --"></th>
                           <th class="center"><input class="btn btn-primary" type="reset" value="Limpiar" /></th>
                           <th class="center"><input class="btn btn-primary" type="submit" value="Filtrar" /></th>
                           </th>
@@ -1048,22 +1047,22 @@
                           <table id="dataTables2" class="table table-bordered table-striped table-hover">
                             <thead>
                               <tr>
-                              <th class="center">ÍTEM</th>
-                              <th class="center">CÓDIGO</th>
-                              <th class="center">DESCRIPCIÓN</th>
-                              <th class="center">M²</th>
-                              <th class="center">PISOS</th>
-                              <th class="center">HABITACIONES</th>
-                              <th class="center">HABITANTES</th>
-                              <th class="center">No. BIEN</th>
-                              <th class="center">CONDICIÓN</th>
-                              <th class="center">DIREC/UNIDAD</th>
-                              <th class="center">UBICACIÓN</th>
-                              <th class="center">NOMBRE</th>
-                              <th class="center">CÉDULA</th>
-                              <th class="center">SEDE</th>
-                              <th class="center">PERTENECEE</th>
-                              <th class="center">QR</th>
+                                <th class="center">ÍTEM</th>
+                                <th class="center">CÓDIGO</th>
+                                <th class="center">DESCRIPCIÓN</th>
+                                <th class="center">M²</th>
+                                <th class="center">PISOS</th>
+                                <th class="center">HABITACIONES</th>
+                                <th class="center">HABITANTES</th>
+                                <th class="center">No. BIEN</th>
+                                <th class="center">CONDICIÓN</th>
+                                <th class="center">DIREC/UNIDAD</th>
+                                <th class="center">UBICACIÓN</th>
+                                <th class="center">NOMBRE</th>
+                                <th class="center">CÉDULA</th>
+                                <th class="center">SEDE</th>
+                                <th class="center">PERTENECEE</th>
+                                <th class="center">QR</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -1112,10 +1111,10 @@
                 </div>
               </form>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1143,16 +1142,16 @@
 
   //SELECCION DEL FILTRO
   var elementos = [elemento = document.getElementById("f_comu2"), elemento2 = document.getElementById("f_comu3")];
-  
+
   //INPUT DEL FILTRO
   var elementos2 = [element = document.getElementById("filtro2"), element2 = document.getElementById("filtro3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("cbtn_o");
-  btn_visible = document.getElementById("cbtn_v"); 
-  
+  btn_visible = document.getElementById("cbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (elementos.length > 1) {
       elementos2[1].style.display = 'none';
       elementos[1].style.display = 'none';
@@ -1172,7 +1171,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (elementos.length < 1) {
       elementos.push(elemento);
       elementos2.push(element);
@@ -1183,25 +1182,26 @@
       elementos.push(elemento2);
       elementos2.push(element2);
       elementos[1].style.display = '';
-      elementos2[1].style.display = '';     
-  }})
+      elementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Oficina"type="text/javascript">
+<script name="filtros_Oficina" type="text/javascript">
   // Oficina
 
   //SELECCION DEL FILTRO
   var melementos = [melemento = document.getElementById("do2"), melemento2 = document.getElementById("do3")];
-  
+
   //INPUT DEL FILTRO
   var melementos2 = [melement = document.getElementById("mfiltro2"), melement2 = document.getElementById("mfiltro3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("mbtn_o");
-  btn_visible = document.getElementById("mbtn_v"); 
-  
+  btn_visible = document.getElementById("mbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (melementos.length > 1) {
       melementos2[1].style.display = 'none';
       melementos[1].style.display = 'none';
@@ -1221,7 +1221,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (melementos.length < 1) {
       melementos.push(melemento);
       melementos2.push(melement);
@@ -1232,25 +1232,26 @@
       melementos.push(melemento2);
       melementos2.push(melement2);
       melementos[1].style.display = '';
-      melementos2[1].style.display = '';     
-  }})
+      melementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Maquinaria"type="text/javascript">
+<script name="filtros_Maquinaria" type="text/javascript">
   // Maquinaria
 
   //SELECCION DEL FILTRO
   var rmelementos = [rmelemento = document.getElementById("ado2"), rmelemento2 = document.getElementById("ado3")];
-  
+
   //INPUT DEL FILTRO
   var rmelementos2 = [rmelement = document.getElementById("rfiltro2"), rmelement2 = document.getElementById("rfiltro3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("rbtn_o");
-  btn_visible = document.getElementById("rbtn_v"); 
-  
+  btn_visible = document.getElementById("rbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (rmelementos.length > 1) {
       rmelementos2[1].style.display = 'none';
       rmelementos[1].style.display = 'none';
@@ -1270,7 +1271,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (rmelementos.length < 1) {
       rmelementos.push(rmelemento);
       rmelementos2.push(rmelement);
@@ -1281,25 +1282,26 @@
       rmelementos.push(rmelemento2);
       rmelementos2.push(rmelement2);
       rmelementos[1].style.display = '';
-      rmelementos2[1].style.display = '';     
-  }})
+      rmelementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Cientificos"type="text/javascript">
+<script name="filtros_Cientificos" type="text/javascript">
   // Cientificos
 
   //SELECCION DEL FILTRO
   var ermelementos = [ermelemento = document.getElementById("rado2"), ermelemento2 = document.getElementById("rado3")];
-  
+
   //INPUT DEL FILTRO
   var ermelementos2 = [ermelement = document.getElementById("efiltro2"), ermelement2 = document.getElementById("efiltro3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("ebtn_o");
-  btn_visible = document.getElementById("ebtn_v"); 
-  
+  btn_visible = document.getElementById("ebtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (ermelementos.length > 1) {
       ermelementos2[1].style.display = 'none';
       ermelementos[1].style.display = 'none';
@@ -1319,7 +1321,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (ermelementos.length < 1) {
       ermelementos.push(ermelemento);
       ermelementos2.push(ermelement);
@@ -1330,25 +1332,26 @@
       ermelementos.push(ermelemento2);
       ermelementos2.push(ermelement2);
       ermelementos[1].style.display = '';
-      ermelementos2[1].style.display = '';     
-  }})
+      ermelementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Medicos"type="text/javascript">
+<script name="filtros_Medicos" type="text/javascript">
   // Medicos
 
   //SELECCION DEL FILTRO
   var sermelementos = [sermelemento = document.getElementById("trado2"), sermelemento2 = document.getElementById("trado3")];
-  
+
   //INPUT DEL FILTRO
   var sermelementos2 = [sermelement = document.getElementById("sfiltro2"), sermelement2 = document.getElementById("sfiltro3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("sbtn_o");
-  btn_visible = document.getElementById("sbtn_v"); 
-  
+  btn_visible = document.getElementById("sbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (sermelementos.length > 1) {
       sermelementos2[1].style.display = 'none';
       sermelementos[1].style.display = 'none';
@@ -1368,7 +1371,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (sermelementos.length < 1) {
       sermelementos.push(sermelemento);
       sermelementos2.push(sermelement);
@@ -1379,25 +1382,26 @@
       sermelementos.push(sermelemento2);
       sermelementos2.push(sermelement2);
       sermelementos[1].style.display = '';
-      sermelementos2[1].style.display = '';     
-  }})
+      sermelementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Biblioteca"type="text/javascript">
+<script name="filtros_Biblioteca" type="text/javascript">
   // BIBLIOTECA
 
   //SELECCION DEL FILTRO
   var bsermelementos = [bsermelemento = document.getElementById("f2"), bsermelemento2 = document.getElementById("f3")];
-  
+
   //INPUT DEL FILTRO
   var bsermelementos2 = [bsermelement = document.getElementById("fb2"), bsermelement2 = document.getElementById("fb3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("bbtn_o");
-  btn_visible = document.getElementById("bbtn_v"); 
-  
+  btn_visible = document.getElementById("bbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (bsermelementos.length > 1) {
       bsermelementos2[1].style.display = 'none';
       bsermelementos[1].style.display = 'none';
@@ -1417,7 +1421,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (bsermelementos.length < 1) {
       bsermelementos.push(bsermelemento);
       bsermelementos2.push(bsermelement);
@@ -1428,25 +1432,26 @@
       bsermelementos.push(bsermelemento2);
       bsermelementos2.push(bsermelement2);
       bsermelementos[1].style.display = '';
-      bsermelementos2[1].style.display = '';     
-  }})
+      bsermelementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Transporte"type="text/javascript">
+<script name="filtros_Transporte" type="text/javascript">
   // Transporte
 
   //SELECCION DEL FILTRO
   var vbsermelementos = [vbsermelemento = document.getElementById("filtrado_Transporte2"), vbsermelemento2 = document.getElementById("filtrado_Transporte3")];
-  
+
   //INPUT DEL FILTRO
   var vbsermelementos2 = [vbsermelement = document.getElementById("fv2"), vbsermelement2 = document.getElementById("fv3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("vbtn_o");
-  btn_visible = document.getElementById("vbtn_v"); 
-  
+  btn_visible = document.getElementById("vbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (vbsermelementos.length > 1) {
       vbsermelementos2[1].style.display = 'none';
       vbsermelementos[1].style.display = 'none';
@@ -1466,7 +1471,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (vbsermelementos.length < 1) {
       vbsermelementos.push(vbsermelemento);
       vbsermelementos2.push(vbsermelement);
@@ -1477,25 +1482,26 @@
       vbsermelementos.push(vbsermelemento2);
       vbsermelementos2.push(vbsermelement2);
       vbsermelementos[1].style.display = '';
-      vbsermelementos2[1].style.display = '';     
-  }})
+      vbsermelementos2[1].style.display = '';
+    }
+  })
 </script>
 
-<script name="filtros_Inmubles"type="text/javascript">
+<script name="filtros_Inmubles" type="text/javascript">
   // Transporte
 
   //SELECCION DEL FILTRO
   var ivbsermelementos = [ivbsermelemento = document.getElementById("filtrado_inmuebles2"), ivbsermelemento2 = document.getElementById("filtrado_inmuebles3")];
-  
+
   //INPUT DEL FILTRO
   var ivbsermelementos2 = [ivbsermelement = document.getElementById("fi2"), ivbsermelement2 = document.getElementById("fi3")];
-  
+
   //BOTONES PARA OCULTAR Y !OCULTAR
   btn_ocultar = document.getElementById("ivbtn_o");
-  btn_visible = document.getElementById("ivbtn_v"); 
-  
+  btn_visible = document.getElementById("ivbtn_v");
+
   //FUNCION PARA OCULTAR
-  btn_ocultar.addEventListener("click",()=>{
+  btn_ocultar.addEventListener("click", () => {
     if (ivbsermelementos.length > 1) {
       ivbsermelementos2[1].style.display = 'none';
       ivbsermelementos[1].style.display = 'none';
@@ -1515,7 +1521,7 @@
   })
 
   //FUNCION PARA !OCULTAR
-  btn_visible.addEventListener("click", ()=>{
+  btn_visible.addEventListener("click", () => {
     if (ivbsermelementos.length < 1) {
       ivbsermelementos.push(ivbsermelemento);
       ivbsermelementos2.push(ivbsermelement);
@@ -1526,12 +1532,12 @@
       ivbsermelementos.push(ivbsermelemento2);
       ivbsermelementos2.push(ivbsermelement2);
       ivbsermelementos[1].style.display = '';
-      ivbsermelementos2[1].style.display = '';     
-  }})
+      ivbsermelementos2[1].style.display = '';
+    }
+  })
 </script>
 
 <script>
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido");
   console.log(qr);
@@ -1586,11 +1592,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-Oficina">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido2");
   console.log(qr);
@@ -1645,11 +1649,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-Maquinaria">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido3");
   console.log(qr);
@@ -1704,11 +1706,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-electricos">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido4");
   console.log(qr);
@@ -1763,11 +1763,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-Medicos">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido5");
   console.log(qr);
@@ -1822,11 +1820,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-biblioteca">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido6");
   console.log(qr);
@@ -1881,11 +1877,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-Transporte">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido7");
   console.log(qr);
@@ -1940,11 +1934,9 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>
 
 <script name="qr-inmuebles">
-  
   //document.getElementById("contenido");
   var qr = document.getElementById("contenido8");
   console.log(qr);
@@ -1999,5 +1991,4 @@
 			
 		  event.preventDefault();*/
   });
-
 </script>

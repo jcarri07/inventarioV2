@@ -90,9 +90,15 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     </div>
 
     <div id="title-tanggal">
-    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
-         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
-         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
+        <?php if ($var != "" && $var2 == "" && $var3 == "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>";
+        } else ?>
+        <?php if ($var != "" && $var2 != "" && $var3 == "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>" . "Filtro 2:" . $filtro2 . " " . "=" . " " . $var2 . "<br>";
+        } else ?>
+        <?php if ($var != "" && $var2 != "" && $var3 != "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>" . "Filtro 2:" . $filtro2 . " " . "=" . " " . $var2 . "<br>" . "Filtro 3:" . $filtro3 . " " . "=" . " " . $var3 . "<br>";
+        } else ?>
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -108,7 +114,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -144,7 +150,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='100' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
                         <td width='180' height='16' align='center' valign='middle'>$data[titulo]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[autor]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[isbn]</td>
