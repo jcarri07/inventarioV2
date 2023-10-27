@@ -195,14 +195,26 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Sede</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="sede_recibe" name="lugar_r" autocomplete="off" required>
+                  <input type="text" class="form-control" list="item" placeholder="-- Especificar --" id="sede_recibe" name="lugar_r" autocomplete="off" required>
+                    <datalist id="item">
+                      <option value=""></option>
+                      <option value="CTSR">CTSR</option>
+                      <option value="SAT">SAT</option>
+                      <option value="Baemari">Baemari</option>
+                      <option value="Luepa">Luepa</option>
+                      <option value="CIDE">CIDE</option>
+                    </datalist>
                 </div>
               </div> 
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="empresa_recibe" name="empresa_r" autocomplete="off" required>
+                  <input type="text" class="form-control" list="item" placeholder="-- Especificar --" id="empresa_recibe" name="empresa_r" autocomplete="off" required>
+                  <datalist id="item">
+                    <option value=""></option>
+                    <option value="ABAE">ABAE</option>
+                  </datalist>
                 </div>
               </div>  
                    
