@@ -211,8 +211,8 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Empresa</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" list="item" placeholder="-- Especificar --" id="empresa_recibe" name="empresa_r" autocomplete="off" required>
-                  <datalist id="item">
+                  <input type="text" class="form-control" list="empresa" placeholder="-- Especificar --" id="empresa_recibe" name="empresa_r" autocomplete="off" required>
+                  <datalist id="empresa">
                     <option value=""></option>
                     <option value="ABAE">ABAE</option>
                   </datalist>
