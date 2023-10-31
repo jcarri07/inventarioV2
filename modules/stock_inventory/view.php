@@ -61,7 +61,7 @@
         <table id="dataTables2" class="table table-bordered table-striped table-hover">
           <thead>
             <tr>
-              <th class="center">ITEM</th>
+              <th class="center">ITEMss </th>
               <th class="center">CODIGO</th>
               <th class="center">SERIAL</th>
               <th class="center">DESCRIPCION</th>
