@@ -22,10 +22,14 @@ $sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
-
-$query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo DESC")
-    or die('Error ' . mysqli_error($mysqli));
-$count  = mysqli_num_rows($query);
+$access = $_SESSION['permisos_acceso'];
+if ($access === 'Super Admin') {
+    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else {
+    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE sede LIKE '$sede' ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
 
 
 ?>
@@ -74,7 +78,7 @@ $count  = mysqli_num_rows($query);
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -122,7 +126,7 @@ $count  = mysqli_num_rows($query);
                         <td width='180' height='16' align='center' valign='middle'>$data[direccion]</td>               
                     </tr>";
                     $no++;
-                } 
+                }
                 ?>
             </tbody>
         </table>

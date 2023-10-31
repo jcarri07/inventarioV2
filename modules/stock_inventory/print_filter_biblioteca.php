@@ -32,23 +32,35 @@ $sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
+$access = $_SESSION['permisos_acceso'];
+if ($var != "" && $var2 == "" && $var3 == "" && $access !== 'Super Admin') {
 
-if ($var != "" && $var2 == "" && $var3 == "") {
-
+    $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 == "" && $var3 == "") {
     $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
-if ($var != "" && $var2 != "" && $var3 == "") {
+if ($var != "" && $var2 != "" && $var3 == "" && $access !== 'Super Admin') {
 
+    $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 != "" && $var3 == "") {
     $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
-if ($var != "" && $var2 != "" && $var3 != "") {
+if ($var != "" && $var2 != "" && $var3 != "" && $access !== 'Super Admin') {
 
+    $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 != "" && $var3 != "") {
     $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);

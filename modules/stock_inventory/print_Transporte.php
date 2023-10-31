@@ -22,11 +22,14 @@ $sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
-
-$query = mysqli_query($mysqli, "SELECT * FROM Transporte ORDER BY codigo DESC")
-    or die('Error ' . mysqli_error($mysqli));
-$count  = mysqli_num_rows($query);
-
+$access = $_SESSION['permisos_acceso'];
+if ($access === 'Super Admin') {
+    $query = mysqli_query($mysqli, "SELECT * FROM Transporte ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else {
+    $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE sede LIKE '$sede' ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -74,7 +77,7 @@ $count  = mysqli_num_rows($query);
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
