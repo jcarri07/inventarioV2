@@ -284,12 +284,12 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 		//Administrar usuarios
 		if ($_GET["module"] == "user" || $_GET["module"] == "form_user") { ?>
 			<li class="active">
-				<a href="?module=user"><i class="fa fa-user"></i> Administrar Usuarios</a>
+				<a href="?module=user"><i class="fa fa-user"></i> Usuarios</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=user"><i class="fa fa-user"></i> Administrar Usuarios</a>
+				<a href="?module=user"><i class="fa fa-user"></i> Usuarios</a>
 			</li>
 		<?php
 		}
@@ -297,12 +297,12 @@ if ($_SESSION['permisos_acceso'] == 'Super Admin') { ?>
 		//Cambiar Contraseña
 		if ($_GET["module"] == "password") { ?>
 			<li class="active">
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		}
@@ -329,42 +329,6 @@ elseif ($_SESSION['permisos_acceso'] == 'Trabajador') { ?>
 		} else { ?>
 			<li>
 				<a href="?module=start"><i class="fa fa-home"></i> Inicio </a>
-			</li>
-		<?php
-		}
-
-		//Reportes
-		if ($_GET["module"] == "stock_inventory") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li class="active"><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes </a></li>
-					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos</a></li>
-				</ul>
-			</li>
-		<?php
-		} elseif ($_GET["module"] == "stock_report") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes </a></li>
-					<li class="active"><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos </a></li>
-				</ul>
-			</li>
-		<?php
-		} else { ?>
-			<li class="treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes </a></li>
-					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos </a></li>
-				</ul>
 			</li>
 		<?php
 		}
@@ -464,15 +428,52 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 		<?php
 		}
 */
+
+		//Reportes
+		if ($_GET["module"] == "stock_inventory") { ?>
+			<li class="active treeview">
+				<a href="javascript:void(0);">
+					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li class="active"><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios </a></li>
+					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos</a></li>
+				</ul>
+			</li>
+		<?php
+		} elseif ($_GET["module"] == "stock_report") { ?>
+			<li class="active treeview">
+				<a href="javascript:void(0);">
+					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios </a></li>
+					<li class="active"><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos </a></li>
+				</ul>
+			</li>
+		<?php
+		} else { ?>
+			<li class="treeview">
+				<a href="javascript:void(0);">
+					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios </a></li>
+					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos </a></li>
+				</ul>
+			</li>
+		<?php
+		}
+
 		//Cambiar contraseña
 		if ($_GET["module"] == "password") { ?>
 			<li class="active">
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		}
@@ -662,8 +663,8 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes</a></li>
-					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos </a></li>
+					<li class="active"><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios</a></li>
+					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos </a></li>
 				</ul>
 			</li>
 		<?php
@@ -673,8 +674,8 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes </a></li>
-					<li class="active"><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos </a></li>
+					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios </a></li>
+					<li class="active"><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos </a></li>
 				</ul>
 			</li>
 		<?php
@@ -684,8 +685,8 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 					<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Reportes </a></li>
-					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Control de Movimientos </a></li>
+					<li><a href="?module=stock_inventory"><i class="fa fa-circle-o"></i> Inventarios </a></li>
+					<li><a href="?module=stock_report"><i class="fa fa-circle-o"></i> Movimientos </a></li>
 				</ul>
 			</li>
 		<?php
@@ -694,12 +695,12 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 		//Administrar usuarios
 		if ($_GET["module"] == "user" || $_GET["module"] == "form_user") { ?>
 			<li class="active">
-				<a href="?module=user"><i class="fa fa-user"></i> Administrar Usuarios</a>
+				<a href="?module=user"><i class="fa fa-user"></i> Usuarios</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=user"><i class="fa fa-user"></i> Administrar Usuarios</a>
+				<a href="?module=user"><i class="fa fa-user"></i> Usuarios</a>
 			</li>
 		<?php
 		}
@@ -707,12 +708,12 @@ if ($_GET["module"] == "transaccion_equipos") { ?>
 		//Cambiar contraseña
 		if ($_GET["module"] == "password") { ?>
 			<li class="active">
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		} else { ?>
 			<li>
-				<a href="?module=password"><i class="fa fa-lock"></i> Cambiar Contraseña</a>
+				<a href="?module=password"><i class="fa fa-lock"></i> Contraseña</a>
 			</li>
 		<?php
 		}
