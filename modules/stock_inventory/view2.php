@@ -156,6 +156,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones' AND sede LIKE '$sede'  ORDER BY codigo DESC ")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -290,7 +291,8 @@
                             <tbody>
                               <?php
                               $no = 1;
-
+                              $sede = $_SESSION['sede'];
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Oficina' AND sede LIKE '$sede' ORDER BY codigo DESC ")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -567,7 +569,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' AND sede LIKE '$sede' ORDER BY codigo DESC")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -705,7 +707,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Medicos' AND sede LIKE '$sede' ORDER BY codigo DESC")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -842,7 +844,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' AND sede LIKE '$sede' ORDER BY codigo DESC")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -974,7 +976,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' AND sede LIKE '$sede' ORDER BY codigo DESC")
                                   or die('error: ' . mysqli_error($mysqli));
@@ -1113,7 +1115,7 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-
+                              $access = $_SESSION['permisos_acceso'];
                               if ($access !== 'Super Admin') {
                                 $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' AND sede LIKE '$sede' ORDER BY codigo DESC")
                                   or die('error: ' . mysqli_error($mysqli));
