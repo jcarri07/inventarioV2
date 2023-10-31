@@ -156,8 +156,13 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones'  and sede LIKE '$sede'  ORDER BY codigo DESC ")
-                                or die('error: ' . mysqli_error($mysqli));
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones' AND sede LIKE '$sede'  ORDER BY codigo DESC ")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Comunicaciones' ORDER BY codigo DESC ")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 $precio_compra = format_rupiah($data['precio_compra']);
@@ -286,8 +291,13 @@
                               <?php
                               $no = 1;
 
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Oficina' AND sede LIKE '$sede' ORDER BY codigo DESC ")
-                                or die('error: ' . mysqli_error($mysqli));
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Oficina' AND sede LIKE '$sede' ORDER BY codigo DESC ")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria LIKE 'Oficina' ORDER BY codigo DESC ")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 $precio_compra = format_rupiah($data['precio_compra']);
@@ -420,8 +430,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' AND sede LIKE '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+                              $access = $_SESSION['permisos_acceso'];
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Maquinaria' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 $precio_compra = format_rupiah($data['precio_compra']);
@@ -551,8 +567,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' AND '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria = 'Cientificos' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 $precio_compra = format_rupiah($data['precio_compra']);
@@ -683,8 +705,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Medicos' AND sede LIKE '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Medicos' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria='Medicos' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 $precio_compra = format_rupiah($data['precio_compra']);
@@ -814,8 +842,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' AND sede LIKE '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE categoria= 'Biblioteca' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
 
@@ -940,8 +974,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' AND sede LIKE '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM Transporte WHERE categoria= 'Transporte' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
                                 //$precio_compra = format_rupiah($data['precio_compra']);
@@ -1073,8 +1113,14 @@
                               <?php
                               $no = 1;
                               $sede = $_SESSION['sede'];
-                              $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' AND sede LIKE '$sede' ORDER BY codigo DESC")
-                                or die('error: ' . mysqli_error($mysqli));
+
+                              if ($access !== 'Super Admin') {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' AND sede LIKE '$sede' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              } else {
+                                $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE categoria= 'inmuebles' ORDER BY codigo DESC")
+                                  or die('error: ' . mysqli_error($mysqli));
+                              }
 
                               while ($data = mysqli_fetch_assoc($query)) {
 
