@@ -74,7 +74,6 @@ if ($parametro != null) {
             echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
             echo $sql . "<br>" . $e->getMessage();
         }
-<<<<<<< HEAD
         try {
             $stmt = $conn->prepare("INSERT INTO inventario (codigo, descripcion, marca, modelo, color, serial, bienesN, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
@@ -100,43 +99,10 @@ if ($parametro != null) {
             $stmt->bindParam(20, $estado);
             $stmt->bindParam(21, $categoria);
 
-=======
-    catch(PDOException $e)
-    {
-        echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
-        echo $sql . "<br>" . $e->getMessage();
-    }
-    try {
-        $stmt = $conn->prepare( "INSERT INTO inventario (codigo, descripcion, marca, modelo, color, serial, bienesN, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        
-        $stmt->bindParam(1, $codigo);
-        $stmt->bindParam(2, $descripcion);
-        $stmt->bindParam(3, $marca);
-        $stmt->bindParam(4, $modelo);
-        $stmt->bindParam(5, $color);
-        $stmt->bindParam(6, $serial);
-        $stmt->bindParam(7, $bienesN);
-        $stmt->bindParam(8, $condicion);
-        $stmt->bindParam(9, $unidad);
-        $stmt->bindParam(10, $ubicacion);
-        $stmt->bindParam(11, $responsable);
-        $stmt->bindParam(12, $cedula);
-        $stmt->bindParam(13, $sede);
-        $stmt->bindParam(14, $pertenece);
-        $stmt->bindParam(15, $cantidad);
-        $stmt->bindParam(16, $created_user);
-        $stmt->bindParam(17, $updated_user);
-        $stmt->bindParam(18, $created_date);
-        $stmt->bindParam(19, $updated_date);
-        $stmt->bindParam(20, $estado);
-        $stmt->bindParam(21, $categoria);
-            
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
             $accion = "Importacion de Equipos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
-<<<<<<< HEAD
                 or die('error ' . mysqli_error($mysqli));
 
             header('Location:/inventariov2/main.php?module=inventario&alert=4');
@@ -169,52 +135,13 @@ if ($parametro != null) {
         } catch (PDOException $e) {
             echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
             echo $sql . "<br>" . $e->getMessage();
-=======
-                                            or die('error '.mysqli_error($mysqli));
-            
-             header('Location:/inventariov2/main.php?module=maquinaria&alert=4');    
-            
-
-        foreach ($xlsx->rows() as $fields)
-        {
-            $codigo = $fields[0];
-            $descripcion = $fields[1];
-            $marca = $fields[2];
-            $modelo = $fields[3];
-            $color = $fields[4];
-            $serial = $fields[5];
-            $bienesN = $fields[6];
-            $condicion = $fields[7];
-            $unidad = $fields[8];
-            $ubicacion = $fields[9];
-            $responsable = $fields[10];
-            $cedula = $fields[11];
-            $sede = $fields[12];
-            $pertenece = $fields[13];
-            $cantidad = $fields[14];
-            $created_user = $fields[15];
-            $updated_user = $fields[16];
-            $created_date = $fields[17];
-            $updated_date = $fields[18];
-            $estado = $fields[19];
-            $categoria = $fields[20];
-            $stmt->execute();
-           
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
         }
         unlink($path_filename_ext);
     } else {
         echo SimpleXLSX::parseError();
     }
-<<<<<<< HEAD
 } else {
     header('Location:/inventariov2/main.php?module=inventario&alert=8');
 }
-=======
-    
- } else {
-    header('Location:/inventariov2/main.php?module=maquinaria&alert=8');
- }
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
 
 ?>

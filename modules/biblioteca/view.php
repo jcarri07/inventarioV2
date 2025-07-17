@@ -183,11 +183,7 @@
                         <i style='x:#fff' class='glyphicon glyphicon-edit'></i>
                     </a>";
               ?>
-<<<<<<< HEAD
                 <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/biblioteca/proses.php?act=delete&id=<?php echo $data['codigo']; ?>" onclick="return confirm('¿Seguro de eliminar <?php echo 'El libro Titulo: ' . $data['titulo'] . ' del Autor: ' . $data['autor']; ?>?');">
-=======
-                <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/biblioteca/proses.php?act=delete&id=<?php echo $data['codigo']; ?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['tipo'] . ' ' . $data['titulo']; ?>?');">
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
                   <i style="x:#fff" class="glyphicon glyphicon-trash"></i>
                 </a>
                 <?php

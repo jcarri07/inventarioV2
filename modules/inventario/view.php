@@ -28,11 +28,7 @@
     var extPermitidas = /(.xlsx)$/i;
 
     if (!extPermitidas.exec(archivoRuta)) {
-<<<<<<< HEAD
       alert('Asegúrese de haber seleccionado un archivo de extensión .xlsx');
-=======
-      alert('Seleccione el archivo que desea importar');
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
       archivoInput.value = '';
       return false;
     }
@@ -92,7 +88,6 @@
 <section class="content-header">
   <!--<div id="visorArchivo"></div>-->
   <h2>
-<<<<<<< HEAD
     <i class="fa fa-folder-o icon-title"></i> 16000-0000 | Equipos de comunicaciones y de señalamiento
 
     <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
@@ -103,32 +98,14 @@
       <div class="btn-group pull-right" role="group" aria-label="Basic example">
 
         <a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip">
-=======
-    <i class="fa fa-folder-o icon-title"></i> 20000-0000 | Máquinas, muebles y demás equipos de oficina y de alojamiento
-
-    <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
-      <!--button class="btn btn-primary btn-social pull-right botones" type="submit" name="archivoInput" data-toggle="tooltip" onclick="return validarExt()">
-        <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
-      </button-->
-
-      <div class="btn-group pull-right" role="group" aria-label="Basic example">
-
-        <!--a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip">
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
           <i class="fa fa-file-excel-o"></i>
           <input method="post" type="file" id="archivoInput" name="archivoInput" onchange="return validarExt()">
           <div class="textoInput">
             Cargar
           </div>
-<<<<<<< HEAD
         </a>
 
         <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_comunicaciones.php" data-toggle="tooltip">
-=======
-        </a-->
-
-        <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_oficina.php" data-toggle="tooltip">
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
           <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
         </a>
 
@@ -167,7 +144,6 @@
               <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               Datos eliminados correctamente
             </div>";
-<<<<<<< HEAD
       } elseif ($_GET['alert'] == 4) {
         echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -179,8 +155,6 @@
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
             </div>";
-=======
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
       } elseif ($_GET['alert'] == 9) {
         echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -213,10 +187,6 @@
           <div id="noResults" class="no-results">No se encontraron resultados</div>
 
           <table id="example" class="table table-bordered table-striped table-hover">
-<<<<<<< HEAD
-=======
-
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
             <thead>
               <tr>
                 <th class="center">ÍTEM</th>
@@ -237,11 +207,7 @@
                 <th class="center">EDITAR</th>
               </tr>
             </thead>
-<<<<<<< HEAD
             <tbody id="tableBody">
-=======
-            <tbody>
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
               <?php
               $no = 1;
 
@@ -254,7 +220,6 @@
               $sede = $_SESSION['sede'];
 
               if ($sede == 'CTSR' && $permiso == 'Super Admin') {
-<<<<<<< HEAD
                 $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Comunicaciones' ORDER BY codigo DESC")
                   or die('error: ' . mysqli_error($mysqli));
               } else {
@@ -267,20 +232,6 @@
                 $precio_venta = format_rupiah($data['precio_venta']);
 
                 echo "<tr>
-=======
-                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Oficina' ORDER BY codigo DESC")
-                  or die('error: ' . mysqli_error($mysqli));
-              } else {
-                $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
-                  or die('error: ' . mysqli_error($mysqli));
-              }
-
-              while ($data = mysqli_fetch_assoc($query)) {
-                $precio_compra = format_rupiah($data['precio_compra']);
-                $precio_venta = format_rupiah($data['precio_venta']);
-
-              echo "<tr>
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
                       <td width='50'  class='center'>$no</td>
                       <td width='100' class='center'>$data[codigo]</td>
                       <td width='100' class='center'>$data[descripcion]</td>
@@ -308,20 +259,10 @@
                 <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-xs" href="modules/inventario/proses.php?act=delete&id=<?php echo $data['codigo']; ?>" onclick="return confirm('¿Seguro de eliminar <?php echo $data['descripcion'] . ' ' . $data['serial']; ?>?');">
                   <i style="color:#fff" class="glyphicon glyphicon-trash"></i>
                 </a>
-<<<<<<< HEAD
 
                 <a class="btn btn-primary btn-xs internos" data-toggle="tooltip" data-placement="top" title="Detalles" class="modal-dialog modal-lg" id="<?php echo $data['codigo']; ?>" onclick="mostrar_modal_internos(this.id);">
                   <i class="fa fa-clipboard" style='color:#fff'></i>
                 </a>
-=======
-                <?php
-                if ($data['descripcion'] == 'Unidad central de proceso (CPU)') {
-                ?>
-                  <a class="btn btn-primary btn-xs internos" data-toggle="tooltip" data-placement="top" title="Detalles" class="modal-dialog modal-lg" id="<?php echo $data['codigo']; ?>" onclick="mostrar_modal_internos(this.id);">
-                    <i class="fa fa-clipboard" style='color:#fff'></i>
-                  </a>
-                <?php  } ?>
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
                 <!--data-toggle='modal' data-target='#modal_internos'-->
                 <?php
 
@@ -363,22 +304,10 @@
 
               <script src="">
                 $(document).ready(function() {
-<<<<<<< HEAD
                   $('#example').DataTable();
                 });
               </script>
               </script>
-=======
-                  $('#example').DataTable({
-                    ajax: "../data/2500.txt",
-                    deferRender: true,
-                    scrollY: 200,
-                    scrollCollapse: true,
-                    scroller: true
-                  });
-                });
-              </script>
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
             </tbody>
           </table>
         </div><!-- /.box-body -->
@@ -386,7 +315,6 @@
     </div><!--/.col -->
   </div> <!-- /.row -->
 
-<<<<<<< HEAD
   <script>
     $(document).ready(function() {
       // Función de búsqueda
@@ -434,20 +362,6 @@
           ...
         </div>
 
-=======
-  <div class="modal fade bd-example-modal-lg" id="modal_internos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="max-width: 100%;" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div id="cuerpo_internos" class="modal-body">
-          ...
-        </div>
-
->>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
       </div>
     </div>
   </div>
