@@ -2,6 +2,9 @@
 session_start();
 ob_start();
 
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 require_once "../../config/database.php";
 
@@ -16,71 +19,73 @@ $data = mysqli_fetch_assoc($query);
 $nombre = $_SESSION['name_user'];
 $cedula = $_SESSION['cedula_user'];
 $sede = $_SESSION['sede'];
-$hari_ini = date("d-m-Y");
+$hari_ini = date("Y-m-d");
 
 $tgl1     = $_GET['tgl_awal_biblioteca'];
-$explode  = explode('-',$tgl1);
-$tgl_awal = $explode[2]."-".$explode[1]."-".$explode[0];
+$explode  = explode('-', $tgl1);
+$tgl_awal = $explode[0] . "-" . $explode[1] . "-" . $explode[2];
 
 $tgl2      = $_GET['tgl_akhir_biblioteca'];
-$explode   = explode('-',$tgl2);
-$tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
+$explode   = explode('-', $tgl2);
+$tgl_akhir = $explode[0] . "-" . $explode[1] . "-" . $explode[2];
 
-$limit =  date("Y-m-d",strtotime($tgl_akhir."+ 1 days")); 
+$limit =  date("Y-m-d", strtotime($tgl_akhir . "+ 1 days"));
 
 if ($tgl_awal !== $tgl_akhir) {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.titulo, b.ubicacion, b.cedula, b.isbn
                                     FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
-                                    or die('error '.mysqli_error($mysqli));
+                                    ORDER BY a.codigo_transaccion DESC")
+        or die('error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 } else {
     $no    = 1;
     $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo, a.motivo, a.entrega, a.recibe, a.cedula_r, a.cedula_e, a.empresa,a.lugar_e, a.lugar_r, a.created_date,b.codigo, b.titulo, b.ubicacion, b.cedula, b.isbn
                                     FROM transaccion_equipos_biblioteca as a INNER JOIN biblioteca as b ON a.codigo=b.codigo
                                     WHERE a.created_date BETWEEN '$tgl_awal' AND '$limit'
-                                    ORDER BY a.codigo_transaccion DESC") 
-                                    or die('error '.mysqli_error($mysqli));
+                                    ORDER BY a.codigo_transaccion DESC")
+        or die('error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>REPORTE DE MOVIMIENTOS (BIBLIOTECA)</title>
-        <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
-    </head>
-    <body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>REPORTE DE MOVIMIENTOS (Biblioteca)</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
+</head>
+
+<body>
 
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
     <br><br>
 
-    
-        <div id="title">
-            REPORTE DE MOVIMIENTOS (BIBLIOTECA)
-        </div>
-    <?php  
+
+    <div id="title">
+        REPORTE DE MOVIMIENTOS (Biblioteca)
+    </div>
+    <?php
 
     $fecha1 = date("d-m-Y", strtotime($tgl_awal));
     $fecha2 = date("d-m-Y", strtotime($tgl_akhir));
-    if ($tgl_awal==$tgl_akhir) { ?>
+    if ($tgl_awal == $tgl_akhir) { ?>
         <div id="title-tanggal">
             Fecha: <?php echo $fecha1; ?>
         </div>
     <?php
     } else { ?>
         <div id="title-tanggal">
-            Desde:  <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
+            Desde: <?php echo $fecha1; ?> Hasta: <?php echo $fecha2; ?>
         </div>
     <?php
     }
@@ -99,7 +104,7 @@ if ($tgl_awal !== $tgl_akhir) {
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -111,11 +116,11 @@ if ($tgl_awal !== $tgl_akhir) {
     <br>
     <hr><br>
 
-        <div id="isi">
-            <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;">
-                <thead style="background:#e8ecee">
+    <div id="isi">
+        <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;">
+            <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>TRANSACCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TIPO </small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
@@ -131,71 +136,70 @@ if ($tgl_awal !== $tgl_akhir) {
                 </tr>
             </thead>
 
-                <tbody>
-<?php
-    
-    if($count == 0) {
+            <tbody>
+                <?php
+
+                if ($count == 0) {
                     echo "  <tr>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='95'  height='16' align='center' valign='middle'></td>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='45'  height='16' align='center' valign='middle'></td>
-                        <td width='200' height='16' align='center' valign='middle'></td>
-					    <td width='75'  height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
+                        <td width= 100' height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
+                        <td width='50'  height='16' align='center' valign='middle'></td>
                         <td width='100' height='16' align='center' valign='middle'></td>
-                        <td width='55'  height='16' align='center' valign='middle'></td>
-                        <td width='40'  height='16' align='center' valign='middle'></td>
+					    <td width='100' height='16' align='center' valign='middle'></td>
                         <td width='100' height='16' align='center' valign='middle'></td>
-                        <td width='55'  height='16' align='center' valign='middle'></td>
-                        <td width='40'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='100' height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
+                        <td width='60'  height='16' align='center' valign='middle'></td>
                         <td width='65'  height='16' align='center' valign='middle'></td>
                     </tr>";
-    }
+                } else {
 
-    else {
-   
-        while ($data = mysqli_fetch_assoc($query)) {
-            $originalDate = $data['created_date'];
-            $fecha = date("d-m-Y", strtotime($originalDate));
+                    while ($data = mysqli_fetch_assoc($query)) {
+                        $originalDate = $data['created_date'];
+                        $fecha = date("d-m-Y", strtotime($originalDate));
 
-            echo "  <tr>
-                        <td width='45'  height='13' align='center' valign='middle'>$no</td>
-                        <td width='95'  height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
-                        <td width='45'  height='13' align='center' valign='middle'>$data[tipo_transaccion]</td>
-                        <td width='45'  height='13' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='200' height='13' align='center' valign='middle'>$data[titulo]</td>
-                        <td width='75'  height='13' align='center' valign='middle'>$data[motivo]</td>
+                        echo "  <tr>
+                        <td width='50'  height='13' align='center' valign='middle'>$no</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
+                        <td width='50'  height='13' align='center' valign='middle'>$data[tipo_transaccion]</td>
+                        <td width='50'  height='13' align='center' valign='middle'>$data[codigo]</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[titulo]</td>
+                        <td width='100' height='13' align='center' valign='middle'>$data[motivo]</td>
                         <td width='100' height='16' align='center' valign='middle'>$data[entrega]</td>
-                        <td width='55'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
-                        <td width='40'  height='16' align='center' valign='middle'>$data[lugar_e]</td> 
+                        <td width='60'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[lugar_e]</td> 
                         <td width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
-                        <td width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
-                        <td width='40'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
+                        <td width='60'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
+                        <td width='60'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
                         <td width='65'  height='16' align='center' valign='middle'>$fecha</td>
                     </tr>";
-            $no++;
-        }
-    }
-?>	
-                </tbody>
-            </table>
+                        $no++;
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
 
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
 <?php
-$filename="Reporte Movimientos Biblioteca.pdf"; 
+$filename = "Reporte Movimientos Biblioteca.pdf";
 //==========================================================================================================
 $content = ob_get_clean();
-$content = '<page style="font-family: freeserif">'.($content).'</page>';
+$content = '<page style="font-family: freeserif">' . ($content) . '</page>';
 
 require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
-try
-{
-    $html2pdf = new HTML2PDF('L','F4','en', false, 'ISO-8859-15',array(10, 10, 10, 10));
+try {
+    $html2pdf = new HTML2PDF('L', 'F4', 'en', false, 'ISO-8859-15', array(10, 10, 10, 10));
     $html2pdf->setDefaultFont('Arial');
     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
     $html2pdf->Output($filename);
+} catch (HTML2PDF_exception $e) {
+    echo $e;
 }
-catch(HTML2PDF_exception $e) { echo $e; }
 ?>

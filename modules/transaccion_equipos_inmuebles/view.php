@@ -125,10 +125,30 @@ function validarExt()
             <tbody>
             <?php  
             $no = 1;
-            $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.descripcion, b.tipo, b.condicion, b.direccion
-                                            FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
-                                            or die('error '.mysqli_error($mysqli));
+          
+             $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
+            or die('error: ' . mysqli_error($mysqli));
+            $data = mysqli_fetch_assoc($query);
 
+             $_SESSION['sede'] = $data['sede'];
+             $_SESSION['permisos_acceso'] = $data['permisos_acceso'];
+             $permiso = $_SESSION['permisos_acceso'];
+             $sede = $_SESSION['sede'];
+
+             if ($sede == 'CTSR' && $permiso == 'Super Admin') {
+              $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.descripcion, b.tipo, b.condicion, b.direccion
+              FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo  ORDER BY codigo_transaccion DESC")
+              or die('error '.mysqli_error($mysqli));
+
+             } else {
+
+              $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion, a.codigo,b.codigo,a.motivo,a.created_date,b.tipo, a.codigo,a.entrega, a.empresa_r, a.cedula_e, a.recibe, a.empresa, a.cedula_r, a.lugar_e, a.lugar_r, b.descripcion, b.tipo, b.condicion, b.direccion
+              FROM transaccion_equipos_inmuebles as a INNER JOIN inmuebles as b ON a.codigo=b.codigo  WHERE lugar_e = '$sede' ORDER BY codigo_transaccion DESC")
+              or die('error '.mysqli_error($mysqli));
+
+                // $query = mysqli_query($mysqli, "SELECT * FROM inventario WHERE categoria= 'Oficina' and sede LIKE '$sede' ORDER BY codigo DESC")
+                // or die('error: ' . mysqli_error($mysqli));
+             }
            
             while ($data = mysqli_fetch_assoc($query)) { 
               $originalDate = $data['created_date'];

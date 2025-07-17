@@ -16,7 +16,7 @@
                   <th class="center">TÍTULO</th>
                   <th class="center">AUTOR</th>
                   <th class="center">COLOR</th>
-                  <th class="center">SERIAL</th>
+                  <th class="center">ISBN</th>
                   <th class="center">No. DEL BIEN</th>               
                   <th class="center">CONDICIÓN</th>
                   <th class="center">DIRECCIÓN O UNIDAD</th>
@@ -39,6 +39,8 @@
     $NombreUser = $_SESSION['name_user'];
     $iduser = $_SESSION['id_user'];
     $cedulauser = $_SESSION['cedula_user'];
+
+    $mysqli = new mysqli($server, $username, $password, $database);
 
     $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
                                 or die('error: '.mysqli_error($mysqli));
@@ -65,10 +67,10 @@
               echo "
 
               <tr>
-                  <td width='50'  class='center'>$no</td>
+                  <td width='50'  class='center' align='center'>$no</td>
                   <td width='150' class='center' align='center'>$data[codigo]</td>
                   <td width='150' class='center' align='center'>$data[descripcion]</td>
-                  <td width='200' class='center' align='center'>$data[titulo]</td>
+                  <td width='150' class='center' align='center'>$data[titulo]</td>
                   <td width='150' class='center' align='center'>$data[autor]</td>
                   <td width='150' class='center' align='center'>$data[color]</td>
                   <td width='150' class='center' align='center'>$data[isbn]</td>
@@ -88,11 +90,11 @@
                   </a>";
     ?>
   
-  
   <?php
     echo "    </div>
                </td>
               </tr>";
+              
     $no++;
           	}
 

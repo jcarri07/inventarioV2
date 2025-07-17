@@ -2,6 +2,9 @@
 session_start();
 ob_start();
 
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 require_once "../../config/database.php";
 
@@ -29,23 +32,35 @@ $sede = $_SESSION['sede'];
 $hari_ini = date("d-m-Y");
 
 $no = 1;
+$access = $_SESSION['permisos_acceso'];
+if ($var != "" && $var2 == "" && $var3 == "" && $access !== 'Super Admin') {
 
-if ($var != "" && $var2 == "" && $var3 == "") {
-
+    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 == "" && $var3 == "") {
     $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
-if ($var != "" && $var2 != "" && $var3 == "") {
+if ($var != "" && $var2 != "" && $var3 == "" && $access !== 'Super Admin') {
 
+    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 != "" && $var3 == "") {
     $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
 
-if ($var != "" && $var2 != "" && $var3 != "") {
+if ($var != "" && $var2 != "" && $var3 != "" && $access !== 'Super Admin') {
 
+    $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' AND sede LIKE '$sede' ORDER BY codigo DESC")
+        or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else if ($var != "" && $var2 != "" && $var3 != "") {
     $query = mysqli_query($mysqli, "SELECT * FROM inmuebles WHERE $filtro LIKE '$var%' && $filtro2 LIKE '$var2%' && $filtro3 LIKE '$var3%' ORDER BY codigo DESC")
         or die('Error ' . mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
@@ -57,7 +72,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (INMUEBLES)</title>
+    <title>REPORTE DE INVENTARIOS (Inmuebles)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 
 </head>
@@ -66,9 +81,9 @@ if ($var != "" && $var2 != "" && $var3 != "") {
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -83,13 +98,19 @@ if ($var != "" && $var2 != "" && $var3 != "") {
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (INMUEBLES)
+        REPORTE DE INVENTARIOS (Inmuebles)
     </div>
 
     <div id="title-tanggal">
-    <?php if($var != "" && $var2 == "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>";} else?>
-         <?php if($var != "" && $var2 != "" && $var3 == "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>";} else?>
-         <?php if($var != "" && $var2 != "" && $var3 != "") {echo "Filtro 1:" .$filtro . " " . "=" . " " . $var ."<br>"."Filtro 2:" .$filtro2 . " " . "=" . " " . $var2 ."<br>"."Filtro 3:" .$filtro3 . " " . "=" . " " . $var3 ."<br>";} else?>
+        <?php if ($var != "" && $var2 == "" && $var3 == "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>";
+        } else ?>
+        <?php if ($var != "" && $var2 != "" && $var3 == "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>" . "Filtro 2:" . $filtro2 . " " . "=" . " " . $var2 . "<br>";
+        } else ?>
+        <?php if ($var != "" && $var2 != "" && $var3 != "") {
+            echo "Filtro 1:" . $filtro . " " . "=" . " " . $var . "<br>" . "Filtro 2:" . $filtro2 . " " . "=" . " " . $var2 . "<br>" . "Filtro 3:" . $filtro3 . " " . "=" . " " . $var3 . "<br>";
+        } else ?>
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -121,7 +142,7 @@ if ($var != "" && $var2 != "" && $var3 != "") {
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
                     <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>M2</small></th>
@@ -143,14 +164,14 @@ if ($var != "" && $var2 != "" && $var3 != "") {
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[descripcion]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[metrosCuadrados]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[pisos]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>
-                        <td width='240' height='16' align='center' valign='middle'>$data[direccion]</td>                  
+                        <td width='100' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[metrosCuadrados]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[pisos]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[nmroCuartos]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[condicion]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[cedula]</td>
+                        <td width='180' height='16' align='center' valign='middle'>$data[direccion]</td>                  
                     </tr>";
                     $no++;
                 }

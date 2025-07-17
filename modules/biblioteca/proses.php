@@ -64,6 +64,7 @@ else {
             $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
             $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
             $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+            $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
             //$nVDA  = mysqli_real_escape_string($mysqli, trim($_POST['nVDA']));
             $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
             $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -84,8 +85,8 @@ else {
 
              } else {
 
-                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, unidad, created_date) 
-                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$unidad', NOW())")
+                $query = mysqli_query($mysqli, "INSERT INTO biblioteca (categoria, codigo, tipo, titulo,autor, editorial, cantidad, isbn, bienesN, responsable, cedula, sede, color, condicion, ubicacion, created_user, unidad, pertenece, created_date) 
+                VALUES('Biblioteca', '$codigo', '$tipo', '$titulo', '$autor', '$editorial', '$cantidad', '$isbn', '$bienesN', '$responsable', '$cedula', '$sede', '$color', '$condicion', '$ubicacion', '$created_user', '$unidad', '$pertenece', NOW())")
                                             or die('error '.mysqli_error($mysqli)); 
                 
             
@@ -114,6 +115,7 @@ else {
                 $isbn  = mysqli_real_escape_string($mysqli, trim($_POST['isbn']));
                 $bienesN  = mysqli_real_escape_string($mysqli, trim($_POST['bienesN']));
                 $responsable  = mysqli_real_escape_string($mysqli, trim($_POST['responsable']));
+                $pertenece  = mysqli_real_escape_string($mysqli, trim($_POST['pertenece']));
                
                 $cedula  = mysqli_real_escape_string($mysqli, trim($_POST['cedula']));
                 $sede  = mysqli_real_escape_string($mysqli, trim($_POST['sede']));
@@ -142,6 +144,7 @@ else {
                                                                     sede          = '$sede',
                                                                     color          = '$color',
                                                                     unidad  = '$unidad',    
+                                                                    pertenece  = '$pertenece', 
                                                                     condicion          = '$condicion',
                                                                     ubicacion          = '$ubicacion',
                                                                     ubicacion          = '$ubicacion',

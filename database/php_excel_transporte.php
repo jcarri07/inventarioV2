@@ -68,8 +68,13 @@ header('Content-Disposition: attachment; filename=Exportación_Transporte.xlsx')
 
               <tr>
               <td width='50'  class='center' align='center'>$no</td>       
+<<<<<<< HEAD
               <td width='150' class='center' align='center'>$data[codigo]</td>
               <td width='200' class='center' align='center'>$data[descripcion]</td>
+=======
+              <td width='150' class='center' align='center'> $data[codigo]</td>
+              <td width='150' class='center' align='center'>$data[descripcion]</td>
+>>>>>>> a974967cb7b01cf1b75643aa0166509892c7f115
               <td width='150' class='center' align='center'>$data[marca]</td>
               <td width='150' class='center' align='center'>$data[modelo]</td>              
               <td width='150' class='center' align='center'>$data[color]</td>

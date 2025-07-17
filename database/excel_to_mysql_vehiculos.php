@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -15,7 +15,7 @@
 	$db_host="localhost";
 	$db_name="inventario3";
 	$db_user="root";
-	$db_pass="root";
+	$db_pass="";
 
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
@@ -51,7 +51,6 @@
         $parametro = $nombreArc.".".$ext;
 
     }
-
 if ($parametro != null) {
 
     if ( $xlsx = SimpleXLSX::parse($parametro)) {
@@ -61,46 +60,43 @@ if ($parametro != null) {
         }
     catch(PDOException $e)
     {
-        echo '<script language="javascript">alert("El documento importado puede que contenga errores");</script>';
+        echo '<script language="javascript">alert("El documento importado puede contener errores");</script>';
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-            $stmt = $conn->prepare("INSERT INTO transporte (codigo, descripcion, marca, placa, tipo, modelo, color, condicion, unidad, ubicacion, responsable, cedula, pertenece, sede, anio, created_user, created_date, estado, updated_user, categoria, bienesN) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO transporte (codigo, descripcion, marca, modelo, color, placa, anio, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->bindParam(1, $codigo);
-            $stmt->bindParam(2, $descripcion);
-            $stmt->bindParam(3, $marca);
-            $stmt->bindParam(4, $modelo);
-            $stmt->bindParam(5, $color);
-            $stmt->bindParam(6, $placa);
-            $stmt->bindParam(7, $bienesN);
-            $stmt->bindParam(8, $condicion);
-            $stmt->bindParam(9, $unidad);
-            $stmt->bindParam(10, $ubicacion);
-            $stmt->bindParam(11, $responsable);
-            $stmt->bindParam(12, $cedula);
-            $stmt->bindParam(13, $sede);
-            $stmt->bindParam(14, $pertenece);
-            $stmt->bindParam(15, $created_user);
-            $stmt->bindParam(16, $updated_user);
-            $stmt->bindParam(17, $created_date);
-            $stmt->bindParam(18, $updated_date);
-            $stmt->bindParam(19, $updated_user);
-            $stmt->bindParam(20, $estado);
-            $stmt->bindParam(21, $categoria);
+        $stmt->bindParam(1, $codigo);
+        $stmt->bindParam(2, $descripcion);
+        $stmt->bindParam(3, $marca);
+        $stmt->bindParam(4, $modelo);
+        $stmt->bindParam(5, $color);
+        $stmt->bindParam(6, $placa);
+        $stmt->bindParam(7, $anio);
+        $stmt->bindParam(8, $condicion);
+        $stmt->bindParam(9, $unidad);
+        $stmt->bindParam(10, $ubicacion);
+        $stmt->bindParam(11, $responsable);
+        $stmt->bindParam(12, $cedula);
+        $stmt->bindParam(13, $sede);
+        $stmt->bindParam(14, $pertenece);
+        $stmt->bindParam(15, $created_user);
+        $stmt->bindParam(16, $updated_user);
+        $stmt->bindParam(17, $created_date);
+        $stmt->bindParam(18, $updated_date);
+        $stmt->bindParam(19, $estado);
+        $stmt->bindParam(20, $categoria);
 
             $accion = "Importacion de Vehiculos";
 
             $query = mysqli_query($mysqli, "INSERT INTO history(nombre, accion, cedula, permiso, fecha, hora) 
                                             VALUES('$NombreUser','$accion','$cedulauser', '$iduser', NOW(), DATE_FORMAT(NOW( ), '%H:%I:%S' ))")
-            or die('error ' . mysqli_error($mysqli));
+                                            or die('error ' . mysqli_error($mysqli));
 
             header('Location:/inventariov2/main.php?module=transporte&alert=4');
 
 
-
-            foreach ($xlsx->rows() as $fields)
+        foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
             $descripcion = $fields[1];
@@ -108,7 +104,7 @@ if ($parametro != null) {
             $modelo = $fields[3];
             $color = $fields[4];
             $placa = $fields[5];
-            $bienesN = $fields[6];
+            $anio = $fields[6];
             $condicion = $fields[7];
             $unidad = $fields[8];
             $ubicacion = $fields[9];
@@ -120,9 +116,8 @@ if ($parametro != null) {
             $updated_user = $fields[15];
             $created_date = $fields[16];
             $updated_date = $fields[17];
-            $updated_user = $fields[18];
-            $estado = $fields[19];
-            $categoria = $fields[20];
+            $estado = $fields[18];
+            $categoria = $fields[19];
             $stmt->execute();
            
         }

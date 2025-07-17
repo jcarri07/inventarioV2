@@ -4,7 +4,7 @@
 
 	$server   = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -64,7 +64,7 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO transaccion_equipos_vehiculos (codigo_transaccion, tipo_transaccion, codigo, motivo, entrega, cedula_e, lugar_e, empresa, recibe, cedula_r, lugar_r, empresa_r, created_date, created_user) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare( "INSERT INTO transaccion_equipos_transporte(codigo_transaccion, tipo_transaccion, codigo, motivo, entrega, cedula_e, lugar_e, empresa, recibe, cedula_r, lugar_r, empresa_r, created_date, created_user) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             $stmt->bindParam( 1, $codigo_transaccion);
             $stmt->bindParam( 2, $tipo_transaccion);
             $stmt->bindParam( 3, $codigo);

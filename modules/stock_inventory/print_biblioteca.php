@@ -2,6 +2,9 @@
 session_start();
 ob_start();
 
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 require_once "../../config/database.php";
 
@@ -20,9 +23,15 @@ $hari_ini = date("d-m-Y");
 
 $no = 1;
 
-$query = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY codigo DESC")
-    or die('Error ' . mysqli_error($mysqli));
-$count  = mysqli_num_rows($query);
+$access = $_SESSION['permisos_acceso'];
+if ($access === 'Super Admin') {
+    $query = mysqli_query($mysqli, "SELECT * FROM biblioteca WHERE sede LIKE '$sede' ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+} else {
+    $query = mysqli_query($mysqli, "SELECT * FROM biblioteca ORDER BY codigo DESC") or die('Error ' . mysqli_error($mysqli));
+    $count  = mysqli_num_rows($query);
+}
+
 
 
 ?>
@@ -30,7 +39,7 @@ $count  = mysqli_num_rows($query);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>REPORTE DE INVENTARIOS (BIBLIOTECA)</title>
+    <title>REPORTE DE INVENTARIOS (Biblioteca)</title>
     <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
 </head>
 
@@ -38,9 +47,9 @@ $count  = mysqli_num_rows($query);
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -55,7 +64,7 @@ $count  = mysqli_num_rows($query);
     <br><br>
 
     <div id="title">
-        REPORTE DE INVENTARIOS (BIBLIOTECA)
+        REPORTE DE INVENTARIOS (Biblioteca)
     </div>
 
     <table border="0.7" cellpadding="0" cellspacing="0" style="margin: left;">
@@ -71,7 +80,7 @@ $count  = mysqli_num_rows($query);
 
         <tr>
             <td>Sede:</td>
-            <td align="center"><?php echo $data['sede']?></td>
+            <td align="center"><?php echo $data['sede'] ?></td>
         </tr>
 
         <tr>
@@ -87,9 +96,9 @@ $count  = mysqli_num_rows($query);
         <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
             <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
-                    <th height="20" align="center" valign="middle"><small>TIPO</small></th>
+                    <th height="20" align="center" valign="middle"><small>DESCRIPCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TITULO</small></th>
                     <th height="20" align="center" valign="middle"><small>AUTOR</small></th>
                     <th height="20" align="center" valign="middle"><small>ISBN</small></th>
@@ -109,14 +118,14 @@ $count  = mysqli_num_rows($query);
                     echo "  <tr>
                         <td width='50'  height='16' align='center' valign='middle'>$no</td>
                         <td width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[tipo]</td>
-                        <td width='240' height='16' align='center' valign='middle'>$data[titulo]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[autor]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[isbn]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[bienesN]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[condicion]</td>
-                        <td width='120' height='16' align='center' valign='middle'>$data[responsable]</td>
-                        <td width='80'  height='16' align='center' valign='middle'>$data[cedula]</td>                  
+                        <td width='100' height='16' align='center' valign='middle'>$data[tipo]</td>
+                        <td width='180' height='16' align='center' valign='middle'>$data[titulo]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[autor]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[isbn]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[bienesN]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[condicion]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[responsable]</td>
+                        <td width='100' height='16' align='center' valign='middle'>$data[cedula]</td>                  
                     </tr>";
                     $no++;
                 }

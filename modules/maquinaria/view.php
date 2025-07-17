@@ -43,18 +43,20 @@ function validarExt()
   <h2>
   <i class="fa fa-folder-o icon-title"></i> 14000-0000 | Maquinaria y demás equipos de construcción, campo, industria y taller
 
-    <form action="database/excel_to_mysql_refrigeracion.php" method="POST" enctype="multipart/form-data">
-        <!--<button class="btn btn-primary pull-right botones" title="Importar" name="archivoInput" data-toggle="tooltip">Importar</button>-->
+    <form action="database/excel_to_mysql_comunicaciones.php" method="POST" enctype="multipart/form-data">
+        <button class="btn btn-primary btn-social pull-right botones" name="archivoInput" data-toggle="tooltip">
+          <i class="fa fa-sign-in"></i></i>Importar&nbsp;&nbsp;
+        </button>
         
         <div class="btn-group pull-right" role="group" aria-label="Basic example"> 
     
-          <!--<a class="btn btn-primary btn-social pull-right botones anchoInput"  title="Cargar archivo" data-toggle="tooltip"> 
-            <i class="fa fa-file-excel-o"></i> 
+          <a class="btn btn-primary btn-social pull-right botones" data-toggle="tooltip"> 
+            <i class="fa fa-file-excel-o"></i>
             <input method="post" type="file" id = "archivoInput" name="archivoInput" onchange="return validarExt()">
             <div class="textoInput">
-              Cargar Archivo
+            Cargar
             </div>  
-          </a>-->
+          </a>
 
           <a class="btn btn-primary btn-social  pull-right botones" href="database\php_excel_maquinaria.php" data-toggle="tooltip">
             <i class="fa fa-sign-out"></i></i>Exportar&nbsp;&nbsp;
@@ -111,8 +113,13 @@ function validarExt()
               Datos importados correctamente
             </div>";
     }
-    
-    
+
+    elseif ($_GET['alert'] == 8) {
+      echo "<div class='alert alert-danger alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Seleccione el archivo que desea importar </h4>
+            </div>";
+    }
     
 
     ?>

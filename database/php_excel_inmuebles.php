@@ -70,7 +70,7 @@
               <tr>
               <td width='50'  class='center' align='center'>$no</td>      
               <td width='150' class='center' align='center'>$data[codigo]</td>
-              <td width='200' class='center' align='center'>$data[descripcion]</td>
+              <td width='150' class='center' align='center'>$data[descripcion]</td>
               <td width='150' class='center' align='center'>$data[metrosCuadrados]</td>
               <td width='150' class='center' align='center'>$data[pisos]</td>
               <td width='150' class='center' align='center'>$data[nmroCuartos]</td>
@@ -78,7 +78,7 @@
               <td width='150' class='center' align='center'>$data[bienesN]</td>
               <td width='150' class='center' align='center'>$data[condicion]</td>
               <td width='150' class='center' align='center'>$data[unidad]</td>
-              <td width='200' class='center' align='center'>$data[direccion]</td>
+              <td width='150' class='center' align='center'>$data[direccion]</td>
               <td width='150' class='center' align='center'>$data[responsable]</td>
               <td width='150' class='center' align='center'>$data[cedula]</td> 
               <td width='150' class='center' align='center'>$data[sede]</td>

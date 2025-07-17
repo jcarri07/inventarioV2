@@ -3,7 +3,7 @@
 
     $server   = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $database = "inventario3";
 
     $mysqli = new mysqli($server, $username, $password, $database);
@@ -15,7 +15,7 @@
 	$db_host="localhost";
 	$db_name="inventario3";
 	$db_user="root";
-	$db_pass="root";
+	$db_pass="";
 
     $hari_ini = date("d-m-Y");
     $NombreUser = $_SESSION['name_user'];
@@ -65,10 +65,10 @@ if ($parametro != null) {
         echo $sql . "<br>" . $e->getMessage();
     }
     try {
-        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo, descripcion, titulo, autor, color, isbn, bienesn, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare( "INSERT INTO biblioteca (codigo, tipo, titulo, autor, color, isbn, bienesn, condicion, unidad, ubicacion, responsable, cedula, sede, pertenece, cantidad, created_user, updated_user, created_date, updated_date, estado, categoria) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
         $stmt->bindParam(1, $codigo);
-        $stmt->bindParam(2, $descripcion);
+        $stmt->bindParam(2, $tipo);
         $stmt->bindParam(3, $titulo);
         $stmt->bindParam(4, $autor);
         $stmt->bindParam(5, $color);
@@ -105,7 +105,7 @@ if ($parametro != null) {
         foreach ($xlsx->rows() as $fields)
         {
             $codigo = $fields[0];
-            $descripcion = $fields[1];
+            $tipo = $fields[1];
             $titulo = $fields[2];
             $autor = $fields[3];
             $color = $fields[4];

@@ -2,6 +2,9 @@
 session_start();
 ob_start();
 
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 require_once "../../config/database.php";
 
@@ -39,7 +42,7 @@ $count  = mysqli_num_rows($query);*/
     <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>REPORTE DE MOVIMIENTOS (INMUEBLES)</title>
+        <title>REPORTE DE MOVIMIENTOS (Inmuebles)</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
        
     </head>
@@ -48,9 +51,9 @@ $count  = mysqli_num_rows($query);*/
 
     <table border="0">
         <tr>
-            <td><img src="../../assets/img/Cintillo_MINCYT.png" width="400" align='center' ;></td>
-            <td width="550"></td>
-            <td><img src="../../assets/img/ABAE_logo.png" width="80" align='center' ;></td>
+            <td><img src="../../assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="630"></td>
+            <td><img src="../../assets/img/ABAE_logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -68,7 +71,7 @@ $count  = mysqli_num_rows($query);*/
 
 
     <div id="title">
-        REPORTE DE MOVIMIENTOS (INMUEBLES)
+        REPORTE DE MOVIMIENTOS (Inmuebles)
         </div>
         <div id="title-tanggal">
             Filtrado: <?php echo $filtro ." "."="." ". $var; ?>
@@ -103,7 +106,7 @@ $count  = mysqli_num_rows($query);*/
             <table width="100%" border="0.7" cellpadding="0" cellspacing="0" style="margin: auto;" font-size="12px">
                 <thead style="background:#e8ecee">
                 <tr class="tr-title">
-                    <th height="20" align="center" valign="middle"><small>No.</small></th>
+                    <th height="20" align="center" valign="middle"><small>ITEM</small></th>
                     <th height="20" align="center" valign="middle"><small>TRANSACCION</small></th>
                     <th height="20" align="center" valign="middle"><small>TIPO </small></th>
                     <th height="20" align="center" valign="middle"><small>CODIGO</small></th>
@@ -127,18 +130,18 @@ $count  = mysqli_num_rows($query);*/
                 $fecha = date("d-m-Y", strtotime($originalDate));
            
                 echo "  <tr>
-                    <td style= width='45'  height='16' align='center' valign='middle'>$no</td>
-                    <td style= width='95'  height='16' align='center' valign='middle'>$data[codigo_transaccion]</td>
-                    <td style= width='45'  height='16' align='center' valign='middle'>$data[tipo_transaccion]</td>
-                    <td style= width='45'  height='16' align='center' valign='middle'>$data[codigo]</td>
-                    <td style= width='200' height='16' align='center' valign='middle'>$data[descripcion]</td>
-                    <td style= width='75'  height='16' align='center' valign='middle'>$data[motivo]</td>
+                    <td style= width='50'  height='16' align='center' valign='middle'>$no</td>
+                    <td style= width='100' height='16' align='center' valign='middle'>$data[codigo_transaccion]</td>
+                    <td style= width='50'  height='16' align='center' valign='middle'>$data[tipo_transaccion]</td>
+                    <td style= width='50'  height='16' align='center' valign='middle'>$data[codigo]</td>
+                    <td style= width='100' height='16' align='center' valign='middle'>$data[descripcion]</td>
+                    <td style= width='100' height='16' align='center' valign='middle'>$data[motivo]</td>
                     <td style= width='100' height='16' align='center' valign='middle'>$data[entrega]</td>
-                    <td style= width='55'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
-                    <td style= width='40'  height='16' align='center' valign='middle'>$data[lugar_e]</td>
+                    <td style= width='60'  height='16' align='center' valign='middle'>$data[cedula_e]</td>
+                    <td style= width='60'  height='16' align='center' valign='middle'>$data[lugar_e]</td>
                     <td style= width='100' height='16' align='center' valign='middle'>$data[recibe]</td>
-                    <td style= width='55'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
-                    <td style= width='40'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
+                    <td style= width='60'  height='16' align='center' valign='middle'>$data[cedula_r]</td>
+                    <td style= width='60'  height='16' align='center' valign='middle'>$data[lugar_r]</td>  
                     <td style= width='65'  height='16' align='center' valign='middle'>$fecha</td>                      
                 </tr>";
             $no++;

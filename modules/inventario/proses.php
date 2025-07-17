@@ -147,7 +147,7 @@ else {
             }else*/ if (empty($_FILES['foto']['name'])) {
                 
                 $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date) 
-                VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
+                VALUES('oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','$estado','$condicion','$ubicacion','$unidad','$created_user',NOW())")
                 or die('error '.mysqli_error($mysqli)); 
 
 
@@ -158,8 +158,11 @@ else {
                 //header("location: ../../main.php?module=form_inventario&form=add");  
 
                if($query){
-                header("location: ../../main.php?module=inventario&alert=1");
-                header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                if($descripcion == "Unidad central de proceso (CPU)") {
+                    header("location: ../../main.php?module=form_inventario&form=add&codigo=".$codigo);
+                } else {
+                    header("location: ../../main.php?module=inventario&alert=1");
+                }
                }
             } elseif (!empty($_FILES['foto']['name'])) {
         
@@ -171,7 +174,7 @@ else {
                             
                          
                         $query = mysqli_query($mysqli, "INSERT INTO inventario(categoria,codigo,serial,responsable,marca,modelo,sede,pertenece,cedula,bienesN,color,descripcion,estado,condicion,ubicacion,unidad,created_user,updated_date,foto) 
-                                            VALUES('Comunicaciones','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
+                                            VALUES('oficina','$codigo','$serial','$responsable','$marca','$modelo','$sede','$pertenece','$cedula','$bienesN','$color','$descripcion','chequeado','$condicion','$ubicacion','$unidad','$created_user','$created_date','$name_file')")
                                             or die('error '.mysqli_error($mysqli)); 
 
                             if ($query) {
@@ -464,7 +467,7 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
 
         
         $query = mysqli_query($mysqli, "UPDATE inventario SET estado = '$estado'
-                                                        WHERE estado = 'chequeado' AND categoria='Comunicaciones'")
+                                                        WHERE estado = 'chequeado' AND categoria='oficina'")
                                         or die('error: '.mysqli_error($mysqli));
 
 
@@ -473,7 +476,4 @@ if ($_GET['act']=='reset' && $_SESSION['permisos_acceso'] == "Super Admin") {
             header("location: ../../main.php?module=inventario");
         }
     
-    }      
-?>
-
-
+    }

@@ -31,28 +31,28 @@ if ($_GET['form']=='add') { ?>
         <div class="box box-primary">
           <!-- form start -->
           <form role="form" class="form-horizontal" action="modules/biblioteca/proses.php?act=insert" method="POST">
-          <div class="box-body">
+            <div class="box-body">
               <?php  
               
               $query = mysqli_query($mysqli, "SELECT cedula_user,sede, id_user, name_user, foto, permisos_acceso FROM usuarios WHERE id_user='$_SESSION[id_user]'")
-                                or die('error: '.mysqli_error($mysqli));
+                or die('error: ' . mysqli_error($mysqli));
               $data = mysqli_fetch_assoc($query);
               $_SESSION['sede'] = $data['sede'];
               $sede = $_SESSION['sede'];
 
               $query_id = mysqli_query($mysqli, "SELECT codigo FROM biblioteca
                                                 ORDER BY codigo DESC LIMIT 1")
-                                                or die('error '.mysqli_error($mysqli));
+                or die('error ' . mysqli_error($mysqli));
 
               $count = mysqli_num_rows($query_id);
 
               if ($count <> 0) {
             
-                  $data_id = mysqli_fetch_assoc($query_id);
-                  $codigo = $data_id['codigo']+1;
-                  error_reporting(E_ERROR | E_WARNING | E_PARSE);
+                $data_id = mysqli_fetch_assoc($query_id);
+                $codigo = $data_id['codigo'] + 1;
+                error_reporting(E_ERROR | E_WARNING | E_PARSE);
               } else {
-                  $codigo = 1;
+                $codigo = 1;
               }
               
               $buat_id   = str_pad($codigo, 6, "0", STR_PAD_LEFT);
@@ -133,7 +133,7 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value=""></option>
-                    <option value="Optimo">Óptimo</option>
+                    <option value="Optimo">Optimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
                     <option value="Averiado">Averiado</option>
@@ -183,7 +183,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group" >
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="editorial" autocomplete="off" required>
+                <input class="form-control" list="item" type="text" placeholder="-- Especificar --" name="pertenece" autocomplete="off" required>
                   <datalist id="item">
                     <option value=""></option>
                     <option value="ABAE">ABAE</option>
@@ -320,7 +320,7 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="chosen-select"  name="condicion" data-placeholder="-- Seleccionar --" autocomplete="off" required>
                     <option value="<?php echo $data['condicion'];?>"><?php echo $data['condicion'];?></option>
-                    <option value="Optimo">Óptimo</option>
+                    <option value="Optimo">Optimo</option>
                     <option value="Regular">Regular</option>
                     <option value="Deteriorado">Deteriorado</option>
                     <option value="Averiado">Averiado</option>
@@ -369,7 +369,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Pertenece</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="editorial" autocomplete="off" value="<?php echo $data['editorial']; ?>" required>
+                  <input type="text" class="form-control" name="pertenece" autocomplete="off" value="<?php echo $data['pertenece']; ?>" required>
                 </div>
               </div>
 

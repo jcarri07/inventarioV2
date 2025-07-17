@@ -3,14 +3,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Login | INABAE </title>
+    <title> INABAE | Login </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Aplikasi Persediaan Obat pada Apotek">
     <meta name="author" content="Indra Styawantoro" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="assets/img/encabezado.png" />
+    <link rel="icon" type="image/png" href="assets/img/INABAE_ico.png"/>
 
     <!-- Bootstrap 3.3.2 -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@
   <body class="login-page bg-login">
     <div class="login-box">
       <div style="color:#3c8dbc" class="login-logo">
-        <img style="margin-top:-12px" src="assets/img/INABAE Logo.png" alt="Logo" height="60"><b>ABAE</b>
+        <img style="margin-top:-12px" src="./assets/img/INABAE_Logo.png" alt="Logo" height="60"><b>ABAE</b>
       </div><!-- /.login-logo -->
       <?php  
  
@@ -46,7 +46,7 @@
       elseif ($_GET['alert'] == 2) {
         echo "<div class='alert alert-success alert-dismissable'>
                 <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                <h4>  <i class='icon fa fa-check-circle'></i> Exito!</h4>
+                <h4>  <i class='icon fa fa-check-circle'></i> Éxito!</h4>
               </div>";
       }
       ?>

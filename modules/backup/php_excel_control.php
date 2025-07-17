@@ -43,7 +43,13 @@
 	  }
 
       $no = 1;
-      $query = mysqli_query($mysqli, "SELECT * FROM transaccion_equipos ORDER BY codigo DESC")
+      $query = mysqli_query($mysqli, "SELECT * FROM transaccion_equipos
+      UNION ALL
+      SELECT * FROM transaccion_equipos_biblioteca
+      UNION ALL
+      SELECT * FROM transaccion_equipos_inmuebles
+      UNION ALL
+      SELECT * FROM transaccion_equipos_transporte ORDER BY codigo DESC;")
                                             or die('error: '.mysqli_error($mysqli));
 
       while ($data = mysqli_fetch_assoc($query)) { 

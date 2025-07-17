@@ -17,12 +17,12 @@
         <div role="tabpanel">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#equipos" aria-controls="" data-toggle="tab" role="tab">Equipos</a></li>
-            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#Transporte" aria-controls="" data-toggle="tab" role="tab">Transporte </a></li>
+            <li role="presentation"><a href="#biblioteca" aria-controls="" data-toggle="tab" role="tab">Biblioteca</a></li>
             <li role="presentation"><a href="#inmuebles" aria-controls="" data-toggle="tab" role="tab">Inmuebles </a></li>
           </ul>
 
-          
+
 
           <!-- EQUIPOS -->
           <div class="tab-content">
@@ -42,12 +42,12 @@
                       <tr>
                         <th class="center" width='150'>Fecha</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal" placeholder="dd/mm/aaaa" autocomplete="off" required>
+                          <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="tgl_awal" placeholder="aaaa/mm/dd" autocomplete="off" required>
                         </th>
 
                         <th class="center" width='150'>Hasta</th>
                         <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir" autocomplete="off" required>
+                          <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" Onchange="consulta()" placeholder="aaaa/mm/dd" name="tgl_akhir" autocomplete="off" required>
                         </th>
                         <th>
                           <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
@@ -56,15 +56,15 @@
                         </th>
                       </tr>
               </div>
-            </form>
-            </thead>
-            </table>
+              </form>
+              </thead>
+              </table>
 
               </br></br>
               <form name="formulario" method="post" action="modules/stock_report/print_filter_report.php" target="_blank">
 
                 <table class="table table-bordered table-striped table-hover">
-                
+
                   <thead>
                     <th class="center" width='150'>Filtrar por</th>
                     <th width='200'>
@@ -97,34 +97,34 @@
           <!--BIBLIOTECA-->
           <div role="tabpanel" class="tab-pane" id="biblioteca">
             <!-- form start -->
-              <div class="box-body">
-                <form name="formulario" method="GET" action="modules/stock_report/print_biblioteca.php" target="_blank">
-                  </br>
-                  <h4 class="text-center">
-                    <i class="fa fa-book"></i> Biblioteca
-                  </h4>
-                  </br> </br>
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                      </tr>
-                      <tr>
-                        <th class="center" width='150'>Fecha</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_biblioteca" placeholder="dd/mm/aaaa" autocomplete="off" required>
-                        </th>
+            <div class="box-body">
+              <form name="formulario" method="GET" action="modules/stock_report/print_biblioteca.php" target="_blank">
+                </br>
+                <h4 class="text-center">
+                  <i class="fa fa-book"></i> Biblioteca
+                </h4>
+                </br> </br>
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                    </tr>
+                    <tr>
+                      <th class="center" width='150'>Fecha</th>
+                      <th width='200'>
+                        <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="tgl_awal_biblioteca" placeholder="aaaa/mm/dd" autocomplete="off" required>
+                      </th>
 
-                        <th class="center" width='150'>Hasta</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir_biblioteca" autocomplete="off" required>
-                        </th>
-                        <th>
-                          <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
-                            <i class="fa fa-print"></i> Imprimir
-                          </button>
-                        </th>
-                      </tr>
-              </div>
+                      <th class="center" width='150'>Hasta</th>
+                      <th width='200'>
+                        <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" Onchange="consulta()" placeholder="aaaa/mm/dd" name="tgl_akhir_biblioteca" autocomplete="off" required>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                          <i class="fa fa-print"></i> Imprimir
+                        </button>
+                      </th>
+                    </tr>
+            </div>
             </form>
             </thead>
             </table>
@@ -166,36 +166,36 @@
         <div role="tabpanel" class="tab-pane" id="Transporte">
           <!-- form start -->
           <div class="box-body">
-                <form name="formulario" method="GET" action="modules/stock_report/print_Transporte.php" target="_blank">
-                  </br>
-                  <h4 class="text-center">
-                    <i class="fa fa-car"></i> Transporte
-                  </h4>
-                  </br> </br>
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                      </tr>
-                      <tr>
-                        <th class="center" width='150'>Fecha</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_Transporte" placeholder="dd/mm/aaaa" autocomplete="off" required>
-                        </th>
+            <form name="formulario" method="GET" action="modules/stock_report/print_Transporte.php" target="_blank">
+              </br>
+              <h4 class="text-center">
+                <i class="fa fa-car"></i> Transporte
+              </h4>
+              </br> </br>
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                  </tr>
+                  <tr>
+                    <th class="center" width='150'>Fecha</th>
+                    <th width='200'>
+                      <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="tgl_awal_Transporte" placeholder="aaaa/mm/dd" autocomplete="off" required>
+                    </th>
 
-                        <th class="center" width='150'>Hasta</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir_Transporte" autocomplete="off" required>
-                        </th>
-                        <th>
-                          <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
-                            <i class="fa fa-print"></i> Imprimir
-                          </button>
-                        </th>
-                      </tr>
-              </div>
-            </form>
-            </thead>
-            </table>
+                    <th class="center" width='150'>Hasta</th>
+                    <th width='200'>
+                      <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" Onchange="consulta()" placeholder="aaaa/mm/dd" name="tgl_akhir_Transporte" autocomplete="off" required>
+                    </th>
+                    <th>
+                      <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                        <i class="fa fa-print"></i> Imprimir
+                      </button>
+                    </th>
+                  </tr>
+          </div>
+          </form>
+          </thead>
+          </table>
 
           </br></br>
           <form name="formulario" method="POST" action="modules/stock_report/print_filter_Transporte.php" target="_blank">
@@ -233,36 +233,36 @@
       <div role="tabpanel" class="tab-pane" id="inmuebles">
         <!-- form start -->
         <div class="box-body">
-                <form name="formulario" method="GET" action="modules/stock_report/print_inmuebles.php" target="_blank">
-                  </br>
-                  <h4 class="text-center">
-                    <i class="fa fa-home"></i> Inmuebles
-                  </h4>
-                  </br> </br>
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                      </tr>
-                      <tr>
-                        <th class="center" width='150'>Fecha</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="tgl_awal_inmuebles" placeholder="dd/mm/aaaa" autocomplete="off" required>
-                        </th>
+          <form name="formulario" method="GET" action="modules/stock_report/print_inmuebles.php" target="_blank">
+            </br>
+            <h4 class="text-center">
+              <i class="fa fa-home"></i> Inmuebles
+            </h4>
+            </br> </br>
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                </tr>
+                <tr>
+                  <th class="center" width='150'>Fecha</th>
+                  <th width='200'>
+                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="tgl_awal_inmuebles" placeholder="aaaa/mm/dd" autocomplete="off" required>
+                  </th>
 
-                        <th class="center" width='150'>Hasta</th>
-                        <th width='200'>
-                          <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" Onchange="consulta()" placeholder="dd/mm/aaaa" name="tgl_akhir_inmuebles" autocomplete="off" required>
-                        </th>
-                        <th>
-                          <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
-                            <i class="fa fa-print"></i> Imprimir
-                          </button>
-                        </th>
-                      </tr>
-              </div>
-            </form>
-            </thead>
-            </table>
+                  <th class="center" width='150'>Hasta</th>
+                  <th width='200'>
+                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" Onchange="consulta()" placeholder="aaaa/mm/dd" name="tgl_akhir_inmuebles" autocomplete="off" required>
+                  </th>
+                  <th>
+                    <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                      <i class="fa fa-print"></i> Imprimir
+                    </button>
+                  </th>
+                </tr>
+        </div>
+        </form>
+        </thead>
+        </table>
 
         </br></br>
         <form name="formulario" method="post" action="modules/stock_report/print_filter_inmuebles.php" target="_blank">

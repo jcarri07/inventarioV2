@@ -65,9 +65,9 @@ ventimp.close();
 
   <table border="0">
         <tr>
-            <td><img src="assets/img/Cintillo_MINCYT.png" width="300" align='center' ;></td>
-            <td width="400"></td>
-            <td><img src="assets/img/ABAE_Logo.png" width="150" align='center' ;></td>
+            <td><img src="assets/img/MINCYT_Cintillo.png" width="300" align='center' ;></td>
+            <td width="450"></td>
+            <td><img src="assets/img/ABAE_Logo.png" width="100" align='center' ;></td>
         </tr>
     </table>
 
@@ -117,7 +117,7 @@ ventimp.close();
                        <td width='100' class='center'>$data[serial]</td>
                        <td width='100' class='center'>$data[bienesN]</td>";
                       
-                        $foto = $data['foto'];
+                        // $foto = $data['foto'];
               
             }
           }
@@ -127,7 +127,7 @@ ventimp.close();
 
           </table><?php
 
-          if (!$foto) { ?> 
+         /* if (!$foto) { ?> 
           </br>
             <div align='center'> <img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/cargar.jpg" width="128"></div>
             </br>
@@ -138,7 +138,7 @@ ventimp.close();
               <div align='center' ><img style="border:1px solid #eaeaea;border-radius:5px;" src="images/inventario/<?php echo $foto; ?>" width="150"></div>
               </br>
              <?php
-           }
+           }*/
            
 
           
